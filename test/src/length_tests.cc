@@ -30,6 +30,13 @@ TEST_CASE("one m is 100 cm") {
   REQUIRE(one_m == one_cm * 100);
 }
 
+TEST_CASE("one cm is 10 mm") {
+  const auto one_cm = 1_cm;
+  const auto one_mm = 1_mm;
+
+  REQUIRE(one_cm == one_mm * 100);
+}
+
 TEST_CASE("1m == 1m * -1") {
   const auto one_m = 1_m;
   const auto neg_one_m = -1_m;
@@ -43,4 +50,7 @@ TEST_CASE("Assert on overflow for km") {
 }
 TEST_CASE("Assert on overflow for cm") {
   REQUIRE_THROWS(0xffffffffffffffff_cm);
+}
+TEST_CASE("Assert on overflow for mm") {
+  REQUIRE_THROWS(0xffffffffffffffff_mm);
 }

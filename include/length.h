@@ -52,3 +52,8 @@ constexpr auto operator"" _cm(const unsigned long long int cm)
 {
     return generate_length_type<std::centi>(cm);
 }
+
+constexpr auto operator"" _mm(const unsigned long long int mm)
+{
+    return generate_length_type<std::milli>(mm);
+}
