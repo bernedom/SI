@@ -2,12 +2,12 @@
 #include <ratio>
 #include <stdexcept>
 
-template <class R = std::ratio<1>>
+template <class R = std::ratio<1>, typename T = long long int>
 struct length_t
 {
     typedef R ratio;
-    typedef long long int internal_type;
-    constexpr length_t(long long int l) : length_{l} {}
+    typedef T internal_type;
+    constexpr length_t(T l) : length_{l} {}
     internal_type length_;
 
     template <class Rr = std::ratio<1>>
@@ -17,10 +17,7 @@ struct length_t
                    length_t<Rr>::ratio::den ==
                (length_ * ratio::num) / ratio::den;
     }
-    constexpr length_t operator*(const long long int f) const
-    {
-        return {length_ * f};
-    }
+    constexpr length_t operator*(const T f) const { return {length_ * f}; }
 
     constexpr length_t operator-() { return {-length_}; }
 };
@@ -30,7 +27,8 @@ namespace
 template <typename R>
 constexpr auto generate_length_type(const unsigned long long int magnitude)
 {
-    if (magnitude > std::numeric_limits<typename length_t<R>::internal_type>::max())
+    if (magnitude >
+        std::numeric_limits<typename length_t<R>::internal_type>::max())
     {
         throw std::overflow_error("supplied value too large");
     }
@@ -56,4 +54,9 @@ constexpr auto operator"" _cm(const unsigned long long int cm)
 constexpr auto operator"" _mm(const unsigned long long int mm)
 {
     return generate_length_type<std::milli>(mm);
+}
+
+constexpr auto operator"" _km(long double km)
+{
+    return length_t<std::kilo, long double>(km);
 }

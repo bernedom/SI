@@ -2,7 +2,10 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 
 include(CTest)
 #consider adding fakeit as mocking framework
-add_executable(SI_Tests src/Catch2Main.cc src/length_tests_integral_type.cc)
+add_executable(SI_Tests 
+               src/Catch2Main.cc
+               src/length_tests_integral_type.cc
+               src/length_tests_floating_point.cc) 
 target_include_directories(SI_Tests PRIVATE ${PROJECT_SOURCE_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/include)
 
 
