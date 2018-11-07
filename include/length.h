@@ -1,5 +1,6 @@
 #include <limits>
 #include <ratio>
+#include <stdexcept>
 
 template <class R = std::ratio<1>>
 struct length_t
@@ -24,30 +25,30 @@ struct length_t
     constexpr length_t operator-() { return {-length_}; }
 };
 
-constexpr length_t<std::ratio<1>>
-operator"" _m(const unsigned long long int m)
+namespace
 {
-    if (m > std::numeric_limits<length_t<std::ratio<1>>::internal_type>::max())
+template <typename R>
+constexpr auto generate_length_type(const unsigned long long int magnitude)
+{
+    if (magnitude > std::numeric_limits<typename length_t<R>::internal_type>::max())
     {
         throw std::overflow_error("supplied value too large");
     }
-    return m;
+    return length_t<R>(magnitude);
+}
+} // namespace
+
+constexpr auto operator"" _m(const unsigned long long int m)
+{
+    return generate_length_type<std::ratio<1>>(m);
 }
 
-constexpr length_t<std::kilo> operator"" _km(const unsigned long long int km)
+constexpr auto operator"" _km(const unsigned long long int km)
 {
-    if (km > std::numeric_limits<length_t<std::kilo>::internal_type>::max())
-    {
-        throw std::overflow_error("supplied value too large");
-    }
-    return km;
+    return generate_length_type<std::kilo>(km);
 }
 
-constexpr length_t<std::centi> operator"" _cm(const unsigned long long int cm)
+constexpr auto operator"" _cm(const unsigned long long int cm)
 {
-    if (cm > std::numeric_limits<length_t<std::centi>::internal_type>::max())
-    {
-        throw std::overflow_error("supplied value too large");
-    }
-    return cm;
+    return generate_length_type<std::centi>(cm);
 }
