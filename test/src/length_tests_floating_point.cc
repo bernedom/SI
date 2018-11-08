@@ -6,7 +6,7 @@
 template <class R = std::ratio<1>>
 std::ostream &operator<<(std::ostream &os, const length_t<R> &l)
 {
-    os << l.length_;
+    os << l.raw_value();
     return os;
 }
 TEST_CASE("km returns ratio 1000 to 1 floating point")
