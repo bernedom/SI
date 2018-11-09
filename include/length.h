@@ -1,12 +1,21 @@
+#pragma once
 #include <limits>
 #include <ratio>
 #include <stdexcept>
 
+#include "area.h"
 #include "value_holder.h"
 
 template <class R = std::ratio<1>, typename T = long long int>
 struct length_t : public value_holder_t<R, T> {
   using value_holder_t<R, T>::value_holder_t;
+
+  using value_holder_t<R, T>::operator*;
+
+  template <class Rr = std::ratio<1>>
+  auto operator*(const length_t<Rr> &rhs) const {
+    return area_t<typename std::ratio<1>>(1);
+  }
 };
 
 namespace {
