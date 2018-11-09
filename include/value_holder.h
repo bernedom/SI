@@ -20,4 +20,10 @@ struct value_holder_t
     constexpr value_holder_t operator*(const T f) const { return {value_ * f}; }
 
     constexpr value_holder_t operator-() { return {-value_}; }
+
+    template <class Rr = std::ratio<1>>
+    constexpr auto ratio_to(const value_holder_t<Rr> &rhs) const
+    {
+        return std::ratio_multiply<ratio, Rr>{};
+    }
 };
