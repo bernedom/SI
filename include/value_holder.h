@@ -1,13 +1,14 @@
 #pragma once
 #include <ratio>
+#include <type_traits>
 
 template <class R = std::ratio<1>, typename T = long long int>
 struct value_holder_t
 {
+  static_assert(std::is_arithmetic<T>::value, "T is an arithmetic value");
   typedef R ratio;
   typedef T internal_type;
   constexpr value_holder_t(T v) : value_{v} {}
-  internal_type value_;
 
   constexpr internal_type raw_value() const { return value_; }
 
@@ -27,4 +28,6 @@ struct value_holder_t
   {
     return std::ratio_multiply<ratio, Rr>{};
   }
+
+  internal_type value_;
 };
