@@ -35,14 +35,13 @@ TEST_CASE(
   static_assert(decltype(rr)::den == 1, "Ratio denumerator is 1");
 }
 
-/*TEST_CASE(
-    "GIVEN two values with ratio<1000,1> and <1, 1000> THEN value holders
-returns " "ratio<1000000, 1>")
-{
+TEST_CASE("GIVEN two values with ratio<1000,1> and <1, 1000> THEN value "
+          "holders returns "
+          "ratio<1000000, 1>") {
   constexpr value_holder_t<std::milli> v1{0};
   constexpr value_holder_t<std::kilo> v2{0};
 
   constexpr auto rr = v1.ratio_to(v2);
-  REQUIRE(decltype(rr)::num == 1000000);
-  REQUIRE(decltype(rr)::den == 1);
-}*/
+  static_assert(decltype(rr)::num == 1000000, "ratio numerator is 100000");
+  static_assert(decltype(rr)::den == 1, "ratio denumerator is 1");
+}

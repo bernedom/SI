@@ -26,7 +26,9 @@ struct value_holder_t
   template <class Rr = std::ratio<1>>
   constexpr auto ratio_to(const value_holder_t<Rr> &rhs) const
   {
-    return std::ratio_multiply<ratio, Rr>{};
+    static_assert(Rr::num == 1 || Rr::den == 1, "Either num or den are to 1");
+    typedef std::ratio_divide<Rr, ratio> resulting_ratio;
+    return resulting_ratio{};
   }
 
   internal_type value_;
