@@ -23,10 +23,11 @@ struct value_holder_t
 
   constexpr value_holder_t operator-() { return {-value_}; }
 
-  template <class Rr = std::ratio<1>>
+  template <class Rr = std::ratio<1>,
+            typename std::enable_if<Rr::num == 1 || Rr::den == 1, Rr>::type * =
+                nullptr>
   constexpr auto ratio_to(const value_holder_t<Rr> &rhs) const
   {
-    static_assert(Rr::num == 1 || Rr::den == 1, "Either num or den are to 1");
     typedef std::ratio_divide<Rr, ratio> resulting_ratio;
     return resulting_ratio{};
   }
