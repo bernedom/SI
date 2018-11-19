@@ -6,6 +6,7 @@
 #include "area.h"
 #include "value_holder.h"
 
+namespace SI {
 template <class R = std::ratio<1>, typename T = long long int>
 struct length_t : public value_holder_t<R, T> {
   using value_holder_t<R, T>::value_holder_t;
@@ -29,31 +30,32 @@ generate_length_type(const unsigned long long int magnitude) {
   return length_t<R, long long int>(magnitude);
 }
 } // namespace
-
+} // namespace SI
 constexpr auto operator"" _m(const unsigned long long int m) {
-  return generate_length_type<std::ratio<1>>(m);
+  return SI::generate_length_type<std::ratio<1>>(m);
 }
 
 constexpr auto operator"" _km(const unsigned long long int km) {
-  return generate_length_type<std::kilo>(km);
+  return SI::generate_length_type<std::kilo>(km);
 }
 
 constexpr auto operator"" _cm(const unsigned long long int cm) {
-  return generate_length_type<std::centi>(cm);
+  return SI::generate_length_type<std::centi>(cm);
 }
 
 constexpr auto operator"" _mm(const unsigned long long int mm) {
-  return generate_length_type<std::milli>(mm);
+  return SI::generate_length_type<std::milli>(mm);
 }
 
 constexpr auto operator"" _m(long double m) {
-  return length_t<std::ratio<1>, long double>(m);
+  return SI::length_t<std::ratio<1>, long double>(m);
 }
 
 constexpr auto operator"" _km(long double km) {
-  return length_t<std::kilo, long double>(km);
+  return SI::length_t<std::kilo, long double>(km);
 }
 
 constexpr auto operator"" _mm(long double mm) {
-  return length_t<std::milli, long double>(mm);
+  return SI::length_t<std::milli, long double>(mm);
 }
+// namespace SI

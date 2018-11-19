@@ -2,6 +2,8 @@
 #include <ratio>
 #include <type_traits>
 
+namespace SI
+{
 template <class R = std::ratio<1>, typename T = long long int,
           typename std::enable_if<std::is_arithmetic<T>::value>::type * =
               nullptr,
@@ -36,3 +38,4 @@ struct value_holder_t
 
   internal_type value_;
 };
+} // namespace SI
