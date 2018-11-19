@@ -6,6 +6,10 @@
 #include "area.h"
 #include "value_holder.h"
 
+/**
+ * @brief specialisation of value_holder_t to represent length units
+ *
+ * */
 template <class R = std::ratio<1>, typename T = long long int>
 struct length_t : public value_holder_t<R, T> {
   using value_holder_t<R, T>::value_holder_t;

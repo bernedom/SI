@@ -2,6 +2,13 @@
 #include <ratio>
 #include <type_traits>
 
+/**
+ * @brief base template class for holding values of type T to be multiplied with
+ * a ratio R
+ *
+ * @tparam R Ratio in relation to the base unit of a SI unit
+ * @tparam T internal representation of the value
+ * */
 template <class R = std::ratio<1>, typename T = long long int>
 struct value_holder_t
 {
@@ -19,10 +26,13 @@ struct value_holder_t
                value_holder_t<Rr>::ratio::den ==
            value_ * ratio::num / ratio::den;
   }
+  /// multiply with a non-unit scalar
   constexpr value_holder_t operator*(const T f) const { return {value_ * f}; }
 
+  /// negate operation
   constexpr value_holder_t operator-() { return {-value_}; }
 
+  /// @returns the ratio between two value holders
   template <class Rr = std::ratio<1>,
             typename std::enable_if<Rr::num == 1 || Rr::den == 1, Rr>::type * =
                 nullptr>
