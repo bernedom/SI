@@ -8,11 +8,16 @@
  *
  * @tparam R Ratio in relation to the base unit of a SI unit
  * @tparam T internal representation of the value
- * */
-template <class R = std::ratio<1>, typename T = long long int>
+ **/
+namespace SI
+{
+template <class R = std::ratio<1>, typename T = long long int,
+          typename std::enable_if<std::is_arithmetic<T>::value>::type * =
+              nullptr,
+          typename std::enable_if<R::num == 1 || R::den == 1>::type * = nullptr>
+
 struct value_holder_t
 {
-  static_assert(std::is_arithmetic<T>::value, "T is an arithmetic value");
   typedef R ratio;
   typedef T internal_type;
   constexpr value_holder_t(T v) : value_{v} {}
@@ -44,3 +49,4 @@ struct value_holder_t
 
   internal_type value_;
 };
+} // namespace SI
