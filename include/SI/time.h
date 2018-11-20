@@ -13,3 +13,7 @@ struct time_t : public value_holder_t<R, T> {
   using value_holder_t<R, T>::operator*;
 };
 } // namespace SI
+
+constexpr auto operator"" _s(unsigned long long int s) {
+  return SI::time_t<std::ratio<1>, long long int>(s);
+}
