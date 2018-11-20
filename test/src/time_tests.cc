@@ -1,3 +1,3 @@
 #include <catch.hpp>
 
-#include <time.h>
+#include <SI/time.h>
