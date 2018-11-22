@@ -12,13 +12,14 @@
  **/
 namespace SI
 {
-template <class R = std::ratio<1>, typename T = long long int,
+template <class R = std::ratio<1>, typename T = long long int, char E = 1,
           typename std::enable_if<R::num == 1 || R::den == 1>::type * = nullptr>
 
 struct value_holder_t
 {
   typedef R ratio;
   typedef T internal_type;
+  typedef std::integral_constant<char, E> exponent;
   constexpr value_holder_t(T v) : value_{v} {}
 
   constexpr internal_type raw_value() const { return value_; }
