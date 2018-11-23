@@ -11,12 +11,33 @@
  * @tparam T internal representation of the value
  **/
 namespace SI {
+
+namespace detail {
+template <template <class, typename> class U, typename R>
+constexpr auto
+generate_unit_type_overflow_check(const unsigned long long int magnitude) {
+  if (magnitude >
+      std::numeric_limits<typename U<R, long long int>::internal_type>::max()) {
+    throw std::overflow_error("supplied value too large");
+  }
+  return U<R, long long int>(magnitude);
+}
+
+template <typename _Tp> struct is_ratio : std::false_type {};
+
+template <intmax_t _Num, intmax_t _Den>
+struct is_ratio<std::ratio<_Num, _Den>> : std::true_type {};
+
+} // namespace detail
+
 template <class R = std::ratio<1>, typename T = long long int, char E = 1,
           typename std::enable_if<R::num == 1 || R::den == 1>::type * = nullptr,
           typename std::enable_if<std::is_arithmetic<T>::value>::type * =
               nullptr>
 
 struct value_holder_t {
+
+  static_assert(detail::is_ratio<R>::value, "R is a std::ratio");
   typedef R ratio;
   typedef T internal_type;
   typedef std::integral_constant<char, E> exponent;
@@ -47,17 +68,5 @@ struct value_holder_t {
 
   internal_type value_;
 };
-
-namespace detail {
-template <template <class, typename> class U, typename R>
-constexpr auto
-generate_unit_type_overflow_check(const unsigned long long int magnitude) {
-  if (magnitude >
-      std::numeric_limits<typename U<R, long long int>::internal_type>::max()) {
-    throw std::overflow_error("supplied value too large");
-  }
-  return U<R, long long int>(magnitude);
-}
-} // namespace detail
 
 } // namespace SI
