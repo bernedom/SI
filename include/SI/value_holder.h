@@ -10,13 +10,13 @@
  * @tparam R Ratio in relation to the base unit of a SI unit
  * @tparam T internal representation of the value
  **/
-namespace SI
-{
+namespace SI {
 template <class R = std::ratio<1>, typename T = long long int, char E = 1,
-          typename std::enable_if<R::num == 1 || R::den == 1>::type * = nullptr>
+          typename std::enable_if<R::num == 1 || R::den == 1>::type * = nullptr,
+          typename std::enable_if<std::is_arithmetic<T>::value>::type * =
+              nullptr>
 
-struct value_holder_t
-{
+struct value_holder_t {
   typedef R ratio;
   typedef T internal_type;
   typedef std::integral_constant<char, E> exponent;
@@ -25,8 +25,7 @@ struct value_holder_t
   constexpr internal_type raw_value() const { return value_; }
 
   template <class Rr = std::ratio<1>>
-  constexpr bool operator==(const value_holder_t<Rr> &rhs) const
-  {
+  constexpr bool operator==(const value_holder_t<Rr> &rhs) const {
     return rhs.value_ * value_holder_t<Rr>::ratio::num /
                value_holder_t<Rr>::ratio::den ==
            value_ * ratio::num / ratio::den;
@@ -41,8 +40,7 @@ struct value_holder_t
   template <class Rr = std::ratio<1>,
             typename std::enable_if<Rr::num == 1 || Rr::den == 1, Rr>::type * =
                 nullptr>
-  constexpr auto ratio_to(const value_holder_t<Rr> &rhs) const
-  {
+  constexpr auto ratio_to(const value_holder_t<Rr> &rhs) const {
     typedef std::ratio_divide<Rr, ratio> resulting_ratio;
     return resulting_ratio{};
   }
@@ -50,15 +48,12 @@ struct value_holder_t
   internal_type value_;
 };
 
-namespace detail
-{
+namespace detail {
 template <template <class, typename> class U, typename R>
 constexpr auto
-generate_unit_type_overflow_check(const unsigned long long int magnitude)
-{
+generate_unit_type_overflow_check(const unsigned long long int magnitude) {
   if (magnitude >
-      std::numeric_limits<typename U<R, long long int>::internal_type>::max())
-  {
+      std::numeric_limits<typename U<R, long long int>::internal_type>::max()) {
     throw std::overflow_error("supplied value too large");
   }
   return U<R, long long int>(magnitude);
