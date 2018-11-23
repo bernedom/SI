@@ -4,23 +4,24 @@
 #include <stdexcept>
 #include <type_traits>
 /**
- * @brief base template class for holding values of type T to be multiplied with
- * a ratio R
+ * @brief base template class for holding values of type _Type to be multiplied
+ *with a ratio _Ratio
  *
- * @tparam R Ratio in relation to the base unit of a SI unit
- * @tparam T internal representation of the value
+ * @tparam _Ratio Ratio in relation to the base unit of a SI unit
+ * @tparam _Type internal representation of the value
  **/
 namespace SI {
 
 namespace detail {
-template <template <class, typename> class U, typename R>
+template <template <class, typename> class U, typename _Ratio>
 constexpr auto
 generate_unit_type_overflow_check(const unsigned long long int magnitude) {
   if (magnitude >
-      std::numeric_limits<typename U<R, long long int>::internal_type>::max()) {
+      std::numeric_limits<
+          typename U<_Ratio, long long int>::internal_type>::max()) {
     throw std::overflow_error("supplied value too large");
   }
-  return U<R, long long int>(magnitude);
+  return U<_Ratio, long long int>(magnitude);
 }
 
 template <typename _Tp> struct is_ratio : std::false_type {};
@@ -30,18 +31,20 @@ struct is_ratio<std::ratio<_Num, _Den>> : std::true_type {};
 
 } // namespace detail
 
-template <class R = std::ratio<1>, typename T = long long int, char E = 1,
-          typename std::enable_if<R::num == 1 || R::den == 1>::type * = nullptr,
-          typename std::enable_if<std::is_arithmetic<T>::value>::type * =
-              nullptr>
+template <
+    class _Ratio = std::ratio<1>, typename _Type = long long int,
+    char _Exponent = 1,
+    typename std::enable_if<_Ratio::num == 1 || _Ratio::den == 1>::type * =
+        nullptr,
+    typename std::enable_if<std::is_arithmetic<_Type>::value>::type * = nullptr>
 
 struct value_holder_t {
 
-  static_assert(detail::is_ratio<R>::value, "R is a std::ratio");
-  typedef R ratio;
-  typedef T internal_type;
-  typedef std::integral_constant<char, E> exponent;
-  constexpr value_holder_t(T v) : value_{v} {}
+  static_assert(detail::is_ratio<_Ratio>::value, "_Ratio is a std::ratio");
+  typedef _Ratio ratio;
+  typedef _Type internal_type;
+  typedef std::integral_constant<char, _Exponent> exponent;
+  constexpr value_holder_t(_Type v) : value_{v} {}
 
   constexpr internal_type raw_value() const { return value_; }
 
@@ -52,7 +55,9 @@ struct value_holder_t {
            value_ * ratio::num / ratio::den;
   }
   /// multiply with a non-unit scalar
-  constexpr value_holder_t operator*(const T f) const { return {value_ * f}; }
+  constexpr value_holder_t operator*(const _Type f) const {
+    return {value_ * f};
+  }
 
   /// negate operation
   constexpr value_holder_t operator-() { return {-value_}; }
