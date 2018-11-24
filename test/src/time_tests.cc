@@ -22,4 +22,4 @@ TEST_CASE("negative duration test")
   REQUIRE(minus_one.raw_value() == -1);
 }
 
-TEST_CASE("Assert on overflow for s") { REQUIRE_NOTHROW(0xffffffffffffffff_s); }
+TEST_CASE("Assert on overflow for s") { REQUIRE_THROWS(0xffffffffffffffff_s); }
