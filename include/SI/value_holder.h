@@ -34,11 +34,11 @@ struct value_holder_t {
   constexpr bool
   operator==(const value_holder_t<symbol::value, Rr, internal_type,
                                   exponent::value> &rhs) const {
-    return rhs.value_ *
-               value_holder_t<symbol::value, Rr, internal_type,
-                              exponent::value>::ratio::num /
-               value_holder_t<symbol::value, Rr>::ratio::den ==
-           value_ * ratio::num / ratio::den;
+
+    return (rhs.value_ *
+            std::remove_reference<decltype(rhs)>::type::ratio::num /
+            std::remove_reference<decltype(rhs)>::type::ratio::den) ==
+           (value_ * ratio::num / ratio::den);
   }
   /// multiply with a non-unit scalar
   constexpr value_holder_t operator*(const _Type f) const {
