@@ -32,8 +32,11 @@ struct value_holder_t {
 
   template <class Rr = std::ratio<1>>
   constexpr bool
-  operator==(const value_holder_t<symbol::value, Rr> &rhs) const {
-    return rhs.value_ * value_holder_t<symbol::value, Rr>::ratio::num /
+  operator==(const value_holder_t<symbol::value, Rr, internal_type,
+                                  exponent::value> &rhs) const {
+    return rhs.value_ *
+               value_holder_t<symbol::value, Rr, internal_type,
+                              exponent::value>::ratio::num /
                value_holder_t<symbol::value, Rr>::ratio::den ==
            value_ * ratio::num / ratio::den;
   }
@@ -49,7 +52,8 @@ struct value_holder_t {
   template <class Rr = std::ratio<1>,
             typename std::enable_if<Rr::num == 1 || Rr::den == 1, Rr>::type * =
                 nullptr>
-  constexpr auto ratio_to(const value_holder_t<symbol::value, Rr> &rhs) const {
+  constexpr auto ratio_to(const value_holder_t<symbol::value, Rr, internal_type,
+                                               exponent::value> &rhs) const {
     typedef std::ratio_divide<Rr, ratio> resulting_ratio;
     return resulting_ratio{};
   }
