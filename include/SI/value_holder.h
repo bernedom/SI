@@ -13,7 +13,7 @@
 namespace SI {
 
 template <
-    class _Ratio = std::ratio<1>, typename _Type = long long int,
+    char _Symbol, class _Ratio = std::ratio<1>, typename _Type = long long int,
     char _Exponent = 1,
     typename std::enable_if<_Ratio::num == 1 || _Ratio::den == 1>::type * =
         nullptr,
@@ -25,14 +25,16 @@ struct value_holder_t {
   typedef _Ratio ratio;
   typedef _Type internal_type;
   typedef std::integral_constant<char, _Exponent> exponent;
+  typedef std::integral_constant<char, _Symbol> symbol;
   constexpr value_holder_t(_Type v) : value_{v} {}
 
   constexpr internal_type raw_value() const { return value_; }
 
   template <class Rr = std::ratio<1>>
-  constexpr bool operator==(const value_holder_t<Rr> &rhs) const {
-    return rhs.value_ * value_holder_t<Rr>::ratio::num /
-               value_holder_t<Rr>::ratio::den ==
+  constexpr bool
+  operator==(const value_holder_t<symbol::value, Rr> &rhs) const {
+    return rhs.value_ * value_holder_t<symbol::value, Rr>::ratio::num /
+               value_holder_t<symbol::value, Rr>::ratio::den ==
            value_ * ratio::num / ratio::den;
   }
   /// multiply with a non-unit scalar
@@ -47,7 +49,7 @@ struct value_holder_t {
   template <class Rr = std::ratio<1>,
             typename std::enable_if<Rr::num == 1 || Rr::den == 1, Rr>::type * =
                 nullptr>
-  constexpr auto ratio_to(const value_holder_t<Rr> &rhs) const {
+  constexpr auto ratio_to(const value_holder_t<symbol::value, Rr> &rhs) const {
     typedef std::ratio_divide<Rr, ratio> resulting_ratio;
     return resulting_ratio{};
   }
