@@ -10,14 +10,22 @@ target_include_directories(${PROJECT_NAME} INTERFACE
   $<INSTALL_INTERFACE:include>
   )
 
-  # for interface libraries one needs to define the compile features explicitely until cmake 3.8
-target_compile_features(${PROJECT_NAME} INTERFACE cxx_auto_type cxx_user_literals cxx_constexpr cxx_defaulted_functions)
-
-  # disabled as this is only working with cmake 3.8 and above
-# set_target_properties(${PROJECT_NAME} PROPERTIES
-#   CXX_STANDARD 14
-#   CXX_STANDARD_REQUIRED YES
-#  )
+  # for interface libraries one needs to define the compile features explicitely
+target_compile_features(${PROJECT_NAME} INTERFACE 
+                        cxx_auto_type
+                        cxx_user_literals
+                        cxx_constexpr
+                        cxx_defaulted_functions
+                        cxx_deleted_functions
+                        cxx_decltype
+                        cxx_default_function_template_args
+                        cxx_inheriting_constructors
+                        cxx_nullptr
+                        cxx_return_type_deduction
+                        cxx_right_angle_brackets
+                        cxx_static_assert
+                        cxx_variadic_templates
+                        cxx_template_template_parameters)
 
 add_subdirectory(test)
   

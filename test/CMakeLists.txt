@@ -1,9 +1,10 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.8)
 
 include(CTest)
 #consider adding fakeit as mocking framework
 add_executable(SI_Tests 
                src/Catch2Main.cc
+               src/detail_tests.cc
                src/length_tests_integral_type.cc
                src/length_tests_floating_point.cc
                src/area_tests.cc
@@ -13,7 +14,7 @@ target_include_directories(SI_Tests PRIVATE ${PROJECT_SOURCE_DIR}/include ${CMAK
 
 
 set_target_properties(SI_Tests PROPERTIES
-     CXX_STANDARD 14
+     CXX_STANDARD 17
      CXX_STANDARD_REQUIRED YES
     )
 

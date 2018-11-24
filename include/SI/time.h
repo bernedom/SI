@@ -8,7 +8,7 @@ namespace SI
 {
 
 template <class _Ratio = std::ratio<1>, typename _Type = long long int>
-struct time_t : public value_holder_t<_Ratio, _Type>
+struct time_t final : public value_holder_t<_Ratio, _Type>
 {
   using value_holder_t<_Ratio, _Type>::value_holder_t;
 

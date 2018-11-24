@@ -1,7 +1,7 @@
 #pragma once
-#include <limits>
+
+#include "detail.h"
 #include <ratio>
-#include <stdexcept>
 #include <type_traits>
 /**
  * @brief base template class for holding values of type _Type to be multiplied
@@ -11,25 +11,6 @@
  * @tparam _Type internal representation of the value
  **/
 namespace SI {
-
-namespace detail {
-template <template <class, typename> class U, typename _Ratio>
-constexpr auto
-generate_unit_type_overflow_check(const unsigned long long int magnitude) {
-  if (magnitude >
-      std::numeric_limits<
-          typename U<_Ratio, long long int>::internal_type>::max()) {
-    throw std::overflow_error("supplied value too large");
-  }
-  return U<_Ratio, long long int>(magnitude);
-}
-
-template <typename _Tp> struct is_ratio : std::false_type {};
-
-template <intmax_t _Num, intmax_t _Den>
-struct is_ratio<std::ratio<_Num, _Den>> : std::true_type {};
-
-} // namespace detail
 
 template <
     class _Ratio = std::ratio<1>, typename _Type = long long int,
