@@ -6,8 +6,7 @@
 using namespace SI;
 
 TEST_CASE(
-    "given two values with exponent 1 WHEN multiplied THEN exponent is 2")
-{
+    "given two values with exponent 1 WHEN multiplied THEN exponent is 2") {
   constexpr value_holder_t<'X'> v1{0};
   constexpr value_holder_t<'X'> v2{0};
 
@@ -20,8 +19,7 @@ TEST_CASE(
 }
 
 TEST_CASE("given two with different values but same ratio and unit WHEN "
-          "multiplied THGEN resulting value is correc")
-{
+          "multiplied THGEN resulting value is correc") {
 
   constexpr value_holder_t<'X'> v1{20};
   constexpr value_holder_t<'X'> v2{30};
@@ -32,13 +30,12 @@ TEST_CASE("given two with different values but same ratio and unit WHEN "
 }
 
 TEST_CASE("given two with different values but different ratio and unit WHEN "
-          "multiplied THGEN resulting value is correc")
-{
+          "multiplied THGEN resulting value is correc") {
 
   constexpr value_holder_t<'X', std::deci> v1{2};
   constexpr value_holder_t<'X'> v2{30};
 
   constexpr auto result = v1 * v2;
 
-  // static_assert(result.raw_value() == 600, "Raw value matches");
+  static_assert(result.raw_value() == 600, "Raw value matches");
 }
