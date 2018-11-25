@@ -16,7 +16,7 @@ generate_unit_type_overflow_check(const unsigned long long int magnitude) {
   return U<_Ratio, long long int>(magnitude);
 }
 
-/// @returns the ratio between two value holders
+/// @returns the ratio between two ratios
 template <
     typename _lhs, typename _rhs,
     typename std::enable_if<_lhs::ratio::num == 1 || _lhs::ratio::den == 1,
