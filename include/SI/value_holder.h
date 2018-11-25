@@ -10,7 +10,8 @@
  * @tparam _Ratio Ratio in relation to the base unit of a SI unit
  * @tparam _Type internal representation of the value
  **/
-namespace SI {
+namespace SI
+{
 
 template <
     char _Symbol, class _Ratio = std::ratio<1>, typename _Type = long long int,
@@ -19,7 +20,8 @@ template <
         nullptr,
     typename std::enable_if<std::is_arithmetic<_Type>::value>::type * = nullptr>
 
-struct value_holder_t {
+struct value_holder_t
+{
 
   static_assert(detail::is_ratio<_Ratio>::value, "_Ratio is a std::ratio");
   typedef _Ratio ratio;
@@ -33,7 +35,8 @@ struct value_holder_t {
   template <class Rr = std::ratio<1>>
   constexpr bool
   operator==(const value_holder_t<symbol::value, Rr, internal_type,
-                                  exponent::value> &rhs) const {
+                                  exponent::value> &rhs) const
+  {
 
     return (rhs.value_ *
             std::remove_reference<decltype(rhs)>::type::ratio::num /
@@ -41,15 +44,18 @@ struct value_holder_t {
            (value_ * ratio::num / ratio::den);
   }
   /// multiply with a non-unit scalar
-  constexpr value_holder_t operator*(const _Type f) const {
+  constexpr value_holder_t operator*(const _Type f) const
+  {
     return {value_ * f};
   }
 
   /// multiply with a same unit
+  /// resulting unit is the same as 'this'/left hand side of operation
   template <typename Rr>
   constexpr auto
   operator*(const value_holder_t<symbol::value, Rr, internal_type,
-                                 exponent::value> &rhs) const {
+                                 exponent::value> &rhs) const
+  {
     constexpr auto conversion_ratio = detail::ratio_to<ratio, Rr>();
     return value_holder_t<symbol::value, ratio, internal_type,
                           exponent::value + std::remove_reference<decltype(

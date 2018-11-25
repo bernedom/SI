@@ -51,6 +51,9 @@ TEST_CASE("given two with different values and different ratio and unit WHEN "
   constexpr auto result = v1 * v2;
 
   static_assert(result.raw_value() == -600, "Raw value matches");
+  static_assert(
+      std::ratio_equal<decltype(result)::ratio, decltype(v1)::ratio>::value,
+      "left hand side binds unit");
 }
 
 TEST_CASE("given two with different values and different ratio and unit WHEN "
@@ -62,4 +65,7 @@ TEST_CASE("given two with different values and different ratio and unit WHEN "
   constexpr auto result = v1 * v2;
 
   static_assert(result.raw_value() == 0, "Raw value matches");
+  static_assert(
+      std::ratio_equal<decltype(result)::ratio, decltype(v1)::ratio>::value,
+      "left hand side binds unit");
 }
