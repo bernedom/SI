@@ -50,11 +50,12 @@ struct value_holder_t
   }
 
   /// multiply with a same unit
-  constexpr auto operator*(
-      const value_holder_t<symbol::value, ratio, internal_type, exponent::value>
-          &rhs) const
+  template <typename Rr>
+  constexpr auto
+  operator*(const value_holder_t<symbol::value, Rr, internal_type,
+                                 exponent::value> &rhs) const
   {
-
+    // constexpr auto conversion_ratio = ratio_to(rhs);
     return value_holder_t<symbol::value, ratio, internal_type,
                           exponent::value + std::remove_reference<decltype(
                                                 rhs)>::type::exponent::value>{
@@ -63,17 +64,6 @@ struct value_holder_t
 
   /// negate operation
   constexpr value_holder_t operator-() { return {-value_}; }
-
-  /// @returns the ratio between two value holders
-  template <class Rr = std::ratio<1>,
-            typename std::enable_if<Rr::num == 1 || Rr::den == 1, Rr>::type * =
-                nullptr>
-  constexpr auto ratio_to(const value_holder_t<symbol::value, Rr, internal_type,
-                                               exponent::value> &rhs) const
-  {
-    typedef std::ratio_divide<Rr, ratio> resulting_ratio;
-    return resulting_ratio{};
-  }
 
   internal_type value_;
 };
