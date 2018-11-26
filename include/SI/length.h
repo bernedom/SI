@@ -3,7 +3,6 @@
 #include <ratio>
 #include <stdexcept>
 
-#include "area.h"
 #include "value_holder.h"
 
 namespace SI
@@ -13,17 +12,11 @@ namespace SI
  *
  * */
 template <class _Ratio = std::ratio<1>, typename _Type = long long int>
-struct length_t final : public value_holder_t<'L', _Ratio, _Type>
+struct length_t : public value_holder_t<'L', _Ratio, _Type>
 {
   using value_holder_t<'L', _Ratio, _Type>::value_holder_t;
 
   using value_holder_t<'L', _Ratio, _Type>::operator*;
-
-  template <class Rr = std::ratio<1>>
-  constexpr auto operator*(const length_t<Rr> &rhs) const
-  {
-    return area_t<typename std::ratio<1>>(1);
-  }
 };
 
 } // namespace SI
