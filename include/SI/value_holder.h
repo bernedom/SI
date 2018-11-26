@@ -3,15 +3,20 @@
 #include "detail.h"
 #include <ratio>
 #include <type_traits>
+
+namespace SI {
+
 /**
  * @brief base template class for holding values of type _Type to be multiplied
  *with a ratio _Ratio
  *
+ * @tparam _Symbol dimension symbol of the unit (see
+ *https://en.wikipedia.org/wiki/SI_base_unit)
  * @tparam _Ratio Ratio in relation to the base unit of a SI unit
  * @tparam _Type internal representation of the value
+ * @tparam _Exponent the exponent to the unit (i.e. length ==  m^1, area == m^2,
+ *volume = m^3)
  **/
-namespace SI {
-
 template <
     char _Symbol, class _Ratio = std::ratio<1>, typename _Type = long long int,
     char _Exponent = 1,
