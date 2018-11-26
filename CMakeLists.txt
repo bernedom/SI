@@ -11,21 +11,8 @@ target_include_directories(${PROJECT_NAME} INTERFACE
   )
 
   # for interface libraries one needs to define the compile features explicitely
-target_compile_features(${PROJECT_NAME} INTERFACE 
-                        cxx_auto_type
-                        cxx_user_literals
-                        cxx_constexpr
-                        cxx_defaulted_functions
-                        cxx_deleted_functions
-                        cxx_decltype
-                        cxx_default_function_template_args
-                        cxx_inheriting_constructors
-                        cxx_nullptr
-                        cxx_return_type_deduction
-                        cxx_right_angle_brackets
-                        cxx_static_assert
-                        cxx_variadic_templates
-                        cxx_template_template_parameters)
+target_compile_features(${PROJECT_NAME} INTERFACE
+                        cxx_std_17)
 
 add_subdirectory(test)
   
