@@ -35,14 +35,12 @@ struct value_holder_t {
 
   constexpr internal_type raw_value() const { return value_; }
 
-  template <class Rr = std::ratio<1>>
+  template <class _rhs_Ratio = std::ratio<1>>
   constexpr bool
-  operator==(const value_holder_t<symbol::value, Rr, internal_type,
+  operator==(const value_holder_t<symbol::value, _rhs_Ratio, internal_type,
                                   exponent::value> &rhs) const {
-
-    return (rhs.value_ *
-            std::remove_reference<decltype(rhs)>::type::ratio::num /
-            std::remove_reference<decltype(rhs)>::type::ratio::den) ==
+    typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
+    return (rhs.value_ * rhs_t::ratio::num / rhs_t::ratio::den) ==
            (value_ * ratio::num / ratio::den);
   }
   /// multiply with a non-unit scalar
@@ -52,13 +50,14 @@ struct value_holder_t {
 
   /// multiply with a same unit
   /// resulting unit is the same as 'this'/left hand side of operation
-  template <typename Rr>
+  template <typename _rhs_Ratio>
   constexpr auto
-  operator*(const value_holder_t<symbol::value, Rr, internal_type> &rhs) const {
-    constexpr auto conversion_ratio = detail::ratio_to<ratio, Rr>();
+  operator*(const value_holder_t<symbol::value, _rhs_Ratio, internal_type> &rhs)
+      const {
+    typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
+    constexpr auto conversion_ratio = detail::ratio_to<ratio, _rhs_Ratio>();
     return value_holder_t<symbol::value, ratio, internal_type,
-                          exponent::value + std::remove_reference<decltype(
-                                                rhs)>::type::exponent::value>{
+                          exponent::value + rhs_t::exponent::value>{
         value_ * (rhs.raw_value() * decltype(conversion_ratio)::num /
                   decltype(conversion_ratio)::den)};
   }

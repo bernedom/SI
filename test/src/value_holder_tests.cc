@@ -19,9 +19,9 @@ TEST_CASE(
                 "Exponent value is two");
 }
 
-TEST_CASE(
-    "given two with different non-negative values but same ratio and unit WHEN "
-    "multiplied THGEN resulting value is correct")
+TEST_CASE("given two units with different non-negative values but same ratio "
+          "and unit WHEN "
+          "multiplied THEN resulting value is correct")
 {
 
   constexpr value_holder_t<'X'> v1{20};
@@ -32,9 +32,10 @@ TEST_CASE(
   static_assert(result.raw_value() == 600, "Raw value matches");
 }
 
-TEST_CASE("given two with different non-negative values and different ratio "
-          "and unit WHEN "
-          "multiplied THGEN resulting value is correct")
+TEST_CASE(
+    "given two units with different non-negative values and different ratio "
+    "and unit WHEN "
+    "multiplied THEN resulting value is correct")
 {
 
   constexpr value_holder_t<'X', std::deci> v1{2};
@@ -45,8 +46,9 @@ TEST_CASE("given two with different non-negative values and different ratio "
   static_assert(result.raw_value() == 600, "Raw value matches");
 }
 
-TEST_CASE("given two with different values and different ratio and unit WHEN "
-          "multiplied THGEN resulting value is correct")
+TEST_CASE(
+    "given two units with different values and different ratio and unit WHEN "
+    "multiplied THEN resulting value is correct")
 {
 
   constexpr value_holder_t<'X', std::deci> v1{2};
@@ -60,8 +62,9 @@ TEST_CASE("given two with different values and different ratio and unit WHEN "
       "left hand side binds unit");
 }
 
-TEST_CASE("given two with different values and different ratio and unit WHEN "
-          "multiplied THGEN resulting value is correct 2")
+TEST_CASE(
+    "given two units with different values and different ratio and unit WHEN "
+    "multiplied THEN resulting value is correct 2")
 {
 
   constexpr value_holder_t<'X'> v1{2};
