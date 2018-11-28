@@ -4,8 +4,7 @@
 #include <ratio>
 #include <type_traits>
 
-namespace SI
-{
+namespace SI {
 
 /**
  * @brief base template class for holding values of type _Type to be multiplied
@@ -25,8 +24,7 @@ template <
         nullptr,
     typename std::enable_if<std::is_arithmetic<_Type>::value>::type * = nullptr>
 
-struct unit_t
-{
+struct unit_t {
 
   static_assert(detail::is_ratio<_Ratio>::value, "_Ratio is a std::ratio");
   typedef _Ratio ratio;
@@ -40,30 +38,38 @@ struct unit_t
   template <class _rhs_Ratio = std::ratio<1>>
   constexpr bool
   operator==(const unit_t<symbol::value, _rhs_Ratio, internal_type,
-                          exponent::value> &rhs) const
-  {
+                          exponent::value> &rhs) const {
     typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
     return (rhs.value_ * rhs_t::ratio::num / rhs_t::ratio::den) ==
            (value_ * ratio::num / ratio::den);
   }
   /// multiply with a non-unit scalar
-  constexpr unit_t operator*(const _Type f) const
-  {
-    return {value_ * f};
-  }
+  constexpr unit_t operator*(const _Type f) const { return {value_ * f}; }
 
   /// multiply with a same unit
   /// resulting unit is the same as 'this'/left hand side of operation
   template <typename _rhs_Ratio>
   constexpr auto
-  operator*(const unit_t<symbol::value, _rhs_Ratio, internal_type> &rhs)
-      const
-  {
+  operator*(const unit_t<symbol::value, _rhs_Ratio, internal_type> &rhs) const {
     typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
     constexpr auto conversion_ratio = detail::ratio_to<ratio, _rhs_Ratio>();
     return unit_t<symbol::value, ratio, internal_type,
                   exponent::value + rhs_t::exponent::value>{
         value_ * (rhs.raw_value() * decltype(conversion_ratio)::num /
+                  decltype(conversion_ratio)::den)};
+  }
+
+  /// multiply with a same unit
+  /// resulting unit is the same as 'this'/left hand side of operation
+  template <typename _rhs_Ratio, char _rhs_exponent>
+  constexpr auto
+  operator/(const unit_t<symbol::value, _rhs_Ratio, internal_type,
+                         _rhs_exponent> &rhs) const {
+    typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
+    constexpr auto conversion_ratio = detail::ratio_to<ratio, _rhs_Ratio>();
+    return unit_t<symbol::value, ratio, internal_type,
+                  exponent::value - rhs_t::exponent::value>{
+        value_ / (rhs.raw_value() * decltype(conversion_ratio)::num /
                   decltype(conversion_ratio)::den)};
   }
 
