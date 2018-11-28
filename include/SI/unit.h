@@ -61,16 +61,36 @@ struct unit_t {
 
   /// multiply with a same unit
   /// resulting unit is the same as 'this'/left hand side of operation
-  template <typename _rhs_Ratio, char _rhs_exponent>
+  template <typename _rhs_Ratio, char _rhs_exponent,
+            typename std::enable_if<_rhs_exponent != exponent::value>::type * =
+                nullptr>
   constexpr auto
   operator/(const unit_t<symbol::value, _rhs_Ratio, internal_type,
                          _rhs_exponent> &rhs) const {
     typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
     constexpr auto conversion_ratio = detail::ratio_to<ratio, _rhs_Ratio>();
+
     return unit_t<symbol::value, ratio, internal_type,
                   exponent::value - rhs_t::exponent::value>{
         value_ / (rhs.raw_value() * decltype(conversion_ratio)::num /
                   decltype(conversion_ratio)::den)};
+  }
+
+  template <typename _rhs_Ratio, char _rhs_exponent,
+            typename std::enable_if<_rhs_exponent == exponent::value>::type * =
+                nullptr>
+  constexpr _Type
+  operator/(const unit_t<symbol::value, _rhs_Ratio, internal_type,
+                         _rhs_exponent> &rhs) const {
+    // typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
+    constexpr auto conversion_ratio = detail::ratio_to<ratio, _rhs_Ratio>();
+
+    return raw_value();
+
+    /*return unit_t<symbol::value, ratio, internal_type,
+                  exponent::value - rhs_t::exponent::value>{
+        value_ / (rhs.raw_value() * decltype(conversion_ratio)::num /
+                  decltype(conversion_ratio)::den)};*/
   }
 
   /// negate operation

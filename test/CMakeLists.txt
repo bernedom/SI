@@ -24,5 +24,7 @@ set_target_properties(SI_Tests PROPERTIES
     )
 endif()
 
+target_compile_features(SI_Tests PRIVATE cxx_std_17)
+
 
 add_test(NAME SI_Tests COMMAND SI_Tests)
