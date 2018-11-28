@@ -6,10 +6,9 @@
 using namespace SI;
 
 TEST_CASE(
-    "given two values with exponent 1 WHEN multiplied THEN exponent is 2")
-{
-  constexpr value_holder_t<'X'> v1{0};
-  constexpr value_holder_t<'X'> v2{0};
+    "given two values with exponent 1 WHEN multiplied THEN exponent is 2") {
+  constexpr unit_t<'X'> v1{0};
+  constexpr unit_t<'X'> v2{0};
 
   constexpr auto result = v1 * v2;
 
@@ -21,11 +20,10 @@ TEST_CASE(
 
 TEST_CASE("given two units with different non-negative values but same ratio "
           "and unit WHEN "
-          "multiplied THEN resulting value is correct")
-{
+          "multiplied THEN resulting value is correct") {
 
-  constexpr value_holder_t<'X'> v1{20};
-  constexpr value_holder_t<'X'> v2{30};
+  constexpr unit_t<'X'> v1{20};
+  constexpr unit_t<'X'> v2{30};
 
   constexpr auto result = v1 * v2;
 
@@ -35,11 +33,10 @@ TEST_CASE("given two units with different non-negative values but same ratio "
 TEST_CASE(
     "given two units with different non-negative values and different ratio "
     "and unit WHEN "
-    "multiplied THEN resulting value is correct")
-{
+    "multiplied THEN resulting value is correct") {
 
-  constexpr value_holder_t<'X', std::deci> v1{2};
-  constexpr value_holder_t<'X'> v2{30};
+  constexpr unit_t<'X', std::deci> v1{2};
+  constexpr unit_t<'X'> v2{30};
 
   constexpr auto result = v1 * v2;
 
@@ -48,11 +45,10 @@ TEST_CASE(
 
 TEST_CASE(
     "given two units with different values and different ratio and unit WHEN "
-    "multiplied THEN resulting value is correct")
-{
+    "multiplied THEN resulting value is correct") {
 
-  constexpr value_holder_t<'X', std::deci> v1{2};
-  constexpr value_holder_t<'X'> v2{-30};
+  constexpr unit_t<'X', std::deci> v1{2};
+  constexpr unit_t<'X'> v2{-30};
 
   constexpr auto result = v1 * v2;
 
@@ -64,11 +60,10 @@ TEST_CASE(
 
 TEST_CASE(
     "given two units with different values and different ratio and unit WHEN "
-    "multiplied THEN resulting value is correct 2")
-{
+    "multiplied THEN resulting value is correct 2") {
 
-  constexpr value_holder_t<'X'> v1{2};
-  constexpr value_holder_t<'X', std::milli> v2{30};
+  constexpr unit_t<'X'> v1{2};
+  constexpr unit_t<'X', std::milli> v2{30};
 
   constexpr auto result = v1 * v2;
 
