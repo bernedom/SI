@@ -18,13 +18,14 @@ if(${CMAKE_VERSION} VERSION_LESS "3.8.0")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCATCH_CONFIG_NO_CPP17_UNCAUGHT_EXCEPTIONS=ON")
     endif()
 else()
+target_compile_features(SI_Tests PRIVATE cxx_std_17)
 set_target_properties(SI_Tests PROPERTIES
      CXX_STANDARD 17
      CXX_STANDARD_REQUIRED YES
     )
 endif()
 
-target_compile_features(SI_Tests PRIVATE cxx_std_17)
+
 
 
 add_test(NAME SI_Tests COMMAND SI_Tests)
