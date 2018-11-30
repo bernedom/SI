@@ -8,15 +8,15 @@ using namespace SI;
 TEST_CASE(
     "given two values with exponent 1 WHEN multiplied THEN exponent is 2")
 {
-  constexpr unit_t<'X'> v1{0};
-  constexpr unit_t<'X'> v2{0};
+    constexpr unit_t<'X'> v1{0};
+    constexpr unit_t<'X'> v2{0};
 
-  constexpr auto result = v1 * v2;
+    constexpr auto result = v1 * v2;
 
-  static_assert(decltype(v1)::exponent::value == 1, "Exponent value is 1");
-  static_assert(decltype(v2)::exponent::value == 1, "Exponent value is 1");
-  static_assert(decltype(result)::exponent::value == 2,
-                "Exponent value is two");
+    static_assert(decltype(v1)::exponent::value == 1, "Exponent value is 1");
+    static_assert(decltype(v2)::exponent::value == 1, "Exponent value is 1");
+    static_assert(decltype(result)::exponent::value == 2,
+                  "Exponent value is two");
 }
 
 TEST_CASE("given two units with different non-negative values but same ratio "
@@ -24,12 +24,12 @@ TEST_CASE("given two units with different non-negative values but same ratio "
           "multiplied THEN resulting value is correct")
 {
 
-  constexpr unit_t<'X'> v1{20};
-  constexpr unit_t<'X'> v2{30};
+    constexpr unit_t<'X'> v1{20};
+    constexpr unit_t<'X'> v2{30};
 
-  constexpr auto result = v1 * v2;
+    constexpr auto result = v1 * v2;
 
-  static_assert(result.raw_value() == 600, "Raw value matches");
+    static_assert(result.raw_value() == 600, "Raw value matches");
 }
 
 TEST_CASE(
@@ -38,12 +38,12 @@ TEST_CASE(
     "multiplied THEN resulting value is correct")
 {
 
-  constexpr unit_t<'X', 1, std::deci> v1{2};
-  constexpr unit_t<'X'> v2{30};
+    constexpr unit_t<'X', 1, std::deci> v1{2};
+    constexpr unit_t<'X'> v2{30};
 
-  constexpr auto result = v1 * v2;
+    constexpr auto result = v1 * v2;
 
-  static_assert(result.raw_value() == 600, "Raw value matches");
+    static_assert(result.raw_value() == 600, "Raw value matches");
 }
 
 TEST_CASE(
@@ -51,15 +51,15 @@ TEST_CASE(
     "multiplied THEN resulting value is correct")
 {
 
-  constexpr unit_t<'X', 1, std::deci> v1{2};
-  constexpr unit_t<'X'> v2{-30};
+    constexpr unit_t<'X', 1, std::deci> v1{2};
+    constexpr unit_t<'X'> v2{-30};
 
-  constexpr auto result = v1 * v2;
+    constexpr auto result = v1 * v2;
 
-  static_assert(result.raw_value() == -600, "Raw value matches");
-  static_assert(
-      std::ratio_equal<decltype(result)::ratio, decltype(v1)::ratio>::value,
-      "left hand side binds unit");
+    static_assert(result.raw_value() == -600, "Raw value matches");
+    static_assert(
+        std::ratio_equal<decltype(result)::ratio, decltype(v1)::ratio>::value,
+        "left hand side binds unit");
 }
 
 TEST_CASE(
@@ -67,36 +67,47 @@ TEST_CASE(
     "multiplied THEN resulting type is of left hand side and value is 0")
 {
 
-  constexpr unit_t<'X'> v1{2};
-  constexpr unit_t<'X', 1, std::milli> v2{30};
+    constexpr unit_t<'X'> v1{2};
+    constexpr unit_t<'X', 1, std::milli> v2{30};
 
-  constexpr auto result = v1 * v2;
+    constexpr auto result = v1 * v2;
 
-  static_assert(result.raw_value() == 0, "Raw value matches");
-  static_assert(
-      std::ratio_equal<decltype(result)::ratio, decltype(v1)::ratio>::value,
-      "left hand side binds unit");
+    static_assert(result.raw_value() == 0, "Raw value matches");
+    static_assert(
+        std::ratio_equal<decltype(result)::ratio, decltype(v1)::ratio>::value,
+        "left hand side binds unit");
 }
 
 TEST_CASE("GIVEN two units with different exponents WHEN divided THEN "
           "resulting exopnent is left exponent - right exponent")
 {
-  constexpr unit_t<'X', 3, std::ratio<1>, long long int> v1{1};
-  constexpr unit_t<'X', 2, std::ratio<1>, long long int> v2{1};
+    constexpr unit_t<'X', 3, std::ratio<1>> v1{1};
+    constexpr unit_t<'X', 2, std::ratio<1>> v2{1};
 
-  constexpr auto result = v1 / v2;
+    constexpr auto result = v1 / v2;
 
-  static_assert(decltype(result)::exponent::value == 1,
-                "Exponent is subtracted");
+    static_assert(decltype(result)::exponent::value == 1,
+                  "Exponent is subtracted");
 }
 
 TEST_CASE(
     "GIVEN two units with exponent 1 WHEN divided result in a raw integer")
 {
-  constexpr unit_t<'X', 1, std::ratio<1>> v1{1};
-  constexpr auto result = v1 / v1;
+    constexpr unit_t<'X', 1, std::ratio<1>> v1{1};
+    constexpr auto result = v1 / v1;
 
-  static_assert(std::is_same<std::remove_const<decltype(result)>::type,
-                             decltype(v1)::internal_type>::value,
-                "raw internal type is returned");
+    static_assert(std::is_same<std::remove_const<decltype(result)>::type,
+                               decltype(v1)::internal_type>::value,
+                  "raw internal type is returned");
+}
+
+TEST_CASE("GIVEN a unit and a scalar WHEN scalar is divided by unit THEN unit "
+          "exponent is negative")
+{
+    constexpr long long int v1{1};
+    constexpr unit_t<'X', 1, std::ratio<1>> v2{1};
+    constexpr auto result = v1 / v2;
+
+    static_assert(decltype(result)::exponent::value == -1,
+                  "Exponent is negative");
 }
