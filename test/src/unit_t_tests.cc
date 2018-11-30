@@ -101,6 +101,20 @@ TEST_CASE(
                   "raw internal type is returned");
 }
 
+TEST_CASE("GIVEN two units with the same ratio exponent 1  WHEN divided result "
+          "is lhs.value / "
+          "rhs.value")
+{
+    constexpr unit_t<'X', 1, std::ratio<1>> v1{1000};
+    constexpr unit_t<'X', 1, std::ratio<1>> v2{10};
+    constexpr auto result = v1 / v2;
+
+    static_assert(std::is_same<std::remove_const<decltype(result)>::type,
+                               decltype(v1)::internal_type>::value,
+                  "raw internal type is returned");
+    static_assert(result == 100, "division by 10");
+}
+
 TEST_CASE("GIVEN a unit and a scalar WHEN scalar is divided by unit THEN unit "
           "exponent is negative")
 {

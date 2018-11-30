@@ -4,7 +4,8 @@
 #include <ratio>
 #include <type_traits>
 
-namespace SI {
+namespace SI
+{
 
 /**
  * @brief base template class for holding values of type _Type to be multiplied
@@ -24,79 +25,85 @@ template <
         nullptr,
     typename std::enable_if<std::is_arithmetic<_Type>::value>::type * = nullptr>
 
-struct unit_t {
+struct unit_t
+{
 
-  static_assert(detail::is_ratio<_Ratio>::value, "_Ratio is a std::ratio");
-  typedef _Ratio ratio;
-  typedef _Type internal_type;
-  typedef std::integral_constant<char, _Exponent> exponent;
-  typedef std::integral_constant<char, _Symbol> symbol;
-  constexpr unit_t(_Type v) : value_{v} {}
+    static_assert(detail::is_ratio<_Ratio>::value, "_Ratio is a std::ratio");
+    typedef _Ratio ratio;
+    typedef _Type internal_type;
+    typedef std::integral_constant<char, _Exponent> exponent;
+    typedef std::integral_constant<char, _Symbol> symbol;
+    constexpr unit_t(_Type v) : value_{v} {}
 
-  constexpr internal_type raw_value() const { return value_; }
+    constexpr internal_type raw_value() const { return value_; }
 
-  template <class _rhs_Ratio = std::ratio<1>>
-  constexpr bool
-  operator==(const unit_t<symbol::value, exponent::value, _rhs_Ratio,
-                          internal_type> &rhs) const {
-    typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
-    return (rhs.value_ * rhs_t::ratio::num / rhs_t::ratio::den) ==
-           (value_ * ratio::num / ratio::den);
-  }
-  /// multiply with a non-unit scalar
-  constexpr unit_t operator*(const _Type f) const { return {value_ * f}; }
+    template <class _rhs_Ratio = std::ratio<1>>
+    constexpr bool
+    operator==(const unit_t<symbol::value, exponent::value, _rhs_Ratio,
+                            internal_type> &rhs) const
+    {
+        typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
+        return (rhs.value_ * rhs_t::ratio::num / rhs_t::ratio::den) ==
+               (value_ * ratio::num / ratio::den);
+    }
+    /// multiply with a non-unit scalar
+    constexpr unit_t operator*(const _Type f) const { return {value_ * f}; }
 
-  /// multiply with a same unit
-  /// resulting unit is the same as 'this'/left hand side of operation
-  template <char _rhs_Exponent, typename _rhs_Ratio>
-  constexpr auto operator*(const unit_t<symbol::value, _rhs_Exponent,
-                                        _rhs_Ratio, internal_type> &rhs) const {
-    typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
-    constexpr auto conversion_ratio = detail::ratio_to<ratio, _rhs_Ratio>();
-    return unit_t<symbol::value, exponent::value + rhs_t::exponent::value,
-                  ratio, internal_type>{
-        value_ * (rhs.raw_value() * decltype(conversion_ratio)::num /
-                  decltype(conversion_ratio)::den)};
-  }
+    /// multiply with a same unit
+    /// resulting unit is the same as 'this'/left hand side of operation
+    template <char _rhs_Exponent, typename _rhs_Ratio>
+    constexpr auto operator*(const unit_t<symbol::value, _rhs_Exponent,
+                                          _rhs_Ratio, internal_type> &rhs) const
+    {
+        typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
+        constexpr auto conversion_ratio = detail::ratio_to<ratio, _rhs_Ratio>();
+        return unit_t<symbol::value, exponent::value + rhs_t::exponent::value,
+                      ratio, internal_type>{
+            value_ * (rhs.raw_value() * decltype(conversion_ratio)::num /
+                      decltype(conversion_ratio)::den)};
+    }
 
-  /// multiply with a same unit
-  /// resulting unit is the same as 'this'/left hand side of operation
-  template <char _rhs_exponent, typename _rhs_Ratio,
-            typename std::enable_if<_rhs_exponent != exponent::value>::type * =
-                nullptr>
-  constexpr auto operator/(const unit_t<symbol::value, _rhs_exponent,
-                                        _rhs_Ratio, internal_type> &rhs) const {
-    typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
-    constexpr auto conversion_ratio = detail::ratio_to<ratio, _rhs_Ratio>();
+    /// multiply with a same unit
+    /// resulting unit is the same as 'this'/left hand side of operation
+    template <char _rhs_exponent, typename _rhs_Ratio,
+              typename std::enable_if<_rhs_exponent != exponent::value>::type * =
+                  nullptr>
+    constexpr auto operator/(const unit_t<symbol::value, _rhs_exponent,
+                                          _rhs_Ratio, internal_type> &rhs) const
+    {
+        typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
+        constexpr auto conversion_ratio = detail::ratio_to<ratio, _rhs_Ratio>();
 
-    return unit_t<symbol::value, exponent::value - rhs_t::exponent::value,
-                  ratio, internal_type>{
-        value_ / (rhs.raw_value() * decltype(conversion_ratio)::num /
-                  decltype(conversion_ratio)::den)};
-  }
+        return unit_t<symbol::value, exponent::value - rhs_t::exponent::value,
+                      ratio, internal_type>{
+            value_ / (rhs.raw_value() * decltype(conversion_ratio)::num /
+                      decltype(conversion_ratio)::den)};
+    }
 
-  /// if the same units of the same exponent are divided then the result is a
-  /// scalar
-  template <char _rhs_exponent, typename _rhs_Ratio,
-            typename std::enable_if<_rhs_exponent == exponent::value>::type * =
-                nullptr>
-  constexpr _Type
-  operator/(const unit_t<symbol::value, _rhs_exponent, _rhs_Ratio,
-                         internal_type> &rhs) const {
-    constexpr auto conversion_ratio = detail::ratio_to<ratio, _rhs_Ratio>();
+    /// if the same units of the same exponent are divided then the result is a
+    /// scalar
+    template <char _rhs_exponent, typename _rhs_Ratio,
+              typename std::enable_if<_rhs_exponent == exponent::value>::type * =
+                  nullptr>
+    constexpr _Type
+    operator/(const unit_t<symbol::value, _rhs_exponent, _rhs_Ratio,
+                           internal_type> &rhs) const
+    {
+        constexpr auto conversion_ratio = detail::ratio_to<ratio, _rhs_Ratio>();
 
-    return raw_value();
-  }
+        return raw_value() / rhs.raw_value();
+    }
 
-  /// negate operation
-  constexpr unit_t operator-() { return {-value_}; }
+    /// negate operation
+    constexpr unit_t operator-() { return {-value_}; }
 
-  internal_type value_;
+    internal_type value_;
 };
 
 template <char _Symbol>
-constexpr auto operator/(long long int, const unit_t<_Symbol> &rhs) {
-  return unit_t<_Symbol, -1>{0};
+constexpr auto operator/(long long int, const unit_t<_Symbol> &rhs)
+{
+    return unit_t<_Symbol, -1>{0};
 }
 
 } // namespace SI
