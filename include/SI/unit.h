@@ -108,7 +108,11 @@ constexpr auto operator/(long long int, const unit_t<_Symbol> &rhs) {
   return unit_t<_Symbol, -1>{0};
 }
 
-template <typename _T, typename _rhs_T>
+template <typename _T, typename _rhs_T,
+          typename std::enable_if<std::is_base_of<
+              unit_t<_rhs_T::symbol::value, _rhs_T::exponent::value,
+                     typename _rhs_T::ratio, typename _rhs_T::internal_type>,
+              _rhs_T>::value>::type * = nullptr>
 constexpr auto unit_cast(const _rhs_T &rhs) {
   return rhs;
 }
