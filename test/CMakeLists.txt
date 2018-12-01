@@ -8,7 +8,7 @@ add_executable(SI_Tests
                src/length_tests_integral_type.cc
                src/length_tests_floating_point.cc
                src/area_tests.cc
-               src/unit_t_tests.cc
+               src/unit_t_operator_tests.cc
                src/time_tests.cc) 
 target_include_directories(SI_Tests PRIVATE ${PROJECT_SOURCE_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/include)
 
