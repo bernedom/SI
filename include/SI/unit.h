@@ -94,6 +94,15 @@ struct unit_t {
   internal_type value_;
 };
 
+template <typename _Tp> struct is_unit_t : std::false_type {};
+
+template <char _Symbol, char _Exponent, class _Ratio, typename _Type>
+struct is_unit_t<const unit_t<_Symbol, _Exponent, _Ratio, _Type>>
+    : std::true_type {};
+
+template <char _Symbol, char _Exponent, class _Ratio, typename _Type>
+struct is_unit_t<unit_t<_Symbol, _Exponent, _Ratio, _Type>> : std::true_type {};
+
 template <char _Symbol>
 constexpr auto operator/(long long int, const unit_t<_Symbol> &rhs) {
   return unit_t<_Symbol, -1>{0};
