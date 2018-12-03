@@ -54,6 +54,7 @@ struct unit_t {
 
   /// multiply with a same unit
   /// resulting unit is the same as 'this'/left hand side of operation
+  /// @todo use unit_cast to get correct value
   template <char _rhs_Exponent, typename _rhs_Ratio>
   constexpr auto operator*(const unit_t<symbol::value, _rhs_Exponent,
                                         _rhs_Ratio, internal_type> &rhs) const {
@@ -67,6 +68,7 @@ struct unit_t {
 
   /// multiply with a same unit
   /// resulting unit is the same as 'this'/left hand side of operation
+  /// @todo use unit_cast to get correct value
   template <char _rhs_exponent, typename _rhs_Ratio,
             typename std::enable_if<_rhs_exponent != exponent::value>::type * =
                 nullptr>
@@ -122,14 +124,19 @@ template <char _Symbol, char _Exponent, class _Ratio, typename _Type>
 struct is_unit_t<unit_t<_Symbol, _Exponent, _Ratio, _Type>> : std::true_type {};
 
 /// function to cast between two units of the same type
-/// @todo handle different ratios and return correct value
-template <typename _T, typename _rhs_T,
-          typename std::enable_if<std::is_base_of<
-              unit_t<_rhs_T::symbol::value, _rhs_T::exponent::value,
-                     typename _rhs_T::ratio, typename _rhs_T::internal_type>,
-              _rhs_T>::value>::type * = nullptr>
+template <
+    typename _T, typename _rhs_T,
+    typename std::enable_if<
+        is_unit_t<_rhs_T>::value ||
+        std::is_base_of<
+            unit_t<_rhs_T::symbol::value, _rhs_T::exponent::value,
+                   typename _rhs_T::ratio, typename _rhs_T::internal_type>,
+            _rhs_T>::value>::type * = nullptr>
 constexpr auto unit_cast(const _rhs_T &rhs) {
-  return rhs;
+  constexpr auto conversion_ratio =
+      detail::ratio_to<typename _T::ratio, typename _rhs_T::ratio>();
+  return _T{(rhs.raw_value() * decltype(conversion_ratio)::num /
+             decltype(conversion_ratio)::den)};
 }
 
 } // namespace SI

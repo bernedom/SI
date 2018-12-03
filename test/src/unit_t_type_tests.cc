@@ -26,7 +26,8 @@ TEST_CASE("GIVEN derived type derived from unit_t THEN is_unit_t returns true "
       "derived type is of type unit_t");
 }
 
-TEST_CASE("GIVEN two units of the same type and value WHEN cast from one to "
+TEST_CASE("GIVEN two units of the same dimension type, ratio and value WHEN "
+          "cast from one to "
           "another THEN units stay the same") {
   constexpr unit_t<'X'> v1{0};
 
@@ -34,4 +35,15 @@ TEST_CASE("GIVEN two units of the same type and value WHEN cast from one to "
   static_assert(result == v1, "Result is same as input");
   static_assert(std::is_same<decltype(result), decltype(v1)>::value,
                 "casted type is the same");
+}
+
+TEST_CASE("GIVEN two units of same dimension type and different ratio WHEN "
+          "cast from one to another THEN value is according to the ratio") {
+  constexpr unit_t<'X', 1, std::milli> v1{1000};
+  constexpr auto result = unit_cast<unit_t<'X', 1, std::ratio<1>>>(v1);
+
+  static_assert(std::is_same<decltype(result),
+                             const unit_t<'X', 1, std::ratio<1>>>::value,
+                "Casted to correct unit");
+  static_assert(result.raw_value() == 1, "value adjusted for ratio");
 }
