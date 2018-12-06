@@ -6,7 +6,7 @@ compiler:
 addons:
   apt:
     sources:
-      - ubunti-toolchain-r-test
+      - ubuntu-toolchain-r-test
     packages:
       - cmake
-    
+script: mkdir build && cd build && cmake .. && make
