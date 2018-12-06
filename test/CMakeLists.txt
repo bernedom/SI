@@ -15,7 +15,7 @@ target_include_directories(SI_Tests PRIVATE ${PROJECT_SOURCE_DIR}/include ${CMAK
 
 if(${CMAKE_VERSION} VERSION_LESS "3.8.0")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
-    if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+    if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCATCH_CONFIG_NO_CPP17_UNCAUGHT_EXCEPTIONS=ON")
     endif()
 else()

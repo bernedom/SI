@@ -1,7 +1,8 @@
 language: cpp
 dist: xenial
 compiler:
-  - gcc  
+  - gcc
+  - clang
 
 addons:
   apt:
@@ -11,6 +12,4 @@ addons:
       - cmake
       - g++-7
 script: 
-  - export CC=gcc-7
-  - export CXX=g++-7
   - mkdir build && cd build && cmake .. && make -j $(nproc)
