@@ -1,1 +1,12 @@
 language: cpp
+dist: xenial
+compiler:
+  - clang  
+
+addons:
+  apt:
+    sources:
+      - ubunti-toolchain-r-test
+    packages:
+      - cmake
+    
