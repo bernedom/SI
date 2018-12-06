@@ -1,7 +1,7 @@
 language: cpp
 dist: xenial
 compiler:
-  - clang  
+  - gcc  
 
 addons:
   apt:
@@ -9,4 +9,8 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - cmake
-script: mkdir build && cd build && cmake .. && make
+      - g++-7
+script: 
+  - export CC=gcc-7
+  - export CXX=g++-7
+  - mkdir build && cd build && cmake .. && make -j $(nproc)
