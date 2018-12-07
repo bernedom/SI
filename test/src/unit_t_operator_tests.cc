@@ -116,3 +116,12 @@ TEST_CASE("GIVEN a unit and a scalar WHEN scalar is divided by unit THEN unit "
   static_assert(decltype(result)::exponent::value == -1,
                 "Exponent is negative");
 }
+
+TEST_CASE("GIVEN a unit with ratio<1> and a scalar WHEN scalar is divided by "
+          "unit THEN resulting  value is scalar / unit.value ") {
+  constexpr long long int v1{1000};
+  constexpr unit_t<'X', 1, std::ratio<1>> v2{2};
+  constexpr auto result = v1 / v2;
+
+  static_assert(result.raw_value() == 500, "1000 / 2m = 500m");
+}

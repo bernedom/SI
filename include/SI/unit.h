@@ -50,7 +50,7 @@ struct unit_t {
   operator==(const unit_t<symbol::value, exponent::value, _rhs_Ratio,
                           internal_type> &rhs) const {
     typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
-    return unit_cast<const unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
+    return unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
                .raw_value() == value_;
   }
   /// multiply with a non-unit scalar
@@ -66,13 +66,12 @@ struct unit_t {
     constexpr auto conversion_ratio = detail::ratio_to<ratio, _rhs_Ratio>();
     return unit_t<symbol::value, exponent::value + rhs_t::exponent::value,
                   ratio, internal_type>{
-        value_ * unit_cast<const unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
-                     .raw_value()};
+        value_ *
+        unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs).raw_value()};
   }
 
   /// multiply with a same unit
   /// resulting unit is the same as 'this'/left hand side of operation
-  /// @todo use unit_cast to get correct value
   template <char _rhs_exponent, typename _rhs_Ratio,
             typename std::enable_if<_rhs_exponent != exponent::value>::type * =
                 nullptr>
@@ -83,8 +82,8 @@ struct unit_t {
 
     return unit_t<symbol::value, exponent::value - rhs_t::exponent::value,
                   ratio, internal_type>{
-        value_ / unit_cast<const unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
-                     .raw_value()};
+        value_ /
+        unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs).raw_value()};
   }
 
   /// if the same units of the same exponent are divided then the result is a
@@ -109,10 +108,10 @@ struct unit_t {
 /// operator to divide
 /// @todo return divided raw_value and handle different ratios
 template <char _Symbol>
-constexpr auto operator/(long long int, const unit_t<_Symbol> &rhs) {
+constexpr auto operator/(long long int lhs, const unit_t<_Symbol> &rhs) {
   return unit_t<_Symbol,
                 -std::remove_reference<decltype(rhs)>::type::exponent::value>{
-      0};
+      lhs / rhs.raw_value()};
 }
 
 /// helper template to check if a type is a unit_t (false for all other types)
