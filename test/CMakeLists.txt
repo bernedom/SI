@@ -13,12 +13,14 @@ add_executable(SI_Tests
                src/time_tests.cc) 
 target_include_directories(SI_Tests PRIVATE ${PROJECT_SOURCE_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/include)
 
+if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+    message("Setting no cpp17 uncaught exceptions for catch2")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCATCH_CONFIG_NO_CPP17_UNCAUGHT_EXCEPTIONS=ON")
+endif()
+
 if(${CMAKE_VERSION} VERSION_LESS "3.8.0")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
-    if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang" || "{CMAKE_CXX_COMPILER_ID}" MATCHES "clang")
-    message("Setting no cpp uncaught exceptions for catch2")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCATCH_CONFIG_NO_CPP17_UNCAUGHT_EXCEPTIONS=ON")
-    endif()
+   
 else()
 target_compile_features(SI_Tests PRIVATE cxx_std_17)
 set_target_properties(SI_Tests PROPERTIES
