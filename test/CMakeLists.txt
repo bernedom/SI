@@ -15,7 +15,8 @@ target_include_directories(SI_Tests PRIVATE ${PROJECT_SOURCE_DIR}/include ${CMAK
 
 if(${CMAKE_VERSION} VERSION_LESS "3.8.0")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
-    if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+    if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang" || "{CMAKE_CXX_COMPILER_ID}" MATCHES "clang")
+    message("Setting no cpp uncaught exceptions for catch2")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCATCH_CONFIG_NO_CPP17_UNCAUGHT_EXCEPTIONS=ON")
     endif()
 else()
@@ -25,8 +26,5 @@ set_target_properties(SI_Tests PROPERTIES
      CXX_STANDARD_REQUIRED YES
     )
 endif()
-
-
-
 
 add_test(NAME SI_Tests COMMAND SI_Tests)
