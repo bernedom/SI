@@ -6,6 +6,10 @@
 
 namespace SI {
 
+// forward declarations
+template <typename _T, typename _rhs_T>
+constexpr auto unit_cast(const _rhs_T &rhs);
+
 /**
  * @brief base template class for holding values of type _Type to be multiplied
  *with a ratio _Ratio
@@ -46,8 +50,8 @@ struct unit_t {
   operator==(const unit_t<symbol::value, exponent::value, _rhs_Ratio,
                           internal_type> &rhs) const {
     typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
-    return (rhs.value_ * rhs_t::ratio::num / rhs_t::ratio::den) ==
-           (value_ * ratio::num / ratio::den);
+    return unit_cast<const unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
+               .raw_value() == value_;
   }
   /// multiply with a non-unit scalar
   constexpr unit_t operator*(const _Type f) const { return {value_ * f}; }
@@ -62,8 +66,8 @@ struct unit_t {
     constexpr auto conversion_ratio = detail::ratio_to<ratio, _rhs_Ratio>();
     return unit_t<symbol::value, exponent::value + rhs_t::exponent::value,
                   ratio, internal_type>{
-        value_ * (rhs.raw_value() * decltype(conversion_ratio)::num /
-                  decltype(conversion_ratio)::den)};
+        value_ * unit_cast<const unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
+                     .raw_value()};
   }
 
   /// multiply with a same unit
@@ -79,8 +83,8 @@ struct unit_t {
 
     return unit_t<symbol::value, exponent::value - rhs_t::exponent::value,
                   ratio, internal_type>{
-        value_ / (rhs.raw_value() * decltype(conversion_ratio)::num /
-                  decltype(conversion_ratio)::den)};
+        value_ / unit_cast<const unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
+                     .raw_value()};
   }
 
   /// if the same units of the same exponent are divided then the result is a
@@ -124,15 +128,17 @@ template <char _Symbol, char _Exponent, class _Ratio, typename _Type>
 struct is_unit_t<unit_t<_Symbol, _Exponent, _Ratio, _Type>> : std::true_type {};
 
 /// function to cast between two units of the same type
-template <
-    typename _T, typename _rhs_T,
-    typename std::enable_if<
-        is_unit_t<_rhs_T>::value ||
-        std::is_base_of<
-            unit_t<_rhs_T::symbol::value, _rhs_T::exponent::value,
-                   typename _rhs_T::ratio, typename _rhs_T::internal_type>,
-            _rhs_T>::value>::type * = nullptr>
+template <typename _T, typename _rhs_T>
 constexpr auto unit_cast(const _rhs_T &rhs) {
+  // using static assert instead of std::enable if in order to be able to
+  // forward declare this function easier
+  static_assert(
+      is_unit_t<_rhs_T>::value ||
+          std::is_base_of<
+              unit_t<_rhs_T::symbol::value, _rhs_T::exponent::value,
+                     typename _rhs_T::ratio, typename _rhs_T::internal_type>,
+              _rhs_T>::value,
+      "is of type unit_t or a derived class");
   constexpr auto conversion_ratio =
       detail::ratio_to<typename _T::ratio, typename _rhs_T::ratio>();
   return _T{(rhs.raw_value() * decltype(conversion_ratio)::num /
