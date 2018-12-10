@@ -6,7 +6,8 @@
 using namespace SI;
 
 TEST_CASE(
-    "given two values with exponent 1 WHEN multiplied THEN exponent is 2") {
+    "given two values with exponent 1 WHEN multiplied THEN exponent is 2")
+{
   constexpr unit_t<'X'> v1{0};
   constexpr unit_t<'X'> v2{0};
 
@@ -20,7 +21,8 @@ TEST_CASE(
 
 TEST_CASE("given two units with different non-negative values but same ratio "
           "and unit WHEN "
-          "multiplied THEN resulting value is correct") {
+          "multiplied THEN resulting value is correct")
+{
 
   constexpr unit_t<'X'> v1{20};
   constexpr unit_t<'X'> v2{30};
@@ -33,7 +35,8 @@ TEST_CASE("given two units with different non-negative values but same ratio "
 TEST_CASE(
     "given two units with different non-negative values and different ratio "
     "and unit WHEN "
-    "multiplied THEN resulting value is correct") {
+    "multiplied THEN resulting value is correct")
+{
 
   constexpr unit_t<'X', 1, std::deci> v1{2};
   constexpr unit_t<'X'> v2{30};
@@ -45,7 +48,8 @@ TEST_CASE(
 
 TEST_CASE(
     "given two units with different values and different ratio and unit WHEN "
-    "multiplied THEN resulting value is correct") {
+    "multiplied THEN resulting value is correct")
+{
 
   constexpr unit_t<'X', 1, std::deci> v1{2};
   constexpr unit_t<'X'> v2{-30};
@@ -60,7 +64,8 @@ TEST_CASE(
 
 TEST_CASE(
     "given two units with different values and ratio of rhs is small WHEN "
-    "multiplied THEN resulting type is of left hand side and value is 0") {
+    "multiplied THEN resulting type is of left hand side and value is 0")
+{
 
   constexpr unit_t<'X'> v1{2};
   constexpr unit_t<'X', 1, std::milli> v2{30};
@@ -74,7 +79,8 @@ TEST_CASE(
 }
 
 TEST_CASE("GIVEN two units with different exponents WHEN divided THEN "
-          "resulting exopnent is left exponent - right exponent") {
+          "resulting exopnent is left exponent - right exponent")
+{
   constexpr unit_t<'X', 3, std::ratio<1>> v1{1};
   constexpr unit_t<'X', 2, std::ratio<1>> v2{1};
 
@@ -85,7 +91,8 @@ TEST_CASE("GIVEN two units with different exponents WHEN divided THEN "
 }
 
 TEST_CASE(
-    "GIVEN two units with exponent 1 WHEN divided result in a raw integer") {
+    "GIVEN two units with exponent 1 WHEN divided result in a raw integer")
+{
   constexpr unit_t<'X', 1, std::ratio<1>> v1{1};
   constexpr auto result = v1 / v1;
 
@@ -96,7 +103,8 @@ TEST_CASE(
 
 TEST_CASE("GIVEN two units with the same ratio exponent 1  WHEN divided result "
           "is lhs.value / "
-          "rhs.value") {
+          "rhs.value")
+{
   constexpr unit_t<'X', 1, std::ratio<1>> v1{1000};
   constexpr unit_t<'X', 1, std::ratio<1>> v2{10};
   constexpr auto result = v1 / v2;
@@ -108,7 +116,8 @@ TEST_CASE("GIVEN two units with the same ratio exponent 1  WHEN divided result "
 }
 
 TEST_CASE("GIVEN a unit and a scalar WHEN scalar is divided by unit THEN unit "
-          "exponent is negative") {
+          "exponent is negative")
+{
   constexpr long long int v1{1};
   constexpr unit_t<'X', 1, std::ratio<1>> v2{1};
   constexpr auto result = v1 / v2;
@@ -118,10 +127,21 @@ TEST_CASE("GIVEN a unit and a scalar WHEN scalar is divided by unit THEN unit "
 }
 
 TEST_CASE("GIVEN a unit with ratio<1> and a scalar WHEN scalar is divided by "
-          "unit THEN resulting  value is scalar / unit.value ") {
+          "unit THEN resulting  value is scalar / unit.value ")
+{
   constexpr long long int v1{1000};
   constexpr unit_t<'X', 1, std::ratio<1>> v2{2};
   constexpr auto result = v1 / v2;
 
-  static_assert(result.raw_value() == 500, "1000 / 2m = 500m");
+  static_assert(result.raw_value() == 500, "1000 / 2 = 500");
+}
+
+TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar WHEN scalar is dived "
+          "by unit THEN resulting value is adjusted by ratio")
+{
+  constexpr long long int v1{1000};
+  constexpr unit_t<'X', 1, std::deci> v2{2};
+
+  constexpr auto result = v1 / v2;
+  static_assert(result.raw_value() == 5, "1000 / 20 = 50");
 }
