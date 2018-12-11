@@ -107,11 +107,13 @@ struct unit_t {
 
 /// operator to divide
 /// @todo return divided raw_value and handle different ratios
-template <char _Symbol>
-constexpr auto operator/(long long int lhs, const unit_t<_Symbol> &rhs) {
-  return unit_t<_Symbol,
-                -std::remove_reference<decltype(rhs)>::type::exponent::value>{
-      lhs / rhs.raw_value()};
+template <char _Symbol, char _Exponent, class _Ratio>
+constexpr auto operator/(long long int lhs,
+                         const unit_t<_Symbol, _Exponent, _Ratio> &rhs) {
+
+  return unit_cast<unit_t<_Symbol, -_Exponent, _Ratio>>(
+      unit_t<_Symbol, -_Exponent, std::ratio<1>>{
+          lhs / (rhs.raw_value() * (_Ratio::num / _Ratio::den))});
 }
 
 /// helper template to check if a type is a unit_t (false for all other types)

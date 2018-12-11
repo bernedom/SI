@@ -140,8 +140,12 @@ TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar WHEN scalar is dived "
           "by unit THEN resulting value is adjusted by ratio")
 {
   constexpr long long int v1{1000};
-  constexpr unit_t<'X', 1, std::deci> v2{2};
+  constexpr unit_t<'X', 1, std::deca> v2{2};
 
   constexpr auto result = v1 / v2;
+  constexpr unit_t<'X', -1, std::deca> expected{5};
+  static_assert(v2.raw_value() == 2, "Is 2");
+  static_assert(std::ratio_equal<std::deca, decltype(result)::ratio>::value,
+                "Is of deca type");
   static_assert(result.raw_value() == 5, "1000 / 20 = 50");
 }
