@@ -8,14 +8,15 @@ This is a learning project to figure out modern C++ user defined literals and pr
 
 The goal is to provide as many conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) as possible with strong type safety already during compile time. 
 
-## how to run lcov
-
+## note to self: how to run lcov
 
 run in `build` folder
 
-`cmake -D CMAKE_CXX_FLAGS="--coverage -fprofile-arcs -ftest-coverage -fno-inline -fno-inline-small-functions -fno-default-inline -g -O0" ..`
-`make -j$(nproc)`
-`./test/SI_Tests`
-`lcov --directory . --capture --output-file coverage.info`
-`lcov --remove coverage.info '/usr/*' --output-file coverage_cleaned.info`
-`genhtml -o out.html coverage_cleaned.info`
+```
+cmake -D CMAKE_CXX_FLAGS="--coverage -fprofile-arcs -ftest-coverage -fno-inline -fno-inline-small-functions -fno-default-inline -g -O0" ..
+make -j$(nproc)
+./test/SI_Tests
+lcov --directory . --capture --output-file coverage.info
+lcov --remove coverage.info '/usr/*' --output-file coverage_cleaned.info
+genhtml -o out.html coverage_cleaned.info
+```
