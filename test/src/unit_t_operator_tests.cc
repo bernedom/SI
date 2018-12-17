@@ -118,7 +118,7 @@ TEST_CASE("GIVEN two units with the same ratio exponent 1  WHEN divided result "
 TEST_CASE("GIVEN a unit and a scalar WHEN scalar is divided by unit THEN unit "
           "exponent is negative")
 {
-  constexpr long long int v1{1};
+  constexpr int64_t v1{1};
   constexpr unit_t<'X', 1, std::ratio<1>> v2{1};
   constexpr auto result = v1 / v2;
 
@@ -129,7 +129,7 @@ TEST_CASE("GIVEN a unit and a scalar WHEN scalar is divided by unit THEN unit "
 TEST_CASE("GIVEN a unit with ratio<1> and a scalar WHEN scalar is divided by "
           "unit THEN resulting  value is scalar / unit.value ")
 {
-  constexpr long long int v1{1000};
+  constexpr int64_t v1{1000};
   constexpr unit_t<'X', 1, std::ratio<1>> v2{2};
   constexpr auto result = v1 / v2;
 
@@ -139,7 +139,7 @@ TEST_CASE("GIVEN a unit with ratio<1> and a scalar WHEN scalar is divided by "
 TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar WHEN scalar is dived "
           "by unit THEN resulting value is adjusted by ratio")
 {
-  constexpr long long int v1{1000};
+  constexpr int64_t v1{1000};
   constexpr unit_t<'X', 1, std::deca> v2{2};
 
   constexpr auto result = v1 / v2;
