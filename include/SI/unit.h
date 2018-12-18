@@ -34,10 +34,10 @@ struct unit_t
 
     static_assert(_Exponent != 0, "Exponent is non-zero");
     static_assert(detail::is_ratio<_Ratio>::value, "_Ratio is a std::ratio");
-    typedef _Ratio ratio;
-    typedef _Type internal_type;
-    typedef std::integral_constant<char, _Exponent> exponent;
-    typedef std::integral_constant<char, _Symbol> symbol;
+    using ratio = _Ratio;
+    using internal_type = _Type;
+    using exponent = std::integral_constant<char, _Exponent>;
+    using symbol = std::integral_constant<char, _Symbol>;
 
     /// Construct with value v
     constexpr unit_t(_Type v) : value_{v} {}
@@ -52,7 +52,7 @@ struct unit_t
     operator==(const unit_t<symbol::value, exponent::value, _rhs_Ratio,
                             internal_type> &rhs) const
     {
-        typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
+        using rhs_t = typename std::remove_reference<decltype(rhs)>::type;
         return unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
                    .raw_value() == value_;
     }
@@ -66,7 +66,7 @@ struct unit_t
     constexpr auto operator*(const unit_t<symbol::value, _rhs_Exponent,
                                           _rhs_Ratio, internal_type> &rhs) const
     {
-        typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
+        using rhs_t = typename std::remove_reference<decltype(rhs)>::type;
         constexpr auto conversion_ratio = detail::ratio_to<ratio, _rhs_Ratio>();
         return unit_t<symbol::value, exponent::value + rhs_t::exponent::value,
                       ratio, internal_type>{
@@ -82,7 +82,7 @@ struct unit_t
     constexpr auto operator/(const unit_t<symbol::value, _rhs_exponent,
                                           _rhs_Ratio, internal_type> &rhs) const
     {
-        typedef typename std::remove_reference<decltype(rhs)>::type rhs_t;
+        using rhs_t = typename std::remove_reference<decltype(rhs)>::type;
         constexpr auto conversion_ratio = detail::ratio_to<ratio, _rhs_Ratio>();
 
         return unit_t<symbol::value, exponent::value - rhs_t::exponent::value,
