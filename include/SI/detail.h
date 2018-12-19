@@ -28,17 +28,6 @@ constexpr _Unit check_overflow()
   return _Unit{_CheckedVal::value};
 }
 
-/// @returns the ratio between two ratios
-template <
-    typename _lhs, typename _rhs,
-    typename std::enable_if<_lhs::ratio::num == 1 || _lhs::ratio::den == 1,
-                            _lhs>::type * = nullptr>
-static constexpr auto ratio_to()
-{
-  typedef std::ratio_divide<_rhs, _lhs> resulting_ratio;
-  return resulting_ratio{};
-}
-
 /// to check if a template is an instatiation of std::ratio
 template <typename _Tp>
 struct is_ratio : std::false_type
