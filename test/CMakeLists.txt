@@ -28,4 +28,8 @@ set_target_properties(SI_Tests PROPERTIES
      CXX_STANDARD_REQUIRED YES
     )
 endif()
+
+# increase warning level
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic")
+
 add_test(NAME SI_Tests COMMAND SI_Tests)

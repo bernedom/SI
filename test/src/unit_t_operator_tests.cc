@@ -148,6 +148,7 @@ TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar WHEN scalar is dived "
   static_assert(std::ratio_equal<std::deca, decltype(result)::ratio>::value,
                 "Is of deca type");
   static_assert(result.raw_value() == 5, "1000 / 20 = 50");
+  static_assert(result == expected, "1000 / 20 = 50");
 }
 
 TEST_CASE("GIVEN a unit WHEN added to itself THEN resulting value value * 2")

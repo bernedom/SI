@@ -49,7 +49,6 @@ struct unit_t {
   constexpr bool
   operator==(const unit_t<symbol::value, exponent::value, _rhs_Ratio,
                           internal_type> &rhs) const {
-    using rhs_t = typename std::remove_reference<decltype(rhs)>::type;
     return unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
                .raw_value() == value_;
   }
@@ -58,7 +57,6 @@ struct unit_t {
 
   /// multiply with a same unit
   /// resulting unit is the same as 'this'/left hand side of operation
-  /// @todo use unit_cast to get correct value
   template <char _rhs_Exponent, typename _rhs_Ratio>
   constexpr auto operator*(const unit_t<symbol::value, _rhs_Exponent,
                                         _rhs_Ratio, internal_type> &rhs) const {
@@ -110,11 +108,11 @@ struct unit_t {
   /// negate operation
   constexpr unit_t operator-() { return {-value_}; }
 
+private:
   internal_type value_;
 };
 
 /// operator to divide
-/// @todo return divided raw_value and handle different ratios
 template <char _Symbol, char _Exponent, class _Ratio>
 constexpr auto operator/(int64_t lhs,
                          const unit_t<_Symbol, _Exponent, _Ratio> &rhs) {
