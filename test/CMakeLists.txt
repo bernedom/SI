@@ -10,7 +10,8 @@ add_executable(SI_Tests
                src/area_tests.cc
                src/unit_t_operator_tests.cc
                src/unit_t_type_tests.cc
-               src/time_tests.cc) 
+               src/time_tests.cc
+               src/unit_conversion_tests.cc) 
 target_include_directories(SI_Tests PRIVATE ${PROJECT_SOURCE_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/include)
 
 if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "[Cc]lang")
