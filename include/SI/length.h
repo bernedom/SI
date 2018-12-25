@@ -16,8 +16,6 @@ template <char _Exponent = 1, class _Ratio = std::ratio<1>,
 struct length_t : public unit_t<'L', _Exponent, _Ratio, _Type>
 {
   using unit_t<'L', _Exponent, _Ratio, _Type>::unit_t;
-
-  using unit_t<'L', _Exponent, _Ratio, _Type>::operator*;
 };
 
 inline namespace literals
@@ -26,8 +24,7 @@ inline namespace literals
 template <char... _Digits>
 constexpr auto operator""_m()
 {
-  return SI::detail::check_overflow<length_t<1, std::ratio<1>>,
-                                    _Digits...>();
+  return SI::detail::check_overflow<length_t<1, std::ratio<1>>, _Digits...>();
 }
 
 template <char... _Digits>
