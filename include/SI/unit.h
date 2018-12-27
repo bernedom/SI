@@ -31,7 +31,6 @@ template <
 
 struct unit_t
 {
-
     static_assert(_Exponent != 0, "Exponent is non-zero");
     static_assert(detail::is_ratio<_Ratio>::value, "_Ratio is a std::ratio");
     using ratio = _Ratio;
