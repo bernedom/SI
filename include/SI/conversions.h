@@ -5,10 +5,14 @@
 #include "time.h"
 
 namespace SI {
-/// @todo calcualate values
+
 /// @todo calculate ratio
 /// @todo add commutive operator
 constexpr auto operator*(const electric_current_t<> &lhs, const time_t<> &rhs) {
-  return 0_C;
+  return electric_charge_t<>{lhs.raw_value() * rhs.raw_value()};
+}
+
+constexpr auto operator*(const time_t<> &lhs, const electric_current_t<> &rhs) {
+  return rhs * lhs;
 }
 } // namespace SI
