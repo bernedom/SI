@@ -182,3 +182,12 @@ TEST_CASE("GIVEN two units with floating point types with value difference of "
   static_assert(v1 != v2, "Result is the not the same");
   static_assert(!(v1 == v2), "Result is the not the same");
 }
+
+TEST_CASE("GIVEN two units same absolute value AND different ratios WHEN "
+          "compared THEN result in true") {
+  constexpr unit_t<'X', 1, std::milli> v1{1000};
+  constexpr unit_t<'X', 1, std::ratio<1>> v2{1};
+
+  static_assert(v1 == v2, "values are equal");
+  static_assert(v2 == v1, "values are equal");
+}
