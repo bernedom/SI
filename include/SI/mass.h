@@ -2,11 +2,10 @@
 #include "unit.h"
 
 namespace SI {
+
 template <char _Exponent = 1, class _Ratio = std::ratio<1>,
           typename _Type = int64_t>
-struct mass_t : public unit_t<'M', _Exponent, _Ratio, _Type> {
-  using unit_t<'M', _Exponent, _Ratio, _Type>::unit_t;
-};
+using mass_t = unit_t<'M', _Exponent, _Ratio, _Type>;
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_g() {
