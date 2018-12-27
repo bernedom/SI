@@ -34,3 +34,18 @@ TEST_CASE("GIVEN values for I and T AND ratio is the same WHEN multiplied THEN "
   static_assert(result_commutative.raw_value() == 2,
                 "result is calculated correctly");
 }
+
+TEST_CASE("GIVEN values for I and T AND ratio is not the same WHEN multiplied "
+          "THEN resulting ratio is same as lhs") {
+  constexpr auto current = 1000_mA;
+  constexpr auto t = 2_s;
+  constexpr auto result = current * t;
+  constexpr auto result_commutative = t * current;
+
+  static_assert(std::ratio_equal<decltype(result)::ratio,
+                                 decltype(current)::ratio>::value,
+                "Ratio is the same");
+  static_assert(std::ratio_equal<decltype(result_commutative)::ratio,
+                                 decltype(t)::ratio>::value,
+                "Ratio is the same");
+}

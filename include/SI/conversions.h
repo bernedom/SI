@@ -7,12 +7,19 @@
 namespace SI {
 
 /// @todo calculate ratio
-/// @todo add commutive operator
-constexpr auto operator*(const electric_current_t<> &lhs, const time_t<> &rhs) {
-  return electric_charge_t<>{lhs.raw_value() * rhs.raw_value()};
+template <char _exponent_lhs, typename _ratio_lhs, char _exponent_rhs,
+          typename _ratio_rhs>
+constexpr auto
+operator*(const electric_current_t<_exponent_lhs, _ratio_lhs> &lhs,
+          const time_t<_exponent_rhs, _ratio_rhs> &rhs) {
+  return electric_charge_t<1, _ratio_lhs>{lhs.raw_value() * rhs.raw_value()};
 }
 
-constexpr auto operator*(const time_t<> &lhs, const electric_current_t<> &rhs) {
-  return rhs * lhs;
+template <char _exponent_lhs, typename _ratio_lhs, char _exponent_rhs,
+          typename _ratio_rhs>
+constexpr auto
+operator*(const time_t<_exponent_lhs, _ratio_lhs> &lhs,
+          const electric_current_t<_exponent_rhs, _ratio_rhs> &rhs) {
+  return unit_cast<electric_current_t<_exponent_rhs, _ratio_lhs>>(rhs) * lhs;
 }
 } // namespace SI
