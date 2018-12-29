@@ -6,18 +6,21 @@
 
 namespace SI {
 
-/// @todo calculate ratio - Question: should resulting unit always be of
-/// ratio<1>?
+/// multiply Amperes with seconds result is Coulomb
+/// @todo consider if this can be merged with unit_t::operator*
 template <typename _ratio_lhs, typename _ratio_rhs>
 constexpr auto operator*(const electric_current_t<1, _ratio_lhs> &lhs,
                          const time_t<1, _ratio_rhs> &rhs) {
-  return electric_charge_t<1, _ratio_lhs>{
-      lhs.raw_value() * unit_cast<time_t<1, _ratio_lhs>>(rhs).raw_value()};
+  return unit_cast<electric_charge_t<1, _ratio_lhs>>(
+      electric_charge_t<1, std::ratio_multiply<_ratio_lhs, _ratio_rhs>>{
+          lhs.raw_value() * rhs.raw_value()});
 }
 
+/// multiply  seconds wit Amperes result is Coulomb
+/// @todo get rid of double unit cast
 template <typename _ratio_lhs, typename _ratio_rhs>
 constexpr auto operator*(const time_t<1, _ratio_lhs> &lhs,
                          const electric_current_t<1, _ratio_rhs> &rhs) {
-  return unit_cast<electric_current_t<1, _ratio_lhs>>(rhs) * lhs;
+  return unit_cast<electric_charge_t<1, _ratio_lhs>>(rhs * lhs);
 }
 } // namespace SI

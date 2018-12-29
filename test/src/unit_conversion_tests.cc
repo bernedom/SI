@@ -49,17 +49,16 @@ TEST_CASE("GIVEN values for I and T AND ratio is not the same WHEN multiplied "
                                  decltype(current)::ratio>::value,
                 "Ratio is the same");
 
-  static_assert(result.raw_value() == 2000000, "value is calculated in "
-                                               "millis");
+  static_assert(result.raw_value() == 2000, "value is calculated in "
+                                            "millis");
+
   static_assert(std::ratio_equal<decltype(result_commutative)::ratio,
                                  decltype(t)::ratio>::value,
                 "Ratio is the same");
+
   static_assert(result_commutative.raw_value() == 2,
                 "value is calculated in ratio 1");
 
-  // since the cast happens before the calculation the results are not
-  // commutative when comparing values as 1000mA * 2_s is translated to 1000mA *
-  // 2000_ms
-  static_assert(result_commutative != result,
+  static_assert(result_commutative == result,
                 "Commutative operations are equal");
 }
