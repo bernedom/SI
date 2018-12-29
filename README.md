@@ -8,6 +8,29 @@ This is a learning project to figure out modern C++ user defined literals and pr
 
 The goal is to provide as many conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) as possible with strong type safety already during compile time. 
 
+## State of implentation
+
+### SI Base units
+
+| Unit                      | Dimension Symbol | Unit Symbol | implemented ratios |
+| ------------------------- | ---------------- | ----------- | ------------------ |
+| Length                    | L                | m           | mm, cm, m, km      |
+| Time                      | T                | s           | us, ms, s, min, h  |
+| Mass                      | M                | kg          | g, kg              |
+| Electric current          | I                | V           | mV, V, kV          |
+| Thermodynamic temperature | Θ (Rho)          | K           | Not implemented    |
+| Amount of substance       | N                | mol         | Not implemented    |
+| Luminous Intensity        | J                | cd          | Not implemented    |
+
+
+### Derived units
+
+Only implemented ones are listed
+
+| Unit            | Dimension Symbol | Unit Symbol | built from | implemented ratios |
+| --------------- | ---------------- | ----------- | ---------- | ------------------ |
+| Electric charge | Q                | C           | I * T      | mC, C, kC          |
+
 ## A word on testing 
 
 I'm using a more or less strict TDD for implementing the functionality. First to check wheter the code actually does what I want it to do, but also as a way to set examples how this is used. The nice benefit of it being, that I'm dogfooding the library to myself while developing. I'm using [Catch2](https://github.com/catchorg/Catch2) as a unit-testing framework, however since the goal is to be able to do as much as possible during compile time most of the tests are performed as `static_asserts` rather than using the functionality delivered by catch2. 
