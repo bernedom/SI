@@ -62,3 +62,14 @@ TEST_CASE("GIVEN values for I and T AND ratio is not the same WHEN multiplied "
   static_assert(result_commutative == result,
                 "Commutative operations are equal");
 }
+
+TEST_CASE("GIVEN electric charge Q WHEN divided by electric current I THEN "
+          "result is time t") {
+  constexpr auto charge = 2_C;
+  constexpr auto current = 2_A;
+  constexpr auto result = charge / current;
+
+  static_assert(
+      std::is_same<decltype(result), const SI::time_t<1, std::ratio<1>>>::value,
+      "Result is of type t");
+}
