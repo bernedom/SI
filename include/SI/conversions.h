@@ -31,9 +31,13 @@ constexpr auto operator*(const time_t<1, _ratio_lhs> &lhs,
   return unit_cast<electric_charge_t<1, _ratio_lhs>>(rhs * lhs);
 }
 
+// divide charge with current, result is always seconds, regardless of ratios as
+// input
 template <typename _ratio_lhs, typename _ratio_rhs>
 constexpr auto operator/(const electric_charge_t<1, _ratio_lhs> &lhs,
                          const electric_current_t<1, _ratio_rhs> &rhs) {
-  return time_t<1, _ratio_lhs>{lhs.raw_value() / rhs.raw_value()};
+  return time_t<1>{
+      unit_cast<electric_charge_t<1, std::ratio<1>>>(lhs).raw_value() /
+      unit_cast<electric_current_t<1, std::ratio<1>>>(rhs).raw_value()};
 }
 } // namespace SI

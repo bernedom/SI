@@ -79,14 +79,13 @@ TEST_CASE("GIVEN electric charge Q with ratio<1> WHEN divided by electric "
 
 TEST_CASE("GIVEN electric charge Q with ratio<1000,1> WHEN divided by electric "
           "current I with ratio<1> THEN "
-          "result is time t with ratio <1000,1>") {
-  constexpr auto charge = 8_kC;
-  constexpr auto current = 4_A;
+          "result is time t with ratio <1,1> (s)") {
+  constexpr auto charge = 8_MC;
+  constexpr auto current = 4000_A;
   constexpr auto result = charge / current;
 
   static_assert(
-      std::is_same<decltype(result), const SI::time_t<1, std::kilo>>::value,
+      std::is_same<decltype(result), const SI::time_t<1, std::ratio<1>>>::value,
       "Result is of type t");
-
-  static_assert(result.raw_value() == 2, "Is 2");
+  static_assert(result.raw_value() == 2000, "Is 2000");
 }
