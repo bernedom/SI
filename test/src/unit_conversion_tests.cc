@@ -77,15 +77,44 @@ TEST_CASE("GIVEN electric charge Q with ratio<1> WHEN divided by electric "
   static_assert(result.raw_value() == 2, "Is 2");
 }
 
-TEST_CASE("GIVEN electric charge Q with ratio<1000,1> WHEN divided by electric "
-          "current I with ratio<1> THEN "
-          "result is time t with ratio <1,1> (s)") {
+TEST_CASE(
+    "GIVEN electric charge Q with ratio<1000000,1> WHEN divided by electric "
+    "current I with ratio<1> THEN "
+    "result is time t with ratio <1,1> (s)") {
   constexpr auto charge = 8_MC;
   constexpr auto current = 4000_A;
   constexpr auto result = charge / current;
 
   static_assert(
       std::is_same<decltype(result), const SI::time_t<1, std::ratio<1>>>::value,
-      "Result is of type t");
+      "Result is of type T");
   static_assert(result.raw_value() == 2000, "Is 2000");
+}
+
+TEST_CASE("GIVEN electric charge Q with ratio<1> WHEN divided by time T in "
+          "seconds THEN result is electric current I with ratio<1>") {
+  constexpr auto charge = 4_C;
+  constexpr auto time = 2_s;
+  constexpr auto result = charge / time;
+
+  static_assert(
+      std::is_same<decltype(result),
+                   const SI::electric_current_t<1, std::ratio<1>>>::value,
+      "Result is electric current");
+  static_assert(result == SI::electric_current_t<1, std::ratio<1>>{2},
+                "result is 2A");
+}
+
+TEST_CASE("GIVEN electric charge Q with ratio<1000,1> WHEN divided by time T "
+          "with ratio <60,1> (min) THEN result is 33A") {
+  constexpr auto charge = 4_kC;
+  constexpr auto time = 2_min;
+  constexpr auto result = charge / time;
+
+  static_assert(
+      std::is_same<decltype(result),
+                   const SI::electric_current_t<1, std::ratio<1>>>::value,
+      "Result is of type T");
+
+  static_assert(result.raw_value() == 33, "Is 33A");
 }

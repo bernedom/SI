@@ -40,4 +40,12 @@ constexpr auto operator/(const electric_charge_t<1, _ratio_lhs> &lhs,
       unit_cast<electric_charge_t<1, std::ratio<1>>>(lhs).raw_value() /
       unit_cast<electric_current_t<1, std::ratio<1>>>(rhs).raw_value()};
 }
+
+template <typename _ratio_lhs, typename _ratio_rhs>
+constexpr auto operator/(const electric_charge_t<1, _ratio_lhs> &lhs,
+                         const time_t<1, _ratio_rhs> &rhs) {
+  return electric_current_t<1, std::ratio<1>>{
+      unit_cast<electric_charge_t<1, std::ratio<1>>>(lhs).raw_value() /
+      unit_cast<time_t<1, std::ratio<1>>>(rhs).raw_value()};
+}
 } // namespace SI
