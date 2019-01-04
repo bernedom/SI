@@ -4,7 +4,15 @@
 
 #include <SI/conversions.h>
 
-// stream operator needed to expand in test output
+namespace {
+/// helper template to compare variable-types ignoring const
+template <typename _lhs_T, typename _rhs_T>
+struct is_same_ignore_const
+    : std::is_same<typename std::remove_const<_lhs_T>::type,
+                   typename std::remove_const<_rhs_T>::type> {};
+
+} // namespace
+
 using namespace SI::literals;
 
 TEST_CASE("GIVEN values electric current (I) and a time (T) WHEN multiplied "
@@ -14,13 +22,10 @@ TEST_CASE("GIVEN values electric current (I) and a time (T) WHEN multiplied "
   constexpr auto result = current * time;
   constexpr auto result_commutative = time * current;
 
+  static_assert(is_same_ignore_const<decltype(result), decltype(1_C)>::value,
+                "Result is electric charge");
   static_assert(
-      std::is_same<decltype(result),
-                   const SI::electric_charge_t<1, std::ratio<1>>>::value,
-      "Result is electric charge");
-  static_assert(
-      std::is_same<decltype(result_commutative),
-                   const SI::electric_charge_t<1, std::ratio<1>>>::value,
+      is_same_ignore_const<decltype(result_commutative), decltype(1_C)>::value,
       "Result is electric charge");
   static_assert(result == result_commutative,
                 "Commutative operations are equal");
@@ -70,9 +75,8 @@ TEST_CASE("GIVEN electric charge Q with ratio<1> WHEN divided by electric "
   constexpr auto current = 4_A;
   constexpr auto result = charge / current;
 
-  static_assert(
-      std::is_same<decltype(result), const SI::time_t<1, std::ratio<1>>>::value,
-      "Result is of type t");
+  static_assert(is_same_ignore_const<decltype(result), decltype(1_s)>::value,
+                "Result is of type T (s)");
 
   static_assert(result.raw_value() == 2, "Is 2");
 }
@@ -85,9 +89,8 @@ TEST_CASE(
   constexpr auto current = 4000_A;
   constexpr auto result = charge / current;
 
-  static_assert(
-      std::is_same<decltype(result), const SI::time_t<1, std::ratio<1>>>::value,
-      "Result is of type T");
+  static_assert(is_same_ignore_const<decltype(result), decltype(1_s)>::value,
+                "Result is of type T");
   static_assert(result.raw_value() == 2000, "Is 2000");
 }
 
@@ -97,12 +100,9 @@ TEST_CASE("GIVEN electric charge Q with ratio<1> WHEN divided by time T in "
   constexpr auto time = 2_s;
   constexpr auto result = charge / time;
 
-  static_assert(
-      std::is_same<decltype(result),
-                   const SI::electric_current_t<1, std::ratio<1>>>::value,
-      "Result is electric current");
-  static_assert(result == SI::electric_current_t<1, std::ratio<1>>{2},
-                "result is 2A");
+  static_assert(is_same_ignore_const<decltype(result), decltype(1_A)>::value,
+                "Result is electric current");
+  static_assert(result == 2_A, "result is 2A");
 }
 
 TEST_CASE("GIVEN electric charge Q with ratio<1000,1> WHEN divided by time T "
@@ -111,10 +111,8 @@ TEST_CASE("GIVEN electric charge Q with ratio<1000,1> WHEN divided by time T "
   constexpr auto time = 2_min;
   constexpr auto result = charge / time;
 
-  static_assert(
-      std::is_same<decltype(result),
-                   const SI::electric_current_t<1, std::ratio<1>>>::value,
-      "Result is of type T");
+  static_assert(is_same_ignore_const<decltype(result), decltype(1_A)>::value,
+                "Result is of type T");
 
   static_assert(result.raw_value() == 33, "Is 33A");
 }
