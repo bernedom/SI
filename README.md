@@ -17,19 +17,19 @@ The goal is to provide as many conversions and arithmetic operations with values
 | Length                    | L                | m           | mm, cm, m, km      |
 | Time                      | T                | s           | us, ms, s, min, h  |
 | Mass                      | M                | kg          | g, kg              |
-| Electric current          | I                | V           | mV, V, kV          |
-| Thermodynamic temperature | Θ (Rho)          | K           | Not implemented    |
+| Electric current          | I                | A           | mA, A, kA, MA      |
+| Thermodynamic temperature | Θ (Theta)        | K           | Not implemented    |
 | Amount of substance       | N                | mol         | Not implemented    |
 | Luminous Intensity        | J                | cd          | Not implemented    |
 
 
 ### Derived units
 
-Only implemented ones are listed
+Only implemented ones are listed. All units that can be built from other units are also decayable to the respective units by inversing the mathematical operation. I.e if `Q = I * T` then `Q / I = T` and `Q / T = I`
 
 | Unit            | Dimension Symbol | Unit Symbol | built from | implemented ratios |
 | --------------- | ---------------- | ----------- | ---------- | ------------------ |
-| Electric charge | Q                | C           | I * T      | mC, C, kC          |
+| Electric charge | Q                | C           | I * T      | mC, C, kC, MC      |
 
 ## A word on testing 
 
