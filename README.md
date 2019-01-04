@@ -14,7 +14,6 @@ A quick example:
   constexpr auto one_kilogramm = 1_kg;
   constexpr auto ten_coulomb = 5.0_A * 2.0_s;
   constexpr auto half_an_ampere = ten_coulomb / 20.0_s;
-
 ```
 
 This is a learning project to figure out modern C++ user defined literals and probably some template and type-traits magic as well. 
@@ -35,7 +34,7 @@ The goal is to provide as many conversions and arithmetic operations with values
 | Amount of substance        | N                | mol         | mmol, mol, kmol    |
 | Luminous Intensity         | J                | cd          | mcd, cd, kcd       |
 
-* The dimension symbol for thermodynamic temperature should be `Θ (Theta)` but the current implementation does not allow for non-ASCII symbols or multi-char symbols
+\* The dimension symbol for thermodynamic temperature should be `Θ (Theta)` but the current implementation does not allow for non-ASCII symbols or multi-char symbols
 
 ### Derived units
 
