@@ -2,7 +2,20 @@
 
 
 # SI
-A header only c++ library that uses user defined literals to help with SI-unit conversion at compile time. 
+A header only c++ library that uses user defined literals to help with SI-unit conversion at compile time.
+
+A quick example: 
+```cpp
+  #include <SI/mass.h>
+  #include <SI/electic_charge.h>
+
+  using SI::literals;
+
+  constexpr auto one_kilogramm = 1_kg;
+  constexpr auto ten_coulomb = 5.0_A * 2.0_s;
+  constexpr auto half_an_ampere = ten_coulomb / 20.0_s;
+
+```
 
 This is a learning project to figure out modern C++ user defined literals and probably some template and type-traits magic as well. 
 
@@ -12,16 +25,17 @@ The goal is to provide as many conversions and arithmetic operations with values
 
 ### SI Base units
 
-| Unit                      | Dimension Symbol | Unit Symbol | implemented ratios |
-| ------------------------- | ---------------- | ----------- | ------------------ |
-| Length                    | L                | m           | mm, cm, m, km      |
-| Time                      | T                | s           | us, ms, s, min, h  |
-| Mass                      | M                | kg          | g, kg              |
-| Electric current          | I                | A           | mA, A, kA, MA      |
-| Thermodynamic temperature | Θ (Theta)        | K           | Not implemented    |
-| Amount of substance       | N                | mol         | Not implemented    |
-| Luminous Intensity        | J                | cd          | Not implemented    |
+| Unit                       | Dimension Symbol | Unit Symbol | implemented ratios |
+| -------------------------- | ---------------- | ----------- | ------------------ |
+| Length                     | L                | m           | mm, cm, m, km      |
+| Time                       | T                | s           | us, ms, s, min, h  |
+| Mass                       | M                | kg          | mg, g, kg          |
+| Electric current           | I                | A           | mA, A, kA, MA      |
+| Thermodynamic temperature* | t                | K           | mK, K, kK          |
+| Amount of substance        | N                | mol         | mmol, mol, kmol    |
+| Luminous Intensity         | J                | cd          | mcd, cd, kcd       |
 
+* The dimension symbol for thermodynamic temperature should be `Θ (Theta)` but the current implementation does not allow for non-ASCII symbols or multi-char symbols
 
 ### Derived units
 

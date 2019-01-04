@@ -3,6 +3,7 @@
 
 namespace SI {
 
+/// @todo find a way to encapuslate unit symbol Theta
 template <char _Exponent = 1, class _Ratio = std::ratio<1>,
           typename _Type = int64_t>
 using thermodynamic_temperature_t = unit_t<'t', _Exponent, _Ratio, _Type>;
