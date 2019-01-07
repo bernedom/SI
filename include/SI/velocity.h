@@ -10,8 +10,6 @@ template <char _Exponent = 1, class _Ratio = std::ratio<1>,
           typename _Type = int64_t>
 using velocity = unit_t<'v', _Exponent, _Ratio, _Type>;
 
-/// multiply Amperes with seconds result is Coulomb
-/// @todo consider if this can be merged with unit_t::operator*
 template <typename _ratio_lhs, typename _ratio_rhs>
 constexpr auto operator/(const length_t<1, _ratio_lhs> &lhs,
                          const time_t<1, _ratio_rhs> &rhs) {
