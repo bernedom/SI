@@ -34,5 +34,26 @@ template <char... _Digits> constexpr auto operator"" _h() {
   return SI::detail::check_overflow<time_t<1, std::chrono::hours::period>,
                                     _Digits...>();
 }
+
+constexpr auto operator"" _us(long double us) {
+  return SI::time_t<1, std::chrono::microseconds::period, long double>{us};
+}
+
+constexpr auto operator"" _ms(long double ms) {
+  return SI::time_t<1, std::chrono::milliseconds::period, long double>{ms};
+}
+
+constexpr auto operator"" _s(long double s) {
+  return SI::time_t<1, std::chrono::seconds::period, long double>{s};
+}
+
+constexpr auto operator"" _min(long double min) {
+  return SI::time_t<1, std::chrono::minutes::period, long double>{min};
+}
+
+constexpr auto operator"" _h(long double h) {
+  return SI::time_t<1, std::chrono::hours::period, long double>{h};
+}
+
 } // namespace literals
 } // namespace SI
