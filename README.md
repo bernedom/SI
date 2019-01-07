@@ -7,7 +7,7 @@ A header only c++ library that uses user defined literals to help with SI-unit c
 A quick example: 
 ```cpp
   #include <SI/mass.h>
-  #include <SI/electic_charge.h>
+  #include <SI/electric_charge.h>
 
   using SI::literals;
 
@@ -43,6 +43,7 @@ Only implemented ones are listed. All units that can be built from other units a
 | Unit            | Dimension Symbol | Unit Symbol | built from | implemented ratios |
 | --------------- | ---------------- | ----------- | ---------- | ------------------ |
 | Electric charge | Q                | C           | I * T      | mC, C, kC, MC      |
+| Velocity        | v                | m/s         | L / T      | m/s km/h           |
 
 ## A word on testing 
 

@@ -16,7 +16,8 @@ add_executable(SI_Tests
                src/mass_tests.cc
                src/temperature_tests.cc
                src/substance_tests.cc
-               src/luminosity_tests.cc) 
+               src/luminosity_tests.cc
+               src/velocity_tests.cc) 
 target_include_directories(SI_Tests PRIVATE ${PROJECT_SOURCE_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/include)
 
 if(${CMAKE_VERSION} VERSION_LESS "3.8.0")

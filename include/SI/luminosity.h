@@ -3,7 +3,6 @@
 
 namespace SI {
 
-/// @todo find a way to encapuslate unit symbol Theta
 template <char _Exponent = 1, class _Ratio = std::ratio<1>,
           typename _Type = int64_t>
 using luminosity = unit_t<'J', _Exponent, _Ratio, _Type>;
