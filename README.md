@@ -45,6 +45,30 @@ Only implemented ones are listed. All units that can be built from other units a
 | Electric charge | Q                | C           | I * T      | mC, C, kC, MC      |
 | Velocity        | v                | m/s         | L / T      | m/s km/h           |
 
+# Building & compatibility
+
+SI is a header only libary that uses C++17 features. Building is tested using cmake > 3.5 and verified for g++7, g++8, clang5, clang6, clang7
+
+
+to build use 
+```
+mkdir build
+cd build
+cmake ..
+make -j $(nproc)
+```
+
+## Building the tests
+
+The tests use [Catch2](https://github.com/catchorg/Catch2) version 2.5 which relies on libstdc++8
+ 
+For ubuntu releases < 18.04 use:
+```
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt update
+sudo apt install libstdc++-8-dev
+```
+
 ## A word on testing 
 
 I'm using a more or less strict TDD for implementing the functionality. First to check wheter the code actually does what I want it to do, but also as a way to set examples how this is used. The nice benefit of it being, that I'm dogfooding the library to myself while developing. I'm using [Catch2](https://github.com/catchorg/Catch2) as a unit-testing framework, however since the goal is to be able to do as much as possible during compile time most of the tests are performed as `static_asserts` rather than using the functionality delivered by catch2. 

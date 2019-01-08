@@ -2,6 +2,7 @@
 
 #include <SI/unit.h>
 #include <ratio>
+#include <type_traits>
 
 using namespace SI;
 
