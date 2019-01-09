@@ -5,7 +5,8 @@
 
 using namespace SI::literals;
 
-TEST_CASE("m/s returns ratio 1 to 1") {
+TEST_CASE("m/s returns ratio 1 to 1")
+{
   constexpr auto one = 1_m / 1_s;
 
   static_assert(
@@ -14,12 +15,11 @@ TEST_CASE("m/s returns ratio 1 to 1") {
   static_assert(std::ratio_equal<std::ratio<1>, decltype(one)::ratio>::value,
                 "One s is 1 / 1");
 
-  // constexpr auto one_mf = 1.0_m;
-  // constexpr auto one_sf = 1.0_s;
-  // constexpr auto one_f = one_mf / one_sf;
-  // static_assert(std::ratio_equal<std::ratio<1>,
-  // decltype(one_f)::ratio>::value,
-  //               "One s is 1 / 1");
+  constexpr auto one_mf = 1.0_m;
+  constexpr auto one_sf = 1.0_s;
+  constexpr auto one_f = one_mf / one_sf;
+  static_assert(std::ratio_equal<std::ratio<1>, decltype(one_f)::ratio>::value,
+                "One s is 1 / 1");
 }
 
 // TEST_CASE("km/h returns ratio 1000 to 3600") {
