@@ -9,7 +9,6 @@ using namespace SI;
 TEST_CASE(
     "given two values with exponent 1 WHEN multiplied THEN exponent is 2") {
   constexpr unit_t<'X'> v1{0};
-  constexpr unit_t<'X'> v2{0};
 
   constexpr auto result = v1 * v1;
 

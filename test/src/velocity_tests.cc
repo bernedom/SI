@@ -5,8 +5,7 @@
 
 using namespace SI::literals;
 
-TEST_CASE("m/s returns ratio 1 to 1")
-{
+TEST_CASE("m/s returns ratio 1 to 1") {
   constexpr auto one = 1_m / 1_s;
 
   static_assert(
