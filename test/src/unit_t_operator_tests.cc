@@ -139,6 +139,17 @@ TEST_CASE("GIVEN a unit and a scalar WHEN scalar is divided by unit THEN unit "
                 "Exponent is negative");
 }
 
+TEST_CASE("GIVEN a unit and a scalar AND Scalar is of floating point type WHEN "
+          "scalar is divided by unit THEN unit "
+          "exponent is negative") {
+  constexpr long double v1{1.0};
+  constexpr unit_t<'X', 1, std::ratio<1>, long double> v2{1};
+  constexpr auto result = v1 / v2;
+
+  static_assert(decltype(result)::exponent::value == -1,
+                "Exponent is negative");
+}
+
 TEST_CASE("GIVEN a unit with ratio<1> and a scalar WHEN scalar is divided by "
           "unit THEN resulting  value is scalar / unit.value ") {
   constexpr int64_t v1{1000};

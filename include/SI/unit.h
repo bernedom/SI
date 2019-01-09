@@ -53,10 +53,12 @@ struct unit_t {
                       std::is_floating_point<internal_type>::value,
                   "Is integral or floating point");
 
-    if constexpr (std::is_integral<internal_type>::value) {
-      return unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
-                 .raw_value() == value_;
-    } else {
+    if
+      constexpr(std::is_integral<internal_type>::value) {
+        return unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
+                   .raw_value() == value_;
+      }
+    else {
       return std::abs(unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
                           .raw_value() -
                       value_) < std::numeric_limits<internal_type>::epsilon();
@@ -88,11 +90,14 @@ struct unit_t {
   /// multiply with a same unit
   /// resulting unit is the same as 'this'/left hand side of operation
   template <char _rhs_symbol, char _rhs_exponent, typename _rhs_Ratio,
+            typename _rhs_type,
             typename std::enable_if<_rhs_exponent != exponent::value>::type * =
                 nullptr,
-            typename std::enable_if<_rhs_symbol == _Symbol>::type * = nullptr>
+            typename std::enable_if<_rhs_symbol == _Symbol>::type * = nullptr,
+            typename std::enable_if<std::is_same<_Type, _rhs_type>::value>::type
+                * = nullptr>
   constexpr auto operator/(const unit_t<_rhs_symbol, _rhs_exponent, _rhs_Ratio,
-                                        internal_type> &rhs) const {
+                                        _rhs_type> &rhs) const {
     using rhs_t = typename std::remove_reference<decltype(rhs)>::type;
 
     return unit_t<symbol::value, exponent::value - rhs_t::exponent::value,
@@ -105,11 +110,14 @@ struct unit_t {
   /// scalar
   /// @todo use unit_cast internally
   template <char _rhs_symbol, char _rhs_exponent, typename _rhs_Ratio,
+            typename _rhs_type,
             typename std::enable_if<_rhs_exponent == exponent::value>::type * =
                 nullptr,
-            typename std::enable_if<_rhs_symbol == _Symbol>::type * = nullptr>
+            typename std::enable_if<_rhs_symbol == _Symbol>::type * = nullptr,
+            typename std::enable_if<std::is_same<_Type, _rhs_type>::value>::type
+                * = nullptr>
   constexpr _Type operator/(const unit_t<_rhs_symbol, _rhs_exponent, _rhs_Ratio,
-                                         internal_type> &rhs) const {
+                                         _rhs_type> &rhs) const {
 
     return raw_value() / rhs.raw_value();
   }
@@ -131,12 +139,12 @@ private:
 };
 
 /// operator to divide
-template <char _Symbol, char _Exponent, class _Ratio>
-constexpr auto operator/(int64_t lhs,
-                         const unit_t<_Symbol, _Exponent, _Ratio> &rhs) {
+template <char _Symbol, char _Exponent, class _Ratio, typename _Type = int64_t>
+constexpr auto operator/(_Type lhs,
+                         const unit_t<_Symbol, _Exponent, _Ratio, _Type> &rhs) {
 
-  return unit_cast<unit_t<_Symbol, -_Exponent, _Ratio>>(
-      unit_t<_Symbol, -_Exponent, std::ratio<1>>{
+  return unit_cast<unit_t<_Symbol, -_Exponent, _Ratio, _Type>>(
+      unit_t<_Symbol, -_Exponent, std::ratio<1>, _Type>{
           lhs / (rhs.raw_value() * (_Ratio::num / _Ratio::den))});
 }
 
