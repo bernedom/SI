@@ -224,11 +224,11 @@ TEST_CASE("GIVEN two units same absolute value AND different ratios WHEN "
   static_assert(!(v2 != v1), "values are equal");
 }
 
-TEST_CASE("GIVEN two units with same absolute value AND same ration WHEN "
+TEST_CASE("GIVEN two units with same absolute value AND same ratio WHEN "
           "compared with less than THEN result is false") {}
 
 TEMPLATE_TEST_CASE(
-    "GIVEN two units with same absolute value AND same ration WHEN "
+    "GIVEN two units with same absolute value AND same ratio WHEN "
     "compared with less than operator THEN result is false",
     "[unit_t][unit_cast]", int64_t, long double) {
 
@@ -238,12 +238,23 @@ TEMPLATE_TEST_CASE(
 }
 
 TEMPLATE_TEST_CASE(
-    "GIVEN two units v1 and v2 AND v1 is smaller than v2 AND same ration WHEN "
+    "GIVEN two units v1 and v2 AND v1 is smaller than v2 AND same ratio WHEN "
     "compared with less than operator THEN result is true",
     "[unit_t][unit_cast]", int64_t, long double) {
 
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{1};
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v2{0};
+
+  static_assert(v1 < v2, "Less than comparison is true");
+}
+
+TEMPLATE_TEST_CASE("GIVEN two units v1 and v2 AND v1 is smaller than v2 AND "
+                   "different ratio WHEN "
+                   "compared with less than operator THEN result is true",
+                   "[unit_t][unit_cast]", int64_t, long double) {
+
+  constexpr unit_t<'X', 1, std::kilo, TestType> v1{10};
+  constexpr unit_t<'X', 1, std::ratio<1>, TestType> v2{1000};
 
   static_assert(v1 < v2, "Less than comparison is true");
 }

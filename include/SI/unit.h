@@ -73,7 +73,8 @@ struct unit_t {
   template <class _rhs_Ratio>
   constexpr bool operator<(const unit_t<symbol::value, exponent::value,
                                         _rhs_Ratio, internal_type> &rhs) const {
-    return rhs.raw_value() < raw_value();
+    return unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
+               .raw_value() < raw_value();
   }
   /// multiply with a non-unit scalar
   constexpr unit_t operator*(const _Type f) const { return {value_ * f}; }
