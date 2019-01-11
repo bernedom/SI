@@ -194,7 +194,7 @@ TEST_CASE(
 }
 
 TEST_CASE("GIVEN two units with floating point types with value difference "
-          "smaller than type::epsilon WHEN compared "
+          "smaller than type::epsilon WHEN compared for equality "
           "THEN result is true") {
   constexpr unit_t<'X', 1, std::ratio<1>, long double> v1{0};
   constexpr unit_t<'X', 1, std::ratio<1>, long double> v2{
@@ -205,7 +205,7 @@ TEST_CASE("GIVEN two units with floating point types with value difference "
 }
 
 TEST_CASE("GIVEN two units with floating point types with value difference of "
-          "epsilon WHEN compared "
+          "epsilon WHEN compared for equality"
           "THEN result is false") {
   constexpr unit_t<'X', 1, std::ratio<1>, long double> v1{0};
   constexpr unit_t<'X', 1, std::ratio<1>, long double> v2{
@@ -216,10 +216,34 @@ TEST_CASE("GIVEN two units with floating point types with value difference of "
 }
 
 TEST_CASE("GIVEN two units same absolute value AND different ratios WHEN "
-          "compared THEN result in true") {
+          "compared for equality THEN result in true") {
   constexpr unit_t<'X', 1, std::milli> v1{1000};
   constexpr unit_t<'X', 1, std::ratio<1>> v2{1};
 
   static_assert(v1 == v2, "values are equal");
-  static_assert(v2 == v1, "values are equal");
+  static_assert(!(v2 != v1), "values are equal");
+}
+
+TEST_CASE("GIVEN two units with same absolute value AND same ration WHEN "
+          "compared with less than THEN result is false") {}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN two units with same absolute value AND same ration WHEN "
+    "compared with less than operator THEN result is false",
+    "[unit_t][unit_cast]", int64_t, long double) {
+
+  constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{1};
+
+  static_assert(!(v1 < v1), "Less than comparison is false");
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN two units v1 and v2 AND v1 is smaller than v2 AND same ration WHEN "
+    "compared with less than operator THEN result is true",
+    "[unit_t][unit_cast]", int64_t, long double) {
+
+  constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{1};
+  constexpr unit_t<'X', 1, std::ratio<1>, TestType> v2{0};
+
+  static_assert(v1 < v2, "Less than comparison is true");
 }

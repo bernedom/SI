@@ -53,12 +53,10 @@ struct unit_t {
                       std::is_floating_point<internal_type>::value,
                   "Is integral or floating point");
 
-    if
-      constexpr(std::is_integral<internal_type>::value) {
-        return unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
-                   .raw_value() == value_;
-      }
-    else {
+    if constexpr (std::is_integral<internal_type>::value) {
+      return unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
+                 .raw_value() == value_;
+    } else {
       return std::abs(unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
                           .raw_value() -
                       value_) < std::numeric_limits<internal_type>::epsilon();
@@ -70,6 +68,12 @@ struct unit_t {
   operator!=(const unit_t<symbol::value, exponent::value, _rhs_Ratio,
                           internal_type> &rhs) const {
     return !(*this == rhs);
+  }
+
+  template <class _rhs_Ratio>
+  constexpr bool operator<(const unit_t<symbol::value, exponent::value,
+                                        _rhs_Ratio, internal_type> &rhs) const {
+    return rhs.raw_value() < raw_value();
   }
   /// multiply with a non-unit scalar
   constexpr unit_t operator*(const _Type f) const { return {value_ * f}; }
