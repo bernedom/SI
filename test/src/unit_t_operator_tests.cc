@@ -172,24 +172,26 @@ TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar WHEN scalar is dived "
   static_assert(result == expected, "1000 / 20 = 50");
 }
 
-TEST_CASE("GIVEN a unit WHEN added to itself THEN resulting value value * 2") {
-  constexpr unit_t<'X', 1, std::ratio<1>> v1{1};
+TEMPLATE_TEST_CASE(
+    "GIVEN a unit WHEN added to itself THEN resulting value value * 2",
+    "[unit_t][unit_cast]", int64_t, long double) {
+  constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{1};
   constexpr auto result = v1 + v1;
 
   static_assert(result.raw_value() == 2, "Result is raw_value * 2");
 }
 
-TEST_CASE(
+TEMPLATE_TEST_CASE(
     "GIVEN two units with different ratios WHEN added together THEN result is "
-    "lhs + rhs with ratio considered AND result is of ratio of lhs") {
-  constexpr unit_t<'X', 1, std::ratio<1>> v1{1};
-  constexpr unit_t<'X', 1, std::kilo> v2{1};
+    "lhs + rhs with ratio considered AND result is of ratio of lhs",
+    "[unit_t][unit_cast]", int64_t, long double) {
+  constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{1};
+  constexpr unit_t<'X', 1, std::kilo, TestType> v2{1};
 
   constexpr auto result = v1 + v2;
-  static_assert(
-      std::ratio_equal<decltype(result)::ratio, decltype(v1)::ratio>::value ==
-          true,
-      "ratio is of same ratio as left hand side");
+  static_assert(std::ratio_equal<typename decltype(result)::ratio,
+                                 typename decltype(v1)::ratio>::value == true,
+                "ratio is of same ratio as left hand side");
   static_assert(result.raw_value() == 1001, "Result is correct");
 }
 
