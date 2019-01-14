@@ -187,6 +187,7 @@ constexpr auto unit_cast(const _rhs_T &rhs) {
       "is of type unit_t or a derived class");
   using conversion_ratio =
       std::ratio_divide<typename _rhs_T::ratio, typename _T::ratio>;
+
   return _T{(rhs.raw_value() * conversion_ratio::num / conversion_ratio::den)};
 }
 

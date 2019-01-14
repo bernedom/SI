@@ -7,7 +7,8 @@
 using namespace SI;
 
 /// @todo add tests for operator == to check against raw value
-/// @tood check operator == for dloating point
+/// @todo check operator == for dloating point, consider disabling in favor of
+/// an epsequal function
 
 TEMPLATE_TEST_CASE(
     "given two values with exponent 1 WHEN multiplied THEN exponent is 2",
@@ -84,25 +85,27 @@ TEST_CASE(
                 "left hand side binds unit");
 }
 
-/*
 TEST_CASE(
     "given two units with different values AND ratio of rhs is small AND type "
     "is floating point WHEN "
     "multiplied THEN resulting type is of left hand side and value is a "
-    "fraction") {
+    "fraction but does not match epsilon") {
 
   constexpr unit_t<'X', 1, std::ratio<1>, long double> v1{2};
   constexpr unit_t<'X', 1, std::milli, long double> v2{20};
 
   constexpr auto result = v1 * v2;
 
-  REQUIRE(result == unit_t<'X', 2, std::ratio<1>, long double>{0.1});
-  // static_assert(result == unit_t<'X', 2, std::ratio<1>, long double>{0.06},
-  //               "value matches");
+  constexpr auto expected =
+      v1 * unit_cast<unit_t<'X', 1, std::ratio<1>, long double>>(v2);
+
+  static_assert(result != unit_t<'X', 2, std::ratio<1>, long double>{0.04},
+                "value matches");
+  static_assert(result == expected, "value matches");
   static_assert(std::ratio_equal<typename decltype(result)::ratio,
                                  typename decltype(v1)::ratio>::value,
                 "left hand side binds unit");
-}*/
+}
 
 TEMPLATE_TEST_CASE("GIVEN two units with different exponents WHEN divided THEN "
                    "resulting exopnent is left exponent - right exponent",
