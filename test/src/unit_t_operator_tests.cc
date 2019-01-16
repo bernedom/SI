@@ -12,7 +12,7 @@ using namespace SI;
 
 TEMPLATE_TEST_CASE(
     "given two values with exponent 1 WHEN multiplied THEN exponent is 2",
-    "[unit_t][unit_cast]", int64_t, long double) {
+    "[unit_t][operator*]", int64_t, long double) {
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{0};
 
   constexpr auto result = v1 * v1;
@@ -25,7 +25,7 @@ TEMPLATE_TEST_CASE(
     "given two units with different non-negative values AND same ratio "
     "AND same unit WHEN "
     "multiplied THEN resulting value is correct",
-    "[unit_t][unit_cast]", int64_t, long double) {
+    "[unit_t][operator*]", int64_t, long double) {
 
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{20};
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v2{30};
@@ -40,7 +40,7 @@ TEMPLATE_TEST_CASE(
     "given two units with different non-negative values AND different ratio "
     "AND same unit WHEN "
     "multiplied THEN resulting value is correct",
-    "[unit_t][unit_cast]", int64_t, long double) {
+    "[unit_t][operator*]", int64_t, long double) {
 
   constexpr unit_t<'X', 1, std::deci, TestType> v1{2};
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v2{30};
@@ -54,7 +54,7 @@ TEMPLATE_TEST_CASE(
 TEMPLATE_TEST_CASE("given two units with different values AND different ratio "
                    "AND same unit WHEN "
                    "multiplied THEN resulting value is correct",
-                   "[unit_t][unit_cast]", int64_t, long double) {
+                   "[unit_t][operator*]", int64_t, long double) {
 
   constexpr unit_t<'X', 1, std::deci, TestType> v1{2};
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v2{-30};
@@ -71,7 +71,8 @@ TEMPLATE_TEST_CASE("given two units with different values AND different ratio "
 TEST_CASE(
     "given two units with different values AND ratio of rhs is small AND type "
     "is integer WHEN "
-    "multiplied THEN resulting type is of left hand side and value is 0") {
+    "multiplied THEN resulting type is of left hand side and value is 0",
+    "[unit_t][operator*]") {
 
   constexpr unit_t<'X', 1, std::ratio<1>, int64_t> v1{2};
   constexpr unit_t<'X', 1, std::milli, int64_t> v2{30};
@@ -89,7 +90,8 @@ TEST_CASE(
     "given two units with different values AND ratio of rhs is small AND type "
     "is floating point WHEN "
     "multiplied THEN resulting type is of left hand side and value is a "
-    "fraction but does not match epsilon") {
+    "fraction but does not match epsilon",
+    "[unit_t][operator*]") {
 
   constexpr unit_t<'X', 1, std::ratio<1>, long double> v1{2};
   constexpr unit_t<'X', 1, std::milli, long double> v2{20};
@@ -109,7 +111,7 @@ TEST_CASE(
 
 TEMPLATE_TEST_CASE("GIVEN two units with different exponents WHEN divided THEN "
                    "resulting exopnent is left exponent - right exponent",
-                   "[unit_t][unit_cast]", int64_t, long double) {
+                   "[unit_t][operator/]", int64_t, long double) {
   constexpr unit_t<'X', 3, std::ratio<1>, TestType> v1{1};
   constexpr unit_t<'X', 2, std::ratio<1>, TestType> v2{1};
 
@@ -121,7 +123,7 @@ TEMPLATE_TEST_CASE("GIVEN two units with different exponents WHEN divided THEN "
 
 TEMPLATE_TEST_CASE(
     "GIVEN two units with exponent 1 WHEN divided result in a raw integer",
-    "[unit_t][unit_cast]", int64_t, long double) {
+    "[unit_t][operator/]", int64_t, long double) {
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{1};
   constexpr auto result = v1 / v1;
 
@@ -133,7 +135,8 @@ TEMPLATE_TEST_CASE(
 /// @ Todo add floating point test
 TEST_CASE("GIVEN two units with the same ratio exponent 1  WHEN divided result "
           "is lhs.value / "
-          "rhs.value") {
+          "rhs.value",
+          "[unit_t][operator/]") {
   constexpr unit_t<'X', 1, std::ratio<1>> v1{1000};
   constexpr unit_t<'X', 1, std::ratio<1>> v2{10};
   constexpr auto result = v1 / v2;
@@ -147,7 +150,7 @@ TEST_CASE("GIVEN two units with the same ratio exponent 1  WHEN divided result "
 TEMPLATE_TEST_CASE(
     "GIVEN a unit and a scalar WHEN scalar is divided by unit THEN unit "
     "exponent is negative",
-    "[unit_t][unit_cast]", int64_t, long double) {
+    "[unit_t][operator/]", int64_t, long double) {
   constexpr TestType v1{1};
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v2{1};
   constexpr auto result = v1 / v2;
@@ -158,7 +161,8 @@ TEMPLATE_TEST_CASE(
 
 //// @ todo add test for floating point
 TEST_CASE("GIVEN a unit with ratio<1> and a scalar WHEN scalar is divided by "
-          "unit THEN resulting  value is scalar / unit.value ") {
+          "unit THEN resulting  value is scalar / unit.value",
+          "[unit_t][operator/]") {
   constexpr int64_t v1{1000};
   constexpr unit_t<'X', 1, std::ratio<1>> v2{2};
   constexpr auto result = v1 / v2;
@@ -168,7 +172,8 @@ TEST_CASE("GIVEN a unit with ratio<1> and a scalar WHEN scalar is divided by "
 
 /// @todo add test for floating point
 TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar WHEN scalar is dived "
-          "by unit THEN resulting value is adjusted by ratio") {
+          "by unit THEN resulting value is adjusted by ratio",
+          "[unit_t][operator/]") {
   constexpr int64_t v1{1000};
   constexpr unit_t<'X', 1, std::deca> v2{2};
 
@@ -183,7 +188,7 @@ TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar WHEN scalar is dived "
 
 TEMPLATE_TEST_CASE(
     "GIVEN a unit WHEN added to itself THEN resulting value value * 2",
-    "[unit_t][unit_cast]", int64_t, long double) {
+    "[unit_t][operator+]", int64_t, long double) {
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{1};
   constexpr auto result = v1 + v1;
 
@@ -193,7 +198,7 @@ TEMPLATE_TEST_CASE(
 TEMPLATE_TEST_CASE(
     "GIVEN two units with different ratios WHEN added together THEN result is "
     "lhs + rhs with ratio considered AND result is of ratio of lhs",
-    "[unit_t][unit_cast]", int64_t, long double) {
+    "[unit_t][operator+]", int64_t, long double) {
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{1};
   constexpr unit_t<'X', 1, std::kilo, TestType> v2{1};
 
@@ -206,7 +211,8 @@ TEMPLATE_TEST_CASE(
 
 TEST_CASE("GIVEN two units with floating point types with value difference "
           "smaller than type::epsilon WHEN compared for equality "
-          "THEN result is true") {
+          "THEN result is true",
+          "[unit_t][operator==]") {
   constexpr unit_t<'X', 1, std::ratio<1>, long double> v1{0};
   constexpr unit_t<'X', 1, std::ratio<1>, long double> v2{
       std::numeric_limits<long double>::epsilon() / 2.0};
@@ -217,7 +223,8 @@ TEST_CASE("GIVEN two units with floating point types with value difference "
 
 TEST_CASE("GIVEN two units with floating point types with value difference of "
           "epsilon WHEN compared for equality"
-          "THEN result is false") {
+          "THEN result is false",
+          "[unit_t][operator==]") {
   constexpr unit_t<'X', 1, std::ratio<1>, long double> v1{0};
   constexpr unit_t<'X', 1, std::ratio<1>, long double> v2{
       std::numeric_limits<long double>::epsilon()};
@@ -227,7 +234,8 @@ TEST_CASE("GIVEN two units with floating point types with value difference of "
 }
 
 TEST_CASE("GIVEN two units same absolute value AND different ratios WHEN "
-          "compared for equality THEN result in true") {
+          "compared for equality THEN result in true",
+          "[unit_t][operator==]") {
   constexpr unit_t<'X', 1, std::milli> v1{1000};
   constexpr unit_t<'X', 1, std::ratio<1>> v2{1};
 
@@ -238,7 +246,7 @@ TEST_CASE("GIVEN two units same absolute value AND different ratios WHEN "
 TEMPLATE_TEST_CASE(
     "GIVEN two units with same absolute value AND same ratio WHEN "
     "compared with less than operator THEN result is false",
-    "[unit_t][unit_cast]", int64_t, long double) {
+    "[unit_t][operator<]", int64_t, long double) {
 
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{1};
 
@@ -248,7 +256,7 @@ TEMPLATE_TEST_CASE(
 TEMPLATE_TEST_CASE(
     "GIVEN two units v1 and v2 AND v1 is smaller than v2 AND same ratio WHEN "
     "compared with less than operator THEN result is true",
-    "[unit_t][unit_cast]", int64_t, long double) {
+    "[unit_t][operator<]", int64_t, long double) {
 
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{1};
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v2{0};
@@ -270,7 +278,7 @@ TEMPLATE_TEST_CASE("GIVEN two units v1 and v2 AND v1 is smaller than v2 AND "
 TEMPLATE_TEST_CASE(
     "GIVEN two units with same absolute value AND same ratio WHEN "
     "compared with greater than operator THEN result is false",
-    "[unit_t][unit_cast]", int64_t, long double) {
+    "[unit_t][operator>]", int64_t, long double) {
 
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{1};
 
@@ -280,7 +288,7 @@ TEMPLATE_TEST_CASE(
 TEMPLATE_TEST_CASE(
     "GIVEN two units with same absolute value AND differnt ratio WHEN "
     "compared with greater than operator THEN result is false",
-    "[unit_t][unit_cast]", int64_t, long double) {
+    "[unit_t][operator>]", int64_t, long double) {
 
   constexpr unit_t<'X', 1, std::kilo, TestType> v1{1};
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v2{1000};
@@ -291,7 +299,7 @@ TEMPLATE_TEST_CASE(
 TEMPLATE_TEST_CASE(
     "GIVEN two units v1 and v2 AND v1 is smaller than v2 AND same ratio WHEN "
     "compared with greater than operator THEN result is true",
-    "[unit_t][unit_cast]", int64_t, long double) {
+    "[unit_t][operator>]", int64_t, long double) {
 
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{1};
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v2{0};
@@ -302,7 +310,7 @@ TEMPLATE_TEST_CASE(
 TEMPLATE_TEST_CASE("GIVEN two units v1 and v2 AND v1 is smaller than v2 AND "
                    "different ratio WHEN "
                    "compared with greater than operator THEN result is true",
-                   "[unit_t][unit_cast]", int64_t, long double) {
+                   "[unit_t][operator>]", int64_t, long double) {
 
   constexpr unit_t<'X', 1, std::kilo, TestType> v1{10};
   constexpr unit_t<'X', 1, std::ratio<1>, TestType> v2{1000};
