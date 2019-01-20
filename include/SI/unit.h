@@ -10,6 +10,8 @@ namespace SI {
 template <typename _T, typename _rhs_T>
 constexpr auto unit_cast(const _rhs_T &rhs);
 
+template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
+
 /**
  * @brief base template class for holding values of type _Type to be multiplied
  *with a ratio _Ratio
@@ -190,5 +192,31 @@ constexpr auto unit_cast(const _rhs_T &rhs) {
 
   return _T{(rhs.raw_value() * conversion_ratio::num / conversion_ratio::den)};
 }
+
+/// @todo consider specializing std::common type
+/// as described here
+/// https://stackoverflow.com/questions/36523038/stdcommon-type-trait-for-user-defined-types
+/// or as std::chrono does
+template <typename _ratio_lhs, typename _ratio_rhs> struct ratio_gcd {
+private:
+  typedef std::__static_gcd<_ratio_lhs::num, _ratio_rhs::num> __gcd_num;
+  typedef std::__static_gcd<_ratio_lhs::den, _ratio_rhs::den> __gcd_den;
+
+public:
+  typedef std::ratio<__gcd_num::value,
+                     (_ratio_lhs::den / __gcd_den::value) * _ratio_rhs::den>
+      ratio;
+};
+
+template <typename _unit_lhs, typename _unit_rhs>
+struct unit_with_common_ratio {
+  static_assert(is_unit_t<_unit_lhs>::value, "only supported for SI::unit_t");
+  static_assert(is_unit_t<_unit_rhs>::value, "only supported for SI::unit_t");
+  typedef unit_t<_unit_lhs::symbol::value, _unit_lhs::exponent::value,
+                 typename ratio_gcd<typename _unit_lhs::ratio,
+                                    typename _unit_rhs::ratio>::ratio,
+                 typename _unit_lhs::internal_type>
+      type;
+};
 
 } // namespace SI

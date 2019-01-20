@@ -51,3 +51,20 @@ TEMPLATE_TEST_CASE(
       "Casted to correct unit");
   static_assert(result.raw_value() == 1, "value adjusted for ratio");
 }
+
+TEMPLATE_TEST_CASE(
+    "GIVEN two units of the same symbol AND with same type AND with different "
+    "ratios WHEN executed with common type THEN ratio of resulting type is "
+    "greatest common denominator of the two input ratios",
+    "[unit_t][common_type]", int64_t, long double) {
+
+  constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{1};
+  constexpr unit_t<'X', 1, std::milli, TestType> v2{1};
+
+  using result_type =
+      typename unit_with_common_ratio<decltype(v1), decltype(v2)>::type;
+
+  static_assert(
+      std::is_same<result_type, unit_t<'X', 1, std::milli, TestType>>::value,
+      "resulting unit has gcd as ratio");
+}
