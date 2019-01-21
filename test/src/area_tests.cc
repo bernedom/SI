@@ -88,5 +88,4 @@ TEST_CASE("m * mm = mm2") {
   static_assert(expected == a, "is 4 micro");
   static_assert(a == a_commutative, "Commutative operation is equal");
   static_assert(a_commutative == a, "inverse commutative operation is equal");
-  REQUIRE(a.raw_value() == 4000);
 }

@@ -79,15 +79,24 @@ struct unit_t {
   template <class _rhs_Ratio>
   constexpr bool operator<(const unit_t<symbol::value, exponent::value,
                                         _rhs_Ratio, internal_type> &rhs) const {
-    return unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
-               .raw_value() < raw_value();
+
+    using gcd_unit = typename unit_with_common_ratio<
+        typename std::remove_reference<decltype(rhs)>::type,
+        typename std::remove_reference<decltype(*this)>::type>::type;
+    return unit_cast<gcd_unit>(rhs).raw_value() <
+           unit_cast<gcd_unit>(*this).raw_value();
   }
 
   template <class _rhs_Ratio>
   constexpr bool operator>(const unit_t<symbol::value, exponent::value,
                                         _rhs_Ratio, internal_type> &rhs) const {
-    return unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
-               .raw_value() > raw_value();
+
+    using gcd_unit = typename unit_with_common_ratio<
+        typename std::remove_reference<decltype(rhs)>::type,
+        typename std::remove_reference<decltype(*this)>::type>::type;
+
+    return unit_cast<gcd_unit>(rhs).raw_value() >
+           unit_cast<gcd_unit>(*this).raw_value();
   }
 
   /// multiply with a non-unit scalar
@@ -117,17 +126,15 @@ struct unit_t {
                rhs);
   }
 
-  /// multiply with a same unit
+  /// divide with a same unit but different ratios
   /// resulting unit is the same as 'this'/left hand side of operation
-  template <char _rhs_symbol, char _rhs_exponent, typename _rhs_Ratio,
-            typename _rhs_type,
+  template <char _rhs_exponent, typename _rhs_Ratio, typename _rhs_type,
             typename std::enable_if<_rhs_exponent != exponent::value>::type * =
                 nullptr,
-            typename std::enable_if<_rhs_symbol == _Symbol>::type * = nullptr,
             typename std::enable_if<std::is_same<_Type, _rhs_type>::value>::type
                 * = nullptr>
-  constexpr auto operator/(const unit_t<_rhs_symbol, _rhs_exponent, _rhs_Ratio,
-                                        _rhs_type> &rhs) const {
+  constexpr auto operator/(
+      const unit_t<_Symbol, _rhs_exponent, _rhs_Ratio, _rhs_type> &rhs) const {
     using rhs_t = typename std::remove_reference<decltype(rhs)>::type;
 
     return unit_t<symbol::value, exponent::value - rhs_t::exponent::value,
@@ -138,16 +145,13 @@ struct unit_t {
 
   /// if the same units of the same exponent are divided then the result is a
   /// scalar
-  /// @todo use unit_cast internally
-  template <char _rhs_symbol, char _rhs_exponent, typename _rhs_Ratio,
-            typename _rhs_type,
+  template <char _rhs_exponent, typename _rhs_Ratio, typename _rhs_type,
             typename std::enable_if<_rhs_exponent == exponent::value>::type * =
                 nullptr,
-            typename std::enable_if<_rhs_symbol == _Symbol>::type * = nullptr,
             typename std::enable_if<std::is_same<_Type, _rhs_type>::value>::type
                 * = nullptr>
-  constexpr _Type operator/(const unit_t<_rhs_symbol, _rhs_exponent, _rhs_Ratio,
-                                         _rhs_type> &rhs) const {
+  constexpr _Type operator/(
+      const unit_t<_Symbol, _rhs_exponent, _rhs_Ratio, _rhs_type> &rhs) const {
 
     return raw_value() / rhs.raw_value();
   }
