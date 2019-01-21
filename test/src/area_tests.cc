@@ -60,7 +60,7 @@ TEST_CASE("Check that area * length == exponent 3") {
                 "Result is area type");
 }
 
-/*TEST_CASE("mm * mm = mm2, mm2 is 10-6") {
+TEST_CASE("mm * mm = mm2, mm2 is 10-6") {
   constexpr auto l = 2_mm;
   constexpr auto a = l * l;
   constexpr auto expected = 4_mm2;
@@ -70,6 +70,6 @@ TEST_CASE("Check that area * length == exponent 3") {
       "Result is area type");
   static_assert(std::is_same<decltype(a), decltype(expected)>::value,
                 "types match");
-  // static_assert(expected == a, "is 4 micro");
-  // REQUIRE(expected == a);
-}*/
+  static_assert(expected == a, "is 4 micro");
+  REQUIRE(expected == a);
+}

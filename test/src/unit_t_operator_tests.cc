@@ -47,7 +47,7 @@ TEMPLATE_TEST_CASE(
 
   constexpr auto result = v1 * v2;
 
-  static_assert(result == unit_t<'X', 2, std::deci, TestType>{600},
+  static_assert(result == unit_t<'X', 2, std::centi, TestType>{600},
                 "value matches");
 }
 
@@ -61,11 +61,11 @@ TEMPLATE_TEST_CASE("given two units with different values AND different ratio "
 
   constexpr auto result = v1 * v2;
 
-  static_assert(result == unit_t<'X', 2, std::deci, TestType>{-600},
+  static_assert(result == unit_t<'X', 2, std::centi, TestType>{-600},
                 "value matches");
-  static_assert(std::ratio_equal<typename decltype(result)::ratio,
-                                 typename decltype(v1)::ratio>::value,
-                "left hand side binds unit");
+  static_assert(
+      std::ratio_equal<typename decltype(result)::ratio, std::centi>::value,
+      "result is greatest common denominator squared");
 }
 
 /// @Todo take out the  0 part as it tests flooring on upcast and is a unit_cast
