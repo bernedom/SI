@@ -68,10 +68,12 @@ TEMPLATE_TEST_CASE("given two units with different values AND different ratio "
                 "left hand side binds unit");
 }
 
+/// @Todo take out the  0 part as it tests flooring on upcast and is a unit_cast
+/// test
 TEST_CASE(
     "given two units with different values AND ratio of rhs is small AND type "
     "is integer WHEN "
-    "multiplied THEN resulting type is of left hand side and value is 0",
+    "multiplied THEN resulting ratio is ratios multiplied and value is 0",
     "[unit_t][operator*]") {
 
   constexpr unit_t<'X', 1, std::ratio<1>, int64_t> v1{2};
@@ -79,11 +81,12 @@ TEST_CASE(
 
   constexpr auto result = v1 * v2;
 
-  static_assert(result == unit_t<'X', 2, std::ratio<1>, int64_t>{0},
+  static_assert(result == unit_t<'X', 2, std::micro, int64_t>{0},
                 "value matches");
-  static_assert(std::ratio_equal<typename decltype(result)::ratio,
-                                 typename decltype(v1)::ratio>::value,
-                "left hand side binds unit");
+  static_assert(result.raw_value() == 0);
+  static_assert(
+      std::ratio_equal<typename decltype(result)::ratio, std::ratio<1>>::value,
+      "ratio is multiplied");
 }
 
 TEST_CASE(
