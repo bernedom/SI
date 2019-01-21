@@ -101,12 +101,8 @@ struct unit_t {
   template <char _rhs_Exponent, typename _rhs_Ratio>
   constexpr auto operator*(const unit_t<symbol::value, _rhs_Exponent,
                                         _rhs_Ratio, internal_type> &rhs) const {
-    using rhs_t = typename std::remove_reference<decltype(rhs)>::type;
-
-    return unit_t<symbol::value, exponent::value + rhs_t::exponent::value,
-                  ratio, internal_type>{
-        value_ *
-        unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs).raw_value()};
+    return (*this) *
+           unit_cast<unit_t<_Symbol, _rhs_Exponent, _Ratio, _Type>>(rhs);
   }
 
   /// multiply with a same unit
@@ -158,7 +154,7 @@ struct unit_t {
 
 private:
   internal_type value_;
-};
+}; // namespace SI
 
 /// operator to divide
 template <char _Symbol, char _Exponent, class _Ratio, typename _Type = int64_t>
