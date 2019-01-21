@@ -126,6 +126,18 @@ struct unit_t {
                rhs);
   }
 
+  /// divide with same unit with same ratio but not the same exponent
+  template <char _rhs_exponent,
+            typename std::enable_if<_rhs_exponent != exponent::value>::type * =
+                nullptr>
+  constexpr auto
+  operator/(const unit_t<_Symbol, _rhs_exponent, _Ratio, _Type> &rhs) const {
+    using rhs_t = typename std::remove_reference<decltype(rhs)>::type;
+
+    return unit_t<symbol::value, exponent::value - rhs_t::exponent::value,
+                  ratio, internal_type>{value_ / rhs.raw_value()};
+  }
+
   /// divide with a same unit but different ratios
   /// resulting unit is the same as 'this'/left hand side of operation
   template <char _rhs_exponent, typename _rhs_Ratio,
