@@ -145,12 +145,15 @@ struct unit_t {
                 nullptr>
   constexpr auto operator/(
       const unit_t<_Symbol, _rhs_exponent, _rhs_Ratio, _Type> &rhs) const {
-    using rhs_t = typename std::remove_reference<decltype(rhs)>::type;
 
-    return unit_t<symbol::value, exponent::value - rhs_t::exponent::value,
-                  ratio, internal_type>{
-        value_ /
-        unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs).raw_value()};
+    using gcd_unit = typename unit_with_common_ratio<
+        typename std::remove_reference<decltype(rhs)>::type,
+        typename std::remove_reference<decltype(*this)>::type>::type;
+
+    return unit_cast<gcd_unit>(*this) /
+           unit_cast<
+               unit_t<_Symbol, _rhs_exponent, typename gcd_unit::ratio, _Type>>(
+               rhs);
   }
 
   /// if the same units of the same exponent are divided then the result is a
