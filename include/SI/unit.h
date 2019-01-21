@@ -89,8 +89,15 @@ struct unit_t {
   /// multiply with a non-unit scalar
   constexpr unit_t operator*(const _Type f) const { return {value_ * f}; }
 
-  /// multiply with a same unit
-  /// resulting unit is the same as 'this'/left hand side of operation
+  template <char _rhs_Exponent>
+  constexpr auto operator*(const unit_t<symbol::value, _rhs_Exponent, ratio,
+                                        internal_type> &rhs) const {
+    return unit_t<symbol::value, _rhs_Exponent + exponent::value, ratio,
+                  internal_type>{raw_value() * rhs.raw_value()};
+  }
+
+  /// multiply with a same unit, with possibly different exponent and different
+  /// ratio resulting unit is the same as 'this'/left hand side of operation
   template <char _rhs_Exponent, typename _rhs_Ratio>
   constexpr auto operator*(const unit_t<symbol::value, _rhs_Exponent,
                                         _rhs_Ratio, internal_type> &rhs) const {
