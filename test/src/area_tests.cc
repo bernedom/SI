@@ -77,6 +77,7 @@ TEST_CASE("m * mm = mm2") {
   constexpr auto l = 2_m;
   constexpr auto l_mm = 2_mm;
   constexpr auto a = l * l_mm;
+  constexpr auto a_commutative = l_mm * l;
   constexpr auto expected = 4000_mm2;
 
   /*static_assert(
@@ -85,5 +86,8 @@ TEST_CASE("m * mm = mm2") {
   static_assert(std::is_same<decltype(a), decltype(expected)>::value,
                 "types match");*/
   // static_assert(expected == a, "is 4 micro");
+  // static_assert(a == a_commutative, "Commutative operation is equal");
+  // static_assert(a_commutative == a, "inverse commutative operation is
+  // equal");
   REQUIRE(a.raw_value() == 4000);
 }

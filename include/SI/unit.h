@@ -54,14 +54,18 @@ struct unit_t {
     static_assert(std::is_integral<internal_type>::value ||
                       std::is_floating_point<internal_type>::value,
                   "Is integral or floating point");
+    using gcd_unit = typename unit_with_common_ratio<
+        typename std::remove_reference<decltype(rhs)>::type,
+        typename std::remove_reference<decltype(*this)>::type>::type;
 
     if constexpr (std::is_integral<internal_type>::value) {
-      return unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
-                 .raw_value() == value_;
+
+      return unit_cast<gcd_unit>(rhs).raw_value() ==
+             unit_cast<gcd_unit>(*this).raw_value();
     } else {
-      return std::abs(unit_cast<unit_t<_Symbol, _Exponent, _Ratio, _Type>>(rhs)
-                          .raw_value() -
-                      value_) < std::numeric_limits<internal_type>::epsilon();
+      return std::abs(unit_cast<gcd_unit>(rhs).raw_value() -
+                      unit_cast<gcd_unit>(*this).raw_value()) <
+             std::numeric_limits<internal_type>::epsilon();
     }
   }
 
