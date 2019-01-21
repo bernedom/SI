@@ -107,8 +107,14 @@ struct unit_t {
   template <char _rhs_Exponent, typename _rhs_Ratio>
   constexpr auto operator*(const unit_t<symbol::value, _rhs_Exponent,
                                         _rhs_Ratio, internal_type> &rhs) const {
-    return (*this) *
-           unit_cast<unit_t<_Symbol, _rhs_Exponent, _Ratio, _Type>>(rhs);
+
+    using gcd_unit = typename unit_with_common_ratio<
+        typename std::remove_reference<decltype(rhs)>::type,
+        typename std::remove_reference<decltype(*this)>::type>::type;
+    return unit_cast<gcd_unit>(*this) *
+           unit_cast<
+               unit_t<_Symbol, _rhs_Exponent, typename gcd_unit::ratio, _Type>>(
+               rhs);
   }
 
   /// multiply with a same unit

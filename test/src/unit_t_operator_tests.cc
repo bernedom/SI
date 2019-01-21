@@ -73,7 +73,7 @@ TEMPLATE_TEST_CASE("given two units with different values AND different ratio "
 TEST_CASE(
     "given two units with different values AND ratio of rhs is small AND type "
     "is integer WHEN "
-    "multiplied THEN resulting ratio is ratios multiplied and value is 0",
+    "multiplied THEN resulting ratio is ratios multiplied and value is correct",
     "[unit_t][operator*]") {
 
   constexpr unit_t<'X', 1, std::ratio<1>, int64_t> v1{2};
@@ -81,11 +81,11 @@ TEST_CASE(
 
   constexpr auto result = v1 * v2;
 
-  static_assert(result == unit_t<'X', 2, std::micro, int64_t>{0},
+  static_assert(result == unit_t<'X', 2, std::micro, int64_t>{60000},
                 "value matches");
-  static_assert(result.raw_value() == 0);
+  static_assert(result.raw_value() == 60000);
   static_assert(
-      std::ratio_equal<typename decltype(result)::ratio, std::ratio<1>>::value,
+      std::ratio_equal<typename decltype(result)::ratio, std::micro>::value,
       "ratio is multiplied");
 }
 
@@ -108,8 +108,8 @@ TEST_CASE(
                 "value matches");
   static_assert(result == expected, "value matches");
   static_assert(std::ratio_equal<typename decltype(result)::ratio,
-                                 typename decltype(v1)::ratio>::value,
-                "left hand side binds unit");
+                                 typename std::micro>::value,
+                "ratio is gcd squared");
 }
 
 TEMPLATE_TEST_CASE("GIVEN two units with different exponents WHEN divided THEN "
