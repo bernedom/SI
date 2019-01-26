@@ -135,19 +135,34 @@ TEMPLATE_TEST_CASE(
                 "raw internal type is returned");
 }
 
-/// @ Todo add floating point test
-TEST_CASE("GIVEN two units with the same ratio exponent 1  WHEN divided result "
+TEST_CASE("GIVEN two units with the same ratio exponent 1 AND internal type is "
+          "integral type  WHEN divided result "
           "is lhs.value / "
           "rhs.value",
           "[unit_t][operator/]") {
-  constexpr unit_t<'X', 1, std::ratio<1>> v1{1000};
-  constexpr unit_t<'X', 1, std::ratio<1>> v2{10};
+  constexpr unit_t<'X', 1, std::ratio<1>, int64_t> v1{1000};
+  constexpr unit_t<'X', 1, std::ratio<1>, int64_t> v2{10};
   constexpr auto result = v1 / v2;
 
   static_assert(std::is_same<std::remove_const<decltype(result)>::type,
                              decltype(v1)::internal_type>::value,
                 "raw internal type is returned");
   static_assert(result == 100, "division by 10");
+}
+
+TEST_CASE("GIVEN two units with the same ratio exponent 1 AND internal type is "
+          "floating point WHEN divided result "
+          "is lhs.value / "
+          "rhs.value",
+          "[unit_t][operator/]") {
+  constexpr unit_t<'X', 1, std::ratio<1>, long double> v1{1000};
+  constexpr unit_t<'X', 1, std::ratio<1>, long double> v2{10};
+  constexpr auto result = v1 / v2;
+
+  static_assert(std::is_same<std::remove_const<decltype(result)>::type,
+                             decltype(v1)::internal_type>::value,
+                "raw internal type is returned");
+  static_assert(detail::epsEqual(result, 100.0L), "division by 10");
 }
 
 TEMPLATE_TEST_CASE(
