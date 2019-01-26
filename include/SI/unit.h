@@ -126,6 +126,7 @@ struct unit_t {
   }
 
   /// divide with same unit with same ratio but not the same exponent
+  /// @returns unit with exponents subtracted from each others
   template <char _rhs_exponent,
             typename std::enable_if<_rhs_exponent != exponent::value>::type * =
                 nullptr>
@@ -138,7 +139,7 @@ struct unit_t {
   }
 
   /// divide with a same unit but different ratios
-  /// resulting unit is the same as 'this'/left hand side of operation
+  /// the ratio of the result is the gcd of the two ratios
   template <char _rhs_exponent, typename _rhs_Ratio,
             typename std::enable_if<_rhs_exponent != exponent::value>::type * =
                 nullptr>
@@ -183,8 +184,8 @@ private:
 }; // namespace SI
 
 /// operator to divide
-template <char _Symbol, char _Exponent, class _Ratio, typename _Type = int64_t>
-constexpr auto operator/(_Type lhs,
+template <char _Symbol, char _Exponent, class _Ratio, typename _Type>
+constexpr auto operator/(const _Type &lhs,
                          const unit_t<_Symbol, _Exponent, _Ratio, _Type> &rhs) {
 
   return unit_cast<unit_t<_Symbol, -_Exponent, _Ratio, _Type>>(

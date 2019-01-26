@@ -177,23 +177,34 @@ TEMPLATE_TEST_CASE(
                 "Exponent is negative");
 }
 
-//// @ todo add test for floating point
-TEST_CASE("GIVEN a unit with ratio<1> and a scalar WHEN scalar is divided by "
+TEST_CASE("GIVEN a unit with ratio<1> and a scalar AND internal type is "
+          "integral WHEN scalar is divided by "
           "unit THEN resulting  value is scalar / unit.value",
           "[unit_t][operator/]") {
   constexpr int64_t v1{1000};
-  constexpr unit_t<'X', 1, std::ratio<1>> v2{2};
+  constexpr unit_t<'X', 1, std::ratio<1>, int64_t> v2{2};
   constexpr auto result = v1 / v2;
 
   static_assert(result.raw_value() == 500, "1000 / 2 = 500");
 }
 
-/// @todo add test for floating point
-TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar WHEN scalar is dived "
+TEST_CASE("GIVEN a unit with ratio<1> and a scalar AND internal type is "
+          "floating point WHEN scalar is divided by "
+          "unit THEN resulting  value is scalar / unit.value",
+          "[unit_t][operator/]") {
+  constexpr long double v1 = 1000.0L;
+  constexpr unit_t<'X', 1, std::ratio<1>, long double> v2{2};
+  constexpr auto result = v1 / v2;
+
+  static_assert(detail::epsEqual(result.raw_value(), 500.0L), "1000 / 2 = 500");
+}
+
+TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
+          "integral WHEN scalar is dived "
           "by unit THEN resulting value is adjusted by ratio",
           "[unit_t][operator/]") {
   constexpr int64_t v1{1000};
-  constexpr unit_t<'X', 1, std::deca> v2{2};
+  constexpr unit_t<'X', 1, std::deca, int64_t> v2{2};
 
   constexpr auto result = v1 / v2;
   constexpr unit_t<'X', -1, std::deca> expected{5};
@@ -201,6 +212,22 @@ TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar WHEN scalar is dived "
   static_assert(std::ratio_equal<std::deca, decltype(result)::ratio>::value,
                 "Is of deca type");
   static_assert(result.raw_value() == 5, "1000 / 20 = 50");
+  static_assert(result == expected, "1000 / 20 = 50");
+}
+
+TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
+          "floating point WHEN scalar is dived "
+          "by unit THEN resulting value is adjusted by ratio",
+          "[unit_t][operator/]") {
+  constexpr long double v1{1000};
+  constexpr unit_t<'X', 1, std::deca, long double> v2{2};
+
+  constexpr auto result = v1 / v2;
+  constexpr unit_t<'X', -1, std::deca, long double> expected{5};
+  static_assert(v2.raw_value() == 2, "Is 2");
+  static_assert(std::ratio_equal<std::deca, decltype(result)::ratio>::value,
+                "Is of deca type");
+  static_assert(detail::epsEqual(result.raw_value(), 5.0L), "1000 / 20 = 50");
   static_assert(result == expected, "1000 / 20 = 50");
 }
 
