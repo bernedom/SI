@@ -63,9 +63,8 @@ struct unit_t {
       return unit_cast<gcd_unit>(rhs).raw_value() ==
              unit_cast<gcd_unit>(*this).raw_value();
     } else {
-      return std::abs(unit_cast<gcd_unit>(rhs).raw_value() -
-                      unit_cast<gcd_unit>(*this).raw_value()) <
-             std::numeric_limits<internal_type>::epsilon();
+      return detail::epsEqual(unit_cast<gcd_unit>(rhs).raw_value(),
+                              unit_cast<gcd_unit>(*this).raw_value());
     }
   }
 
