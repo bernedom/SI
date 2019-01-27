@@ -5,6 +5,61 @@
 
 using namespace SI::literals;
 
+TEST_CASE("GIVEN value AND value is integral WHEN constructed with literal _m2 "
+          "THEN ratio is 1 AND exponent is 2") {
+  constexpr auto a = 1_m2;
+  static_assert(std::ratio_equal<decltype(a)::ratio, std::ratio<1>>::value,
+                "Ratio is 1");
+  static_assert(decltype(a)::exponent::value == 2, "Exponent is 2");
+}
+
+TEST_CASE(
+    "GIVEN value AND value is floating point WHEN constructed with literal _m2 "
+    "THEN ratio is 1 AND exponent is 2") {
+  constexpr auto a = 1.0_m2;
+  static_assert(std::ratio_equal<decltype(a)::ratio, std::ratio<1>>::value,
+                "Ratio is 1");
+  static_assert(decltype(a)::exponent::value == 2, "Exponent is 2");
+}
+
+TEST_CASE(
+    "GIVEN value AND value is integral WHEN constructed with literal _cm2 "
+    "THEN ratio is 10^-4 AND exponent is 2") {
+  constexpr auto a = 1_cm2;
+  static_assert(
+      std::ratio_equal<decltype(a)::ratio, std::ratio<1, 10000>>::value,
+      "Ratio is 1");
+  static_assert(decltype(a)::exponent::value == 2, "Exponent is 2");
+}
+
+TEST_CASE(
+    "GIVEN value AND value is floating point WHEN constructed with literal _m2 "
+    "THEN ratio is 10^-4 AND exponent is 2") {
+  constexpr auto a = 1.0_cm2;
+  static_assert(
+      std::ratio_equal<decltype(a)::ratio, std::ratio<1, 10000>>::value,
+      "Ratio is 1");
+  static_assert(decltype(a)::exponent::value == 2, "Exponent is 2");
+}
+
+TEST_CASE(
+    "GIVEN value AND value is integral WHEN constructed with literal _mm2 "
+    "THEN ratio is 10^-6 AND exponent is 2") {
+  constexpr auto a = 1_mm2;
+  static_assert(std::ratio_equal<decltype(a)::ratio, std::micro>::value,
+                "Ratio is 1");
+  static_assert(decltype(a)::exponent::value == 2, "Exponent is 2");
+}
+
+TEST_CASE("GIVEN value AND value is floating point WHEN constructed with "
+          "literal _mm2 "
+          "THEN ratio is 10^-6 AND exponent is 2") {
+  constexpr auto a = 1.0_mm2;
+  static_assert(std::ratio_equal<decltype(a)::ratio, std::micro>::value,
+                "Ratio is 1");
+  static_assert(decltype(a)::exponent::value == 2, "Exponent is 2");
+}
+
 TEST_CASE("GIVEN two length values in meters WHEN multiplied THEN result is "
           "square meters") {
   constexpr auto l = 1_m;
