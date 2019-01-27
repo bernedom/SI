@@ -36,6 +36,31 @@ constexpr auto operator"" _mm2(long double mm) {
   return area_t<std::micro, long double>(mm);
 }
 
+template <char... _Digits> constexpr auto operator""_m3() {
+  return SI::detail::check_overflow<volume_t<std::ratio<1>>, _Digits...>();
+}
+
+constexpr auto operator"" _m3(long double m) {
+  return volume_t<std::ratio<1>, long double>(m);
+}
+
+template <char... _Digits> constexpr auto operator""_cm3() {
+  return SI::detail::check_overflow<volume_t<std::ratio<1, 1000000>>,
+                                    _Digits...>();
+}
+
+constexpr auto operator"" _cm3(long double cm) {
+  return volume_t<std::micro, long double>(cm);
+}
+
+template <char... _Digits> constexpr auto operator""_mm3() {
+  return SI::detail::check_overflow<volume_t<std::nano>, _Digits...>();
+}
+
+constexpr auto operator"" _mm3(long double mm) {
+  return volume_t<std::nano, long double>(mm);
+}
+
 } // namespace literals
 
 } // namespace SI
