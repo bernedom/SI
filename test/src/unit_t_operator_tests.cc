@@ -39,7 +39,8 @@ TEMPLATE_TEST_CASE(
 TEMPLATE_TEST_CASE(
     "given two units with different non-negative values AND different ratio "
     "AND same unit WHEN "
-    "multiplied THEN resulting value is correct",
+    "multiplied THEN resulting value is correct AND resulting ratio is ratio "
+    "multiplied",
     "[unit_t][operator*]", int64_t, long double) {
 
   constexpr unit_t<'X', 1, std::deci, TestType> v1{2};
@@ -49,6 +50,9 @@ TEMPLATE_TEST_CASE(
 
   static_assert(result == unit_t<'X', 2, std::centi, TestType>{600},
                 "value matches");
+  static_assert(
+      std::is_same<decltype(result),
+                   const unit_t<'X', 2, std::centi, TestType>>::value);
 }
 
 TEMPLATE_TEST_CASE("given two units with different values AND different ratio "

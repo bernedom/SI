@@ -118,9 +118,10 @@ TEST_CASE("GIVEN two length values in meters WHEN multiplied THEN result is "
   constexpr auto l = 1_m;
   constexpr auto a = l * l;
 
+  constexpr auto expected = 1_m2;
+
   static_assert(decltype(a)::exponent::value == 2, "area exponent is 2");
-  static_assert(std::is_same<decltype(a),
-                             const SI::area_t<std::ratio<1>, int64_t>>::value,
+  static_assert(std::is_same<decltype(a), decltype(expected)>::value,
                 "Result is area type");
 }
 
@@ -128,9 +129,10 @@ TEST_CASE("GIVEN three length values WHEN multiplied THEN result is volume") {
   constexpr auto l = 1_m;
   constexpr auto v = l * l * l;
 
+  constexpr auto expected = 1_m3;
+
   static_assert(decltype(v)::exponent::value == 3, "area exponent is 3");
-  static_assert(std::is_same<decltype(v),
-                             const SI::volume_t<std::ratio<1>, int64_t>>::value,
+  static_assert(std::is_same<decltype(v), decltype(expected)>::value,
                 "Result is area type");
 }
 
@@ -140,9 +142,10 @@ TEST_CASE("GIVEN an area value AND a length value WHEN multiplied THEN result "
   constexpr auto a = l * l;
   constexpr auto v = a * l;
 
+  constexpr auto expected = 1_m3;
+
   static_assert(decltype(v)::exponent::value == 3, "area exponent is 3");
-  static_assert(std::is_same<decltype(v),
-                             const SI::volume_t<std::ratio<1>, int64_t>>::value,
+  static_assert(std::is_same<decltype(v), decltype(expected)>::value,
                 "Result is area type");
 }
 
@@ -152,9 +155,6 @@ TEST_CASE("GIVEN two length values AND ratio is 10^-3 WHEN multiplied THEN "
   constexpr auto a = l * l;
   constexpr auto expected = 4_mm2;
 
-  static_assert(
-      std::is_same<decltype(a), const SI::area_t<std::micro, int64_t>>::value,
-      "Result is area type");
   static_assert(std::is_same<decltype(a), decltype(expected)>::value,
                 "types match");
   static_assert(expected == a, "is 4 micro");
@@ -168,9 +168,6 @@ TEST_CASE("GIVEN a lenght value with ratio 1 AND a length value with ratio "
   constexpr auto a_commutative = l_mm * l;
   constexpr auto expected = 4000_mm2;
 
-  static_assert(
-      std::is_same<decltype(a), const SI::area_t<std::micro, int64_t>>::value,
-      "Result is area type");
   static_assert(std::is_same<decltype(a), decltype(expected)>::value,
                 "types match");
   static_assert(expected == a, "is 4 micro");
