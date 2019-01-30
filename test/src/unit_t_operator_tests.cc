@@ -68,8 +68,8 @@ TEMPLATE_TEST_CASE("given two units with different values AND different ratio "
       "result is greatest common denominator squared");
 }
 
-/// @Todo take out the  0 part as it tests flooring on upcast and is a unit_cast
-/// test
+/* This test is not templatized because of the == comparison of the raw values,
+ Which does not work with floating points*/
 TEST_CASE(
     "given two units with different values AND ratio of rhs is small AND type "
     "is integer WHEN "
@@ -89,6 +89,8 @@ TEST_CASE(
       "ratio is multiplied");
 }
 
+/* This test is not templatized because of the epsEqual comparison of the raw
+ * values*/
 TEST_CASE(
     "given two units with different values AND ratio of rhs is small AND type "
     "is floating point WHEN "
@@ -106,6 +108,7 @@ TEST_CASE(
 
   static_assert(result != unit_t<'X', 2, std::ratio<1>, long double>{0.04},
                 "value matches");
+  static_assert(detail::epsEqual(result.raw_value(), 40000.0L));
   static_assert(result == expected, "value matches");
   static_assert(std::ratio_equal<typename decltype(result)::ratio,
                                  typename std::micro>::value,
@@ -254,13 +257,13 @@ TEMPLATE_TEST_CASE(
   static_assert(result.raw_value() == 1001, "Result is correct");
 }
 
-TEST_CASE("GIVEN two units with floating point types with value difference "
-          "smaller than type::epsilon WHEN compared for equality "
-          "THEN result is true",
-          "[unit_t][operator==]") {
-  constexpr unit_t<'X', 1, std::ratio<1>, long double> v1{0};
-  constexpr unit_t<'X', 1, std::ratio<1>, long double> v2{
-      std::numeric_limits<long double>::epsilon() / 2.0};
+TEMPLATE_TEST_CASE("GIVEN two units with value difference "
+                   "smaller than type::epsilon WHEN compared for equality "
+                   "THEN result is true",
+                   "[unit_t][operator==]", int64_t, long double) {
+  constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{0};
+  constexpr unit_t<'X', 1, std::ratio<1>, TestType> v2{
+      std::numeric_limits<TestType>::epsilon() / static_cast<TestType>(2)};
 
   static_assert(v1 == v2, "Result is the same");
   static_assert(!(v1 != v2), "Result is the same");
@@ -278,11 +281,12 @@ TEST_CASE("GIVEN two units with floating point types with value difference of "
   static_assert(!(v1 == v2), "Result is the not the same");
 }
 
-TEST_CASE("GIVEN two units same absolute value AND different ratios WHEN "
-          "compared for equality THEN result in true",
-          "[unit_t][operator==]") {
-  constexpr unit_t<'X', 1, std::milli> v1{1000};
-  constexpr unit_t<'X', 1, std::ratio<1>> v2{1};
+TEMPLATE_TEST_CASE(
+    "GIVEN two units same absolute value AND different ratios WHEN "
+    "compared for equality THEN result in true",
+    "[unit_t][operator==]", int64_t, long double) {
+  constexpr unit_t<'X', 1, std::milli, TestType> v1{1000};
+  constexpr unit_t<'X', 1, std::ratio<1>, TestType> v2{1};
 
   static_assert(v1 == v2, "values are equal");
   static_assert(!(v2 != v1), "values are equal");
