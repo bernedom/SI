@@ -34,7 +34,16 @@ The goal is to provide as many conversions and arithmetic operations with values
 | Amount of substance        | N                | mol         | mmol, mol, kmol    |
 | Luminous Intensity         | J                | cd          | mcd, cd, kcd       |
 
+
 \* The dimension symbol for thermodynamic temperature should be `Θ (Theta)` but the current implementation does not allow for non-ASCII symbols or multi-char symbols
+
+#### Special Units
+
+| Unit   | Dimension Symbol | Exponent | Unit Symbol | implemented ratios |
+| ------ | ---------------- | -------- | ----------- | ------------------ |
+| Area   | L                | 2        | m2          | mm2, cm2, m2       |
+| Volume | L                | 3        | m3          | mm3, cm3, m3       |
+
 
 ### Derived units
 
@@ -44,6 +53,7 @@ Only implemented ones are listed. All units that can be built from other units a
 | --------------- | ---------------- | ----------- | ---------- | ------------------ |
 | Electric charge | Q                | C           | I * T      | mC, C, kC, MC      |
 | Velocity        | v                | m/s         | L / T      | m/s km/h           |
+
 
 # Building & compatibility
 
