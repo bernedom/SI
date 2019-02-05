@@ -11,7 +11,7 @@ add_executable(SI_Tests
                src/unit_t_operator_tests.cc
                src/unit_t_type_tests.cc
                src/time_tests.cc
-               src/unit_conversion_tests.cc
+               src/electric_charge_tests.cc
                src/electric_current_tests.cc
                src/mass_tests.cc
                src/temperature_tests.cc

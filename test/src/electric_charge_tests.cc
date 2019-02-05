@@ -2,7 +2,7 @@
 
 #include <catch.hpp>
 
-#include <SI/conversions.h>
+#include <SI/electric_charge.h>
 
 namespace {
 /// helper template to compare variable-types ignoring const
