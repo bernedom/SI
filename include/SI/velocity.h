@@ -6,19 +6,18 @@
 
 namespace SI {
 
-template <char _Exponent = 1, class _Ratio = std::ratio<1>,
-          typename _Type = int64_t>
-using velocity = unit_t<'v', _Exponent, _Ratio, _Type>;
+template <class _Ratio, typename _Type = int64_t>
+using velocity = unit_t<'v', 1, _Ratio, _Type>;
 
-template <typename _ratio_lhs, typename _ratio_rhs, typename _type>
-constexpr auto operator/(const length_t<1, _ratio_lhs, _type> &lhs,
-                         const time_t<1, _ratio_rhs, _type> &rhs) {
+template <typename _ratio_lhs, typename _ratio_rhs, typename _Type = int64_t>
+constexpr auto operator/(const length_t<1, _ratio_lhs, _Type> &lhs,
+                         const time_t<1, _ratio_rhs, _Type> &rhs) {
   static_assert(detail::is_ratio<_ratio_lhs>::value &&
                     detail::is_ratio<_ratio_rhs>::value,
                 "template parametes are ratios");
 
-  return unit_cast<velocity<1, _ratio_lhs, _type>>(
-      velocity<1, std::ratio_multiply<_ratio_lhs, _ratio_rhs>, _type>{
+  return unit_cast<velocity<std::ratio_divide<_ratio_lhs, _ratio_rhs>, _Type>>(
+      velocity<std::ratio_divide<_ratio_lhs, _ratio_rhs>, _Type>{
           lhs.raw_value() * rhs.raw_value()});
 }
 

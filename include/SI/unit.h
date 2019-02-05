@@ -23,12 +23,10 @@ template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
  * @tparam _Exponent the exponent to the unit (i.e. length ==  m^1, area == m^2,
  *volume = m^3)
  **/
-template <
-    char _Symbol, char _Exponent = 1, class _Ratio = std::ratio<1>,
-    typename _Type = int64_t,
-    typename std::enable_if<_Ratio::num == 1 || _Ratio::den == 1>::type * =
-        nullptr,
-    typename std::enable_if<std::is_arithmetic<_Type>::value>::type * = nullptr>
+template <char _Symbol, char _Exponent = 1, class _Ratio = std::ratio<1>,
+          typename _Type = int64_t,
+          typename std::enable_if<std::is_arithmetic<_Type>::value>::type * =
+              nullptr>
 
 struct unit_t {
   static_assert(_Exponent != 0, "Exponent is non-zero");

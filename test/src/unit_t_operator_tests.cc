@@ -6,10 +6,6 @@
 
 using namespace SI;
 
-/// @todo add tests for operator == to check against raw value
-/// @todo check operator == for floating point, consider disabling in favor of
-/// an epsequal function
-
 TEMPLATE_TEST_CASE(
     "given two values with exponent 1 WHEN multiplied THEN exponent is 2",
     "[unit_t][operator*]", int64_t, long double) {
