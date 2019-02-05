@@ -16,9 +16,8 @@ constexpr auto operator/(const length_t<1, _ratio_lhs, _Type> &lhs,
                     detail::is_ratio<_ratio_rhs>::value,
                 "template parametes are ratios");
 
-  return unit_cast<velocity<std::ratio_divide<_ratio_lhs, _ratio_rhs>, _Type>>(
-      velocity<std::ratio_divide<_ratio_lhs, _ratio_rhs>, _Type>{
-          lhs.raw_value() * rhs.raw_value()});
+  return velocity<std::ratio_divide<_ratio_lhs, _ratio_rhs>, _Type>{
+      lhs.raw_value() / rhs.raw_value()};
 }
 
 } // namespace SI
