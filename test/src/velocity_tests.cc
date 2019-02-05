@@ -9,7 +9,7 @@ TEST_CASE("m/s returns ratio 1 to 1") {
   constexpr auto one = 1_m / 1_s;
 
   static_assert(
-      std::is_same<decltype(one), const SI::velocity<std::ratio<1>>>::value,
+      std::is_same<decltype(one), const SI::velocity_t<std::ratio<1>>>::value,
       "Returned value is a velocity");
   static_assert(std::ratio_equal<std::ratio<1>, decltype(one)::ratio>::value,
                 "One s is 1 / 1");
@@ -32,7 +32,7 @@ TEST_CASE("km/h returns ratio 1000 to 3600") {
 TEST_CASE("km/s returns ratio 1000/1") {
   constexpr auto one = 1_km / 1_s;
   static_assert(std::is_same<decltype(one),
-                             const SI::velocity<std::ratio<1000, 1>>>::value);
+                             const SI::velocity_t<std::ratio<1000, 1>>>::value);
 }
 
 TEST_CASE("5 km/s returns is equal 5000 m/s") {
