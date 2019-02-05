@@ -5,7 +5,8 @@
 
 using namespace SI::literals;
 
-TEST_CASE("m/s returns ratio 1 to 1") {
+TEST_CASE("GIVEN a length value in meters WHEN divided by time value in "
+          "seconds THEN result is a velocity value AND ratio of result is 1") {
   constexpr auto one = 1_m / 1_s;
 
   static_assert(
@@ -21,7 +22,8 @@ TEST_CASE("m/s returns ratio 1 to 1") {
                 "One s is 1 / 1");
 }
 
-TEST_CASE("km/h returns ratio 1000 to 3600") {
+TEST_CASE("GIVEN a length value in km WHEN divided by a time value in h THEN "
+          "result is a velocity value AND ratio of result is 1000 to 3600") {
   constexpr auto one = 1_km / 1_h;
   static_assert(
       std::ratio_equal<std::ratio<1000, 3600>, decltype(one)::ratio>::value,
@@ -29,15 +31,19 @@ TEST_CASE("km/h returns ratio 1000 to 3600") {
   static_assert(one.raw_value() == 1);
 }
 
-TEST_CASE("km/s returns ratio 1000/1") {
+TEST_CASE("GIVEN a length value in km WHEN divided by a time value in seconds "
+          "THEN result is a velocity value AND ratio of result is kilo") {
   constexpr auto one = 1_km / 1_s;
   static_assert(std::is_same<decltype(one),
                              const SI::velocity_t<std::ratio<1000, 1>>>::value);
 }
 
-TEST_CASE("5 km/s returns is equal 5000 m/s") {
-  constexpr auto one_kms = 5_km / 1_s;
-  constexpr auto one_ms = 5000_m / 1_s;
+TEST_CASE(
+    "GIVEN a length value of 10 km WHEN divided by time value of 2 s THEN "
+    "result is 5000m/s") {
+  constexpr auto kms = 10_km / 2_s;
+  constexpr auto ms = 10000_m / 2_s;
 
-  static_assert(one_kms == one_ms);
+  static_assert(kms.raw_value() == 5);
+  static_assert(kms == ms);
 }

@@ -5,6 +5,8 @@
 
 using namespace SI::literals;
 
+/// @todo add building from L / t^2
+
 TEST_CASE("GIVEN one velocity value WHEN divided by time value THEN result is "
           "an acceleration value") {
 

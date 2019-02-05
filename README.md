@@ -49,10 +49,11 @@ The goal is to provide as many conversions and arithmetic operations with values
 
 Only implemented ones are listed. All units that can be built from other units are also decayable to the respective units by inversing the mathematical operation. I.e if `Q = I * T` then `Q / I = T` and `Q / T = I`
 
-| Unit            | Dimension Symbol | Unit Symbol | built from | implemented ratios |
-| --------------- | ---------------- | ----------- | ---------- | ------------------ |
-| Electric charge | Q                | C           | I * T      | mC, C, kC, MC      |
-| Velocity        | v                | m/s         | L / T      | m/s km/h           |
+| Unit            | Dimension Symbol | Unit Symbol | builable from | implemented ratios |
+| --------------- | ---------------- | ----------- | ------------- | ------------------ |
+| Electric charge | Q                | C           | I * T         | mC, C, kC, MC      |
+| Velocity        | v                | m/s         | L / T         | m/s km/h           |
+| Acceleration    | a                | m/s^2       | v / T         | m/s^2              |
 
 
 # Building & compatibility
