@@ -4,12 +4,6 @@
 
 using namespace SI;
 
-// stream operator needed to expand in test output
-template <char E = 1, class R = std::ratio<1>>
-std::ostream &operator<<(std::ostream &os, const length_t<E, R> &l) {
-  os << l.raw_value();
-  return os;
-}
 TEST_CASE("km returns ratio 1000 to 1 floating point") {
   constexpr auto one_k = 1.0_km;
   static_assert(decltype(one_k)::ratio::num == 1000, "one km is 1000 / 1");
