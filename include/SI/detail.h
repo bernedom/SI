@@ -37,4 +37,19 @@ constexpr bool epsEqual(const T &lhs, const T &rhs) {
   return std::abs(lhs - rhs) < std::numeric_limits<T>::epsilon();
 }
 
+/// @todo consider specializing std::common type
+/// as described here
+/// https://stackoverflow.com/questions/36523038/stdcommon-type-trait-for-user-defined-types
+/// or as std::chrono does
+template <typename _ratio_lhs, typename _ratio_rhs> struct ratio_gcd {
+private:
+  typedef std::__static_gcd<_ratio_lhs::num, _ratio_rhs::num> __gcd_num;
+  typedef std::__static_gcd<_ratio_lhs::den, _ratio_rhs::den> __gcd_den;
+
+public:
+  typedef std::ratio<__gcd_num::value,
+                     (_ratio_lhs::den / __gcd_den::value) * _ratio_rhs::den>
+      ratio;
+};
+
 } // namespace SI::detail
