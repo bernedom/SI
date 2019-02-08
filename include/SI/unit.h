@@ -260,6 +260,9 @@ struct unit_with_common_ratio
 
 namespace detail
 {
+//// @todo check if this implementation can be used by the operators inside
+///unit_t
+
 /// divide a value of a certain unit with another value of a possibly different
 /// type resulting in a new type
 /// using a variadic template to simplify usage of implentation
@@ -277,7 +280,22 @@ constexpr auto cross_unit_divide_impl(const _unit_lhs &lhs,
     return _resulting_unit<resulting_ratio, typename _unit_lhs::internal_type>{
         lhs.raw_value() / rhs.raw_value()};
 }
-
+/// multiply a value of a unit witn another value of a possibly different value
+/// resulting
+/// in a value of a new type
+template <template <typename...> typename _resulting_unit, typename _unit_lhs,
+          typename _unit_rhs>
+constexpr auto cross_unit_multiply_impl(const _unit_lhs &lhs,
+                                        const _unit_rhs &rhs)
+{
+    static_assert(!std::is_same<_unit_lhs, _unit_rhs>::value);
+    static_assert(is_unit_t<_unit_lhs>::value, "lhs parameter is a unit_t");
+    static_assert(is_unit_t<_unit_rhs>::value, "rhs parameter is a unit_t");
+    using resulting_ratio = typename std::ratio_multiply<typename _unit_lhs::ratio,
+                                                         typename _unit_rhs::ratio>;
+    return _resulting_unit<resulting_ratio, typename _unit_lhs::internal_type>{
+        lhs.raw_value() * rhs.raw_value()};
+}
 } // namespace detail
 
 } // namespace SI
