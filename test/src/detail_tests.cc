@@ -4,14 +4,16 @@
 #include <SI/unit.h>
 
 TEMPLATE_TEST_CASE("EpsEqual comparison of 0 and 0 returns true",
-                   "[detail][epsequal]", long double, double, float) {
+                   "[detail][epsequal]", long double, double, float)
+{
   constexpr TestType zero{0};
 
   static_assert(SI::detail::epsEqual(zero, zero), "is equal");
 }
 
 TEMPLATE_TEST_CASE("EpsEqual comparison of 0 and epsilon returns false",
-                   "[detail][epsequal]", long double, double, float) {
+                   "[detail][epsequal]", long double, double, float)
+{
   constexpr TestType zero{0};
   constexpr TestType half_eps{std::numeric_limits<TestType>::epsilon()};
 
@@ -20,7 +22,8 @@ TEMPLATE_TEST_CASE("EpsEqual comparison of 0 and epsilon returns false",
 }
 
 TEMPLATE_TEST_CASE("EpsEqual comparison of 0 and -epsilon returns false",
-                   "[detail][epsequal]", long double, double, float) {
+                   "[detail][epsequal]", long double, double, float)
+{
   constexpr TestType zero{0};
   constexpr TestType half_eps{-std::numeric_limits<TestType>::epsilon()};
 
@@ -29,7 +32,8 @@ TEMPLATE_TEST_CASE("EpsEqual comparison of 0 and -epsilon returns false",
 }
 
 TEMPLATE_TEST_CASE("EpsEqual comparison of 0 and epsilon/2 returns true",
-                   "[detail][epsequal]", long double, double, float) {
+                   "[detail][epsequal]", long double, double, float)
+{
   constexpr TestType zero{0};
   constexpr TestType half_eps{std::numeric_limits<TestType>::epsilon() / 2};
 
@@ -38,7 +42,8 @@ TEMPLATE_TEST_CASE("EpsEqual comparison of 0 and epsilon/2 returns true",
 }
 
 TEMPLATE_TEST_CASE("EpsEqual comparison of 0 and -epsilon/2 returns true",
-                   "[detail][epsequal]", long double, double, float) {
+                   "[detail][epsequal]", long double, double, float)
+{
   constexpr TestType zero{0};
   constexpr TestType half_eps{-std::numeric_limits<TestType>::epsilon() / 2};
 
@@ -48,7 +53,8 @@ TEMPLATE_TEST_CASE("EpsEqual comparison of 0 and -epsilon/2 returns true",
 
 TEMPLATE_TEST_CASE(
     "EpsEqual comparison of non_zero and -epsilon/2 returns true",
-    "[detail][epsequal]", long double, double, float) {
+    "[detail][epsequal]", long double, double, float)
+{
   constexpr TestType non_zero{1234.345};
   constexpr TestType half_eps{non_zero +
                               -std::numeric_limits<TestType>::epsilon() / 2};
@@ -58,7 +64,8 @@ TEMPLATE_TEST_CASE(
 }
 
 TEMPLATE_TEST_CASE("EpsEqual comparison of non_zero and epsilon/2 returns true",
-                   "[detail][epsequal]", long double, double, float) {
+                   "[detail][epsequal]", long double, double, float)
+{
   constexpr TestType non_zero{1234.345};
   constexpr TestType half_eps{non_zero +
                               std::numeric_limits<TestType>::epsilon() / 2};
@@ -69,7 +76,8 @@ TEMPLATE_TEST_CASE("EpsEqual comparison of non_zero and epsilon/2 returns true",
 
 TEMPLATE_TEST_CASE(
     "EpsEqual comparison of non_zero and quiet_NaN returns false",
-    "[detail][epsequal][runtime]", long double, double, float) {
+    "[detail][epsequal][runtime]", long double, double, float)
+{
   constexpr TestType zero{0};
   constexpr const TestType nan{std::numeric_limits<TestType>::quiet_NaN()};
 
@@ -79,7 +87,8 @@ TEMPLATE_TEST_CASE(
 
 TEMPLATE_TEST_CASE(
     "EpsEqual comparison of quiet_NaN and quiet_NaN returns false",
-    "[detail][epsequal][runtime]", long double, double, float) {
+    "[detail][epsequal][runtime]", long double, double, float)
+{
 
   constexpr const TestType nan{std::numeric_limits<TestType>::quiet_NaN()};
 
@@ -88,7 +97,8 @@ TEMPLATE_TEST_CASE(
 
 TEMPLATE_TEST_CASE(
     "EpsEqual comparison of signaling_NaN and quiet_NaN returns false",
-    "[detail][epsequal][runtime]", long double, double, float) {
+    "[detail][epsequal][runtime]", long double, double, float)
+{
 
   constexpr const TestType signaling_nan{
       std::numeric_limits<TestType>::signaling_NaN()};
@@ -100,7 +110,8 @@ TEMPLATE_TEST_CASE(
 
 TEMPLATE_TEST_CASE(
     "EpsEqual comparison of signaling_NaN and signaling_NaN returns false",
-    "[detail][epsequal][runtime]", long double, double, float) {
+    "[detail][epsequal][runtime]", long double, double, float)
+{
 
   constexpr const TestType signaling_nan{
       std::numeric_limits<TestType>::signaling_NaN()};
@@ -108,4 +119,19 @@ TEMPLATE_TEST_CASE(
       std::numeric_limits<TestType>::signaling_NaN()};
 
   REQUIRE(!SI::detail::epsEqual(signaling_nan, quiet_nan));
+}
+
+template <class _Ratio, typename _Type = int64_t>
+using resulting_t = SI::unit_t<'Y', 1, _Ratio, _Type>;
+
+TEST_CASE("GIVEN a value of an integral type AND a value of floating point "
+          "type WHEN divided THEN result is of left hand type")
+{
+  constexpr SI::unit_t<'X', 1, std::ratio<1>, long double> v1{1};
+  constexpr SI::unit_t<'X', 1, std::ratio<1>, int64_t> v2{1};
+
+  constexpr auto result = SI::detail::cross_unit_multiply<resulting_t>(v1, v2);
+
+  static_assert(std::is_same<long double,
+                             typename decltype(result)::internal_type>::value);
 }
