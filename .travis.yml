@@ -52,7 +52,9 @@ matrix:
           packages:
             - ['clang-5.0', 'libstdc++-8-dev']
       env:
-        - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"        
+        - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
+
+    - os: windows
       
 
 before_install:
@@ -60,5 +62,6 @@ before_install:
 
 script: 
   - cmake --version
-  - mkdir build && cd build && cmake .. && make -j $(nproc)
-  - ctest
+  - mkdir build && cd build && cmake .. 
+  - cmake --build . --config Debug
+  - ctest -C Debug
