@@ -106,8 +106,6 @@ TEST_CASE(
   constexpr auto expected =
       v1 * unit_cast<unit_t<'X', 1, std::ratio<1>, long double>>(v2);
 
-  static_assert(result != unit_t<'X', 2, std::ratio<1>, long double>{0.04},
-                "value matches");
   static_assert(detail::epsEqual(result.raw_value(), 40000.0L));
   static_assert(result == expected, "value matches");
   static_assert(std::ratio_equal<typename decltype(result)::ratio,
