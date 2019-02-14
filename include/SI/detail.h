@@ -43,7 +43,10 @@ struct is_ratio<std::ratio<_Num, _Den>> : std::true_type {};
 template <typename T, typename std::enable_if<
                           std::is_floating_point<T>::value>::type * = nullptr>
 constexpr bool epsEqual(const T &lhs, const T &rhs) {
-  return std::abs(lhs - rhs) < std::numeric_limits<T>::epsilon();
+
+  return (lhs - rhs) < std::numeric_limits<T>::epsilon() &&
+         (lhs - rhs) > -std::numeric_limits<T>::epsilon();
+  // return std::abs(lhs - rhs) < std::numeric_limits<T>::epsilon();
 }
 
 /// @todo consider specializing std::common type
