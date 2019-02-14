@@ -14,6 +14,8 @@ template <char... _Digits>
 using Int_Parser = SI::detail::int_parse::_Parse_int<_Digits...>;
 #endif
 
+#include "static_gcd.h"
+
 namespace SI::detail {
 
 /// Kudos to std::chrono authors for the overflow check of literals
@@ -50,12 +52,12 @@ constexpr bool epsEqual(const T &lhs, const T &rhs) {
 /// or as std::chrono does
 template <typename _ratio_lhs, typename _ratio_rhs> struct ratio_gcd {
 private:
-  typedef std::__static_gcd<_ratio_lhs::num, _ratio_rhs::num> __gcd_num;
-  typedef std::__static_gcd<_ratio_lhs::den, _ratio_rhs::den> __gcd_den;
+  typedef static_gcd<_ratio_lhs::num, _ratio_rhs::num> gcd_num;
+  typedef static_gcd<_ratio_lhs::den, _ratio_rhs::den> gcd_den;
 
 public:
-  typedef std::ratio<__gcd_num::value,
-                     (_ratio_lhs::den / __gcd_den::value) * _ratio_rhs::den>
+  typedef std::ratio<gcd_num::value,
+                     (_ratio_lhs::den / gcd_den::value) * _ratio_rhs::den>
       ratio;
 };
 

@@ -33,7 +33,7 @@ set_target_properties(SI_Tests PROPERTIES
 endif()
 
 # increase warning level for gcc and enabled c++17 for msvc
-if (${CMAKE_CXX_COMPILER_ID} MATCHES "GNU" OR ${CMAKE_CXX_COMPILER_ID} MATCHES "Clang")
+if (${CMAKE_CXX_COMPILER_ID} MATCHES "GNU" OR ${CMAKE_CXX_COMPILER_ID} MATCHES "[Cc]lang")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic")
 elseif(${CMAKE_CXX_COMPILER_ID} MATCHES "MSVC")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17")
