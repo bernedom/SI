@@ -4,8 +4,15 @@
 #include <ratio>
 #include <stdexcept>
 #include <type_traits>
-
+#if __has_include(<bits/parse_numbers.h>)
 #include <bits/parse_numbers.h> // for literals support.
+template <char... _Digits>
+using Int_Parser = std::__parse_int::_Parse_int<_Digits...>;
+#else
+#include "number_parser.h"
+template <char... _Digits>
+using Int_Parser = SI::detail::int_parse::_Parse_int<_Digits...>;
+#endif
 
 namespace SI::detail {
 
@@ -19,7 +26,7 @@ struct _checked_integral_constant
 };
 
 template <typename _Unit, char... _Digits> constexpr _Unit check_overflow() {
-  using _Val = std::__parse_int::_Parse_int<_Digits...>;
+  using _Val = Int_Parser<_Digits...>;
   using _Rep = typename _Unit::internal_type;
   using _CheckedVal = _checked_integral_constant<_Rep, _Val::value>;
   return _Unit{_CheckedVal::value};
