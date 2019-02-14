@@ -48,8 +48,8 @@ TEMPLATE_TEST_CASE("EpsEqual comparison of 0 and -epsilon/2 returns true",
 
 TEMPLATE_TEST_CASE(
     "EpsEqual comparison of non_zero and -epsilon/2 returns true",
-    "[detail][epsequal]", long double, double, float) {
-  constexpr TestType non_zero = 1234.345;
+    "[detail][epsequal]", long double, double) {
+  constexpr TestType non_zero{1234.345};
   constexpr TestType half_eps =
       non_zero + -std::numeric_limits<TestType>::epsilon() / 2;
 
@@ -57,11 +57,35 @@ TEMPLATE_TEST_CASE(
   static_assert(SI::detail::epsEqual(half_eps, non_zero), "is equal");
 }
 
+// not covered by the template test case abofe because of the differnt literal
+// construction using 'f'-suffix
+TEST_CASE(
+    "EpsEqual comparison of non_zero and -epsilon/2 returns true for floats",
+    "[detail][epsequal]") {
+  constexpr float non_zero = 1234.345f;
+  constexpr float half_eps =
+      non_zero + -std::numeric_limits<float>::epsilon() / 2;
+
+  static_assert(SI::detail::epsEqual(non_zero, half_eps), "is equal");
+  static_assert(SI::detail::epsEqual(half_eps, non_zero), "is equal");
+}
+
 TEMPLATE_TEST_CASE("EpsEqual comparison of non_zero and epsilon/2 returns true",
-                   "[detail][epsequal]", long double, double, float) {
+                   "[detail][epsequal]", long double, double) {
   constexpr TestType non_zero{1234.345};
   constexpr TestType half_eps{non_zero +
                               std::numeric_limits<TestType>::epsilon() / 2};
+
+  static_assert(SI::detail::epsEqual(non_zero, half_eps), "is equal");
+  static_assert(SI::detail::epsEqual(half_eps, non_zero), "is equal");
+}
+
+TEST_CASE(
+    "EpsEqual comparison of non_zero and epsilon/2 returns true for floats",
+    "[detail][epsequal]") {
+  constexpr float non_zero{1234.345f};
+  constexpr float half_eps{non_zero +
+                           std::numeric_limits<float>::epsilon() / 2};
 
   static_assert(SI::detail::epsEqual(non_zero, half_eps), "is equal");
   static_assert(SI::detail::epsEqual(half_eps, non_zero), "is equal");
