@@ -58,7 +58,7 @@ Only implemented ones are listed. All units that can be built from other units a
 
 # Building & compatibility
 
-SI is a header only libary that uses C++17 features. Building is tested using cmake > 3.5 and verified for g++7, g++8, clang5, clang6, clang7
+SI is a header only libary that uses C++17 features. Building is tested using cmake > 3.5 and verified for g++7, g++8, clang5, clang6, clang7, msvc 19
 
 
 to build use 
