@@ -253,6 +253,8 @@ constexpr auto cross_unit_divide(const _unit_lhs &lhs, const _unit_rhs &rhs) {
 /// multiply a value of a unit witn another value of a possibly different value
 /// resulting in a value of a new type
 /// the internal type of the result is the internal type of lhs
+/// @todo add function that works with variable exponent units and remove
+/// special typedefs for time
 template <template <typename...> typename _resulting_unit, typename _unit_lhs,
           typename _unit_rhs>
 constexpr auto cross_unit_multiply(const _unit_lhs &lhs, const _unit_rhs &rhs) {

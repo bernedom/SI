@@ -9,6 +9,12 @@ template <char _Exponent = 1, class _Ratio = std::ratio<1>,
           typename _Type = int64_t>
 using time_t = unit_t<'T', _Exponent, _Ratio, _Type>;
 
+template <class _Ratio = std::ratio<1>, typename _Type = int64_t>
+using time_single_t = unit_t<'T', 1, _Ratio, _Type>;
+
+template <class _Ratio = std::ratio<1>, typename _Type = int64_t>
+using time_squared_t = unit_t<'T', 2, _Ratio, _Type>;
+
 inline namespace literals {
 
 template <char... _Digits> constexpr auto operator"" _us() {
