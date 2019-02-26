@@ -35,3 +35,6 @@
 build
 .vscode
 build
+
+# exclude generated documentation
+doc
