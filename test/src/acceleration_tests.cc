@@ -60,21 +60,6 @@ TEST_CASE("GIVEN an acceleration value WHEN multiplied by time THEN "
       std::is_same<decltype(velocity_commutative), decltype(velocity)>::value);
 }
 
-TEST_CASE("GIVEN an acceleration value WHEN multiplied by velocity THEN "
-          "result is a time value") {
-
-  constexpr SI::velocity_t<std::ratio<1>, int64_t> velocity{1};
-  constexpr SI::acceleration_t<std::ratio<1>, int64_t> acceleration{1};
-  constexpr auto time = acceleration * velocity;
-  constexpr auto time_commutative = velocity * acceleration;
-
-  static_assert(
-      std::is_same<decltype(time),
-                   const SI::time_t<1, std::ratio<1>, int64_t>>::value);
-  static_assert(
-      std::is_same<decltype(time_commutative), decltype(time)>::value);
-}
-
 TEST_CASE("GIVEN an acceleration value WHEN multiplied by length value THEN "
           "result is a time squared value") {
 
