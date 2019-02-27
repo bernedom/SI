@@ -5,8 +5,6 @@
 
 using namespace SI::literals;
 
-/// @todo add decay to L, a and t&2
-
 TEST_CASE("GIVEN velocity value WHEN divided by time value THEN result is "
           "an acceleration value") {
 
@@ -58,4 +56,28 @@ TEST_CASE("GIVEN an acceleration value WHEN multiplied by time THEN "
                    const SI::velocity_t<std::ratio<1>, int64_t>>::value);
   static_assert(
       std::is_same<decltype(velocity_commutative), decltype(velocity)>::value);
+}
+
+TEST_CASE("GIVEN a velocity value WHEN divided by acceleration THEN result is "
+          "a time value") {
+  constexpr SI::velocity_t<std::ratio<1>, int64_t> v{1};
+  constexpr SI::acceleration_t<std::ratio<1>, int64_t> a{1};
+
+  constexpr auto result = v / a;
+
+  static_assert(
+      std::is_same<decltype(result),
+                   const SI::time_single_t<std::ratio<1>, int64_t>>::value);
+}
+
+TEST_CASE("GIVEN a length value WHEN divided by acceleration THEN result is "
+          "a time squared value") {
+  constexpr SI::length_t<std::ratio<1>, int64_t> L{1};
+  constexpr SI::acceleration_t<std::ratio<1>, int64_t> a{1};
+
+  constexpr auto result = L / a;
+
+  static_assert(
+      std::is_same<decltype(result),
+                   const SI::time_squared_t<std::ratio<1>, int64_t>>::value);
 }
