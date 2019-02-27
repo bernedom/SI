@@ -1,6 +1,6 @@
 #include <catch.hpp>
 
-#include <SI/detail.h>
+#include <SI/detail/detail.h>
 #include <SI/unit.h>
 
 TEMPLATE_TEST_CASE("EpsEqual comparison of 0 and 0 returns true",

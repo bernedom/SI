@@ -1,6 +1,5 @@
 #pragma once
 
-#include <SI/detail.h>
 #include <SI/length.h>
 
 namespace SI {

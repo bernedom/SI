@@ -1,5 +1,5 @@
 #pragma once
-#include "detail.h"
+
 #include "electric_current.h"
 #include "time.h"
 #include "unit.h"
