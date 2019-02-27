@@ -47,3 +47,22 @@ TEST_CASE(
   static_assert(kms.raw_value() == 5);
   static_assert(kms == ms);
 }
+
+TEMPLATE_TEST_CASE(
+    "GIVEN velocity value WHEN multiplied with time THEN result is a "
+    "length value",
+    "[length][operator_tests]", int64_t, long double) {
+
+  constexpr SI::velocity_t<std::ratio<1>, TestType> v{1};
+  constexpr SI::time_t<1, std::ratio<1>, TestType> T{1};
+
+  constexpr auto result = v * T;
+  constexpr auto result_commutative = T * v;
+
+  static_assert(
+      std::is_same<decltype(result),
+                   const SI::length_t<std::ratio<1>, TestType>>::value);
+
+  static_assert(
+      std::is_same<decltype(result), decltype(result_commutative)>::value);
+}
