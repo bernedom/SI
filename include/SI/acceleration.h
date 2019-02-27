@@ -30,37 +30,6 @@ template <class _Ratio, typename _Type = int64_t>
 using acceleration_t = unit_t<'a', 1, _Ratio, _Type>;
 
 BUILD_UNIT_FROM_DIVISON(acceleration_t, velocity_t, time_single_t)
-
-template <typename _ratio_lhs, typename _ratio_rhs, typename _Type = int64_t>
-constexpr auto operator/(const length_t<_ratio_lhs, _Type> &lhs,
-                         const time_squared_t<_ratio_rhs, _Type> &rhs) {
-
-  return detail::cross_unit_divide<acceleration_t>(lhs, rhs);
-}
-
-template <typename _ratio_lhs, typename _ratio_rhs, typename _Type = int64_t>
-constexpr auto operator*(const acceleration_t<_ratio_lhs, _Type> &lhs,
-                         const time_squared_t<_ratio_rhs, _Type> &rhs) {
-  return detail::cross_unit_multiply<length_t>(lhs, rhs);
-}
-
-template <typename _ratio_lhs, typename _ratio_rhs, typename _Type = int64_t>
-constexpr auto operator*(const time_squared_t<_ratio_lhs, _Type> &lhs,
-                         const acceleration_t<_ratio_rhs, _Type> &rhs) {
-  return rhs * lhs;
-}
-
-template <typename _ratio_lhs, typename _ratio_rhs, typename _Type = int64_t>
-constexpr auto operator*(const acceleration_t<_ratio_lhs, _Type> &lhs,
-                         const length_t<_ratio_rhs, _Type> &rhs) {
-
-  return detail::cross_unit_multiply<time_squared_t>(lhs, rhs);
-}
-
-template <typename _ratio_lhs, typename _ratio_rhs, typename _Type = int64_t>
-constexpr auto operator*(const length_t<_ratio_lhs, _Type> &lhs,
-                         const acceleration_t<_ratio_rhs, _Type> &rhs) {
-  return rhs * lhs;
-}
+BUILD_UNIT_FROM_DIVISON(acceleration_t, length_t, time_squared_t)
 
 } // namespace SI
