@@ -1,11 +1,15 @@
 #pragma once
 
+#include "detail/operator_helpers.h"
 #include "electric_current.h"
 #include "time.h"
 #include "unit.h"
 
 namespace SI {
 
+/// @todo check for correctness
+
+/// unit for electroc charge 'Q' where Q = T * I
 template <class _Ratio = std::ratio<1>, typename _Type = int64_t>
 using electric_charge_t = unit_t<'Q', 1, _Ratio, _Type>;
 
