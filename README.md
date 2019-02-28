@@ -24,6 +24,8 @@ The goal is to provide as many conversions and arithmetic operations with values
 
 ### SI Base units
 
+For each Unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the internation system of units](https://en.wikipedia.org/wiki/Metric_prefix)
+
 | Unit                       | Dimension Symbol | Unit Symbol | implemented ratios |
 | -------------------------- | ---------------- | ----------- | ------------------ |
 | Length                     | L                | m           | mm, cm, m, km      |
@@ -58,7 +60,7 @@ Only implemented ones are listed. All units that can be built from other units a
 
 # Building & compatibility
 
-SI is a header only libary that uses C++17 features. Building is tested using cmake > 3.5 and verified for g++7, g++8, clang5, clang6, clang7, msvc 19
+SI is a header only libary that uses C++17 features. Building is tested using cmake > 3.5 and verified for g++7, g++8, clang5, clang6, clang7, msvc 19, and AppleClang 10.0
 
 
 to build use 
@@ -66,8 +68,10 @@ to build use
 mkdir build
 cd build
 cmake ..
-make -j $(nproc)
+cmake --build . --config Debug
 ```
+
+substitute `--config Debug` with `--config Release` for optimized builds
 
 ## Building the tests
 
