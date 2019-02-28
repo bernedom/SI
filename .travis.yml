@@ -55,6 +55,10 @@ matrix:
         - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
 
     - os: windows
+
+    - os: osx
+      osx_image: xcode10.2
+      compiler: clang
       
 
 before_install:
