@@ -55,6 +55,12 @@ matrix:
         - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
 
     - os: windows
+      name: "Windows Visual Studio 15 2017"
+      script:
+        - cmake --version
+        - mkdir build && cd build && cmake .. -G "Visual Studio 15 2017" -A x64
+        - cmake --build . --config Debug
+        - ctest -C Debug
 
     - os: osx
       osx_image: xcode10.2
