@@ -1,3 +1,5 @@
+<img align="right" src="SI-logo.jpg">
+
 [![Build Status](https://travis-ci.com/bernedom/SI.svg?branch=master)](https://travis-ci.com/bernedom/SI)
 
 
