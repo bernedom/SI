@@ -2,6 +2,7 @@
 
 #include <catch.hpp>
 
+#include <SI/detail/detail.h>
 #include <SI/electric_charge.h>
 
 namespace {
@@ -110,7 +111,20 @@ TEST_CASE(
   static_assert(std::ratio_equal<decltype(result)::ratio, std::mega>::value,
                 "Ratio is 1 / mega");
   static_assert(result.raw_value() == 0,
-                "Is 0"); // result would be 2000 s which is 0 Mega-Seconds
+                "Is 0"); // result would be 2000 s which is 0.002 Mega-Seconds
+}
+
+TEST_CASE("GIVEN electric charge Q with ratio<1000000,1>  AND type is floating "
+          "point WHEN divided by electric "
+          "current I with ratio<1> THEN "
+          "result is time t with ratio <1,1> (s)") {
+  constexpr auto charge = 8.0_MC;
+  constexpr auto current = 4000.0_A;
+  constexpr auto result = charge / current;
+
+  static_assert(std::ratio_equal<decltype(result)::ratio, std::mega>::value,
+                "Ratio is 1 / mega");
+  static_assert(SI::detail::epsEqual(result.raw_value(), 0.002L), "Is 0");
 }
 
 TEST_CASE("GIVEN electric charge Q with ratio<1> WHEN divided by time T in "

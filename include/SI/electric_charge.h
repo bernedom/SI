@@ -7,10 +7,8 @@
 
 namespace SI {
 
-/// @todo check for correctness
-
 /// unit for electroc charge 'Q' where Q = T * I
-template <class _Ratio = std::ratio<1>, typename _Type = int64_t>
+template <class _Ratio, typename _Type>
 using electric_charge_t = unit_t<'Q', 1, _Ratio, _Type>;
 
 BUILD_UNIT_FROM_MULTIPLICATION(electric_charge_t, electric_current_t,
@@ -18,21 +16,23 @@ BUILD_UNIT_FROM_MULTIPLICATION(electric_charge_t, electric_current_t,
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_mC() {
-  return SI::detail::check_overflow<electric_charge_t<std::milli>,
+  return SI::detail::check_overflow<electric_charge_t<std::milli, int64_t>,
                                     _Digits...>();
 }
 
 template <char... _Digits> constexpr auto operator""_C() {
-  return SI::detail::check_overflow<electric_charge_t<std::ratio<1>>,
+  return SI::detail::check_overflow<electric_charge_t<std::ratio<1>, int64_t>,
                                     _Digits...>();
 }
 
 template <char... _Digits> constexpr auto operator""_kC() {
-  return SI::detail::check_overflow<electric_charge_t<std::kilo>, _Digits...>();
+  return SI::detail::check_overflow<electric_charge_t<std::kilo, int64_t>,
+                                    _Digits...>();
 }
 
 template <char... _Digits> constexpr auto operator""_MC() {
-  return SI::detail::check_overflow<electric_charge_t<std::mega>, _Digits...>();
+  return SI::detail::check_overflow<electric_charge_t<std::mega, int64_t>,
+                                    _Digits...>();
 }
 
 constexpr auto operator"" _mC(long double mC) {
@@ -48,7 +48,7 @@ constexpr auto operator"" _kC(long double kC) {
 }
 
 constexpr auto operator"" _MC(long double MC) {
-  return electric_charge_t<std::kilo, long double>(MC);
+  return electric_charge_t<std::mega, long double>(MC);
 }
 
 } // namespace literals
