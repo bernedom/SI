@@ -3,10 +3,10 @@
 #include <SI/length.h>
 
 namespace SI {
-template <class _Ratio = std::ratio<1>, typename _Type = int64_t>
+template <typename _Ratio = std::ratio<1>, typename _Type = int64_t>
 using area_t = unit_t<'L', 2, _Ratio, _Type>;
 
-template <class _Ratio = std::ratio<1>, typename _Type = int64_t>
+template <typename _Ratio = std::ratio<1>, typename _Type = int64_t>
 using volume_t = unit_t<'L', 3, _Ratio, _Type>;
 
 inline namespace literals {

@@ -6,7 +6,7 @@
 namespace SI {
 
 /// Type for acceleration a = v / t or a = L / t^2
-template <class _Ratio, typename _Type = int64_t>
+template <typename _Ratio, typename _Type = int64_t>
 using acceleration_t = unit_t<'a', 1, _Ratio, _Type>;
 
 BUILD_UNIT_FROM_DIVISON(acceleration_t, velocity_t, time_single_t)

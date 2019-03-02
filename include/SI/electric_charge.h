@@ -8,7 +8,7 @@
 namespace SI {
 
 /// unit for electroc charge 'Q' where Q = T * I
-template <class _Ratio, typename _Type>
+template <typename _Ratio, typename _Type>
 using electric_charge_t = unit_t<'Q', 1, _Ratio, _Type>;
 
 BUILD_UNIT_FROM_MULTIPLICATION(electric_charge_t, electric_current_t,

@@ -134,7 +134,7 @@ TEMPLATE_TEST_CASE(
   REQUIRE(!SI::detail::epsEqual(signaling_nan, quiet_nan));
 }
 
-template <class _Ratio, typename _Type = int64_t>
+template <typename _Ratio, typename _Type = int64_t>
 using resulting_t = SI::unit_t<'Y', 1, _Ratio, _Type>;
 
 TEST_CASE("GIVEN a value of an integral type AND a value of floating point "

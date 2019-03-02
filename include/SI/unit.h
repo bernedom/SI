@@ -24,7 +24,7 @@ template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
  * @tparam _Exponent the exponent to the unit (i.e. length ==  m^1, area == m^2,
  *volume = m^3)
  **/
-template <char _Symbol, char _Exponent = 1, class _Ratio = std::ratio<1>,
+template <char _Symbol, char _Exponent = 1, typename _Ratio = std::ratio<1>,
           typename _Type = int64_t>
 struct unit_t {
   static_assert(std::is_arithmetic<_Type>::value);
@@ -43,7 +43,7 @@ struct unit_t {
 
   /// Comparison operator takes considers different ratios, i.e. 1000 micros ===
   /// 1 milli
-  template <class _rhs_Ratio = std::ratio<1>>
+  template <typename _rhs_Ratio = std::ratio<1>>
   constexpr bool
   operator==(const unit_t<symbol::value, exponent::value, _rhs_Ratio,
                           internal_type> &rhs) const {
@@ -65,14 +65,14 @@ struct unit_t {
     }
   }
 
-  template <class _rhs_Ratio = std::ratio<1>>
+  template <typename _rhs_Ratio = std::ratio<1>>
   constexpr bool
   operator!=(const unit_t<symbol::value, exponent::value, _rhs_Ratio,
                           internal_type> &rhs) const {
     return !(*this == rhs);
   }
 
-  template <class _rhs_Ratio>
+  template <typename _rhs_Ratio>
   constexpr bool operator<(const unit_t<symbol::value, exponent::value,
                                         _rhs_Ratio, internal_type> &rhs) const {
 
@@ -83,7 +83,7 @@ struct unit_t {
            unit_cast<gcd_unit>(*this).raw_value();
   }
 
-  template <class _rhs_Ratio>
+  template <typename _rhs_Ratio>
   constexpr bool operator>(const unit_t<symbol::value, exponent::value,
                                         _rhs_Ratio, internal_type> &rhs) const {
 
@@ -181,7 +181,7 @@ private:
 }; // namespace SI
 
 /// operator to divide
-template <char _Symbol, char _Exponent, class _Ratio, typename _Type>
+template <char _Symbol, char _Exponent, typename _Ratio, typename _Type>
 constexpr auto operator/(const _Type &lhs,
                          const unit_t<_Symbol, _Exponent, _Ratio, _Type> &rhs) {
 
@@ -194,12 +194,12 @@ constexpr auto operator/(const _Type &lhs,
 template <typename _Tp> struct is_unit_t : std::false_type {};
 
 /// template specialisation to check if a type is a unit_t (true if unit_t)
-template <char _Symbol, char _Exponent, class _Ratio, typename _Type>
+template <char _Symbol, char _Exponent, typename _Ratio, typename _Type>
 struct is_unit_t<const unit_t<_Symbol, _Exponent, _Ratio, _Type>>
     : std::true_type {};
 
 /// non-const specialisation of check above
-template <char _Symbol, char _Exponent, class _Ratio, typename _Type>
+template <char _Symbol, char _Exponent, typename _Ratio, typename _Type>
 struct is_unit_t<unit_t<_Symbol, _Exponent, _Ratio, _Type>> : std::true_type {};
 
 /// function to cast between two units of the same type

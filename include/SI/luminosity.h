@@ -3,7 +3,7 @@
 
 namespace SI {
 
-template <class _Ratio = std::ratio<1>, typename _Type = int64_t>
+template <typename _Ratio = std::ratio<1>, typename _Type = int64_t>
 using luminosity_t = unit_t<'J', 1, _Ratio, _Type>;
 
 inline namespace literals {

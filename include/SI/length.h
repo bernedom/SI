@@ -6,7 +6,7 @@
 #include "unit.h"
 
 namespace SI {
-template <class _Ratio = std::ratio<1>, typename _Type = int64_t>
+template <typename _Ratio = std::ratio<1>, typename _Type = int64_t>
 using length_t = unit_t<'L', 1, _Ratio, _Type>;
 
 inline namespace literals {
