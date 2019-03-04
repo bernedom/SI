@@ -16,6 +16,48 @@ struct is_same_ignore_const
 
 using namespace SI::literals;
 
+TEST_CASE("GIVEN a value WHEN constructed with literal _C THEN result is an "
+          "electric charge AND ratio is 1") {
+  constexpr auto one = 1_C;
+
+  static_assert(
+      std::is_same<decltype(one),
+                   const SI::electric_charge_t<std::ratio<1>, int64_t>>::value);
+
+  constexpr auto one_f = 1.0_C;
+  static_assert(
+      std::is_same<decltype(one_f), const SI::electric_charge_t<
+                                        std::ratio<1>, long double>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _mC THEN result is an "
+          "electric charge AND ratio is 1/1000") {
+  constexpr auto one = 1_mC;
+
+  static_assert(
+      std::is_same<decltype(one),
+                   const SI::electric_charge_t<std::milli, int64_t>>::value);
+
+  constexpr auto one_f = 1.0_mC;
+
+  static_assert(std::is_same<
+                decltype(one_f),
+                const SI::electric_charge_t<std::milli, long double>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _kC THEN result is an "
+          "electric charge AND ratio is 1000/1") {
+  constexpr auto one = 1_kC;
+  static_assert(
+      std::is_same<decltype(one),
+                   const SI::electric_charge_t<std::kilo, int64_t>>::value);
+
+  constexpr auto one_f = 1.0_kC;
+  static_assert(
+      std::is_same<decltype(one_f),
+                   const SI::electric_charge_t<std::kilo, long double>>::value);
+}
+
 TEST_CASE("GIVEN values electric current (I) and a time (T) WHEN multiplied "
           "THEN result is electric charge (Q)") {
   constexpr auto current = 1_A;
