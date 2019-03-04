@@ -1,10 +1,15 @@
 #pragma once
 
+#include "acceleration.h"
+#include "detail/operator_helpers.h"
+#include "mass.h"
 #include "unit.h"
 
 namespace SI {
 template <class _Ratio = std::ratio<1>, typename _Type = int64_t>
 using force_t = unit_t<'F', 1, _Ratio, _Type>;
+
+BUILD_UNIT_FROM_MULTIPLICATION(force_t, mass_t, acceleration_t)
 
 inline namespace literals {
 
