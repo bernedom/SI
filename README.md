@@ -28,18 +28,19 @@ The goal is to provide as many conversions and arithmetic operations with values
 
 For each Unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the internation system of units](https://en.wikipedia.org/wiki/Metric_prefix)
 
-| Unit                       | Dimension Symbol | Unit Symbol | implemented ratios |
-| -------------------------- | ---------------- | ----------- | ------------------ |
-| Length                     | L                | m           | mm, cm, m, km      |
-| Time                       | T                | s           | us, ms, s, min, h  |
-| Mass                       | M                | kg          | mg, g, kg          |
-| Electric current           | I                | A           | mA, A, kA, MA      |
-| Thermodynamic temperature* | t                | K           | mK, K, kK          |
-| Amount of substance        | N                | mol         | mmol, mol, kmol    |
-| Luminous Intensity         | J                | cd          | mcd, cd, kcd       |
+| Unit                        | Dimension Symbol | Unit Symbol | implemented ratios |
+| --------------------------- | ---------------- | ----------- | ------------------ |
+| Length                      | L                | m           | mm, cm, m, km      |
+| Time                        | T                | s           | us, ms, s, min, h  |
+| Mass*                       | M                | kg          | mg, g, kg          |
+| Electric current            | I                | A           | mA, A, kA, MA      |
+| Thermodynamic temperature** | t                | K           | mK, K, kK          |
+| Amount of substance         | N                | mol         | mmol, mol, kmol    |
+| Luminous Intensity          | J                | cd          | mcd, cd, kcd       |
 
+\* the base ratio of mass is `kg` not `g` as it is defined in the SI unit table. So there is a mismatch between the literal prefix and the internal representation.
 
-\* The dimension symbol for thermodynamic temperature should be `Θ (Theta)` but the current implementation does not allow for non-ASCII symbols or multi-char symbols
+\** The dimension symbol for thermodynamic temperature should be `Θ (Theta)` but the current implementation does not allow for non-ASCII symbols or multi-char symbols
 
 #### Special Units
 
