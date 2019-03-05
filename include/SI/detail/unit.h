@@ -1,6 +1,7 @@
 #pragma once
 
-#include "detail/detail.h"
+#include "detail.h"
+
 #include <ratio>
 #include <type_traits>
 

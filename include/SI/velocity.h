@@ -2,9 +2,9 @@
 
 #include "detail/operator_helpers.h"
 
+#include "detail/unit.h"
 #include "length.h"
 #include "time.h"
-#include "unit.h"
 
 namespace SI {
 

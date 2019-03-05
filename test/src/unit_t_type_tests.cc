@@ -1,6 +1,6 @@
 #include <catch.hpp>
 
-#include <SI/unit.h>
+#include <SI/detail/unit.h>
 
 using namespace SI;
 

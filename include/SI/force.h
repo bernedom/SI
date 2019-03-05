@@ -2,8 +2,8 @@
 
 #include "acceleration.h"
 #include "detail/operator_helpers.h"
+#include "detail/unit.h"
 #include "mass.h"
-#include "unit.h"
 
 namespace SI {
 /// @todo check if N = kg * m/s^2 (not g * m /s^2)

@@ -1,9 +1,9 @@
 #pragma once
 
 #include "detail/operator_helpers.h"
+#include "detail/unit.h"
 #include "electric_current.h"
 #include "time.h"
-#include "unit.h"
 
 namespace SI {
 

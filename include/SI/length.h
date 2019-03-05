@@ -3,7 +3,7 @@
 #include <ratio>
 #include <stdexcept>
 
-#include "unit.h"
+#include "detail/unit.h"
 
 namespace SI {
 template <typename _Ratio = std::ratio<1>, typename _Type = int64_t>

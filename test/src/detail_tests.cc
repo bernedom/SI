@@ -1,7 +1,7 @@
 #include <catch.hpp>
 
 #include <SI/detail/detail.h>
-#include <SI/unit.h>
+#include <SI/detail/unit.h>
 
 TEMPLATE_TEST_CASE("EpsEqual comparison of 0 and 0 returns true",
                    "[detail][epsequal]", long double, double, float) {
