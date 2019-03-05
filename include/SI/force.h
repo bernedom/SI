@@ -6,36 +6,36 @@
 #include "mass.h"
 
 namespace SI {
-/// @todo check if N = kg * m/s^2 (not g * m /s^2)
-template <class _Ratio = std::ratio<1>, typename _Type = int64_t>
-using force_t = unit_t<'F', 1, _Ratio, _Type>;
+template <typename _Type = int64_t, class _Ratio = std::ratio<1>>
+using force_t = unit_t<'F', 1, _Type, _Ratio>;
 
 BUILD_UNIT_FROM_MULTIPLICATION(force_t, mass_t, acceleration_t)
 
 inline namespace literals {
 
 template <char... _Digits> constexpr auto operator""_N() {
-  return SI::detail::check_overflow<force_t<std::ratio<1>>, _Digits...>();
+  return SI::detail::check_overflow<force_t<int64_t, std::ratio<1>>,
+                                    _Digits...>();
 }
 
 template <char... _Digits> constexpr auto operator"" _kN() {
-  return SI::detail::check_overflow<force_t<std::kilo>, _Digits...>();
+  return SI::detail::check_overflow<force_t<int64_t, std::kilo>, _Digits...>();
 }
 
 template <char... _Digits> constexpr auto operator"" _mN() {
-  return SI::detail::check_overflow<force_t<std::milli>, _Digits...>();
+  return SI::detail::check_overflow<force_t<int64_t, std::milli>, _Digits...>();
 }
 
 constexpr auto operator"" _N(long double N) {
-  return force_t<std::ratio<1>, long double>(N);
+  return force_t<long double, std::ratio<1>>(N);
 }
 
 constexpr auto operator"" _kN(long double kN) {
-  return force_t<std::kilo, long double>(kN);
+  return force_t<long double, std::kilo>(kN);
 }
 
 constexpr auto operator"" _mN(long double mN) {
-  return force_t<std::milli, long double>(mN);
+  return force_t<long double, std::milli>(mN);
 }
 } // namespace literals
 } // namespace SI

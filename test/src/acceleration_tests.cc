@@ -8,12 +8,12 @@ using namespace SI::literals;
 TEST_CASE("GIVEN velocity value WHEN divided by time value THEN result is "
           "an acceleration value") {
 
-  constexpr SI::velocity_t<std::ratio<1>, int64_t> one_ms{1};
+  constexpr SI::velocity_t<int64_t, std::ratio<1>> one_ms{1};
   constexpr auto acceleration = one_ms / 1_s;
 
   static_assert(
       std::is_same<decltype(acceleration),
-                   const SI::acceleration_t<std::ratio<1>, int64_t>>::value);
+                   const SI::acceleration_t<int64_t, std::ratio<1>>>::value);
 }
 
 TEST_CASE("GIVEN a length value WHEN divided by time squared THEN result is an "
@@ -24,7 +24,7 @@ TEST_CASE("GIVEN a length value WHEN divided by time squared THEN result is an "
 
   static_assert(
       std::is_same<decltype(acceleration),
-                   const SI::acceleration_t<std::ratio<1>, int64_t>>::value);
+                   const SI::acceleration_t<int64_t, std::ratio<1>>>::value);
 }
 
 TEST_CASE("GIVEN an acceleration value WHEN multiplied by time squared THEN "
@@ -37,47 +37,47 @@ TEST_CASE("GIVEN an acceleration value WHEN multiplied by time squared THEN "
 
   static_assert(
       std::is_same<decltype(length),
-                   const SI::length_t<std::ratio<1>, int64_t>>::value);
+                   const SI::length_t<int64_t, std::ratio<1>>>::value);
   static_assert(
       std::is_same<decltype(length_commutative),
-                   const SI::length_t<std::ratio<1>, int64_t>>::value);
+                   const SI::length_t<int64_t, std::ratio<1>>>::value);
 }
 
 TEST_CASE("GIVEN an acceleration value WHEN multiplied by time THEN "
           "result is a velocity value") {
 
   constexpr auto one_s = 1_s;
-  constexpr SI::acceleration_t<std::ratio<1>, int64_t> acceleration{1};
+  constexpr SI::acceleration_t<int64_t, std::ratio<1>> acceleration{1};
   constexpr auto velocity = acceleration * one_s;
   constexpr auto velocity_commutative = one_s * acceleration;
 
   static_assert(
       std::is_same<decltype(velocity),
-                   const SI::velocity_t<std::ratio<1>, int64_t>>::value);
+                   const SI::velocity_t<int64_t, std::ratio<1>>>::value);
   static_assert(
       std::is_same<decltype(velocity_commutative), decltype(velocity)>::value);
 }
 
 TEST_CASE("GIVEN a velocity value WHEN divided by acceleration THEN result is "
           "a time value") {
-  constexpr SI::velocity_t<std::ratio<1>, int64_t> v{1};
-  constexpr SI::acceleration_t<std::ratio<1>, int64_t> a{1};
+  constexpr SI::velocity_t<int64_t, std::ratio<1>> v{1};
+  constexpr SI::acceleration_t<int64_t, std::ratio<1>> a{1};
 
   constexpr auto result = v / a;
 
   static_assert(
       std::is_same<decltype(result),
-                   const SI::time_single_t<std::ratio<1>, int64_t>>::value);
+                   const SI::time_single_t<int64_t, std::ratio<1>>>::value);
 }
 
 TEST_CASE("GIVEN a length value WHEN divided by acceleration THEN result is "
           "a time squared value") {
-  constexpr SI::length_t<std::ratio<1>, int64_t> L{1};
-  constexpr SI::acceleration_t<std::ratio<1>, int64_t> a{1};
+  constexpr SI::length_t<int64_t, std::ratio<1>> L{1};
+  constexpr SI::acceleration_t<int64_t, std::ratio<1>> a{1};
 
   constexpr auto result = L / a;
 
   static_assert(
       std::is_same<decltype(result),
-                   const SI::time_squared_t<std::ratio<1>, int64_t>>::value);
+                   const SI::time_squared_t<int64_t, std::ratio<1>>>::value);
 }

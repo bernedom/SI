@@ -41,13 +41,13 @@ TEMPLATE_TEST_CASE(
     "GIVEN two units of same dimension type AND different ratio WHEN "
     "cast from one to another THEN value is according to the ratio",
     "[unit_t][unit_cast]", int64_t, long double) {
-  constexpr unit_t<'X', 1, std::milli, TestType> v1{1000};
+  constexpr unit_t<'X', 1, TestType, std::milli> v1{1000};
   constexpr auto result =
-      unit_cast<unit_t<'X', 1, std::ratio<1>, TestType>>(v1);
+      unit_cast<unit_t<'X', 1, TestType, std::ratio<1>>>(v1);
 
   static_assert(
       std::is_same<decltype(result),
-                   const unit_t<'X', 1, std::ratio<1>, TestType>>::value,
+                   const unit_t<'X', 1, TestType, std::ratio<1>>>::value,
       "Casted to correct unit");
   static_assert(result.raw_value() == 1, "value adjusted for ratio");
 }
@@ -58,13 +58,13 @@ TEMPLATE_TEST_CASE(
     "greatest common denominator of the two input ratios",
     "[unit_t][common_type]", int64_t, long double) {
 
-  constexpr unit_t<'X', 1, std::ratio<1>, TestType> v1{1};
-  constexpr unit_t<'X', 1, std::milli, TestType> v2{1};
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1};
+  constexpr unit_t<'X', 1, TestType, std::milli> v2{1};
 
   using result_type =
       typename unit_with_common_ratio<decltype(v1), decltype(v2)>::type;
 
   static_assert(
-      std::is_same<result_type, unit_t<'X', 1, std::milli, TestType>>::value,
+      std::is_same<result_type, unit_t<'X', 1, TestType, std::milli>>::value,
       "resulting unit has gcd as ratio");
 }

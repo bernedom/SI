@@ -134,13 +134,13 @@ TEMPLATE_TEST_CASE(
   REQUIRE(!SI::detail::epsEqual(signaling_nan, quiet_nan));
 }
 
-template <typename _Ratio, typename _Type = int64_t>
-using resulting_t = SI::unit_t<'Y', 1, _Ratio, _Type>;
+template <typename _Type, typename _Ratio>
+using resulting_t = SI::unit_t<'Y', 1, _Type, _Ratio>;
 
 TEST_CASE("GIVEN a value of an integral type AND a value of floating point "
           "type WHEN divided THEN result is of left hand type") {
-  constexpr SI::unit_t<'X', 1, std::ratio<1>, long double> v1{1};
-  constexpr SI::unit_t<'X', 1, std::ratio<1>, int64_t> v2{1};
+  constexpr SI::unit_t<'X', 1, long double, std::ratio<1>> v1{1};
+  constexpr SI::unit_t<'X', 1, int64_t, std::ratio<1>> v2{1};
 
   constexpr auto result = SI::detail::cross_unit_multiply<resulting_t>(v1, v2);
 

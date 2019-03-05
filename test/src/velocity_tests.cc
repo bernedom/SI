@@ -10,7 +10,8 @@ TEST_CASE("GIVEN a length value in meters WHEN divided by time value in "
   constexpr auto one = 1_m / 1_s;
 
   static_assert(
-      std::is_same<decltype(one), const SI::velocity_t<std::ratio<1>>>::value,
+      std::is_same<decltype(one),
+                   const SI::velocity_t<int64_t, std::ratio<1>>>::value,
       "Returned value is a velocity");
   static_assert(std::ratio_equal<std::ratio<1>, decltype(one)::ratio>::value,
                 "One s is 1 / 1");
@@ -34,8 +35,9 @@ TEST_CASE("GIVEN a length value in km WHEN divided by a time value in h THEN "
 TEST_CASE("GIVEN a length value in km WHEN divided by a time value in seconds "
           "THEN result is a velocity value AND ratio of result is kilo") {
   constexpr auto one = 1_km / 1_s;
-  static_assert(std::is_same<decltype(one),
-                             const SI::velocity_t<std::ratio<1000, 1>>>::value);
+  static_assert(
+      std::is_same<decltype(one),
+                   const SI::velocity_t<int64_t, std::ratio<1000, 1>>>::value);
 }
 
 TEST_CASE(
@@ -53,15 +55,15 @@ TEMPLATE_TEST_CASE(
     "length value",
     "[length][operator_tests]", int64_t, long double) {
 
-  constexpr SI::velocity_t<std::ratio<1>, TestType> v{1};
-  constexpr SI::time_t<1, std::ratio<1>, TestType> T{1};
+  constexpr SI::velocity_t<TestType, std::ratio<1>> v{1};
+  constexpr SI::time_t<1, TestType, std::ratio<1>> T{1};
 
   constexpr auto result = v * T;
   constexpr auto result_commutative = T * v;
 
   static_assert(
       std::is_same<decltype(result),
-                   const SI::length_t<std::ratio<1>, TestType>>::value);
+                   const SI::length_t<TestType, std::ratio<1>>>::value);
 
   static_assert(
       std::is_same<decltype(result), decltype(result_commutative)>::value);
