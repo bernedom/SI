@@ -6,6 +6,7 @@
 #include "unit.h"
 
 namespace SI {
+/// @todo check if N = kg * m/s^2 (not g * m /s^2)
 template <class _Ratio = std::ratio<1>, typename _Type = int64_t>
 using force_t = unit_t<'F', 1, _Ratio, _Type>;
 

@@ -5,6 +5,7 @@
 #include <SI/mass.h>
 
 using namespace SI::literals;
+/// @todo check if N = kg * m/s^2 (not g * m /s^2)
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _N; THEN result is an "
           "electric charge AND ratio is 1") {
