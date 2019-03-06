@@ -25,7 +25,7 @@ template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
  * @tparam _Exponent the exponent to the unit (i.e. length ==  m^1, area == m^2,
  *volume = m^3)
  **/
-template <char _Symbol, char _Exponent = 1, typename _Type = int64_t,
+template <char _Symbol, char _Exponent, typename _Type,
           typename _Ratio = std::ratio<1>>
 struct unit_t {
   static_assert(std::is_arithmetic<_Type>::value);
