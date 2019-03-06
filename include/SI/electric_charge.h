@@ -9,10 +9,14 @@ namespace SI {
 
 /// unit for electroc charge 'Q' where Q = T * I
 template <typename _Type, typename _Ratio>
-using electric_charge_t = unit_t<'Q', 1, _Type, _Ratio>;
+using electric_charge_t = detail::unit_t<'Q', 1, _Type, _Ratio>;
 
+/// @todo find out why the operators have to be in SI::detail
+/// maybe using preceeding :: helps
+namespace detail {
 BUILD_UNIT_FROM_MULTIPLICATION(electric_charge_t, electric_current_t,
                                time_single_t)
+}
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_mC() {

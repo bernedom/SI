@@ -4,7 +4,7 @@
 #include <ratio>
 #include <type_traits>
 
-using namespace SI;
+using namespace SI::detail;
 
 TEMPLATE_TEST_CASE(
     "given two values with exponent 1 WHEN multiplied THEN exponent is 2",
@@ -106,7 +106,7 @@ TEST_CASE(
   constexpr auto expected =
       v1 * unit_cast<unit_t<'X', 1, long double, std::ratio<1>>>(v2);
 
-  static_assert(detail::epsEqual(result.raw_value(), 40000.0L));
+  static_assert(epsEqual(result.raw_value(), 40000.0L));
   static_assert(result == expected, "value matches");
   static_assert(std::ratio_equal<typename decltype(result)::ratio,
                                  typename std::micro>::value,
@@ -163,7 +163,7 @@ TEST_CASE("GIVEN two units with the same ratio exponent 1 AND internal type is "
   static_assert(std::is_same<std::remove_const<decltype(result)>::type,
                              decltype(v1)::internal_type>::value,
                 "raw internal type is returned");
-  static_assert(detail::epsEqual(result, 100.0L), "division by 10");
+  static_assert(epsEqual(result, 100.0L), "division by 10");
 }
 
 TEMPLATE_TEST_CASE(
@@ -197,7 +197,7 @@ TEST_CASE("GIVEN a unit with ratio<1> and a scalar AND internal type is "
   constexpr unit_t<'X', 1, long double, std::ratio<1>> v2{2};
   constexpr auto result = v1 / v2;
 
-  static_assert(detail::epsEqual(result.raw_value(), 500.0L), "1000 / 2 = 500");
+  static_assert(epsEqual(result.raw_value(), 500.0L), "1000 / 2 = 500");
 }
 
 TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
@@ -228,7 +228,7 @@ TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
   static_assert(v2.raw_value() == 2, "Is 2");
   static_assert(std::ratio_equal<std::deca, decltype(result)::ratio>::value,
                 "Is of deca type");
-  static_assert(detail::epsEqual(result.raw_value(), 5.0L), "1000 / 20 = 50");
+  static_assert(epsEqual(result.raw_value(), 5.0L), "1000 / 20 = 50");
   static_assert(result == expected, "1000 / 20 = 50");
 }
 

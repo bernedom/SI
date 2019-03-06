@@ -2,7 +2,7 @@
 
 #include <SI/detail/unit.h>
 
-using namespace SI;
+using namespace SI::detail;
 
 TEST_CASE("GIVEN a variable of type unit_t THEN is_unit_t returns true") {
   constexpr unit_t<'X', 1, int64_t> v1{0};
