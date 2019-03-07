@@ -5,6 +5,7 @@ include(CTest)
 add_executable(SI_Tests 
                src/Catch2Main.cc
                src/detail_tests.cc
+               src/number_parser_tests.cc
                src/unit_t_operator_tests.cc
                src/unit_t_type_tests.cc
                src/length_tests_integral_type.cc
