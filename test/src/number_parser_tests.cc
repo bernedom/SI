@@ -93,6 +93,7 @@ TEST_CASE("GIVEN a three digit string WHEN passed to number structure THEN "
   static_assert(number_123::value == 123);
 }
 
+/// @todo add tests for power structure regarding different bases
 /// @todo test parsing of hex number 0x...
 /// @todo test parsing of binary number 0b...
 /// @todo test parsing of oct number 0... (leading 0)

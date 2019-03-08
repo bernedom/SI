@@ -4,6 +4,8 @@
 
 namespace SI::detail::parsing {
 
+/// @tood add assert for numeric overflow
+
 /// struct converting a char digit into an int
 template <intmax_t _base, char _Str_digit> struct Digit {
   static_assert((_Str_digit >= '0' && _Str_digit <= '9') ||
