@@ -21,6 +21,10 @@ template <intmax_t _base, char _Str_digit> struct Digit {
   static_assert(value < _base, "Digit is valid for base");
 };
 
+template <char _digit> struct Number {
+  static constexpr intmax_t value = Digit<10, _digit>::value;
+};
+
 TEST_CASE("GIVEN a numeric value as string WHEN passed to a digit "
           "structure THEN "
           "stored value is an integer") {
@@ -44,4 +48,14 @@ TEST_CASE("GIVEN a hexadeciamal alphanumeric value as String WHEN passed to a "
 
   using digit_F = Digit<16, 'F'>;
   static_assert(digit_F::value == 15);
+}
+
+TEST_CASE(
+    "GIVEN a single digit string WHEN passed to number structure THEN stored "
+    "value is an integer") {
+  using number_1 = Number<'1'>;
+  static_assert(number_1::value == 1);
+
+  using number_9 = Number<'9'>;
+  static_assert(number_9::value == 9);
 }
