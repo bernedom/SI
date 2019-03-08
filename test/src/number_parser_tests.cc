@@ -21,9 +21,18 @@ template <intmax_t _base, char _Str_digit> struct Digit {
   static_assert(value < _base, "Digit is valid for base");
 };
 
-template <char _digit> struct Number {
+template <intmax_t _power, char _digit, char... _digits> struct Number_impl {
+  using digit = Digit<10, _digit>;
+  static constexpr intmax_t value = 10;
+};
+
+// terminating case for variadic template
+template <intmax_t _power, char _digit> struct Number_impl<_power, _digit> {
+  static_assert(_power == 1, "power should be one");
   static constexpr intmax_t value = Digit<10, _digit>::value;
 };
+
+template <char... _digits> struct Number : Number_impl<1, _digits...> {};
 
 TEST_CASE("GIVEN a numeric value as string WHEN passed to a digit "
           "structure THEN "
@@ -58,4 +67,10 @@ TEST_CASE(
 
   using number_9 = Number<'9'>;
   static_assert(number_9::value == 9);
+}
+
+TEST_CASE("GIVEN a two digit string WHEN passed to number structure THEN "
+          "stored value is an integer") {
+  using number_10 = Number<'1', '0'>;
+  static_assert(number_10::value == 10);
 }
