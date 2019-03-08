@@ -1,19 +1,13 @@
 #pragma once
 
+#include "number_parser.h"
 #include <limits>
 #include <numeric>
 #include <ratio>
 #include <stdexcept>
 #include <type_traits>
-#if __has_include(<bits/parse_numbers.h>)
-#include <bits/parse_numbers.h> // for literals support.
 template <char... _Digits>
-using Int_Parser = std::__parse_int::_Parse_int<_Digits...>;
-#else
-#include "number_parser.h"
-template <char... _Digits>
-using Int_Parser = SI::detail::int_parse::_Parse_int<_Digits...>;
-#endif
+using Int_Parser = SI::detail::parsing::Number<_Digits...>;
 
 /// Namespace containing implementation details for SI
 namespace SI::detail {
