@@ -1,17 +1,47 @@
 #include <catch.hpp>
 
+#include <limits>
 #include <type_traits>
 
-template <char _Str_digit>
-struct Digit : public std::integral_constant<char, _Str_digit - '0'> {
-  static_assert(_Str_digit >= '0' && _Str_digit <= '9');
+template <intmax_t _base, char _Str_digit> struct Digit {
+  static_assert((_Str_digit >= '0' && _Str_digit <= '9') ||
+                (_Str_digit >= 'a' && _Str_digit <= 'f') ||
+                (_Str_digit >= 'A' && _Str_digit <= 'F'));
+
+  static_assert(_base > 2);
+
+  static constexpr intmax_t value =
+      (_Str_digit >= '0' && _Str_digit <= '9')
+          ? _Str_digit - '0'
+          : (_Str_digit >= 'a' && _Str_digit <= 'f')
+                ? 10 + (_Str_digit - 'a')
+                : (_Str_digit >= 'A' && _Str_digit <= 'F')
+                      ? 10 + (_Str_digit - 'A')
+                      : std::numeric_limits<intmax_t>::max();
+  static_assert(value < _base, "Digit is valid for base");
 };
 
-TEST_CASE("GIVEN a value as string WHEN passed to a digit implementation THEN "
+TEST_CASE("GIVEN a numeric value as string WHEN passed to a digit "
+          "structure THEN "
           "stored value is an integer") {
-  using digit_0 = Digit<'0'>;
+  using digit_0 = Digit<10, '0'>;
   static_assert(digit_0::value == 0);
 
-  using digit_9 = Digit<'9'>;
+  using digit_9 = Digit<10, '9'>;
   static_assert(digit_9::value == 9);
+}
+
+TEST_CASE("GIVEN a hexadeciamal alphanumeric value as String WHEN passed to a "
+          "digit structure THEN stored value is the corresponding integer") {
+  using digit_a = Digit<16, 'a'>;
+  static_assert(digit_a::value == 10);
+
+  using digit_A = Digit<16, 'A'>;
+  static_assert(digit_A::value == 10);
+
+  using digit_f = Digit<16, 'f'>;
+  static_assert(digit_f::value == 15);
+
+  using digit_F = Digit<16, 'F'>;
+  static_assert(digit_F::value == 15);
 }
