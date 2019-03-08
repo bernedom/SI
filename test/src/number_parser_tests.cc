@@ -42,27 +42,28 @@ template <intmax_t _base> struct Power<_base> {
 };
 
 // recursive struct that builds the number
-template <intmax_t _power, char _digit, char... _digits> struct Number_impl {
+template <char _digit, char... _digits> struct Number_impl {
   using digit = Digit<10, _digit>;
 
   static constexpr intmax_t magnitude = sizeof...(_digits);
   static constexpr intmax_t power = Power<10, _digit, _digits...>::power;
 
-  using recursive_number = Number_impl<_power, _digits...>;
+  using recursive_number = Number_impl<_digits...>;
   static constexpr intmax_t value =
       Digit<10, _digit>::value * power + recursive_number::value;
 };
 
 // terminating case for variadic template
-template <intmax_t _power, char _digit> struct Number_impl<_power, _digit> {
-  static_assert(_power == 1, "power should be one");
+template <char _digit> struct Number_impl<_digit> {
+
   static constexpr intmax_t value = Digit<10, _digit>::value;
   static constexpr intmax_t magnitude = 0;
   static constexpr intmax_t power = Power<10>::power;
+  static_assert(power == 1, "power should be one");
 };
 
 /// interface class for number
-template <char... _digits> struct Number : Number_impl<1, _digits...> {};
+template <char... _digits> struct Number : Number_impl<_digits...> {};
 
 TEST_CASE("GIVEN a numeric value as string WHEN passed to a digit "
           "structure THEN "
