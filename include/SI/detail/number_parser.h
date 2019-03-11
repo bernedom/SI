@@ -4,10 +4,10 @@
 
 namespace SI::detail::parsing {
 
-/// @tood add assert for numeric overflow
+/// @todo add assert for numeric overflow
 
 /// struct converting a char digit into an int
-template <intmax_t _base, char _Str_digit> struct Digit {
+template <intmax_t _base, char _Str_digit> struct Digit_impl {
   static_assert((_Str_digit >= '0' && _Str_digit <= '9') ||
                 (_Str_digit >= 'a' && _Str_digit <= 'f') ||
                 (_Str_digit >= 'A' && _Str_digit <= 'F'));
@@ -23,6 +23,14 @@ template <intmax_t _base, char _Str_digit> struct Digit {
                       ? 10 + (_Str_digit - 'A')
                       : std::numeric_limits<intmax_t>::max();
   static_assert(value < _base, "Digit is valid for base");
+  using is_digit = std::true_type;
+};
+
+template <intmax_t _base, char _Str_digit>
+struct Digit : public Digit_impl<_base, _Str_digit> {};
+
+template <intmax_t _base> struct Digit<_base, '\''> {
+  using is_digit = std::false_type;
 };
 
 template <intmax_t _base, char _digit, char... _digits> struct Power_impl {
@@ -54,7 +62,7 @@ template <intmax_t _base, char _digit, char... _digits> struct Number_impl {
 
   using recursive_number = Number_impl<_base, _digits...>;
   static constexpr intmax_t value =
-      Digit<base, _digit>::value * power + recursive_number::value;
+      digit::value * power + recursive_number::value;
 };
 
 // terminating case for variadic template

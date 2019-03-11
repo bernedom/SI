@@ -168,4 +168,11 @@ TEST_CASE("GIVEN a multidigit number WHEN passed with prefix 0 then base is "
   static_assert(number_77::value == 077);
 }
 
+/*TEST_CASE("GIVEN A multidigit number AND the number contains a digit
+separator" "WHEN passed to digit separator THEN digit separator is ignored") {
+
+  using number = Number<'1', '0', '\'', '0'>;
+  static_assert(number::value == 100);
+}*/
+
 /// @todo test parinsg of digit separator '
