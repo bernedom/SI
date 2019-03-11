@@ -13,7 +13,7 @@ TEST_CASE("GIVEN a numeric value as string WHEN passed to a digit "
   using digit_9 = Digit<10, '9'>;
   static_assert(digit_9::value == 9);
 
-  static_assert(digit_9::is_valid_digit::value == true);
+  static_assert(digit_9::is_valid_digit);
 }
 
 TEST_CASE("GIVEN a hexadeciamal alphanumeric value as String WHEN passed to a "
@@ -29,6 +29,12 @@ TEST_CASE("GIVEN a hexadeciamal alphanumeric value as String WHEN passed to a "
 
   using digit_F = Digit<16, 'F'>;
   static_assert(digit_F::value == 15);
+}
+
+TEST_CASE(
+    "GIVEN a digit separator WHEN passed to Digit THEN digit is not valid") {
+  using digit = Digit<10, '\''>;
+  static_assert(digit::is_valid_digit == false);
 }
 
 TEST_CASE(
@@ -109,7 +115,7 @@ TEST_CASE("GIVEN a number with two digits WHEN passed to power THEN power is "
   using power = Power<10, '1', '2'>;
   static_assert(power::power == 10);
 
-  using power_2 = Power<2, '1', '2'>;
+  using power_2 = Power<2, '1', '1'>;
   static_assert(power_2::power == 2);
 }
 
@@ -118,7 +124,7 @@ TEST_CASE("GIVEN a number with two digits WHEN passed to power THEN power is "
   using power = Power<10, '1', '2', '3'>;
   static_assert(power::power == 10 * 10);
 
-  using power_2 = Power<2, '1', '2', '3'>;
+  using power_2 = Power<2, '1', '1', '1'>;
   static_assert(power_2::power == 2 * 2);
 }
 
@@ -170,17 +176,17 @@ TEST_CASE("GIVEN a multidigit number WHEN passed with prefix 0 THEN base is "
   static_assert(number_77::value == 077);
 }
 
-TEST_CASE(
-    "GIVEN a digit separateh WHEN passed to Digit THEN digit is not valid") {
-  using digit = Digit<10, '\''>;
-  static_assert(digit::is_valid_digit::value == false);
+TEST_CASE("GIVEN A multidigit number AND the number contains a digit separator"
+          "WHEN passed to digit separator THEN digit separator is ignored") {
+
+  using number = Number<'1', '2', '\'', '3'>;
+  static_assert(number::value == 123);
 }
 
-/*TEST_CASE("GIVEN A multidigit number AND the number contains a digit
-separator" "WHEN passed to digit separator THEN digit separator is ignored") {
+TEST_CASE("GIVEN A multidigit number AND the number contains multiple digit "
+          "separators"
+          "WHEN passed to digit separator THEN digit separator is ignored") {
 
-  using number = Number<'1', '0', '\'', '0'>;
-  static_assert(number::value == 100);
-}*/
-
-/// @todo test parinsg of digit separator '
+  using number = Number<'1', '\'', '2', '\'', '4'>;
+  static_assert(number::value == 124);
+}
