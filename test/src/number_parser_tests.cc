@@ -93,7 +93,33 @@ TEST_CASE("GIVEN a three digit string WHEN passed to number structure THEN "
   static_assert(number_123::value == 123);
 }
 
-/// @todo add tests for power structure regarding different bases
+TEST_CASE("GIVEN a single digit number WHEN passed to power THEN power is "
+          "base^0 == 1") {
+  using power = Power<10, '1'>;
+  static_assert(power::power == 1);
+
+  using power_5 = Power<5, '1'>;
+  static_assert(power_5::power == 1);
+}
+
+TEST_CASE("GIVEN a number with two digits WHEN passed to power THEN power is "
+          "base^1") {
+  using power = Power<10, '1', '2'>;
+  static_assert(power::power == 10);
+
+  using power_2 = Power<2, '1', '2'>;
+  static_assert(power_2::power == 2);
+}
+
+TEST_CASE("GIVEN a number with two digits WHEN passed to power THEN power is "
+          "base^2") {
+  using power = Power<10, '1', '2', '3'>;
+  static_assert(power::power == 10 * 10);
+
+  using power_2 = Power<2, '1', '2', '3'>;
+  static_assert(power_2::power == 2 * 2);
+}
+
 /// @todo test parsing of hex number 0x...
 /// @todo test parsing of binary number 0b...
 /// @todo test parsing of oct number 0... (leading 0)
