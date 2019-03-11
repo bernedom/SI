@@ -12,7 +12,7 @@ template <intmax_t _base, char _Str_digit> struct Digit {
                 (_Str_digit >= 'a' && _Str_digit <= 'f') ||
                 (_Str_digit >= 'A' && _Str_digit <= 'F'));
 
-  static_assert(_base > 2);
+  static_assert(_base >= 2);
 
   static constexpr intmax_t value =
       (_Str_digit >= '0' && _Str_digit <= '9')
@@ -77,5 +77,13 @@ struct Number<'0', 'x', _digits...> : Number_impl<16, _digits...> {};
 /// specialisation of Number for hex notation
 template <char... _digits>
 struct Number<'0', 'X', _digits...> : Number_impl<16, _digits...> {};
+
+/// specialisation of Number for binary notation
+template <char... _digits>
+struct Number<'0', 'b', _digits...> : Number_impl<2, _digits...> {};
+
+/// specialisation of Number for binary notation
+template <char... _digits>
+struct Number<'0', 'B', _digits...> : Number_impl<2, _digits...> {};
 
 } // namespace SI::detail::parsing
