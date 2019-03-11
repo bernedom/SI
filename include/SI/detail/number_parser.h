@@ -45,26 +45,37 @@ template <intmax_t _base> struct Power<_base> {
 };
 
 // recursive struct that builds the number
-template <char _digit, char... _digits> struct Number_impl {
-  using digit = Digit<10, _digit>;
+template <intmax_t _base, char _digit, char... _digits> struct Number_impl {
 
   static constexpr intmax_t magnitude = sizeof...(_digits);
-  static constexpr intmax_t power = Power<10, _digit, _digits...>::power;
+  static constexpr intmax_t base = _base;
+  using digit = Digit<base, _digit>;
+  static constexpr intmax_t power = Power<base, _digit, _digits...>::power;
 
-  using recursive_number = Number_impl<_digits...>;
+  using recursive_number = Number_impl<_base, _digits...>;
   static constexpr intmax_t value =
-      Digit<10, _digit>::value * power + recursive_number::value;
+      Digit<base, _digit>::value * power + recursive_number::value;
 };
 
 // terminating case for variadic template
-template <char _digit> struct Number_impl<_digit> {
+template <intmax_t _base, char _digit> struct Number_impl<_base, _digit> {
 
-  static constexpr intmax_t value = Digit<10, _digit>::value;
+  static constexpr intmax_t value = Digit<_base, _digit>::value;
   static constexpr intmax_t magnitude = 0;
-  static constexpr intmax_t power = Power<10>::power;
+  static constexpr intmax_t base = _base;
+  static constexpr intmax_t power = Power<base>::power;
   static_assert(power == 1, "power should be one");
 };
 
 /// interface class for number
-template <char... _digits> struct Number : Number_impl<_digits...> {};
+template <char... _digits> struct Number : Number_impl<10, _digits...> {};
+
+/// specialisation of Number for hex notation
+template <char... _digits>
+struct Number<'0', 'x', _digits...> : Number_impl<16, _digits...> {};
+
+/// specialisation of Number for hex notation
+template <char... _digits>
+struct Number<'0', 'X', _digits...> : Number_impl<16, _digits...> {};
+
 } // namespace SI::detail::parsing

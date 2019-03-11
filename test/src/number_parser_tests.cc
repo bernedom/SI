@@ -120,7 +120,23 @@ TEST_CASE("GIVEN a number with two digits WHEN passed to power THEN power is "
   static_assert(power_2::power == 2 * 2);
 }
 
-/// @todo test parsing of hex number 0x...
+TEST_CASE("GIVEN a number WHEN passed with prefix 0x THEN base is 16") {
+  using number = Number<'0', 'x', '1'>;
+  static_assert(number::base == 16);
+
+  using number_cap = Number<'0', 'X', '1'>;
+  static_assert(number_cap::base == 16);
+}
+
+TEST_CASE("GIVEN a multidigit number WHEN passed with prefix 0x then base is "
+          "16 AND result is caluculated accordingly") {
+  using number = Number<'0', 'x', '1', '0'>;
+  static_assert(number::value == 0x10);
+
+  using number_FF = Number<'0', 'X', 'F', 'F'>;
+  static_assert(number_FF::value == 0xFF);
+}
+
 /// @todo test parsing of binary number 0b...
 /// @todo test parsing of oct number 0... (leading 0)
 /// @todo test parinsg of digit separator '
