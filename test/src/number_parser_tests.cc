@@ -154,5 +154,18 @@ TEST_CASE("GIVEN a multidigit number WHEN passed with prefix 0x then base is "
   static_assert(number_11::value == 0B11);
 }
 
-/// @todo test parsing of oct number 0... (leading 0)
+TEST_CASE("GIVEN a number WHEN passed with prefix 0 THEN base is 8") {
+  using number = Number<'0', '1'>;
+  static_assert(number::base == 8);
+}
+
+TEST_CASE("GIVEN a multidigit number WHEN passed with prefix 0 then base is "
+          "8 AND result is caluculated accordingly") {
+  using number = Number<'0', '1', '0'>;
+  static_assert(number::value == 010);
+
+  using number_77 = Number<'0', '7', '7'>;
+  static_assert(number_77::value == 077);
+}
+
 /// @todo test parinsg of digit separator '

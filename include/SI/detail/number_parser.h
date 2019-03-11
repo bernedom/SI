@@ -86,4 +86,8 @@ struct Number<'0', 'b', _digits...> : Number_impl<2, _digits...> {};
 template <char... _digits>
 struct Number<'0', 'B', _digits...> : Number_impl<2, _digits...> {};
 
+/// specialisation of Number for octal notation
+template <char... _digits>
+struct Number<'0', _digits...> : Number_impl<8, _digits...> {};
+
 } // namespace SI::detail::parsing
