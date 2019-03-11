@@ -23,14 +23,14 @@ template <intmax_t _base, char _Str_digit> struct Digit_impl {
                       ? 10 + (_Str_digit - 'A')
                       : std::numeric_limits<intmax_t>::max();
   static_assert(value < _base, "Digit is valid for base");
-  using is_digit = std::true_type;
+  using is_valid_digit = std::true_type;
 };
 
 template <intmax_t _base, char _Str_digit>
 struct Digit : public Digit_impl<_base, _Str_digit> {};
 
 template <intmax_t _base> struct Digit<_base, '\''> {
-  using is_digit = std::false_type;
+  using is_valid_digit = std::false_type;
 };
 
 template <intmax_t _base, char _digit, char... _digits> struct Power_impl {

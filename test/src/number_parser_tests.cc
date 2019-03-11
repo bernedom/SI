@@ -12,6 +12,8 @@ TEST_CASE("GIVEN a numeric value as string WHEN passed to a digit "
 
   using digit_9 = Digit<10, '9'>;
   static_assert(digit_9::value == 9);
+
+  static_assert(digit_9::is_valid_digit::value == true);
 }
 
 TEST_CASE("GIVEN a hexadeciamal alphanumeric value as String WHEN passed to a "
@@ -128,7 +130,7 @@ TEST_CASE("GIVEN a number WHEN passed with prefix 0x THEN base is 16") {
   static_assert(number_cap::base == 16);
 }
 
-TEST_CASE("GIVEN a multidigit number WHEN passed with prefix 0x then base is "
+TEST_CASE("GIVEN a multidigit number WHEN passed with prefix 0x THEN base is "
           "16 AND result is caluculated accordingly") {
   using number = Number<'0', 'x', '1', '0'>;
   static_assert(number::value == 0x10);
@@ -145,7 +147,7 @@ TEST_CASE("GIVEN a number WHEN passed with prefix 0b THEN base is 2") {
   static_assert(number_cap::base == 2);
 }
 
-TEST_CASE("GIVEN a multidigit number WHEN passed with prefix 0x then base is "
+TEST_CASE("GIVEN a multidigit number WHEN passed with prefix 0x THEN base is "
           "2 AND result is caluculated accordingly") {
   using number = Number<'0', 'b', '1', '0'>;
   static_assert(number::value == 0b10);
@@ -159,13 +161,19 @@ TEST_CASE("GIVEN a number WHEN passed with prefix 0 THEN base is 8") {
   static_assert(number::base == 8);
 }
 
-TEST_CASE("GIVEN a multidigit number WHEN passed with prefix 0 then base is "
+TEST_CASE("GIVEN a multidigit number WHEN passed with prefix 0 THEN base is "
           "8 AND result is caluculated accordingly") {
   using number = Number<'0', '1', '0'>;
   static_assert(number::value == 010);
 
   using number_77 = Number<'0', '7', '7'>;
   static_assert(number_77::value == 077);
+}
+
+TEST_CASE(
+    "GIVEN a digit separateh WHEN passed to Digit THEN digit is not valid") {
+  using digit = Digit<10, '\''>;
+  static_assert(digit::is_valid_digit::value == false);
 }
 
 /*TEST_CASE("GIVEN A multidigit number AND the number contains a digit
