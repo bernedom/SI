@@ -21,27 +21,26 @@ add_executable(SI_base_unit_tests
                 src/base_unit_tests/luminosity_tests.cc
                 src/base_unit_tests/length_tests_integral_type.cc
                 src/base_unit_tests/length_tests_floating_point.cc
- 
                 )   
 
 target_include_directories(SI_base_unit_tests PRIVATE ${PROJECT_SOURCE_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/include)
 
-add_executable(SI_tests 
+add_executable(SI_derived_unit_tests 
                src/Catch2Main.cc
-               src/area_tests.cc
-               src/electric_charge_tests.cc
-               src/velocity_tests.cc
-               src/acceleration_tests.cc
-               src/force_tests.cc) 
+               src/derived_unit_tests/area_tests.cc
+               src/derived_unit_tests/electric_charge_tests.cc
+               src/derived_unit_tests/velocity_tests.cc
+               src/derived_unit_tests/acceleration_tests.cc
+               src/derived_unit_tests/force_tests.cc) 
 
-target_include_directories(SI_tests PRIVATE ${PROJECT_SOURCE_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/include)
+target_include_directories(SI_derived_unit_tests PRIVATE ${PROJECT_SOURCE_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/include)
 
 if(${CMAKE_VERSION} VERSION_LESS "3.8.0")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
    
 else()
-    target_compile_features(SI_tests PRIVATE cxx_std_17)
-    set_target_properties(SI_tests PROPERTIES
+    target_compile_features(SI_derived_unit_tests PRIVATE cxx_std_17)
+    set_target_properties(SI_derived_unit_tests PROPERTIES
         CXX_STANDARD 17
         CXX_STANDARD_REQUIRED YES
         )
@@ -68,4 +67,4 @@ endif()
 
 add_test(NAME SI_detail_tests COMMAND SI_detail_tests)
 add_test(NAME SI_base_unit_tests COMMAND SI_base_unit_tests)
-add_test(NAME SI_tests COMMAND SI_tests)
+add_test(NAME SI_derived_unit_tests COMMAND SI_derived_unit_tests)
