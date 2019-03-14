@@ -11,18 +11,25 @@ add_executable(SI_detail_tests
 
 target_include_directories(SI_detail_tests PRIVATE ${PROJECT_SOURCE_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/include)
 
+add_executable(SI_base_unit_tests
+                src/Catch2Main.cc
+                src/base_unit_tests/mass_tests.cc
+                src/base_unit_tests/time_tests.cc
+                src/base_unit_tests/electric_current_tests.cc
+                src/base_unit_tests/temperature_tests.cc
+                src/base_unit_tests/substance_tests.cc
+                src/base_unit_tests/luminosity_tests.cc
+                src/base_unit_tests/length_tests_integral_type.cc
+                src/base_unit_tests/length_tests_floating_point.cc
+ 
+                )   
+
+target_include_directories(SI_base_unit_tests PRIVATE ${PROJECT_SOURCE_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/include)
+
 add_executable(SI_tests 
                src/Catch2Main.cc
-               src/length_tests_integral_type.cc
-               src/length_tests_floating_point.cc
                src/area_tests.cc
-               src/time_tests.cc
-               src/electric_current_tests.cc
                src/electric_charge_tests.cc
-               src/mass_tests.cc
-               src/temperature_tests.cc
-               src/substance_tests.cc
-               src/luminosity_tests.cc
                src/velocity_tests.cc
                src/acceleration_tests.cc
                src/force_tests.cc) 
@@ -33,13 +40,20 @@ if(${CMAKE_VERSION} VERSION_LESS "3.8.0")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
    
 else()
-target_compile_features(SI_tests PRIVATE cxx_std_17)
-set_target_properties(SI_tests PROPERTIES
-     CXX_STANDARD 17
-     CXX_STANDARD_REQUIRED YES
-    )
+    target_compile_features(SI_tests PRIVATE cxx_std_17)
+    set_target_properties(SI_tests PROPERTIES
+        CXX_STANDARD 17
+        CXX_STANDARD_REQUIRED YES
+        )
+
     target_compile_features(SI_detail_tests PRIVATE cxx_std_17)
     set_target_properties(SI_detail_tests PROPERTIES
+         CXX_STANDARD 17
+         CXX_STANDARD_REQUIRED YES
+        )
+
+    target_compile_features(SI_base_unit_tests PRIVATE cxx_std_17)
+    set_target_properties(SI_base_unit_tests PROPERTIES
          CXX_STANDARD 17
          CXX_STANDARD_REQUIRED YES
         )
@@ -53,4 +67,5 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17")
 endif()
 
 add_test(NAME SI_detail_tests COMMAND SI_detail_tests)
+add_test(NAME SI_base_unit_tests COMMAND SI_base_unit_tests)
 add_test(NAME SI_tests COMMAND SI_tests)
