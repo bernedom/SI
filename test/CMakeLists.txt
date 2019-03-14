@@ -19,7 +19,6 @@ add_executable(SI_base_unit_tests
                 src/base_unit_tests/temperature_tests.cc
                 src/base_unit_tests/substance_tests.cc
                 src/base_unit_tests/luminosity_tests.cc
-                src/base_unit_tests/length_tests_integral_type.cc
                 src/base_unit_tests/length_tests_floating_point.cc
                 )   
 
