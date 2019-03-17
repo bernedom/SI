@@ -16,6 +16,10 @@ A quick example:
   constexpr auto one_kilogramm = 1_kg;
   constexpr auto ten_coulomb = 5.0_A * 2.0_s;
   constexpr auto half_an_ampere = ten_coulomb / 20.0_s;
+
+  void calculate_mass(const SI::mass_t<long double, std::ratio<1>>& kg) { 
+    ...
+  }
 ```
 
 This is a learning project to figure out modern C++ user defined literals and probably some template and type-traits magic as well. 
@@ -38,7 +42,7 @@ For each Unit the available literals are the implemented ratios prefixed with an
 | Amount of substance         | N                | mol         | mmol, mol, kmol    |
 | Luminous Intensity          | J                | cd          | mcd, cd, kcd       |
 
-\* the base ratio of mass is `kg` not `g` as it is defined in the SI unit table. So there is a mismatch between the literal prefix and the internal representation.
+\* for mass the base ratio is `kg` (not `g`) as it is defined in the SI unit table. So there is a mismatch between the literal prefix and the internal representation.
 
 \** The dimension symbol for thermodynamic temperature should be `Θ (Theta)` but the current implementation does not allow for non-ASCII symbols or multi-char symbols
 
@@ -90,9 +94,9 @@ sudo apt install libstdc++-8-dev
 
 ## A word on testing 
 
-I'm using a more or less strict TDD for implementing the functionality. First to check wheter the code actually does what I want it to do, but also as a way to set examples how this is used. The nice benefit of it being, that I'm dogfooding the library to myself while developing. I'm using [Catch2](https://github.com/catchorg/Catch2) as a unit-testing framework, however since the goal is to be able to do as much as possible during compile time most of the tests are performed as `static_asserts` rather than using the functionality delivered by catch2. 
+I'm using a more or less strict TDD for implementing the functionality. First to check wheter the code actually does what I want it to do, but also as a way to set examples how this is used. The nice benefit of it being, that I'm dogfooding the library to myself while developing. I'm using [Catch2](https://github.com/catchorg/Catch2) as a unit-testing framework, however since the goal is to be able to do as much as possible during compile time most of the tests are performed with Catch2 `STATIC_REQUIRES` which contatain `static_asserts` and run-time `REQUIRE`s as . 
 
-Unfortunately this breaks any analysis on the code coverage using lcov, as the tests do not actually *run* any code when executed. The upside of this is that if it compiles, it passes the tests.    
+This means if the tests compile then the tests are correct. To compile only with runtime check pass `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE` to the compilers. 
 
 ## note to self: how to run lcov
 
