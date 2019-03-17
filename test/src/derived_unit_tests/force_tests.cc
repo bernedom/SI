@@ -10,12 +10,13 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _N; THEN result is a "
           "force value AND ratio is 1") {
   constexpr auto one = 1_N;
 
-  static_assert(std::is_same<decltype(one),
-                             const SI::force_t<int64_t, std::ratio<1>>>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::force_t<int64_t, std::ratio<1>>>::value);
 
   constexpr auto one_f = 1.0_N;
 
-  static_assert(
+  STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::force_t<long double, std::ratio<1>>>::value);
 }
@@ -23,11 +24,11 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _N; THEN result is a "
 TEST_CASE("GIVEN a value WHEN constructed with literal _mN THEN result is a "
           "force value AND ratio is 1/1000") {
   constexpr auto one = 1_mN;
-  static_assert(std::is_same<decltype(one),
-                             const SI::force_t<int64_t, std::milli>>::value);
+  STATIC_REQUIRE(std::is_same<decltype(one),
+                              const SI::force_t<int64_t, std::milli>>::value);
 
   constexpr auto one_f = 1.0_mN;
-  static_assert(
+  STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::force_t<long double, std::milli>>::value);
 }
@@ -35,12 +36,13 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _mN THEN result is a "
 TEST_CASE("GIVEN a value WHEN constructed with literal _kN THEN result is a "
           "force value AND ratio is 1000/1") {
   constexpr auto one = 1_kN;
-  static_assert(std::is_same<decltype(one),
-                             const SI::force_t<int64_t, std::kilo>>::value);
+  STATIC_REQUIRE(std::is_same<decltype(one),
+                              const SI::force_t<int64_t, std::kilo>>::value);
 
   constexpr auto one_f = 1.0_kN;
-  static_assert(std::is_same<decltype(one_f),
-                             const SI::force_t<long double, std::kilo>>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_f),
+                   const SI::force_t<long double, std::kilo>>::value);
 }
 
 TEMPLATE_TEST_CASE("GIVEN a mass value WHEN multiplied with a acceleration "
@@ -52,10 +54,10 @@ TEMPLATE_TEST_CASE("GIVEN a mass value WHEN multiplied with a acceleration "
   constexpr auto result = m * a;
   constexpr auto result_commutative = a * m;
 
-  static_assert(
+  STATIC_REQUIRE(
       std::is_same<decltype(result),
                    const SI::force_t<TestType, std::ratio<1>>>::value);
-  static_assert(
+  STATIC_REQUIRE(
       std::is_same<decltype(result), decltype(result_commutative)>::value);
 }
 
@@ -66,8 +68,9 @@ TEMPLATE_TEST_CASE("GIVEN a force value WHEN divided by acceleration THEN then "
   constexpr SI::acceleration_t<TestType, std::ratio<1>> a{1};
 
   constexpr auto result = f / a;
-  static_assert(std::is_same<decltype(result),
-                             const SI::mass_t<TestType, std::ratio<1>>>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::mass_t<TestType, std::ratio<1>>>::value);
 }
 
 TEMPLATE_TEST_CASE("GIVEN a force value WHEN divided by mass THEN then "
@@ -77,7 +80,7 @@ TEMPLATE_TEST_CASE("GIVEN a force value WHEN divided by mass THEN then "
   constexpr SI::mass_t<TestType, std::ratio<1>> m{1};
 
   constexpr auto result = f / m;
-  static_assert(
+  STATIC_REQUIRE(
       std::is_same<decltype(result),
                    const SI::acceleration_t<TestType, std::ratio<1>>>::value);
 }

@@ -13,8 +13,7 @@ TEMPLATE_TEST_CASE(
 
   constexpr auto result = v1 * v1;
 
-  static_assert(decltype(result)::exponent::value == 2,
-                "Exponent value is two");
+  STATIC_REQUIRE(decltype(result)::exponent::value == 2);
 }
 
 TEMPLATE_TEST_CASE(
@@ -28,8 +27,7 @@ TEMPLATE_TEST_CASE(
 
   constexpr auto result = v1 * v2;
 
-  static_assert(result == unit_t<'X', 2, TestType, std::ratio<1>>{600},
-                "Raw value matches");
+  STATIC_REQUIRE(result == unit_t<'X', 2, TestType, std::ratio<1>>{600});
 }
 
 TEMPLATE_TEST_CASE(
@@ -44,9 +42,8 @@ TEMPLATE_TEST_CASE(
 
   constexpr auto result = v1 * v2;
 
-  static_assert(result == unit_t<'X', 2, TestType, std::centi>{600},
-                "value matches");
-  static_assert(
+  STATIC_REQUIRE(result == unit_t<'X', 2, TestType, std::centi>{600});
+  STATIC_REQUIRE(
       std::is_same<decltype(result),
                    const unit_t<'X', 2, TestType, std::centi>>::value);
 }
@@ -61,11 +58,9 @@ TEMPLATE_TEST_CASE("given two units with different values AND different ratio "
 
   constexpr auto result = v1 * v2;
 
-  static_assert(result == unit_t<'X', 2, TestType, std::centi>{-600},
-                "value matches");
-  static_assert(
-      std::ratio_equal<typename decltype(result)::ratio, std::centi>::value,
-      "result is greatest common denominator squared");
+  STATIC_REQUIRE(result == unit_t<'X', 2, TestType, std::centi>{-600});
+  STATIC_REQUIRE(
+      std::ratio_equal<typename decltype(result)::ratio, std::centi>::value);
 }
 
 /* This test is not templatized because of the == comparison of the raw values,
@@ -81,12 +76,10 @@ TEST_CASE(
 
   constexpr auto result = v1 * v2;
 
-  static_assert(result == unit_t<'X', 2, int64_t, std::micro>{60000},
-                "value matches");
-  static_assert(result.raw_value() == 60000);
-  static_assert(
-      std::ratio_equal<typename decltype(result)::ratio, std::micro>::value,
-      "ratio is multiplied");
+  STATIC_REQUIRE(result == unit_t<'X', 2, int64_t, std::micro>{60000});
+  STATIC_REQUIRE(result.raw_value() == 60000);
+  STATIC_REQUIRE(
+      std::ratio_equal<typename decltype(result)::ratio, std::micro>::value);
 }
 
 /* This test is not templatized because of the epsEqual comparison of the raw
@@ -106,11 +99,10 @@ TEST_CASE(
   constexpr auto expected =
       v1 * unit_cast<unit_t<'X', 1, long double, std::ratio<1>>>(v2);
 
-  static_assert(epsEqual(result.raw_value(), 40000.0L));
-  static_assert(result == expected, "value matches");
-  static_assert(std::ratio_equal<typename decltype(result)::ratio,
-                                 typename std::micro>::value,
-                "ratio is gcd squared");
+  STATIC_REQUIRE(epsEqual(result.raw_value(), 40000.0L));
+  STATIC_REQUIRE(result == expected);
+  STATIC_REQUIRE(std::ratio_equal<typename decltype(result)::ratio,
+                                  typename std::micro>::value);
 }
 
 TEMPLATE_TEST_CASE("GIVEN two units with different exponents WHEN divided THEN "
@@ -121,8 +113,7 @@ TEMPLATE_TEST_CASE("GIVEN two units with different exponents WHEN divided THEN "
 
   constexpr auto result = v1 / v2;
 
-  static_assert(decltype(result)::exponent::value == 1,
-                "Exponent is subtracted");
+  STATIC_REQUIRE(decltype(result)::exponent::value == 1);
 }
 
 TEMPLATE_TEST_CASE(
@@ -131,9 +122,9 @@ TEMPLATE_TEST_CASE(
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1};
   constexpr auto result = v1 / v1;
 
-  static_assert(std::is_same<typename std::remove_const<decltype(result)>::type,
-                             typename decltype(v1)::internal_type>::value,
-                "raw internal type is returned");
+  STATIC_REQUIRE(
+      std::is_same<typename std::remove_const<decltype(result)>::type,
+                   typename decltype(v1)::internal_type>::value);
 }
 
 TEST_CASE("GIVEN two units with the same ratio exponent 1 AND internal type is "
@@ -145,10 +136,9 @@ TEST_CASE("GIVEN two units with the same ratio exponent 1 AND internal type is "
   constexpr unit_t<'X', 1, int64_t, std::ratio<1>> v2{10};
   constexpr auto result = v1 / v2;
 
-  static_assert(std::is_same<std::remove_const<decltype(result)>::type,
-                             decltype(v1)::internal_type>::value,
-                "raw internal type is returned");
-  static_assert(result == 100, "division by 10");
+  STATIC_REQUIRE(std::is_same<std::remove_const<decltype(result)>::type,
+                              decltype(v1)::internal_type>::value);
+  STATIC_REQUIRE(result == 100);
 }
 
 TEST_CASE("GIVEN two units with the same ratio exponent 1 AND internal type is "
@@ -160,10 +150,9 @@ TEST_CASE("GIVEN two units with the same ratio exponent 1 AND internal type is "
   constexpr unit_t<'X', 1, long double, std::ratio<1>> v2{10};
   constexpr auto result = v1 / v2;
 
-  static_assert(std::is_same<std::remove_const<decltype(result)>::type,
-                             decltype(v1)::internal_type>::value,
-                "raw internal type is returned");
-  static_assert(epsEqual(result, 100.0L), "division by 10");
+  STATIC_REQUIRE(std::is_same<std::remove_const<decltype(result)>::type,
+                              decltype(v1)::internal_type>::value);
+  STATIC_REQUIRE(epsEqual(result, 100.0L));
 }
 
 TEMPLATE_TEST_CASE(
@@ -174,8 +163,7 @@ TEMPLATE_TEST_CASE(
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{1};
   constexpr auto result = v1 / v2;
 
-  static_assert(decltype(result)::exponent::value == -1,
-                "Exponent is negative");
+  STATIC_REQUIRE(decltype(result)::exponent::value == -1);
 }
 
 TEST_CASE("GIVEN a unit with ratio<1> and a scalar AND internal type is "
@@ -186,7 +174,7 @@ TEST_CASE("GIVEN a unit with ratio<1> and a scalar AND internal type is "
   constexpr unit_t<'X', 1, int64_t, std::ratio<1>> v2{2};
   constexpr auto result = v1 / v2;
 
-  static_assert(result.raw_value() == 500, "1000 / 2 = 500");
+  STATIC_REQUIRE(result.raw_value() == 500);
 }
 
 TEST_CASE("GIVEN a unit with ratio<1> and a scalar AND internal type is "
@@ -197,7 +185,7 @@ TEST_CASE("GIVEN a unit with ratio<1> and a scalar AND internal type is "
   constexpr unit_t<'X', 1, long double, std::ratio<1>> v2{2};
   constexpr auto result = v1 / v2;
 
-  static_assert(epsEqual(result.raw_value(), 500.0L), "1000 / 2 = 500");
+  STATIC_REQUIRE(epsEqual(result.raw_value(), 500.0L));
 }
 
 TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
@@ -209,11 +197,10 @@ TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
 
   constexpr auto result = v1 / v2;
   constexpr unit_t<'X', -1, int64_t, std::deca> expected{5};
-  static_assert(v2.raw_value() == 2, "Is 2");
-  static_assert(std::ratio_equal<std::deca, decltype(result)::ratio>::value,
-                "Is of deca type");
-  static_assert(result.raw_value() == 5, "1000 / 20 = 50");
-  static_assert(result == expected, "1000 / 20 = 50");
+  STATIC_REQUIRE(v2.raw_value() == 2);
+  STATIC_REQUIRE(std::ratio_equal<std::deca, decltype(result)::ratio>::value);
+  STATIC_REQUIRE(result.raw_value() == 5);
+  STATIC_REQUIRE(result == expected);
 }
 
 TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
@@ -225,11 +212,10 @@ TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
 
   constexpr auto result = v1 / v2;
   constexpr unit_t<'X', -1, long double, std::deca> expected{5};
-  static_assert(v2.raw_value() == 2, "Is 2");
-  static_assert(std::ratio_equal<std::deca, decltype(result)::ratio>::value,
-                "Is of deca type");
-  static_assert(epsEqual(result.raw_value(), 5.0L), "1000 / 20 = 50");
-  static_assert(result == expected, "1000 / 20 = 50");
+  STATIC_REQUIRE(v2.raw_value() == 2);
+  STATIC_REQUIRE(std::ratio_equal<std::deca, decltype(result)::ratio>::value);
+  STATIC_REQUIRE(epsEqual(result.raw_value(), 5.0L));
+  STATIC_REQUIRE(result == expected);
 }
 
 TEMPLATE_TEST_CASE(
@@ -238,7 +224,7 @@ TEMPLATE_TEST_CASE(
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1};
   constexpr auto result = v1 + v1;
 
-  static_assert(result.raw_value() == 2, "Result is raw_value * 2");
+  STATIC_REQUIRE(result.raw_value() == 2);
 }
 
 TEMPLATE_TEST_CASE(
@@ -249,10 +235,9 @@ TEMPLATE_TEST_CASE(
   constexpr unit_t<'X', 1, TestType, std::kilo> v2{1};
 
   constexpr auto result = v1 + v2;
-  static_assert(std::ratio_equal<typename decltype(result)::ratio,
-                                 typename decltype(v1)::ratio>::value == true,
-                "ratio is of same ratio as left hand side");
-  static_assert(result.raw_value() == 1001, "Result is correct");
+  STATIC_REQUIRE(std::ratio_equal<typename decltype(result)::ratio,
+                                  typename decltype(v1)::ratio>::value == true);
+  STATIC_REQUIRE(result.raw_value() == 1001);
 }
 
 TEMPLATE_TEST_CASE("GIVEN two units with value difference "
@@ -263,8 +248,8 @@ TEMPLATE_TEST_CASE("GIVEN two units with value difference "
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{
       std::numeric_limits<TestType>::epsilon() / static_cast<TestType>(2)};
 
-  static_assert(v1 == v2, "Result is the same");
-  static_assert(!(v1 != v2), "Result is the same");
+  STATIC_REQUIRE(v1 == v2);
+  STATIC_REQUIRE(!(v1 != v2));
 }
 
 TEST_CASE("GIVEN two units with floating point types with value difference of "
@@ -275,8 +260,8 @@ TEST_CASE("GIVEN two units with floating point types with value difference of "
   constexpr unit_t<'X', 1, long double, std::ratio<1>> v2{
       std::numeric_limits<long double>::epsilon()};
 
-  static_assert(v1 != v2, "Result is the not the same");
-  static_assert(!(v1 == v2), "Result is the not the same");
+  STATIC_REQUIRE(v1 != v2);
+  STATIC_REQUIRE(!(v1 == v2));
 }
 
 TEMPLATE_TEST_CASE(
@@ -286,8 +271,8 @@ TEMPLATE_TEST_CASE(
   constexpr unit_t<'X', 1, TestType, std::milli> v1{1000};
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{1};
 
-  static_assert(v1 == v2, "values are equal");
-  static_assert(!(v2 != v1), "values are equal");
+  STATIC_REQUIRE(v1 == v2);
+  STATIC_REQUIRE(!(v2 != v1));
 }
 
 TEMPLATE_TEST_CASE(
@@ -297,7 +282,7 @@ TEMPLATE_TEST_CASE(
 
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1};
 
-  static_assert(!(v1 < v1), "Less than comparison is false");
+  STATIC_REQUIRE(!(v1 < v1));
 }
 
 TEMPLATE_TEST_CASE(
@@ -308,7 +293,7 @@ TEMPLATE_TEST_CASE(
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1};
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{0};
 
-  static_assert(v1 < v2, "Less than comparison is true");
+  STATIC_REQUIRE(v1 < v2);
 }
 
 TEMPLATE_TEST_CASE("GIVEN two units v1 and v2 AND v1 is smaller than v2 AND "
@@ -319,7 +304,7 @@ TEMPLATE_TEST_CASE("GIVEN two units v1 and v2 AND v1 is smaller than v2 AND "
   constexpr unit_t<'X', 1, TestType, std::kilo> v1{10};
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{1000};
 
-  static_assert(v1 < v2, "Less than comparison is true");
+  STATIC_REQUIRE(v1 < v2);
 }
 
 TEMPLATE_TEST_CASE(
@@ -329,7 +314,7 @@ TEMPLATE_TEST_CASE(
 
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1};
 
-  static_assert(!(v1 > v1), "Less than comparison is false");
+  STATIC_REQUIRE(!(v1 > v1));
 }
 
 TEMPLATE_TEST_CASE(
@@ -340,7 +325,7 @@ TEMPLATE_TEST_CASE(
   constexpr unit_t<'X', 1, TestType, std::kilo> v1{1};
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{1000};
 
-  static_assert(!(v1 > v2), "Less than comparison is false");
+  STATIC_REQUIRE(!(v1 > v2));
 }
 
 TEMPLATE_TEST_CASE(
@@ -351,7 +336,7 @@ TEMPLATE_TEST_CASE(
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1};
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{0};
 
-  static_assert(v2 > v1, "Less than comparison is true");
+  STATIC_REQUIRE(v2 > v1);
 }
 
 TEMPLATE_TEST_CASE("GIVEN two units v1 and v2 AND v1 is smaller than v2 AND "
@@ -362,5 +347,5 @@ TEMPLATE_TEST_CASE("GIVEN two units v1 and v2 AND v1 is smaller than v2 AND "
   constexpr unit_t<'X', 1, TestType, std::kilo> v1{10};
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{1000};
 
-  static_assert(v2 > v1, "Less than comparison is true");
+  STATIC_REQUIRE(v2 > v1);
 }

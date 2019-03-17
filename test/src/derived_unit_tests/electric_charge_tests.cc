@@ -1,5 +1,3 @@
-
-
 #include <catch.hpp>
 
 #include <SI/detail/detail.h>
@@ -20,12 +18,12 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _C THEN result is an "
           "electric charge AND ratio is 1") {
   constexpr auto one = 1_C;
 
-  static_assert(
+  STATIC_REQUIRE(
       std::is_same<decltype(one),
                    const SI::electric_charge_t<int64_t, std::ratio<1>>>::value);
 
   constexpr auto one_f = 1.0_C;
-  static_assert(
+  STATIC_REQUIRE(
       std::is_same<decltype(one_f), const SI::electric_charge_t<
                                         long double, std::ratio<1>>>::value);
 }
@@ -34,26 +32,26 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _mC THEN result is an "
           "electric charge AND ratio is 1/1000") {
   constexpr auto one = 1_mC;
 
-  static_assert(
+  STATIC_REQUIRE(
       std::is_same<decltype(one),
                    const SI::electric_charge_t<int64_t, std::milli>>::value);
 
   constexpr auto one_f = 1.0_mC;
 
-  static_assert(std::is_same<
-                decltype(one_f),
-                const SI::electric_charge_t<long double, std::milli>>::value);
+  STATIC_REQUIRE(std::is_same<
+                 decltype(one_f),
+                 const SI::electric_charge_t<long double, std::milli>>::value);
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _kC THEN result is an "
           "electric charge AND ratio is 1000/1") {
   constexpr auto one = 1_kC;
-  static_assert(
+  STATIC_REQUIRE(
       std::is_same<decltype(one),
                    const SI::electric_charge_t<int64_t, std::kilo>>::value);
 
   constexpr auto one_f = 1.0_kC;
-  static_assert(
+  STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::electric_charge_t<long double, std::kilo>>::value);
 }
@@ -65,13 +63,10 @@ TEST_CASE("GIVEN values electric current (I) and a time (T) WHEN multiplied "
   constexpr auto result = current * time;
   constexpr auto result_commutative = time * current;
 
-  static_assert(is_same_ignore_const<decltype(result), decltype(1_C)>::value,
-                "Result is electric charge");
-  static_assert(
-      is_same_ignore_const<decltype(result_commutative), decltype(1_C)>::value,
-      "Result is electric charge");
-  static_assert(result == result_commutative,
-                "Commutative operations are equal");
+  STATIC_REQUIRE(is_same_ignore_const<decltype(result), decltype(1_C)>::value);
+  STATIC_REQUIRE(
+      is_same_ignore_const<decltype(result_commutative), decltype(1_C)>::value);
+  STATIC_REQUIRE(result == result_commutative);
 }
 
 TEST_CASE("GIVEN value for electric charge WHEN divided by electric current "
@@ -81,7 +76,7 @@ TEST_CASE("GIVEN value for electric charge WHEN divided by electric current "
 
   constexpr auto result = charge / current;
 
-  static_assert(is_same_ignore_const<decltype(result), decltype(1_s)>::value);
+  STATIC_REQUIRE(is_same_ignore_const<decltype(result), decltype(1_s)>::value);
 }
 
 TEST_CASE("GIVEN value for electric charge WHEN divided by time THEN result is "
@@ -90,7 +85,7 @@ TEST_CASE("GIVEN value for electric charge WHEN divided by time THEN result is "
   constexpr auto time = 1_s;
   constexpr auto result = charge / time;
 
-  static_assert(is_same_ignore_const<decltype(result), decltype(1_A)>::value);
+  STATIC_REQUIRE(is_same_ignore_const<decltype(result), decltype(1_A)>::value);
 }
 
 TEST_CASE("GIVEN values for I and T AND ratio is the same WHEN multiplied THEN "
@@ -100,9 +95,8 @@ TEST_CASE("GIVEN values for I and T AND ratio is the same WHEN multiplied THEN "
   constexpr auto result = current * time;
   constexpr auto result_commutative = time * current;
 
-  static_assert(result.raw_value() == 2, "result is calculated correctly");
-  static_assert(result_commutative.raw_value() == 2,
-                "result is calculated correctly");
+  STATIC_REQUIRE(result.raw_value() == 2);
+  STATIC_REQUIRE(result_commutative.raw_value() == 2);
 }
 
 TEST_CASE("GIVEN values for I and T AND ratio is not the same WHEN multiplied "
@@ -112,21 +106,16 @@ TEST_CASE("GIVEN values for I and T AND ratio is not the same WHEN multiplied "
   constexpr auto result = current * t;
   constexpr auto result_commutative = t * current;
 
-  static_assert(std::ratio_equal<decltype(result)::ratio, std::milli>::value,
-                "resulting ratio is mutliplied");
+  STATIC_REQUIRE(std::ratio_equal<decltype(result)::ratio, std::milli>::value);
 
-  static_assert(result.raw_value() == 2000, "value is calculated in "
-                                            "millis");
+  STATIC_REQUIRE(result.raw_value() == 2000);
 
-  static_assert(std::ratio_equal<decltype(result_commutative)::ratio,
-                                 decltype(result)::ratio>::value,
-                "Ratio is the same for commutative operations");
+  STATIC_REQUIRE(std::ratio_equal<decltype(result_commutative)::ratio,
+                                  decltype(result)::ratio>::value);
 
-  static_assert(result_commutative.raw_value() == 2000,
-                "value is calculated in ratio 1");
+  STATIC_REQUIRE(result_commutative.raw_value() == 2000);
 
-  static_assert(result_commutative == result,
-                "Commutative operations are equal");
+  STATIC_REQUIRE(result_commutative == result);
 }
 
 TEST_CASE("GIVEN electric charge Q with ratio<1> WHEN divided by electric "
@@ -136,10 +125,9 @@ TEST_CASE("GIVEN electric charge Q with ratio<1> WHEN divided by electric "
   constexpr auto current = 4_A;
   constexpr auto result = charge / current;
 
-  static_assert(is_same_ignore_const<decltype(result), decltype(1_s)>::value,
-                "Result is of type T (s)");
+  STATIC_REQUIRE(is_same_ignore_const<decltype(result), decltype(1_s)>::value);
 
-  static_assert(result.raw_value() == 2, "Is 2");
+  STATIC_REQUIRE(result.raw_value() == 2);
 }
 
 TEST_CASE(
@@ -150,10 +138,9 @@ TEST_CASE(
   constexpr auto current = 4000_A;
   constexpr auto result = charge / current;
 
-  static_assert(std::ratio_equal<decltype(result)::ratio, std::mega>::value,
-                "Ratio is 1 / mega");
-  static_assert(result.raw_value() == 0,
-                "Is 0"); // result would be 2000 s which is 0.002 Mega-Seconds
+  STATIC_REQUIRE(std::ratio_equal<decltype(result)::ratio, std::mega>::value);
+  STATIC_REQUIRE(result.raw_value() ==
+                 0); // result would be 2000 s which is 0.002 Mega-Seconds
 }
 
 TEST_CASE("GIVEN electric charge Q with ratio<1000000,1>  AND type is floating "
@@ -164,9 +151,8 @@ TEST_CASE("GIVEN electric charge Q with ratio<1000000,1>  AND type is floating "
   constexpr auto current = 4000.0_A;
   constexpr auto result = charge / current;
 
-  static_assert(std::ratio_equal<decltype(result)::ratio, std::mega>::value,
-                "Ratio is 1 / mega");
-  static_assert(SI::detail::epsEqual(result.raw_value(), 0.002L), "Is 0");
+  STATIC_REQUIRE(std::ratio_equal<decltype(result)::ratio, std::mega>::value);
+  STATIC_REQUIRE(SI::detail::epsEqual(result.raw_value(), 0.002L));
 }
 
 TEST_CASE("GIVEN electric charge Q with ratio<1> WHEN divided by time T in "
@@ -175,9 +161,8 @@ TEST_CASE("GIVEN electric charge Q with ratio<1> WHEN divided by time T in "
   constexpr auto time = 2_s;
   constexpr auto result = charge / time;
 
-  static_assert(is_same_ignore_const<decltype(result), decltype(1_A)>::value,
-                "Result is electric current");
-  static_assert(result == 2_A, "result is 2A");
+  STATIC_REQUIRE(is_same_ignore_const<decltype(result), decltype(1_A)>::value);
+  STATIC_REQUIRE(result == 2_A);
 }
 
 TEST_CASE("GIVEN electric charge Q with ratio<1000,1> WHEN divided by time T "
@@ -186,9 +171,8 @@ TEST_CASE("GIVEN electric charge Q with ratio<1000,1> WHEN divided by time T "
   constexpr auto time = 2_min;
   constexpr auto result = charge / time;
 
-  static_assert(
-      std::ratio_equal<decltype(result)::ratio, std::ratio<50, 3>>::value,
-      "Result is of type T");
+  STATIC_REQUIRE(
+      std::ratio_equal<decltype(result)::ratio, std::ratio<50, 3>>::value);
 
-  static_assert(result.raw_value() == 2, "Is 200/3A");
+  STATIC_REQUIRE(result.raw_value() == 2);
 }
