@@ -65,7 +65,18 @@ matrix:
     - os: osx
       osx_image: xcode10.2
       compiler: clang
-      
+
+    - os: linux
+      name: runtime-testing
+      compiler: gcc
+      addons:
+        apt:
+          sources: *all_sources
+          packages:
+            - g++-8
+      env:
+        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+        - CXXFLAGS=-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE
 
 before_install:
   - eval "${MATRIX_EVAL}"
