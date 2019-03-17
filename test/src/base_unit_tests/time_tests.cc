@@ -5,7 +5,10 @@
 
 using namespace SI::literals;
 
-TEST_CASE("s returns ratio 1 to 1") {
+/// @todo add test for return type
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _s THEN resulting value "
+          "is of time type AND ratio 1 to 1") {
   constexpr auto one = 1_s;
   STATIC_REQUIRE(decltype(one)::ratio::num == 1);
   STATIC_REQUIRE(decltype(one)::ratio::den == 1);
@@ -16,7 +19,8 @@ TEST_CASE("s returns ratio 1 to 1") {
   STATIC_REQUIRE(decltype(one_f)::ratio::den == 1);
 }
 
-TEST_CASE("us returns ratio micro") {
+TEST_CASE("GIVEN a value WHEN constructed with literal _us THEN resulting "
+          "value is of time type AND ratio micro") {
   constexpr auto one = 1_us;
   STATIC_REQUIRE(std::ratio_equal<decltype(one)::ratio, std::micro>::value);
 
@@ -24,7 +28,8 @@ TEST_CASE("us returns ratio micro") {
   STATIC_REQUIRE(std::ratio_equal<decltype(one_f)::ratio, std::micro>::value);
 }
 
-TEST_CASE("ms returns ratio milli") {
+TEST_CASE("GIVEN a value WHEN constructed with literal _ms THEN resulting "
+          "value is of time type AND ratio milli") {
   constexpr auto one = 1_ms;
   STATIC_REQUIRE(std::ratio_equal<decltype(one)::ratio, std::milli>::value);
 
@@ -32,7 +37,8 @@ TEST_CASE("ms returns ratio milli") {
   STATIC_REQUIRE(std::ratio_equal<decltype(one_f)::ratio, std::milli>::value);
 }
 
-TEST_CASE("min returns ratio 60 to 1") {
+TEST_CASE("GIVEN a value WHEN constructed with literal _min THEN resulting "
+          "value is of time type AND ratio 60 to 1") {
   constexpr auto one = 1_min;
   STATIC_REQUIRE(decltype(one)::ratio::num == 60);
   STATIC_REQUIRE(decltype(one)::ratio::den == 1);
@@ -42,7 +48,8 @@ TEST_CASE("min returns ratio 60 to 1") {
   STATIC_REQUIRE(decltype(one_f)::ratio::den == 1);
 }
 
-TEST_CASE("h returns ratio 3600 to 1") {
+TEST_CASE("GIVEN a value WHEN constructed with literal _h THEN resulting value "
+          "is of time type AND ratio 3600 to 1") {
   constexpr auto one = 1_h;
   STATIC_REQUIRE(
       std::ratio_equal<decltype(one)::ratio, std::ratio<3600, 1>>::value);
@@ -52,11 +59,8 @@ TEST_CASE("h returns ratio 3600 to 1") {
       std::ratio_equal<decltype(one_f)::ratio, std::ratio<3600, 1>>::value);
 }
 
-TEST_CASE("negative duration test") {
+TEST_CASE(
+    "GIVEN a value WHEN constructed with literal _negative duration test") {
   constexpr auto minus_one = -1_s;
   STATIC_REQUIRE(minus_one.raw_value() == -1);
 }
-
-/* Test below intentionally fails to compile
-TEST_CASE("Assert on overflow for s") { REQUIRE_THROWS(0xffffffffffffffff_s); }
-*/
