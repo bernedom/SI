@@ -4,20 +4,22 @@
 
 using namespace SI::detail;
 
-TEST_CASE("GIVEN a variable of type unit_t THEN is_unit_t returns true") {
+TEST_CASE("GIVEN a variable of type unit_t WHEN passed to is_unit THEN result "
+          "is true") {
   constexpr unit_t<'X', 1, int64_t> v1{0};
   STATIC_REQUIRE(is_unit_t<decltype(v1)>::value == true);
 }
 
-/// @todo convert to templated case
-TEST_CASE("GIVEN a variable of type int THEN is_unit_t returns false") {
+TEMPLATE_TEST_CASE("GIVEN a variable of simple type WHEN passed to is?unit "
+                   "THEN result false",
+                   "[is unit test]", int, char, float, double) {
 
-  constexpr int v1{0};
+  constexpr TestType v1{0};
   STATIC_REQUIRE(is_unit_t<decltype(v1)>::value == false);
 }
 
-TEST_CASE("GIVEN derived type derived from unit_t THEN is_unit_t returns true "
-          "if casted") {
+TEST_CASE("GIVEN derived type derived from unit_t WHEN catsted AND passed to "
+          "is_unit  THEN return value is true ") {
 
   struct to_test : unit_t<'X', 1, int64_t> {};
   constexpr to_test v1{0};
