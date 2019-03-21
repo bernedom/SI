@@ -227,6 +227,22 @@ TEMPLATE_TEST_CASE("GIVEN a unit WHEN added to itself THEN resulting value is "
   STATIC_REQUIRE(result.raw_value() == 2);
   STATIC_REQUIRE(std::is_same<decltype(v1), decltype(result)>::value);
 }
+
+TEMPLATE_TEST_CASE("GIVEN two values of same unit AND ratio is different WHEN "
+                   "added to each other THEN resulting type is type of lhs",
+                   "[unit_t][operator+]", int64_t, long double) {
+
+  constexpr unit_t<'X', 1, TestType, std::kilo> k{1};
+  constexpr unit_t<'X', 1, TestType, std::milli> m{1};
+
+  constexpr auto result = k + m;
+  constexpr auto result_commutative = m + k;
+
+  STATIC_REQUIRE(std::is_same<decltype(result), decltype(k)>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(result_commutative), decltype(m)>::value);
+}
+
 TEMPLATE_TEST_CASE("GIVEN a value WHEN subtracted from itself THEN result is 0 "
                    "AND type is the same",
                    "[unit_t][operator-]", int64_t, long double) {
@@ -234,6 +250,22 @@ TEMPLATE_TEST_CASE("GIVEN a value WHEN subtracted from itself THEN result is 0 "
   constexpr auto result = v1 - v1;
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> expected(0);
   STATIC_REQUIRE(expected == result);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN two values of same unit AND ratio is different WHEN "
+    "subtracted from each other THEN resulting type is type of lhs",
+    "[unit_t][operator+]", int64_t, long double) {
+
+  constexpr unit_t<'X', 1, TestType, std::kilo> k{1};
+  constexpr unit_t<'X', 1, TestType, std::milli> m{1};
+
+  constexpr auto result = k - m;
+  constexpr auto result_commutative = m - k;
+
+  STATIC_REQUIRE(std::is_same<decltype(result), decltype(k)>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(result_commutative), decltype(m)>::value);
 }
 
 TEMPLATE_TEST_CASE(

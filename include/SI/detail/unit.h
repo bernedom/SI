@@ -186,6 +186,7 @@ struct unit_t {
     return raw_value() / rhs.raw_value();
   }
 
+  /// adds two values, returning type is type of lhs
   template <typename _rhs_ratio>
   constexpr unit_t
   operator+(const unit_t<symbol::value, exponent::value, internal_type,
@@ -198,7 +199,7 @@ struct unit_t {
         raw_value() +
         unit_cast<unit_t<_Symbol, _Exponent, _Type, _Ratio>>(rhs).raw_value()};
   }
-
+  /// subtracts two values, returning type is type of lhs
   template <typename _rhs_ratio>
   constexpr unit_t
   operator-(const unit_t<symbol::value, exponent::value, internal_type,
