@@ -264,6 +264,9 @@ template <typename _unit_lhs, typename _unit_rhs>
 struct unit_with_common_ratio {
   static_assert(is_unit_t<_unit_lhs>::value, "only supported for SI::unit_t");
   static_assert(is_unit_t<_unit_rhs>::value, "only supported for SI::unit_t");
+  static_assert(std::is_same<typename _unit_lhs::internal_type,
+                             typename _unit_rhs::internal_type>::value);
+  static_assert(_unit_lhs::symbol::value == _unit_rhs::symbol::value);
   typedef unit_t<_unit_lhs::symbol::value, _unit_lhs::exponent::value,
                  typename _unit_lhs::internal_type,
                  typename detail::ratio_gcd<typename _unit_lhs::ratio,

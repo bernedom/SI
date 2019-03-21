@@ -62,3 +62,18 @@ TEMPLATE_TEST_CASE("GIVEN to values of different type AND ratio is different "
       std::is_same<decltype(result),
                    const expected_unit<TestType, std::ratio<1>>>::value);
 }
+
+TEMPLATE_TEST_CASE(
+    "GIVEN two units of same type AND different ratio WHEN passed to "
+    "unit_with_common_ratio THEN resulting ratio is gcd",
+    "[unit_t][helpers]", int64_t, long double) {
+  using common_unit = typename SI::detail::unit_with_common_ratio<
+      unit_t<'X', 1, TestType, std::ratio<1>>,
+      unit_t<'X', 1, TestType, std::milli>>::type;
+
+  STATIC_REQUIRE(
+      std::ratio_equal<typename common_unit::ratio, std::milli>::value);
+  STATIC_REQUIRE(
+      std::is_same<common_unit,
+                   SI::detail::unit_t<'X', 1, TestType, std::milli>>::value);
+}
