@@ -43,8 +43,9 @@ struct unit_t {
   /// returns the stored value as raw type
   constexpr internal_type raw_value() const { return value_; }
 
-  /// Comparison operator takes considers different ratios, i.e. 1000 micros ===
-  /// 1 milli
+  /// @todo check if comparison works if integer is truncated
+  /// Comparison operator takes considers different ratios, i.e. 1000
+  /// micros === 1 milli
   template <typename _rhs_ratio = std::ratio<1>>
   constexpr bool
   operator==(const unit_t<symbol::value, exponent::value, internal_type,
@@ -69,6 +70,7 @@ struct unit_t {
     }
   }
 
+  /// compares two values, considers different ratios.
   template <typename _rhs_ratio = std::ratio<1>>
   constexpr bool
   operator!=(const unit_t<symbol::value, exponent::value, internal_type,
@@ -118,8 +120,10 @@ struct unit_t {
                                                      rhs.raw_value()};
   }
 
-  /// multiply with a same unit, with possibly different exponent and different
-  /// ratio resulting unit is the same as 'this'/left hand side of operation
+  /// @todo check if internal multiplication behaves the same as cross unit
+  /// multiplication multiply with a same unit, with possibly different exponent
+  /// and different ratio resulting unit is the same as 'this'/left hand side of
+  /// operation
   template <char _rhs_Exponent, typename _rhs_ratio>
   constexpr auto operator*(const unit_t<symbol::value, _rhs_Exponent,
                                         internal_type, _rhs_ratio> &rhs) const {
@@ -151,6 +155,7 @@ struct unit_t {
                   internal_type, ratio>{value_ / rhs.raw_value()};
   }
 
+  /// @todo check if internal divide behaves the same as cross unit divide
   /// divide with a same unit but different ratios
   /// the ratio of the result is the gcd of the two ratios
   template <char _rhs_exponent, typename _rhs_ratio,
@@ -220,7 +225,8 @@ private:
   internal_type value_;
 }; // namespace SI
 
-/// operator to divide
+/// operator to divide primitive type by unit encapsulating the same type
+/// @results unit with negative exponent
 template <char _Symbol, char _Exponent, typename _Type, typename _Ratio>
 constexpr auto operator/(const _Type &lhs,
                          const unit_t<_Symbol, _Exponent, _Type, _Ratio> &rhs) {
