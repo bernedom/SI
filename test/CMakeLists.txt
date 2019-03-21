@@ -7,7 +7,8 @@ add_executable(SI_detail_tests
                 src/detail_tests/detail_tests.cc
                 src/detail_tests/number_parser_tests.cc
                 src/detail_tests/unit_t_operator_tests.cc
-                src/detail_tests/unit_t_type_tests.cc)   
+                src/detail_tests/unit_t_type_tests.cc
+                src/detail_tests/unit_helper_functions_tests.cc)   
 
 target_include_directories(SI_detail_tests PRIVATE ${PROJECT_SOURCE_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/include)
 
