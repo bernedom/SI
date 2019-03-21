@@ -340,7 +340,7 @@ TEMPLATE_TEST_CASE(
 TEMPLATE_TEST_CASE("GIVEN two units v1 and v2 AND v1 is smaller than v2 AND "
                    "different ratio WHEN "
                    "compared with less than operator THEN result is true",
-                   "[unit_t][unit_cast]", int64_t, long double) {
+                   "[unit_t][operator<]", int64_t, long double) {
 
   constexpr unit_t<'X', 1, TestType, std::kilo> v1{10};
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{1000};

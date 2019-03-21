@@ -38,6 +38,23 @@ TEST_CASE("GIVEN two units of the same dimension type, ratio and value WHEN "
   STATIC_REQUIRE(std::is_same<decltype(result), decltype(v1)>::value);
 }
 
+TEST_CASE("GIVEN a value AND ratio is small AND type is integral WHEN "
+          "unit_cast to unit with ratio that exceeds value THEN value is 0") {
+  constexpr unit_t<'X', 1, int64_t, std::ratio<1>> v1{1};
+  constexpr auto result = unit_cast<unit_t<'X', 1, int64_t, std::kilo>>(v1);
+
+  STATIC_REQUIRE(result.raw_value() == 0);
+}
+TEST_CASE(
+    "GIVEN a value AND ratio is small AND type is double WHEN "
+    "unit_cast to unit with ratio that exceeds value THEN value is added") {
+  constexpr unit_t<'X', 1, long double, std::ratio<1>> v1{1};
+  constexpr auto result = unit_cast<unit_t<'X', 1, long double, std::kilo>>(v1);
+  constexpr unit_t<'X', 1, long double, std::kilo> expected(0.001);
+
+  STATIC_REQUIRE(result == expected);
+}
+
 TEMPLATE_TEST_CASE(
     "GIVEN two units of same dimension type AND different ratio WHEN "
     "cast from one to another THEN value is according to the ratio",
