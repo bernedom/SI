@@ -18,7 +18,7 @@ TEMPLATE_TEST_CASE("GIVEN a variable of simple type WHEN passed to is?unit "
   STATIC_REQUIRE(is_unit_t<decltype(v1)>::value == false);
 }
 
-TEST_CASE("GIVEN derived type derived from unit_t WHEN catsted AND passed to "
+TEST_CASE("GIVEN derived type derived from unit_t WHEN catsed AND passed to "
           "is_unit  THEN return value is true ") {
 
   struct to_test : unit_t<'X', 1, int64_t> {};

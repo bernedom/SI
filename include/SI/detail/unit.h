@@ -199,6 +199,19 @@ struct unit_t {
         unit_cast<unit_t<_Symbol, _Exponent, _Type, _Ratio>>(rhs).raw_value()};
   }
 
+  template <typename _rhs_ratio>
+  constexpr unit_t
+  operator-(const unit_t<symbol::value, exponent::value, internal_type,
+                         _rhs_ratio> &rhs) const {
+
+    static_assert(detail::is_ratio<_rhs_ratio>::value,
+                  "_rhs_ratio is a std::ratio");
+
+    return unit_t{
+        raw_value() +
+        -unit_cast<unit_t<_Symbol, _Exponent, _Type, _Ratio>>(rhs).raw_value()};
+  }
+
   /// negate operation
   constexpr unit_t operator-() { return {-value_}; }
 

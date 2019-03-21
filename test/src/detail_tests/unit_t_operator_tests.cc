@@ -218,13 +218,22 @@ TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
   STATIC_REQUIRE(result == expected);
 }
 
-TEMPLATE_TEST_CASE(
-    "GIVEN a unit WHEN added to itself THEN resulting value value * 2",
-    "[unit_t][operator+]", int64_t, long double) {
+TEMPLATE_TEST_CASE("GIVEN a unit WHEN added to itself THEN resulting value is "
+                   "value * 2 AND resulting type is the same",
+                   "[unit_t][operator+]", int64_t, long double) {
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1};
   constexpr auto result = v1 + v1;
 
   STATIC_REQUIRE(result.raw_value() == 2);
+  STATIC_REQUIRE(std::is_same<decltype(v1), decltype(result)>::value);
+}
+TEMPLATE_TEST_CASE("GIVEN a value WHEN subtracted from itself THEN result is 0 "
+                   "AND type is the same",
+                   "[unit_t][operator-]", int64_t, long double) {
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1};
+  constexpr auto result = v1 - v1;
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> expected(0);
+  STATIC_REQUIRE(expected == result);
 }
 
 TEMPLATE_TEST_CASE(
