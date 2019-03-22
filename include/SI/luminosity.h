@@ -3,7 +3,7 @@
 
 namespace SI {
 
-template <typename _Type, typename _Ratio = std::ratio<1>>
+template <typename _Type, typename _Ratio>
 using luminosity_t = detail::unit_t<'J', 1, _Type, _Ratio>;
 
 template <typename _Type> using candela_t = luminosity_t<_Type, std::ratio<1>>;

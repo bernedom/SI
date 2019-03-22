@@ -6,7 +6,7 @@
 #include "detail/unit.h"
 
 namespace SI {
-template <typename _Type, typename _Ratio = std::ratio<1>>
+template <typename _Type, typename _Ratio>
 using length_t = detail::unit_t<'L', 1, _Type, _Ratio>;
 
 template <typename _Type> using meter_t = length_t<_Type, std::ratio<1>>;
