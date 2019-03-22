@@ -284,12 +284,14 @@ struct unit_with_common_ratio {
 /// unit_t
 
 /// divide a value of a certain unit with another value of a possibly different
-/// type resulting in a new type
-/// using a variadic template to simplify usage of implentation
+/// type resulting in a new type, the resulting exponent is specified by
+/// resultingunit using a variadic template to simplify usage of implentation
 /// the internal type of the result is the internal type of lhs
 template <template <typename...> typename _resulting_unit, typename _unit_lhs,
           typename _unit_rhs>
 constexpr auto cross_unit_divide(const _unit_lhs &lhs, const _unit_rhs &rhs) {
+  // do not use for the same unit as this should result in decreasing the
+  // exponent
   static_assert(!std::is_same<_unit_lhs, _unit_rhs>::value);
   static_assert(is_unit_t<_unit_lhs>::value, "lhs parameter is a unit_t");
   static_assert(is_unit_t<_unit_rhs>::value, "rhs parameter is a unit_t");
@@ -300,13 +302,16 @@ constexpr auto cross_unit_divide(const _unit_lhs &lhs, const _unit_rhs &rhs) {
       lhs.raw_value() / rhs.raw_value()};
 }
 /// multiply a value of a unit witn another value of a possibly different value
-/// resulting in a value of a new type
+/// resulting in a value of a new type with exponent 1
 /// the internal type of the result is the internal type of lhs
 /// @todo add function that works with variable exponent units and remove
 /// special typedefs for time
+
 template <template <typename...> typename _resulting_unit, typename _unit_lhs,
           typename _unit_rhs>
 constexpr auto cross_unit_multiply(const _unit_lhs &lhs, const _unit_rhs &rhs) {
+  // do not use for the same unit as this should result in increasing the
+  // exponent
   static_assert(!std::is_same<_unit_lhs, _unit_rhs>::value);
   static_assert(is_unit_t<_unit_lhs>::value, "lhs parameter is a unit_t");
   static_assert(is_unit_t<_unit_rhs>::value, "rhs parameter is a unit_t");
