@@ -21,11 +21,15 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _C THEN result is an "
   STATIC_REQUIRE(
       std::is_same<decltype(one),
                    const SI::electric_charge_t<int64_t, std::ratio<1>>>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::coulomb_t<int64_t>>::value);
 
   constexpr auto one_f = 1.0_C;
   STATIC_REQUIRE(
       std::is_same<decltype(one_f), const SI::electric_charge_t<
                                         long double, std::ratio<1>>>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_f), const SI::coulomb_t<long double>>::value);
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _mC THEN result is an "
@@ -35,12 +39,16 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _mC THEN result is an "
   STATIC_REQUIRE(
       std::is_same<decltype(one),
                    const SI::electric_charge_t<int64_t, std::milli>>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::milli_coulomb_t<int64_t>>::value);
 
   constexpr auto one_f = 1.0_mC;
 
   STATIC_REQUIRE(std::is_same<
                  decltype(one_f),
                  const SI::electric_charge_t<long double, std::milli>>::value);
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::milli_coulomb_t<long double>>::value);
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _kC THEN result is an "
@@ -49,11 +57,32 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _kC THEN result is an "
   STATIC_REQUIRE(
       std::is_same<decltype(one),
                    const SI::electric_charge_t<int64_t, std::kilo>>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::kilo_coulomb_t<int64_t>>::value);
 
   constexpr auto one_f = 1.0_kC;
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::electric_charge_t<long double, std::kilo>>::value);
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::kilo_coulomb_t<long double>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _MC THEN result is an "
+          "electric charge AND ratio is 1000000/1") {
+  constexpr auto one = 1_MC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::electric_charge_t<int64_t, std::mega>>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mega_coulomb_t<int64_t>>::value);
+
+  constexpr auto one_f = 1.0_MC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_f),
+                   const SI::electric_charge_t<long double, std::mega>>::value);
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mega_coulomb_t<long double>>::value);
 }
 
 TEST_CASE("GIVEN values electric current (I) and a time (T) WHEN multiplied "
