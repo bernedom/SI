@@ -43,7 +43,6 @@ struct unit_t {
   /// returns the stored value as raw type
   constexpr internal_type raw_value() const { return value_; }
 
-  /// @todo check if comparison works if integer is truncated
   /// Comparison operator takes considers different ratios, i.e. 1000
   /// micros === 1 milli
   template <typename _rhs_ratio = std::ratio<1>>
@@ -120,10 +119,11 @@ struct unit_t {
                                                      rhs.raw_value()};
   }
 
-  /// @todo check if internal multiplication behaves the same as cross unit
   /// multiplication multiply with a same unit, with possibly different exponent
-  /// and different ratio resulting unit is the same as 'this'/left hand side of
-  /// operation
+  /// and different ratio
+  /// the exponents this and rhs are added, the resulting ratio is the gcd
+  /// between both ratios squared. The reason for this is to avoid truncating
+  /// values if multiplying units with different ratios
   template <char _rhs_Exponent, typename _rhs_ratio>
   constexpr auto operator*(const unit_t<symbol::value, _rhs_Exponent,
                                         internal_type, _rhs_ratio> &rhs) const {
@@ -155,9 +155,9 @@ struct unit_t {
                   internal_type, ratio>{value_ / rhs.raw_value()};
   }
 
-  /// @todo check if internal divide behaves the same as cross unit divide
   /// divide with a same unit but different ratios
-  /// the ratio of the result is the gcd of the two ratios
+  /// the ratio of the result is the gcd of the two ratios and the exponents are
+  /// subtracted
   template <char _rhs_exponent, typename _rhs_ratio,
             typename std::enable_if<_rhs_exponent != exponent::value>::type * =
                 nullptr>
@@ -279,9 +279,6 @@ struct unit_with_common_ratio {
                                             typename _unit_rhs::ratio>::ratio>
       type;
 };
-
-//// @todo check if this implementation can be used by the operators inside
-/// unit_t
 
 /// divide a value of a certain unit with another value of a possibly different
 /// type resulting in a new type, the resulting exponent is specified by

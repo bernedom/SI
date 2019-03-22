@@ -390,3 +390,11 @@ TEMPLATE_TEST_CASE("GIVEN two units v1 and v2 AND v1 is smaller than v2 AND "
 
   STATIC_REQUIRE(v2 > v1);
 }
+
+TEST_CASE("GIVEN two units with the same value but different ratios AND values "
+          "are adjusted for ratio WHEN compared THEN result is true") {
+  constexpr unit_t<'X', 1, int64_t, std::kilo> v1{1};
+  constexpr unit_t<'X', 1, int64_t, std::milli> v2{1000000};
+
+  STATIC_REQUIRE(v1 == v2);
+}
