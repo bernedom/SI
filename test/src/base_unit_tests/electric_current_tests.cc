@@ -42,3 +42,16 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _kA THEN result is a "
                  decltype(one_f),
                  const SI::electric_current_t<long double, std::kilo>>::value);
 }
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _MA THEN result is a "
+          "electric_current type AND ratio 1000000 to 1") {
+  constexpr auto one = 1_MA;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::electric_current_t<int64_t, std::mega>>::value);
+
+  constexpr auto one_f = 1.0_MA;
+  STATIC_REQUIRE(std::is_same<
+                 decltype(one_f),
+                 const SI::electric_current_t<long double, std::mega>>::value);
+}
