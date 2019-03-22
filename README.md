@@ -17,7 +17,7 @@ A quick example:
   constexpr auto ten_coulomb = 5.0_A * 2.0_s;
   constexpr auto half_an_ampere = ten_coulomb / 20.0_s;
 
-  void calculate_mass(const SI::mass_t<long double, std::ratio<1>>& kg) { 
+  void calculate_mass(const SI::kilo_gram_t<long double>& kg) { 
     ...
   }
 ```
@@ -31,16 +31,17 @@ The goal is to provide as many conversions and arithmetic operations with values
 ### SI Base units
 
 For each Unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the internation system of units](https://en.wikipedia.org/wiki/Metric_prefix)
+The typedefs are prefixed (ore in rare cases interfixed) with the standard metrix prefixes. i.e. `meter_t, milli_meter_t, kilo_meter_t`. Rhe prefix or interfix is marked with an `*` in the tables below. 
 
-| Unit                        | Dimension Symbol | Unit Symbol | implemented ratios |
-| --------------------------- | ---------------- | ----------- | ------------------ |
-| Length                      | L                | m           | mm, cm, m, km      |
-| Time                        | T                | s           | us, ms, s, min, h  |
-| Mass*                       | M                | kg          | mg, g, kg          |
-| Electric current            | I                | A           | mA, A, kA, MA      |
-| Thermodynamic temperature** | t                | K           | mK, K, kK          |
-| Amount of substance         | N                | mol         | mmol, mol, kmol    |
-| Luminous Intensity          | J                | cd          | mcd, cd, kcd       |
+| Unit                        | Dimension Symbol | Unit Symbol | implemented ratios | unit typedefs                     |
+| --------------------------- | ---------------- | ----------- | ------------------ | --------------------------------- |
+| Length                      | L                | m           | mm, cm, m, km      | `*_meter_t`                       |
+| Time                        | T                | s           | us, ms, s, min, h  | `*_seconds_t, hours_t, minutes_t` |
+| Mass*                       | M                | kg          | mg, g, kg          | `*_gram_t `                       |
+| Electric current            | I                | A           | mA, A, kA, MA      | `*_ampere_t`                      |
+| Thermodynamic temperature** | t                | K           | mK, K, kK          | `*_kelvin_t`                      |
+| Amount of substance         | N                | mol         | mmol, mol, kmol    | `*_mol_t`                         |
+| Luminous Intensity          | J                | cd          | mcd, cd, kcd       | `*_candela_t`                     |
 
 \* for mass the base ratio is `kg` (not `g`) as it is defined in the SI unit table. So there is a mismatch between the literal prefix and the internal representation.
 
@@ -48,22 +49,22 @@ For each Unit the available literals are the implemented ratios prefixed with an
 
 #### Special Units
 
-| Unit   | Dimension Symbol | Exponent | Unit Symbol | implemented ratios |
-| ------ | ---------------- | -------- | ----------- | ------------------ |
-| Area   | L                | 2        | m2          | mm2, cm2, m2       |
-| Volume | L                | 3        | m3          | mm3, cm3, m3       |
+| Unit   | Dimension Symbol | Exponent | Unit Symbol | implemented ratios | unit typedefs      |
+| ------ | ---------------- | -------- | ----------- | ------------------ | ------------------ |
+| Area   | L                | 2        | m2          | mm2, cm2, m2       | `square_*_meter_t` |
+| Volume | L                | 3        | m3          | mm3, cm3, m3       | `cubic_*_meter_t`  |
 
 
 ### Derived units
 
 Only implemented ones are listed. All units that can be built from other units are also decayable to the respective units by inversing the mathematical operation. I.e if `Q = I * T` then `Q / I = T` and `Q / T = I`
 
-| Unit            | Dimension Symbol | Unit Symbol    | builable from | implemented literals |
-| --------------- | ---------------- | -------------- | ------------- | -------------------- |
-| Electric charge | Q                | C              | I * T         | mC, C, kC, MC        |
-| Velocity        | v                | m/s            | L / T         | none                 |
-| Acceleration    | a                | m/s^2          | v / T         | none                 |
-| Force           | F                | N (kg * m/s^2) | M * a         | N, mN, kN            |
+| Unit            | Dimension Symbol | Unit Symbol    | builable from | implemented literals | unit typedefs |
+| --------------- | ---------------- | -------------- | ------------- | -------------------- | ------------- |
+| Electric charge | Q                | C              | I * T         | mC, C, kC, MC        | `*_coulomb_t` |
+| Velocity        | v                | m/s            | L / T         | none                 | none          |
+| Acceleration    | a                | m/s^2          | v / T         | none                 | none          |
+| Force           | F                | N (kg * m/s^2) | M * a         | N, mN, kN            | `*_newton_t`  |
 
 
 # Building & compatibility
