@@ -95,7 +95,7 @@ TEMPLATE_TEST_CASE(
     "EpsEqual comparison of non_zero and quiet_NaN returns false",
     "[detail][epsequal][runtime]", long double, double, float) {
   constexpr TestType zero{0};
-  constexpr const TestType nan{std::numeric_limits<TestType>::quiet_NaN()};
+  constexpr TestType nan{std::numeric_limits<TestType>::quiet_NaN()};
 
   REQUIRE(!SI::detail::epsEqual(zero, nan));
   REQUIRE(!SI::detail::epsEqual(nan, zero));
@@ -105,7 +105,7 @@ TEMPLATE_TEST_CASE(
     "EpsEqual comparison of quiet_NaN and quiet_NaN returns false",
     "[detail][epsequal][runtime]", long double, double, float) {
 
-  constexpr const TestType nan{std::numeric_limits<TestType>::quiet_NaN()};
+  constexpr TestType nan{std::numeric_limits<TestType>::quiet_NaN()};
 
   REQUIRE(!SI::detail::epsEqual(nan, nan));
 }
@@ -114,10 +114,9 @@ TEMPLATE_TEST_CASE(
     "EpsEqual comparison of signaling_NaN and quiet_NaN returns false",
     "[detail][epsequal][runtime]", long double, double, float) {
 
-  constexpr const TestType signaling_nan{
+  constexpr TestType signaling_nan{
       std::numeric_limits<TestType>::signaling_NaN()};
-  constexpr const TestType quiet_nan{
-      std::numeric_limits<TestType>::quiet_NaN()};
+  constexpr TestType quiet_nan{std::numeric_limits<TestType>::quiet_NaN()};
 
   REQUIRE(!SI::detail::epsEqual(signaling_nan, quiet_nan));
 }
@@ -126,10 +125,9 @@ TEMPLATE_TEST_CASE(
     "EpsEqual comparison of signaling_NaN and signaling_NaN returns false",
     "[detail][epsequal][runtime]", long double, double, float) {
 
-  constexpr const TestType signaling_nan{
+  constexpr TestType signaling_nan{
       std::numeric_limits<TestType>::signaling_NaN()};
-  constexpr const TestType quiet_nan{
-      std::numeric_limits<TestType>::signaling_NaN()};
+  constexpr TestType quiet_nan{std::numeric_limits<TestType>::signaling_NaN()};
 
   REQUIRE(!SI::detail::epsEqual(signaling_nan, quiet_nan));
 }
