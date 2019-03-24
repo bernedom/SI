@@ -6,33 +6,124 @@ namespace SI {
 template <typename _Type, typename _Ratio>
 using substance_t = detail::unit_t<'N', 1, _Type, _Ratio>;
 
-template <typename _Type> using mol_t = substance_t<_Type, std::ratio<1>>;
+template <typename _Type> using atto_mol_t = substance_t<_Type, std::atto>;
+template <typename _Type> using femto_mol_t = substance_t<_Type, std::femto>;
+template <typename _Type> using pico_mol_t = substance_t<_Type, std::pico>;
+template <typename _Type> using nano_mol_t = substance_t<_Type, std::nano>;
+template <typename _Type> using micro_mol_t = substance_t<_Type, std::micro>;
 template <typename _Type> using milli_mol_t = substance_t<_Type, std::milli>;
+template <typename _Type> using mol_t = substance_t<_Type, std::ratio<1>>;
 template <typename _Type> using kilo_mol_t = substance_t<_Type, std::kilo>;
+template <typename _Type> using mega_mol_t = substance_t<_Type, std::mega>;
+template <typename _Type> using giga_mol_t = substance_t<_Type, std::giga>;
+template <typename _Type> using tera_mol_t = substance_t<_Type, std::tera>;
+template <typename _Type> using peta_mol_t = substance_t<_Type, std::peta>;
+template <typename _Type> using exa_mol_t = substance_t<_Type, std::exa>;
 
 inline namespace literals {
+
+template <char... _Digits> constexpr auto operator""_amol() {
+  return SI::detail::check_overflow<atto_mol_t<int64_t>, _Digits...>();
+}
+
+template <char... _Digits> constexpr auto operator""_fmol() {
+  return SI::detail::check_overflow<femto_mol_t<int64_t>, _Digits...>();
+}
+
+template <char... _Digits> constexpr auto operator""_pmol() {
+  return SI::detail::check_overflow<pico_mol_t<int64_t>, _Digits...>();
+}
+
+template <char... _Digits> constexpr auto operator""_nmol() {
+  return SI::detail::check_overflow<nano_mol_t<int64_t>, _Digits...>();
+}
+
+template <char... _Digits> constexpr auto operator""_umol() {
+  return SI::detail::check_overflow<micro_mol_t<int64_t>, _Digits...>();
+}
+
+template <char... _Digits> constexpr auto operator""_mmol() {
+  return SI::detail::check_overflow<milli_mol_t<int64_t>, _Digits...>();
+}
+
 template <char... _Digits> constexpr auto operator""_mol() {
   return SI::detail::check_overflow<mol_t<int64_t>, _Digits...>();
 }
 
-template <char... _Digits> constexpr auto operator"" _kmol() {
+template <char... _Digits> constexpr auto operator""_kmol() {
   return SI::detail::check_overflow<kilo_mol_t<int64_t>, _Digits...>();
 }
 
-template <char... _Digits> constexpr auto operator"" _mmol() {
-  return SI::detail::check_overflow<milli_mol_t<int64_t>, _Digits...>();
+template <char... _Digits> constexpr auto operator""_Mmol() {
+  return SI::detail::check_overflow<mega_mol_t<int64_t>, _Digits...>();
 }
 
-constexpr auto operator"" _mol(long double mol) {
-  return mol_t<long double>(mol);
+template <char... _Digits> constexpr auto operator""_Gmol() {
+  return SI::detail::check_overflow<giga_mol_t<int64_t>, _Digits...>();
 }
 
-constexpr auto operator"" _kmol(long double kmol) {
-  return kilo_mol_t<long double>(kmol);
+template <char... _Digits> constexpr auto operator""_Tmol() {
+  return SI::detail::check_overflow<tera_mol_t<int64_t>, _Digits...>();
 }
 
-constexpr auto operator"" _mmol(long double mmol) {
-  return milli_mol_t<long double>(mmol);
+template <char... _Digits> constexpr auto operator""_Pmol() {
+  return SI::detail::check_overflow<peta_mol_t<int64_t>, _Digits...>();
+}
+
+template <char... _Digits> constexpr auto operator""_Emol() {
+  return SI::detail::check_overflow<exa_mol_t<int64_t>, _Digits...>();
+}
+
+constexpr auto operator""_amol(long double value) {
+  return atto_mol_t<long double>{value};
+}
+
+constexpr auto operator""_fmol(long double value) {
+  return femto_mol_t<long double>{value};
+}
+
+constexpr auto operator""_pmol(long double value) {
+  return pico_mol_t<long double>{value};
+}
+
+constexpr auto operator""_nmol(long double value) {
+  return nano_mol_t<long double>{value};
+}
+
+constexpr auto operator""_umol(long double value) {
+  return micro_mol_t<long double>{value};
+}
+
+constexpr auto operator""_mmol(long double value) {
+  return milli_mol_t<long double>{value};
+}
+
+constexpr auto operator""_mol(long double value) {
+  return mol_t<long double>{value};
+}
+
+constexpr auto operator""_kmol(long double value) {
+  return kilo_mol_t<long double>{value};
+}
+
+constexpr auto operator""_Mmol(long double value) {
+  return mega_mol_t<long double>{value};
+}
+
+constexpr auto operator""_Gmol(long double value) {
+  return giga_mol_t<long double>{value};
+}
+
+constexpr auto operator""_Tmol(long double value) {
+  return tera_mol_t<long double>{value};
+}
+
+constexpr auto operator""_Pmol(long double value) {
+  return peta_mol_t<long double>{value};
+}
+
+constexpr auto operator""_Emol(long double value) {
+  return exa_mol_t<long double>{value};
 }
 
 } // namespace literals
