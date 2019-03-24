@@ -14,75 +14,173 @@ struct is_same_ignore_const
 
 using namespace SI::literals;
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _C THEN result is an "
-          "electric charge AND ratio is 1") {
-  constexpr auto one = 1_C;
+TEST_CASE("GIVEN a value WHEN constructed with literal _pC THEN result is a "
+          "electric_charge type AND ratio 1 to 10^15") {
+  constexpr auto one = 1_aC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::electric_charge_t<int64_t, std::atto>>::value);
 
+  constexpr auto one_f = 1.0_aC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_f),
+                   const SI::electric_charge_t<long double, std::atto>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _pC THEN result is a "
+          "electric_charge type AND ratio 1 to 10^15") {
+  constexpr auto one = 1_fC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::electric_charge_t<int64_t, std::femto>>::value);
+
+  constexpr auto one_f = 1.0_fC;
+  STATIC_REQUIRE(std::is_same<
+                 decltype(one_f),
+                 const SI::electric_charge_t<long double, std::femto>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _pC THEN result is a "
+          "electric_charge type AND ratio 1 to 10^12") {
+  constexpr auto one = 1_pC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::electric_charge_t<int64_t, std::pico>>::value);
+
+  constexpr auto one_f = 1.0_pC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_f),
+                   const SI::electric_charge_t<long double, std::pico>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _nC THEN result is a "
+          "electric_charge type AND ratio 1 to 10^9") {
+  constexpr auto one = 1_nC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::electric_charge_t<int64_t, std::nano>>::value);
+
+  constexpr auto one_f = 1.0_nC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_f),
+                   const SI::electric_charge_t<long double, std::nano>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _uC THEN result is a "
+          "electric_charge type AND ratio 1 to 10^6") {
+  constexpr auto one = 1_uC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::electric_charge_t<int64_t, std::micro>>::value);
+
+  constexpr auto one_f = 1.0_uC;
+  STATIC_REQUIRE(std::is_same<
+                 decltype(one_f),
+                 const SI::electric_charge_t<long double, std::micro>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _mC THEN result is a "
+          "electric_charge type AND ratio 1 to 1000") {
+  constexpr auto one = 1_mC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::electric_charge_t<int64_t, std::milli>>::value);
+
+  constexpr auto one_f = 1.0_mC;
+  STATIC_REQUIRE(std::is_same<
+                 decltype(one_f),
+                 const SI::electric_charge_t<long double, std::milli>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _C THEN result is a "
+          "electric_charge type AND ratio 1 to 1") {
+  constexpr auto one = 1_C;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
                    const SI::electric_charge_t<int64_t, std::ratio<1>>>::value);
-  STATIC_REQUIRE(
-      std::is_same<decltype(one), const SI::coulomb_t<int64_t>>::value);
 
   constexpr auto one_f = 1.0_C;
   STATIC_REQUIRE(
       std::is_same<decltype(one_f), const SI::electric_charge_t<
                                         long double, std::ratio<1>>>::value);
-  STATIC_REQUIRE(
-      std::is_same<decltype(one_f), const SI::coulomb_t<long double>>::value);
 }
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _mC THEN result is an "
-          "electric charge AND ratio is 1/1000") {
-  constexpr auto one = 1_mC;
-
-  STATIC_REQUIRE(
-      std::is_same<decltype(one),
-                   const SI::electric_charge_t<int64_t, std::milli>>::value);
-  STATIC_REQUIRE(
-      std::is_same<decltype(one), const SI::milli_coulomb_t<int64_t>>::value);
-
-  constexpr auto one_f = 1.0_mC;
-
-  STATIC_REQUIRE(std::is_same<
-                 decltype(one_f),
-                 const SI::electric_charge_t<long double, std::milli>>::value);
-  STATIC_REQUIRE(std::is_same<decltype(one_f),
-                              const SI::milli_coulomb_t<long double>>::value);
-}
-
-TEST_CASE("GIVEN a value WHEN constructed with literal _kC THEN result is an "
-          "electric charge AND ratio is 1000/1") {
+TEST_CASE("GIVEN a value WHEN constructed with literal _kC THEN result is a "
+          "electric_charge type AND ratio 1000 to 1") {
   constexpr auto one = 1_kC;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
                    const SI::electric_charge_t<int64_t, std::kilo>>::value);
-  STATIC_REQUIRE(
-      std::is_same<decltype(one), const SI::kilo_coulomb_t<int64_t>>::value);
 
   constexpr auto one_f = 1.0_kC;
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::electric_charge_t<long double, std::kilo>>::value);
-  STATIC_REQUIRE(std::is_same<decltype(one_f),
-                              const SI::kilo_coulomb_t<long double>>::value);
 }
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _MC THEN result is an "
-          "electric charge AND ratio is 1000000/1") {
+TEST_CASE("GIVEN a value WHEN constructed with literal _MC THEN result is a "
+          "electric_charge type AND ratio 10^6 to 1") {
   constexpr auto one = 1_MC;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
                    const SI::electric_charge_t<int64_t, std::mega>>::value);
-  STATIC_REQUIRE(
-      std::is_same<decltype(one), const SI::mega_coulomb_t<int64_t>>::value);
 
   constexpr auto one_f = 1.0_MC;
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::electric_charge_t<long double, std::mega>>::value);
-  STATIC_REQUIRE(std::is_same<decltype(one_f),
-                              const SI::mega_coulomb_t<long double>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _GC THEN result is a "
+          "electric_charge type AND ratio 10^9 to 1") {
+  constexpr auto one = 1_GC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::electric_charge_t<int64_t, std::giga>>::value);
+
+  constexpr auto one_f = 1.0_GC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_f),
+                   const SI::electric_charge_t<long double, std::giga>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _TC THEN result is a "
+          "electric_charge type AND ratio 10^12 to 1") {
+  constexpr auto one = 1_TC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::electric_charge_t<int64_t, std::tera>>::value);
+
+  constexpr auto one_f = 1.0_TC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_f),
+                   const SI::electric_charge_t<long double, std::tera>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _PC THEN result is a "
+          "electric_charge type AND ratio 10^15 to 1") {
+  constexpr auto one = 1_PC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::electric_charge_t<int64_t, std::peta>>::value);
+
+  constexpr auto one_f = 1.0_PC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_f),
+                   const SI::electric_charge_t<long double, std::peta>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _EC THEN result is a "
+          "electric_charge type AND ratio 10^18 to 1") {
+  constexpr auto one = 1_EC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::electric_charge_t<int64_t, std::exa>>::value);
+
+  constexpr auto one_f = 1.0_EC;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_f),
+                   const SI::electric_charge_t<long double, std::exa>>::value);
 }
 
 TEST_CASE("GIVEN values electric current (I) and a time (T) WHEN multiplied "
