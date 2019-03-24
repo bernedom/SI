@@ -22,16 +22,16 @@ A quick example:
   }
 ```
 
-This is a learning project to figure out modern C++ user defined literals and probably some template and type-traits magic as well. 
+The goal is to provide as many conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) as possible with strong type safety at compile time. 
 
-The goal is to provide as many conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) as possible with strong type safety already during compile time. 
+This is a learning project to figure out modern C++ user defined literals and probably some template and type-traits magic as well. 
 
 ## State of implentation
 
 ### SI Base units
 
 For each Unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the internation system of units](https://en.wikipedia.org/wiki/Metric_prefix)
-The typedefs are prefixed (ore in rare cases interfixed) with the standard metrix prefixes. i.e. `meter_t, milli_meter_t, kilo_meter_t`. Rhe prefix or interfix is marked with an `*` in the tables below. 
+The typedefs are prefixed (or in rare cases interfixed) with the standard metrix prefixes. i.e. `meter_t, milli_meter_t, kilo_meter_t`. The prefix or interfix is marked with an `*` in the tables below. 
 
 | Unit                        | Dimension Symbol | Unit Symbol | implemented ratios | unit typedefs                     |
 | --------------------------- | ---------------- | ----------- | ------------------ | --------------------------------- |
