@@ -14,7 +14,7 @@ struct is_same_ignore_const
 
 using namespace SI::literals;
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _pC THEN result is a "
+TEST_CASE("GIVEN a value WHEN constructed with literal _aC THEN result is a "
           "electric_charge type AND ratio 1 to 10^15") {
   constexpr auto one = 1_aC;
   STATIC_REQUIRE(
@@ -27,7 +27,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _pC THEN result is a "
                    const SI::electric_charge_t<long double, std::atto>>::value);
 }
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _pC THEN result is a "
+TEST_CASE("GIVEN a value WHEN constructed with literal _fC THEN result is a "
           "electric_charge type AND ratio 1 to 10^15") {
   constexpr auto one = 1_fC;
   STATIC_REQUIRE(

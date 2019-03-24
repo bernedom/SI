@@ -4,8 +4,8 @@
 
 using namespace SI::literals;
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _pA THEN result is a "
-          "electric_current type AND ratio 1 to 10^15") {
+TEST_CASE("GIVEN a value WHEN constructed with literal _aA THEN result is a "
+          "electric_current type AND ratio 1 to 10^18") {
   constexpr auto one = 1_aA;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -17,7 +17,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _pA THEN result is a "
                  const SI::electric_current_t<long double, std::atto>>::value);
 }
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _pA THEN result is a "
+TEST_CASE("GIVEN a value WHEN constructed with literal _fA THEN result is a "
           "electric_current type AND ratio 1 to 10^15") {
   constexpr auto one = 1_fA;
   STATIC_REQUIRE(

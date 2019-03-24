@@ -4,8 +4,8 @@
 
 using namespace SI::literals;
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _pK THEN result is a "
-          "electric_current type AND ratio 1 to 10^15") {
+TEST_CASE("GIVEN a value WHEN constructed with literal _aK THEN result is a "
+          "temperature type AND ratio 1 to 10^18") {
   constexpr auto one = 1_aK;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -18,7 +18,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _pK THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _pK THEN result is a "
-          "electric_current type AND ratio 1 to 10^15") {
+          "temperature type AND ratio 1 to 10^15") {
   constexpr auto one = 1_fK;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -31,7 +31,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _pK THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _pK THEN result is a "
-          "electric_current type AND ratio 1 to 10^12") {
+          "temperature type AND ratio 1 to 10^12") {
   constexpr auto one = 1_pK;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -44,7 +44,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _pK THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _nK THEN result is a "
-          "electric_current type AND ratio 1 to 10^9") {
+          "temperature type AND ratio 1 to 10^9") {
   constexpr auto one = 1_nK;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -57,7 +57,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _nK THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _uK THEN result is a "
-          "electric_current type AND ratio 1 to 10^6") {
+          "temperature type AND ratio 1 to 10^6") {
   constexpr auto one = 1_uK;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -70,7 +70,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _uK THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _mK THEN result is a "
-          "electric_current type AND ratio 1 to 1000") {
+          "temperature type AND ratio 1 to 1000") {
   constexpr auto one = 1_mK;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -83,7 +83,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _mK THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _K THEN result is a "
-          "electric_current type AND ratio 1 to 1") {
+          "temperature type AND ratio 1 to 1") {
   constexpr auto one = 1_K;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -96,7 +96,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _K THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _kK THEN result is a "
-          "electric_current type AND ratio 1000 to 1") {
+          "temperature type AND ratio 1000 to 1") {
   constexpr auto one = 1_kK;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -109,7 +109,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _kK THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _MK THEN result is a "
-          "electric_current type AND ratio 10^6 to 1") {
+          "temperature type AND ratio 10^6 to 1") {
   constexpr auto one = 1_MK;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -122,7 +122,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _MK THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _GK THEN result is a "
-          "electric_current type AND ratio 10^9 to 1") {
+          "temperature type AND ratio 10^9 to 1") {
   constexpr auto one = 1_GK;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -135,7 +135,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _GK THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _TK THEN result is a "
-          "electric_current type AND ratio 10^12 to 1") {
+          "temperature type AND ratio 10^12 to 1") {
   constexpr auto one = 1_TK;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -148,7 +148,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _TK THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _PK THEN result is a "
-          "electric_current type AND ratio 10^15 to 1") {
+          "temperature type AND ratio 10^15 to 1") {
   constexpr auto one = 1_PK;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -161,7 +161,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _PK THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _EK THEN result is a "
-          "electric_current type AND ratio 10^18 to 1") {
+          "temperature type AND ratio 10^18 to 1") {
   constexpr auto one = 1_EK;
   STATIC_REQUIRE(
       std::is_same<decltype(one),

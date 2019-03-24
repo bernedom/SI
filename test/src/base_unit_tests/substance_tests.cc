@@ -4,8 +4,8 @@
 
 using namespace SI::literals;
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _pmol THEN result is a "
-          "electric_current type AND ratio 1 to 10^15") {
+TEST_CASE("GIVEN a value WHEN constructed with literal _amol THEN result is a "
+          "substance type AND ratio 1 to 10^18") {
   constexpr auto one = 1_amol;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -18,7 +18,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _pmol THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _pmol THEN result is a "
-          "electric_current type AND ratio 1 to 10^15") {
+          "substance type AND ratio 1 to 10^15") {
   constexpr auto one = 1_fmol;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -31,7 +31,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _pmol THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _pmol THEN result is a "
-          "electric_current type AND ratio 1 to 10^12") {
+          "substance type AND ratio 1 to 10^12") {
   constexpr auto one = 1_pmol;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -44,7 +44,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _pmol THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _nmol THEN result is a "
-          "electric_current type AND ratio 1 to 10^9") {
+          "substance type AND ratio 1 to 10^9") {
   constexpr auto one = 1_nmol;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -57,7 +57,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _nmol THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _umol THEN result is a "
-          "electric_current type AND ratio 1 to 10^6") {
+          "substance type AND ratio 1 to 10^6") {
   constexpr auto one = 1_umol;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -70,7 +70,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _umol THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _mmol THEN result is a "
-          "electric_current type AND ratio 1 to 1000") {
+          "substance type AND ratio 1 to 1000") {
   constexpr auto one = 1_mmol;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -83,7 +83,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _mmol THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _mol THEN result is a "
-          "electric_current type AND ratio 1 to 1") {
+          "substance type AND ratio 1 to 1") {
   constexpr auto one = 1_mol;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -96,7 +96,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _mol THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _kmol THEN result is a "
-          "electric_current type AND ratio 1000 to 1") {
+          "substance type AND ratio 1000 to 1") {
   constexpr auto one = 1_kmol;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -109,7 +109,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _kmol THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _Mmol THEN result is a "
-          "electric_current type AND ratio 10^6 to 1") {
+          "substance type AND ratio 10^6 to 1") {
   constexpr auto one = 1_Mmol;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -122,7 +122,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _Mmol THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _Gmol THEN result is a "
-          "electric_current type AND ratio 10^9 to 1") {
+          "substance type AND ratio 10^9 to 1") {
   constexpr auto one = 1_Gmol;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -135,7 +135,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _Gmol THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _Tmol THEN result is a "
-          "electric_current type AND ratio 10^12 to 1") {
+          "substance type AND ratio 10^12 to 1") {
   constexpr auto one = 1_Tmol;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -148,7 +148,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _Tmol THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _Pmol THEN result is a "
-          "electric_current type AND ratio 10^15 to 1") {
+          "substance type AND ratio 10^15 to 1") {
   constexpr auto one = 1_Pmol;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
@@ -161,7 +161,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _Pmol THEN result is a "
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _Emol THEN result is a "
-          "electric_current type AND ratio 10^18 to 1") {
+          "substance type AND ratio 10^18 to 1") {
   constexpr auto one = 1_Emol;
   STATIC_REQUIRE(std::is_same<decltype(one),
                               const SI::substance_t<int64_t, std::exa>>::value);

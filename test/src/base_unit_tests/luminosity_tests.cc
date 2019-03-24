@@ -4,8 +4,8 @@
 
 using namespace SI::literals;
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _pcd THEN result is a "
-          "luminosity type AND ratio 1 to 10^15") {
+TEST_CASE("GIVEN a value WHEN constructed with literal _acd THEN result is a "
+          "luminosity type AND ratio 1 to 10^18") {
   constexpr auto one = 1_acd;
   STATIC_REQUIRE(
       std::is_same<decltype(one),

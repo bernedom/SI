@@ -4,8 +4,8 @@
 
 using namespace SI;
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _pm THEN result is a "
-          "length type AND ratio 1 to 10^15") {
+TEST_CASE("GIVEN a value WHEN constructed with literal _am THEN result is a "
+          "length type AND ratio 1 to 10^18") {
   constexpr auto one = 1_am;
   STATIC_REQUIRE(std::is_same<decltype(one),
                               const SI::length_t<int64_t, std::atto>>::value);
