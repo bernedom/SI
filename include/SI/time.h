@@ -12,11 +12,19 @@ using time_t = detail::unit_t<'T', _Exponent, _Type, _Ratio>;
 template <typename _Type, typename _Ratio>
 using time_single_t = detail::unit_t<'T', 1, _Type, _Ratio>;
 
-template <typename _Type> using seconds_t = time_single_t<_Type, std::ratio<1>>;
 template <typename _Type>
-using milli_seconds_t = time_single_t<_Type, std::chrono::milliseconds::period>;
+using atto_seconds_t = time_single_t<_Type, std::atto>;
+template <typename _Type>
+using femto_seconds_t = time_single_t<_Type, std::femto>;
+template <typename _Type>
+using pico_seconds_t = time_single_t<_Type, std::pico>;
+template <typename _Type>
+using nano_seconds_t = time_single_t<_Type, std::nano>;
 template <typename _Type>
 using micro_seconds_t = time_single_t<_Type, std::chrono::microseconds::period>;
+template <typename _Type>
+using milli_seconds_t = time_single_t<_Type, std::chrono::milliseconds::period>;
+template <typename _Type> using seconds_t = time_single_t<_Type, std::ratio<1>>;
 template <typename _Type>
 using minutes_t = time_single_t<_Type, std::chrono::minutes::period>;
 template <typename _Type>
@@ -26,6 +34,22 @@ template <typename _Type, typename _Ratio>
 using time_squared_t = detail::unit_t<'T', 2, _Type, _Ratio>;
 
 inline namespace literals {
+
+template <char... _Digits> constexpr auto operator""_as() {
+  return SI::detail::check_overflow<atto_seconds_t<int64_t>, _Digits...>();
+}
+
+template <char... _Digits> constexpr auto operator""_fs() {
+  return SI::detail::check_overflow<femto_seconds_t<int64_t>, _Digits...>();
+}
+
+template <char... _Digits> constexpr auto operator""_ps() {
+  return SI::detail::check_overflow<pico_seconds_t<int64_t>, _Digits...>();
+}
+
+template <char... _Digits> constexpr auto operator""_ns() {
+  return SI::detail::check_overflow<nano_seconds_t<int64_t>, _Digits...>();
+}
 
 template <char... _Digits> constexpr auto operator"" _us() {
   return SI::detail::check_overflow<SI::micro_seconds_t<int64_t>, _Digits...>();
@@ -44,6 +68,22 @@ template <char... _Digits> constexpr auto operator"" _min() {
 
 template <char... _Digits> constexpr auto operator"" _h() {
   return SI::detail::check_overflow<hours_t<int64_t>, _Digits...>();
+}
+
+constexpr auto operator""_as(long double value) {
+  return atto_seconds_t<long double>{value};
+}
+
+constexpr auto operator""_fs(long double value) {
+  return femto_seconds_t<long double>{value};
+}
+
+constexpr auto operator""_ps(long double value) {
+  return pico_seconds_t<long double>{value};
+}
+
+constexpr auto operator""_ns(long double value) {
+  return nano_seconds_t<long double>{value};
 }
 
 constexpr auto operator"" _us(long double us) {

@@ -5,17 +5,56 @@
 
 using namespace SI::literals;
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _s THEN resulting value "
-          "is of time type AND ratio 1 to 1") {
-  constexpr auto one = 1_s;
+TEST_CASE("GIVEN a value WHEN constructed with literal _as THEN result is a "
+          "force type AND ratio 1 to 10^15") {
+  constexpr auto one = 1_as;
   STATIC_REQUIRE(
       std::is_same<decltype(one),
-                   const SI::time_single_t<int64_t, std::ratio<1>>>::value);
+                   const SI::time_single_t<int64_t, std::atto>>::value);
 
-  constexpr auto one_f = 1.0_s;
+  constexpr auto one_f = 1.0_as;
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
-                   const SI::time_single_t<long double, std::ratio<1>>>::value);
+                   const SI::time_single_t<long double, std::atto>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _fs THEN result is a "
+          "force type AND ratio 1 to 10^15") {
+  constexpr auto one = 1_fs;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::time_single_t<int64_t, std::femto>>::value);
+
+  constexpr auto one_f = 1.0_fs;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_f),
+                   const SI::time_single_t<long double, std::femto>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _ps THEN result is a "
+          "force type AND ratio 1 to 10^12") {
+  constexpr auto one = 1_ps;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::time_single_t<int64_t, std::pico>>::value);
+
+  constexpr auto one_f = 1.0_ps;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_f),
+                   const SI::time_single_t<long double, std::pico>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _ns THEN result is a "
+          "force type AND ratio 1 to 10^9") {
+  constexpr auto one = 1_ns;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::time_single_t<int64_t, std::nano>>::value);
+
+  constexpr auto one_f = 1.0_ns;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_f),
+                   const SI::time_single_t<long double, std::nano>>::value);
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _us THEN resulting "
@@ -42,6 +81,19 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _ms THEN resulting "
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::time_single_t<long double, std::milli>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _s THEN resulting value "
+          "is of time type AND ratio 1 to 1") {
+  constexpr auto one = 1_s;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one),
+                   const SI::time_single_t<int64_t, std::ratio<1>>>::value);
+
+  constexpr auto one_f = 1.0_s;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_f),
+                   const SI::time_single_t<long double, std::ratio<1>>>::value);
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _min THEN resulting "
