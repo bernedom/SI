@@ -33,15 +33,15 @@ This is a learning project to figure out modern C++ user defined literals and pr
 For each Unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the internation system of units](https://en.wikipedia.org/wiki/Metric_prefix)
 The typedefs are prefixed (or in rare cases interfixed) with the standard metrix prefixes. i.e. `meter_t, milli_meter_t, kilo_meter_t`. The prefix or interfix is marked with an `*` in the tables below. 
 
-| Unit                        | Dimension Symbol | Unit Symbol | implemented ratios | unit typedefs                     |
-| --------------------------- | ---------------- | ----------- | ------------------ | --------------------------------- |
-| Length                      | L                | m           | mm, cm, m, km      | `*_meter_t`                       |
-| Time                        | T                | s           | us, ms, s, min, h  | `*_seconds_t, hours_t, minutes_t` |
-| Mass*                       | M                | kg          | mg, g, kg          | `*_gram_t `                       |
-| Electric current            | I                | A           | mA, A, kA, MA      | `*_ampere_t`                      |
-| Thermodynamic temperature** | t                | K           | mK, K, kK          | `*_kelvin_t`                      |
-| Amount of substance         | N                | mol         | mmol, mol, kmol    | `*_mol_t`                         |
-| Luminous Intensity          | J                | cd          | mcd, cd, kcd       | `*_candela_t`                     |
+| Unit                        | Dimension Symbol | Unit Symbol | implemented ratios                                  | unit typedefs                                |
+| --------------------------- | ---------------- | ----------- | --------------------------------------------------- | -------------------------------------------- |
+| Length                      | L                | m           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_meter_t`                                  |
+| Time                        | T                | s           | 10<sup>-18</sup> to 10<sup>0</sup> and 60/1, 3600/1 | `*_seconds_t, minutes_t, hours_t, minutes_t` |
+| Mass*                       | M                | kg          | 10<sup>-15</sup> to 10<sup>3</sup>                  | `*_gram_t `, `ton_t`                         |
+| Electric current            | I                | A           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_ampere_t`                                 |
+| Thermodynamic temperature** | t                | K           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_kelvin_t`                                 |
+| Amount of substance         | N                | mol         | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_mol_t`                                    |
+| Luminous Intensity          | J                | cd          | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_candela_t`                                |
 
 \* for mass the base ratio is `kg` (not `g`) as it is defined in the SI unit table. So there is a mismatch between the literal prefix and the internal representation.
 
