@@ -1,5 +1,7 @@
 #include <catch.hpp>
 
+#include <SI/area.h>
+#include <SI/force.h>
 #include <SI/pressure.h>
 
 using namespace SI::literals;
@@ -161,4 +163,46 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _Epa THEN result is a "
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::pressure_t<long double, std::exa>>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a force value WHEN divided by an area value THEN "
+                   "result is a pressure value",
+                   "[pressure][operator/]", int64_t, long double) {
+  constexpr SI::force_t<TestType, std::ratio<1>> force{1};
+  constexpr SI::area_t<TestType, std::ratio<1>> area{1};
+
+  constexpr auto result = force / area;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::pressure_t<TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a pressure value WHEN multiplied by an area value "
+                   "THEN result is a force value",
+                   "[pressure][operator*]", int64_t, long double) {
+  constexpr SI::pressure_t<TestType, std::ratio<1>> pressure{1};
+  constexpr SI::area_t<TestType, std::ratio<1>> area{1};
+
+  constexpr auto result = pressure * area;
+  constexpr auto result_commutative = area * pressure;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), decltype(result_commutative)>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::force_t<TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a force value WHEN divided by a pressure value THEN "
+                   "result is an area value",
+                   "[force][operator/]", int64_t, long double) {
+  constexpr SI::force_t<TestType, std::ratio<1>> force{1};
+  constexpr SI::pressure_t<TestType, std::ratio<1>> pressure{1};
+
+  constexpr auto result = force / pressure;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::area_t<TestType, std::ratio<1>>>::value);
 }

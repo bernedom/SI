@@ -61,10 +61,11 @@ Only implemented ones are listed. All units that can be built from other units a
 
 | Unit            | Dimension Symbol | Unit Symbol    | builable from | implemented literals | unit typedefs |
 | --------------- | ---------------- | -------------- | ------------- | -------------------- | ------------- |
-| Electric charge | Q                | C              | I * T         | mC, C, kC, MC        | `*_coulomb_t` |
+| Electric charge | Q                | C              | I * T         | aC to EC             | `*_coulomb_t` |
 | Velocity        | v                | m/s            | L / T         | none                 | none          |
 | Acceleration    | a                | m/s^2          | v / T         | none                 | none          |
-| Force           | F                | N (kg * m/s^2) | M * a         | N, mN, kN            | `*_newton_t`  |
+| Force           | F                | N (kg * m/s^2) | M * a         | aN to EN             | `*_newton_t`  |
+| Pressure        | p                | pa (N/m2)      | F / L^2       | apa to Epa           | `*_pascal_t`  |
 
 
 # Building & compatibility

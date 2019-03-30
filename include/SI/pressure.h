@@ -1,9 +1,9 @@
 #pragma once
 
-#include "acceleration.h"
+#include "area.h"
 #include "detail/operator_helpers.h"
 #include "detail/unit.h"
-#include "mass.h"
+#include "force.h"
 
 namespace SI {
 template <typename _Type, class _Ratio = std::ratio<1>>
@@ -24,7 +24,10 @@ template <typename _Type> using tera_pascal_t = pressure_t<_Type, std::tera>;
 template <typename _Type> using peta_pascal_t = pressure_t<_Type, std::peta>;
 template <typename _Type> using exa_pascal_t = pressure_t<_Type, std::exa>;
 
-namespace detail {}
+namespace detail {
+
+BUILD_UNIT_FROM_DIVISON(pressure_t, force_t, area_t)
+}
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_apa() {
