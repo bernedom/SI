@@ -1,8 +1,6 @@
 #include <catch.hpp>
 
 #include <SI/detail/unit.h>
-#include <ratio>
-#include <type_traits>
 
 using namespace SI::detail;
 

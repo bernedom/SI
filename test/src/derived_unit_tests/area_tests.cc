@@ -1,8 +1,6 @@
 #include <SI/area.h>
 #include <catch.hpp>
 
-#include <type_traits>
-
 using namespace SI::literals;
 
 TEST_CASE("GIVEN value AND value is integral WHEN constructed with literal _m2 "

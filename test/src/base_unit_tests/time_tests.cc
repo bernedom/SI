@@ -1,7 +1,6 @@
 #include <catch.hpp>
 
 #include <SI/time.h>
-#include <ratio>
 
 using namespace SI::literals;
 

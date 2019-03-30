@@ -1,7 +1,6 @@
 #include <catch.hpp>
 
 #include <SI/acceleration.h>
-#include <SI/time.h>
 
 using namespace SI::literals;
 

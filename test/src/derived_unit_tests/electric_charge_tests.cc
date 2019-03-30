@@ -1,6 +1,5 @@
 #include <catch.hpp>
 
-#include <SI/detail/detail.h>
 #include <SI/electric_charge.h>
 
 namespace {

@@ -1,8 +1,6 @@
 #include <catch.hpp>
 
-#include <SI/acceleration.h>
 #include <SI/force.h>
-#include <SI/mass.h>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _aN THEN result is a "
