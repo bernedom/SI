@@ -159,3 +159,43 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _EJ THEN result is a "
       std::is_same<decltype(one_f),
                    const SI::energy_t<long double, std::exa>>::value);
 }
+
+TEMPLATE_TEST_CASE("GIVEN a force value WHEN multiplied with a length "
+                   "value THEN result is a energy value",
+                   "[energy][operators]", int64_t, long double) {
+  constexpr SI::force_t<TestType, std::ratio<1>> m{1};
+  constexpr SI::length_t<TestType, std::ratio<1>> a{1};
+
+  constexpr auto result = m * a;
+  constexpr auto result_commutative = a * m;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::energy_t<TestType, std::ratio<1>>>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), decltype(result_commutative)>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a energy value WHEN divided by length THEN then "
+                   "result is a force value",
+                   "[energy][operators]", int64_t, long double) {
+  constexpr SI::energy_t<TestType, std::ratio<1>> f{1};
+  constexpr SI::length_t<TestType, std::ratio<1>> a{1};
+
+  constexpr auto result = f / a;
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::force_t<TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a energy value WHEN divided by force THEN then "
+                   "result is a accelereatin value",
+                   "[energy][operators]", int64_t, long double) {
+  constexpr SI::energy_t<TestType, std::ratio<1>> f{1};
+  constexpr SI::force_t<TestType, std::ratio<1>> m{1};
+
+  constexpr auto result = f / m;
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::length_t<TestType, std::ratio<1>>>::value);
+}

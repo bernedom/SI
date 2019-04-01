@@ -24,7 +24,9 @@ template <typename _Type> using tera_joule_t = energy_t<_Type, std::tera>;
 template <typename _Type> using peta_joule_t = energy_t<_Type, std::peta>;
 template <typename _Type> using exa_joule_t = energy_t<_Type, std::exa>;
 
-namespace detail {}
+namespace detail {
+BUILD_UNIT_FROM_MULTIPLICATION(energy_t, force_t, length_t)
+}
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aJ() {
