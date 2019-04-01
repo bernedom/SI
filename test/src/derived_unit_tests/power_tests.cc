@@ -165,7 +165,7 @@ TEMPLATE_TEST_CASE("GIVEN a energy value WHEN divided by an time value THEN "
                    "result is a power value",
                    "[power][operator/]", int64_t, long double) {
   constexpr SI::energy_t<TestType, std::ratio<1>> energy{1};
-  constexpr SI::time_single_t<TestType, std::ratio<1>> time{1};
+  constexpr SI::time_t<TestType, std::ratio<1>> time{1};
 
   constexpr auto result = energy / time;
 
@@ -178,7 +178,7 @@ TEMPLATE_TEST_CASE("GIVEN a power value WHEN multiplied by an time value "
                    "THEN result is a energy value",
                    "[power][operator*]", int64_t, long double) {
   constexpr SI::power_t<TestType, std::ratio<1>> power{1};
-  constexpr SI::time_single_t<TestType, std::ratio<1>> time{1};
+  constexpr SI::time_t<TestType, std::ratio<1>> time{1};
 
   constexpr auto result = power * time;
   constexpr auto result_commutative = time * power;
@@ -200,5 +200,5 @@ TEMPLATE_TEST_CASE("GIVEN a energy value WHEN divided by a power value THEN "
 
   STATIC_REQUIRE(
       std::is_same<decltype(result),
-                   const SI::time_single_t<TestType, std::ratio<1>>>::value);
+                   const SI::time_t<TestType, std::ratio<1>>>::value);
 }

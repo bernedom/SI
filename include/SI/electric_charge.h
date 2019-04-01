@@ -42,8 +42,7 @@ using exa_coulomb_t = electric_charge_t<_Type, std::exa>;
 /// @todo find out why the operators have to be in SI::detail
 /// maybe using preceeding :: helps
 namespace detail {
-BUILD_UNIT_FROM_MULTIPLICATION(electric_charge_t, electric_current_t,
-                               time_single_t)
+BUILD_UNIT_FROM_MULTIPLICATION(electric_charge_t, electric_current_t, time_t)
 }
 
 inline namespace literals {

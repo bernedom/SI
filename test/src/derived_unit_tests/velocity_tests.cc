@@ -52,7 +52,7 @@ TEMPLATE_TEST_CASE(
     "[length][operator_tests]", int64_t, long double) {
 
   constexpr SI::velocity_t<TestType, std::ratio<1>> v{1};
-  constexpr SI::time_t<1, TestType, std::ratio<1>> T{1};
+  constexpr SI::time_t<TestType, std::ratio<1>> T{1};
 
   constexpr auto result = v * T;
   constexpr auto result_commutative = T * v;

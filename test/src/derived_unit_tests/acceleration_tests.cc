@@ -64,9 +64,8 @@ TEST_CASE("GIVEN a velocity value WHEN divided by acceleration THEN result is "
 
   constexpr auto result = v / a;
 
-  STATIC_REQUIRE(
-      std::is_same<decltype(result),
-                   const SI::time_single_t<int64_t, std::ratio<1>>>::value);
+  STATIC_REQUIRE(std::is_same<decltype(result),
+                              const SI::time_t<int64_t, std::ratio<1>>>::value);
 }
 
 TEST_CASE("GIVEN a length value WHEN divided by acceleration THEN result is "

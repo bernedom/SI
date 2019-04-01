@@ -25,7 +25,7 @@ template <typename _Type> using peta_watt_t = power_t<_Type, std::peta>;
 template <typename _Type> using exa_watt_t = power_t<_Type, std::exa>;
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(power_t, energy_t, time_single_t)
+BUILD_UNIT_FROM_DIVISON(power_t, energy_t, time_t)
 }
 
 inline namespace literals {

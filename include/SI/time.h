@@ -5,34 +5,31 @@
 
 #include "detail/unit.h"
 namespace SI {
-/// @todo see how to get rid of duplicate typedefs
+
 /// @todo add Hertz
+namespace detail {
 template <char _Exponent, typename _Type, typename _Ratio>
-using time_t = detail::unit_t<'T', _Exponent, _Type, _Ratio>;
+using time_base_t = detail::unit_t<'T', _Exponent, _Type, _Ratio>;
+}
+template <typename _Type, typename _Ratio>
+using time_t = detail::time_base_t<1, _Type, _Ratio>;
 
 template <typename _Type, typename _Ratio>
-using time_single_t = detail::unit_t<'T', 1, _Type, _Ratio>;
+using time_squared_t = detail::time_base_t<2, _Type, _Ratio>;
 
+template <typename _Type> using atto_seconds_t = time_t<_Type, std::atto>;
+template <typename _Type> using femto_seconds_t = time_t<_Type, std::femto>;
+template <typename _Type> using pico_seconds_t = time_t<_Type, std::pico>;
+template <typename _Type> using nano_seconds_t = time_t<_Type, std::nano>;
 template <typename _Type>
-using atto_seconds_t = time_single_t<_Type, std::atto>;
+using micro_seconds_t = time_t<_Type, std::chrono::microseconds::period>;
 template <typename _Type>
-using femto_seconds_t = time_single_t<_Type, std::femto>;
+using milli_seconds_t = time_t<_Type, std::chrono::milliseconds::period>;
+template <typename _Type> using seconds_t = time_t<_Type, std::ratio<1>>;
 template <typename _Type>
-using pico_seconds_t = time_single_t<_Type, std::pico>;
+using minutes_t = time_t<_Type, std::chrono::minutes::period>;
 template <typename _Type>
-using nano_seconds_t = time_single_t<_Type, std::nano>;
-template <typename _Type>
-using micro_seconds_t = time_single_t<_Type, std::chrono::microseconds::period>;
-template <typename _Type>
-using milli_seconds_t = time_single_t<_Type, std::chrono::milliseconds::period>;
-template <typename _Type> using seconds_t = time_single_t<_Type, std::ratio<1>>;
-template <typename _Type>
-using minutes_t = time_single_t<_Type, std::chrono::minutes::period>;
-template <typename _Type>
-using hours_t = time_single_t<_Type, std::chrono::hours::period>;
-
-template <typename _Type, typename _Ratio>
-using time_squared_t = detail::unit_t<'T', 2, _Type, _Ratio>;
+using hours_t = time_t<_Type, std::chrono::hours::period>;
 
 inline namespace literals {
 

@@ -13,7 +13,7 @@ template <typename _Type, typename _Ratio>
 using velocity_t = detail::unit_t<'v', 1, _Type, _Ratio>;
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(velocity_t, length_t, time_single_t)
+BUILD_UNIT_FROM_DIVISON(velocity_t, length_t, time_t)
 }
 
 } // namespace SI
