@@ -6,6 +6,7 @@
 #include "detail/unit.h"
 namespace SI {
 /// @todo see how to get rid of duplicate typedefs
+/// @todo add Hertz
 template <char _Exponent, typename _Type, typename _Ratio>
 using time_t = detail::unit_t<'T', _Exponent, _Type, _Ratio>;
 
