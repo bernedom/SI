@@ -28,6 +28,7 @@ target_include_directories(SI_base_unit_tests PRIVATE ${PROJECT_SOURCE_DIR}/incl
 add_executable(SI_derived_unit_tests 
                src/Catch2Main.cc
                src/derived_unit_tests/area_tests.cc
+               src/derived_unit_tests/frequency_tests.cc
                src/derived_unit_tests/electric_charge_tests.cc
                src/derived_unit_tests/velocity_tests.cc
                src/derived_unit_tests/acceleration_tests.cc

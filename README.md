@@ -49,10 +49,11 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metrix
 
 #### Special Units
 
-| Unit   | Dimension Symbol | Exponent | Unit Symbol | implemented ratios | unit typedefs      |
-| ------ | ---------------- | -------- | ----------- | ------------------ | ------------------ |
-| Area   | L                | 2        | m2          | mm2, cm2, m2       | `square_*_meter_t` |
-| Volume | L                | 3        | m3          | mm3, cm3, m3       | `cubic_*_meter_t`  |
+| Unit      | Dimension Symbol | Exponent | Unit Symbol | implemented ratios                  | unit typedefs      |
+| --------- | ---------------- | -------- | ----------- | ----------------------------------- | ------------------ |
+| Area      | L                | 2        | m2          | 10<sup>-18</sup> to 10<sup>18</sup> | `square_*_meter_t` |
+| Volume    | L                | 3        | m3          | 10<sup>-18</sup> to 10<sup>18</sup> | `cubic_*_meter_t`  |
+| Frequency | T                | -1       | Hz          | 10<sup>-18</sup> to 10<sup>18</sup> | `*_hertz_t`        |
 
 
 ### Derived units
