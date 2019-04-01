@@ -67,6 +67,7 @@ Only implemented ones are listed. All units that can be built from other units a
 | Force           | F                | N (kg * m/s^2) | M * a          | aN to EN             | `*_newton_t`  |
 | Pressure        | p                | pa (N/m2)      | F / L^2        | apa to Epa           | `*_pascal_t`  |
 | Energy          | E                | J (N * m)      | F * L, p * L^3 | aJ to EJ             | `*_joule_t`   |
+| Power           | P                | W (J/s)        | E/T            | aW to EW             | `*_watt_t`    |
 
 
 # Building & compatibility

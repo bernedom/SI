@@ -1,6 +1,8 @@
 #include <catch.hpp>
 
+#include <SI/energy.h>
 #include <SI/power.h>
+#include <SI/time.h>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _aW THEN result is a "
@@ -157,4 +159,46 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _EW THEN result is a "
   constexpr auto one_f = 1.0_EW;
   STATIC_REQUIRE(std::is_same<decltype(one_f),
                               const SI::power_t<long double, std::exa>>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a energy value WHEN divided by an time value THEN "
+                   "result is a power value",
+                   "[power][operator/]", int64_t, long double) {
+  constexpr SI::energy_t<TestType, std::ratio<1>> energy{1};
+  constexpr SI::time_single_t<TestType, std::ratio<1>> time{1};
+
+  constexpr auto result = energy / time;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::power_t<TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a power value WHEN multiplied by an time value "
+                   "THEN result is a energy value",
+                   "[power][operator*]", int64_t, long double) {
+  constexpr SI::power_t<TestType, std::ratio<1>> power{1};
+  constexpr SI::time_single_t<TestType, std::ratio<1>> time{1};
+
+  constexpr auto result = power * time;
+  constexpr auto result_commutative = time * power;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), decltype(result_commutative)>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::energy_t<TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a energy value WHEN divided by a power value THEN "
+                   "result is an time value",
+                   "[energy][operator/]", int64_t, long double) {
+  constexpr SI::energy_t<TestType, std::ratio<1>> energy{1};
+  constexpr SI::power_t<TestType, std::ratio<1>> power{1};
+
+  constexpr auto result = energy / power;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::time_single_t<TestType, std::ratio<1>>>::value);
 }
