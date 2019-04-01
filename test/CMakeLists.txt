@@ -33,7 +33,8 @@ add_executable(SI_derived_unit_tests
                src/derived_unit_tests/acceleration_tests.cc
                src/derived_unit_tests/force_tests.cc
                src/derived_unit_tests/pressure_tests.cc
-               src/derived_unit_tests/energy_tests.cc) 
+               src/derived_unit_tests/energy_tests.cc
+               src/derived_unit_tests/power_tests.cc) 
 
 target_include_directories(SI_derived_unit_tests PRIVATE ${PROJECT_SOURCE_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/include)
 
