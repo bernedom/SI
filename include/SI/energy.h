@@ -1,9 +1,10 @@
 #pragma once
 
-#include "area.h"
 #include "detail/operator_helpers.h"
 #include "detail/unit.h"
 #include "force.h"
+#include "length.h"
+#include "pressure.h"
 
 namespace SI {
 template <typename _Type, class _Ratio = std::ratio<1>>
@@ -26,7 +27,8 @@ template <typename _Type> using exa_joule_t = energy_t<_Type, std::exa>;
 
 namespace detail {
 BUILD_UNIT_FROM_MULTIPLICATION(energy_t, force_t, length_t)
-}
+BUILD_UNIT_FROM_MULTIPLICATION(energy_t, pressure_t, volume_t)
+} // namespace detail
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aJ() {
