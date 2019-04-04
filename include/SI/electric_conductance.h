@@ -38,7 +38,11 @@ using peta_siemens_t = electric_conductance_t<_Type, std::peta>;
 template <typename _Type>
 using exa_siemens_t = electric_conductance_t<_Type, std::exa>;
 
-namespace detail {} // namespace detail
+namespace detail {
+/// @todo add building from 1/Ohm
+BUILD_UNIT_FROM_DIVISON(electric_conductance_t, electric_current_t,
+                        electric_potential_t)
+} // namespace detail
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aS() {

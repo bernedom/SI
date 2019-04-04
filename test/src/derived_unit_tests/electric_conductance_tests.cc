@@ -160,3 +160,52 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _ES THEN result is a "
       std::is_same<decltype(one_f), const SI::electric_conductance_t<
                                         long double, std::exa>>::value);
 }
+
+TEMPLATE_TEST_CASE("GIVEN a electric_current value WHEN divided by an "
+                   "electric_potential value THEN "
+                   "result is a electric_conductance value",
+                   "[electric_conductance][operator/]", int64_t, long double) {
+  constexpr SI::electric_current_t<TestType, std::ratio<1>> electric_current{1};
+  constexpr SI::electric_potential_t<TestType, std::ratio<1>>
+      electric_potential{1};
+
+  constexpr auto result = electric_current / electric_potential;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), const SI::electric_conductance_t<
+                                         TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a electric_conductance value WHEN multiplied by an "
+                   "electric_potential value "
+                   "THEN result is a electric_current value",
+                   "[electric_conductance][operator*]", int64_t, long double) {
+  constexpr SI::electric_conductance_t<TestType, std::ratio<1>>
+      electric_conductance{1};
+  constexpr SI::electric_potential_t<TestType, std::ratio<1>>
+      electric_potential{1};
+
+  constexpr auto result = electric_conductance * electric_potential;
+  constexpr auto result_commutative = electric_potential * electric_conductance;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), decltype(result_commutative)>::value);
+  STATIC_REQUIRE(std::is_same<
+                 decltype(result),
+                 const SI::electric_current_t<TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a electric_current value WHEN divided by a "
+                   "electric_conductance value THEN "
+                   "result is an electric_potential value",
+                   "[electric_current][operator/]", int64_t, long double) {
+  constexpr SI::electric_current_t<TestType, std::ratio<1>> electric_current{1};
+  constexpr SI::electric_conductance_t<TestType, std::ratio<1>>
+      electric_conductance{1};
+
+  constexpr auto result = electric_current / electric_conductance;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), const SI::electric_potential_t<
+                                         TestType, std::ratio<1>>>::value);
+}
