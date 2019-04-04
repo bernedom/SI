@@ -2,7 +2,7 @@
 
 #include "detail/operator_helpers.h"
 #include "detail/unit.h"
-#include "electric_charge.h"
+#include "electric_current.h"
 #include "electric_potential.h"
 
 namespace SI {
@@ -38,7 +38,10 @@ using peta_ohm_t = electric_resistance_t<_Type, std::peta>;
 template <typename _Type>
 using exa_ohm_t = electric_resistance_t<_Type, std::exa>;
 
-namespace detail {} // namespace detail
+namespace detail {
+BUILD_UNIT_FROM_DIVISON(electric_resistance_t, electric_potential_t,
+                        electric_current_t)
+} // namespace detail
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aOhm() {

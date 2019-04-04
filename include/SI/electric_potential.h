@@ -2,6 +2,7 @@
 
 #include "detail/operator_helpers.h"
 #include "detail/unit.h"
+#include "electric_charge.h"
 #include "electric_current.h"
 #include "energy.h"
 #include "power.h"
