@@ -2,8 +2,7 @@
 
 #include <SI/electric_capacity.h>
 #include <SI/electric_charge.h>
-#include <SI/energy.h>
-#include <SI/power.h>
+#include <SI/electric_potential.h>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _aC THEN result is a "
@@ -173,4 +172,53 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _EC THEN result is a "
   STATIC_REQUIRE(std::is_same<
                  decltype(one_f),
                  const SI::electric_capacity_t<long double, std::exa>>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a electric_charge value WHEN divided by an "
+                   "electric_potential value THEN "
+                   "result is a electric_capacity value",
+                   "[electric_capacity][operator/]", int64_t, long double) {
+  constexpr SI::electric_charge_t<TestType, std::ratio<1>> electric_charge{1};
+  constexpr SI::electric_potential_t<TestType, std::ratio<1>>
+      electric_potential{1};
+
+  constexpr auto result = electric_charge / electric_potential;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), const SI::electric_capacity_t<
+                                         TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a electric_capacity value WHEN multiplied by an "
+                   "electric_potential value "
+                   "THEN result is a electric_charge value",
+                   "[electric_capacity][operator*]", int64_t, long double) {
+  constexpr SI::electric_capacity_t<TestType, std::ratio<1>> electric_capacity{
+      1};
+  constexpr SI::electric_potential_t<TestType, std::ratio<1>>
+      electric_potential{1};
+
+  constexpr auto result = electric_capacity * electric_potential;
+  constexpr auto result_commutative = electric_potential * electric_capacity;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), decltype(result_commutative)>::value);
+  STATIC_REQUIRE(std::is_same<
+                 decltype(result),
+                 const SI::electric_charge_t<TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a electric_charge value WHEN divided by a "
+                   "electric_capacity value THEN "
+                   "result is an electric_potential value",
+                   "[electric_charge][operator/]", int64_t, long double) {
+  constexpr SI::electric_charge_t<TestType, std::ratio<1>> electric_charge{1};
+  constexpr SI::electric_capacity_t<TestType, std::ratio<1>> electric_capacity{
+      1};
+
+  constexpr auto result = electric_charge / electric_capacity;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), const SI::electric_potential_t<
+                                         TestType, std::ratio<1>>>::value);
 }

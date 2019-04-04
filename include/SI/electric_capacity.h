@@ -2,9 +2,8 @@
 
 #include "detail/operator_helpers.h"
 #include "detail/unit.h"
-#include "electric_current.h"
-#include "energy.h"
-#include "power.h"
+#include "electric_charge.h"
+#include "electric_potential.h"
 
 namespace SI {
 template <typename _Type, class _Ratio = std::ratio<1>>
@@ -38,7 +37,10 @@ using peta_farad_t = electric_capacity_t<_Type, std::peta>;
 template <typename _Type>
 using exa_farad_t = electric_capacity_t<_Type, std::exa>;
 
-namespace detail {} // namespace detail
+namespace detail {
+BUILD_UNIT_FROM_DIVISON(electric_capacity_t, electric_charge_t,
+                        electric_potential_t)
+} // namespace detail
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aF() {
