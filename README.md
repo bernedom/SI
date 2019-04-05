@@ -81,6 +81,7 @@ Only implemented ones are listed. All units that can be built from other units a
 | Radioactivity        | A                | Bq          |                | aBq to EBq           | `*_becquerel_t` |
 | Absorbed Dose        | D                | Gy          |                | aGy to EGy           | `*_gray_t`      |
 | Equivalent Dose      | H                | Sv          |                | aSv to ESv           | `*_sievert_t`   |
+| Catalytic activity   | K                | kat         | N / T          | akat to Ekat         | `*_katal_t`     |
 
 \* These dimension do not yet have the correct dimension symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`but. Illuminace should be E<sub>b/<sub>. 
 
