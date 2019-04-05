@@ -76,8 +76,11 @@ Only implemented ones are listed. All units that can be built from other units a
 | Magnetic Flux        | f*               | Wb          | U *T           | aWb to EWb           | `*_weber_t`   |
 | Magnetic Field       | B                | T           | f/L^2          | aT to ET             | `*_tesla_t`   |
 | Inductance           | l                | H           | f / I          | aH to EH             | `*_henry_t`   |
+| Luminous flux        | m**              | lm          |                | alm to Elm           | `*_lumen_t`   |
 
-\** The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`but the current implementation does not allow for non-ASCII symbols or multi-char symbols
+\* The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`but the current implementation does not allow for non-ASCII symbols or multi-char symbols
+
+\*** luminous flux should be Φ<sub>v</sub> which is even more less supported than `Φ (Phi)` itself. Also since sterradiant (which is essentially just a scalar) is not yet implemented luminous flux cannot be built from other units
 
 # Building & compatibility
 
