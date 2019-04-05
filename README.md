@@ -74,6 +74,7 @@ Only implemented ones are listed. All units that can be built from other units a
 | Energy               | E                | J           | F * L, p * L^3 | aJ to EJ             | `*_joule_t`   |
 | Power                | P                | W           | E/T            | aW to EW             | `*_watt_t`    |
 | Magnetic Flux        | f*               | Wb          | U *T           | aWb to EWb           | `*_weber_t`   |
+| Magnetic Field       | B                | T           | f/L^2          | aT to ET             | `*_tesla_t`   |
 
 \** The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`but the current implementation does not allow for non-ASCII symbols or multi-char symbols
 
