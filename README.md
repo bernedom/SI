@@ -60,24 +60,25 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metric
 
 Only implemented ones are listed. All units that can be built from other units are also decayable to the respective units by inversing the mathematical operation. I.e if `Q = I * T` then `Q / I = T` and `Q / T = I`
 
-| Unit                 | Dimension Symbol | Unit Symbol | builable from  | implemented literals | unit typedefs |
-| -------------------- | ---------------- | ----------- | -------------- | -------------------- | ------------- |
-| Velocity             | v                | m/s         | L / T          | none                 | none          |
-| Acceleration         | a                | m/s^2       | v / T          | none                 | none          |
-| Electric charge      | Q                | C           | I * T          | aC to EC             | `*_coulomb_t` |
-| Electric potential   | U                | V           | P / I, E/Q     | aV to EV             | `*_volt_t`    |
-| Electric resistance  | O*               | Ohm (Ω)     | U / I          | aOhm to EOhm         | `*_ohm_t`     |
-| Electric conductance | G                | S           | I / U          | aS to ES             | `*_siemens_t` |
-| Electric capacity    | C                | F           | Q / U          | aF to EF             | `*_farad_t`   |
-| Force                | F                | N           | M * a          | aN to EN             | `*_newton_t`  |
-| Pressure             | p                | pa          | F / L^2        | apa to Epa           | `*_pascal_t`  |
-| Energy               | E                | J           | F * L, p * L^3 | aJ to EJ             | `*_joule_t`   |
-| Power                | P                | W           | E/T            | aW to EW             | `*_watt_t`    |
-| Magnetic Flux        | f*               | Wb          | U *T           | aWb to EWb           | `*_weber_t`   |
-| Magnetic Field       | B                | T           | f/L^2          | aT to ET             | `*_tesla_t`   |
-| Inductance           | l                | H           | f / I          | aH to EH             | `*_henry_t`   |
-| Luminous flux        | m**              | lm          |                | alm to Elm           | `*_lumen_t`   |
-| Illuminance          | i*               | lx          | m / a          | alx to Elx           | `*_lux_t`     |
+| Unit                 | Dimension Symbol | Unit Symbol | builable from  | implemented literals | unit typedefs   |
+| -------------------- | ---------------- | ----------- | -------------- | -------------------- | --------------- |
+| Velocity             | v                | m/s         | L / T          | none                 | none            |
+| Acceleration         | a                | m/s^2       | v / T          | none                 | none            |
+| Electric charge      | Q                | C           | I * T          | aC to EC             | `*_coulomb_t`   |
+| Electric potential   | U                | V           | P / I, E/Q     | aV to EV             | `*_volt_t`      |
+| Electric resistance  | O*               | Ohm (Ω)     | U / I          | aOhm to EOhm         | `*_ohm_t`       |
+| Electric conductance | G                | S           | I / U          | aS to ES             | `*_siemens_t`   |
+| Electric capacity    | C                | F           | Q / U          | aF to EF             | `*_farad_t`     |
+| Force                | F                | N           | M * a          | aN to EN             | `*_newton_t`    |
+| Pressure             | p                | pa          | F / L^2        | apa to Epa           | `*_pascal_t`    |
+| Energy               | E                | J           | F * L, p * L^3 | aJ to EJ             | `*_joule_t`     |
+| Power                | P                | W           | E/T            | aW to EW             | `*_watt_t`      |
+| Magnetic Flux        | f*               | Wb          | U *T           | aWb to EWb           | `*_weber_t`     |
+| Magnetic Field       | B                | T           | f/L^2          | aT to ET             | `*_tesla_t`     |
+| Inductance           | l                | H           | f / I          | aH to EH             | `*_henry_t`     |
+| Luminous flux        | m**              | lm          |                | alm to Elm           | `*_lumen_t`     |
+| Illuminance          | i*               | lx          | m / a          | alx to Elx           | `*_lux_t`       |
+| Radioactivity        | A                | Bq          |                | aBq to EBq           | `*_becquerel_t` |
 
 \* These dimension do not yet have the correct dimension symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`but. Illuminace should be E<sub>b/<sub>. 
 
