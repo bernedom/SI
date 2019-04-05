@@ -5,7 +5,6 @@
 
 namespace SI {
 
-/// @todo check how to make this the same/an alias of hertz
 template <typename _Type, class _Ratio = std::ratio<1>>
 using absorbed_dose_t = detail::unit_t<'D', 1, _Type, _Ratio>;
 
