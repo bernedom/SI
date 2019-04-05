@@ -34,6 +34,7 @@ add_executable(SI_derived_unit_tests
                src/derived_unit_tests/electric_capacity_tests.cc
                src/derived_unit_tests/electric_conductance_tests.cc
                src/derived_unit_tests/electric_resistance_tests.cc
+               src/derived_unit_tests/inductance_tests.cc
                src/derived_unit_tests/velocity_tests.cc
                src/derived_unit_tests/acceleration_tests.cc
                src/derived_unit_tests/force_tests.cc

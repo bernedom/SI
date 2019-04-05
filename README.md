@@ -31,7 +31,7 @@ This is a learning project to figure out modern C++ user defined literals and pr
 ### SI Base units
 
 For each Unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the internation system of units](https://en.wikipedia.org/wiki/Metric_prefix)
-The typedefs are prefixed (or in rare cases interfixed) with the standard metrix prefixes. i.e. `meter_t, milli_meter_t, kilo_meter_t`. The prefix or interfix is marked with an `*` in the tables below. 
+The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. `meter_t, milli_meter_t, kilo_meter_t`. The prefix or interfix is marked with an `*` in the tables below. 
 
 | Unit                        | Dimension Symbol | Unit Symbol | implemented ratios                                  | unit typedefs                     |
 | --------------------------- | ---------------- | ----------- | --------------------------------------------------- | --------------------------------- |
@@ -75,6 +75,7 @@ Only implemented ones are listed. All units that can be built from other units a
 | Power                | P                | W           | E/T            | aW to EW             | `*_watt_t`    |
 | Magnetic Flux        | f*               | Wb          | U *T           | aWb to EWb           | `*_weber_t`   |
 | Magnetic Field       | B                | T           | f/L^2          | aT to ET             | `*_tesla_t`   |
+| Inductance           | l                | H           | f / I          | aH to EH             | `*_henry_t`   |
 
 \** The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`but the current implementation does not allow for non-ASCII symbols or multi-char symbols
 
