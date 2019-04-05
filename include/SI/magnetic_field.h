@@ -1,10 +1,9 @@
 #pragma once
 
+#include "area.h"
 #include "detail/operator_helpers.h"
 #include "detail/unit.h"
-#include "electric_potential.h"
 #include "magnetic_flux.h"
-#include "time.h"
 
 namespace SI {
 
@@ -39,7 +38,9 @@ template <typename _Type>
 using peta_tesla_t = magnetic_field_t<_Type, std::peta>;
 template <typename _Type> using exa_tesla_t = magnetic_field_t<_Type, std::exa>;
 
-namespace detail {}
+namespace detail {
+BUILD_UNIT_FROM_DIVISON(magnetic_field_t, magnetic_flux_t, area_t)
+}
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aT() {

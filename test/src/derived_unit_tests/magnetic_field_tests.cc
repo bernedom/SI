@@ -160,3 +160,48 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _PT THEN result is a "
       std::is_same<decltype(one_f),
                    const SI::magnetic_field_t<long double, std::peta>>::value);
 }
+
+TEMPLATE_TEST_CASE(
+    "GIVEN a magnetic_flux value WHEN divided by an area value THEN "
+    "result is a magnetic_field value",
+    "[magnetic_field][operator/]", int64_t, long double) {
+  constexpr SI::magnetic_flux_t<TestType, std::ratio<1>> magnetic_flux{1};
+  constexpr SI::area_t<TestType, std::ratio<1>> area{1};
+
+  constexpr auto result = magnetic_flux / area;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::magnetic_field_t<TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN a magnetic_field value WHEN multiplied by an area value "
+    "THEN result is a magnetic_flux value",
+    "[magnetic_field][operator*]", int64_t, long double) {
+  constexpr SI::magnetic_field_t<TestType, std::ratio<1>> magnetic_field{1};
+  constexpr SI::area_t<TestType, std::ratio<1>> area{1};
+
+  constexpr auto result = magnetic_field * area;
+  constexpr auto result_commutative = area * magnetic_field;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), decltype(result_commutative)>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::magnetic_flux_t<TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN a magnetic_flux value WHEN divided by a magnetic_field value THEN "
+    "result is an area value",
+    "[magnetic_flux][operator/]", int64_t, long double) {
+  constexpr SI::magnetic_flux_t<TestType, std::ratio<1>> magnetic_flux{1};
+  constexpr SI::magnetic_field_t<TestType, std::ratio<1>> magnetic_field{1};
+
+  constexpr auto result = magnetic_flux / magnetic_field;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::area_t<TestType, std::ratio<1>>>::value);
+}
