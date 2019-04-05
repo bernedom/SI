@@ -2,8 +2,9 @@
 
 #include "detail/operator_helpers.h"
 #include "detail/unit.h"
-#include "energy.h"
+#include "electric_potential.h"
 #include "magnetic_flux.h"
+#include "time.h"
 
 namespace SI {
 
@@ -37,7 +38,9 @@ template <typename _Type>
 using peta_weber_t = magnetic_flux_t<_Type, std::peta>;
 template <typename _Type> using exa_weber_t = magnetic_flux_t<_Type, std::exa>;
 
-namespace detail {}
+namespace detail {
+BUILD_UNIT_FROM_MULTIPLICATION(magnetic_flux_t, electric_potential_t, time_t)
+}
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aWb() {

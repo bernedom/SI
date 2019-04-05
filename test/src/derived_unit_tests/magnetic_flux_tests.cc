@@ -1,5 +1,6 @@
 #include <catch.hpp>
 
+#include <SI/electric_potential.h>
 #include <SI/magnetic_flux.h>
 #include <SI/time.h>
 
@@ -158,4 +159,46 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _PWb THEN result is a "
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::magnetic_flux_t<long double, std::peta>>::value);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN a electric_potential value WHEN multiplied with a time "
+    "value THEN result is a magnetic_flux value",
+    "[magnetic_flux][operators]", int64_t, long double) {
+  constexpr SI::electric_potential_t<TestType, std::ratio<1>> f{1};
+  constexpr SI::time_t<TestType, std::ratio<1>> l{1};
+
+  constexpr auto result = f * l;
+  constexpr auto result_commutative = l * f;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::magnetic_flux_t<TestType, std::ratio<1>>>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), decltype(result_commutative)>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a magnetic_flux value WHEN divided by time THEN then "
+                   "result is a electric_potential value",
+                   "[magnetic_flux][operators]", int64_t, long double) {
+  constexpr SI::magnetic_flux_t<TestType, std::ratio<1>> e{1};
+  constexpr SI::time_t<TestType, std::ratio<1>> l{1};
+
+  constexpr auto result = e / l;
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), const SI::electric_potential_t<
+                                         TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN a magnetic_flux value WHEN divided by electric_potential THEN then "
+    "result is a accelereatin value",
+    "[magnetic_flux][operators]", int64_t, long double) {
+  constexpr SI::magnetic_flux_t<TestType, std::ratio<1>> e{1};
+  constexpr SI::electric_potential_t<TestType, std::ratio<1>> f{1};
+
+  constexpr auto result = e / f;
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::time_t<TestType, std::ratio<1>>>::value);
 }
