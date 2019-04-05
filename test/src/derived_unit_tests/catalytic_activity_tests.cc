@@ -1,6 +1,8 @@
 #include <catch.hpp>
 
 #include <SI/catalytic_activity.h>
+#include <SI/substance.h>
+#include <SI/time.h>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _akat THEN result is a "
@@ -170,4 +172,50 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _Ekat THEN result is a "
   STATIC_REQUIRE(std::is_same<
                  decltype(one_f),
                  const SI::catalytic_activity_t<long double, std::exa>>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a substance value WHEN divided by a time value THEN "
+                   "result is a catalytic_activity value",
+                   "[catalytic_activity][operator/]", int64_t, long double) {
+  constexpr SI::substance_t<TestType, std::ratio<1>> substance{1};
+  constexpr SI::time_t<TestType, std::ratio<1>> time{1};
+
+  constexpr auto result = substance / time;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), const SI::catalytic_activity_t<
+                                         TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN a catalytic_activity value WHEN multiplied by an time value "
+    "THEN result is a substance value",
+    "[catalytic_activity][operator*]", int64_t, long double) {
+  constexpr SI::catalytic_activity_t<TestType, std::ratio<1>>
+      catalytic_activity{1};
+  constexpr SI::time_t<TestType, std::ratio<1>> time{1};
+
+  constexpr auto result = catalytic_activity * time;
+  constexpr auto result_commutative = time * catalytic_activity;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), decltype(result_commutative)>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::substance_t<TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN a substance value WHEN divided by a catalytic_activity value THEN "
+    "result is an time value",
+    "[substance][operator/]", int64_t, long double) {
+  constexpr SI::substance_t<TestType, std::ratio<1>> substance{1};
+  constexpr SI::catalytic_activity_t<TestType, std::ratio<1>>
+      catalytic_activity{1};
+
+  constexpr auto result = substance / catalytic_activity;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::time_t<TestType, std::ratio<1>>>::value);
 }

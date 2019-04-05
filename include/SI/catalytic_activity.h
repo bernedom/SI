@@ -2,6 +2,8 @@
 
 #include "detail/operator_helpers.h"
 #include "detail/unit.h"
+#include "substance.h"
+#include "time.h"
 
 namespace SI {
 
@@ -35,6 +37,10 @@ template <typename _Type>
 using peta_katal_t = catalytic_activity_t<_Type, std::peta>;
 template <typename _Type>
 using exa_katal_t = catalytic_activity_t<_Type, std::exa>;
+
+namespace detail {
+BUILD_UNIT_FROM_DIVISON(catalytic_activity_t, substance_t, time_t)
+}
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_akat() {
