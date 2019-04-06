@@ -23,13 +23,13 @@ INCLUDES DESTINATION include
 )
 
 include(CMakePackageConfigHelpers)
-write_basic_package_version_file("SIConfigVersion.cmake" 
+write_basic_package_version_file("${PROJECT_NAME}ConfigVersion.cmake" 
   VERSION 1.0.0 
   COMPATIBILITY SameMajorVersion)
 
 configure_package_config_file(
-    "${PROJECT_SOURCE_DIR}/SIConfig.cmake.in"
-    "${PROJECT_BINARY_DIR}/SIConfig.cmake"
+    "${PROJECT_SOURCE_DIR}/cmake/SIConfig.cmake.in"
+    "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
     INSTALL_DESTINATION lib/cmake/${PROJECT_NAME}
 )
 
@@ -39,7 +39,7 @@ install(EXPORT SI_Targets
     DESTINATION lib/cmake/${PROJECT_NAME}
 )
 
-install(FILES "${PROJECT_BINARY_DIR}/SIConfig.cmake" "${PROJECT_BINARY_DIR}/SIConfigVersion.cmake"
+install(FILES "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake" "${PROJECT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
     DESTINATION lib/cmake/${PROJECT_NAME})
   
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/SI DESTINATION include)
