@@ -10,8 +10,8 @@ target_include_directories(${PROJECT_NAME} INTERFACE
   $<INSTALL_INTERFACE:include>
   )
 
-# target_compile_features(${PROJECT_NAME} INTERFACE
-#                         cxx_std_17)
+target_compile_features(${PROJECT_NAME} INTERFACE
+                        cxx_std_17)
 
 add_subdirectory(test)
   
