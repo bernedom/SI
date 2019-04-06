@@ -42,4 +42,4 @@ install(EXPORT SI_Targets
 install(FILES "${PROJECT_BINARY_DIR}/SIConfig.cmake" "${PROJECT_BINARY_DIR}/SIConfigVersion.cmake"
     DESTINATION lib/cmake/${PROJECT_NAME})
   
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/include DESTINATION include)    
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/SI DESTINATION include)
