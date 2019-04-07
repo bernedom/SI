@@ -59,7 +59,7 @@ matrix:
       script:
         - cmake --version
         - mkdir build && cd build && cmake .. -G "Visual Studio 15 2017" -A x64
-        - cmake --build . --config Debug -- -j $(nproc)
+        - cmake --build . --config Debug
         - ctest -C Debug
 
     - os: osx
@@ -77,6 +77,26 @@ matrix:
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
         - CXXFLAGS=-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE
+
+    - os: linux
+      name: installation testing
+      compiler: gcc
+      addons:
+        apt:
+          sources: *all_sources
+          packages:
+            - g++-8
+      env:
+        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+      script: 
+        - cmake --version
+        - mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/local-install
+        - cmake --build . --config Release --target install -- -j $(nproc)
+        - cd ../example
+        - mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/local-install
+        - cmake --build .
+        
+             
 
 before_install:
   - eval "${MATRIX_EVAL}"
