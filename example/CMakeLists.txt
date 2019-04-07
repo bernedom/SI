@@ -6,9 +6,3 @@ find_package(SI CONFIG REQUIRED)
 
 add_executable(${PROJECT_NAME} src/main.cc)
 target_link_libraries(${PROJECT_NAME} SI::SI)
-
-target_compile_features(${PROJECT_NAME} PRIVATE
-                        cxx_std_17)
-
-
-# call cmake -DCMAKE_INSTALL_PREFIX:PATH=~/SI-Install ..

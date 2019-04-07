@@ -97,10 +97,28 @@ to build use
 mkdir build
 cd build
 cmake ..
-cmake --build . --config Debug
+cmake --build . --config Debug -- -j $(nproc)
 ```
 
 substitute `--config Debug` with `--config Release` for optimized builds
+
+## Installing
+
+To install SI use the commands below: this will install SI into `/usr/local/lib/cmake/SI`
+
+```
+mkdir build 
+cd build 
+cmake ..
+cmake --build . --config Release --target install -- -j $(nproc)
+```
+
+Consider running the build/install command with setting the install prefix, if you do not want to install SI system wide
+```
+-DCMAKE_INSTALL_PREFIX:PATH=${HOME}/SI-install
+```
+
+The folder `example` contains a standalone sample program to check for succesful installation
 
 ## Building the tests
 
