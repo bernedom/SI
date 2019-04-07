@@ -59,7 +59,7 @@ matrix:
       script:
         - cmake --version
         - mkdir build && cd build && cmake .. -G "Visual Studio 15 2017" -A x64
-        - cmake --build . --config Debug
+        - cmake --build . --config Debug -- -j $(nproc)
         - ctest -C Debug
 
     - os: osx
@@ -84,5 +84,5 @@ before_install:
 script: 
   - cmake --version
   - mkdir build && cd build && cmake .. 
-  - cmake --build . --config Debug
+  - cmake --build . --config Debug -- -j $(nproc)
   - ctest -C Debug
