@@ -37,4 +37,4 @@ build
 build
 
 # exclude generated documentation
-doc
+doc/generated
