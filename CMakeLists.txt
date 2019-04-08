@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project("SI")
+project("SI" VERSION 0.0.1)
 enable_testing()
 
 add_library( ${PROJECT_NAME} INTERFACE)
@@ -24,7 +24,7 @@ INCLUDES DESTINATION include
 
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file("${PROJECT_NAME}ConfigVersion.cmake" 
-  VERSION 1.0.0 
+  VERSION ${PROJECT_VERSION} 
   COMPATIBILITY SameMajorVersion)
 
 configure_package_config_file(
