@@ -6,7 +6,7 @@
 # SI
 A header only c++ library that uses user defined literals to help with SI-unit conversion at compile time.
 
-A quick example: 
+An illustrative example: 
 ```cpp
   #include <SI/mass.h>
   #include <SI/electric_charge.h>
@@ -22,9 +22,7 @@ A quick example:
   }
 ```
 
-The goal is to provide as many conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) as possible with strong type safety at compile time. 
-
-This is a learning project to figure out modern C++ user defined literals and probably some template and type-traits magic as well. 
+SI provides conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) with strong type safety at compile time. 
 
 ## State of implentation
 
@@ -56,9 +54,9 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metric
 | Frequency | T                | -1       | Hz          | 10<sup>-18</sup> to 10<sup>18</sup> | `*_hertz_t`        |
 
 
-### Derived units
+### Derived units with special names
 
-Only implemented ones are listed. All units that can be built from other units are also decayable to the respective units by inversing the mathematical operation. I.e if `Q = I * T` then `Q / I = T` and `Q / T = I`
+All units that can be built from other units are also decayable to the respective units by inversing the mathematical operation. I.e if `Q = I * T` then `Q / I = T` and `Q / T = I`
 
 | Unit                 | Dimension Symbol | Unit Symbol | builable from  | implemented literals | unit typedefs   |
 | -------------------- | ---------------- | ----------- | -------------- | -------------------- | --------------- |
@@ -83,14 +81,13 @@ Only implemented ones are listed. All units that can be built from other units a
 | Equivalent Dose      | H                | Sv          |                | aSv to ESv           | `*_sievert_t`   |
 | Catalytic activity   | K                | kat         | N / T          | akat to Ekat         | `*_katal_t`     |
 
-\* These dimension do not yet have the correct dimension symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`but. Illuminace should be E<sub>b/<sub>. 
+\* These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`but. Illuminace should be E<sub>b</sub>. 
 
-\*** luminous flux should be Φ<sub>v</sub> which is even more less supported than `Φ (Phi)` itself. Also since sterradiant (which is essentially just a scalar) is not yet implemented luminous flux cannot be built from other units
+\** luminous flux should be Φ<sub>v</sub> which is even more less supported than `Φ (Phi)` itself. Also since sterradiant (which is essentially just a scalar) is not yet implemented luminous flux cannot be built from other units
 
 # Building & compatibility
 
-SI is a header only libary that uses C++17 features. Building is tested using cmake > 3.5 and verified for g++7, g++8, clang5, clang6, clang7, msvc 19, and AppleClang 10.0
-
+SI is a header only libary that uses **C++17** features. Building is tested using cmake > 3.5 and verified for g++7, g++8, clang5, clang6, clang7, msvc 19, and AppleClang 10.0.
 
 to build use 
 ```
@@ -133,19 +130,7 @@ sudo apt install libstdc++-8-dev
 
 ## A word on testing 
 
-I'm using a more or less strict TDD for implementing the functionality. First to check wheter the code actually does what I want it to do, but also as a way to set examples how this is used. The nice benefit of it being, that I'm dogfooding the library to myself while developing. I'm using [Catch2](https://github.com/catchorg/Catch2) as a unit-testing framework, however since the goal is to be able to do as much as possible during compile time most of the tests are performed with Catch2 `STATIC_REQUIRES` which contatain `static_asserts` and run-time `REQUIRE`s as . 
+I'm using more or less strict TDD for implementing the functionality. First to check if the code actually does what I want it to do, but also as a way to set examples how SI is used. The nice benefit of it being, that I'm dogfooding the library to myself while developing. I'm using [Catch2](https://github.com/catchorg/Catch2) as a unit-testing framework, however since the goal is to be able to do as much as possible during compile time most of the tests are performed with Catch2 `STATIC_REQUIRES` which contatain `static_asserts` and run-time `REQUIRE`s as testing assert. 
 
 This means if the tests compile then the tests are correct. To compile only with runtime check pass `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE` to the compilers. 
 
-## note to self: how to run lcov
-
-run in `build` folder
-
-```
-cmake -D CMAKE_CXX_FLAGS="--coverage -fprofile-arcs -ftest-coverage -fno-inline -fno-inline-small-functions -fno-default-inline -g -O0" ..
-make -j$(nproc)
-./test/SI_Tests
-lcov --directory . --capture --output-file coverage.info
-lcov --remove coverage.info '/usr/*' --output-file coverage_cleaned.info
-genhtml -o out.html coverage_cleaned.info
-```
