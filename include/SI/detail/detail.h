@@ -1,6 +1,7 @@
 #pragma once
 
 #include "number_parser.h"
+#include <cstdint>
 #include <limits>
 #include <numeric>
 #include <ratio>
