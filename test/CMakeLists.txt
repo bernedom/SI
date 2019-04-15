@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.8)
 
 include(CTest)
 
@@ -57,31 +57,26 @@ target_include_directories(SI_derived_unit_tests
                            PRIVATE ${PROJECT_SOURCE_DIR}/include
                                    ${CMAKE_CURRENT_LIST_DIR}/include)
 
-if(${CMAKE_VERSION} VERSION_LESS "3.8.0")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+target_compile_features(SI_derived_unit_tests PRIVATE cxx_std_17)
+set_target_properties(SI_derived_unit_tests
+                      PROPERTIES CXX_STANDARD
+                                 17
+                                 CXX_STANDARD_REQUIRED
+                                 YES)
 
-else()
-  target_compile_features(SI_derived_unit_tests PRIVATE cxx_std_17)
-  set_target_properties(SI_derived_unit_tests
-                        PROPERTIES CXX_STANDARD
-                                   17
-                                   CXX_STANDARD_REQUIRED
-                                   YES)
+target_compile_features(SI_detail_tests PRIVATE cxx_std_17)
+set_target_properties(SI_detail_tests
+                      PROPERTIES CXX_STANDARD
+                                 17
+                                 CXX_STANDARD_REQUIRED
+                                 YES)
 
-  target_compile_features(SI_detail_tests PRIVATE cxx_std_17)
-  set_target_properties(SI_detail_tests
-                        PROPERTIES CXX_STANDARD
-                                   17
-                                   CXX_STANDARD_REQUIRED
-                                   YES)
-
-  target_compile_features(SI_base_unit_tests PRIVATE cxx_std_17)
-  set_target_properties(SI_base_unit_tests
-                        PROPERTIES CXX_STANDARD
-                                   17
-                                   CXX_STANDARD_REQUIRED
-                                   YES)
-endif()
+target_compile_features(SI_base_unit_tests PRIVATE cxx_std_17)
+set_target_properties(SI_base_unit_tests
+                      PROPERTIES CXX_STANDARD
+                                 17
+                                 CXX_STANDARD_REQUIRED
+                                 YES)
 
 # increase warning level for gcc and enabled c++17 for msvc
 if(${CMAKE_CXX_COMPILER_ID} MATCHES "GNU"
