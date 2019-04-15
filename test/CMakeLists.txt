@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.8)
 
 include(CTest)
+enable_testing()
 
 add_executable(SI_detail_tests
                src/Catch2Main.cc

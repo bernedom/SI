@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 
-project("SI" VERSION 0.0.1)
-enable_testing()
+project("SI" VERSION 0.0.2)
 
 add_library(${PROJECT_NAME} INTERFACE)
 
@@ -35,7 +34,7 @@ configure_package_config_file(
 
 install(EXPORT SI_Targets
         FILE ${PROJECT_NAME}Targets.cmake
-        NAMESPACE SI::
+        NAMESPACE ${PROJECT_NAME}::
         DESTINATION lib/cmake/${PROJECT_NAME})
 
 install(FILES "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
