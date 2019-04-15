@@ -3,7 +3,9 @@ cmake_minimum_required(VERSION 3.8)
 include(CTest)
 enable_testing()
 
-add_executable(SI_detail_tests
+add_executable(SI_detail_tests)
+target_sources(SI_detail_tests
+               PRIVATE
                src/Catch2Main.cc
                src/detail_tests/detail_tests.cc
                src/detail_tests/number_parser_tests.cc
@@ -15,7 +17,9 @@ target_include_directories(SI_detail_tests
                            PRIVATE ${PROJECT_SOURCE_DIR}/include
                                    ${CMAKE_CURRENT_LIST_DIR}/include)
 
-add_executable(SI_base_unit_tests
+add_executable(SI_base_unit_tests)
+target_sources(SI_base_unit_tests
+               PRIVATE
                src/Catch2Main.cc
                src/base_unit_tests/mass_tests.cc
                src/base_unit_tests/time_tests.cc
@@ -29,7 +33,9 @@ target_include_directories(SI_base_unit_tests
                            PRIVATE ${PROJECT_SOURCE_DIR}/include
                                    ${CMAKE_CURRENT_LIST_DIR}/include)
 
-add_executable(SI_derived_unit_tests
+add_executable(SI_derived_unit_tests)
+target_sources(SI_derived_unit_tests
+               PRIVATE
                src/Catch2Main.cc
                src/derived_unit_tests/area_tests.cc
                src/derived_unit_tests/frequency_tests.cc
