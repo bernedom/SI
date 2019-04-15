@@ -13,9 +13,10 @@ target_sources(SI_detail_tests
                src/detail_tests/unit_t_type_tests.cc
                src/detail_tests/unit_helper_functions_tests.cc)
 
-target_include_directories(SI_detail_tests
-                           PRIVATE ${PROJECT_SOURCE_DIR}/include
-                                   ${CMAKE_CURRENT_LIST_DIR}/include)
+target_include_directories(
+  SI_detail_tests
+  PRIVATE $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include
+          ${CMAKE_CURRENT_LIST_DIR}/include>)
 
 add_executable(SI_base_unit_tests)
 target_sources(SI_base_unit_tests
@@ -29,9 +30,10 @@ target_sources(SI_base_unit_tests
                src/base_unit_tests/luminosity_tests.cc
                src/base_unit_tests/length_tests.cc)
 
-target_include_directories(SI_base_unit_tests
-                           PRIVATE ${PROJECT_SOURCE_DIR}/include
-                                   ${CMAKE_CURRENT_LIST_DIR}/include)
+target_include_directories(
+  SI_base_unit_tests
+  PRIVATE $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include
+          ${CMAKE_CURRENT_LIST_DIR}/include>)
 
 add_executable(SI_derived_unit_tests)
 target_sources(SI_derived_unit_tests
@@ -60,9 +62,10 @@ target_sources(SI_derived_unit_tests
                src/derived_unit_tests/equivalent_dose_tests.cc
                src/derived_unit_tests/catalytic_activity_tests.cc)
 
-target_include_directories(SI_derived_unit_tests
-                           PRIVATE ${PROJECT_SOURCE_DIR}/include
-                                   ${CMAKE_CURRENT_LIST_DIR}/include)
+target_include_directories(
+  SI_derived_unit_tests
+  PRIVATE $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include
+          ${CMAKE_CURRENT_LIST_DIR}/include>)
 
 target_compile_features(SI_derived_unit_tests PRIVATE cxx_std_17)
 
