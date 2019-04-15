@@ -73,14 +73,35 @@ target_compile_features(SI_detail_tests PRIVATE cxx_std_17)
 
 target_compile_features(SI_base_unit_tests PRIVATE cxx_std_17)
 
-# increase warning level for gcc and enabled c++17 for msvc
-if(${CMAKE_CXX_COMPILER_ID} MATCHES "GNU"
-   OR ${CMAKE_CXX_COMPILER_ID} MATCHES "[Cc]lang")
-  # add `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE to switch to runtime only checks
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic")
-elseif(${CMAKE_CXX_COMPILER_ID} MATCHES "MSVC")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17")
-endif()
+target_compile_options(
+  SI_detail_tests
+  PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
+          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Wall>
+          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-pedantic>)
+
+# add `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE to switch to runtime only checks
+# target_compile_definitions(SI_detail_tests PRIVATE
+# CATCH_CONFIG_RUNTIME_STATIC_REQUIRE)
+
+target_compile_options(
+  SI_base_unit_tests
+  PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
+          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Wall>
+          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-pedantic>)
+
+# add `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE to switch to runtime only checks
+# target_compile_definitions(SI_base_unit_tests PRIVATE
+# CATCH_CONFIG_RUNTIME_STATIC_REQUIRE)
+
+target_compile_options(
+  SI_derived_unit_tests
+  PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
+          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Wall>
+          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-pedantic>)
+
+# add `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE to switch to runtime only checks
+# target_compile_definitions(SI_derived_unit_tests PRIVATE
+# CATCH_CONFIG_RUNTIME_STATIC_REQUIRE)
 
 add_test(NAME SI_detail_tests COMMAND SI_detail_tests)
 add_test(NAME SI_base_unit_tests COMMAND SI_base_unit_tests)
