@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 
 include(CTest)
-enable_testing()
 
 add_executable(SI_detail_tests)
 target_sources(SI_detail_tests
