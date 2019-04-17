@@ -1,6 +1,5 @@
 #pragma once
 
-#include "detail/operator_helpers.h"
 #include "detail/unit.h"
 
 namespace SI {

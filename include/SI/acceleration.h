@@ -1,6 +1,7 @@
 #pragma once
 
 #include "detail/operator_helpers.h"
+#include "time.h"
 #include "velocity.h"
 
 namespace SI {
