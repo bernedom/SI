@@ -14,3 +14,16 @@ lcov --directory . --capture --output-file coverage.info
 lcov --remove coverage.info '/usr/*' --output-file coverage_cleaned.info
 genhtml -o out.html coverage_cleaned.info
 ```
+
+## Running clang-tidy
+
+See https://clang.llvm.org/extra/clang-tidy/
+
+```
+mkdir build && cd build
+cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+run-clang-tidy -checks=bugprone-* -header-filter=.*
+run-clang-tidy -checks=performance-* -header-filter=.*
+run-clang-tidy -checks=modernize-* -header-filter=.*
+run-clang-tidy -checks=clang-analyzer-* -header-filter=.*
+run-clang-tidy -checks=readability-* -header-filter=.*
