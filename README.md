@@ -27,11 +27,10 @@ int main(int, char **) {
 }
 ```
 
-SI provides conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) with strong type safety at compile time. 
+SI provides conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) with strong type safety at compile time. All units are special typedefs of the templated struct `SI::unit_t`. Only the value of the unit is stored internally, the ratio (i.e. milli, micro, kilo...) is determined as a type trait to allow all units to have the same resolution across the whole implemented ratios. SI handles operations of units of the same ratios as well as when the ratios are different. Operations of between units of the same ratio are overhead-free, else there is additional computation cost to adjust the values to the units.
 
-## State of implentation
 
-### SI Base units
+## SI Base units
 
 For each Unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the internation system of units](https://en.wikipedia.org/wiki/Metric_prefix)
 The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. `meter_t, milli_meter_t, kilo_meter_t`. The prefix or interfix is marked with an `*` in the tables below. 
@@ -50,7 +49,7 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metric
 
 \** The dimension symbol for thermodynamic temperature should be `Θ (Theta)` but the current implementation does not allow for non-ASCII symbols or multi-char symbols
 
-#### Special Units
+### Special Units
 
 | Unit      | Dimension Symbol | Exponent | Unit Symbol | implemented ratios                  | unit typedefs      |
 | --------- | ---------------- | -------- | ----------- | ----------------------------------- | ------------------ |
@@ -59,7 +58,7 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metric
 | Frequency | T                | -1       | Hz          | 10<sup>-18</sup> to 10<sup>18</sup> | `*_hertz_t`        |
 
 
-### Derived units with special names
+## Derived units with special names
 
 All units that can be built from other units are also decayable to the respective units by inversing the mathematical operation. I.e if `Q = I * T` then `Q / I = T` and `Q / T = I`
 
