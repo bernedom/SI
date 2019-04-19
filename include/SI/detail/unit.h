@@ -273,11 +273,11 @@ struct unit_with_common_ratio {
   static_assert(std::is_same<typename _unit_lhs::internal_type,
                              typename _unit_rhs::internal_type>::value);
   static_assert(_unit_lhs::symbol::value == _unit_rhs::symbol::value);
-  typedef unit_t<_unit_lhs::symbol::value, _unit_lhs::exponent::value,
-                 typename _unit_lhs::internal_type,
-                 typename detail::ratio_gcd<typename _unit_lhs::ratio,
-                                            typename _unit_rhs::ratio>::ratio>
-      type;
+  using type =
+      unit_t<_unit_lhs::symbol::value, _unit_lhs::exponent::value,
+             typename _unit_lhs::internal_type,
+             typename detail::ratio_gcd<typename _unit_lhs::ratio,
+                                        typename _unit_rhs::ratio>::ratio>;
 };
 
 /// divide a value of a certain unit with another value of a possibly different
