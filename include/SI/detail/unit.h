@@ -226,14 +226,32 @@ private:
 }; // namespace SI
 
 /// operator to divide primitive type by unit encapsulating the same type
+/// template specialisation handling integer types
 /// @results unit with negative exponent
-template <char _Symbol, char _Exponent, typename _Type, typename _Ratio>
+template <
+    char _Symbol, char _Exponent, typename _Type, typename _Ratio,
+    typename std::enable_if<std::is_integral<_Type>::value>::type * = nullptr>
+constexpr auto operator/(const _Type &lhs,
+                         const unit_t<_Symbol, _Exponent, _Type, _Ratio> &rhs) {
+  return unit_cast<unit_t<_Symbol, -_Exponent, _Type, _Ratio>>(
+      unit_t<_Symbol, -_Exponent, _Type, std::ratio<1>>{
+          lhs / (rhs.raw_value() * (_Ratio::num / _Ratio::den))});
+}
+
+/// operator to divide primitive type by unit encapsulating the same type
+/// template specialisation for floating point types, to avoid possible loss of
+/// precision when adjusting for ratio
+/// @results unit with negative exponent
+template <char _Symbol, char _Exponent, typename _Type, typename _Ratio,
+          typename std::enable_if<std::is_floating_point<_Type>::value>::type
+              * = nullptr>
 constexpr auto operator/(const _Type &lhs,
                          const unit_t<_Symbol, _Exponent, _Type, _Ratio> &rhs) {
 
   return unit_cast<unit_t<_Symbol, -_Exponent, _Type, _Ratio>>(
       unit_t<_Symbol, -_Exponent, _Type, std::ratio<1>>{
-          lhs / (rhs.raw_value() * (_Ratio::num / _Ratio::den))});
+          lhs / (rhs.raw_value() * (static_cast<_Type>(_Ratio::num) /
+                                    static_cast<_Type>(_Ratio::den)))});
 }
 
 /// helper template to check if a type is a unit_t (false for all other types)
