@@ -3,7 +3,6 @@
 #include "detail/operator_helpers.h"
 #include "detail/unit.h"
 #include "electric_potential.h"
-#include "magnetic_flux.h"
 #include "time.h"
 
 namespace SI {

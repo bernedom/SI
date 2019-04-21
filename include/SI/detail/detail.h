@@ -41,9 +41,8 @@ private:
                                              _ratio_lhs::den, _ratio_rhs::den)>;
 
 public:
-  typedef std::ratio<gcd_num::value,
-                     (_ratio_lhs::den / gcd_den::value) * _ratio_rhs::den>
-      ratio;
+  using ratio = std::ratio<gcd_num::value, (_ratio_lhs::den / gcd_den::value) *
+                                               _ratio_rhs::den>;
 };
 
 } // namespace SI::detail

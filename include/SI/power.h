@@ -3,7 +3,6 @@
 #include "detail/operator_helpers.h"
 #include "detail/unit.h"
 #include "energy.h"
-#include "power.h"
 
 namespace SI {
 template <typename _Type, class _Ratio = std::ratio<1>>

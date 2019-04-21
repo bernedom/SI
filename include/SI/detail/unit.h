@@ -226,14 +226,32 @@ private:
 }; // namespace SI
 
 /// operator to divide primitive type by unit encapsulating the same type
+/// template specialisation handling integer types
 /// @results unit with negative exponent
-template <char _Symbol, char _Exponent, typename _Type, typename _Ratio>
+template <
+    char _Symbol, char _Exponent, typename _Type, typename _Ratio,
+    typename std::enable_if<std::is_integral<_Type>::value>::type * = nullptr>
+constexpr auto operator/(const _Type &lhs,
+                         const unit_t<_Symbol, _Exponent, _Type, _Ratio> &rhs) {
+  return unit_cast<unit_t<_Symbol, -_Exponent, _Type, _Ratio>>(
+      unit_t<_Symbol, -_Exponent, _Type, std::ratio<1>>{
+          lhs / (rhs.raw_value() * (_Ratio::num / _Ratio::den))});
+}
+
+/// operator to divide primitive type by unit encapsulating the same type
+/// template specialisation for floating point types, to avoid possible loss of
+/// precision when adjusting for ratio
+/// @results unit with negative exponent
+template <char _Symbol, char _Exponent, typename _Type, typename _Ratio,
+          typename std::enable_if<std::is_floating_point<_Type>::value>::type
+              * = nullptr>
 constexpr auto operator/(const _Type &lhs,
                          const unit_t<_Symbol, _Exponent, _Type, _Ratio> &rhs) {
 
   return unit_cast<unit_t<_Symbol, -_Exponent, _Type, _Ratio>>(
       unit_t<_Symbol, -_Exponent, _Type, std::ratio<1>>{
-          lhs / (rhs.raw_value() * (_Ratio::num / _Ratio::den))});
+          lhs / (rhs.raw_value() * (static_cast<_Type>(_Ratio::num) /
+                                    static_cast<_Type>(_Ratio::den)))});
 }
 
 /// helper template to check if a type is a unit_t (false for all other types)
@@ -273,11 +291,11 @@ struct unit_with_common_ratio {
   static_assert(std::is_same<typename _unit_lhs::internal_type,
                              typename _unit_rhs::internal_type>::value);
   static_assert(_unit_lhs::symbol::value == _unit_rhs::symbol::value);
-  typedef unit_t<_unit_lhs::symbol::value, _unit_lhs::exponent::value,
-                 typename _unit_lhs::internal_type,
-                 typename detail::ratio_gcd<typename _unit_lhs::ratio,
-                                            typename _unit_rhs::ratio>::ratio>
-      type;
+  using type =
+      unit_t<_unit_lhs::symbol::value, _unit_lhs::exponent::value,
+             typename _unit_lhs::internal_type,
+             typename detail::ratio_gcd<typename _unit_lhs::ratio,
+                                        typename _unit_rhs::ratio>::ratio>;
 };
 
 /// divide a value of a certain unit with another value of a possibly different
