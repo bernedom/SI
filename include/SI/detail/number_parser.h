@@ -58,9 +58,12 @@ template <intmax_t _base> struct Power<_base> {
 /// recursive struct that builds the number
 template <intmax_t _base, char _digit, char... _digits> struct Number_impl {
 
-  static constexpr intmax_t magnitude = sizeof...(_digits);
   static constexpr intmax_t base = _base;
   using digit = Digit<base, _digit>;
+  static constexpr intmax_t recursive_magnitude =
+      Number_impl<_base, _digits...>::magnitude;
+  static constexpr intmax_t magnitude =
+      digit::is_valid_digit ? 1 + recursive_magnitude : recursive_magnitude;
   static constexpr intmax_t power = Power<base, _digit, _digits...>::power;
 
   using recursive_number = Number_impl<_base, _digits...>;

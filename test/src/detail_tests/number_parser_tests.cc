@@ -93,6 +93,25 @@ TEST_CASE("GIVEN a multiple digit string AND string contains no special "
   STATIC_REQUIRE(number_100::magnitude == 2);
 }
 
+TEST_CASE("GIVEN a multiple digit string AND string contains no prefix AND "
+          "string contains one digit separator WHEN passed to number struct "
+          "THEN magnitude is number of arguments -2") {
+
+  using number_10 = Number<'1', '\'', '0'>;
+  STATIC_REQUIRE(number_10::magnitude == 1);
+
+  using number_100 = Number<'1', '0', '\'', '0'>;
+  STATIC_REQUIRE(number_100::magnitude == 2);
+}
+
+TEST_CASE("GIVEN a multiple digit string AND string contains no prefix AND "
+          "string contains two digit separator WHEN passed to number struct "
+          "THEN magnitude is number of arguments -3") {
+
+  using number_100 = Number<'1', '\'', '0', '\'', '0'>;
+  STATIC_REQUIRE(number_100::magnitude == 2);
+}
+
 TEST_CASE("GIVEN a multiple digit string WHEN passed to number structure THEN"
           "power is base^magnitude") {
   using number_10 = Number<'1', '0'>;
