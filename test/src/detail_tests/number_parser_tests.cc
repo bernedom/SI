@@ -48,7 +48,7 @@ TEST_CASE(
 }
 
 TEST_CASE("GIVEN a single digit string WHEN passed to number structure THEN "
-          "magnitude is 1 ") {
+          "magnitude is 0 ") {
   using number_1 = Number<'1'>;
   STATIC_REQUIRE(number_1::magnitude == 0);
 
@@ -65,7 +65,26 @@ TEST_CASE("GIVEN a single digit string WHEN passed to number structure THEN "
   STATIC_REQUIRE(number_9::power == 1);
 }
 
-TEST_CASE("GIVEN a multiple digit string WHEN passed to number structure THEN "
+TEST_CASE("GIVEN a single digit string AND string is prefixed WHEN "
+          "passed to number structure THEN magnitude is 0") {
+  using number_1hex = Number<'0', 'x', '1'>;
+  STATIC_REQUIRE(number_1hex::magnitude == 0);
+
+  using number_1HEX = Number<'0', 'X', '1'>;
+  STATIC_REQUIRE(number_1HEX::magnitude == 0);
+
+  using number_1bin = Number<'0', 'b', '1'>;
+  STATIC_REQUIRE(number_1bin::magnitude == 0);
+
+  using number_1BIN = Number<'0', 'B', '1'>;
+  STATIC_REQUIRE(number_1BIN::magnitude == 0);
+
+  using number_1oct = Number<'0', '1'>;
+  STATIC_REQUIRE(number_1oct::magnitude == 0);
+}
+
+TEST_CASE("GIVEN a multiple digit string AND string contains no special "
+          "characters WHEN passed to number structure THEN "
           "magnitude is number of arguments - 1") {
   using number_10 = Number<'1', '0'>;
   STATIC_REQUIRE(number_10::magnitude == 1);
