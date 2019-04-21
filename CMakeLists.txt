@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 
-project("SI" VERSION 0.0.3)
+project("SI" VERSION 0.0.4)
 
 add_library(${PROJECT_NAME} INTERFACE)
 # add alias so the project can be uses with add_subdirectory
