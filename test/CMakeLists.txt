@@ -22,7 +22,9 @@ target_compile_features(SI_detail_tests PRIVATE cxx_std_17)
 target_compile_options(
   SI_detail_tests
   PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
+          $<$<CXX_COMPILER_ID:MSVC>:/W4>
           $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Wall>
+          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Werror>
           $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-pedantic>)
 
 # add `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE to switch to runtime only checks
@@ -51,7 +53,9 @@ target_compile_features(SI_base_unit_tests PRIVATE cxx_std_17)
 target_compile_options(
   SI_base_unit_tests
   PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
+          $<$<CXX_COMPILER_ID:MSVC>:/W4>
           $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Wall>
+          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Werror>
           $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-pedantic>)
 
 # add `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE to switch to runtime only checks
@@ -95,7 +99,9 @@ target_compile_features(SI_derived_unit_tests PRIVATE cxx_std_17)
 target_compile_options(
   SI_derived_unit_tests
   PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
+          $<$<CXX_COMPILER_ID:MSVC>:/W4>
           $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Wall>
+          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Werror>
           $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-pedantic>)
 
 # add `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE to switch to runtime only checks
