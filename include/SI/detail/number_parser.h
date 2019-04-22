@@ -12,7 +12,8 @@ template <intmax_t _base, char _Str_digit> struct Digit_impl {
                 (_Str_digit >= 'a' && _Str_digit <= 'f') ||
                 (_Str_digit >= 'A' && _Str_digit <= 'F') || _Str_digit == '\'');
 
-  static_assert(_base >= 2);
+  static_assert(_base >= 2, "minimum representation is binary (base = 2)");
+  static_assert(_base < 17, "maximum representation is hex (base == 16)");
 
   static constexpr bool is_valid_digit = _Str_digit == '\'' ? false : true;
   static constexpr intmax_t value =
@@ -22,7 +23,7 @@ template <intmax_t _base, char _Str_digit> struct Digit_impl {
                 ? 10 + (_Str_digit - 'a')
                 : (_Str_digit >= 'A' && _Str_digit <= 'F')
                       ? 10 + (_Str_digit - 'A')
-                      : std::numeric_limits<intmax_t>::max();
+                      : std::numeric_limits<intmax_t>::quiet_NaN();
   static_assert(!is_valid_digit || value < _base, "Digit is valid for base");
 };
 
@@ -78,8 +79,8 @@ template <intmax_t _base, char _digit, char... _digits> struct Number_impl {
 
   using recursive_number = Number_impl<_base, _digits...>;
   static constexpr intmax_t value =
-      (digit::is_valid_digit ? (digit::value * power) : 0) +
-      recursive_number::value;
+      recursive_number::value +
+      (digit::is_valid_digit ? (digit::value * power) : 0);
   static_assert(!digit::is_valid_digit || value / power == digit::value,
                 "integer literal overflows");
 };
