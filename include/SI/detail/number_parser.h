@@ -50,9 +50,21 @@ template <intmax_t _base, char _digit> struct Power_impl<_base, _digit> {
 template <intmax_t _base, char... _digits>
 struct Power : Power_impl<_base, _digits...> {};
 
-/// Edge case for _base^0 == 1
+/// Edge case for _base^0 == 1 s multiplier
 template <intmax_t _base> struct Power<_base> {
   static constexpr intmax_t power = 1;
+};
+
+template <intmax_t _base, char _digit, char... _digits> struct Magnitude {
+  using digit = Digit<_base, _digit>;
+  static constexpr intmax_t recursive_magnitude =
+      Magnitude<_base, _digits...>::value;
+  static constexpr intmax_t value =
+      digit::is_valid_digit ? 1 + recursive_magnitude : recursive_magnitude;
+};
+
+template <intmax_t _base, char _digit> struct Magnitude<_base, _digit> {
+  static constexpr intmax_t value = 0;
 };
 
 /// recursive struct that builds the number
@@ -60,10 +72,8 @@ template <intmax_t _base, char _digit, char... _digits> struct Number_impl {
 
   static constexpr intmax_t base = _base;
   using digit = Digit<base, _digit>;
-  static constexpr intmax_t recursive_magnitude =
-      Number_impl<_base, _digits...>::magnitude;
   static constexpr intmax_t magnitude =
-      digit::is_valid_digit ? 1 + recursive_magnitude : recursive_magnitude;
+      Magnitude<_base, _digit, _digits...>::value;
   static constexpr intmax_t power = Power<base, _digit, _digits...>::power;
 
   using recursive_number = Number_impl<_base, _digits...>;
@@ -78,7 +88,7 @@ template <intmax_t _base, char _digit, char... _digits> struct Number_impl {
 template <intmax_t _base, char _digit> struct Number_impl<_base, _digit> {
 
   using digit = Digit<_base, _digit>;
-  static_assert(digit::is_valid_digit);
+  static_assert(digit::is_valid_digit, "digit is valid");
   static constexpr intmax_t value = digit::value;
   static constexpr intmax_t magnitude = 0;
   static constexpr intmax_t base = _base;
