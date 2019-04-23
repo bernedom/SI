@@ -23,6 +23,7 @@ target_compile_options(
   SI_detail_tests
   PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
           $<$<CXX_COMPILER_ID:MSVC>:/W4>
+          $<$<CXX_COMPILER_ID:MSVC>:/WX>
           $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Wall>
           $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Werror>
           $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-pedantic>)
@@ -54,6 +55,7 @@ target_compile_options(
   SI_base_unit_tests
   PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
           $<$<CXX_COMPILER_ID:MSVC>:/W4>
+          $<$<CXX_COMPILER_ID:MSVC>:/WX>
           $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Wall>
           $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Werror>
           $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-pedantic>)
@@ -100,6 +102,7 @@ target_compile_options(
   SI_derived_unit_tests
   PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
           $<$<CXX_COMPILER_ID:MSVC>:/W4>
+          $<$<CXX_COMPILER_ID:MSVC>:/WX>
           $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Wall>
           $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Werror>
           $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-pedantic>)
