@@ -3,6 +3,7 @@
 **Changes**
 
 * Added CHANGELOG.md
+* Fixed bug in number parser, magnitude of a numbrer is correctly counted even if a digit separator is present
 
 # 0.0.3
 
