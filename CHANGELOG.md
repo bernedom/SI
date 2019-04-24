@@ -1,3 +1,8 @@
+# HEAD
+
+* Updated catch2 to version 2.7.2
+* 
+
 # 0.0.4 
 
 **Changes**
