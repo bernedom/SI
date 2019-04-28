@@ -51,12 +51,15 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metric
 
 ### Special Units
 
-| Unit      | Dimension Symbol | Exponent | Unit Symbol | implemented ratios                  | unit typedefs      |
-| --------- | ---------------- | -------- | ----------- | ----------------------------------- | ------------------ |
-| Area      | L                | 2        | m2          | 10<sup>-18</sup> to 10<sup>18</sup> | `square_*_meter_t` |
-| Volume    | L                | 3        | m3          | 10<sup>-18</sup> to 10<sup>18</sup> | `cubic_*_meter_t`  |
-| Frequency | T                | -1       | Hz          | 10<sup>-18</sup> to 10<sup>18</sup> | `*_hertz_t`        |
+| Unit        | Dimension Symbol | Exponent | Unit Symbol | implemented ratios                  | unit typedefs      |
+| ----------- | ---------------- | -------- | ----------- | ----------------------------------- | ------------------ |
+| Area        | L                | 2        | m2          | 10<sup>-18</sup> to 10<sup>18</sup> | `square_*_meter_t` |
+| Volume      | L                | 3        | m3          | 10<sup>-18</sup> to 10<sup>18</sup> | `cubic_*_meter_t`  |
+| Frequency   | T                | -1       | Hz          | 10<sup>-18</sup> to 10<sup>18</sup> | `*_hertz_t`        |
+| Angle*      | r                | 1        | none        | 1                                   | `*_radiant_t`      |
+| Room Angle* | R                | 1        | none        | 1                                   | `*_sterradiant_t`  |
 
+* Angle and Roomangle are simple containers, not containing any functionality to do angle/room-angle computation such as an overflow after 2*pi. Also the dimension symbols are not yet correct. 
 
 ## Derived units with special names
 

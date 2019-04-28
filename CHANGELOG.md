@@ -1,7 +1,7 @@
 # HEAD
 
 * Updated catch2 to version 2.7.2
-* 
+* Added angle (radiant) and room angle (sterradiant) typedefs
 
 # 0.0.4 
 
