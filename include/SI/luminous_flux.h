@@ -2,6 +2,8 @@
 
 #include "detail/operator_helpers.h"
 #include "detail/unit.h"
+#include "luminosity.h"
+#include "solid_angle.h"
 
 namespace SI {
 
@@ -34,6 +36,10 @@ using tera_lumen_t = luminous_flux_t<_Type, std::tera>;
 template <typename _Type>
 using peta_lumen_t = luminous_flux_t<_Type, std::peta>;
 template <typename _Type> using exa_lumen_t = luminous_flux_t<_Type, std::exa>;
+
+namespace detail {
+BUILD_UNIT_FROM_MULTIPLICATION(luminous_flux_t, solid_angle_t, luminosity_t)
+}
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_alm() {
