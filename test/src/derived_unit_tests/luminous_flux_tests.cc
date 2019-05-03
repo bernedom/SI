@@ -1,8 +1,8 @@
 #include <catch.hpp>
 
-#include <SI/electric_current.h>
+#include <SI/luminosity.h>
 #include <SI/luminous_flux.h>
-#include <SI/magnetic_flux.h>
+#include <SI/solid_angle.h>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _alm THEN result is a "
@@ -172,4 +172,47 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _Elm THEN result is a "
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::luminous_flux_t<long double, std::exa>>::value);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN a luminosity value WHEN multiplied with a solid_angle "
+    "value THEN result is a luminous_flux value",
+    "[luminous_flux][operators]", int64_t, long double) {
+  constexpr SI::luminosity_t<TestType, std::ratio<1>> l{1};
+  constexpr SI::solid_angle_t<TestType, std::ratio<1>> a{1};
+
+  constexpr auto result = a * l;
+  constexpr auto result_commutative = l * a;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::luminous_flux_t<TestType, std::ratio<1>>>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), decltype(result_commutative)>::value);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN a luminous_flux value WHEN divided by solid_angle THEN then "
+    "result is a luminosity value",
+    "[luminous_flux][operators]", int64_t, long double) {
+  constexpr SI::luminous_flux_t<TestType, std::ratio<1>> e{1};
+  constexpr SI::solid_angle_t<TestType, std::ratio<1>> l{1};
+
+  constexpr auto result = e / l;
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::luminosity_t<TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN a luminous_flux value WHEN divided by luminosity THEN then "
+    "result is a accelereatin value",
+    "[luminous_flux][operators]", int64_t, long double) {
+  constexpr SI::luminous_flux_t<TestType, std::ratio<1>> e{1};
+  constexpr SI::luminosity_t<TestType, std::ratio<1>> f{1};
+
+  constexpr auto result = e / f;
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::solid_angle_t<TestType, std::ratio<1>>>::value);
 }
