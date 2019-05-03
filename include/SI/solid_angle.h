@@ -24,7 +24,7 @@ using milli_sterradiant_t = solid_angle_t<_Type, std::milli>;
 template <typename _Type>
 using sterradiant_t = solid_angle_t<_Type, std::ratio<1>>;
 
-namespace literals {
+inline namespace literals {
 
 template <char... _Digits> constexpr auto operator""_asr() {
   return SI::detail::check_overflow<atto_sterradiant_t<int64_t>, _Digits...>();

@@ -17,7 +17,7 @@ template <typename _Type> using micro_radiant_t = angle_t<_Type, std::micro>;
 template <typename _Type> using milli_radiant_t = angle_t<_Type, std::milli>;
 template <typename _Type> using radiant_t = angle_t<_Type, std::ratio<1>>;
 
-namespace literals {
+inline namespace literals {
 
 template <char... _Digits> constexpr auto operator""_arad() {
   return SI::detail::check_overflow<atto_radiant_t<int64_t>, _Digits...>();
