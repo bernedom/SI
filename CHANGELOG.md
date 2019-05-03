@@ -1,4 +1,6 @@
-# HEAD
+# HEAD 
+
+# 0.0.5
 
 * Updated catch2 to version 2.7.2
 * Added angle (radiant) and solid angle (sterradiant) typedefs
