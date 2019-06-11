@@ -17,7 +17,7 @@ enable_testing()
 add_subdirectory(test)
 
 install(TARGETS ${PROJECT_NAME}
-        EXPORT SI_Targets
+        EXPORT ${PROJECT_NAME}_Targets
         ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib
         RUNTIME DESTINATION bin
@@ -30,12 +30,12 @@ write_basic_package_version_file("${PROJECT_NAME}ConfigVersion.cmake"
                                  COMPATIBILITY SameMajorVersion)
 
 configure_package_config_file(
-  "${PROJECT_SOURCE_DIR}/cmake/SIConfig.cmake.in"
+  "${PROJECT_SOURCE_DIR}/cmake/${PROJECT_NAME}Config.cmake.in"
   "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
   INSTALL_DESTINATION
   lib/cmake/${PROJECT_NAME})
 
-install(EXPORT SI_Targets
+install(EXPORT ${PROJECT_NAME}_Targets
         FILE ${PROJECT_NAME}Targets.cmake
         NAMESPACE ${PROJECT_NAME}::
         DESTINATION lib/cmake/${PROJECT_NAME})
