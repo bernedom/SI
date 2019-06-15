@@ -85,59 +85,59 @@ template <char... _Digits> constexpr auto operator""_Em() {
   return exa_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_am(long double value) {
+constexpr atto_meter_t<long double> operator""_am(long double value) {
   return atto_meter_t<long double>{value};
 }
 
-constexpr auto operator""_fm(long double value) {
+constexpr femto_meter_t<long double> operator""_fm(long double value) {
   return femto_meter_t<long double>{value};
 }
 
-constexpr auto operator""_pm(long double value) {
+constexpr pico_meter_t<long double> operator""_pm(long double value) {
   return pico_meter_t<long double>{value};
 }
 
-constexpr auto operator""_nm(long double value) {
+constexpr nano_meter_t<long double> operator""_nm(long double value) {
   return nano_meter_t<long double>{value};
 }
 
-constexpr auto operator""_um(long double value) {
+constexpr micro_meter_t<long double> operator""_um(long double value) {
   return micro_meter_t<long double>{value};
 }
 
-constexpr auto operator""_mm(long double value) {
+constexpr milli_meter_t<long double> operator""_mm(long double value) {
   return milli_meter_t<long double>{value};
 }
 
-constexpr auto operator""_cm(long double value) {
+constexpr centi_meter_t<long double> operator""_cm(long double value) {
   return centi_meter_t<long double>{value};
 }
 
-constexpr auto operator""_m(long double value) {
+constexpr meter_t<long double> operator""_m(long double value) {
   return meter_t<long double>{value};
 }
 
-constexpr auto operator""_km(long double value) {
+constexpr kilo_meter_t<long double> operator""_km(long double value) {
   return kilo_meter_t<long double>{value};
 }
 
-constexpr auto operator""_Mm(long double value) {
+constexpr mega_meter_t<long double> operator""_Mm(long double value) {
   return mega_meter_t<long double>{value};
 }
 
-constexpr auto operator""_Gm(long double value) {
+constexpr giga_meter_t<long double> operator""_Gm(long double value) {
   return giga_meter_t<long double>{value};
 }
 
-constexpr auto operator""_Tm(long double value) {
+constexpr tera_meter_t<long double> operator""_Tm(long double value) {
   return tera_meter_t<long double>{value};
 }
 
-constexpr auto operator""_Pm(long double value) {
+constexpr peta_meter_t<long double> operator""_Pm(long double value) {
   return peta_meter_t<long double>{value};
 }
 
-constexpr auto operator""_Em(long double value) {
+constexpr exa_meter_t<long double> operator""_Em(long double value) {
   return exa_meter_t<long double>{value};
 }
 } // namespace literals
