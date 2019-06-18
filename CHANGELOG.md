@@ -3,6 +3,7 @@
 # master - unreleased
 
 * Removed indirection for overflow check when parsing ints
+* Fixed typo of luminosity unit from candea -> candela
 
 # 0.0.5
 
