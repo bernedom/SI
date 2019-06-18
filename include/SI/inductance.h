@@ -2,6 +2,7 @@
 
 #include "detail/operator_helpers.h"
 #include "detail/unit.h"
+#include "detail/number_parser.h"
 #include "electric_current.h"
 #include "magnetic_flux.h"
 

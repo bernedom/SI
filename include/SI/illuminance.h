@@ -1,6 +1,7 @@
 #pragma once
 
 #include "area.h"
+#include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
 #include "detail/unit.h"
 #include "luminous_flux.h"

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
 #include "detail/unit.h"
 #include "luminosity.h"

@@ -2,6 +2,7 @@
 
 #include "detail/operator_helpers.h"
 
+#include "detail/number_parser.h"
 #include "detail/unit.h"
 #include "length.h"
 #include "time.h"

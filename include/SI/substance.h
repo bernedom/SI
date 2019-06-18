@@ -1,4 +1,5 @@
 #pragma once
+#include "detail/number_parser.h"
 #include "detail/unit.h"
 
 namespace SI {

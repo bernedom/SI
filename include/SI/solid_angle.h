@@ -1,5 +1,6 @@
 #pragma once
 
+#include "detail/number_parser.h"
 #include "detail/unit.h"
 
 /// todo add rad and sr as literal operators

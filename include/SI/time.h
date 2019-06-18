@@ -3,6 +3,7 @@
 #include <chrono>
 #include <ratio>
 
+#include "detail/number_parser.h"
 #include "detail/unit.h"
 namespace SI {
 

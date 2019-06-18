@@ -3,6 +3,7 @@
 #include <ratio>
 #include <stdexcept>
 
+#include "detail/number_parser.h"
 #include "detail/unit.h"
 
 namespace SI {
