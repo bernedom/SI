@@ -48,55 +48,66 @@ BUILD_UNIT_FROM_MULTIPLICATION(electric_charge_t, electric_current_t, time_t)
 inline namespace literals {
 
 template <char... _Digits> constexpr auto operator""_aC() {
-  return SI::detail::check_overflow<atto_coulomb_t<int64_t>, _Digits...>();
+  return atto_coulomb_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fC() {
-  return SI::detail::check_overflow<femto_coulomb_t<int64_t>, _Digits...>();
+  return femto_coulomb_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pC() {
-  return SI::detail::check_overflow<pico_coulomb_t<int64_t>, _Digits...>();
+  return pico_coulomb_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nC() {
-  return SI::detail::check_overflow<nano_coulomb_t<int64_t>, _Digits...>();
+  return nano_coulomb_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uC() {
-  return SI::detail::check_overflow<micro_coulomb_t<int64_t>, _Digits...>();
+  return micro_coulomb_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mC() {
-  return SI::detail::check_overflow<milli_coulomb_t<int64_t>, _Digits...>();
+  return milli_coulomb_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_C() {
-  return SI::detail::check_overflow<coulomb_t<int64_t>, _Digits...>();
+  return coulomb_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kC() {
-  return SI::detail::check_overflow<kilo_coulomb_t<int64_t>, _Digits...>();
+  return kilo_coulomb_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MC() {
-  return SI::detail::check_overflow<mega_coulomb_t<int64_t>, _Digits...>();
+  return mega_coulomb_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GC() {
-  return SI::detail::check_overflow<giga_coulomb_t<int64_t>, _Digits...>();
+  return giga_coulomb_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TC() {
-  return SI::detail::check_overflow<tera_coulomb_t<int64_t>, _Digits...>();
+  return tera_coulomb_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PC() {
-  return SI::detail::check_overflow<peta_coulomb_t<int64_t>, _Digits...>();
+  return peta_coulomb_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_EC() {
-  return SI::detail::check_overflow<exa_coulomb_t<int64_t>, _Digits...>();
+  return exa_coulomb_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aC(long double value) {

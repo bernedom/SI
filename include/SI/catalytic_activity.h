@@ -44,55 +44,55 @@ BUILD_UNIT_FROM_DIVISON(catalytic_activity_t, substance_t, time_t)
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_akat() {
-  return SI::detail::check_overflow<atto_katal_t<int64_t>, _Digits...>();
+  return atto_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fkat() {
-  return SI::detail::check_overflow<femto_katal_t<int64_t>, _Digits...>();
+  return femto_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pkat() {
-  return SI::detail::check_overflow<pico_katal_t<int64_t>, _Digits...>();
+  return pico_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nkat() {
-  return SI::detail::check_overflow<nano_katal_t<int64_t>, _Digits...>();
+  return nano_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_ukat() {
-  return SI::detail::check_overflow<micro_katal_t<int64_t>, _Digits...>();
+  return micro_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mkat() {
-  return SI::detail::check_overflow<milli_katal_t<int64_t>, _Digits...>();
+  return milli_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kat() {
-  return SI::detail::check_overflow<katal_t<int64_t>, _Digits...>();
+  return katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kkat() {
-  return SI::detail::check_overflow<kilo_katal_t<int64_t>, _Digits...>();
+  return kilo_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Mkat() {
-  return SI::detail::check_overflow<mega_katal_t<int64_t>, _Digits...>();
+  return mega_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Gkat() {
-  return SI::detail::check_overflow<giga_katal_t<int64_t>, _Digits...>();
+  return giga_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Tkat() {
-  return SI::detail::check_overflow<tera_katal_t<int64_t>, _Digits...>();
+  return tera_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Pkat() {
-  return SI::detail::check_overflow<peta_katal_t<int64_t>, _Digits...>();
+  return peta_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Ekat() {
-  return SI::detail::check_overflow<exa_katal_t<int64_t>, _Digits...>();
+  return exa_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_akat(long double value) {

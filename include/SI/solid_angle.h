@@ -27,31 +27,37 @@ using sterradiant_t = solid_angle_t<_Type, std::ratio<1>>;
 inline namespace literals {
 
 template <char... _Digits> constexpr auto operator""_asr() {
-  return SI::detail::check_overflow<atto_sterradiant_t<int64_t>, _Digits...>();
+  return atto_sterradiant_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fsr() {
-  return SI::detail::check_overflow<femto_sterradiant_t<int64_t>, _Digits...>();
+  return femto_sterradiant_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_psr() {
-  return SI::detail::check_overflow<pico_sterradiant_t<int64_t>, _Digits...>();
+  return pico_sterradiant_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nsr() {
-  return SI::detail::check_overflow<nano_sterradiant_t<int64_t>, _Digits...>();
+  return nano_sterradiant_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_usr() {
-  return SI::detail::check_overflow<micro_sterradiant_t<int64_t>, _Digits...>();
+  return micro_sterradiant_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_msr() {
-  return SI::detail::check_overflow<milli_sterradiant_t<int64_t>, _Digits...>();
+  return milli_sterradiant_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_sr() {
-  return SI::detail::check_overflow<sterradiant_t<int64_t>, _Digits...>();
+  return sterradiant_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_asr(long double value) {

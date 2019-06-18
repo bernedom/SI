@@ -20,31 +20,37 @@ template <typename _Type> using radiant_t = angle_t<_Type, std::ratio<1>>;
 inline namespace literals {
 
 template <char... _Digits> constexpr auto operator""_arad() {
-  return SI::detail::check_overflow<atto_radiant_t<int64_t>, _Digits...>();
+  return atto_radiant_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_frad() {
-  return SI::detail::check_overflow<femto_radiant_t<int64_t>, _Digits...>();
+  return femto_radiant_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_prad() {
-  return SI::detail::check_overflow<pico_radiant_t<int64_t>, _Digits...>();
+  return pico_radiant_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nrad() {
-  return SI::detail::check_overflow<nano_radiant_t<int64_t>, _Digits...>();
+  return nano_radiant_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_urad() {
-  return SI::detail::check_overflow<micro_radiant_t<int64_t>, _Digits...>();
+  return micro_radiant_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mrad() {
-  return SI::detail::check_overflow<milli_radiant_t<int64_t>, _Digits...>();
+  return milli_radiant_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_rad() {
-  return SI::detail::check_overflow<radiant_t<int64_t>, _Digits...>();
+  return radiant_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_arad(long double value) {

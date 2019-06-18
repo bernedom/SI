@@ -44,55 +44,55 @@ BUILD_UNIT_FROM_DIVISON(electric_capacity_t, electric_charge_t,
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aF() {
-  return SI::detail::check_overflow<atto_farad_t<int64_t>, _Digits...>();
+  return atto_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fF() {
-  return SI::detail::check_overflow<femto_farad_t<int64_t>, _Digits...>();
+  return femto_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pF() {
-  return SI::detail::check_overflow<pico_farad_t<int64_t>, _Digits...>();
+  return pico_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nF() {
-  return SI::detail::check_overflow<nano_farad_t<int64_t>, _Digits...>();
+  return nano_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uF() {
-  return SI::detail::check_overflow<micro_farad_t<int64_t>, _Digits...>();
+  return micro_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mF() {
-  return SI::detail::check_overflow<milli_farad_t<int64_t>, _Digits...>();
+  return milli_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_F() {
-  return SI::detail::check_overflow<farad_t<int64_t>, _Digits...>();
+  return farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kF() {
-  return SI::detail::check_overflow<kilo_farad_t<int64_t>, _Digits...>();
+  return kilo_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MF() {
-  return SI::detail::check_overflow<mega_farad_t<int64_t>, _Digits...>();
+  return mega_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GF() {
-  return SI::detail::check_overflow<giga_farad_t<int64_t>, _Digits...>();
+  return giga_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TF() {
-  return SI::detail::check_overflow<tera_farad_t<int64_t>, _Digits...>();
+  return tera_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PF() {
-  return SI::detail::check_overflow<peta_farad_t<int64_t>, _Digits...>();
+  return peta_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_EF() {
-  return SI::detail::check_overflow<exa_farad_t<int64_t>, _Digits...>();
+  return exa_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aF(long double value) {

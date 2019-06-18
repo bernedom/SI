@@ -46,55 +46,66 @@ BUILD_UNIT_FROM_DIVISON(electric_conductance_t, electric_current_t,
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aS() {
-  return SI::detail::check_overflow<atto_siemens_t<int64_t>, _Digits...>();
+  return atto_siemens_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fS() {
-  return SI::detail::check_overflow<femto_siemens_t<int64_t>, _Digits...>();
+  return femto_siemens_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pS() {
-  return SI::detail::check_overflow<pico_siemens_t<int64_t>, _Digits...>();
+  return pico_siemens_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nS() {
-  return SI::detail::check_overflow<nano_siemens_t<int64_t>, _Digits...>();
+  return nano_siemens_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uS() {
-  return SI::detail::check_overflow<micro_siemens_t<int64_t>, _Digits...>();
+  return micro_siemens_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mS() {
-  return SI::detail::check_overflow<milli_siemens_t<int64_t>, _Digits...>();
+  return milli_siemens_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_S() {
-  return SI::detail::check_overflow<siemens_t<int64_t>, _Digits...>();
+  return siemens_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kS() {
-  return SI::detail::check_overflow<kilo_siemens_t<int64_t>, _Digits...>();
+  return kilo_siemens_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MS() {
-  return SI::detail::check_overflow<mega_siemens_t<int64_t>, _Digits...>();
+  return mega_siemens_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GS() {
-  return SI::detail::check_overflow<giga_siemens_t<int64_t>, _Digits...>();
+  return giga_siemens_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TS() {
-  return SI::detail::check_overflow<tera_siemens_t<int64_t>, _Digits...>();
+  return tera_siemens_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PS() {
-  return SI::detail::check_overflow<peta_siemens_t<int64_t>, _Digits...>();
+  return peta_siemens_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_ES() {
-  return SI::detail::check_overflow<exa_siemens_t<int64_t>, _Digits...>();
+  return exa_siemens_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aS(long double value) {

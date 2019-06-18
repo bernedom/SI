@@ -46,55 +46,55 @@ BUILD_UNIT_FROM_DIVISON(electric_potential_t, energy_t, electric_charge_t)
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aV() {
-  return SI::detail::check_overflow<atto_volt_t<int64_t>, _Digits...>();
+  return atto_volt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fV() {
-  return SI::detail::check_overflow<femto_volt_t<int64_t>, _Digits...>();
+  return femto_volt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pV() {
-  return SI::detail::check_overflow<pico_volt_t<int64_t>, _Digits...>();
+  return pico_volt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nV() {
-  return SI::detail::check_overflow<nano_volt_t<int64_t>, _Digits...>();
+  return nano_volt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uV() {
-  return SI::detail::check_overflow<micro_volt_t<int64_t>, _Digits...>();
+  return micro_volt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mV() {
-  return SI::detail::check_overflow<milli_volt_t<int64_t>, _Digits...>();
+  return milli_volt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_V() {
-  return SI::detail::check_overflow<volt_t<int64_t>, _Digits...>();
+  return volt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kV() {
-  return SI::detail::check_overflow<kilo_volt_t<int64_t>, _Digits...>();
+  return kilo_volt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MV() {
-  return SI::detail::check_overflow<mega_volt_t<int64_t>, _Digits...>();
+  return mega_volt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GV() {
-  return SI::detail::check_overflow<giga_volt_t<int64_t>, _Digits...>();
+  return giga_volt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TV() {
-  return SI::detail::check_overflow<tera_volt_t<int64_t>, _Digits...>();
+  return tera_volt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PV() {
-  return SI::detail::check_overflow<peta_volt_t<int64_t>, _Digits...>();
+  return peta_volt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_EV() {
-  return SI::detail::check_overflow<exa_volt_t<int64_t>, _Digits...>();
+  return exa_volt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aV(long double value) {

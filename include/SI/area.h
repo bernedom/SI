@@ -26,7 +26,8 @@ using cubic_milli_meter_t = volume_t<_Type, std::nano>;
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_m2() {
-  return SI::detail::check_overflow<square_meter_t<int64_t>, _Digits...>();
+  return square_meter_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator"" _m2(long double m) {
@@ -34,8 +35,8 @@ constexpr auto operator"" _m2(long double m) {
 }
 
 template <char... _Digits> constexpr auto operator""_cm2() {
-  return SI::detail::check_overflow<square_centi_meter_t<int64_t>,
-                                    _Digits...>();
+  return square_centi_meter_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator"" _cm2(long double cm) {
@@ -43,8 +44,8 @@ constexpr auto operator"" _cm2(long double cm) {
 }
 
 template <char... _Digits> constexpr auto operator""_mm2() {
-  return SI::detail::check_overflow<square_milli_meter_t<int64_t>,
-                                    _Digits...>();
+  return square_milli_meter_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator"" _mm2(long double mm) {
@@ -52,7 +53,7 @@ constexpr auto operator"" _mm2(long double mm) {
 }
 
 template <char... _Digits> constexpr auto operator""_m3() {
-  return SI::detail::check_overflow<cubic_meter_t<int64_t>, _Digits...>();
+  return cubic_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator"" _m3(long double m) {
@@ -60,7 +61,8 @@ constexpr auto operator"" _m3(long double m) {
 }
 
 template <char... _Digits> constexpr auto operator""_cm3() {
-  return SI::detail::check_overflow<cubic_centi_meter_t<int64_t>, _Digits...>();
+  return cubic_centi_meter_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator"" _cm3(long double cm) {
@@ -68,7 +70,8 @@ constexpr auto operator"" _cm3(long double cm) {
 }
 
 template <char... _Digits> constexpr auto operator""_mm3() {
-  return SI::detail::check_overflow<cubic_milli_meter_t<int64_t>, _Digits...>();
+  return cubic_milli_meter_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator"" _mm3(long double mm) {

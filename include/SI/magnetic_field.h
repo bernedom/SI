@@ -44,55 +44,55 @@ BUILD_UNIT_FROM_DIVISON(magnetic_field_t, magnetic_flux_t, area_t)
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aT() {
-  return SI::detail::check_overflow<atto_tesla_t<int64_t>, _Digits...>();
+  return atto_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fT() {
-  return SI::detail::check_overflow<femto_tesla_t<int64_t>, _Digits...>();
+  return femto_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pT() {
-  return SI::detail::check_overflow<pico_tesla_t<int64_t>, _Digits...>();
+  return pico_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nT() {
-  return SI::detail::check_overflow<nano_tesla_t<int64_t>, _Digits...>();
+  return nano_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uT() {
-  return SI::detail::check_overflow<micro_tesla_t<int64_t>, _Digits...>();
+  return micro_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mT() {
-  return SI::detail::check_overflow<milli_tesla_t<int64_t>, _Digits...>();
+  return milli_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_T() {
-  return SI::detail::check_overflow<tesla_t<int64_t>, _Digits...>();
+  return tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kT() {
-  return SI::detail::check_overflow<kilo_tesla_t<int64_t>, _Digits...>();
+  return kilo_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MT() {
-  return SI::detail::check_overflow<mega_tesla_t<int64_t>, _Digits...>();
+  return mega_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GT() {
-  return SI::detail::check_overflow<giga_tesla_t<int64_t>, _Digits...>();
+  return giga_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TT() {
-  return SI::detail::check_overflow<tera_tesla_t<int64_t>, _Digits...>();
+  return tera_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PT() {
-  return SI::detail::check_overflow<peta_tesla_t<int64_t>, _Digits...>();
+  return peta_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_ET() {
-  return SI::detail::check_overflow<exa_tesla_t<int64_t>, _Digits...>();
+  return exa_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aT(long double value) {

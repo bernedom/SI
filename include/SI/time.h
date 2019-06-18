@@ -33,38 +33,44 @@ using hours_t = time_t<_Type, std::chrono::hours::period>;
 inline namespace literals {
 
 template <char... _Digits> constexpr auto operator""_as() {
-  return SI::detail::check_overflow<atto_seconds_t<int64_t>, _Digits...>();
+  return atto_seconds_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fs() {
-  return SI::detail::check_overflow<femto_seconds_t<int64_t>, _Digits...>();
+  return femto_seconds_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_ps() {
-  return SI::detail::check_overflow<pico_seconds_t<int64_t>, _Digits...>();
+  return pico_seconds_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_ns() {
-  return SI::detail::check_overflow<nano_seconds_t<int64_t>, _Digits...>();
+  return nano_seconds_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator"" _us() {
-  return SI::detail::check_overflow<SI::micro_seconds_t<int64_t>, _Digits...>();
+  return SI::micro_seconds_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator"" _ms() {
-  return SI::detail::check_overflow<SI::milli_seconds_t<int64_t>, _Digits...>();
+  return SI::milli_seconds_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 template <char... _Digits> constexpr auto operator"" _s() {
-  return SI::detail::check_overflow<SI::seconds_t<int64_t>, _Digits...>();
+  return SI::seconds_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator"" _min() {
-  return SI::detail::check_overflow<SI::minutes_t<int64_t>, _Digits...>();
+  return SI::minutes_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator"" _h() {
-  return SI::detail::check_overflow<hours_t<int64_t>, _Digits...>();
+  return hours_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_as(long double value) {

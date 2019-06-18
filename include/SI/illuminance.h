@@ -30,55 +30,55 @@ BUILD_UNIT_FROM_DIVISON(illuminance_t, luminous_flux_t, area_t)
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_alx() {
-  return SI::detail::check_overflow<atto_lux_t<int64_t>, _Digits...>();
+  return atto_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_flx() {
-  return SI::detail::check_overflow<femto_lux_t<int64_t>, _Digits...>();
+  return femto_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_plx() {
-  return SI::detail::check_overflow<pico_lux_t<int64_t>, _Digits...>();
+  return pico_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nlx() {
-  return SI::detail::check_overflow<nano_lux_t<int64_t>, _Digits...>();
+  return nano_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_ulx() {
-  return SI::detail::check_overflow<micro_lux_t<int64_t>, _Digits...>();
+  return micro_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mlx() {
-  return SI::detail::check_overflow<milli_lux_t<int64_t>, _Digits...>();
+  return milli_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_lx() {
-  return SI::detail::check_overflow<lux_t<int64_t>, _Digits...>();
+  return lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_klx() {
-  return SI::detail::check_overflow<kilo_lux_t<int64_t>, _Digits...>();
+  return kilo_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Mlx() {
-  return SI::detail::check_overflow<mega_lux_t<int64_t>, _Digits...>();
+  return mega_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Glx() {
-  return SI::detail::check_overflow<giga_lux_t<int64_t>, _Digits...>();
+  return giga_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Tlx() {
-  return SI::detail::check_overflow<tera_lux_t<int64_t>, _Digits...>();
+  return tera_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Plx() {
-  return SI::detail::check_overflow<peta_lux_t<int64_t>, _Digits...>();
+  return peta_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Elx() {
-  return SI::detail::check_overflow<exa_lux_t<int64_t>, _Digits...>();
+  return exa_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_alx(long double value) {

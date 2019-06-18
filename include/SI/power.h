@@ -29,55 +29,55 @@ BUILD_UNIT_FROM_DIVISON(power_t, energy_t, time_t)
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aW() {
-  return SI::detail::check_overflow<atto_watt_t<int64_t>, _Digits...>();
+  return atto_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fW() {
-  return SI::detail::check_overflow<femto_watt_t<int64_t>, _Digits...>();
+  return femto_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pW() {
-  return SI::detail::check_overflow<pico_watt_t<int64_t>, _Digits...>();
+  return pico_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nW() {
-  return SI::detail::check_overflow<nano_watt_t<int64_t>, _Digits...>();
+  return nano_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uW() {
-  return SI::detail::check_overflow<micro_watt_t<int64_t>, _Digits...>();
+  return micro_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mW() {
-  return SI::detail::check_overflow<milli_watt_t<int64_t>, _Digits...>();
+  return milli_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_W() {
-  return SI::detail::check_overflow<watt_t<int64_t>, _Digits...>();
+  return watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kW() {
-  return SI::detail::check_overflow<kilo_watt_t<int64_t>, _Digits...>();
+  return kilo_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MW() {
-  return SI::detail::check_overflow<mega_watt_t<int64_t>, _Digits...>();
+  return mega_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GW() {
-  return SI::detail::check_overflow<giga_watt_t<int64_t>, _Digits...>();
+  return giga_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TW() {
-  return SI::detail::check_overflow<tera_watt_t<int64_t>, _Digits...>();
+  return tera_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PW() {
-  return SI::detail::check_overflow<peta_watt_t<int64_t>, _Digits...>();
+  return peta_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_EW() {
-  return SI::detail::check_overflow<exa_watt_t<int64_t>, _Digits...>();
+  return exa_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aW(long double value) {

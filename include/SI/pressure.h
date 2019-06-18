@@ -31,55 +31,58 @@ BUILD_UNIT_FROM_DIVISON(pressure_t, force_t, area_t)
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_apa() {
-  return SI::detail::check_overflow<atto_pascal_t<int64_t>, _Digits...>();
+  return atto_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fpa() {
-  return SI::detail::check_overflow<femto_pascal_t<int64_t>, _Digits...>();
+  return femto_pascal_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_ppa() {
-  return SI::detail::check_overflow<pico_pascal_t<int64_t>, _Digits...>();
+  return pico_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_npa() {
-  return SI::detail::check_overflow<nano_pascal_t<int64_t>, _Digits...>();
+  return nano_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_upa() {
-  return SI::detail::check_overflow<micro_pascal_t<int64_t>, _Digits...>();
+  return micro_pascal_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mpa() {
-  return SI::detail::check_overflow<milli_pascal_t<int64_t>, _Digits...>();
+  return milli_pascal_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pa() {
-  return SI::detail::check_overflow<pascal_t<int64_t>, _Digits...>();
+  return pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kpa() {
-  return SI::detail::check_overflow<kilo_pascal_t<int64_t>, _Digits...>();
+  return kilo_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Mpa() {
-  return SI::detail::check_overflow<mega_pascal_t<int64_t>, _Digits...>();
+  return mega_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Gpa() {
-  return SI::detail::check_overflow<giga_pascal_t<int64_t>, _Digits...>();
+  return giga_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Tpa() {
-  return SI::detail::check_overflow<tera_pascal_t<int64_t>, _Digits...>();
+  return tera_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Ppa() {
-  return SI::detail::check_overflow<peta_pascal_t<int64_t>, _Digits...>();
+  return peta_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Epa() {
-  return SI::detail::check_overflow<exa_pascal_t<int64_t>, _Digits...>();
+  return exa_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_apa(long double value) {

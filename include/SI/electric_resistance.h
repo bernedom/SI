@@ -45,55 +45,55 @@ BUILD_UNIT_FROM_DIVISON(electric_resistance_t, electric_potential_t,
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aOhm() {
-  return SI::detail::check_overflow<atto_ohm_t<int64_t>, _Digits...>();
+  return atto_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fOhm() {
-  return SI::detail::check_overflow<femto_ohm_t<int64_t>, _Digits...>();
+  return femto_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pOhm() {
-  return SI::detail::check_overflow<pico_ohm_t<int64_t>, _Digits...>();
+  return pico_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nOhm() {
-  return SI::detail::check_overflow<nano_ohm_t<int64_t>, _Digits...>();
+  return nano_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uOhm() {
-  return SI::detail::check_overflow<micro_ohm_t<int64_t>, _Digits...>();
+  return micro_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mOhm() {
-  return SI::detail::check_overflow<milli_ohm_t<int64_t>, _Digits...>();
+  return milli_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Ohm() {
-  return SI::detail::check_overflow<ohm_t<int64_t>, _Digits...>();
+  return ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kOhm() {
-  return SI::detail::check_overflow<kilo_ohm_t<int64_t>, _Digits...>();
+  return kilo_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MOhm() {
-  return SI::detail::check_overflow<mega_ohm_t<int64_t>, _Digits...>();
+  return mega_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GOhm() {
-  return SI::detail::check_overflow<giga_ohm_t<int64_t>, _Digits...>();
+  return giga_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TOhm() {
-  return SI::detail::check_overflow<tera_ohm_t<int64_t>, _Digits...>();
+  return tera_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_POhm() {
-  return SI::detail::check_overflow<peta_ohm_t<int64_t>, _Digits...>();
+  return peta_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_EOhm() {
-  return SI::detail::check_overflow<exa_ohm_t<int64_t>, _Digits...>();
+  return exa_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aOhm(long double value) {

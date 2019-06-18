@@ -11,11 +11,6 @@
 /// Namespace containing implementation details for SI
 namespace SI::detail {
 
-template <typename _Unit, char... _Digits> constexpr _Unit check_overflow() {
-  // overflow check is handled inside inside number parser
-  return _Unit{SI::detail::parsing::Number<_Digits...>::value};
-}
-
 /// to check if a template is an instatiation of std::ratio
 template <typename _Tp> struct is_ratio : std::false_type {};
 

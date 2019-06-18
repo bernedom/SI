@@ -43,55 +43,55 @@ BUILD_UNIT_FROM_MULTIPLICATION(magnetic_flux_t, electric_potential_t, time_t)
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aWb() {
-  return SI::detail::check_overflow<atto_weber_t<int64_t>, _Digits...>();
+  return atto_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fWb() {
-  return SI::detail::check_overflow<femto_weber_t<int64_t>, _Digits...>();
+  return femto_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pWb() {
-  return SI::detail::check_overflow<pico_weber_t<int64_t>, _Digits...>();
+  return pico_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nWb() {
-  return SI::detail::check_overflow<nano_weber_t<int64_t>, _Digits...>();
+  return nano_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uWb() {
-  return SI::detail::check_overflow<micro_weber_t<int64_t>, _Digits...>();
+  return micro_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mWb() {
-  return SI::detail::check_overflow<milli_weber_t<int64_t>, _Digits...>();
+  return milli_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Wb() {
-  return SI::detail::check_overflow<weber_t<int64_t>, _Digits...>();
+  return weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kWb() {
-  return SI::detail::check_overflow<kilo_weber_t<int64_t>, _Digits...>();
+  return kilo_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MWb() {
-  return SI::detail::check_overflow<mega_weber_t<int64_t>, _Digits...>();
+  return mega_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GWb() {
-  return SI::detail::check_overflow<giga_weber_t<int64_t>, _Digits...>();
+  return giga_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TWb() {
-  return SI::detail::check_overflow<tera_weber_t<int64_t>, _Digits...>();
+  return tera_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PWb() {
-  return SI::detail::check_overflow<peta_weber_t<int64_t>, _Digits...>();
+  return peta_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_EWb() {
-  return SI::detail::check_overflow<exa_weber_t<int64_t>, _Digits...>();
+  return exa_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aWb(long double value) {

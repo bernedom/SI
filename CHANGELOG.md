@@ -1,5 +1,9 @@
 # HEAD 
 
+# master - unreleased
+
+* Removed indirection for overflow check when parsing ints
+
 # 0.0.5
 
 * Updated catch2 to version 2.7.2

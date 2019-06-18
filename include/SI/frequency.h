@@ -24,55 +24,55 @@ template <typename _Type> using exa_hertz_t = frequency_t<_Type, std::exa>;
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aHz() {
-  return SI::detail::check_overflow<atto_hertz_t<int64_t>, _Digits...>();
+  return atto_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fHz() {
-  return SI::detail::check_overflow<femto_hertz_t<int64_t>, _Digits...>();
+  return femto_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pHz() {
-  return SI::detail::check_overflow<pico_hertz_t<int64_t>, _Digits...>();
+  return pico_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nHz() {
-  return SI::detail::check_overflow<nano_hertz_t<int64_t>, _Digits...>();
+  return nano_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uHz() {
-  return SI::detail::check_overflow<micro_hertz_t<int64_t>, _Digits...>();
+  return micro_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mHz() {
-  return SI::detail::check_overflow<milli_hertz_t<int64_t>, _Digits...>();
+  return milli_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Hz() {
-  return SI::detail::check_overflow<hertz_t<int64_t>, _Digits...>();
+  return hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kHz() {
-  return SI::detail::check_overflow<kilo_hertz_t<int64_t>, _Digits...>();
+  return kilo_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MHz() {
-  return SI::detail::check_overflow<mega_hertz_t<int64_t>, _Digits...>();
+  return mega_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GHz() {
-  return SI::detail::check_overflow<giga_hertz_t<int64_t>, _Digits...>();
+  return giga_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_THz() {
-  return SI::detail::check_overflow<tera_hertz_t<int64_t>, _Digits...>();
+  return tera_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PHz() {
-  return SI::detail::check_overflow<peta_hertz_t<int64_t>, _Digits...>();
+  return peta_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_EHz() {
-  return SI::detail::check_overflow<exa_hertz_t<int64_t>, _Digits...>();
+  return exa_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aHz(long double value) {

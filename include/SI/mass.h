@@ -18,35 +18,35 @@ template <typename _Type> using ton_t = mass_t<_Type, std::kilo>;
 inline namespace literals {
 
 template <char... _Digits> constexpr auto operator""_fg() {
-  return SI::detail::check_overflow<femto_gram_t<int64_t>, _Digits...>();
+  return femto_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pg() {
-  return SI::detail::check_overflow<pico_gram_t<int64_t>, _Digits...>();
+  return pico_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_ng() {
-  return SI::detail::check_overflow<nano_gram_t<int64_t>, _Digits...>();
+  return nano_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_ug() {
-  return SI::detail::check_overflow<micro_gram_t<int64_t>, _Digits...>();
+  return micro_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mg() {
-  return SI::detail::check_overflow<milli_gram_t<int64_t>, _Digits...>();
+  return milli_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_g() {
-  return SI::detail::check_overflow<gram_t<int64_t>, _Digits...>();
+  return gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kg() {
-  return SI::detail::check_overflow<kilo_gram_t<int64_t>, _Digits...>();
+  return kilo_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_t() {
-  return SI::detail::check_overflow<ton_t<int64_t>, _Digits...>();
+  return ton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_fg(long double value) {

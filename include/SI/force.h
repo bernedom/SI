@@ -30,55 +30,58 @@ BUILD_UNIT_FROM_MULTIPLICATION(force_t, mass_t, acceleration_t)
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aN() {
-  return SI::detail::check_overflow<atto_newton_t<int64_t>, _Digits...>();
+  return atto_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fN() {
-  return SI::detail::check_overflow<femto_newton_t<int64_t>, _Digits...>();
+  return femto_newton_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pN() {
-  return SI::detail::check_overflow<pico_newton_t<int64_t>, _Digits...>();
+  return pico_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nN() {
-  return SI::detail::check_overflow<nano_newton_t<int64_t>, _Digits...>();
+  return nano_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uN() {
-  return SI::detail::check_overflow<micro_newton_t<int64_t>, _Digits...>();
+  return micro_newton_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mN() {
-  return SI::detail::check_overflow<milli_newton_t<int64_t>, _Digits...>();
+  return milli_newton_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_N() {
-  return SI::detail::check_overflow<newton_t<int64_t>, _Digits...>();
+  return newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kN() {
-  return SI::detail::check_overflow<kilo_newton_t<int64_t>, _Digits...>();
+  return kilo_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MN() {
-  return SI::detail::check_overflow<mega_newton_t<int64_t>, _Digits...>();
+  return mega_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GN() {
-  return SI::detail::check_overflow<giga_newton_t<int64_t>, _Digits...>();
+  return giga_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TN() {
-  return SI::detail::check_overflow<tera_newton_t<int64_t>, _Digits...>();
+  return tera_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PN() {
-  return SI::detail::check_overflow<peta_newton_t<int64_t>, _Digits...>();
+  return peta_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_EN() {
-  return SI::detail::check_overflow<exa_newton_t<int64_t>, _Digits...>();
+  return exa_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aN(long double value) {

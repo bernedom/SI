@@ -38,55 +38,66 @@ using exa_sievert_t = equivalent_dose_t<_Type, std::exa>;
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aSv() {
-  return SI::detail::check_overflow<atto_sievert_t<int64_t>, _Digits...>();
+  return atto_sievert_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fSv() {
-  return SI::detail::check_overflow<femto_sievert_t<int64_t>, _Digits...>();
+  return femto_sievert_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pSv() {
-  return SI::detail::check_overflow<pico_sievert_t<int64_t>, _Digits...>();
+  return pico_sievert_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nSv() {
-  return SI::detail::check_overflow<nano_sievert_t<int64_t>, _Digits...>();
+  return nano_sievert_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uSv() {
-  return SI::detail::check_overflow<micro_sievert_t<int64_t>, _Digits...>();
+  return micro_sievert_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mSv() {
-  return SI::detail::check_overflow<milli_sievert_t<int64_t>, _Digits...>();
+  return milli_sievert_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Sv() {
-  return SI::detail::check_overflow<sievert_t<int64_t>, _Digits...>();
+  return sievert_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kSv() {
-  return SI::detail::check_overflow<kilo_sievert_t<int64_t>, _Digits...>();
+  return kilo_sievert_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MSv() {
-  return SI::detail::check_overflow<mega_sievert_t<int64_t>, _Digits...>();
+  return mega_sievert_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GSv() {
-  return SI::detail::check_overflow<giga_sievert_t<int64_t>, _Digits...>();
+  return giga_sievert_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TSv() {
-  return SI::detail::check_overflow<tera_sievert_t<int64_t>, _Digits...>();
+  return tera_sievert_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PSv() {
-  return SI::detail::check_overflow<peta_sievert_t<int64_t>, _Digits...>();
+  return peta_sievert_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_ESv() {
-  return SI::detail::check_overflow<exa_sievert_t<int64_t>, _Digits...>();
+  return exa_sievert_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aSv(long double value) {

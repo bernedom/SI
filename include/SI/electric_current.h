@@ -37,55 +37,58 @@ using exa_ampere_t = electric_current_t<_Type, std::exa>;
 inline namespace literals {
 
 template <char... _Digits> constexpr auto operator""_aA() {
-  return SI::detail::check_overflow<atto_ampere_t<int64_t>, _Digits...>();
+  return atto_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fA() {
-  return SI::detail::check_overflow<femto_ampere_t<int64_t>, _Digits...>();
+  return femto_ampere_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pA() {
-  return SI::detail::check_overflow<pico_ampere_t<int64_t>, _Digits...>();
+  return pico_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nA() {
-  return SI::detail::check_overflow<nano_ampere_t<int64_t>, _Digits...>();
+  return nano_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uA() {
-  return SI::detail::check_overflow<micro_ampere_t<int64_t>, _Digits...>();
+  return micro_ampere_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mA() {
-  return SI::detail::check_overflow<milli_ampere_t<int64_t>, _Digits...>();
+  return milli_ampere_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_A() {
-  return SI::detail::check_overflow<ampere_t<int64_t>, _Digits...>();
+  return ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kA() {
-  return SI::detail::check_overflow<kilo_ampere_t<int64_t>, _Digits...>();
+  return kilo_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MA() {
-  return SI::detail::check_overflow<mega_ampere_t<int64_t>, _Digits...>();
+  return mega_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GA() {
-  return SI::detail::check_overflow<giga_ampere_t<int64_t>, _Digits...>();
+  return giga_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TA() {
-  return SI::detail::check_overflow<tera_ampere_t<int64_t>, _Digits...>();
+  return tera_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PA() {
-  return SI::detail::check_overflow<peta_ampere_t<int64_t>, _Digits...>();
+  return peta_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_EA() {
-  return SI::detail::check_overflow<exa_ampere_t<int64_t>, _Digits...>();
+  return exa_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aA(long double value) {

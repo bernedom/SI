@@ -39,55 +39,67 @@ using exa_becquerel_t = radioactivity_t<_Type, std::exa>;
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aBq() {
-  return SI::detail::check_overflow<atto_becquerel_t<int64_t>, _Digits...>();
+  return atto_becquerel_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fBq() {
-  return SI::detail::check_overflow<femto_becquerel_t<int64_t>, _Digits...>();
+  return femto_becquerel_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pBq() {
-  return SI::detail::check_overflow<pico_becquerel_t<int64_t>, _Digits...>();
+  return pico_becquerel_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nBq() {
-  return SI::detail::check_overflow<nano_becquerel_t<int64_t>, _Digits...>();
+  return nano_becquerel_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uBq() {
-  return SI::detail::check_overflow<micro_becquerel_t<int64_t>, _Digits...>();
+  return micro_becquerel_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mBq() {
-  return SI::detail::check_overflow<milli_becquerel_t<int64_t>, _Digits...>();
+  return milli_becquerel_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Bq() {
-  return SI::detail::check_overflow<becquerel_t<int64_t>, _Digits...>();
+  return becquerel_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kBq() {
-  return SI::detail::check_overflow<kilo_becquerel_t<int64_t>, _Digits...>();
+  return kilo_becquerel_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MBq() {
-  return SI::detail::check_overflow<mega_becquerel_t<int64_t>, _Digits...>();
+  return mega_becquerel_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GBq() {
-  return SI::detail::check_overflow<giga_becquerel_t<int64_t>, _Digits...>();
+  return giga_becquerel_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TBq() {
-  return SI::detail::check_overflow<tera_becquerel_t<int64_t>, _Digits...>();
+  return tera_becquerel_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PBq() {
-  return SI::detail::check_overflow<peta_becquerel_t<int64_t>, _Digits...>();
+  return peta_becquerel_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_EBq() {
-  return SI::detail::check_overflow<exa_becquerel_t<int64_t>, _Digits...>();
+  return exa_becquerel_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aBq(long double value) {

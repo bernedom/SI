@@ -26,55 +26,58 @@ template <typename _Type> using exa_candea_t = luminosity_t<_Type, std::exa>;
 inline namespace literals {
 
 template <char... _Digits> constexpr auto operator""_acd() {
-  return SI::detail::check_overflow<atto_candea_t<int64_t>, _Digits...>();
+  return atto_candea_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fcd() {
-  return SI::detail::check_overflow<femto_candea_t<int64_t>, _Digits...>();
+  return femto_candea_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pcd() {
-  return SI::detail::check_overflow<pico_candea_t<int64_t>, _Digits...>();
+  return pico_candea_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_ncd() {
-  return SI::detail::check_overflow<nano_candea_t<int64_t>, _Digits...>();
+  return nano_candea_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_ucd() {
-  return SI::detail::check_overflow<micro_candea_t<int64_t>, _Digits...>();
+  return micro_candea_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mcd() {
-  return SI::detail::check_overflow<milli_candea_t<int64_t>, _Digits...>();
+  return milli_candea_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_cd() {
-  return SI::detail::check_overflow<candea_t<int64_t>, _Digits...>();
+  return candea_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kcd() {
-  return SI::detail::check_overflow<kilo_candea_t<int64_t>, _Digits...>();
+  return kilo_candea_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Mcd() {
-  return SI::detail::check_overflow<mega_candea_t<int64_t>, _Digits...>();
+  return mega_candea_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Gcd() {
-  return SI::detail::check_overflow<giga_candea_t<int64_t>, _Digits...>();
+  return giga_candea_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Tcd() {
-  return SI::detail::check_overflow<tera_candea_t<int64_t>, _Digits...>();
+  return tera_candea_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Pcd() {
-  return SI::detail::check_overflow<peta_candea_t<int64_t>, _Digits...>();
+  return peta_candea_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Ecd() {
-  return SI::detail::check_overflow<exa_candea_t<int64_t>, _Digits...>();
+  return exa_candea_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_acd(long double value) {

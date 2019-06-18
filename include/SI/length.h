@@ -29,59 +29,59 @@ template <typename _Type> using exa_meter_t = length_t<_Type, std::exa>;
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_am() {
-  return SI::detail::check_overflow<atto_meter_t<int64_t>, _Digits...>();
+  return atto_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fm() {
-  return SI::detail::check_overflow<femto_meter_t<int64_t>, _Digits...>();
+  return femto_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pm() {
-  return SI::detail::check_overflow<pico_meter_t<int64_t>, _Digits...>();
+  return pico_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nm() {
-  return SI::detail::check_overflow<nano_meter_t<int64_t>, _Digits...>();
+  return nano_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_um() {
-  return SI::detail::check_overflow<micro_meter_t<int64_t>, _Digits...>();
+  return micro_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mm() {
-  return SI::detail::check_overflow<milli_meter_t<int64_t>, _Digits...>();
+  return milli_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_cm() {
-  return SI::detail::check_overflow<centi_meter_t<int64_t>, _Digits...>();
+  return centi_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_m() {
-  return SI::detail::check_overflow<meter_t<int64_t>, _Digits...>();
+  return meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_km() {
-  return SI::detail::check_overflow<kilo_meter_t<int64_t>, _Digits...>();
+  return kilo_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Mm() {
-  return SI::detail::check_overflow<mega_meter_t<int64_t>, _Digits...>();
+  return mega_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Gm() {
-  return SI::detail::check_overflow<giga_meter_t<int64_t>, _Digits...>();
+  return giga_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Tm() {
-  return SI::detail::check_overflow<tera_meter_t<int64_t>, _Digits...>();
+  return tera_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Pm() {
-  return SI::detail::check_overflow<peta_meter_t<int64_t>, _Digits...>();
+  return peta_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Em() {
-  return SI::detail::check_overflow<exa_meter_t<int64_t>, _Digits...>();
+  return exa_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_am(long double value) {

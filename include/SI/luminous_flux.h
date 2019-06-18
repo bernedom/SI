@@ -43,55 +43,55 @@ BUILD_UNIT_FROM_MULTIPLICATION(luminous_flux_t, solid_angle_t, luminosity_t)
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_alm() {
-  return SI::detail::check_overflow<atto_lumen_t<int64_t>, _Digits...>();
+  return atto_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_flm() {
-  return SI::detail::check_overflow<femto_lumen_t<int64_t>, _Digits...>();
+  return femto_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_plm() {
-  return SI::detail::check_overflow<pico_lumen_t<int64_t>, _Digits...>();
+  return pico_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nlm() {
-  return SI::detail::check_overflow<nano_lumen_t<int64_t>, _Digits...>();
+  return nano_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_ulm() {
-  return SI::detail::check_overflow<micro_lumen_t<int64_t>, _Digits...>();
+  return micro_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mlm() {
-  return SI::detail::check_overflow<milli_lumen_t<int64_t>, _Digits...>();
+  return milli_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_lm() {
-  return SI::detail::check_overflow<lumen_t<int64_t>, _Digits...>();
+  return lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_klm() {
-  return SI::detail::check_overflow<kilo_lumen_t<int64_t>, _Digits...>();
+  return kilo_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Mlm() {
-  return SI::detail::check_overflow<mega_lumen_t<int64_t>, _Digits...>();
+  return mega_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Glm() {
-  return SI::detail::check_overflow<giga_lumen_t<int64_t>, _Digits...>();
+  return giga_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Tlm() {
-  return SI::detail::check_overflow<tera_lumen_t<int64_t>, _Digits...>();
+  return tera_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Plm() {
-  return SI::detail::check_overflow<peta_lumen_t<int64_t>, _Digits...>();
+  return peta_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Elm() {
-  return SI::detail::check_overflow<exa_lumen_t<int64_t>, _Digits...>();
+  return exa_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_alm(long double value) {

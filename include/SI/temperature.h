@@ -27,55 +27,58 @@ template <typename _Type> using exa_kelvin_t = temperature_t<_Type, std::exa>;
 inline namespace literals {
 
 template <char... _Digits> constexpr auto operator""_aK() {
-  return SI::detail::check_overflow<atto_kelvin_t<int64_t>, _Digits...>();
+  return atto_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fK() {
-  return SI::detail::check_overflow<femto_kelvin_t<int64_t>, _Digits...>();
+  return femto_kelvin_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pK() {
-  return SI::detail::check_overflow<pico_kelvin_t<int64_t>, _Digits...>();
+  return pico_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nK() {
-  return SI::detail::check_overflow<nano_kelvin_t<int64_t>, _Digits...>();
+  return nano_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uK() {
-  return SI::detail::check_overflow<micro_kelvin_t<int64_t>, _Digits...>();
+  return micro_kelvin_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mK() {
-  return SI::detail::check_overflow<milli_kelvin_t<int64_t>, _Digits...>();
+  return milli_kelvin_t<int64_t>{
+      SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_K() {
-  return SI::detail::check_overflow<kelvin_t<int64_t>, _Digits...>();
+  return kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kK() {
-  return SI::detail::check_overflow<kilo_kelvin_t<int64_t>, _Digits...>();
+  return kilo_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MK() {
-  return SI::detail::check_overflow<mega_kelvin_t<int64_t>, _Digits...>();
+  return mega_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GK() {
-  return SI::detail::check_overflow<giga_kelvin_t<int64_t>, _Digits...>();
+  return giga_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TK() {
-  return SI::detail::check_overflow<tera_kelvin_t<int64_t>, _Digits...>();
+  return tera_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PK() {
-  return SI::detail::check_overflow<peta_kelvin_t<int64_t>, _Digits...>();
+  return peta_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_EK() {
-  return SI::detail::check_overflow<exa_kelvin_t<int64_t>, _Digits...>();
+  return exa_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aK(long double value) {

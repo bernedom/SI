@@ -30,55 +30,55 @@ BUILD_UNIT_FROM_DIVISON(inductance_t, magnetic_flux_t, electric_current_t)
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aH() {
-  return SI::detail::check_overflow<atto_henry_t<int64_t>, _Digits...>();
+  return atto_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fH() {
-  return SI::detail::check_overflow<femto_henry_t<int64_t>, _Digits...>();
+  return femto_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pH() {
-  return SI::detail::check_overflow<pico_henry_t<int64_t>, _Digits...>();
+  return pico_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nH() {
-  return SI::detail::check_overflow<nano_henry_t<int64_t>, _Digits...>();
+  return nano_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uH() {
-  return SI::detail::check_overflow<micro_henry_t<int64_t>, _Digits...>();
+  return micro_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mH() {
-  return SI::detail::check_overflow<milli_henry_t<int64_t>, _Digits...>();
+  return milli_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_H() {
-  return SI::detail::check_overflow<henry_t<int64_t>, _Digits...>();
+  return henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kH() {
-  return SI::detail::check_overflow<kilo_henry_t<int64_t>, _Digits...>();
+  return kilo_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MH() {
-  return SI::detail::check_overflow<mega_henry_t<int64_t>, _Digits...>();
+  return mega_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GH() {
-  return SI::detail::check_overflow<giga_henry_t<int64_t>, _Digits...>();
+  return giga_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TH() {
-  return SI::detail::check_overflow<tera_henry_t<int64_t>, _Digits...>();
+  return tera_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PH() {
-  return SI::detail::check_overflow<peta_henry_t<int64_t>, _Digits...>();
+  return peta_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_EH() {
-  return SI::detail::check_overflow<exa_henry_t<int64_t>, _Digits...>();
+  return exa_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aH(long double value) {

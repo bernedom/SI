@@ -32,55 +32,55 @@ BUILD_UNIT_FROM_MULTIPLICATION(energy_t, pressure_t, volume_t)
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aJ() {
-  return SI::detail::check_overflow<atto_joule_t<int64_t>, _Digits...>();
+  return atto_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fJ() {
-  return SI::detail::check_overflow<femto_joule_t<int64_t>, _Digits...>();
+  return femto_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pJ() {
-  return SI::detail::check_overflow<pico_joule_t<int64_t>, _Digits...>();
+  return pico_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nJ() {
-  return SI::detail::check_overflow<nano_joule_t<int64_t>, _Digits...>();
+  return nano_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uJ() {
-  return SI::detail::check_overflow<micro_joule_t<int64_t>, _Digits...>();
+  return micro_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mJ() {
-  return SI::detail::check_overflow<milli_joule_t<int64_t>, _Digits...>();
+  return milli_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_J() {
-  return SI::detail::check_overflow<joule_t<int64_t>, _Digits...>();
+  return joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kJ() {
-  return SI::detail::check_overflow<kilo_joule_t<int64_t>, _Digits...>();
+  return kilo_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MJ() {
-  return SI::detail::check_overflow<mega_joule_t<int64_t>, _Digits...>();
+  return mega_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GJ() {
-  return SI::detail::check_overflow<giga_joule_t<int64_t>, _Digits...>();
+  return giga_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TJ() {
-  return SI::detail::check_overflow<tera_joule_t<int64_t>, _Digits...>();
+  return tera_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PJ() {
-  return SI::detail::check_overflow<peta_joule_t<int64_t>, _Digits...>();
+  return peta_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_EJ() {
-  return SI::detail::check_overflow<exa_joule_t<int64_t>, _Digits...>();
+  return exa_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aJ(long double value) {

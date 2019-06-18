@@ -27,55 +27,55 @@ template <typename _Type> using exa_gray_t = absorbed_dose_t<_Type, std::exa>;
 
 inline namespace literals {
 template <char... _Digits> constexpr auto operator""_aGy() {
-  return SI::detail::check_overflow<atto_gray_t<int64_t>, _Digits...>();
+  return atto_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fGy() {
-  return SI::detail::check_overflow<femto_gray_t<int64_t>, _Digits...>();
+  return femto_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pGy() {
-  return SI::detail::check_overflow<pico_gray_t<int64_t>, _Digits...>();
+  return pico_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nGy() {
-  return SI::detail::check_overflow<nano_gray_t<int64_t>, _Digits...>();
+  return nano_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_uGy() {
-  return SI::detail::check_overflow<micro_gray_t<int64_t>, _Digits...>();
+  return micro_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mGy() {
-  return SI::detail::check_overflow<milli_gray_t<int64_t>, _Digits...>();
+  return milli_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Gy() {
-  return SI::detail::check_overflow<gray_t<int64_t>, _Digits...>();
+  return gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kGy() {
-  return SI::detail::check_overflow<kilo_gray_t<int64_t>, _Digits...>();
+  return kilo_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_MGy() {
-  return SI::detail::check_overflow<mega_gray_t<int64_t>, _Digits...>();
+  return mega_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_GGy() {
-  return SI::detail::check_overflow<giga_gray_t<int64_t>, _Digits...>();
+  return giga_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_TGy() {
-  return SI::detail::check_overflow<tera_gray_t<int64_t>, _Digits...>();
+  return tera_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_PGy() {
-  return SI::detail::check_overflow<peta_gray_t<int64_t>, _Digits...>();
+  return peta_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_EGy() {
-  return SI::detail::check_overflow<exa_gray_t<int64_t>, _Digits...>();
+  return exa_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_aGy(long double value) {

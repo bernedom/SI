@@ -23,55 +23,55 @@ template <typename _Type> using exa_mol_t = substance_t<_Type, std::exa>;
 inline namespace literals {
 
 template <char... _Digits> constexpr auto operator""_amol() {
-  return SI::detail::check_overflow<atto_mol_t<int64_t>, _Digits...>();
+  return atto_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_fmol() {
-  return SI::detail::check_overflow<femto_mol_t<int64_t>, _Digits...>();
+  return femto_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_pmol() {
-  return SI::detail::check_overflow<pico_mol_t<int64_t>, _Digits...>();
+  return pico_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_nmol() {
-  return SI::detail::check_overflow<nano_mol_t<int64_t>, _Digits...>();
+  return nano_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_umol() {
-  return SI::detail::check_overflow<micro_mol_t<int64_t>, _Digits...>();
+  return micro_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mmol() {
-  return SI::detail::check_overflow<milli_mol_t<int64_t>, _Digits...>();
+  return milli_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_mol() {
-  return SI::detail::check_overflow<mol_t<int64_t>, _Digits...>();
+  return mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_kmol() {
-  return SI::detail::check_overflow<kilo_mol_t<int64_t>, _Digits...>();
+  return kilo_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Mmol() {
-  return SI::detail::check_overflow<mega_mol_t<int64_t>, _Digits...>();
+  return mega_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Gmol() {
-  return SI::detail::check_overflow<giga_mol_t<int64_t>, _Digits...>();
+  return giga_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Tmol() {
-  return SI::detail::check_overflow<tera_mol_t<int64_t>, _Digits...>();
+  return tera_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Pmol() {
-  return SI::detail::check_overflow<peta_mol_t<int64_t>, _Digits...>();
+  return peta_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 template <char... _Digits> constexpr auto operator""_Emol() {
-  return SI::detail::check_overflow<exa_mol_t<int64_t>, _Digits...>();
+  return exa_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
 constexpr auto operator""_amol(long double value) {
