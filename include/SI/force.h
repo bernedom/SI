@@ -30,110 +30,110 @@ BUILD_UNIT_FROM_MULTIPLICATION(force_t, mass_t, acceleration_t)
 }
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_aN() {
+template <char... _Digits> constexpr atto_newton_t<int64_t> operator""_aN() {
   return atto_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fN() {
+template <char... _Digits> constexpr femto_newton_t<int64_t> operator""_fN() {
   return femto_newton_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pN() {
+template <char... _Digits> constexpr pico_newton_t<int64_t> operator""_pN() {
   return pico_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nN() {
+template <char... _Digits> constexpr nano_newton_t<int64_t> operator""_nN() {
   return nano_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_uN() {
+template <char... _Digits> constexpr micro_newton_t<int64_t> operator""_uN() {
   return micro_newton_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mN() {
+template <char... _Digits> constexpr milli_newton_t<int64_t> operator""_mN() {
   return milli_newton_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_N() {
+template <char... _Digits> constexpr newton_t<int64_t> operator""_N() {
   return newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kN() {
+template <char... _Digits> constexpr kilo_newton_t<int64_t> operator""_kN() {
   return kilo_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_MN() {
+template <char... _Digits> constexpr mega_newton_t<int64_t> operator""_MN() {
   return mega_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_GN() {
+template <char... _Digits> constexpr giga_newton_t<int64_t> operator""_GN() {
   return giga_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_TN() {
+template <char... _Digits> constexpr tera_newton_t<int64_t> operator""_TN() {
   return tera_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_PN() {
+template <char... _Digits> constexpr peta_newton_t<int64_t> operator""_PN() {
   return peta_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_EN() {
+template <char... _Digits> constexpr exa_newton_t<int64_t> operator""_EN() {
   return exa_newton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_aN(long double value) {
+constexpr atto_newton_t<long double> operator""_aN(long double value) {
   return atto_newton_t<long double>{value};
 }
 
-constexpr auto operator""_fN(long double value) {
+constexpr femto_newton_t<long double> operator""_fN(long double value) {
   return femto_newton_t<long double>{value};
 }
 
-constexpr auto operator""_pN(long double value) {
+constexpr pico_newton_t<long double> operator""_pN(long double value) {
   return pico_newton_t<long double>{value};
 }
 
-constexpr auto operator""_nN(long double value) {
+constexpr nano_newton_t<long double> operator""_nN(long double value) {
   return nano_newton_t<long double>{value};
 }
 
-constexpr auto operator""_uN(long double value) {
+constexpr micro_newton_t<long double> operator""_uN(long double value) {
   return micro_newton_t<long double>{value};
 }
 
-constexpr auto operator""_mN(long double value) {
+constexpr milli_newton_t<long double> operator""_mN(long double value) {
   return milli_newton_t<long double>{value};
 }
 
-constexpr auto operator""_N(long double value) {
+constexpr newton_t<long double> operator""_N(long double value) {
   return newton_t<long double>{value};
 }
 
-constexpr auto operator""_kN(long double value) {
+constexpr kilo_newton_t<long double> operator""_kN(long double value) {
   return kilo_newton_t<long double>{value};
 }
 
-constexpr auto operator""_MN(long double value) {
+constexpr mega_newton_t<long double> operator""_MN(long double value) {
   return mega_newton_t<long double>{value};
 }
 
-constexpr auto operator""_GN(long double value) {
+constexpr giga_newton_t<long double> operator""_GN(long double value) {
   return giga_newton_t<long double>{value};
 }
 
-constexpr auto operator""_TN(long double value) {
+constexpr tera_newton_t<long double> operator""_TN(long double value) {
   return tera_newton_t<long double>{value};
 }
 
-constexpr auto operator""_PN(long double value) {
+constexpr peta_newton_t<long double> operator""_PN(long double value) {
   return peta_newton_t<long double>{value};
 }
 
-constexpr auto operator""_EN(long double value) {
+constexpr exa_newton_t<long double> operator""_EN(long double value) {
   return exa_newton_t<long double>{value};
 }
 

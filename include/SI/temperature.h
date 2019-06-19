@@ -27,110 +27,110 @@ template <typename _Type> using exa_kelvin_t = temperature_t<_Type, std::exa>;
 
 inline namespace literals {
 
-template <char... _Digits> constexpr auto operator""_aK() {
+template <char... _Digits> constexpr atto_kelvin_t<int64_t> operator""_aK() {
   return atto_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fK() {
+template <char... _Digits> constexpr femto_kelvin_t<int64_t> operator""_fK() {
   return femto_kelvin_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pK() {
+template <char... _Digits> constexpr pico_kelvin_t<int64_t> operator""_pK() {
   return pico_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nK() {
+template <char... _Digits> constexpr nano_kelvin_t<int64_t> operator""_nK() {
   return nano_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_uK() {
+template <char... _Digits> constexpr micro_kelvin_t<int64_t> operator""_uK() {
   return micro_kelvin_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mK() {
+template <char... _Digits> constexpr milli_kelvin_t<int64_t> operator""_mK() {
   return milli_kelvin_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_K() {
+template <char... _Digits> constexpr kelvin_t<int64_t> operator""_K() {
   return kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kK() {
+template <char... _Digits> constexpr kilo_kelvin_t<int64_t> operator""_kK() {
   return kilo_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_MK() {
+template <char... _Digits> constexpr mega_kelvin_t<int64_t> operator""_MK() {
   return mega_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_GK() {
+template <char... _Digits> constexpr giga_kelvin_t<int64_t> operator""_GK() {
   return giga_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_TK() {
+template <char... _Digits> constexpr tera_kelvin_t<int64_t> operator""_TK() {
   return tera_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_PK() {
+template <char... _Digits> constexpr peta_kelvin_t<int64_t> operator""_PK() {
   return peta_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_EK() {
+template <char... _Digits> constexpr exa_kelvin_t<int64_t> operator""_EK() {
   return exa_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_aK(long double value) {
+constexpr atto_kelvin_t<long double> operator""_aK(long double value) {
   return atto_kelvin_t<long double>{value};
 }
 
-constexpr auto operator""_fK(long double value) {
+constexpr femto_kelvin_t<long double> operator""_fK(long double value) {
   return femto_kelvin_t<long double>{value};
 }
 
-constexpr auto operator""_pK(long double value) {
+constexpr pico_kelvin_t<long double> operator""_pK(long double value) {
   return pico_kelvin_t<long double>{value};
 }
 
-constexpr auto operator""_nK(long double value) {
+constexpr nano_kelvin_t<long double> operator""_nK(long double value) {
   return nano_kelvin_t<long double>{value};
 }
 
-constexpr auto operator""_uK(long double value) {
+constexpr micro_kelvin_t<long double> operator""_uK(long double value) {
   return micro_kelvin_t<long double>{value};
 }
 
-constexpr auto operator""_mK(long double value) {
+constexpr milli_kelvin_t<long double> operator""_mK(long double value) {
   return milli_kelvin_t<long double>{value};
 }
 
-constexpr auto operator""_K(long double value) {
+constexpr kelvin_t<long double> operator""_K(long double value) {
   return kelvin_t<long double>{value};
 }
 
-constexpr auto operator""_kK(long double value) {
+constexpr kilo_kelvin_t<long double> operator""_kK(long double value) {
   return kilo_kelvin_t<long double>{value};
 }
 
-constexpr auto operator""_MK(long double value) {
+constexpr mega_kelvin_t<long double> operator""_MK(long double value) {
   return mega_kelvin_t<long double>{value};
 }
 
-constexpr auto operator""_GK(long double value) {
+constexpr giga_kelvin_t<long double> operator""_GK(long double value) {
   return giga_kelvin_t<long double>{value};
 }
 
-constexpr auto operator""_TK(long double value) {
+constexpr tera_kelvin_t<long double> operator""_TK(long double value) {
   return tera_kelvin_t<long double>{value};
 }
 
-constexpr auto operator""_PK(long double value) {
+constexpr peta_kelvin_t<long double> operator""_PK(long double value) {
   return peta_kelvin_t<long double>{value};
 }
 
-constexpr auto operator""_EK(long double value) {
+constexpr exa_kelvin_t<long double> operator""_EK(long double value) {
   return exa_kelvin_t<long double>{value};
 }
 

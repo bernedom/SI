@@ -23,107 +23,107 @@ template <typename _Type> using peta_hertz_t = frequency_t<_Type, std::peta>;
 template <typename _Type> using exa_hertz_t = frequency_t<_Type, std::exa>;
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_aHz() {
+template <char... _Digits> constexpr atto_hertz_t<int64_t> operator""_aHz() {
   return atto_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fHz() {
+template <char... _Digits> constexpr femto_hertz_t<int64_t> operator""_fHz() {
   return femto_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pHz() {
+template <char... _Digits> constexpr pico_hertz_t<int64_t> operator""_pHz() {
   return pico_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nHz() {
+template <char... _Digits> constexpr nano_hertz_t<int64_t> operator""_nHz() {
   return nano_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_uHz() {
+template <char... _Digits> constexpr micro_hertz_t<int64_t> operator""_uHz() {
   return micro_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mHz() {
+template <char... _Digits> constexpr milli_hertz_t<int64_t> operator""_mHz() {
   return milli_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Hz() {
+template <char... _Digits> constexpr hertz_t<int64_t> operator""_Hz() {
   return hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kHz() {
+template <char... _Digits> constexpr kilo_hertz_t<int64_t> operator""_kHz() {
   return kilo_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_MHz() {
+template <char... _Digits> constexpr mega_hertz_t<int64_t> operator""_MHz() {
   return mega_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_GHz() {
+template <char... _Digits> constexpr giga_hertz_t<int64_t> operator""_GHz() {
   return giga_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_THz() {
+template <char... _Digits> constexpr tera_hertz_t<int64_t> operator""_THz() {
   return tera_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_PHz() {
+template <char... _Digits> constexpr peta_hertz_t<int64_t> operator""_PHz() {
   return peta_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_EHz() {
+template <char... _Digits> constexpr exa_hertz_t<int64_t> operator""_EHz() {
   return exa_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_aHz(long double value) {
+constexpr atto_hertz_t<long double> operator""_aHz(long double value) {
   return atto_hertz_t<long double>{value};
 }
 
-constexpr auto operator""_fHz(long double value) {
+constexpr femto_hertz_t<long double> operator""_fHz(long double value) {
   return femto_hertz_t<long double>{value};
 }
 
-constexpr auto operator""_pHz(long double value) {
+constexpr pico_hertz_t<long double> operator""_pHz(long double value) {
   return pico_hertz_t<long double>{value};
 }
 
-constexpr auto operator""_nHz(long double value) {
+constexpr nano_hertz_t<long double> operator""_nHz(long double value) {
   return nano_hertz_t<long double>{value};
 }
 
-constexpr auto operator""_uHz(long double value) {
+constexpr micro_hertz_t<long double> operator""_uHz(long double value) {
   return micro_hertz_t<long double>{value};
 }
 
-constexpr auto operator""_mHz(long double value) {
+constexpr milli_hertz_t<long double> operator""_mHz(long double value) {
   return milli_hertz_t<long double>{value};
 }
 
-constexpr auto operator""_Hz(long double value) {
+constexpr hertz_t<long double> operator""_Hz(long double value) {
   return hertz_t<long double>{value};
 }
 
-constexpr auto operator""_kHz(long double value) {
+constexpr kilo_hertz_t<long double> operator""_kHz(long double value) {
   return kilo_hertz_t<long double>{value};
 }
 
-constexpr auto operator""_MHz(long double value) {
+constexpr mega_hertz_t<long double> operator""_MHz(long double value) {
   return mega_hertz_t<long double>{value};
 }
 
-constexpr auto operator""_GHz(long double value) {
+constexpr giga_hertz_t<long double> operator""_GHz(long double value) {
   return giga_hertz_t<long double>{value};
 }
 
-constexpr auto operator""_THz(long double value) {
+constexpr tera_hertz_t<long double> operator""_THz(long double value) {
   return tera_hertz_t<long double>{value};
 }
 
-constexpr auto operator""_PHz(long double value) {
+constexpr peta_hertz_t<long double> operator""_PHz(long double value) {
   return peta_hertz_t<long double>{value};
 }
 
-constexpr auto operator""_EHz(long double value) {
+constexpr exa_hertz_t<long double> operator""_EHz(long double value) {
   return exa_hertz_t<long double>{value};
 }
 

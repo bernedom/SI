@@ -20,65 +20,65 @@ template <typename _Type> using radiant_t = angle_t<_Type, std::ratio<1>>;
 
 inline namespace literals {
 
-template <char... _Digits> constexpr auto operator""_arad() {
+template <char... _Digits> constexpr atto_radiant_t<int64_t> operator""_arad() {
   return atto_radiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_frad() {
+template <char... _Digits> constexpr femto_radiant_t<int64_t> operator""_frad() {
   return femto_radiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_prad() {
+template <char... _Digits> constexpr pico_radiant_t<int64_t> operator""_prad() {
   return pico_radiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nrad() {
+template <char... _Digits> constexpr nano_radiant_t<int64_t> operator""_nrad() {
   return nano_radiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_urad() {
+template <char... _Digits> constexpr micro_radiant_t<int64_t> operator""_urad() {
   return micro_radiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mrad() {
+template <char... _Digits> constexpr milli_radiant_t<int64_t> operator""_mrad() {
   return milli_radiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_rad() {
+template <char... _Digits> constexpr radiant_t<int64_t> operator""_rad() {
   return radiant_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_arad(long double value) {
+constexpr atto_radiant_t<long double> operator""_arad(long double value) {
   return atto_radiant_t<long double>{value};
 }
 
-constexpr auto operator""_frad(long double value) {
+constexpr femto_radiant_t<long double> operator""_frad(long double value) {
   return femto_radiant_t<long double>{value};
 }
 
-constexpr auto operator""_prad(long double value) {
+constexpr pico_radiant_t<long double> operator""_prad(long double value) {
   return pico_radiant_t<long double>{value};
 }
 
-constexpr auto operator""_nrad(long double value) {
+constexpr nano_radiant_t<long double> operator""_nrad(long double value) {
   return nano_radiant_t<long double>{value};
 }
 
-constexpr auto operator""_urad(long double value) {
+constexpr micro_radiant_t<long double> operator""_urad(long double value) {
   return micro_radiant_t<long double>{value};
 }
 
-constexpr auto operator""_mrad(long double value) {
+constexpr milli_radiant_t<long double> operator""_mrad(long double value) {
   return milli_radiant_t<long double>{value};
 }
 
-constexpr auto operator""_rad(long double value) {
+constexpr radiant_t<long double> operator""_rad(long double value) {
   return radiant_t<long double>{value};
 }
 

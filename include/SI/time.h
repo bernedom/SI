@@ -33,80 +33,80 @@ using hours_t = time_t<_Type, std::chrono::hours::period>;
 
 inline namespace literals {
 
-template <char... _Digits> constexpr auto operator""_as() {
+template <char... _Digits> constexpr atto_seconds_t<int64_t> operator""_as() {
   return atto_seconds_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fs() {
+template <char... _Digits> constexpr femto_seconds_t<int64_t> operator""_fs() {
   return femto_seconds_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_ps() {
+template <char... _Digits> constexpr pico_seconds_t<int64_t> operator""_ps() {
   return pico_seconds_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_ns() {
+template <char... _Digits> constexpr nano_seconds_t<int64_t> operator""_ns() {
   return nano_seconds_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator"" _us() {
+template <char... _Digits> constexpr SI::micro_seconds_t<int64_t> operator"" _us() {
   return SI::micro_seconds_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator"" _ms() {
+template <char... _Digits> constexpr SI::milli_seconds_t<int64_t> operator"" _ms() {
   return SI::milli_seconds_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
-template <char... _Digits> constexpr auto operator"" _s() {
+template <char... _Digits> constexpr SI::seconds_t<int64_t> operator"" _s() {
   return SI::seconds_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator"" _min() {
+template <char... _Digits> constexpr SI::minutes_t<int64_t> operator"" _min() {
   return SI::minutes_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator"" _h() {
+template <char... _Digits> constexpr hours_t<int64_t> operator"" _h() {
   return hours_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_as(long double value) {
+constexpr atto_seconds_t<long double> operator""_as(long double value) {
   return atto_seconds_t<long double>{value};
 }
 
-constexpr auto operator""_fs(long double value) {
+constexpr femto_seconds_t<long double> operator""_fs(long double value) {
   return femto_seconds_t<long double>{value};
 }
 
-constexpr auto operator""_ps(long double value) {
+constexpr pico_seconds_t<long double> operator""_ps(long double value) {
   return pico_seconds_t<long double>{value};
 }
 
-constexpr auto operator""_ns(long double value) {
+constexpr nano_seconds_t<long double> operator""_ns(long double value) {
   return nano_seconds_t<long double>{value};
 }
 
-constexpr auto operator"" _us(long double us) {
+constexpr SI::micro_seconds_t<long double> operator"" _us(long double us) {
   return SI::micro_seconds_t<long double>{us};
 }
 
-constexpr auto operator"" _ms(long double ms) {
+constexpr SI::milli_seconds_t<long double> operator"" _ms(long double ms) {
   return SI::milli_seconds_t<long double>{ms};
 }
 
-constexpr auto operator"" _s(long double s) {
+constexpr SI::seconds_t<long double> operator"" _s(long double s) {
   return SI::seconds_t<long double>{s};
 }
 
-constexpr auto operator"" _min(long double min) {
+constexpr SI::minutes_t<long double> operator"" _min(long double min) {
   return SI::minutes_t<long double>{min};
 }
 
-constexpr auto operator"" _h(long double h) {
+constexpr SI::hours_t<long double> operator"" _h(long double h) {
   return SI::hours_t<long double>{h};
 }
 

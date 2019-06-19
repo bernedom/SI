@@ -32,107 +32,107 @@ BUILD_UNIT_FROM_MULTIPLICATION(energy_t, pressure_t, volume_t)
 } // namespace detail
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_aJ() {
+template <char... _Digits> constexpr atto_joule_t<int64_t> operator""_aJ() {
   return atto_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fJ() {
+template <char... _Digits> constexpr femto_joule_t<int64_t> operator""_fJ() {
   return femto_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pJ() {
+template <char... _Digits> constexpr pico_joule_t<int64_t> operator""_pJ() {
   return pico_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nJ() {
+template <char... _Digits> constexpr nano_joule_t<int64_t> operator""_nJ() {
   return nano_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_uJ() {
+template <char... _Digits> constexpr micro_joule_t<int64_t> operator""_uJ() {
   return micro_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mJ() {
+template <char... _Digits> constexpr milli_joule_t<int64_t> operator""_mJ() {
   return milli_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_J() {
+template <char... _Digits> constexpr joule_t<int64_t> operator""_J() {
   return joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kJ() {
+template <char... _Digits> constexpr kilo_joule_t<int64_t> operator""_kJ() {
   return kilo_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_MJ() {
+template <char... _Digits> constexpr mega_joule_t<int64_t> operator""_MJ() {
   return mega_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_GJ() {
+template <char... _Digits> constexpr giga_joule_t<int64_t> operator""_GJ() {
   return giga_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_TJ() {
+template <char... _Digits> constexpr tera_joule_t<int64_t> operator""_TJ() {
   return tera_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_PJ() {
+template <char... _Digits> constexpr peta_joule_t<int64_t> operator""_PJ() {
   return peta_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_EJ() {
+template <char... _Digits> constexpr exa_joule_t<int64_t> operator""_EJ() {
   return exa_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_aJ(long double value) {
+constexpr atto_joule_t<long double> operator""_aJ(long double value) {
   return atto_joule_t<long double>{value};
 }
 
-constexpr auto operator""_fJ(long double value) {
+constexpr femto_joule_t<long double> operator""_fJ(long double value) {
   return femto_joule_t<long double>{value};
 }
 
-constexpr auto operator""_pJ(long double value) {
+constexpr pico_joule_t<long double> operator""_pJ(long double value) {
   return pico_joule_t<long double>{value};
 }
 
-constexpr auto operator""_nJ(long double value) {
+constexpr nano_joule_t<long double> operator""_nJ(long double value) {
   return nano_joule_t<long double>{value};
 }
 
-constexpr auto operator""_uJ(long double value) {
+constexpr micro_joule_t<long double> operator""_uJ(long double value) {
   return micro_joule_t<long double>{value};
 }
 
-constexpr auto operator""_mJ(long double value) {
+constexpr milli_joule_t<long double> operator""_mJ(long double value) {
   return milli_joule_t<long double>{value};
 }
 
-constexpr auto operator""_J(long double value) {
+constexpr joule_t<long double> operator""_J(long double value) {
   return joule_t<long double>{value};
 }
 
-constexpr auto operator""_kJ(long double value) {
+constexpr kilo_joule_t<long double> operator""_kJ(long double value) {
   return kilo_joule_t<long double>{value};
 }
 
-constexpr auto operator""_MJ(long double value) {
+constexpr mega_joule_t<long double> operator""_MJ(long double value) {
   return mega_joule_t<long double>{value};
 }
 
-constexpr auto operator""_GJ(long double value) {
+constexpr giga_joule_t<long double> operator""_GJ(long double value) {
   return giga_joule_t<long double>{value};
 }
 
-constexpr auto operator""_TJ(long double value) {
+constexpr tera_joule_t<long double> operator""_TJ(long double value) {
   return tera_joule_t<long double>{value};
 }
 
-constexpr auto operator""_PJ(long double value) {
+constexpr peta_joule_t<long double> operator""_PJ(long double value) {
   return peta_joule_t<long double>{value};
 }
 
-constexpr auto operator""_EJ(long double value) {
+constexpr exa_joule_t<long double> operator""_EJ(long double value) {
   return exa_joule_t<long double>{value};
 }
 

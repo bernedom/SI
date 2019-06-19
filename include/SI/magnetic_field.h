@@ -44,107 +44,107 @@ BUILD_UNIT_FROM_DIVISON(magnetic_field_t, magnetic_flux_t, area_t)
 }
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_aT() {
+template <char... _Digits> constexpr atto_tesla_t<int64_t> operator""_aT() {
   return atto_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fT() {
+template <char... _Digits> constexpr femto_tesla_t<int64_t> operator""_fT() {
   return femto_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pT() {
+template <char... _Digits> constexpr pico_tesla_t<int64_t> operator""_pT() {
   return pico_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nT() {
+template <char... _Digits> constexpr nano_tesla_t<int64_t> operator""_nT() {
   return nano_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_uT() {
+template <char... _Digits> constexpr micro_tesla_t<int64_t> operator""_uT() {
   return micro_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mT() {
+template <char... _Digits> constexpr milli_tesla_t<int64_t> operator""_mT() {
   return milli_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_T() {
+template <char... _Digits> constexpr tesla_t<int64_t> operator""_T() {
   return tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kT() {
+template <char... _Digits> constexpr kilo_tesla_t<int64_t> operator""_kT() {
   return kilo_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_MT() {
+template <char... _Digits> constexpr mega_tesla_t<int64_t> operator""_MT() {
   return mega_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_GT() {
+template <char... _Digits> constexpr giga_tesla_t<int64_t> operator""_GT() {
   return giga_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_TT() {
+template <char... _Digits> constexpr tera_tesla_t<int64_t> operator""_TT() {
   return tera_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_PT() {
+template <char... _Digits> constexpr peta_tesla_t<int64_t> operator""_PT() {
   return peta_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_ET() {
+template <char... _Digits> constexpr exa_tesla_t<int64_t> operator""_ET() {
   return exa_tesla_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_aT(long double value) {
+constexpr atto_tesla_t<long double> operator""_aT(long double value) {
   return atto_tesla_t<long double>{value};
 }
 
-constexpr auto operator""_fT(long double value) {
+constexpr femto_tesla_t<long double> operator""_fT(long double value) {
   return femto_tesla_t<long double>{value};
 }
 
-constexpr auto operator""_pT(long double value) {
+constexpr pico_tesla_t<long double> operator""_pT(long double value) {
   return pico_tesla_t<long double>{value};
 }
 
-constexpr auto operator""_nT(long double value) {
+constexpr nano_tesla_t<long double> operator""_nT(long double value) {
   return nano_tesla_t<long double>{value};
 }
 
-constexpr auto operator""_uT(long double value) {
+constexpr micro_tesla_t<long double> operator""_uT(long double value) {
   return micro_tesla_t<long double>{value};
 }
 
-constexpr auto operator""_mT(long double value) {
+constexpr milli_tesla_t<long double> operator""_mT(long double value) {
   return milli_tesla_t<long double>{value};
 }
 
-constexpr auto operator""_T(long double value) {
+constexpr tesla_t<long double> operator""_T(long double value) {
   return tesla_t<long double>{value};
 }
 
-constexpr auto operator""_kT(long double value) {
+constexpr kilo_tesla_t<long double> operator""_kT(long double value) {
   return kilo_tesla_t<long double>{value};
 }
 
-constexpr auto operator""_MT(long double value) {
+constexpr mega_tesla_t<long double> operator""_MT(long double value) {
   return mega_tesla_t<long double>{value};
 }
 
-constexpr auto operator""_GT(long double value) {
+constexpr giga_tesla_t<long double> operator""_GT(long double value) {
   return giga_tesla_t<long double>{value};
 }
 
-constexpr auto operator""_TT(long double value) {
+constexpr tera_tesla_t<long double> operator""_TT(long double value) {
   return tera_tesla_t<long double>{value};
 }
 
-constexpr auto operator""_PT(long double value) {
+constexpr peta_tesla_t<long double> operator""_PT(long double value) {
   return peta_tesla_t<long double>{value};
 }
 
-constexpr auto operator""_ET(long double value) {
+constexpr exa_tesla_t<long double> operator""_ET(long double value) {
   return exa_tesla_t<long double>{value};
 }
 

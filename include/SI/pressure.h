@@ -31,110 +31,110 @@ BUILD_UNIT_FROM_DIVISON(pressure_t, force_t, area_t)
 }
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_apa() {
+template <char... _Digits> constexpr atto_pascal_t<int64_t> operator""_apa() {
   return atto_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fpa() {
+template <char... _Digits> constexpr femto_pascal_t<int64_t> operator""_fpa() {
   return femto_pascal_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_ppa() {
+template <char... _Digits> constexpr pico_pascal_t<int64_t> operator""_ppa() {
   return pico_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_npa() {
+template <char... _Digits> constexpr nano_pascal_t<int64_t> operator""_npa() {
   return nano_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_upa() {
+template <char... _Digits> constexpr micro_pascal_t<int64_t> operator""_upa() {
   return micro_pascal_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mpa() {
+template <char... _Digits> constexpr milli_pascal_t<int64_t> operator""_mpa() {
   return milli_pascal_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pa() {
+template <char... _Digits> constexpr pascal_t<int64_t> operator""_pa() {
   return pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kpa() {
+template <char... _Digits> constexpr kilo_pascal_t<int64_t> operator""_kpa() {
   return kilo_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Mpa() {
+template <char... _Digits> constexpr mega_pascal_t<int64_t> operator""_Mpa() {
   return mega_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Gpa() {
+template <char... _Digits> constexpr giga_pascal_t<int64_t> operator""_Gpa() {
   return giga_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Tpa() {
+template <char... _Digits> constexpr tera_pascal_t<int64_t> operator""_Tpa() {
   return tera_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Ppa() {
+template <char... _Digits> constexpr peta_pascal_t<int64_t> operator""_Ppa() {
   return peta_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Epa() {
+template <char... _Digits> constexpr exa_pascal_t<int64_t> operator""_Epa() {
   return exa_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_apa(long double value) {
+constexpr atto_pascal_t<long double> operator""_apa(long double value) {
   return atto_pascal_t<long double>{value};
 }
 
-constexpr auto operator""_fpa(long double value) {
+constexpr femto_pascal_t<long double> operator""_fpa(long double value) {
   return femto_pascal_t<long double>{value};
 }
 
-constexpr auto operator""_ppa(long double value) {
+constexpr pico_pascal_t<long double> operator""_ppa(long double value) {
   return pico_pascal_t<long double>{value};
 }
 
-constexpr auto operator""_npa(long double value) {
+constexpr nano_pascal_t<long double> operator""_npa(long double value) {
   return nano_pascal_t<long double>{value};
 }
 
-constexpr auto operator""_upa(long double value) {
+constexpr micro_pascal_t<long double> operator""_upa(long double value) {
   return micro_pascal_t<long double>{value};
 }
 
-constexpr auto operator""_mpa(long double value) {
+constexpr milli_pascal_t<long double> operator""_mpa(long double value) {
   return milli_pascal_t<long double>{value};
 }
 
-constexpr auto operator""_pa(long double value) {
+constexpr pascal_t<long double> operator""_pa(long double value) {
   return pascal_t<long double>{value};
 }
 
-constexpr auto operator""_kpa(long double value) {
+constexpr kilo_pascal_t<long double> operator""_kpa(long double value) {
   return kilo_pascal_t<long double>{value};
 }
 
-constexpr auto operator""_Mpa(long double value) {
+constexpr mega_pascal_t<long double> operator""_Mpa(long double value) {
   return mega_pascal_t<long double>{value};
 }
 
-constexpr auto operator""_Gpa(long double value) {
+constexpr giga_pascal_t<long double> operator""_Gpa(long double value) {
   return giga_pascal_t<long double>{value};
 }
 
-constexpr auto operator""_Tpa(long double value) {
+constexpr tera_pascal_t<long double> operator""_Tpa(long double value) {
   return tera_pascal_t<long double>{value};
 }
 
-constexpr auto operator""_Ppa(long double value) {
+constexpr peta_pascal_t<long double> operator""_Ppa(long double value) {
   return peta_pascal_t<long double>{value};
 }
 
-constexpr auto operator""_Epa(long double value) {
+constexpr exa_pascal_t<long double> operator""_Epa(long double value) {
   return exa_pascal_t<long double>{value};
 }
 

@@ -30,107 +30,107 @@ BUILD_UNIT_FROM_DIVISON(inductance_t, magnetic_flux_t, electric_current_t)
 } // namespace detail
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_aH() {
+template <char... _Digits> constexpr atto_henry_t<int64_t> operator""_aH() {
   return atto_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fH() {
+template <char... _Digits> constexpr femto_henry_t<int64_t> operator""_fH() {
   return femto_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pH() {
+template <char... _Digits> constexpr pico_henry_t<int64_t> operator""_pH() {
   return pico_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nH() {
+template <char... _Digits> constexpr nano_henry_t<int64_t> operator""_nH() {
   return nano_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_uH() {
+template <char... _Digits> constexpr micro_henry_t<int64_t> operator""_uH() {
   return micro_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mH() {
+template <char... _Digits> constexpr milli_henry_t<int64_t> operator""_mH() {
   return milli_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_H() {
+template <char... _Digits> constexpr henry_t<int64_t> operator""_H() {
   return henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kH() {
+template <char... _Digits> constexpr kilo_henry_t<int64_t> operator""_kH() {
   return kilo_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_MH() {
+template <char... _Digits> constexpr mega_henry_t<int64_t> operator""_MH() {
   return mega_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_GH() {
+template <char... _Digits> constexpr giga_henry_t<int64_t> operator""_GH() {
   return giga_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_TH() {
+template <char... _Digits> constexpr tera_henry_t<int64_t> operator""_TH() {
   return tera_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_PH() {
+template <char... _Digits> constexpr peta_henry_t<int64_t> operator""_PH() {
   return peta_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_EH() {
+template <char... _Digits> constexpr exa_henry_t<int64_t> operator""_EH() {
   return exa_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_aH(long double value) {
+constexpr atto_henry_t<long double> operator""_aH(long double value) {
   return atto_henry_t<long double>{value};
 }
 
-constexpr auto operator""_fH(long double value) {
+constexpr femto_henry_t<long double> operator""_fH(long double value) {
   return femto_henry_t<long double>{value};
 }
 
-constexpr auto operator""_pH(long double value) {
+constexpr pico_henry_t<long double> operator""_pH(long double value) {
   return pico_henry_t<long double>{value};
 }
 
-constexpr auto operator""_nH(long double value) {
+constexpr nano_henry_t<long double> operator""_nH(long double value) {
   return nano_henry_t<long double>{value};
 }
 
-constexpr auto operator""_uH(long double value) {
+constexpr micro_henry_t<long double> operator""_uH(long double value) {
   return micro_henry_t<long double>{value};
 }
 
-constexpr auto operator""_mH(long double value) {
+constexpr milli_henry_t<long double> operator""_mH(long double value) {
   return milli_henry_t<long double>{value};
 }
 
-constexpr auto operator""_H(long double value) {
+constexpr henry_t<long double> operator""_H(long double value) {
   return henry_t<long double>{value};
 }
 
-constexpr auto operator""_kH(long double value) {
+constexpr kilo_henry_t<long double> operator""_kH(long double value) {
   return kilo_henry_t<long double>{value};
 }
 
-constexpr auto operator""_MH(long double value) {
+constexpr mega_henry_t<long double> operator""_MH(long double value) {
   return mega_henry_t<long double>{value};
 }
 
-constexpr auto operator""_GH(long double value) {
+constexpr giga_henry_t<long double> operator""_GH(long double value) {
   return giga_henry_t<long double>{value};
 }
 
-constexpr auto operator""_TH(long double value) {
+constexpr tera_henry_t<long double> operator""_TH(long double value) {
   return tera_henry_t<long double>{value};
 }
 
-constexpr auto operator""_PH(long double value) {
+constexpr peta_henry_t<long double> operator""_PH(long double value) {
   return peta_henry_t<long double>{value};
 }
 
-constexpr auto operator""_EH(long double value) {
+constexpr exa_henry_t<long double> operator""_EH(long double value) {
   return exa_henry_t<long double>{value};
 }
 

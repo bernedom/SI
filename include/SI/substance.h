@@ -23,107 +23,107 @@ template <typename _Type> using exa_mol_t = substance_t<_Type, std::exa>;
 
 inline namespace literals {
 
-template <char... _Digits> constexpr auto operator""_amol() {
+template <char... _Digits> constexpr atto_mol_t<int64_t> operator""_amol() {
   return atto_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fmol() {
+template <char... _Digits> constexpr femto_mol_t<int64_t> operator""_fmol() {
   return femto_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pmol() {
+template <char... _Digits> constexpr pico_mol_t<int64_t> operator""_pmol() {
   return pico_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nmol() {
+template <char... _Digits> constexpr nano_mol_t<int64_t> operator""_nmol() {
   return nano_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_umol() {
+template <char... _Digits> constexpr micro_mol_t<int64_t> operator""_umol() {
   return micro_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mmol() {
+template <char... _Digits> constexpr milli_mol_t<int64_t> operator""_mmol() {
   return milli_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mol() {
+template <char... _Digits> constexpr mol_t<int64_t> operator""_mol() {
   return mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kmol() {
+template <char... _Digits> constexpr kilo_mol_t<int64_t> operator""_kmol() {
   return kilo_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Mmol() {
+template <char... _Digits> constexpr mega_mol_t<int64_t> operator""_Mmol() {
   return mega_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Gmol() {
+template <char... _Digits> constexpr giga_mol_t<int64_t> operator""_Gmol() {
   return giga_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Tmol() {
+template <char... _Digits> constexpr tera_mol_t<int64_t> operator""_Tmol() {
   return tera_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Pmol() {
+template <char... _Digits> constexpr peta_mol_t<int64_t> operator""_Pmol() {
   return peta_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Emol() {
+template <char... _Digits> constexpr exa_mol_t<int64_t> operator""_Emol() {
   return exa_mol_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_amol(long double value) {
+constexpr atto_mol_t<long double> operator""_amol(long double value) {
   return atto_mol_t<long double>{value};
 }
 
-constexpr auto operator""_fmol(long double value) {
+constexpr femto_mol_t<long double> operator""_fmol(long double value) {
   return femto_mol_t<long double>{value};
 }
 
-constexpr auto operator""_pmol(long double value) {
+constexpr pico_mol_t<long double> operator""_pmol(long double value) {
   return pico_mol_t<long double>{value};
 }
 
-constexpr auto operator""_nmol(long double value) {
+constexpr nano_mol_t<long double> operator""_nmol(long double value) {
   return nano_mol_t<long double>{value};
 }
 
-constexpr auto operator""_umol(long double value) {
+constexpr micro_mol_t<long double> operator""_umol(long double value) {
   return micro_mol_t<long double>{value};
 }
 
-constexpr auto operator""_mmol(long double value) {
+constexpr milli_mol_t<long double> operator""_mmol(long double value) {
   return milli_mol_t<long double>{value};
 }
 
-constexpr auto operator""_mol(long double value) {
+constexpr mol_t<long double> operator""_mol(long double value) {
   return mol_t<long double>{value};
 }
 
-constexpr auto operator""_kmol(long double value) {
+constexpr kilo_mol_t<long double> operator""_kmol(long double value) {
   return kilo_mol_t<long double>{value};
 }
 
-constexpr auto operator""_Mmol(long double value) {
+constexpr mega_mol_t<long double> operator""_Mmol(long double value) {
   return mega_mol_t<long double>{value};
 }
 
-constexpr auto operator""_Gmol(long double value) {
+constexpr giga_mol_t<long double> operator""_Gmol(long double value) {
   return giga_mol_t<long double>{value};
 }
 
-constexpr auto operator""_Tmol(long double value) {
+constexpr tera_mol_t<long double> operator""_Tmol(long double value) {
   return tera_mol_t<long double>{value};
 }
 
-constexpr auto operator""_Pmol(long double value) {
+constexpr peta_mol_t<long double> operator""_Pmol(long double value) {
   return peta_mol_t<long double>{value};
 }
 
-constexpr auto operator""_Emol(long double value) {
+constexpr exa_mol_t<long double> operator""_Emol(long double value) {
   return exa_mol_t<long double>{value};
 }
 

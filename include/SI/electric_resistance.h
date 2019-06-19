@@ -45,107 +45,107 @@ BUILD_UNIT_FROM_DIVISON(electric_resistance_t, electric_potential_t,
 } // namespace detail
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_aOhm() {
+template <char... _Digits> constexpr atto_ohm_t<int64_t> operator""_aOhm() {
   return atto_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fOhm() {
+template <char... _Digits> constexpr femto_ohm_t<int64_t> operator""_fOhm() {
   return femto_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pOhm() {
+template <char... _Digits> constexpr pico_ohm_t<int64_t> operator""_pOhm() {
   return pico_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nOhm() {
+template <char... _Digits> constexpr nano_ohm_t<int64_t> operator""_nOhm() {
   return nano_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_uOhm() {
+template <char... _Digits> constexpr micro_ohm_t<int64_t> operator""_uOhm() {
   return micro_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mOhm() {
+template <char... _Digits> constexpr milli_ohm_t<int64_t> operator""_mOhm() {
   return milli_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Ohm() {
+template <char... _Digits> constexpr ohm_t<int64_t> operator""_Ohm() {
   return ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kOhm() {
+template <char... _Digits> constexpr kilo_ohm_t<int64_t> operator""_kOhm() {
   return kilo_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_MOhm() {
+template <char... _Digits> constexpr mega_ohm_t<int64_t> operator""_MOhm() {
   return mega_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_GOhm() {
+template <char... _Digits> constexpr giga_ohm_t<int64_t> operator""_GOhm() {
   return giga_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_TOhm() {
+template <char... _Digits> constexpr tera_ohm_t<int64_t> operator""_TOhm() {
   return tera_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_POhm() {
+template <char... _Digits> constexpr peta_ohm_t<int64_t> operator""_POhm() {
   return peta_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_EOhm() {
+template <char... _Digits> constexpr exa_ohm_t<int64_t> operator""_EOhm() {
   return exa_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_aOhm(long double value) {
+constexpr atto_ohm_t<long double> operator""_aOhm(long double value) {
   return atto_ohm_t<long double>{value};
 }
 
-constexpr auto operator""_fOhm(long double value) {
+constexpr femto_ohm_t<long double> operator""_fOhm(long double value) {
   return femto_ohm_t<long double>{value};
 }
 
-constexpr auto operator""_pOhm(long double value) {
+constexpr pico_ohm_t<long double> operator""_pOhm(long double value) {
   return pico_ohm_t<long double>{value};
 }
 
-constexpr auto operator""_nOhm(long double value) {
+constexpr nano_ohm_t<long double> operator""_nOhm(long double value) {
   return nano_ohm_t<long double>{value};
 }
 
-constexpr auto operator""_uOhm(long double value) {
+constexpr micro_ohm_t<long double> operator""_uOhm(long double value) {
   return micro_ohm_t<long double>{value};
 }
 
-constexpr auto operator""_mOhm(long double value) {
+constexpr milli_ohm_t<long double> operator""_mOhm(long double value) {
   return milli_ohm_t<long double>{value};
 }
 
-constexpr auto operator""_Ohm(long double value) {
+constexpr ohm_t<long double> operator""_Ohm(long double value) {
   return ohm_t<long double>{value};
 }
 
-constexpr auto operator""_kOhm(long double value) {
+constexpr kilo_ohm_t<long double> operator""_kOhm(long double value) {
   return kilo_ohm_t<long double>{value};
 }
 
-constexpr auto operator""_MOhm(long double value) {
+constexpr mega_ohm_t<long double> operator""_MOhm(long double value) {
   return mega_ohm_t<long double>{value};
 }
 
-constexpr auto operator""_GOhm(long double value) {
+constexpr giga_ohm_t<long double> operator""_GOhm(long double value) {
   return giga_ohm_t<long double>{value};
 }
 
-constexpr auto operator""_TOhm(long double value) {
+constexpr tera_ohm_t<long double> operator""_TOhm(long double value) {
   return tera_ohm_t<long double>{value};
 }
 
-constexpr auto operator""_POhm(long double value) {
+constexpr peta_ohm_t<long double> operator""_POhm(long double value) {
   return peta_ohm_t<long double>{value};
 }
 
-constexpr auto operator""_EOhm(long double value) {
+constexpr exa_ohm_t<long double> operator""_EOhm(long double value) {
   return exa_ohm_t<long double>{value};
 }
 

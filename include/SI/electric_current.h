@@ -37,110 +37,110 @@ using exa_ampere_t = electric_current_t<_Type, std::exa>;
 
 inline namespace literals {
 
-template <char... _Digits> constexpr auto operator""_aA() {
+template <char... _Digits> constexpr atto_ampere_t<int64_t> operator""_aA() {
   return atto_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fA() {
+template <char... _Digits> constexpr femto_ampere_t<int64_t> operator""_fA() {
   return femto_ampere_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pA() {
+template <char... _Digits> constexpr pico_ampere_t<int64_t> operator""_pA() {
   return pico_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nA() {
+template <char... _Digits> constexpr nano_ampere_t<int64_t> operator""_nA() {
   return nano_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_uA() {
+template <char... _Digits> constexpr micro_ampere_t<int64_t> operator""_uA() {
   return micro_ampere_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mA() {
+template <char... _Digits> constexpr milli_ampere_t<int64_t> operator""_mA() {
   return milli_ampere_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_A() {
+template <char... _Digits> constexpr ampere_t<int64_t> operator""_A() {
   return ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kA() {
+template <char... _Digits> constexpr kilo_ampere_t<int64_t> operator""_kA() {
   return kilo_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_MA() {
+template <char... _Digits> constexpr mega_ampere_t<int64_t> operator""_MA() {
   return mega_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_GA() {
+template <char... _Digits> constexpr giga_ampere_t<int64_t> operator""_GA() {
   return giga_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_TA() {
+template <char... _Digits> constexpr tera_ampere_t<int64_t> operator""_TA() {
   return tera_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_PA() {
+template <char... _Digits> constexpr peta_ampere_t<int64_t> operator""_PA() {
   return peta_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_EA() {
+template <char... _Digits> constexpr exa_ampere_t<int64_t> operator""_EA() {
   return exa_ampere_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_aA(long double value) {
+constexpr atto_ampere_t<long double> operator""_aA(long double value) {
   return atto_ampere_t<long double>{value};
 }
 
-constexpr auto operator""_fA(long double value) {
+constexpr femto_ampere_t<long double> operator""_fA(long double value) {
   return femto_ampere_t<long double>{value};
 }
 
-constexpr auto operator""_pA(long double value) {
+constexpr pico_ampere_t<long double> operator""_pA(long double value) {
   return pico_ampere_t<long double>{value};
 }
 
-constexpr auto operator""_nA(long double value) {
+constexpr nano_ampere_t<long double> operator""_nA(long double value) {
   return nano_ampere_t<long double>{value};
 }
 
-constexpr auto operator""_uA(long double value) {
+constexpr micro_ampere_t<long double> operator""_uA(long double value) {
   return micro_ampere_t<long double>{value};
 }
 
-constexpr auto operator""_mA(long double value) {
+constexpr milli_ampere_t<long double> operator""_mA(long double value) {
   return milli_ampere_t<long double>{value};
 }
 
-constexpr auto operator""_A(long double value) {
+constexpr ampere_t<long double> operator""_A(long double value) {
   return ampere_t<long double>{value};
 }
 
-constexpr auto operator""_kA(long double value) {
+constexpr kilo_ampere_t<long double> operator""_kA(long double value) {
   return kilo_ampere_t<long double>{value};
 }
 
-constexpr auto operator""_MA(long double value) {
+constexpr mega_ampere_t<long double> operator""_MA(long double value) {
   return mega_ampere_t<long double>{value};
 }
 
-constexpr auto operator""_GA(long double value) {
+constexpr giga_ampere_t<long double> operator""_GA(long double value) {
   return giga_ampere_t<long double>{value};
 }
 
-constexpr auto operator""_TA(long double value) {
+constexpr tera_ampere_t<long double> operator""_TA(long double value) {
   return tera_ampere_t<long double>{value};
 }
 
-constexpr auto operator""_PA(long double value) {
+constexpr peta_ampere_t<long double> operator""_PA(long double value) {
   return peta_ampere_t<long double>{value};
 }
 
-constexpr auto operator""_EA(long double value) {
+constexpr exa_ampere_t<long double> operator""_EA(long double value) {
   return exa_ampere_t<long double>{value};
 }
 

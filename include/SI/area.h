@@ -25,56 +25,56 @@ template <typename _Type>
 using cubic_milli_meter_t = volume_t<_Type, std::nano>;
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_m2() {
+template <char... _Digits> constexpr square_meter_t<int64_t> operator""_m2() {
   return square_meter_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator"" _m2(long double m) {
+constexpr square_meter_t<long double> operator"" _m2(long double m) {
   return square_meter_t<long double>(m);
 }
 
-template <char... _Digits> constexpr auto operator""_cm2() {
+template <char... _Digits> constexpr square_centi_meter_t<int64_t> operator""_cm2() {
   return square_centi_meter_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator"" _cm2(long double cm) {
+constexpr square_centi_meter_t<long double> operator"" _cm2(long double cm) {
   return square_centi_meter_t<long double>(cm);
 }
 
-template <char... _Digits> constexpr auto operator""_mm2() {
+template <char... _Digits> constexpr square_milli_meter_t<int64_t> operator""_mm2() {
   return square_milli_meter_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator"" _mm2(long double mm) {
+constexpr square_milli_meter_t<long double> operator"" _mm2(long double mm) {
   return square_milli_meter_t<long double>(mm);
 }
 
-template <char... _Digits> constexpr auto operator""_m3() {
+template <char... _Digits> constexpr cubic_meter_t<int64_t> operator""_m3() {
   return cubic_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator"" _m3(long double m) {
+constexpr cubic_meter_t<long double> operator"" _m3(long double m) {
   return cubic_meter_t<long double>(m);
 }
 
-template <char... _Digits> constexpr auto operator""_cm3() {
+template <char... _Digits> constexpr cubic_centi_meter_t<int64_t> operator""_cm3() {
   return cubic_centi_meter_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator"" _cm3(long double cm) {
+constexpr cubic_centi_meter_t<long double> operator"" _cm3(long double cm) {
   return cubic_centi_meter_t<long double>(cm);
 }
 
-template <char... _Digits> constexpr auto operator""_mm3() {
+template <char... _Digits> constexpr cubic_milli_meter_t<int64_t> operator""_mm3() {
   return cubic_milli_meter_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator"" _mm3(long double mm) {
+constexpr cubic_milli_meter_t<long double> operator"" _mm3(long double mm) {
   return cubic_milli_meter_t<long double>(mm);
 }
 

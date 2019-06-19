@@ -30,107 +30,107 @@ BUILD_UNIT_FROM_DIVISON(illuminance_t, luminous_flux_t, area_t)
 } // namespace detail
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_alx() {
+template <char... _Digits> constexpr atto_lux_t<int64_t> operator""_alx() {
   return atto_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_flx() {
+template <char... _Digits> constexpr femto_lux_t<int64_t> operator""_flx() {
   return femto_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_plx() {
+template <char... _Digits> constexpr pico_lux_t<int64_t> operator""_plx() {
   return pico_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nlx() {
+template <char... _Digits> constexpr nano_lux_t<int64_t> operator""_nlx() {
   return nano_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_ulx() {
+template <char... _Digits> constexpr micro_lux_t<int64_t> operator""_ulx() {
   return micro_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mlx() {
+template <char... _Digits> constexpr milli_lux_t<int64_t> operator""_mlx() {
   return milli_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_lx() {
+template <char... _Digits> constexpr lux_t<int64_t> operator""_lx() {
   return lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_klx() {
+template <char... _Digits> constexpr kilo_lux_t<int64_t> operator""_klx() {
   return kilo_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Mlx() {
+template <char... _Digits> constexpr mega_lux_t<int64_t> operator""_Mlx() {
   return mega_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Glx() {
+template <char... _Digits> constexpr giga_lux_t<int64_t> operator""_Glx() {
   return giga_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Tlx() {
+template <char... _Digits> constexpr tera_lux_t<int64_t> operator""_Tlx() {
   return tera_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Plx() {
+template <char... _Digits> constexpr peta_lux_t<int64_t> operator""_Plx() {
   return peta_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Elx() {
+template <char... _Digits> constexpr exa_lux_t<int64_t> operator""_Elx() {
   return exa_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_alx(long double value) {
+constexpr atto_lux_t<long double> operator""_alx(long double value) {
   return atto_lux_t<long double>{value};
 }
 
-constexpr auto operator""_flx(long double value) {
+constexpr femto_lux_t<long double> operator""_flx(long double value) {
   return femto_lux_t<long double>{value};
 }
 
-constexpr auto operator""_plx(long double value) {
+constexpr pico_lux_t<long double> operator""_plx(long double value) {
   return pico_lux_t<long double>{value};
 }
 
-constexpr auto operator""_nlx(long double value) {
+constexpr nano_lux_t<long double> operator""_nlx(long double value) {
   return nano_lux_t<long double>{value};
 }
 
-constexpr auto operator""_ulx(long double value) {
+constexpr micro_lux_t<long double> operator""_ulx(long double value) {
   return micro_lux_t<long double>{value};
 }
 
-constexpr auto operator""_mlx(long double value) {
+constexpr milli_lux_t<long double> operator""_mlx(long double value) {
   return milli_lux_t<long double>{value};
 }
 
-constexpr auto operator""_lx(long double value) {
+constexpr lux_t<long double> operator""_lx(long double value) {
   return lux_t<long double>{value};
 }
 
-constexpr auto operator""_klx(long double value) {
+constexpr kilo_lux_t<long double> operator""_klx(long double value) {
   return kilo_lux_t<long double>{value};
 }
 
-constexpr auto operator""_Mlx(long double value) {
+constexpr mega_lux_t<long double> operator""_Mlx(long double value) {
   return mega_lux_t<long double>{value};
 }
 
-constexpr auto operator""_Glx(long double value) {
+constexpr giga_lux_t<long double> operator""_Glx(long double value) {
   return giga_lux_t<long double>{value};
 }
 
-constexpr auto operator""_Tlx(long double value) {
+constexpr tera_lux_t<long double> operator""_Tlx(long double value) {
   return tera_lux_t<long double>{value};
 }
 
-constexpr auto operator""_Plx(long double value) {
+constexpr peta_lux_t<long double> operator""_Plx(long double value) {
   return peta_lux_t<long double>{value};
 }
 
-constexpr auto operator""_Elx(long double value) {
+constexpr exa_lux_t<long double> operator""_Elx(long double value) {
   return exa_lux_t<long double>{value};
 }
 

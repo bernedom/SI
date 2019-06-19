@@ -39,119 +39,119 @@ template <typename _Type>
 using exa_becquerel_t = radioactivity_t<_Type, std::exa>;
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_aBq() {
+template <char... _Digits> constexpr atto_becquerel_t<int64_t> operator""_aBq() {
   return atto_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fBq() {
+template <char... _Digits> constexpr femto_becquerel_t<int64_t> operator""_fBq() {
   return femto_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pBq() {
+template <char... _Digits> constexpr pico_becquerel_t<int64_t> operator""_pBq() {
   return pico_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nBq() {
+template <char... _Digits> constexpr nano_becquerel_t<int64_t> operator""_nBq() {
   return nano_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_uBq() {
+template <char... _Digits> constexpr micro_becquerel_t<int64_t> operator""_uBq() {
   return micro_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mBq() {
+template <char... _Digits> constexpr milli_becquerel_t<int64_t> operator""_mBq() {
   return milli_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Bq() {
+template <char... _Digits> constexpr becquerel_t<int64_t> operator""_Bq() {
   return becquerel_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kBq() {
+template <char... _Digits> constexpr kilo_becquerel_t<int64_t> operator""_kBq() {
   return kilo_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_MBq() {
+template <char... _Digits> constexpr mega_becquerel_t<int64_t> operator""_MBq() {
   return mega_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_GBq() {
+template <char... _Digits> constexpr giga_becquerel_t<int64_t> operator""_GBq() {
   return giga_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_TBq() {
+template <char... _Digits> constexpr tera_becquerel_t<int64_t> operator""_TBq() {
   return tera_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_PBq() {
+template <char... _Digits> constexpr peta_becquerel_t<int64_t> operator""_PBq() {
   return peta_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_EBq() {
+template <char... _Digits> constexpr exa_becquerel_t<int64_t> operator""_EBq() {
   return exa_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_aBq(long double value) {
+constexpr atto_becquerel_t<long double> operator""_aBq(long double value) {
   return atto_becquerel_t<long double>{value};
 }
 
-constexpr auto operator""_fBq(long double value) {
+constexpr femto_becquerel_t<long double> operator""_fBq(long double value) {
   return femto_becquerel_t<long double>{value};
 }
 
-constexpr auto operator""_pBq(long double value) {
+constexpr pico_becquerel_t<long double> operator""_pBq(long double value) {
   return pico_becquerel_t<long double>{value};
 }
 
-constexpr auto operator""_nBq(long double value) {
+constexpr nano_becquerel_t<long double> operator""_nBq(long double value) {
   return nano_becquerel_t<long double>{value};
 }
 
-constexpr auto operator""_uBq(long double value) {
+constexpr micro_becquerel_t<long double> operator""_uBq(long double value) {
   return micro_becquerel_t<long double>{value};
 }
 
-constexpr auto operator""_mBq(long double value) {
+constexpr milli_becquerel_t<long double> operator""_mBq(long double value) {
   return milli_becquerel_t<long double>{value};
 }
 
-constexpr auto operator""_Bq(long double value) {
+constexpr becquerel_t<long double> operator""_Bq(long double value) {
   return becquerel_t<long double>{value};
 }
 
-constexpr auto operator""_kBq(long double value) {
+constexpr kilo_becquerel_t<long double> operator""_kBq(long double value) {
   return kilo_becquerel_t<long double>{value};
 }
 
-constexpr auto operator""_MBq(long double value) {
+constexpr mega_becquerel_t<long double> operator""_MBq(long double value) {
   return mega_becquerel_t<long double>{value};
 }
 
-constexpr auto operator""_GBq(long double value) {
+constexpr giga_becquerel_t<long double> operator""_GBq(long double value) {
   return giga_becquerel_t<long double>{value};
 }
 
-constexpr auto operator""_TBq(long double value) {
+constexpr tera_becquerel_t<long double> operator""_TBq(long double value) {
   return tera_becquerel_t<long double>{value};
 }
 
-constexpr auto operator""_PBq(long double value) {
+constexpr peta_becquerel_t<long double> operator""_PBq(long double value) {
   return peta_becquerel_t<long double>{value};
 }
 
-constexpr auto operator""_EBq(long double value) {
+constexpr exa_becquerel_t<long double> operator""_EBq(long double value) {
   return exa_becquerel_t<long double>{value};
 }
 

@@ -27,65 +27,65 @@ using sterradiant_t = solid_angle_t<_Type, std::ratio<1>>;
 
 inline namespace literals {
 
-template <char... _Digits> constexpr auto operator""_asr() {
+template <char... _Digits> constexpr atto_sterradiant_t<int64_t> operator""_asr() {
   return atto_sterradiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fsr() {
+template <char... _Digits> constexpr femto_sterradiant_t<int64_t> operator""_fsr() {
   return femto_sterradiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_psr() {
+template <char... _Digits> constexpr pico_sterradiant_t<int64_t> operator""_psr() {
   return pico_sterradiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nsr() {
+template <char... _Digits> constexpr nano_sterradiant_t<int64_t> operator""_nsr() {
   return nano_sterradiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_usr() {
+template <char... _Digits> constexpr micro_sterradiant_t<int64_t> operator""_usr() {
   return micro_sterradiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_msr() {
+template <char... _Digits> constexpr milli_sterradiant_t<int64_t> operator""_msr() {
   return milli_sterradiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_sr() {
+template <char... _Digits> constexpr sterradiant_t<int64_t> operator""_sr() {
   return sterradiant_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_asr(long double value) {
+constexpr atto_sterradiant_t<long double> operator""_asr(long double value) {
   return atto_sterradiant_t<long double>{value};
 }
 
-constexpr auto operator""_fsr(long double value) {
+constexpr femto_sterradiant_t<long double> operator""_fsr(long double value) {
   return femto_sterradiant_t<long double>{value};
 }
 
-constexpr auto operator""_psr(long double value) {
+constexpr pico_sterradiant_t<long double> operator""_psr(long double value) {
   return pico_sterradiant_t<long double>{value};
 }
 
-constexpr auto operator""_nsr(long double value) {
+constexpr nano_sterradiant_t<long double> operator""_nsr(long double value) {
   return nano_sterradiant_t<long double>{value};
 }
 
-constexpr auto operator""_usr(long double value) {
+constexpr micro_sterradiant_t<long double> operator""_usr(long double value) {
   return micro_sterradiant_t<long double>{value};
 }
 
-constexpr auto operator""_msr(long double value) {
+constexpr milli_sterradiant_t<long double> operator""_msr(long double value) {
   return milli_sterradiant_t<long double>{value};
 }
 
-constexpr auto operator""_sr(long double value) {
+constexpr sterradiant_t<long double> operator""_sr(long double value) {
   return sterradiant_t<long double>{value};
 }
 

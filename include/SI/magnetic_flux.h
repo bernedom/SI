@@ -43,107 +43,107 @@ BUILD_UNIT_FROM_MULTIPLICATION(magnetic_flux_t, electric_potential_t, time_t)
 }
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_aWb() {
+template <char... _Digits> constexpr atto_weber_t<int64_t> operator""_aWb() {
   return atto_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fWb() {
+template <char... _Digits> constexpr femto_weber_t<int64_t> operator""_fWb() {
   return femto_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pWb() {
+template <char... _Digits> constexpr pico_weber_t<int64_t> operator""_pWb() {
   return pico_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nWb() {
+template <char... _Digits> constexpr nano_weber_t<int64_t> operator""_nWb() {
   return nano_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_uWb() {
+template <char... _Digits> constexpr micro_weber_t<int64_t> operator""_uWb() {
   return micro_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mWb() {
+template <char... _Digits> constexpr milli_weber_t<int64_t> operator""_mWb() {
   return milli_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Wb() {
+template <char... _Digits> constexpr weber_t<int64_t> operator""_Wb() {
   return weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kWb() {
+template <char... _Digits> constexpr kilo_weber_t<int64_t> operator""_kWb() {
   return kilo_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_MWb() {
+template <char... _Digits> constexpr mega_weber_t<int64_t> operator""_MWb() {
   return mega_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_GWb() {
+template <char... _Digits> constexpr giga_weber_t<int64_t> operator""_GWb() {
   return giga_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_TWb() {
+template <char... _Digits> constexpr tera_weber_t<int64_t> operator""_TWb() {
   return tera_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_PWb() {
+template <char... _Digits> constexpr peta_weber_t<int64_t> operator""_PWb() {
   return peta_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_EWb() {
+template <char... _Digits> constexpr exa_weber_t<int64_t> operator""_EWb() {
   return exa_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_aWb(long double value) {
+constexpr atto_weber_t<long double> operator""_aWb(long double value) {
   return atto_weber_t<long double>{value};
 }
 
-constexpr auto operator""_fWb(long double value) {
+constexpr femto_weber_t<long double> operator""_fWb(long double value) {
   return femto_weber_t<long double>{value};
 }
 
-constexpr auto operator""_pWb(long double value) {
+constexpr pico_weber_t<long double> operator""_pWb(long double value) {
   return pico_weber_t<long double>{value};
 }
 
-constexpr auto operator""_nWb(long double value) {
+constexpr nano_weber_t<long double> operator""_nWb(long double value) {
   return nano_weber_t<long double>{value};
 }
 
-constexpr auto operator""_uWb(long double value) {
+constexpr micro_weber_t<long double> operator""_uWb(long double value) {
   return micro_weber_t<long double>{value};
 }
 
-constexpr auto operator""_mWb(long double value) {
+constexpr milli_weber_t<long double> operator""_mWb(long double value) {
   return milli_weber_t<long double>{value};
 }
 
-constexpr auto operator""_Wb(long double value) {
+constexpr weber_t<long double> operator""_Wb(long double value) {
   return weber_t<long double>{value};
 }
 
-constexpr auto operator""_kWb(long double value) {
+constexpr kilo_weber_t<long double> operator""_kWb(long double value) {
   return kilo_weber_t<long double>{value};
 }
 
-constexpr auto operator""_MWb(long double value) {
+constexpr mega_weber_t<long double> operator""_MWb(long double value) {
   return mega_weber_t<long double>{value};
 }
 
-constexpr auto operator""_GWb(long double value) {
+constexpr giga_weber_t<long double> operator""_GWb(long double value) {
   return giga_weber_t<long double>{value};
 }
 
-constexpr auto operator""_TWb(long double value) {
+constexpr tera_weber_t<long double> operator""_TWb(long double value) {
   return tera_weber_t<long double>{value};
 }
 
-constexpr auto operator""_PWb(long double value) {
+constexpr peta_weber_t<long double> operator""_PWb(long double value) {
   return peta_weber_t<long double>{value};
 }
 
-constexpr auto operator""_EWb(long double value) {
+constexpr exa_weber_t<long double> operator""_EWb(long double value) {
   return exa_weber_t<long double>{value};
 }
 

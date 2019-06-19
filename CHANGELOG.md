@@ -2,6 +2,7 @@
 
 # master - unreleased
 
+* Literal operators return explicit return types instead of auto
 * Removed indirection for overflow check when parsing ints
 * Fixed typo of luminosity unit from candea -> candela
 

@@ -27,118 +27,118 @@ template <typename _Type> using exa_candela_t = luminosity_t<_Type, std::exa>;
 
 inline namespace literals {
 
-template <char... _Digits> constexpr auto operator""_acd() {
+template <char... _Digits> constexpr atto_candela_t<int64_t> operator""_acd() {
   return atto_candela_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fcd() {
+template <char... _Digits> constexpr femto_candela_t<int64_t> operator""_fcd() {
   return femto_candela_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pcd() {
+template <char... _Digits> constexpr pico_candela_t<int64_t> operator""_pcd() {
   return pico_candela_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_ncd() {
+template <char... _Digits> constexpr nano_candela_t<int64_t> operator""_ncd() {
   return nano_candela_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_ucd() {
+template <char... _Digits> constexpr micro_candela_t<int64_t> operator""_ucd() {
   return micro_candela_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mcd() {
+template <char... _Digits> constexpr milli_candela_t<int64_t> operator""_mcd() {
   return milli_candela_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_cd() {
+template <char... _Digits> constexpr candela_t<int64_t> operator""_cd() {
   return candela_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kcd() {
+template <char... _Digits> constexpr kilo_candela_t<int64_t> operator""_kcd() {
   return kilo_candela_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Mcd() {
+template <char... _Digits> constexpr mega_candela_t<int64_t> operator""_Mcd() {
   return mega_candela_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Gcd() {
+template <char... _Digits> constexpr giga_candela_t<int64_t> operator""_Gcd() {
   return giga_candela_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Tcd() {
+template <char... _Digits> constexpr tera_candela_t<int64_t> operator""_Tcd() {
   return tera_candela_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Pcd() {
+template <char... _Digits> constexpr peta_candela_t<int64_t> operator""_Pcd() {
   return peta_candela_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Ecd() {
+template <char... _Digits> constexpr exa_candela_t<int64_t> operator""_Ecd() {
   return exa_candela_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_acd(long double value) {
+constexpr atto_candela_t<long double> operator""_acd(long double value) {
   return atto_candela_t<long double>{value};
 }
 
-constexpr auto operator""_fcd(long double value) {
+constexpr femto_candela_t<long double> operator""_fcd(long double value) {
   return femto_candela_t<long double>{value};
 }
 
-constexpr auto operator""_pcd(long double value) {
+constexpr pico_candela_t<long double> operator""_pcd(long double value) {
   return pico_candela_t<long double>{value};
 }
 
-constexpr auto operator""_ncd(long double value) {
+constexpr nano_candela_t<long double> operator""_ncd(long double value) {
   return nano_candela_t<long double>{value};
 }
 
-constexpr auto operator""_ucd(long double value) {
+constexpr micro_candela_t<long double> operator""_ucd(long double value) {
   return micro_candela_t<long double>{value};
 }
 
-constexpr auto operator""_mcd(long double value) {
+constexpr milli_candela_t<long double> operator""_mcd(long double value) {
   return milli_candela_t<long double>{value};
 }
 
-constexpr auto operator""_cd(long double value) {
+constexpr candela_t<long double> operator""_cd(long double value) {
   return candela_t<long double>{value};
 }
 
-constexpr auto operator""_kcd(long double value) {
+constexpr kilo_candela_t<long double> operator""_kcd(long double value) {
   return kilo_candela_t<long double>{value};
 }
 
-constexpr auto operator""_Mcd(long double value) {
+constexpr mega_candela_t<long double> operator""_Mcd(long double value) {
   return mega_candela_t<long double>{value};
 }
 
-constexpr auto operator""_Gcd(long double value) {
+constexpr giga_candela_t<long double> operator""_Gcd(long double value) {
   return giga_candela_t<long double>{value};
 }
 
-constexpr auto operator""_Tcd(long double value) {
+constexpr tera_candela_t<long double> operator""_Tcd(long double value) {
   return tera_candela_t<long double>{value};
 }
 
-constexpr auto operator""_Pcd(long double value) {
+constexpr peta_candela_t<long double> operator""_Pcd(long double value) {
   return peta_candela_t<long double>{value};
 }
 
-constexpr auto operator""_Ecd(long double value) {
+constexpr exa_candela_t<long double> operator""_Ecd(long double value) {
   return exa_candela_t<long double>{value};
 }
 

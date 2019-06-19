@@ -44,107 +44,107 @@ BUILD_UNIT_FROM_DIVISON(catalytic_activity_t, substance_t, time_t)
 }
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_akat() {
+template <char... _Digits> constexpr atto_katal_t<int64_t> operator""_akat() {
   return atto_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fkat() {
+template <char... _Digits> constexpr femto_katal_t<int64_t> operator""_fkat() {
   return femto_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pkat() {
+template <char... _Digits> constexpr pico_katal_t<int64_t> operator""_pkat() {
   return pico_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nkat() {
+template <char... _Digits> constexpr nano_katal_t<int64_t> operator""_nkat() {
   return nano_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_ukat() {
+template <char... _Digits> constexpr micro_katal_t<int64_t> operator""_ukat() {
   return micro_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mkat() {
+template <char... _Digits> constexpr milli_katal_t<int64_t> operator""_mkat() {
   return milli_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kat() {
+template <char... _Digits> constexpr katal_t<int64_t> operator""_kat() {
   return katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kkat() {
+template <char... _Digits> constexpr kilo_katal_t<int64_t> operator""_kkat() {
   return kilo_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Mkat() {
+template <char... _Digits> constexpr mega_katal_t<int64_t> operator""_Mkat() {
   return mega_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Gkat() {
+template <char... _Digits> constexpr giga_katal_t<int64_t> operator""_Gkat() {
   return giga_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Tkat() {
+template <char... _Digits> constexpr tera_katal_t<int64_t> operator""_Tkat() {
   return tera_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Pkat() {
+template <char... _Digits> constexpr peta_katal_t<int64_t> operator""_Pkat() {
   return peta_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Ekat() {
+template <char... _Digits> constexpr exa_katal_t<int64_t> operator""_Ekat() {
   return exa_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_akat(long double value) {
+constexpr atto_katal_t<long double> operator""_akat(long double value) {
   return atto_katal_t<long double>{value};
 }
 
-constexpr auto operator""_fkat(long double value) {
+constexpr femto_katal_t<long double> operator""_fkat(long double value) {
   return femto_katal_t<long double>{value};
 }
 
-constexpr auto operator""_pkat(long double value) {
+constexpr pico_katal_t<long double> operator""_pkat(long double value) {
   return pico_katal_t<long double>{value};
 }
 
-constexpr auto operator""_nkat(long double value) {
+constexpr nano_katal_t<long double> operator""_nkat(long double value) {
   return nano_katal_t<long double>{value};
 }
 
-constexpr auto operator""_ukat(long double value) {
+constexpr micro_katal_t<long double> operator""_ukat(long double value) {
   return micro_katal_t<long double>{value};
 }
 
-constexpr auto operator""_mkat(long double value) {
+constexpr milli_katal_t<long double> operator""_mkat(long double value) {
   return milli_katal_t<long double>{value};
 }
 
-constexpr auto operator""_kat(long double value) {
+constexpr katal_t<long double> operator""_kat(long double value) {
   return katal_t<long double>{value};
 }
 
-constexpr auto operator""_kkat(long double value) {
+constexpr kilo_katal_t<long double> operator""_kkat(long double value) {
   return kilo_katal_t<long double>{value};
 }
 
-constexpr auto operator""_Mkat(long double value) {
+constexpr mega_katal_t<long double> operator""_Mkat(long double value) {
   return mega_katal_t<long double>{value};
 }
 
-constexpr auto operator""_Gkat(long double value) {
+constexpr giga_katal_t<long double> operator""_Gkat(long double value) {
   return giga_katal_t<long double>{value};
 }
 
-constexpr auto operator""_Tkat(long double value) {
+constexpr tera_katal_t<long double> operator""_Tkat(long double value) {
   return tera_katal_t<long double>{value};
 }
 
-constexpr auto operator""_Pkat(long double value) {
+constexpr peta_katal_t<long double> operator""_Pkat(long double value) {
   return peta_katal_t<long double>{value};
 }
 
-constexpr auto operator""_Ekat(long double value) {
+constexpr exa_katal_t<long double> operator""_Ekat(long double value) {
   return exa_katal_t<long double>{value};
 }
 

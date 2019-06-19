@@ -43,107 +43,107 @@ BUILD_UNIT_FROM_MULTIPLICATION(luminous_flux_t, solid_angle_t, luminosity_t)
 }
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_alm() {
+template <char... _Digits> constexpr atto_lumen_t<int64_t> operator""_alm() {
   return atto_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_flm() {
+template <char... _Digits> constexpr femto_lumen_t<int64_t> operator""_flm() {
   return femto_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_plm() {
+template <char... _Digits> constexpr pico_lumen_t<int64_t> operator""_plm() {
   return pico_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nlm() {
+template <char... _Digits> constexpr nano_lumen_t<int64_t> operator""_nlm() {
   return nano_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_ulm() {
+template <char... _Digits> constexpr micro_lumen_t<int64_t> operator""_ulm() {
   return micro_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mlm() {
+template <char... _Digits> constexpr milli_lumen_t<int64_t> operator""_mlm() {
   return milli_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_lm() {
+template <char... _Digits> constexpr lumen_t<int64_t> operator""_lm() {
   return lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_klm() {
+template <char... _Digits> constexpr kilo_lumen_t<int64_t> operator""_klm() {
   return kilo_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Mlm() {
+template <char... _Digits> constexpr mega_lumen_t<int64_t> operator""_Mlm() {
   return mega_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Glm() {
+template <char... _Digits> constexpr giga_lumen_t<int64_t> operator""_Glm() {
   return giga_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Tlm() {
+template <char... _Digits> constexpr tera_lumen_t<int64_t> operator""_Tlm() {
   return tera_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Plm() {
+template <char... _Digits> constexpr peta_lumen_t<int64_t> operator""_Plm() {
   return peta_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Elm() {
+template <char... _Digits> constexpr exa_lumen_t<int64_t> operator""_Elm() {
   return exa_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_alm(long double value) {
+constexpr atto_lumen_t<long double> operator""_alm(long double value) {
   return atto_lumen_t<long double>{value};
 }
 
-constexpr auto operator""_flm(long double value) {
+constexpr femto_lumen_t<long double> operator""_flm(long double value) {
   return femto_lumen_t<long double>{value};
 }
 
-constexpr auto operator""_plm(long double value) {
+constexpr pico_lumen_t<long double> operator""_plm(long double value) {
   return pico_lumen_t<long double>{value};
 }
 
-constexpr auto operator""_nlm(long double value) {
+constexpr nano_lumen_t<long double> operator""_nlm(long double value) {
   return nano_lumen_t<long double>{value};
 }
 
-constexpr auto operator""_ulm(long double value) {
+constexpr micro_lumen_t<long double> operator""_ulm(long double value) {
   return micro_lumen_t<long double>{value};
 }
 
-constexpr auto operator""_mlm(long double value) {
+constexpr milli_lumen_t<long double> operator""_mlm(long double value) {
   return milli_lumen_t<long double>{value};
 }
 
-constexpr auto operator""_lm(long double value) {
+constexpr lumen_t<long double> operator""_lm(long double value) {
   return lumen_t<long double>{value};
 }
 
-constexpr auto operator""_klm(long double value) {
+constexpr kilo_lumen_t<long double> operator""_klm(long double value) {
   return kilo_lumen_t<long double>{value};
 }
 
-constexpr auto operator""_Mlm(long double value) {
+constexpr mega_lumen_t<long double> operator""_Mlm(long double value) {
   return mega_lumen_t<long double>{value};
 }
 
-constexpr auto operator""_Glm(long double value) {
+constexpr giga_lumen_t<long double> operator""_Glm(long double value) {
   return giga_lumen_t<long double>{value};
 }
 
-constexpr auto operator""_Tlm(long double value) {
+constexpr tera_lumen_t<long double> operator""_Tlm(long double value) {
   return tera_lumen_t<long double>{value};
 }
 
-constexpr auto operator""_Plm(long double value) {
+constexpr peta_lumen_t<long double> operator""_Plm(long double value) {
   return peta_lumen_t<long double>{value};
 }
 
-constexpr auto operator""_Elm(long double value) {
+constexpr exa_lumen_t<long double> operator""_Elm(long double value) {
   return exa_lumen_t<long double>{value};
 }
 

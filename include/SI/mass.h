@@ -18,64 +18,64 @@ template <typename _Type> using ton_t = mass_t<_Type, std::kilo>;
 
 inline namespace literals {
 
-template <char... _Digits> constexpr auto operator""_fg() {
+template <char... _Digits> constexpr femto_gram_t<int64_t> operator""_fg() {
   return femto_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pg() {
+template <char... _Digits> constexpr pico_gram_t<int64_t> operator""_pg() {
   return pico_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_ng() {
+template <char... _Digits> constexpr nano_gram_t<int64_t> operator""_ng() {
   return nano_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_ug() {
+template <char... _Digits> constexpr micro_gram_t<int64_t> operator""_ug() {
   return micro_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mg() {
+template <char... _Digits> constexpr milli_gram_t<int64_t> operator""_mg() {
   return milli_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_g() {
+template <char... _Digits> constexpr gram_t<int64_t> operator""_g() {
   return gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kg() {
+template <char... _Digits> constexpr kilo_gram_t<int64_t> operator""_kg() {
   return kilo_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_t() {
+template <char... _Digits> constexpr ton_t<int64_t> operator""_t() {
   return ton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_fg(long double value) {
+constexpr femto_gram_t<long double> operator""_fg(long double value) {
   return femto_gram_t<long double>{value};
 }
 
-constexpr auto operator""_pg(long double value) {
+constexpr pico_gram_t<long double> operator""_pg(long double value) {
   return pico_gram_t<long double>{value};
 }
 
-constexpr auto operator""_ng(long double value) {
+constexpr nano_gram_t<long double> operator""_ng(long double value) {
   return nano_gram_t<long double>{value};
 }
 
-constexpr auto operator""_ug(long double value) {
+constexpr micro_gram_t<long double> operator""_ug(long double value) {
   return micro_gram_t<long double>{value};
 }
 
-constexpr auto operator"" _mg(long double mg) {
+constexpr milli_gram_t<long double> operator"" _mg(long double mg) {
   return milli_gram_t<long double>(mg);
 }
 
-constexpr auto operator"" _g(long double g) { return gram_t<long double>(g); }
+constexpr gram_t<long double> operator"" _g(long double g) { return gram_t<long double>(g); }
 
-constexpr auto operator"" _kg(long double kg) {
+constexpr kilo_gram_t<long double> operator"" _kg(long double kg) {
   return kilo_gram_t<long double>(kg);
 }
-constexpr auto operator"" _t(long double t) { return ton_t<long double>(t); }
+constexpr ton_t<long double> operator"" _t(long double t) { return ton_t<long double>(t); }
 
 } // namespace literals
 } // namespace SI

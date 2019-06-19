@@ -27,107 +27,107 @@ template <typename _Type> using peta_gray_t = absorbed_dose_t<_Type, std::peta>;
 template <typename _Type> using exa_gray_t = absorbed_dose_t<_Type, std::exa>;
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_aGy() {
+template <char... _Digits> constexpr atto_gray_t<int64_t> operator""_aGy() {
   return atto_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fGy() {
+template <char... _Digits> constexpr femto_gray_t<int64_t> operator""_fGy() {
   return femto_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pGy() {
+template <char... _Digits> constexpr pico_gray_t<int64_t> operator""_pGy() {
   return pico_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nGy() {
+template <char... _Digits> constexpr nano_gray_t<int64_t> operator""_nGy() {
   return nano_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_uGy() {
+template <char... _Digits> constexpr micro_gray_t<int64_t> operator""_uGy() {
   return micro_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mGy() {
+template <char... _Digits> constexpr milli_gray_t<int64_t> operator""_mGy() {
   return milli_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Gy() {
+template <char... _Digits> constexpr gray_t<int64_t> operator""_Gy() {
   return gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kGy() {
+template <char... _Digits> constexpr kilo_gray_t<int64_t> operator""_kGy() {
   return kilo_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_MGy() {
+template <char... _Digits> constexpr mega_gray_t<int64_t> operator""_MGy() {
   return mega_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_GGy() {
+template <char... _Digits> constexpr giga_gray_t<int64_t> operator""_GGy() {
   return giga_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_TGy() {
+template <char... _Digits> constexpr tera_gray_t<int64_t> operator""_TGy() {
   return tera_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_PGy() {
+template <char... _Digits> constexpr peta_gray_t<int64_t> operator""_PGy() {
   return peta_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_EGy() {
+template <char... _Digits> constexpr exa_gray_t<int64_t> operator""_EGy() {
   return exa_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_aGy(long double value) {
+constexpr atto_gray_t<long double> operator""_aGy(long double value) {
   return atto_gray_t<long double>{value};
 }
 
-constexpr auto operator""_fGy(long double value) {
+constexpr femto_gray_t<long double> operator""_fGy(long double value) {
   return femto_gray_t<long double>{value};
 }
 
-constexpr auto operator""_pGy(long double value) {
+constexpr pico_gray_t<long double> operator""_pGy(long double value) {
   return pico_gray_t<long double>{value};
 }
 
-constexpr auto operator""_nGy(long double value) {
+constexpr nano_gray_t<long double> operator""_nGy(long double value) {
   return nano_gray_t<long double>{value};
 }
 
-constexpr auto operator""_uGy(long double value) {
+constexpr micro_gray_t<long double> operator""_uGy(long double value) {
   return micro_gray_t<long double>{value};
 }
 
-constexpr auto operator""_mGy(long double value) {
+constexpr milli_gray_t<long double> operator""_mGy(long double value) {
   return milli_gray_t<long double>{value};
 }
 
-constexpr auto operator""_Gy(long double value) {
+constexpr gray_t<long double> operator""_Gy(long double value) {
   return gray_t<long double>{value};
 }
 
-constexpr auto operator""_kGy(long double value) {
+constexpr kilo_gray_t<long double> operator""_kGy(long double value) {
   return kilo_gray_t<long double>{value};
 }
 
-constexpr auto operator""_MGy(long double value) {
+constexpr mega_gray_t<long double> operator""_MGy(long double value) {
   return mega_gray_t<long double>{value};
 }
 
-constexpr auto operator""_GGy(long double value) {
+constexpr giga_gray_t<long double> operator""_GGy(long double value) {
   return giga_gray_t<long double>{value};
 }
 
-constexpr auto operator""_TGy(long double value) {
+constexpr tera_gray_t<long double> operator""_TGy(long double value) {
   return tera_gray_t<long double>{value};
 }
 
-constexpr auto operator""_PGy(long double value) {
+constexpr peta_gray_t<long double> operator""_PGy(long double value) {
   return peta_gray_t<long double>{value};
 }
 
-constexpr auto operator""_EGy(long double value) {
+constexpr exa_gray_t<long double> operator""_EGy(long double value) {
   return exa_gray_t<long double>{value};
 }
 

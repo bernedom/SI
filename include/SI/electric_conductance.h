@@ -46,118 +46,118 @@ BUILD_UNIT_FROM_DIVISON(electric_conductance_t, electric_current_t,
 } // namespace detail
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_aS() {
+template <char... _Digits> constexpr atto_siemens_t<int64_t> operator""_aS() {
   return atto_siemens_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fS() {
+template <char... _Digits> constexpr femto_siemens_t<int64_t> operator""_fS() {
   return femto_siemens_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pS() {
+template <char... _Digits> constexpr pico_siemens_t<int64_t> operator""_pS() {
   return pico_siemens_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nS() {
+template <char... _Digits> constexpr nano_siemens_t<int64_t> operator""_nS() {
   return nano_siemens_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_uS() {
+template <char... _Digits> constexpr micro_siemens_t<int64_t> operator""_uS() {
   return micro_siemens_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mS() {
+template <char... _Digits> constexpr milli_siemens_t<int64_t> operator""_mS() {
   return milli_siemens_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_S() {
+template <char... _Digits> constexpr siemens_t<int64_t> operator""_S() {
   return siemens_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kS() {
+template <char... _Digits> constexpr kilo_siemens_t<int64_t> operator""_kS() {
   return kilo_siemens_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_MS() {
+template <char... _Digits> constexpr mega_siemens_t<int64_t> operator""_MS() {
   return mega_siemens_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_GS() {
+template <char... _Digits> constexpr giga_siemens_t<int64_t> operator""_GS() {
   return giga_siemens_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_TS() {
+template <char... _Digits> constexpr tera_siemens_t<int64_t> operator""_TS() {
   return tera_siemens_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_PS() {
+template <char... _Digits> constexpr peta_siemens_t<int64_t> operator""_PS() {
   return peta_siemens_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_ES() {
+template <char... _Digits> constexpr exa_siemens_t<int64_t> operator""_ES() {
   return exa_siemens_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_aS(long double value) {
+constexpr atto_siemens_t<long double> operator""_aS(long double value) {
   return atto_siemens_t<long double>{value};
 }
 
-constexpr auto operator""_fS(long double value) {
+constexpr femto_siemens_t<long double> operator""_fS(long double value) {
   return femto_siemens_t<long double>{value};
 }
 
-constexpr auto operator""_pS(long double value) {
+constexpr pico_siemens_t<long double> operator""_pS(long double value) {
   return pico_siemens_t<long double>{value};
 }
 
-constexpr auto operator""_nS(long double value) {
+constexpr nano_siemens_t<long double> operator""_nS(long double value) {
   return nano_siemens_t<long double>{value};
 }
 
-constexpr auto operator""_uS(long double value) {
+constexpr micro_siemens_t<long double> operator""_uS(long double value) {
   return micro_siemens_t<long double>{value};
 }
 
-constexpr auto operator""_mS(long double value) {
+constexpr milli_siemens_t<long double> operator""_mS(long double value) {
   return milli_siemens_t<long double>{value};
 }
 
-constexpr auto operator""_S(long double value) {
+constexpr siemens_t<long double> operator""_S(long double value) {
   return siemens_t<long double>{value};
 }
 
-constexpr auto operator""_kS(long double value) {
+constexpr kilo_siemens_t<long double> operator""_kS(long double value) {
   return kilo_siemens_t<long double>{value};
 }
 
-constexpr auto operator""_MS(long double value) {
+constexpr mega_siemens_t<long double> operator""_MS(long double value) {
   return mega_siemens_t<long double>{value};
 }
 
-constexpr auto operator""_GS(long double value) {
+constexpr giga_siemens_t<long double> operator""_GS(long double value) {
   return giga_siemens_t<long double>{value};
 }
 
-constexpr auto operator""_TS(long double value) {
+constexpr tera_siemens_t<long double> operator""_TS(long double value) {
   return tera_siemens_t<long double>{value};
 }
 
-constexpr auto operator""_PS(long double value) {
+constexpr peta_siemens_t<long double> operator""_PS(long double value) {
   return peta_siemens_t<long double>{value};
 }
 
-constexpr auto operator""_ES(long double value) {
+constexpr exa_siemens_t<long double> operator""_ES(long double value) {
   return exa_siemens_t<long double>{value};
 }
 

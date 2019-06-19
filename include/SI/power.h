@@ -29,107 +29,107 @@ BUILD_UNIT_FROM_DIVISON(power_t, energy_t, time_t)
 }
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_aW() {
+template <char... _Digits> constexpr atto_watt_t<int64_t> operator""_aW() {
   return atto_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fW() {
+template <char... _Digits> constexpr femto_watt_t<int64_t> operator""_fW() {
   return femto_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pW() {
+template <char... _Digits> constexpr pico_watt_t<int64_t> operator""_pW() {
   return pico_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nW() {
+template <char... _Digits> constexpr nano_watt_t<int64_t> operator""_nW() {
   return nano_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_uW() {
+template <char... _Digits> constexpr micro_watt_t<int64_t> operator""_uW() {
   return micro_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mW() {
+template <char... _Digits> constexpr milli_watt_t<int64_t> operator""_mW() {
   return milli_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_W() {
+template <char... _Digits> constexpr watt_t<int64_t> operator""_W() {
   return watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kW() {
+template <char... _Digits> constexpr kilo_watt_t<int64_t> operator""_kW() {
   return kilo_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_MW() {
+template <char... _Digits> constexpr mega_watt_t<int64_t> operator""_MW() {
   return mega_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_GW() {
+template <char... _Digits> constexpr giga_watt_t<int64_t> operator""_GW() {
   return giga_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_TW() {
+template <char... _Digits> constexpr tera_watt_t<int64_t> operator""_TW() {
   return tera_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_PW() {
+template <char... _Digits> constexpr peta_watt_t<int64_t> operator""_PW() {
   return peta_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_EW() {
+template <char... _Digits> constexpr exa_watt_t<int64_t> operator""_EW() {
   return exa_watt_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_aW(long double value) {
+constexpr atto_watt_t<long double> operator""_aW(long double value) {
   return atto_watt_t<long double>{value};
 }
 
-constexpr auto operator""_fW(long double value) {
+constexpr femto_watt_t<long double> operator""_fW(long double value) {
   return femto_watt_t<long double>{value};
 }
 
-constexpr auto operator""_pW(long double value) {
+constexpr pico_watt_t<long double> operator""_pW(long double value) {
   return pico_watt_t<long double>{value};
 }
 
-constexpr auto operator""_nW(long double value) {
+constexpr nano_watt_t<long double> operator""_nW(long double value) {
   return nano_watt_t<long double>{value};
 }
 
-constexpr auto operator""_uW(long double value) {
+constexpr micro_watt_t<long double> operator""_uW(long double value) {
   return micro_watt_t<long double>{value};
 }
 
-constexpr auto operator""_mW(long double value) {
+constexpr milli_watt_t<long double> operator""_mW(long double value) {
   return milli_watt_t<long double>{value};
 }
 
-constexpr auto operator""_W(long double value) {
+constexpr watt_t<long double> operator""_W(long double value) {
   return watt_t<long double>{value};
 }
 
-constexpr auto operator""_kW(long double value) {
+constexpr kilo_watt_t<long double> operator""_kW(long double value) {
   return kilo_watt_t<long double>{value};
 }
 
-constexpr auto operator""_MW(long double value) {
+constexpr mega_watt_t<long double> operator""_MW(long double value) {
   return mega_watt_t<long double>{value};
 }
 
-constexpr auto operator""_GW(long double value) {
+constexpr giga_watt_t<long double> operator""_GW(long double value) {
   return giga_watt_t<long double>{value};
 }
 
-constexpr auto operator""_TW(long double value) {
+constexpr tera_watt_t<long double> operator""_TW(long double value) {
   return tera_watt_t<long double>{value};
 }
 
-constexpr auto operator""_PW(long double value) {
+constexpr peta_watt_t<long double> operator""_PW(long double value) {
   return peta_watt_t<long double>{value};
 }
 
-constexpr auto operator""_EW(long double value) {
+constexpr exa_watt_t<long double> operator""_EW(long double value) {
   return exa_watt_t<long double>{value};
 }
 

@@ -44,107 +44,107 @@ BUILD_UNIT_FROM_DIVISON(electric_capacity_t, electric_charge_t,
 } // namespace detail
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_aF() {
+template <char... _Digits> constexpr atto_farad_t<int64_t> operator""_aF() {
   return atto_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fF() {
+template <char... _Digits> constexpr femto_farad_t<int64_t> operator""_fF() {
   return femto_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pF() {
+template <char... _Digits> constexpr pico_farad_t<int64_t> operator""_pF() {
   return pico_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nF() {
+template <char... _Digits> constexpr nano_farad_t<int64_t> operator""_nF() {
   return nano_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_uF() {
+template <char... _Digits> constexpr micro_farad_t<int64_t> operator""_uF() {
   return micro_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mF() {
+template <char... _Digits> constexpr milli_farad_t<int64_t> operator""_mF() {
   return milli_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_F() {
+template <char... _Digits> constexpr farad_t<int64_t> operator""_F() {
   return farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_kF() {
+template <char... _Digits> constexpr kilo_farad_t<int64_t> operator""_kF() {
   return kilo_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_MF() {
+template <char... _Digits> constexpr mega_farad_t<int64_t> operator""_MF() {
   return mega_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_GF() {
+template <char... _Digits> constexpr giga_farad_t<int64_t> operator""_GF() {
   return giga_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_TF() {
+template <char... _Digits> constexpr tera_farad_t<int64_t> operator""_TF() {
   return tera_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_PF() {
+template <char... _Digits> constexpr peta_farad_t<int64_t> operator""_PF() {
   return peta_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_EF() {
+template <char... _Digits> constexpr exa_farad_t<int64_t> operator""_EF() {
   return exa_farad_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-constexpr auto operator""_aF(long double value) {
+constexpr atto_farad_t<long double> operator""_aF(long double value) {
   return atto_farad_t<long double>{value};
 }
 
-constexpr auto operator""_fF(long double value) {
+constexpr femto_farad_t<long double> operator""_fF(long double value) {
   return femto_farad_t<long double>{value};
 }
 
-constexpr auto operator""_pF(long double value) {
+constexpr pico_farad_t<long double> operator""_pF(long double value) {
   return pico_farad_t<long double>{value};
 }
 
-constexpr auto operator""_nF(long double value) {
+constexpr nano_farad_t<long double> operator""_nF(long double value) {
   return nano_farad_t<long double>{value};
 }
 
-constexpr auto operator""_uF(long double value) {
+constexpr micro_farad_t<long double> operator""_uF(long double value) {
   return micro_farad_t<long double>{value};
 }
 
-constexpr auto operator""_mF(long double value) {
+constexpr milli_farad_t<long double> operator""_mF(long double value) {
   return milli_farad_t<long double>{value};
 }
 
-constexpr auto operator""_F(long double value) {
+constexpr farad_t<long double> operator""_F(long double value) {
   return farad_t<long double>{value};
 }
 
-constexpr auto operator""_kF(long double value) {
+constexpr kilo_farad_t<long double> operator""_kF(long double value) {
   return kilo_farad_t<long double>{value};
 }
 
-constexpr auto operator""_MF(long double value) {
+constexpr mega_farad_t<long double> operator""_MF(long double value) {
   return mega_farad_t<long double>{value};
 }
 
-constexpr auto operator""_GF(long double value) {
+constexpr giga_farad_t<long double> operator""_GF(long double value) {
   return giga_farad_t<long double>{value};
 }
 
-constexpr auto operator""_TF(long double value) {
+constexpr tera_farad_t<long double> operator""_TF(long double value) {
   return tera_farad_t<long double>{value};
 }
 
-constexpr auto operator""_PF(long double value) {
+constexpr peta_farad_t<long double> operator""_PF(long double value) {
   return peta_farad_t<long double>{value};
 }
 
-constexpr auto operator""_EF(long double value) {
+constexpr exa_farad_t<long double> operator""_EF(long double value) {
   return exa_farad_t<long double>{value};
 }
 
