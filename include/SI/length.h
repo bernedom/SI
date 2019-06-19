@@ -29,59 +29,59 @@ template <typename _Type> using peta_meter_t = length_t<_Type, std::peta>;
 template <typename _Type> using exa_meter_t = length_t<_Type, std::exa>;
 
 inline namespace literals {
-template <char... _Digits> constexpr auto operator""_am() {
+template <char... _Digits> constexpr atto_meter_t<int64_t> operator""_am() {
   return atto_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_fm() {
+template <char... _Digits> constexpr femto_meter_t<int64_t> operator""_fm() {
   return femto_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_pm() {
+template <char... _Digits> constexpr pico_meter_t<int64_t> operator""_pm() {
   return pico_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_nm() {
+template <char... _Digits> constexpr nano_meter_t<int64_t> operator""_nm() {
   return nano_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_um() {
+template <char... _Digits> constexpr micro_meter_t<int64_t> operator""_um() {
   return micro_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_mm() {
+template <char... _Digits> constexpr milli_meter_t<int64_t> operator""_mm() {
   return milli_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_cm() {
+template <char... _Digits> constexpr centi_meter_t<int64_t> operator""_cm() {
   return centi_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_m() {
+template <char... _Digits> constexpr meter_t<int64_t> operator""_m() {
   return meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_km() {
+template <char... _Digits> constexpr kilo_meter_t<int64_t> operator""_km() {
   return kilo_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Mm() {
+template <char... _Digits> constexpr mega_meter_t<int64_t> operator""_Mm() {
   return mega_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Gm() {
+template <char... _Digits> constexpr giga_meter_t<int64_t> operator""_Gm() {
   return giga_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Tm() {
+template <char... _Digits> constexpr tera_meter_t<int64_t> operator""_Tm() {
   return tera_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Pm() {
+template <char... _Digits> constexpr peta_meter_t<int64_t> operator""_Pm() {
   return peta_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr auto operator""_Em() {
+template <char... _Digits> constexpr exa_meter_t<int64_t> operator""_Em() {
   return exa_meter_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
