@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 
 include(CTest)
 
-add_executable(SI_detail_tests)
+add_executable(SI_detail_tests "")
 target_sources(SI_detail_tests
                PRIVATE
                src/Catch2Main.cc
@@ -32,7 +32,7 @@ target_compile_options(
 # target_compile_definitions(SI_detail_tests PRIVATE
 # CATCH_CONFIG_RUNTIME_STATIC_REQUIRE)
 
-add_executable(SI_base_unit_tests)
+add_executable(SI_base_unit_tests "")
 target_sources(SI_base_unit_tests
                PRIVATE
                src/Catch2Main.cc
@@ -64,7 +64,7 @@ target_compile_options(
 # target_compile_definitions(SI_base_unit_tests PRIVATE
 # CATCH_CONFIG_RUNTIME_STATIC_REQUIRE)
 
-add_executable(SI_derived_unit_tests)
+add_executable(SI_derived_unit_tests "")
 target_sources(SI_derived_unit_tests
                PRIVATE
                src/Catch2Main.cc

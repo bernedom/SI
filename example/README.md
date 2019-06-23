@@ -5,7 +5,7 @@ This is an example application to demostrate/test the installation and usage of 
 
 ## Building
 
-```
+```bash
 mkdir build
 cd build 
 cmake .. -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/SI-install
