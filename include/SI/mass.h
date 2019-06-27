@@ -1,3 +1,13 @@
+/**
+ * This file is part of "SI",
+ * A header only c++ library that provides type safety and user defined literals
+ * for handling pyhsical values defined in the International System of
+ * Units
+ *
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ **/
 #pragma once
 #include "detail/number_parser.h"
 #include "detail/unit.h"
@@ -70,12 +80,16 @@ constexpr milli_gram_t<long double> operator"" _mg(long double mg) {
   return milli_gram_t<long double>(mg);
 }
 
-constexpr gram_t<long double> operator"" _g(long double g) { return gram_t<long double>(g); }
+constexpr gram_t<long double> operator"" _g(long double g) {
+  return gram_t<long double>(g);
+}
 
 constexpr kilo_gram_t<long double> operator"" _kg(long double kg) {
   return kilo_gram_t<long double>(kg);
 }
-constexpr ton_t<long double> operator"" _t(long double t) { return ton_t<long double>(t); }
+constexpr ton_t<long double> operator"" _t(long double t) {
+  return ton_t<long double>(t);
+}
 
 } // namespace literals
 } // namespace SI

@@ -1,3 +1,13 @@
+/**
+ * This file is part of "SI",
+ * A header only c++ library that provides type safety and user defined literals
+ * for handling pyhsical values defined in the International System of
+ * Units
+ *
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ **/
 #pragma once
 
 #include <chrono>
@@ -53,12 +63,14 @@ template <char... _Digits> constexpr nano_seconds_t<int64_t> operator""_ns() {
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr SI::micro_seconds_t<int64_t> operator"" _us() {
+template <char... _Digits>
+constexpr SI::micro_seconds_t<int64_t> operator"" _us() {
   return SI::micro_seconds_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr SI::milli_seconds_t<int64_t> operator"" _ms() {
+template <char... _Digits>
+constexpr SI::milli_seconds_t<int64_t> operator"" _ms() {
   return SI::milli_seconds_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }

@@ -1,3 +1,13 @@
+/**
+ * This file is part of "SI",
+ * A header only c++ library that provides type safety and user defined literals
+ * for handling pyhsical values defined in the International System of
+ * Units
+ *
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ **/
 #pragma once
 
 #include "detail/number_parser.h"
@@ -27,32 +37,38 @@ using sterradiant_t = solid_angle_t<_Type, std::ratio<1>>;
 
 inline namespace literals {
 
-template <char... _Digits> constexpr atto_sterradiant_t<int64_t> operator""_asr() {
+template <char... _Digits>
+constexpr atto_sterradiant_t<int64_t> operator""_asr() {
   return atto_sterradiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_sterradiant_t<int64_t> operator""_fsr() {
+template <char... _Digits>
+constexpr femto_sterradiant_t<int64_t> operator""_fsr() {
   return femto_sterradiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_sterradiant_t<int64_t> operator""_psr() {
+template <char... _Digits>
+constexpr pico_sterradiant_t<int64_t> operator""_psr() {
   return pico_sterradiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_sterradiant_t<int64_t> operator""_nsr() {
+template <char... _Digits>
+constexpr nano_sterradiant_t<int64_t> operator""_nsr() {
   return nano_sterradiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_sterradiant_t<int64_t> operator""_usr() {
+template <char... _Digits>
+constexpr micro_sterradiant_t<int64_t> operator""_usr() {
   return micro_sterradiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_sterradiant_t<int64_t> operator""_msr() {
+template <char... _Digits>
+constexpr milli_sterradiant_t<int64_t> operator""_msr() {
   return milli_sterradiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }

@@ -1,3 +1,13 @@
+/**
+ * This file is part of "SI",
+ * A header only c++ library that provides type safety and user defined literals
+ * for handling pyhsical values defined in the International System of
+ * Units
+ *
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ **/
 #pragma once
 
 #include "length.h"
@@ -34,7 +44,8 @@ constexpr square_meter_t<long double> operator"" _m2(long double m) {
   return square_meter_t<long double>(m);
 }
 
-template <char... _Digits> constexpr square_centi_meter_t<int64_t> operator""_cm2() {
+template <char... _Digits>
+constexpr square_centi_meter_t<int64_t> operator""_cm2() {
   return square_centi_meter_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
@@ -43,7 +54,8 @@ constexpr square_centi_meter_t<long double> operator"" _cm2(long double cm) {
   return square_centi_meter_t<long double>(cm);
 }
 
-template <char... _Digits> constexpr square_milli_meter_t<int64_t> operator""_mm2() {
+template <char... _Digits>
+constexpr square_milli_meter_t<int64_t> operator""_mm2() {
   return square_milli_meter_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
@@ -60,7 +72,8 @@ constexpr cubic_meter_t<long double> operator"" _m3(long double m) {
   return cubic_meter_t<long double>(m);
 }
 
-template <char... _Digits> constexpr cubic_centi_meter_t<int64_t> operator""_cm3() {
+template <char... _Digits>
+constexpr cubic_centi_meter_t<int64_t> operator""_cm3() {
   return cubic_centi_meter_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
@@ -69,7 +82,8 @@ constexpr cubic_centi_meter_t<long double> operator"" _cm3(long double cm) {
   return cubic_centi_meter_t<long double>(cm);
 }
 
-template <char... _Digits> constexpr cubic_milli_meter_t<int64_t> operator""_mm3() {
+template <char... _Digits>
+constexpr cubic_milli_meter_t<int64_t> operator""_mm3() {
   return cubic_milli_meter_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }

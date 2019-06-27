@@ -1,3 +1,13 @@
+/**
+ * This file is part of "SI",
+ * A header only c++ library that provides type safety and user defined literals
+ * for handling pyhsical values defined in the International System of
+ * Units
+ *
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ **/
 #pragma once
 
 #include "detail/number_parser.h"
@@ -25,7 +35,8 @@ template <char... _Digits> constexpr atto_radiant_t<int64_t> operator""_arad() {
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_radiant_t<int64_t> operator""_frad() {
+template <char... _Digits>
+constexpr femto_radiant_t<int64_t> operator""_frad() {
   return femto_radiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
@@ -40,12 +51,14 @@ template <char... _Digits> constexpr nano_radiant_t<int64_t> operator""_nrad() {
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_radiant_t<int64_t> operator""_urad() {
+template <char... _Digits>
+constexpr micro_radiant_t<int64_t> operator""_urad() {
   return micro_radiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_radiant_t<int64_t> operator""_mrad() {
+template <char... _Digits>
+constexpr milli_radiant_t<int64_t> operator""_mrad() {
   return milli_radiant_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
