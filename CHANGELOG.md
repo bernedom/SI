@@ -1,5 +1,10 @@
 # Changelog 
 
+## 1.0.1 - unreleased
+
+* cmake requires version 3.12 to support add_executable without sources and verbose project description
+* all headers are prefixed with a license tag
+
 ## 1.0.0
 
 * Literal operators return explicit return types instead of auto
