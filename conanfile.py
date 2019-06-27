@@ -11,8 +11,6 @@ class SiConan(ConanFile):
     topics = ("physical units", "SI-unit-conversion", "cplusplus-library", "cplusplus-17")
     exports_sources = "include/*"
     no_copy_source = True
-    settings = "compiler"
-    default_settings = {"compiler.cppstd": "17"}
 
     def package(self):
         self.copy("*.h")
