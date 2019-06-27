@@ -15,5 +15,6 @@ The implementation of the functionality is done purely in the classes of the `de
 # Packaging with conan
 
 See https://docs.conan.io/en/latest/howtos/header_only.html#with-unit-tests on how to pack a header onlz library
+https://docs.conan.io/en/latest/integrations/ci/travisci.html
 
 conan create . user/channel -s compiler.cppstd=17
