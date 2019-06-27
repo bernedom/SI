@@ -12,3 +12,8 @@ template <typename _type> using micro_newton_t = force_t<_type, std::micro>;
 
 The implementation of the functionality is done purely in the classes of the `detail` namespace. 
 
+# Packaging with conan
+
+See https://docs.conan.io/en/latest/howtos/header_only.html#with-unit-tests on how to pack a header onlz library
+
+conan create . user/channel -s compiler.cppstd=17
