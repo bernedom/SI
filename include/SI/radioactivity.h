@@ -1,3 +1,13 @@
+/**
+ * This file is part of "SI",
+ * A header only c++ library that provides type safety and user defined literals
+ * for handling pyhsical values defined in the International System of
+ * Units
+ *
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ **/
 #pragma once
 
 #include "detail/number_parser.h"
@@ -39,32 +49,38 @@ template <typename _Type>
 using exa_becquerel_t = radioactivity_t<_Type, std::exa>;
 
 inline namespace literals {
-template <char... _Digits> constexpr atto_becquerel_t<int64_t> operator""_aBq() {
+template <char... _Digits>
+constexpr atto_becquerel_t<int64_t> operator""_aBq() {
   return atto_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_becquerel_t<int64_t> operator""_fBq() {
+template <char... _Digits>
+constexpr femto_becquerel_t<int64_t> operator""_fBq() {
   return femto_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_becquerel_t<int64_t> operator""_pBq() {
+template <char... _Digits>
+constexpr pico_becquerel_t<int64_t> operator""_pBq() {
   return pico_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_becquerel_t<int64_t> operator""_nBq() {
+template <char... _Digits>
+constexpr nano_becquerel_t<int64_t> operator""_nBq() {
   return nano_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_becquerel_t<int64_t> operator""_uBq() {
+template <char... _Digits>
+constexpr micro_becquerel_t<int64_t> operator""_uBq() {
   return micro_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_becquerel_t<int64_t> operator""_mBq() {
+template <char... _Digits>
+constexpr milli_becquerel_t<int64_t> operator""_mBq() {
   return milli_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
@@ -73,27 +89,32 @@ template <char... _Digits> constexpr becquerel_t<int64_t> operator""_Bq() {
   return becquerel_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_becquerel_t<int64_t> operator""_kBq() {
+template <char... _Digits>
+constexpr kilo_becquerel_t<int64_t> operator""_kBq() {
   return kilo_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_becquerel_t<int64_t> operator""_MBq() {
+template <char... _Digits>
+constexpr mega_becquerel_t<int64_t> operator""_MBq() {
   return mega_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_becquerel_t<int64_t> operator""_GBq() {
+template <char... _Digits>
+constexpr giga_becquerel_t<int64_t> operator""_GBq() {
   return giga_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_becquerel_t<int64_t> operator""_TBq() {
+template <char... _Digits>
+constexpr tera_becquerel_t<int64_t> operator""_TBq() {
   return tera_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_becquerel_t<int64_t> operator""_PBq() {
+template <char... _Digits>
+constexpr peta_becquerel_t<int64_t> operator""_PBq() {
   return peta_becquerel_t<int64_t>{
       SI::detail::parsing::Number<_Digits...>::value};
 }

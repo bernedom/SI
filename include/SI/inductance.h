@@ -1,8 +1,18 @@
+/**
+ * This file is part of "SI",
+ * A header only c++ library that provides type safety and user defined literals
+ * for handling pyhsical values defined in the International System of
+ * Units
+ *
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ **/
 #pragma once
 
+#include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
 #include "detail/unit.h"
-#include "detail/number_parser.h"
 #include "electric_current.h"
 #include "magnetic_flux.h"
 
