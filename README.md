@@ -122,7 +122,7 @@ cmake --build . --config Release --target install -- -j $(nproc)
 ```
 
 Consider running the build/install command with setting the install prefix, if you do not want to install SI system wide
-```
+```bash
 -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/SI-install
 ```
 
