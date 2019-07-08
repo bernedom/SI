@@ -25,7 +25,7 @@ add_subdirectory(test)
 
 install(TARGETS ${PROJECT_NAME}
         EXPORT ${PROJECT_NAME}_Targets
-        ARCHIVE DESTINATION lib
+        ARCHIVE DESTINATION share
         LIBRARY DESTINATION lib
         RUNTIME DESTINATION bin
         INCLUDES
@@ -40,16 +40,16 @@ configure_package_config_file(
   "${PROJECT_SOURCE_DIR}/cmake/${PROJECT_NAME}Config.cmake.in"
   "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
   INSTALL_DESTINATION
-  lib/cmake/${PROJECT_NAME})
+  share/${PROJECT_NAME}/cmake)
 
 install(EXPORT ${PROJECT_NAME}_Targets
         FILE ${PROJECT_NAME}Targets.cmake
         NAMESPACE ${PROJECT_NAME}::
-        DESTINATION lib/cmake/${PROJECT_NAME})
+        DESTINATION share/${PROJECT_NAME}/cmake)
 
 install(FILES "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
               "${PROJECT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
-        DESTINATION lib/cmake/${PROJECT_NAME})
+        DESTINATION share/${PROJECT_NAME}/cmake)
 
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/SI DESTINATION include)
 
