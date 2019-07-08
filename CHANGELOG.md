@@ -1,6 +1,6 @@
 # Changelog 
 
-## 1.0.1 - unreleased
+## 1.0.1
 
 *   cmake requires version 3.12 to support add_executable without sources and verbose project description
 *   all headers are prefixed with a license tag
