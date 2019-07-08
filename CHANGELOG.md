@@ -4,6 +4,7 @@
 
 *   cmake requires version 3.12 to support add_executable without sources and verbose project description
 *   all headers are prefixed with a license tag
+*   Added support for cpack (see README for usage)
 
 ## 1.0.0
 
