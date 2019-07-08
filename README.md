@@ -115,8 +115,7 @@ substitute `--config Debug` with `--config Release` for optimized builds
 To install SI use the commands below: this will install SI into `/usr/local/lib/cmake/SI`
 
 ```bash
-mkdir build 
-cd build 
+mkdir build && cd build 
 cmake ..
 cmake --build . --config Release --target install -- -j $(nproc)
 ```
@@ -126,7 +125,17 @@ Consider running the build/install command with setting the install prefix, if y
 -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/SI-install
 ```
 
-The folder `example` contains a standalone sample program to check for succesful installation
+The folder `example` contains a standalone sample program to check for succesful installation.
+
+#### Installing using `cpack`
+
+To build the `cpack` package use:
+
+```bash
+mkdir build && cd build
+cmake ..
+cmake --build . --config Release --target package -- -j $(nproc)
+```
 
 ## Building the tests
 

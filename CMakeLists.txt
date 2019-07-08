@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 
+
+
 project("SI" VERSION 1.0.1
              DESCRIPTION "A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units."
              HOMEPAGE_URL "https://github.com/bernedom/SI")
@@ -47,3 +49,5 @@ install(FILES "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
         DESTINATION lib/cmake/${PROJECT_NAME})
 
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/SI DESTINATION include)
+
+include(CPack)
