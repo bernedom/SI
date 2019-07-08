@@ -84,7 +84,6 @@ matrix:
         - mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/local-install
         - cmake --build .
         
-    # TODO automatically read version tag
     - os: linux
       name: installation testing cpack
       compiler: gcc
@@ -96,10 +95,11 @@ matrix:
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
       script: 
-        - mkdir build && cd build && cmake .. 
+        - mkdir build && cd build
+        - cmake -DCPACK_PACKAGE_FILE_NAME=install-SI .. 
         - cmake --build . --config Release --target package -- -j $(nproc)
         - mkdir ${HOME}/local-install
-        - ./SI-1.0.1-Linux.sh --prefix=${HOME}/local-install --skip-license --exclude-subdir
+        - ./install-SI.sh --prefix=${HOME}/local-install --skip-license --exclude-subdir
         - cd ../example
         - mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/local-install
         - cmake --build .
