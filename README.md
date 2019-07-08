@@ -100,7 +100,8 @@ All units that can be built from other units are also decayable to the respectiv
 
 SI is a header only libary that uses **C++17** features. Building is tested using cmake > 3.5 and verified for g++7, g++8, clang5, clang6, clang7, msvc 19, and AppleClang 10.0.
 
-to build use 
+to build use
+
 ```bash
 mkdir build
 cd build
@@ -115,24 +116,43 @@ substitute `--config Debug` with `--config Release` for optimized builds
 To install SI use the commands below: this will install SI into `/usr/local/lib/cmake/SI`
 
 ```bash
-mkdir build 
-cd build 
+mkdir build && cd build 
 cmake ..
 cmake --build . --config Release --target install -- -j $(nproc)
 ```
 
 Consider running the build/install command with setting the install prefix, if you do not want to install SI system wide
+
 ```bash
 -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/SI-install
 ```
 
-The folder `example` contains a standalone sample program to check for succesful installation
+The folder `example` contains a standalone sample program to check for succesful installation.
+
+#### Installing using `cpack`
+
+To build the `cpack` package use:
+
+```bash
+mkdir build && cd build
+cmake ..
+cmake --build . --config Release --target package -- -j $(nproc)
+```
+
+This creates gzipped archives containing all files as well as an installation script `SI-<version>-<plattform>.sh`. 
+
+```bash
+cd build
+mkdir ${HOME}/SI-install
+./SI-1.0.1-Linux.sh --prefix=$HOME/SI-install --skip-license --exclude-subdir
+```
 
 ## Building the tests
 
 The tests use [Catch2](https://github.com/catchorg/Catch2) version 2.7 which relies on libstdc++8
- 
+
 For ubuntu releases < 18.04 use:
+
 ```bash
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 sudo apt update
@@ -143,4 +163,4 @@ sudo apt install libstdc++-8-dev
 
 I'm using more or less strict TDD for implementing the functionality. First to check if the code actually does what I want it to do, but also as a way to set examples how SI is used. The nice benefit of it being, that I'm dogfooding the library to myself while developing. I'm using [Catch2](https://github.com/catchorg/Catch2) as a unit-testing framework, however since the goal is to be able to do as much as possible during compile time most of the tests are performed with Catch2 `STATIC_REQUIRES` which contatain `static_asserts` and run-time `REQUIRE`s as testing assert. 
 
-This means if the tests compile then the tests are correct. To compile only with runtime check pass `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE` to the compilers. 
+This means if the tests compile then the tests are correct. To compile only with runtime check pass `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE` to the compilers.
