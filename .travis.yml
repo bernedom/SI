@@ -17,22 +17,18 @@ addons:
 matrix:
   include:
     - os: linux
-      compiler: gcc
       env:
         - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
 
     - os: linux
-      compiler: gcc
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"        
 
     - os: linux
-      compiler: clang
       env:
         - MATRIX_EVAL="CC=clang-6.0 && CXX=clang++-6.0"
 
     - os: linux
-      compiler: clang
       env:
         - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
 
@@ -50,7 +46,6 @@ matrix:
 
     - os: linux
       name: installation testing pure cmake
-      compiler: gcc
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
       script: 
@@ -63,7 +58,6 @@ matrix:
         
     - os: linux
       name: installation testing cpack
-      compiler: gcc
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
       script: 
