@@ -14,24 +14,15 @@ addons:
       - clang-6.0
       - libstdc++-8-dev
 
+os: linux
+env:
+  - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+  - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"      
+  - MATRIX_EVAL="CC=clang-6.0 && CXX=clang++-6.0"
+  - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
+
 matrix:
   include:
-    - os: linux
-      env:
-        - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
-
-    - os: linux
-      env:
-        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"        
-
-    - os: linux
-      env:
-        - MATRIX_EVAL="CC=clang-6.0 && CXX=clang++-6.0"
-
-    - os: linux
-      env:
-        - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
-
     - os: windows
       name: "Windows Visual Studio 15 2017"
       script:
@@ -43,6 +34,9 @@ matrix:
     - os: osx
       osx_image: xcode10.2
       compiler: clang
+      # empty matrix eval to avoid pollution
+      env: 
+        - MATRIX_EVAL=""
 
     - os: linux
       name: installation testing pure cmake
