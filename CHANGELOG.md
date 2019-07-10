@@ -1,5 +1,9 @@
 # Changelog 
 
+## 1.1.0
+
+*   Implicit / automatic conversions between units of different ratio can be disabled with the preprocessor flag `ENABLE_IMPLICIT_RATIO_CONVERSION`
+
 ## 1.0.1
 
 *   cmake requires version 3.12 to support add_executable without sources and verbose project description
