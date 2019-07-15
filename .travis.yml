@@ -14,6 +14,11 @@ addons:
       - clang-6.0
       - libstdc++-8-dev
       - shunit2
+      - ninja-build
+  homebrew:
+    packages:
+      - ninja
+      - shunit2
 
 os: linux
 env:
@@ -45,8 +50,8 @@ matrix:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
       script: 
         - cmake --version
-        - mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/local-install
-        - cmake --build . --config Release --target install -- -j $(nproc)
+        - mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/local-install -G Ninja
+        - cmake --build . --config Release --target install
         - cd ../example
         - mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/local-install
         - cmake --build .
@@ -57,8 +62,8 @@ matrix:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
       script: 
         - mkdir build && cd build
-        - cmake -DCPACK_PACKAGE_FILE_NAME=install-SI .. 
-        - cmake --build . --config Release --target package -- -j $(nproc)
+        - cmake -DCPACK_PACKAGE_FILE_NAME=install-SI .. -G Ninja
+        - cmake --build . --config Release --target package
         - mkdir ${HOME}/local-install
         - ./install-SI.sh --prefix=${HOME}/local-install --skip-license --exclude-subdir
         - cd ../example
@@ -71,7 +76,7 @@ before_install:
 
 script: 
   - cmake --version
-  - mkdir build && cd build && cmake .. 
-  - cmake --build . --config Debug -- -j $(nproc)
+  - mkdir build && cd build && cmake .. -G Ninja 
+  - cmake --build . --config Debug
   - ctest -C Debug
   - ../test/compilation-tests.sh

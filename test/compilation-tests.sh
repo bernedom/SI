@@ -23,7 +23,7 @@ testFailedCompilationWhenImplicitConversionDisabled() {
   TMP_DIR=$(mktemp -d)
 
   cd ${TMP_DIR}
-  cmake ${ROOT_DIR} -DCMAKE_CXX_FLAGS="-DENABLE_IMPLICIT_RATIO_CONVERSION=false"
+  cmake ${ROOT_DIR} -DCMAKE_CXX_FLAGS="-DENABLE_IMPLICIT_RATIO_CONVERSION=false" -G Ninja
   assertEquals "Configuration successful" $? 0
   cmake --build . --config Release 
   assertNotEquals "Building fails" $? 0
