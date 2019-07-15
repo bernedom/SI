@@ -69,6 +69,13 @@ matrix:
         - cd ../example
         - mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/local-install
         - cmake --build .
+
+    - os: linux
+      name: compilation tests
+      env:
+         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+      script:
+        - ./test/compilation-tests.sh
              
 
 before_install:
@@ -79,4 +86,3 @@ script:
   - mkdir build && cd build && cmake .. -G Ninja 
   - cmake --build . --config Debug
   - ctest -C Debug
-  - ../test/compilation-tests.sh
