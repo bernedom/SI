@@ -28,6 +28,8 @@ constexpr auto unit_cast(const _rhs_T &rhs);
 
 template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
 
+/// @todo add assignement operator, copy ctor, move ctor
+
 /**
  * @brief base template class for holding values of type _Type to be multiplied
  *with a ratio _Ratio
@@ -78,13 +80,11 @@ struct unit_t {
         typename std::remove_reference<decltype(rhs)>::type,
         typename std::remove_reference<decltype(*this)>::type>::type;
 
-    if
-      constexpr(std::is_integral<internal_type>::value) {
+    if constexpr (std::is_integral<internal_type>::value) {
 
-        return unit_cast<gcd_unit>(rhs).raw_value() ==
-               unit_cast<gcd_unit>(*this).raw_value();
-      }
-    else {
+      return unit_cast<gcd_unit>(rhs).raw_value() ==
+             unit_cast<gcd_unit>(*this).raw_value();
+    } else {
       return detail::epsEqual(unit_cast<gcd_unit>(rhs).raw_value(),
                               unit_cast<gcd_unit>(*this).raw_value());
     }
@@ -216,6 +216,7 @@ struct unit_t {
 
   /// if the same units of the same exponent are divided then the result is a
   /// scalar
+  /// @todo add handling for different ratios
   template <char _rhs_exponent, typename _rhs_ratio,
             typename std::enable_if<_rhs_exponent == exponent::value>::type * =
                 nullptr>

@@ -4,7 +4,18 @@ project("SI-Compilation-Tests")
 
 find_package(SI CONFIG REQUIRED)
 
-add_executable(${PROJECT_NAME} main.cc)
+add_executable(${PROJECT_NAME})
 target_link_libraries(${PROJECT_NAME} SI::SI)
 
-target_sources(${PROJECT_NAME} PRIVATE operator_equals.cc)
+target_sources(${PROJECT_NAME}
+               PRIVATE
+               main.cc
+               operator_equals_test.cc
+               operator_lessthan_test.cc
+               operator_greaterthan_test.cc
+               operator_multiply_test.cc
+               operator_divide_test.cc
+               operator_add_test.cc
+               operator_subtract_test.cc
+               operator_divide_from_integral_test.cc
+               operator_divide_from_floating_point_test.cc)
