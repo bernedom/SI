@@ -14,6 +14,7 @@ add_library(${PROJECT_NAME} INTERFACE)
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 include(GNUInstallDirs)
+include(CTest)
 
 # Adding the install interface generator expression makes sure that the include
 # files are installed to the proper location (provided by GNUInstallDirs)
@@ -24,8 +25,9 @@ target_include_directories(
 
 target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_17)
 
-enable_testing()
-add_subdirectory(test)
+if(BUILD_TESTING)
+  add_subdirectory(test)
+endif()
 
 # locations are provided by GNUInstallDirs
 install(TARGETS ${PROJECT_NAME}
@@ -54,7 +56,8 @@ install(FILES "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
               "${PROJECT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
         DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME}/cmake)
 
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/SI DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/SI
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
 set(CPACK_RESOURCE_FILE_LICENSE "${PROJECT_SOURCE_DIR}/LICENSE")
 
