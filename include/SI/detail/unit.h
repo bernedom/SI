@@ -10,6 +10,12 @@
  **/
 #pragma once
 
+#ifdef DISABLE_IMPLICIT_RATIO_CONVERSION
+#define _SI_ENABLE_IMPLICIT_RATIO_CONVERSION false
+#else
+#define _SI_ENABLE_IMPLICIT_RATIO_CONVERSION true
+#endif
+
 #include "detail.h"
 
 #include <ratio>
@@ -23,6 +29,8 @@ template <typename _T, typename _rhs_T>
 constexpr auto unit_cast(const _rhs_T &rhs);
 
 template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
+
+/// @todo add assignement operator, copy ctor, move ctor
 
 /**
  * @brief base template class for holding values of type _Type to be multiplied
@@ -60,6 +68,11 @@ struct unit_t {
   operator==(const unit_t<symbol::value, exponent::value, internal_type,
                           _rhs_ratio> &rhs) const {
 
+    static_assert(
+        _SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before comparing");
+
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
     static_assert(std::is_integral<internal_type>::value ||
@@ -94,6 +107,10 @@ struct unit_t {
                                         internal_type, _rhs_ratio> &rhs) const {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
+    static_assert(
+        _SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before comparing");
 
     using gcd_unit = typename unit_with_common_ratio<
         typename std::remove_reference<decltype(rhs)>::type,
@@ -107,6 +124,10 @@ struct unit_t {
                                         internal_type, _rhs_ratio> &rhs) const {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
+    static_assert(
+        _SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before comparing");
 
     using gcd_unit = typename unit_with_common_ratio<
         typename std::remove_reference<decltype(rhs)>::type,
@@ -141,6 +162,10 @@ struct unit_t {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
     static_assert(_rhs_Exponent > 0, "_rhs_Exponent is positive");
+    static_assert(
+        _SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before comparing");
 
     using gcd_unit = typename unit_with_common_ratio<
         typename std::remove_reference<decltype(rhs)>::type,
@@ -176,6 +201,10 @@ struct unit_t {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
     static_assert(_rhs_exponent > 0, "_rhs_Exponent is positive");
+    static_assert(
+        _SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before dividing");
 
     using gcd_unit = typename unit_with_common_ratio<
         typename std::remove_reference<decltype(rhs)>::type,
@@ -189,11 +218,17 @@ struct unit_t {
 
   /// if the same units of the same exponent are divided then the result is a
   /// scalar
+  /// @todo add handling for different ratios
   template <char _rhs_exponent, typename _rhs_ratio,
             typename std::enable_if<_rhs_exponent == exponent::value>::type * =
                 nullptr>
   constexpr _Type operator/(
       const unit_t<_Symbol, _rhs_exponent, _Type, _rhs_ratio> &rhs) const {
+    static_assert(_SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+                      std::ratio_equal<_rhs_ratio, _Ratio>::value,
+                  "Implicit ratio conversion disabled, convert to same ratio "
+                  "before dividing");
+
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
     static_assert(_rhs_exponent > 0, "_rhs_Exponent is positive");
@@ -209,6 +244,10 @@ struct unit_t {
 
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
+    static_assert(
+        _SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before adding values");
 
     return unit_t{
         raw_value() +
@@ -222,6 +261,10 @@ struct unit_t {
 
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
+    static_assert(
+        _SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before subtracting");
 
     return unit_t{
         raw_value() +
@@ -243,6 +286,10 @@ template <
     typename std::enable_if<std::is_integral<_Type>::value>::type * = nullptr>
 constexpr auto operator/(const _Type &lhs,
                          const unit_t<_Symbol, _Exponent, _Type, _Ratio> &rhs) {
+  static_assert(_SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+                    std::ratio_equal<std::ratio<1>, _Ratio>::value,
+                "Implicit ratio conversion disabled, convert to ratio<1> "
+                "before dividing");
   return unit_cast<unit_t<_Symbol, -_Exponent, _Type, _Ratio>>(
       unit_t<_Symbol, -_Exponent, _Type, std::ratio<1>>{
           lhs / (rhs.raw_value() * (_Ratio::num / _Ratio::den))});
@@ -257,7 +304,10 @@ template <char _Symbol, char _Exponent, typename _Type, typename _Ratio,
               * = nullptr>
 constexpr auto operator/(const _Type &lhs,
                          const unit_t<_Symbol, _Exponent, _Type, _Ratio> &rhs) {
-
+  static_assert(_SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+                    std::ratio_equal<_Ratio, std::ratio<1>>::value,
+                "Implicit ratio conversion disabled, convert to ratio<1> "
+                "before dividing");
   return unit_cast<unit_t<_Symbol, -_Exponent, _Type, _Ratio>>(
       unit_t<_Symbol, -_Exponent, _Type, std::ratio<1>>{
           lhs / (rhs.raw_value() * (static_cast<_Type>(_Ratio::num) /

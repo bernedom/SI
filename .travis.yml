@@ -13,6 +13,12 @@ addons:
       - clang-5.0
       - clang-6.0
       - libstdc++-8-dev
+      - shunit2
+      - ninja-build
+  homebrew:
+    packages:
+      - ninja
+      - shunit2
 
 os: linux
 env:
@@ -39,30 +45,18 @@ matrix:
         - MATRIX_EVAL=""
 
     - os: linux
-      name: installation testing pure cmake
+      name: installation tests
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
       script: 
-        - cmake --version
-        - mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/local-install
-        - cmake --build . --config Release --target install -- -j $(nproc)
-        - cd ../example
-        - mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/local-install
-        - cmake --build .
-        
+        - ./test/installation-tests.sh
+
     - os: linux
-      name: installation testing cpack
+      name: compilation tests
       env:
-        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
-      script: 
-        - mkdir build && cd build
-        - cmake -DCPACK_PACKAGE_FILE_NAME=install-SI .. 
-        - cmake --build . --config Release --target package -- -j $(nproc)
-        - mkdir ${HOME}/local-install
-        - ./install-SI.sh --prefix=${HOME}/local-install --skip-license --exclude-subdir
-        - cd ../example
-        - mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/local-install
-        - cmake --build .
+         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+      script:
+        - ./test/compilation-tests.sh
              
 
 before_install:
@@ -70,6 +64,6 @@ before_install:
 
 script: 
   - cmake --version
-  - mkdir build && cd build && cmake .. 
-  - cmake --build . --config Debug -- -j $(nproc)
+  - mkdir build && cd build && cmake .. -G Ninja 
+  - cmake --build . --config Debug
   - ctest -C Debug
