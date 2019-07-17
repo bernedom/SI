@@ -2,7 +2,7 @@
 
 ## 1.1.0
 
-*   Implicit / automatic conversions between units of different ratio can be disabled with the preprocessor flag `ENABLE_IMPLICIT_RATIO_CONVERSION`
+*   Implicit / automatic conversions between units of different ratio can be disabled with the preprocessor flag `DISABLE_IMPLICIT_RATIO_CONVERSION`
 
 ## 1.0.1
 

@@ -16,7 +16,7 @@ buildSingleTarget()
         assertEquals "Configuration successful" $? 0
         
     else
-        cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_CXX_FLAGS="-DENABLE_IMPLICIT_RATIO_CONVERSION=false" -G Ninja >/dev/null
+        cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_CXX_FLAGS="-DDISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja >/dev/null
         assertEquals "Configuration successful" $? 0
     fi
     
@@ -65,7 +65,7 @@ testSISelfSuccessfulCompilationWhenDefaultInvocation() {
 
 testSISelfFailedCompilationWhenImplicitConversionDisabled() {
     
-    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_CXX_FLAGS="-DENABLE_IMPLICIT_RATIO_CONVERSION=false" -G Ninja
+    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_CXX_FLAGS="-DDISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja
     assertEquals "Configuration successful" $? 0
     cmake --build ${BUILD_DIR} --config Release
     assertNotEquals "Building fails" $? 0
