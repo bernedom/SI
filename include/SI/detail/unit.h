@@ -211,9 +211,11 @@ struct unit_t {
         typename std::remove_reference<decltype(rhs)>::type,
         typename std::remove_reference<decltype(*this)>::type>::type;
 
-    return unit_cast<gcd_unit>(*this) /
+    return unit_cast<
+               unit_t<_Symbol, _Exponent, _Type, typename gcd_unit::ratio>>(
+               *this) /
            unit_cast<
-               unit_t<_Symbol, _rhs_exponent, typename gcd_unit::ratio, _Type>>(
+               unit_t<_Symbol, _rhs_exponent, _Type, typename gcd_unit::ratio>>(
                rhs);
   }
 
