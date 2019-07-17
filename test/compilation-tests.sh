@@ -159,11 +159,11 @@ testOperatorDivideCompilesWhenDefaultInvocation()
 }
 
 
-# testOperatorDivideFailsWhenImplicitConversionDisabled()
-# {
-#     TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_divide_test.cc.o
-#     buildSingleTarget ${TARGET} FAIL
-# }
+testOperatorDivideFailsWhenImplicitConversionDisabled()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_divide_test.cc.o
+    buildSingleTarget ${TARGET} FAIL
+}
 
 testOperatorDivideFromFloatingPointCompilesWhenDefaultInvocation()
 {

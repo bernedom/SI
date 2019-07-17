@@ -224,6 +224,11 @@ struct unit_t {
                 nullptr>
   constexpr _Type operator/(
       const unit_t<_Symbol, _rhs_exponent, _Type, _rhs_ratio> &rhs) const {
+    static_assert(_SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+                      std::ratio_equal<_rhs_ratio, _Ratio>::value,
+                  "Implicit ratio conversion disabled, convert to same ratio "
+                  "before dividing");
+
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
     static_assert(_rhs_exponent > 0, "_rhs_Exponent is positive");
