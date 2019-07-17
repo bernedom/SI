@@ -217,6 +217,13 @@ struct unit_t {
                rhs);
   }
 
+  /// divide whit same unit type result is a scalar
+  constexpr _Type
+  operator/(const unit_t<_Symbol, _Exponent, _Type, _Ratio> &rhs) {
+
+    return raw_value() / rhs.raw_value();
+  }
+
   /// if the same units of the same exponent are divided then the result is a
   /// scalar
   template <char _rhs_exponent, typename _rhs_ratio,
@@ -237,8 +244,7 @@ struct unit_t {
         typename std::remove_reference<decltype(rhs)>::type,
         typename std::remove_reference<decltype(*this)>::type>::type;
 
-    return unit_cast<gcd_unit>(*this).raw_value() /
-           unit_cast<gcd_unit>(rhs).raw_value();
+    return unit_cast<gcd_unit>(*this) / unit_cast<gcd_unit>(rhs);
   }
 
   /// adds two values, returning type is type of lhs

@@ -3,6 +3,7 @@
 ## 1.1.0
 
 *   Implicit / automatic conversions between units of different ratio can be disabled with the preprocessor flag `DISABLE_IMPLICIT_RATIO_CONVERSION`
+*   Fixed disivion of units with same exponent, so it considers ratio 
 
 ## 1.0.1
 
