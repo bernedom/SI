@@ -114,15 +114,42 @@ TEMPLATE_TEST_CASE("GIVEN two units with different exponents WHEN divided THEN "
   STATIC_REQUIRE(decltype(result)::exponent::value == 1);
 }
 
-TEMPLATE_TEST_CASE(
-    "GIVEN two units with exponent 1 WHEN divided result in a raw integer",
-    "[unit_t][operator/]", int64_t, long double) {
+TEMPLATE_TEST_CASE("GIVEN two units with same exponent AND same ratio WHEN "
+                   "divided THEN result is internal type",
+                   "[unit_t][operator/]", int64_t, long double) {
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1};
   constexpr auto result = v1 / v1;
 
   STATIC_REQUIRE(
       std::is_same<typename std::remove_const<decltype(result)>::type,
                    typename decltype(v1)::internal_type>::value);
+}
+
+TEST_CASE(
+    "GIVEN two units with same exponent AND different ratios WHEN divided THEN "
+    "result is internal type AND ratio is calculated into result") {
+  constexpr unit_t<'X', 1, int64_t, std::kilo> v1{1};
+  constexpr unit_t<'X', 1, int64_t, std::ratio<1>> v2{500};
+
+  constexpr auto result = v1 / v2;
+
+  STATIC_REQUIRE(
+      std::is_same<typename std::remove_const<decltype(result)>::type,
+                   typename decltype(v1)::internal_type>::value);
+  STATIC_REQUIRE(result == 2);
+}
+
+TEST_CASE("GIVEN two units with different exponents AND different ratios WHEN "
+          "divided THEN result is unit with exponents subtracted AND ratio "
+          "is gcd ") {
+  constexpr SI::detail::unit_t<'X', 2, int64_t, std::ratio<1>> v1{2000};
+  constexpr SI::detail::unit_t<'X', 1, int64_t, std::milli> v2{1000};
+
+  constexpr auto result = v1 / v2;
+  STATIC_REQUIRE(std::is_same<
+                 decltype(result),
+                 const SI::detail::unit_t<'X', 1, int64_t, std::milli>>::value);
+  STATIC_REQUIRE(result.raw_value() == 2000);
 }
 
 TEST_CASE("GIVEN two units with the same ratio exponent 1 AND internal type is "

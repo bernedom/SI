@@ -31,6 +31,7 @@ constexpr auto unit_cast(const _rhs_T &rhs);
 template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
 
 /// @todo add assignement operator, copy ctor, move ctor
+/// @todo add division by primitive type
 
 /**
  * @brief base template class for holding values of type _Type to be multiplied
@@ -210,15 +211,23 @@ struct unit_t {
         typename std::remove_reference<decltype(rhs)>::type,
         typename std::remove_reference<decltype(*this)>::type>::type;
 
-    return unit_cast<gcd_unit>(*this) /
+    return unit_cast<
+               unit_t<_Symbol, _Exponent, _Type, typename gcd_unit::ratio>>(
+               *this) /
            unit_cast<
-               unit_t<_Symbol, _rhs_exponent, typename gcd_unit::ratio, _Type>>(
+               unit_t<_Symbol, _rhs_exponent, _Type, typename gcd_unit::ratio>>(
                rhs);
+  }
+
+  /// divide whit same unit type result is a scalar
+  constexpr _Type
+  operator/(const unit_t<_Symbol, _Exponent, _Type, _Ratio> &rhs) {
+
+    return raw_value() / rhs.raw_value();
   }
 
   /// if the same units of the same exponent are divided then the result is a
   /// scalar
-  /// @todo add handling for different ratios
   template <char _rhs_exponent, typename _rhs_ratio,
             typename std::enable_if<_rhs_exponent == exponent::value>::type * =
                 nullptr>
@@ -233,7 +242,11 @@ struct unit_t {
                   "_rhs_ratio is a std::ratio");
     static_assert(_rhs_exponent > 0, "_rhs_Exponent is positive");
 
-    return raw_value() / rhs.raw_value();
+    using gcd_unit = typename unit_with_common_ratio<
+        typename std::remove_reference<decltype(rhs)>::type,
+        typename std::remove_reference<decltype(*this)>::type>::type;
+
+    return unit_cast<gcd_unit>(*this) / unit_cast<gcd_unit>(rhs);
   }
 
   /// adds two values, returning type is type of lhs
