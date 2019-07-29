@@ -188,7 +188,8 @@ struct unit_t {
     using rhs_t = typename std::remove_reference<decltype(rhs)>::type;
 
     return unit_t<symbol::value, exponent::value - rhs_t::exponent::value,
-                  internal_type, ratio>{value_ / rhs.raw_value()};
+                  internal_type, std::ratio_divide<ratio, ratio>>{
+        value_ / rhs.raw_value()};
   }
 
   /// divide with a same unit but different ratios
