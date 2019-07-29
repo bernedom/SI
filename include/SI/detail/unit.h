@@ -172,6 +172,9 @@ struct unit_t {
                                                           rhs.raw_value()};
   }
 
+  /// divide by a non-unit scalar
+  constexpr unit_t operator/(const _Type f) const { return {value_ / f}; }
+
   /// divide with same unit with same ratio but not the same exponent
   /// @returns unit with exponents subtracted from each others
   template <char _rhs_exponent,

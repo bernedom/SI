@@ -5,7 +5,7 @@
 using namespace SI::detail;
 
 TEMPLATE_TEST_CASE(
-    "given two values with exponent 1 WHEN multiplied THEN exponent is 2",
+    "GIVEN two values with exponent 1 WHEN multiplied THEN exponent is 2",
     "[unit_t][operator*]", int64_t, long double) {
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{0};
 
@@ -15,7 +15,7 @@ TEMPLATE_TEST_CASE(
 }
 
 TEMPLATE_TEST_CASE(
-    "given two units with different non-negative values AND same ratio "
+    "GIVEN two units with different non-negative values AND same ratio "
     "AND same unit WHEN "
     "multiplied THEN resulting value is correct",
     "[unit_t][operator*]", int64_t, long double) {
@@ -29,7 +29,7 @@ TEMPLATE_TEST_CASE(
 }
 
 TEMPLATE_TEST_CASE(
-    "given two units with different non-negative values AND different ratio "
+    "GIVEN two units with different non-negative values AND different ratio "
     "AND same unit WHEN "
     "multiplied THEN resulting value is correct AND resulting ratio is ratio "
     "multiplied",
@@ -46,7 +46,7 @@ TEMPLATE_TEST_CASE(
                    const unit_t<'X', 2, TestType, std::deci>>::value);
 }
 
-TEMPLATE_TEST_CASE("given two units with different values AND different ratio "
+TEMPLATE_TEST_CASE("GIVEN two units with different values AND different ratio "
                    "AND same unit WHEN "
                    "multiplied THEN resulting value is correct",
                    "[unit_t][operator*]", int64_t, long double) {
@@ -61,10 +61,20 @@ TEMPLATE_TEST_CASE("given two units with different values AND different ratio "
       std::ratio_equal<typename decltype(result)::ratio, std::deci>::value);
 }
 
+TEST_CASE("GIVEN a unit WHEN divided by as scalar THEN result is correct") {
+  constexpr unit_t<'X', 1, int64_t, std::milli> v{30};
+  constexpr auto r = v / 2;
+  constexpr unit_t<'X', 1, int64_t, std::milli> expected{15};
+
+  STATIC_REQUIRE(r.raw_value() == 15);
+  STATIC_REQUIRE(r == expected);
+  STATIC_REQUIRE(std::is_same<decltype(r), decltype(v)>::value);
+}
+
 /* This test is not templatized because of the == comparison of the raw values,
  Which does not work with floating points*/
 TEST_CASE(
-    "given two units with different values AND ratio of rhs is small AND type "
+    "GIVEN two units with different values AND ratio of rhs is small AND type "
     "is integer WHEN "
     "multiplied THEN resulting ratio is ratios multiplied and value is correct",
     "[unit_t][operator*]") {
@@ -83,7 +93,7 @@ TEST_CASE(
 /* This test is not templatized because of the epsEqual comparison of the raw
  * values*/
 TEST_CASE(
-    "given two units with different values AND ratio of rhs is small AND type "
+    "GIVEN two units with different values AND ratio of rhs is small AND type "
     "is floating point WHEN "
     "multiplied THEN resulting type is of left hand side and value is a "
     "fraction but does not match epsilon",

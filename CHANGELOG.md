@@ -6,6 +6,7 @@
 *   Fixed division of units with same exponent so it considers ratio
 *   Bugfix in division of units with different exponent and different ratios
 *   Multiplying units with different ratios results in mutiplied ratios instead of gcd of ratios squared
+*   Added division of units by a scalar
 
 ## 1.0.1
 
