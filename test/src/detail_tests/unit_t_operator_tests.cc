@@ -40,10 +40,10 @@ TEMPLATE_TEST_CASE(
 
   constexpr auto result = v1 * v2;
 
-  STATIC_REQUIRE(result == unit_t<'X', 2, TestType, std::centi>{600});
+  STATIC_REQUIRE(result == unit_t<'X', 2, TestType, std::deci>{60});
   STATIC_REQUIRE(
       std::is_same<decltype(result),
-                   const unit_t<'X', 2, TestType, std::centi>>::value);
+                   const unit_t<'X', 2, TestType, std::deci>>::value);
 }
 
 TEMPLATE_TEST_CASE("given two units with different values AND different ratio "
@@ -56,9 +56,9 @@ TEMPLATE_TEST_CASE("given two units with different values AND different ratio "
 
   constexpr auto result = v1 * v2;
 
-  STATIC_REQUIRE(result == unit_t<'X', 2, TestType, std::centi>{-600});
+  STATIC_REQUIRE(result == unit_t<'X', 2, TestType, std::deci>{-60});
   STATIC_REQUIRE(
-      std::ratio_equal<typename decltype(result)::ratio, std::centi>::value);
+      std::ratio_equal<typename decltype(result)::ratio, std::deci>::value);
 }
 
 /* This test is not templatized because of the == comparison of the raw values,
@@ -74,10 +74,10 @@ TEST_CASE(
 
   constexpr auto result = v1 * v2;
 
-  STATIC_REQUIRE(result == unit_t<'X', 2, int64_t, std::micro>{60000});
-  STATIC_REQUIRE(result.raw_value() == 60000);
+  STATIC_REQUIRE(result == unit_t<'X', 2, int64_t, std::milli>{60});
+  STATIC_REQUIRE(result.raw_value() == 60);
   STATIC_REQUIRE(
-      std::ratio_equal<typename decltype(result)::ratio, std::micro>::value);
+      std::ratio_equal<typename decltype(result)::ratio, std::milli>::value);
 }
 
 /* This test is not templatized because of the epsEqual comparison of the raw
@@ -97,10 +97,10 @@ TEST_CASE(
   constexpr auto expected =
       v1 * unit_cast<unit_t<'X', 1, long double, std::ratio<1>>>(v2);
 
-  STATIC_REQUIRE(epsEqual(result.raw_value(), 40000.0L));
+  STATIC_REQUIRE(epsEqual(result.raw_value(), 40.0L));
   STATIC_REQUIRE(result == expected);
   STATIC_REQUIRE(std::ratio_equal<typename decltype(result)::ratio,
-                                  typename std::micro>::value);
+                                  typename std::milli>::value);
 }
 
 TEMPLATE_TEST_CASE("GIVEN two units with different exponents WHEN divided THEN "

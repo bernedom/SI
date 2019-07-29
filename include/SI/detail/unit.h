@@ -151,30 +151,25 @@ struct unit_t {
                                                      rhs.raw_value()};
   }
 
-  /// multiplication multiply with a same unit, with possibly different exponent
+  /// multiplication multiply with a same unit, with different exponent
   /// and different ratio
-  /// the exponents this and rhs are added, the resulting ratio is the gcd
-  /// between both ratios squared. The reason for this is to avoid truncating
-  /// values if multiplying units with different ratios
-  template <char _rhs_Exponent, typename _rhs_ratio>
-  constexpr auto operator*(const unit_t<symbol::value, _rhs_Exponent,
+  /// the exponents this and rhs are added, the resulting ratio the ratio
+  /// multiplied.
+  template <char _rhs_exponent, typename _rhs_ratio>
+  constexpr auto operator*(const unit_t<symbol::value, _rhs_exponent,
                                         internal_type, _rhs_ratio> &rhs) const {
 
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
-    static_assert(_rhs_Exponent > 0, "_rhs_Exponent is positive");
+
     static_assert(
         _SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
             std::ratio_equal<ratio, _rhs_ratio>::value,
         "Implicit ratio conversion disabled, convert before comparing");
 
-    using gcd_unit = typename unit_with_common_ratio<
-        typename std::remove_reference<decltype(rhs)>::type,
-        typename std::remove_reference<decltype(*this)>::type>::type;
-    return unit_cast<gcd_unit>(*this) *
-           unit_cast<
-               unit_t<_Symbol, _rhs_Exponent, _Type, typename gcd_unit::ratio>>(
-               rhs);
+    return unit_t<symbol::value, exponent::value + _rhs_exponent, internal_type,
+                  std::ratio_multiply<ratio, _rhs_ratio>>{value_ *
+                                                          rhs.raw_value()};
   }
 
   /// divide with same unit with same ratio but not the same exponent
