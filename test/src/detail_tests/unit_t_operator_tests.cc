@@ -5,7 +5,7 @@
 using namespace SI::detail;
 
 TEMPLATE_TEST_CASE(
-    "given two values with exponent 1 WHEN multiplied THEN exponent is 2",
+    "GIVEN two values with exponent 1 WHEN multiplied THEN exponent is 2",
     "[unit_t][operator*]", int64_t, long double) {
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{0};
 
@@ -15,7 +15,7 @@ TEMPLATE_TEST_CASE(
 }
 
 TEMPLATE_TEST_CASE(
-    "given two units with different non-negative values AND same ratio "
+    "GIVEN two units with different non-negative values AND same ratio "
     "AND same unit WHEN "
     "multiplied THEN resulting value is correct",
     "[unit_t][operator*]", int64_t, long double) {
@@ -29,7 +29,7 @@ TEMPLATE_TEST_CASE(
 }
 
 TEMPLATE_TEST_CASE(
-    "given two units with different non-negative values AND different ratio "
+    "GIVEN two units with different non-negative values AND different ratio "
     "AND same unit WHEN "
     "multiplied THEN resulting value is correct AND resulting ratio is ratio "
     "multiplied",
@@ -40,13 +40,13 @@ TEMPLATE_TEST_CASE(
 
   constexpr auto result = v1 * v2;
 
-  STATIC_REQUIRE(result == unit_t<'X', 2, TestType, std::centi>{600});
+  STATIC_REQUIRE(result == unit_t<'X', 2, TestType, std::deci>{60});
   STATIC_REQUIRE(
       std::is_same<decltype(result),
-                   const unit_t<'X', 2, TestType, std::centi>>::value);
+                   const unit_t<'X', 2, TestType, std::deci>>::value);
 }
 
-TEMPLATE_TEST_CASE("given two units with different values AND different ratio "
+TEMPLATE_TEST_CASE("GIVEN two units with different values AND different ratio "
                    "AND same unit WHEN "
                    "multiplied THEN resulting value is correct",
                    "[unit_t][operator*]", int64_t, long double) {
@@ -56,15 +56,25 @@ TEMPLATE_TEST_CASE("given two units with different values AND different ratio "
 
   constexpr auto result = v1 * v2;
 
-  STATIC_REQUIRE(result == unit_t<'X', 2, TestType, std::centi>{-600});
+  STATIC_REQUIRE(result == unit_t<'X', 2, TestType, std::deci>{-60});
   STATIC_REQUIRE(
-      std::ratio_equal<typename decltype(result)::ratio, std::centi>::value);
+      std::ratio_equal<typename decltype(result)::ratio, std::deci>::value);
+}
+
+TEST_CASE("GIVEN a unit WHEN divided by as scalar THEN result is correct") {
+  constexpr unit_t<'X', 1, int64_t, std::milli> v{30};
+  constexpr auto r = v / 2;
+  constexpr unit_t<'X', 1, int64_t, std::milli> expected{15};
+
+  STATIC_REQUIRE(r.raw_value() == 15);
+  STATIC_REQUIRE(r == expected);
+  STATIC_REQUIRE(std::is_same<decltype(r), decltype(v)>::value);
 }
 
 /* This test is not templatized because of the == comparison of the raw values,
  Which does not work with floating points*/
 TEST_CASE(
-    "given two units with different values AND ratio of rhs is small AND type "
+    "GIVEN two units with different values AND ratio of rhs is small AND type "
     "is integer WHEN "
     "multiplied THEN resulting ratio is ratios multiplied and value is correct",
     "[unit_t][operator*]") {
@@ -74,16 +84,16 @@ TEST_CASE(
 
   constexpr auto result = v1 * v2;
 
-  STATIC_REQUIRE(result == unit_t<'X', 2, int64_t, std::micro>{60000});
-  STATIC_REQUIRE(result.raw_value() == 60000);
+  STATIC_REQUIRE(result == unit_t<'X', 2, int64_t, std::milli>{60});
+  STATIC_REQUIRE(result.raw_value() == 60);
   STATIC_REQUIRE(
-      std::ratio_equal<typename decltype(result)::ratio, std::micro>::value);
+      std::ratio_equal<typename decltype(result)::ratio, std::milli>::value);
 }
 
 /* This test is not templatized because of the epsEqual comparison of the raw
  * values*/
 TEST_CASE(
-    "given two units with different values AND ratio of rhs is small AND type "
+    "GIVEN two units with different values AND ratio of rhs is small AND type "
     "is floating point WHEN "
     "multiplied THEN resulting type is of left hand side and value is a "
     "fraction but does not match epsilon",
@@ -97,10 +107,10 @@ TEST_CASE(
   constexpr auto expected =
       v1 * unit_cast<unit_t<'X', 1, long double, std::ratio<1>>>(v2);
 
-  STATIC_REQUIRE(epsEqual(result.raw_value(), 40000.0L));
+  STATIC_REQUIRE(epsEqual(result.raw_value(), 40.0L));
   STATIC_REQUIRE(result == expected);
   STATIC_REQUIRE(std::ratio_equal<typename decltype(result)::ratio,
-                                  typename std::micro>::value);
+                                  typename std::milli>::value);
 }
 
 TEMPLATE_TEST_CASE("GIVEN two units with different exponents WHEN divided THEN "
@@ -139,17 +149,31 @@ TEST_CASE(
   STATIC_REQUIRE(result == 2);
 }
 
-TEST_CASE("GIVEN two units with different exponents AND different ratios WHEN "
+TEST_CASE("GIVEN two units with different exponents AND different ratios WHEN  "
           "divided THEN result is unit with exponents subtracted AND ratio "
-          "is gcd ") {
-  constexpr SI::detail::unit_t<'X', 2, int64_t, std::ratio<1>> v1{2000};
-  constexpr SI::detail::unit_t<'X', 1, int64_t, std::milli> v2{1000};
+          "is divided ") {
+  constexpr SI::detail::unit_t<'X', 2, int64_t, std::ratio<1>> v1{4};
+  constexpr SI::detail::unit_t<'X', 1, int64_t, std::milli> v2{2};
 
   constexpr auto result = v1 / v2;
   STATIC_REQUIRE(std::is_same<
                  decltype(result),
-                 const SI::detail::unit_t<'X', 1, int64_t, std::milli>>::value);
-  STATIC_REQUIRE(result.raw_value() == 2000);
+                 const SI::detail::unit_t<'X', 1, int64_t, std::kilo>>::value);
+  STATIC_REQUIRE(result.raw_value() == 2);
+}
+
+TEST_CASE("GIVEN two units with different exponents AND same ratios WHEN "
+          "divided THEN result is unit with exponents subtracted AND ratio "
+          "is divided") {
+  constexpr SI::detail::unit_t<'X', 2, int64_t, std::milli> v1{4};
+  constexpr SI::detail::unit_t<'X', 1, int64_t, std::milli> v2{2};
+
+  constexpr auto result = v1 / v2;
+  STATIC_REQUIRE(
+      std::is_same<
+          decltype(result),
+          const SI::detail::unit_t<'X', 1, int64_t, std::ratio<1>>>::value);
+  STATIC_REQUIRE(result.raw_value() == 2);
 }
 
 TEST_CASE("GIVEN two units with the same ratio exponent 1 AND internal type is "

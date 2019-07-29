@@ -150,7 +150,10 @@ TEST_CASE("GIVEN a lenght value with ratio 1 AND a length value with ratio "
   constexpr auto a_commutative = l_mm * l;
   constexpr auto expected = 4000_mm2;
 
-  STATIC_REQUIRE(std::is_same<decltype(a), decltype(expected)>::value);
+  STATIC_REQUIRE(std::is_same<decltype(a), decltype(a_commutative)>::value);
+  STATIC_REQUIRE(std::is_same<std::remove_const<decltype(a)>::type,
+                              SI::area_t<int64_t, std::milli>>::value);
+
   STATIC_REQUIRE(expected == a);
   STATIC_REQUIRE(a == a_commutative);
   STATIC_REQUIRE(a_commutative == a);

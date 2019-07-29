@@ -13,8 +13,6 @@
 #include "detail/number_parser.h"
 #include "detail/unit.h"
 
-/// todo add rad and sr as literal operators
-
 namespace SI {
 /// Type for angle (which should be buildable from m/m (sin/cos))
 template <typename _Type, typename _Ratio>

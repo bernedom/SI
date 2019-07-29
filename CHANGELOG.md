@@ -3,8 +3,10 @@
 ## 1.1.0
 
 *   Implicit / automatic conversions between units of different ratio can be disabled with the preprocessor flag `DISABLE_IMPLICIT_RATIO_CONVERSION`
-*   Fixed division of units with same exponent, so it considers ratio
+*   Fixed division of units with same exponent so it considers ratio
 *   Bugfix in division of units with different exponent and different ratios
+*   Multiplying units with different ratios results in mutiplied ratios instead of gcd of ratios squared
+*   Added division of units by a scalar
 
 ## 1.0.1
 
