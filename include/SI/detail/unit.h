@@ -208,16 +208,9 @@ struct unit_t {
             std::ratio_equal<ratio, _rhs_ratio>::value,
         "Implicit ratio conversion disabled, convert before dividing");
 
-    using gcd_unit = typename unit_with_common_ratio<
-        typename std::remove_reference<decltype(rhs)>::type,
-        typename std::remove_reference<decltype(*this)>::type>::type;
-
-    return unit_cast<
-               unit_t<_Symbol, _Exponent, _Type, typename gcd_unit::ratio>>(
-               *this) /
-           unit_cast<
-               unit_t<_Symbol, _rhs_exponent, _Type, typename gcd_unit::ratio>>(
-               rhs);
+    return unit_t<_Symbol, exponent::value - _rhs_exponent, _Type,
+                  std::ratio_divide<ratio, _rhs_ratio>>{value_ /
+                                                        rhs.raw_value()};
   }
 
   /// divide whit same unit type result is a scalar
@@ -227,8 +220,8 @@ struct unit_t {
     return raw_value() / rhs.raw_value();
   }
 
-  /// if the same units of the same exponent are divided then the result is a
-  /// scalar
+  /// if the same units of the same exponent but different ratio are divided
+  /// then the result is a scalar
   template <char _rhs_exponent, typename _rhs_ratio,
             typename std::enable_if<_rhs_exponent == exponent::value>::type * =
                 nullptr>
