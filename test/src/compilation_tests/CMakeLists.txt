@@ -18,4 +18,6 @@ target_sources(${PROJECT_NAME}
                operator_add_test.cc
                operator_subtract_test.cc
                operator_divide_from_integral_test.cc
-               operator_divide_from_floating_point_test.cc)
+               operator_divide_from_floating_point_test.cc
+               parsing_overflow_test.cc
+               parsing_overflow_test_pass_compilation.cc)
