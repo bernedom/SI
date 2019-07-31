@@ -1,5 +1,9 @@
 # Changelog 
 
+## 1.1.1
+
+*   Unified usage of template arugments in unit_t
+
 ## 1.1.0
 
 *   Implicit / automatic conversions between units of different ratio can be disabled with the preprocessor flag `DISABLE_IMPLICIT_RATIO_CONVERSION`

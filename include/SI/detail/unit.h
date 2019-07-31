@@ -31,7 +31,6 @@ constexpr auto unit_cast(const _rhs_T &rhs);
 template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
 
 /// @todo add assignement operator, copy ctor, move ctor
-/// @todo add division by primitive type
 
 /**
  * @brief base template class for holding values of type _Type to be multiplied

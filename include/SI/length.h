@@ -18,8 +18,6 @@
 
 namespace SI {
 /// @todo add astronomic units
-/// @todo add angle/radiant (l/l)
-/// @todo add solid-angle/sterradiant (l^2/L^2)
 template <typename _Type, typename _Ratio>
 using length_t = detail::unit_t<'L', 1, _Type, _Ratio>;
 
