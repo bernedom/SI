@@ -51,5 +51,18 @@ testCpackInstallation(){
     
 }
 
+testVersionNumberConsistency()
+{
+    CHANGELOG_VERSION=$(sed -n -E '/## [0-9]+\.[0-9]+\.[0-9]+/p' ${ROOT_DIR}/CHANGELOG.md | head -1 | grep -E -o '[0-9]+\.[0-9]+\.[0-9]+')
+    ORIG_DIR=$(pwd)
+    cmake ${ROOT_DIR} -B${SI_BUILD_DIR} -DBUILD_TESTING=off -G Ninja
+    cd ${SI_BUILD_DIR}
+    CMAKE_VERSION=$(cmake --system-information|grep -E "VERSION:STATIC"|grep -E -o '[0-9]+\.[0-9]+\.[0-9]+')
+    cd ${ORIG_DIR}
+    
+    assertEquals "version in changelog (${CHANGELOG_VERSION}) does not match cmake version (${CMAKE_VERSION})" $CHANGELOG_VERSION $CMAKE_VERSION
+    
+}
+
 # Load shUnit2.
 . shunit2
