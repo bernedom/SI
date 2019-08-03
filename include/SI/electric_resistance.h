@@ -17,6 +17,7 @@
 #include "electric_potential.h"
 
 namespace SI {
+
 /// @todo find a way to use Ohm as dimension symbol
 template <typename _Type, class _Ratio = std::ratio<1>>
 using electric_resistance_t = detail::unit_t<'O', 1, _Type, _Ratio>;
@@ -52,6 +53,16 @@ using exa_ohm_t = electric_resistance_t<_Type, std::exa>;
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(electric_resistance_t, electric_potential_t,
                         electric_current_t)
+
+/// Builds conductance from 1/conductance, to avoid include cycles the base
+/// unit_t is used instead of the type alias electric_conductance_t
+template <typename _Type, class _Ratio = std::ratio<1>>
+constexpr auto
+operator/(const _Type scalar,
+          const detail::unit_t<'G', 1, _Type, _Ratio> &conductance) {
+  return electric_resistance_t<_Type, std::ratio<_Ratio::den, _Ratio::num>>{
+      scalar / conductance.raw_value()};
+}
 } // namespace detail
 
 inline namespace literals {

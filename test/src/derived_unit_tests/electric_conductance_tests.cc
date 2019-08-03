@@ -235,7 +235,7 @@ template <typename _ratio_lhs, typename _ratio_rhs> struct ratio_tuple {
 } // namespace
 
 TEMPLATE_TEST_CASE("GIVEN a scalar WHEN divided by a resistance value THEN "
-                   "result is electric_conductance AND ratio is kept",
+                   "result is electric_conductance AND ratio is inverse",
                    "[electric_conductance][operator/]",
                    (ratio_tuple<std::milli, std::kilo>),
                    (ratio_tuple<std::kilo, std::milli>),
