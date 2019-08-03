@@ -1,5 +1,6 @@
 #include <catch.hpp>
 
+#include <SI/electric_conductance.h>
 #include <SI/electric_resistance.h>
 
 using namespace SI::literals;
@@ -216,4 +217,46 @@ TEMPLATE_TEST_CASE("GIVEN a electric_potential value WHEN divided by a "
   STATIC_REQUIRE(std::is_same<
                  decltype(result),
                  const SI::electric_current_t<TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a scalar WHEN divided by a conductance value THEN "
+                   "result is an electric resistance value",
+                   "[electric_resistance][operator/]", int64_t, long double) {
+
+  constexpr SI::electric_conductance_t<TestType, std::ratio<1>> conductance{5};
+  constexpr TestType scalar{10};
+
+  constexpr auto result = scalar / conductance;
+  constexpr SI::ohm_t<TestType> expected{2};
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), const SI::ohm_t<TestType>>::value);
+  STATIC_REQUIRE(result == expected);
+}
+
+namespace {
+/// helper struct to faciltate templated testcase
+template <typename _ratio_lhs, typename _ratio_rhs> struct ratio_tuple {
+  using ratio_lhs = _ratio_lhs;
+  using ratio_rhs = _ratio_rhs;
+};
+
+} // namespace
+
+TEMPLATE_TEST_CASE("GIVEN a scalar WHEN divided by a conductance value THEN "
+                   "result is electric_resistance AND ratio is inverse",
+                   "[electric_conductance][operator/]",
+                   (ratio_tuple<std::milli, std::kilo>),
+                   (ratio_tuple<std::kilo, std::milli>),
+                   (ratio_tuple<std::ratio<1>, std::ratio<1>>)) {
+
+  constexpr auto conductance =
+      SI::electric_conductance_t<int64_t, typename TestType::ratio_lhs>{5};
+  constexpr int64_t scalar{10};
+
+  constexpr auto result = scalar / conductance;
+  constexpr SI::electric_resistance_t<int64_t, typename TestType::ratio_rhs>
+      expected{2};
+  STATIC_REQUIRE(std::ratio_equal<typename decltype(result)::ratio,
+                                  typename TestType::ratio_rhs>::value);
+  STATIC_REQUIRE(result == expected);
 }

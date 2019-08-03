@@ -1,6 +1,7 @@
 #include <catch.hpp>
 
 #include <SI/electric_conductance.h>
+#include <SI/electric_resistance.h>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _aS THEN result is a "
@@ -198,7 +199,7 @@ TEMPLATE_TEST_CASE("GIVEN a electric_conductance value WHEN multiplied by an "
 TEMPLATE_TEST_CASE("GIVEN a electric_current value WHEN divided by a "
                    "electric_conductance value THEN "
                    "result is an electric_potential value",
-                   "[electric_current][operator/]", int64_t, long double) {
+                   "[electric_conductance][operator/]", int64_t, long double) {
   constexpr SI::electric_current_t<TestType, std::ratio<1>> electric_current{1};
   constexpr SI::electric_conductance_t<TestType, std::ratio<1>>
       electric_conductance{1};
@@ -208,4 +209,46 @@ TEMPLATE_TEST_CASE("GIVEN a electric_current value WHEN divided by a "
   STATIC_REQUIRE(
       std::is_same<decltype(result), const SI::electric_potential_t<
                                          TestType, std::ratio<1>>>::value);
+}
+
+TEMPLATE_TEST_CASE("GIVEN a scalar WHEN divided by a resistance value THEN "
+                   "result is an electric conductance value",
+                   "[electric_conductance][operator/]", int64_t, long double) {
+
+  constexpr SI::electric_resistance_t<TestType, std::ratio<1>> resistance{5};
+  constexpr TestType scalar{10};
+
+  constexpr auto result = scalar / resistance;
+  constexpr SI::siemens_t<TestType> expected{2};
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), const SI::siemens_t<TestType>>::value);
+  STATIC_REQUIRE(result == expected);
+}
+
+namespace {
+/// helper struct to faciltate templated testcase
+template <typename _ratio_lhs, typename _ratio_rhs> struct ratio_tuple {
+  using ratio_lhs = _ratio_lhs;
+  using ratio_rhs = _ratio_rhs;
+};
+
+} // namespace
+
+TEMPLATE_TEST_CASE("GIVEN a scalar WHEN divided by a resistance value THEN "
+                   "result is electric_conductance AND ratio is inverse",
+                   "[electric_conductance][operator/]",
+                   (ratio_tuple<std::milli, std::kilo>),
+                   (ratio_tuple<std::kilo, std::milli>),
+                   (ratio_tuple<std::ratio<1>, std::ratio<1>>)) {
+
+  constexpr auto resistance =
+      SI::electric_resistance_t<int64_t, typename TestType::ratio_lhs>{5};
+  constexpr int64_t scalar{10};
+
+  constexpr auto result = scalar / resistance;
+  constexpr SI::electric_conductance_t<int64_t, typename TestType::ratio_rhs>
+      expected{2};
+  STATIC_REQUIRE(std::ratio_equal<typename decltype(result)::ratio,
+                                  typename TestType::ratio_rhs>::value);
+  STATIC_REQUIRE(result == expected);
 }
