@@ -18,7 +18,6 @@
 
 namespace SI {
 
-/// @todo add building from candela / sterradiant
 template <typename _Type, class _Ratio = std::ratio<1>>
 using luminous_flux_t = detail::unit_t<'m', 1, _Type, _Ratio>;
 

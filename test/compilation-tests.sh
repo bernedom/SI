@@ -1,7 +1,6 @@
 #!/bin/bash
 # file: test/compilation-tests.sh
 
-# TODO add test for overflow checks
 # TODO add tests for generated operators
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
@@ -191,6 +190,19 @@ testOperatorDivideFromIntegralFailsWhenImplicitConversionDisabled()
     TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_divide_from_integral_test.cc.o
     buildSingleTarget ${TARGET} FAIL
 }
+
+testCompilationFailsWhenNumberparserOverflows()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/parsing_overflow_test.cc.o
+    buildSingleTarget ${TARGET} FAIL
+}
+
+testCompilationSucceedsWhenNumberparserDoesNotOverflow()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/parsing_overflow_test_pass_compilation.cc.o
+    buildSingleTarget ${TARGET} PASS
+}
+
 
 # Load shUnit2.
 . shunit2
