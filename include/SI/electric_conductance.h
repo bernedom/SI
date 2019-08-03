@@ -15,6 +15,7 @@
 #include "detail/unit.h"
 #include "electric_current.h"
 #include "electric_potential.h"
+#include "electric_resistance.h"
 
 namespace SI {
 
@@ -50,9 +51,18 @@ template <typename _Type>
 using exa_siemens_t = electric_conductance_t<_Type, std::exa>;
 
 namespace detail {
-/// @todo add building from 1/Ohm
+
 BUILD_UNIT_FROM_DIVISON(electric_conductance_t, electric_current_t,
                         electric_potential_t)
+
+/// Builds conductance from 1/resistance
+template <typename _Type, class _Ratio = std::ratio<1>>
+constexpr auto
+operator/(const _Type scalar,
+          const electric_resistance_t<_Type, _Ratio> &resistance) {
+  return electric_conductance_t<_Type, std::ratio<_Ratio::den, _Ratio::num>>{
+      scalar / resistance.raw_value()};
+}
 } // namespace detail
 
 inline namespace literals {

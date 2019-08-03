@@ -76,7 +76,7 @@ All units that can be built from other units are also decayable to the respectiv
 | Electric charge      | Q                | C           | I \* T           | aC to EC             | `*_coulomb_t`   |
 | Electric potential   | U                | V           | P / I, E/Q       | aV to EV             | `*_volt_t`      |
 | Electric resistance  | O*               | Ohm (Ω)     | U / I            | aOhm to EOhm         | `*_ohm_t`       |
-| Electric conductance | G                | S           | I / U            | aS to ES             | `*_siemens_t`   |
+| Electric conductance | G                | S           | I / U, 1/R       | aS to ES             | `*_siemens_t`   |
 | Electric capacity    | C                | F           | Q / U            | aF to EF             | `*_farad_t`     |
 | Force                | F                | N           | M \* a           | aN to EN             | `*_newton_t`    |
 | Pressure             | p                | pa          | F / L^2          | apa to Epa           | `*_pascal_t`    |

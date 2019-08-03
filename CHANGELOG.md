@@ -3,6 +3,7 @@
 ## 1.1.1
 
 *   Unified usage of template arugments in unit_t
+*   electric conductance can be built from 1/Ohm (including all ratios)
 
 ## 1.1.0
 
