@@ -18,92 +18,92 @@
 
 namespace SI {
 
-template <typename _Type, class _Ratio = std::ratio<1>>
-using catalytic_activity_t = detail::unit_t<'K', 1, _Type, _Ratio>;
+template <typename _type, class _ratio = std::ratio<1>>
+using catalytic_activity_t = detail::unit_t<'K', 1, _type, _ratio>;
 
 /// specific units
-template <typename _Type>
-using atto_katal_t = catalytic_activity_t<_Type, std::atto>;
-template <typename _Type>
-using femto_katal_t = catalytic_activity_t<_Type, std::femto>;
-template <typename _Type>
-using pico_katal_t = catalytic_activity_t<_Type, std::pico>;
-template <typename _Type>
-using nano_katal_t = catalytic_activity_t<_Type, std::nano>;
-template <typename _Type>
-using micro_katal_t = catalytic_activity_t<_Type, std::micro>;
-template <typename _Type>
-using milli_katal_t = catalytic_activity_t<_Type, std::milli>;
-template <typename _Type>
-using katal_t = catalytic_activity_t<_Type, std::ratio<1>>;
-template <typename _Type>
-using kilo_katal_t = catalytic_activity_t<_Type, std::kilo>;
-template <typename _Type>
-using mega_katal_t = catalytic_activity_t<_Type, std::mega>;
-template <typename _Type>
-using giga_katal_t = catalytic_activity_t<_Type, std::giga>;
-template <typename _Type>
-using tera_katal_t = catalytic_activity_t<_Type, std::tera>;
-template <typename _Type>
-using peta_katal_t = catalytic_activity_t<_Type, std::peta>;
-template <typename _Type>
-using exa_katal_t = catalytic_activity_t<_Type, std::exa>;
+template <typename _type>
+using atto_katal_t = catalytic_activity_t<_type, std::atto>;
+template <typename _type>
+using femto_katal_t = catalytic_activity_t<_type, std::femto>;
+template <typename _type>
+using pico_katal_t = catalytic_activity_t<_type, std::pico>;
+template <typename _type>
+using nano_katal_t = catalytic_activity_t<_type, std::nano>;
+template <typename _type>
+using micro_katal_t = catalytic_activity_t<_type, std::micro>;
+template <typename _type>
+using milli_katal_t = catalytic_activity_t<_type, std::milli>;
+template <typename _type>
+using katal_t = catalytic_activity_t<_type, std::ratio<1>>;
+template <typename _type>
+using kilo_katal_t = catalytic_activity_t<_type, std::kilo>;
+template <typename _type>
+using mega_katal_t = catalytic_activity_t<_type, std::mega>;
+template <typename _type>
+using giga_katal_t = catalytic_activity_t<_type, std::giga>;
+template <typename _type>
+using tera_katal_t = catalytic_activity_t<_type, std::tera>;
+template <typename _type>
+using peta_katal_t = catalytic_activity_t<_type, std::peta>;
+template <typename _type>
+using exa_katal_t = catalytic_activity_t<_type, std::exa>;
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(catalytic_activity_t, substance_t, time_t)
 }
 
 inline namespace literals {
-template <char... _Digits> constexpr atto_katal_t<int64_t> operator""_akat() {
-  return atto_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr atto_katal_t<int64_t> operator""_akat() {
+  return atto_katal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_katal_t<int64_t> operator""_fkat() {
-  return femto_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr femto_katal_t<int64_t> operator""_fkat() {
+  return femto_katal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_katal_t<int64_t> operator""_pkat() {
-  return pico_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr pico_katal_t<int64_t> operator""_pkat() {
+  return pico_katal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_katal_t<int64_t> operator""_nkat() {
-  return nano_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr nano_katal_t<int64_t> operator""_nkat() {
+  return nano_katal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_katal_t<int64_t> operator""_ukat() {
-  return micro_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr micro_katal_t<int64_t> operator""_ukat() {
+  return micro_katal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_katal_t<int64_t> operator""_mkat() {
-  return milli_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr milli_katal_t<int64_t> operator""_mkat() {
+  return milli_katal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr katal_t<int64_t> operator""_kat() {
-  return katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr katal_t<int64_t> operator""_kat() {
+  return katal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_katal_t<int64_t> operator""_kkat() {
-  return kilo_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr kilo_katal_t<int64_t> operator""_kkat() {
+  return kilo_katal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_katal_t<int64_t> operator""_Mkat() {
-  return mega_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr mega_katal_t<int64_t> operator""_Mkat() {
+  return mega_katal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_katal_t<int64_t> operator""_Gkat() {
-  return giga_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr giga_katal_t<int64_t> operator""_Gkat() {
+  return giga_katal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_katal_t<int64_t> operator""_Tkat() {
-  return tera_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr tera_katal_t<int64_t> operator""_Tkat() {
+  return tera_katal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_katal_t<int64_t> operator""_Pkat() {
-  return peta_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr peta_katal_t<int64_t> operator""_Pkat() {
+  return peta_katal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr exa_katal_t<int64_t> operator""_Ekat() {
-  return exa_katal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr exa_katal_t<int64_t> operator""_Ekat() {
+  return exa_katal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_katal_t<long double> operator""_akat(long double value) {

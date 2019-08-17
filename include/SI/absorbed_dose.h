@@ -15,78 +15,78 @@
 
 namespace SI {
 
-template <typename _Type, class _Ratio = std::ratio<1>>
-using absorbed_dose_t = detail::unit_t<'D', 1, _Type, _Ratio>;
+template <typename _type, class _ratio = std::ratio<1>>
+using absorbed_dose_t = detail::unit_t<'D', 1, _type, _ratio>;
 
 /// specific units
-template <typename _Type> using atto_gray_t = absorbed_dose_t<_Type, std::atto>;
-template <typename _Type>
-using femto_gray_t = absorbed_dose_t<_Type, std::femto>;
-template <typename _Type> using pico_gray_t = absorbed_dose_t<_Type, std::pico>;
-template <typename _Type> using nano_gray_t = absorbed_dose_t<_Type, std::nano>;
-template <typename _Type>
-using micro_gray_t = absorbed_dose_t<_Type, std::micro>;
-template <typename _Type>
-using milli_gray_t = absorbed_dose_t<_Type, std::milli>;
-template <typename _Type> using gray_t = absorbed_dose_t<_Type, std::ratio<1>>;
-template <typename _Type> using kilo_gray_t = absorbed_dose_t<_Type, std::kilo>;
-template <typename _Type> using mega_gray_t = absorbed_dose_t<_Type, std::mega>;
-template <typename _Type> using giga_gray_t = absorbed_dose_t<_Type, std::giga>;
-template <typename _Type> using tera_gray_t = absorbed_dose_t<_Type, std::tera>;
-template <typename _Type> using peta_gray_t = absorbed_dose_t<_Type, std::peta>;
-template <typename _Type> using exa_gray_t = absorbed_dose_t<_Type, std::exa>;
+template <typename _type> using atto_gray_t = absorbed_dose_t<_type, std::atto>;
+template <typename _type>
+using femto_gray_t = absorbed_dose_t<_type, std::femto>;
+template <typename _type> using pico_gray_t = absorbed_dose_t<_type, std::pico>;
+template <typename _type> using nano_gray_t = absorbed_dose_t<_type, std::nano>;
+template <typename _type>
+using micro_gray_t = absorbed_dose_t<_type, std::micro>;
+template <typename _type>
+using milli_gray_t = absorbed_dose_t<_type, std::milli>;
+template <typename _type> using gray_t = absorbed_dose_t<_type, std::ratio<1>>;
+template <typename _type> using kilo_gray_t = absorbed_dose_t<_type, std::kilo>;
+template <typename _type> using mega_gray_t = absorbed_dose_t<_type, std::mega>;
+template <typename _type> using giga_gray_t = absorbed_dose_t<_type, std::giga>;
+template <typename _type> using tera_gray_t = absorbed_dose_t<_type, std::tera>;
+template <typename _type> using peta_gray_t = absorbed_dose_t<_type, std::peta>;
+template <typename _type> using exa_gray_t = absorbed_dose_t<_type, std::exa>;
 
 inline namespace literals {
-template <char... _Digits> constexpr atto_gray_t<int64_t> operator""_aGy() {
-  return atto_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr atto_gray_t<int64_t> operator""_aGy() {
+  return atto_gray_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_gray_t<int64_t> operator""_fGy() {
-  return femto_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr femto_gray_t<int64_t> operator""_fGy() {
+  return femto_gray_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_gray_t<int64_t> operator""_pGy() {
-  return pico_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr pico_gray_t<int64_t> operator""_pGy() {
+  return pico_gray_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_gray_t<int64_t> operator""_nGy() {
-  return nano_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr nano_gray_t<int64_t> operator""_nGy() {
+  return nano_gray_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_gray_t<int64_t> operator""_uGy() {
-  return micro_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr micro_gray_t<int64_t> operator""_uGy() {
+  return micro_gray_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_gray_t<int64_t> operator""_mGy() {
-  return milli_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr milli_gray_t<int64_t> operator""_mGy() {
+  return milli_gray_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr gray_t<int64_t> operator""_Gy() {
-  return gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr gray_t<int64_t> operator""_Gy() {
+  return gray_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_gray_t<int64_t> operator""_kGy() {
-  return kilo_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr kilo_gray_t<int64_t> operator""_kGy() {
+  return kilo_gray_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_gray_t<int64_t> operator""_MGy() {
-  return mega_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr mega_gray_t<int64_t> operator""_MGy() {
+  return mega_gray_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_gray_t<int64_t> operator""_GGy() {
-  return giga_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr giga_gray_t<int64_t> operator""_GGy() {
+  return giga_gray_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_gray_t<int64_t> operator""_TGy() {
-  return tera_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr tera_gray_t<int64_t> operator""_TGy() {
+  return tera_gray_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_gray_t<int64_t> operator""_PGy() {
-  return peta_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr peta_gray_t<int64_t> operator""_PGy() {
+  return peta_gray_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr exa_gray_t<int64_t> operator""_EGy() {
-  return exa_gray_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr exa_gray_t<int64_t> operator""_EGy() {
+  return exa_gray_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_gray_t<long double> operator""_aGy(long double value) {

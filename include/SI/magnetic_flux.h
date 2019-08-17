@@ -19,90 +19,90 @@
 namespace SI {
 
 /// @todo find a way to encapsulate   phi
-template <typename _Type, class _Ratio = std::ratio<1>>
-using magnetic_flux_t = detail::unit_t<'f', 1, _Type, _Ratio>;
+template <typename _type, class _ratio = std::ratio<1>>
+using magnetic_flux_t = detail::unit_t<'f', 1, _type, _ratio>;
 
 /// specific units
-template <typename _Type>
-using atto_weber_t = magnetic_flux_t<_Type, std::atto>;
-template <typename _Type>
-using femto_weber_t = magnetic_flux_t<_Type, std::femto>;
-template <typename _Type>
-using pico_weber_t = magnetic_flux_t<_Type, std::pico>;
-template <typename _Type>
-using nano_weber_t = magnetic_flux_t<_Type, std::nano>;
-template <typename _Type>
-using micro_weber_t = magnetic_flux_t<_Type, std::micro>;
-template <typename _Type>
-using milli_weber_t = magnetic_flux_t<_Type, std::milli>;
-template <typename _Type> using weber_t = magnetic_flux_t<_Type, std::ratio<1>>;
-template <typename _Type>
-using kilo_weber_t = magnetic_flux_t<_Type, std::kilo>;
-template <typename _Type>
-using mega_weber_t = magnetic_flux_t<_Type, std::mega>;
-template <typename _Type>
-using giga_weber_t = magnetic_flux_t<_Type, std::giga>;
-template <typename _Type>
-using tera_weber_t = magnetic_flux_t<_Type, std::tera>;
-template <typename _Type>
-using peta_weber_t = magnetic_flux_t<_Type, std::peta>;
-template <typename _Type> using exa_weber_t = magnetic_flux_t<_Type, std::exa>;
+template <typename _type>
+using atto_weber_t = magnetic_flux_t<_type, std::atto>;
+template <typename _type>
+using femto_weber_t = magnetic_flux_t<_type, std::femto>;
+template <typename _type>
+using pico_weber_t = magnetic_flux_t<_type, std::pico>;
+template <typename _type>
+using nano_weber_t = magnetic_flux_t<_type, std::nano>;
+template <typename _type>
+using micro_weber_t = magnetic_flux_t<_type, std::micro>;
+template <typename _type>
+using milli_weber_t = magnetic_flux_t<_type, std::milli>;
+template <typename _type> using weber_t = magnetic_flux_t<_type, std::ratio<1>>;
+template <typename _type>
+using kilo_weber_t = magnetic_flux_t<_type, std::kilo>;
+template <typename _type>
+using mega_weber_t = magnetic_flux_t<_type, std::mega>;
+template <typename _type>
+using giga_weber_t = magnetic_flux_t<_type, std::giga>;
+template <typename _type>
+using tera_weber_t = magnetic_flux_t<_type, std::tera>;
+template <typename _type>
+using peta_weber_t = magnetic_flux_t<_type, std::peta>;
+template <typename _type> using exa_weber_t = magnetic_flux_t<_type, std::exa>;
 
 namespace detail {
 BUILD_UNIT_FROM_MULTIPLICATION(magnetic_flux_t, electric_potential_t, time_t)
 }
 
 inline namespace literals {
-template <char... _Digits> constexpr atto_weber_t<int64_t> operator""_aWb() {
-  return atto_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr atto_weber_t<int64_t> operator""_aWb() {
+  return atto_weber_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_weber_t<int64_t> operator""_fWb() {
-  return femto_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr femto_weber_t<int64_t> operator""_fWb() {
+  return femto_weber_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_weber_t<int64_t> operator""_pWb() {
-  return pico_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr pico_weber_t<int64_t> operator""_pWb() {
+  return pico_weber_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_weber_t<int64_t> operator""_nWb() {
-  return nano_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr nano_weber_t<int64_t> operator""_nWb() {
+  return nano_weber_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_weber_t<int64_t> operator""_uWb() {
-  return micro_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr micro_weber_t<int64_t> operator""_uWb() {
+  return micro_weber_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_weber_t<int64_t> operator""_mWb() {
-  return milli_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr milli_weber_t<int64_t> operator""_mWb() {
+  return milli_weber_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr weber_t<int64_t> operator""_Wb() {
-  return weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr weber_t<int64_t> operator""_Wb() {
+  return weber_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_weber_t<int64_t> operator""_kWb() {
-  return kilo_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr kilo_weber_t<int64_t> operator""_kWb() {
+  return kilo_weber_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_weber_t<int64_t> operator""_MWb() {
-  return mega_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr mega_weber_t<int64_t> operator""_MWb() {
+  return mega_weber_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_weber_t<int64_t> operator""_GWb() {
-  return giga_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr giga_weber_t<int64_t> operator""_GWb() {
+  return giga_weber_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_weber_t<int64_t> operator""_TWb() {
-  return tera_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr tera_weber_t<int64_t> operator""_TWb() {
+  return tera_weber_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_weber_t<int64_t> operator""_PWb() {
-  return peta_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr peta_weber_t<int64_t> operator""_PWb() {
+  return peta_weber_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr exa_weber_t<int64_t> operator""_EWb() {
-  return exa_weber_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr exa_weber_t<int64_t> operator""_EWb() {
+  return exa_weber_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_weber_t<long double> operator""_aWb(long double value) {

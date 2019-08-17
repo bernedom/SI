@@ -18,36 +18,36 @@
 
 namespace SI {
 
-template <typename _Type, class _Ratio = std::ratio<1>>
-using electric_conductance_t = detail::unit_t<'G', 1, _Type, _Ratio>;
+template <typename _type, class _ratio = std::ratio<1>>
+using electric_conductance_t = detail::unit_t<'G', 1, _type, _ratio>;
 
 /// specific units
-template <typename _Type>
-using atto_siemens_t = electric_conductance_t<_Type, std::atto>;
-template <typename _Type>
-using femto_siemens_t = electric_conductance_t<_Type, std::femto>;
-template <typename _Type>
-using pico_siemens_t = electric_conductance_t<_Type, std::pico>;
-template <typename _Type>
-using nano_siemens_t = electric_conductance_t<_Type, std::nano>;
-template <typename _Type>
-using micro_siemens_t = electric_conductance_t<_Type, std::micro>;
-template <typename _Type>
-using milli_siemens_t = electric_conductance_t<_Type, std::milli>;
-template <typename _Type>
-using siemens_t = electric_conductance_t<_Type, std::ratio<1>>;
-template <typename _Type>
-using kilo_siemens_t = electric_conductance_t<_Type, std::kilo>;
-template <typename _Type>
-using mega_siemens_t = electric_conductance_t<_Type, std::mega>;
-template <typename _Type>
-using giga_siemens_t = electric_conductance_t<_Type, std::giga>;
-template <typename _Type>
-using tera_siemens_t = electric_conductance_t<_Type, std::tera>;
-template <typename _Type>
-using peta_siemens_t = electric_conductance_t<_Type, std::peta>;
-template <typename _Type>
-using exa_siemens_t = electric_conductance_t<_Type, std::exa>;
+template <typename _type>
+using atto_siemens_t = electric_conductance_t<_type, std::atto>;
+template <typename _type>
+using femto_siemens_t = electric_conductance_t<_type, std::femto>;
+template <typename _type>
+using pico_siemens_t = electric_conductance_t<_type, std::pico>;
+template <typename _type>
+using nano_siemens_t = electric_conductance_t<_type, std::nano>;
+template <typename _type>
+using micro_siemens_t = electric_conductance_t<_type, std::micro>;
+template <typename _type>
+using milli_siemens_t = electric_conductance_t<_type, std::milli>;
+template <typename _type>
+using siemens_t = electric_conductance_t<_type, std::ratio<1>>;
+template <typename _type>
+using kilo_siemens_t = electric_conductance_t<_type, std::kilo>;
+template <typename _type>
+using mega_siemens_t = electric_conductance_t<_type, std::mega>;
+template <typename _type>
+using giga_siemens_t = electric_conductance_t<_type, std::giga>;
+template <typename _type>
+using tera_siemens_t = electric_conductance_t<_type, std::tera>;
+template <typename _type>
+using peta_siemens_t = electric_conductance_t<_type, std::peta>;
+template <typename _type>
+using exa_siemens_t = electric_conductance_t<_type, std::exa>;
 
 namespace detail {
 
@@ -56,76 +56,76 @@ BUILD_UNIT_FROM_DIVISON(electric_conductance_t, electric_current_t,
 
 /// Builds conductance from 1/resistance, to avoid include cycles the base
 /// unit_t is used instead of the type alias electric_resistance_t
-template <typename _Type, class _Ratio = std::ratio<1>>
-constexpr auto operator/(const _Type scalar,
-                         const unit_t<'O', 1, _Type, _Ratio> &resistance) {
-  return electric_conductance_t<_Type, std::ratio<_Ratio::den, _Ratio::num>>{
+template <typename _type, class _ratio = std::ratio<1>>
+constexpr auto operator/(const _type scalar,
+                         const unit_t<'O', 1, _type, _ratio> &resistance) {
+  return electric_conductance_t<_type, std::ratio<_ratio::den, _ratio::num>>{
       scalar / resistance.raw_value()};
 }
 } // namespace detail
 
 inline namespace literals {
-template <char... _Digits> constexpr atto_siemens_t<int64_t> operator""_aS() {
+template <char... _digits> constexpr atto_siemens_t<int64_t> operator""_aS() {
   return atto_siemens_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_siemens_t<int64_t> operator""_fS() {
+template <char... _digits> constexpr femto_siemens_t<int64_t> operator""_fS() {
   return femto_siemens_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_siemens_t<int64_t> operator""_pS() {
+template <char... _digits> constexpr pico_siemens_t<int64_t> operator""_pS() {
   return pico_siemens_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_siemens_t<int64_t> operator""_nS() {
+template <char... _digits> constexpr nano_siemens_t<int64_t> operator""_nS() {
   return nano_siemens_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_siemens_t<int64_t> operator""_uS() {
+template <char... _digits> constexpr micro_siemens_t<int64_t> operator""_uS() {
   return micro_siemens_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_siemens_t<int64_t> operator""_mS() {
+template <char... _digits> constexpr milli_siemens_t<int64_t> operator""_mS() {
   return milli_siemens_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr siemens_t<int64_t> operator""_S() {
-  return siemens_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr siemens_t<int64_t> operator""_S() {
+  return siemens_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_siemens_t<int64_t> operator""_kS() {
+template <char... _digits> constexpr kilo_siemens_t<int64_t> operator""_kS() {
   return kilo_siemens_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_siemens_t<int64_t> operator""_MS() {
+template <char... _digits> constexpr mega_siemens_t<int64_t> operator""_MS() {
   return mega_siemens_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_siemens_t<int64_t> operator""_GS() {
+template <char... _digits> constexpr giga_siemens_t<int64_t> operator""_GS() {
   return giga_siemens_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_siemens_t<int64_t> operator""_TS() {
+template <char... _digits> constexpr tera_siemens_t<int64_t> operator""_TS() {
   return tera_siemens_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_siemens_t<int64_t> operator""_PS() {
+template <char... _digits> constexpr peta_siemens_t<int64_t> operator""_PS() {
   return peta_siemens_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr exa_siemens_t<int64_t> operator""_ES() {
-  return exa_siemens_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr exa_siemens_t<int64_t> operator""_ES() {
+  return exa_siemens_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_siemens_t<long double> operator""_aS(long double value) {

@@ -132,8 +132,8 @@ TEMPLATE_TEST_CASE(
   REQUIRE(!SI::detail::epsEqual(signaling_nan, quiet_nan));
 }
 
-template <typename _Type, typename _Ratio>
-using resulting_t = SI::detail::unit_t<'Y', 1, _Type, _Ratio>;
+template <typename _type, typename _ratio>
+using resulting_t = SI::detail::unit_t<'Y', 1, _type, _ratio>;
 
 TEST_CASE("GIVEN a value of an integral type AND a value of floating point "
           "type WHEN divided THEN result is of left hand type") {

@@ -18,23 +18,23 @@
 #include "pressure.h"
 
 namespace SI {
-template <typename _Type, class _Ratio = std::ratio<1>>
-using energy_t = detail::unit_t<'E', 1, _Type, _Ratio>;
+template <typename _type, class _ratio = std::ratio<1>>
+using energy_t = detail::unit_t<'E', 1, _type, _ratio>;
 
 /// specific units
-template <typename _Type> using atto_joule_t = energy_t<_Type, std::atto>;
-template <typename _Type> using femto_joule_t = energy_t<_Type, std::femto>;
-template <typename _Type> using pico_joule_t = energy_t<_Type, std::pico>;
-template <typename _Type> using nano_joule_t = energy_t<_Type, std::nano>;
-template <typename _Type> using micro_joule_t = energy_t<_Type, std::micro>;
-template <typename _Type> using milli_joule_t = energy_t<_Type, std::milli>;
-template <typename _Type> using joule_t = energy_t<_Type, std::ratio<1>>;
-template <typename _Type> using kilo_joule_t = energy_t<_Type, std::kilo>;
-template <typename _Type> using mega_joule_t = energy_t<_Type, std::mega>;
-template <typename _Type> using giga_joule_t = energy_t<_Type, std::giga>;
-template <typename _Type> using tera_joule_t = energy_t<_Type, std::tera>;
-template <typename _Type> using peta_joule_t = energy_t<_Type, std::peta>;
-template <typename _Type> using exa_joule_t = energy_t<_Type, std::exa>;
+template <typename _type> using atto_joule_t = energy_t<_type, std::atto>;
+template <typename _type> using femto_joule_t = energy_t<_type, std::femto>;
+template <typename _type> using pico_joule_t = energy_t<_type, std::pico>;
+template <typename _type> using nano_joule_t = energy_t<_type, std::nano>;
+template <typename _type> using micro_joule_t = energy_t<_type, std::micro>;
+template <typename _type> using milli_joule_t = energy_t<_type, std::milli>;
+template <typename _type> using joule_t = energy_t<_type, std::ratio<1>>;
+template <typename _type> using kilo_joule_t = energy_t<_type, std::kilo>;
+template <typename _type> using mega_joule_t = energy_t<_type, std::mega>;
+template <typename _type> using giga_joule_t = energy_t<_type, std::giga>;
+template <typename _type> using tera_joule_t = energy_t<_type, std::tera>;
+template <typename _type> using peta_joule_t = energy_t<_type, std::peta>;
+template <typename _type> using exa_joule_t = energy_t<_type, std::exa>;
 
 namespace detail {
 BUILD_UNIT_FROM_MULTIPLICATION(energy_t, force_t, length_t)
@@ -42,56 +42,56 @@ BUILD_UNIT_FROM_MULTIPLICATION(energy_t, pressure_t, volume_t)
 } // namespace detail
 
 inline namespace literals {
-template <char... _Digits> constexpr atto_joule_t<int64_t> operator""_aJ() {
-  return atto_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr atto_joule_t<int64_t> operator""_aJ() {
+  return atto_joule_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_joule_t<int64_t> operator""_fJ() {
-  return femto_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr femto_joule_t<int64_t> operator""_fJ() {
+  return femto_joule_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_joule_t<int64_t> operator""_pJ() {
-  return pico_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr pico_joule_t<int64_t> operator""_pJ() {
+  return pico_joule_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_joule_t<int64_t> operator""_nJ() {
-  return nano_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr nano_joule_t<int64_t> operator""_nJ() {
+  return nano_joule_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_joule_t<int64_t> operator""_uJ() {
-  return micro_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr micro_joule_t<int64_t> operator""_uJ() {
+  return micro_joule_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_joule_t<int64_t> operator""_mJ() {
-  return milli_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr milli_joule_t<int64_t> operator""_mJ() {
+  return milli_joule_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr joule_t<int64_t> operator""_J() {
-  return joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr joule_t<int64_t> operator""_J() {
+  return joule_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_joule_t<int64_t> operator""_kJ() {
-  return kilo_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr kilo_joule_t<int64_t> operator""_kJ() {
+  return kilo_joule_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_joule_t<int64_t> operator""_MJ() {
-  return mega_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr mega_joule_t<int64_t> operator""_MJ() {
+  return mega_joule_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_joule_t<int64_t> operator""_GJ() {
-  return giga_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr giga_joule_t<int64_t> operator""_GJ() {
+  return giga_joule_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_joule_t<int64_t> operator""_TJ() {
-  return tera_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr tera_joule_t<int64_t> operator""_TJ() {
+  return tera_joule_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_joule_t<int64_t> operator""_PJ() {
-  return peta_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr peta_joule_t<int64_t> operator""_PJ() {
+  return peta_joule_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr exa_joule_t<int64_t> operator""_EJ() {
-  return exa_joule_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr exa_joule_t<int64_t> operator""_EJ() {
+  return exa_joule_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_joule_t<long double> operator""_aJ(long double value) {

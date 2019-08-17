@@ -17,79 +17,79 @@
 #include "luminous_flux.h"
 
 namespace SI {
-template <typename _Type, class _Ratio = std::ratio<1>>
-using illuminance_t = detail::unit_t<'i', 1, _Type, _Ratio>;
+template <typename _type, class _ratio = std::ratio<1>>
+using illuminance_t = detail::unit_t<'i', 1, _type, _ratio>;
 
 /// specific units
-template <typename _Type> using atto_lux_t = illuminance_t<_Type, std::atto>;
-template <typename _Type> using femto_lux_t = illuminance_t<_Type, std::femto>;
-template <typename _Type> using pico_lux_t = illuminance_t<_Type, std::pico>;
-template <typename _Type> using nano_lux_t = illuminance_t<_Type, std::nano>;
-template <typename _Type> using micro_lux_t = illuminance_t<_Type, std::micro>;
-template <typename _Type> using milli_lux_t = illuminance_t<_Type, std::milli>;
-template <typename _Type> using lux_t = illuminance_t<_Type, std::ratio<1>>;
-template <typename _Type> using kilo_lux_t = illuminance_t<_Type, std::kilo>;
-template <typename _Type> using mega_lux_t = illuminance_t<_Type, std::mega>;
-template <typename _Type> using giga_lux_t = illuminance_t<_Type, std::giga>;
-template <typename _Type> using tera_lux_t = illuminance_t<_Type, std::tera>;
-template <typename _Type> using peta_lux_t = illuminance_t<_Type, std::peta>;
-template <typename _Type> using exa_lux_t = illuminance_t<_Type, std::exa>;
+template <typename _type> using atto_lux_t = illuminance_t<_type, std::atto>;
+template <typename _type> using femto_lux_t = illuminance_t<_type, std::femto>;
+template <typename _type> using pico_lux_t = illuminance_t<_type, std::pico>;
+template <typename _type> using nano_lux_t = illuminance_t<_type, std::nano>;
+template <typename _type> using micro_lux_t = illuminance_t<_type, std::micro>;
+template <typename _type> using milli_lux_t = illuminance_t<_type, std::milli>;
+template <typename _type> using lux_t = illuminance_t<_type, std::ratio<1>>;
+template <typename _type> using kilo_lux_t = illuminance_t<_type, std::kilo>;
+template <typename _type> using mega_lux_t = illuminance_t<_type, std::mega>;
+template <typename _type> using giga_lux_t = illuminance_t<_type, std::giga>;
+template <typename _type> using tera_lux_t = illuminance_t<_type, std::tera>;
+template <typename _type> using peta_lux_t = illuminance_t<_type, std::peta>;
+template <typename _type> using exa_lux_t = illuminance_t<_type, std::exa>;
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(illuminance_t, luminous_flux_t, area_t)
 } // namespace detail
 
 inline namespace literals {
-template <char... _Digits> constexpr atto_lux_t<int64_t> operator""_alx() {
-  return atto_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr atto_lux_t<int64_t> operator""_alx() {
+  return atto_lux_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_lux_t<int64_t> operator""_flx() {
-  return femto_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr femto_lux_t<int64_t> operator""_flx() {
+  return femto_lux_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_lux_t<int64_t> operator""_plx() {
-  return pico_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr pico_lux_t<int64_t> operator""_plx() {
+  return pico_lux_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_lux_t<int64_t> operator""_nlx() {
-  return nano_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr nano_lux_t<int64_t> operator""_nlx() {
+  return nano_lux_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_lux_t<int64_t> operator""_ulx() {
-  return micro_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr micro_lux_t<int64_t> operator""_ulx() {
+  return micro_lux_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_lux_t<int64_t> operator""_mlx() {
-  return milli_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr milli_lux_t<int64_t> operator""_mlx() {
+  return milli_lux_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr lux_t<int64_t> operator""_lx() {
-  return lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr lux_t<int64_t> operator""_lx() {
+  return lux_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_lux_t<int64_t> operator""_klx() {
-  return kilo_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr kilo_lux_t<int64_t> operator""_klx() {
+  return kilo_lux_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_lux_t<int64_t> operator""_Mlx() {
-  return mega_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr mega_lux_t<int64_t> operator""_Mlx() {
+  return mega_lux_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_lux_t<int64_t> operator""_Glx() {
-  return giga_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr giga_lux_t<int64_t> operator""_Glx() {
+  return giga_lux_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_lux_t<int64_t> operator""_Tlx() {
-  return tera_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr tera_lux_t<int64_t> operator""_Tlx() {
+  return tera_lux_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_lux_t<int64_t> operator""_Plx() {
-  return peta_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr peta_lux_t<int64_t> operator""_Plx() {
+  return peta_lux_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr exa_lux_t<int64_t> operator""_Elx() {
-  return exa_lux_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr exa_lux_t<int64_t> operator""_Elx() {
+  return exa_lux_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_lux_t<long double> operator""_alx(long double value) {

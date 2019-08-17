@@ -14,75 +14,75 @@
 
 namespace SI {
 /// @todo find a way to add alternative dimension symbol  (f) to frequency
-template <typename _Type, class _Ratio = std::ratio<1>>
-using frequency_t = detail::time_base_t<-1, _Type, _Ratio>;
+template <typename _type, class _ratio = std::ratio<1>>
+using frequency_t = detail::time_base_t<-1, _type, _ratio>;
 
 /// specific units
-template <typename _Type> using atto_hertz_t = frequency_t<_Type, std::atto>;
-template <typename _Type> using femto_hertz_t = frequency_t<_Type, std::femto>;
-template <typename _Type> using pico_hertz_t = frequency_t<_Type, std::pico>;
-template <typename _Type> using nano_hertz_t = frequency_t<_Type, std::nano>;
-template <typename _Type> using micro_hertz_t = frequency_t<_Type, std::micro>;
-template <typename _Type> using milli_hertz_t = frequency_t<_Type, std::milli>;
-template <typename _Type> using hertz_t = frequency_t<_Type, std::ratio<1>>;
-template <typename _Type> using kilo_hertz_t = frequency_t<_Type, std::kilo>;
-template <typename _Type> using mega_hertz_t = frequency_t<_Type, std::mega>;
-template <typename _Type> using giga_hertz_t = frequency_t<_Type, std::giga>;
-template <typename _Type> using tera_hertz_t = frequency_t<_Type, std::tera>;
-template <typename _Type> using peta_hertz_t = frequency_t<_Type, std::peta>;
-template <typename _Type> using exa_hertz_t = frequency_t<_Type, std::exa>;
+template <typename _type> using atto_hertz_t = frequency_t<_type, std::atto>;
+template <typename _type> using femto_hertz_t = frequency_t<_type, std::femto>;
+template <typename _type> using pico_hertz_t = frequency_t<_type, std::pico>;
+template <typename _type> using nano_hertz_t = frequency_t<_type, std::nano>;
+template <typename _type> using micro_hertz_t = frequency_t<_type, std::micro>;
+template <typename _type> using milli_hertz_t = frequency_t<_type, std::milli>;
+template <typename _type> using hertz_t = frequency_t<_type, std::ratio<1>>;
+template <typename _type> using kilo_hertz_t = frequency_t<_type, std::kilo>;
+template <typename _type> using mega_hertz_t = frequency_t<_type, std::mega>;
+template <typename _type> using giga_hertz_t = frequency_t<_type, std::giga>;
+template <typename _type> using tera_hertz_t = frequency_t<_type, std::tera>;
+template <typename _type> using peta_hertz_t = frequency_t<_type, std::peta>;
+template <typename _type> using exa_hertz_t = frequency_t<_type, std::exa>;
 
 inline namespace literals {
-template <char... _Digits> constexpr atto_hertz_t<int64_t> operator""_aHz() {
-  return atto_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr atto_hertz_t<int64_t> operator""_aHz() {
+  return atto_hertz_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_hertz_t<int64_t> operator""_fHz() {
-  return femto_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr femto_hertz_t<int64_t> operator""_fHz() {
+  return femto_hertz_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_hertz_t<int64_t> operator""_pHz() {
-  return pico_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr pico_hertz_t<int64_t> operator""_pHz() {
+  return pico_hertz_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_hertz_t<int64_t> operator""_nHz() {
-  return nano_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr nano_hertz_t<int64_t> operator""_nHz() {
+  return nano_hertz_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_hertz_t<int64_t> operator""_uHz() {
-  return micro_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr micro_hertz_t<int64_t> operator""_uHz() {
+  return micro_hertz_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_hertz_t<int64_t> operator""_mHz() {
-  return milli_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr milli_hertz_t<int64_t> operator""_mHz() {
+  return milli_hertz_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr hertz_t<int64_t> operator""_Hz() {
-  return hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr hertz_t<int64_t> operator""_Hz() {
+  return hertz_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_hertz_t<int64_t> operator""_kHz() {
-  return kilo_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr kilo_hertz_t<int64_t> operator""_kHz() {
+  return kilo_hertz_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_hertz_t<int64_t> operator""_MHz() {
-  return mega_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr mega_hertz_t<int64_t> operator""_MHz() {
+  return mega_hertz_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_hertz_t<int64_t> operator""_GHz() {
-  return giga_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr giga_hertz_t<int64_t> operator""_GHz() {
+  return giga_hertz_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_hertz_t<int64_t> operator""_THz() {
-  return tera_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr tera_hertz_t<int64_t> operator""_THz() {
+  return tera_hertz_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_hertz_t<int64_t> operator""_PHz() {
-  return peta_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr peta_hertz_t<int64_t> operator""_PHz() {
+  return peta_hertz_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr exa_hertz_t<int64_t> operator""_EHz() {
-  return exa_hertz_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr exa_hertz_t<int64_t> operator""_EHz() {
+  return exa_hertz_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_hertz_t<long double> operator""_aHz(long double value) {

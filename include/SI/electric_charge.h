@@ -19,36 +19,36 @@
 namespace SI {
 
 /// unit for electric charge 'Q' where Q = T * I
-template <typename _Type, typename _Ratio>
-using electric_charge_t = detail::unit_t<'Q', 1, _Type, _Ratio>;
+template <typename _type, typename _ratio>
+using electric_charge_t = detail::unit_t<'Q', 1, _type, _ratio>;
 
 /// specific units
-template <typename _Type>
-using atto_coulomb_t = electric_charge_t<_Type, std::atto>;
-template <typename _Type>
-using femto_coulomb_t = electric_charge_t<_Type, std::femto>;
-template <typename _Type>
-using pico_coulomb_t = electric_charge_t<_Type, std::pico>;
-template <typename _Type>
-using nano_coulomb_t = electric_charge_t<_Type, std::nano>;
-template <typename _Type>
-using micro_coulomb_t = electric_charge_t<_Type, std::micro>;
-template <typename _Type>
-using milli_coulomb_t = electric_charge_t<_Type, std::milli>;
-template <typename _Type>
-using coulomb_t = electric_charge_t<_Type, std::ratio<1>>;
-template <typename _Type>
-using kilo_coulomb_t = electric_charge_t<_Type, std::kilo>;
-template <typename _Type>
-using mega_coulomb_t = electric_charge_t<_Type, std::mega>;
-template <typename _Type>
-using giga_coulomb_t = electric_charge_t<_Type, std::giga>;
-template <typename _Type>
-using tera_coulomb_t = electric_charge_t<_Type, std::tera>;
-template <typename _Type>
-using peta_coulomb_t = electric_charge_t<_Type, std::peta>;
-template <typename _Type>
-using exa_coulomb_t = electric_charge_t<_Type, std::exa>;
+template <typename _type>
+using atto_coulomb_t = electric_charge_t<_type, std::atto>;
+template <typename _type>
+using femto_coulomb_t = electric_charge_t<_type, std::femto>;
+template <typename _type>
+using pico_coulomb_t = electric_charge_t<_type, std::pico>;
+template <typename _type>
+using nano_coulomb_t = electric_charge_t<_type, std::nano>;
+template <typename _type>
+using micro_coulomb_t = electric_charge_t<_type, std::micro>;
+template <typename _type>
+using milli_coulomb_t = electric_charge_t<_type, std::milli>;
+template <typename _type>
+using coulomb_t = electric_charge_t<_type, std::ratio<1>>;
+template <typename _type>
+using kilo_coulomb_t = electric_charge_t<_type, std::kilo>;
+template <typename _type>
+using mega_coulomb_t = electric_charge_t<_type, std::mega>;
+template <typename _type>
+using giga_coulomb_t = electric_charge_t<_type, std::giga>;
+template <typename _type>
+using tera_coulomb_t = electric_charge_t<_type, std::tera>;
+template <typename _type>
+using peta_coulomb_t = electric_charge_t<_type, std::peta>;
+template <typename _type>
+using exa_coulomb_t = electric_charge_t<_type, std::exa>;
 
 /// @todo find out why the operators have to be in SI::detail
 /// maybe using preceeding :: helps
@@ -58,67 +58,67 @@ BUILD_UNIT_FROM_MULTIPLICATION(electric_charge_t, electric_current_t, time_t)
 
 inline namespace literals {
 
-template <char... _Digits> constexpr atto_coulomb_t<int64_t> operator""_aC() {
+template <char... _digits> constexpr atto_coulomb_t<int64_t> operator""_aC() {
   return atto_coulomb_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_coulomb_t<int64_t> operator""_fC() {
+template <char... _digits> constexpr femto_coulomb_t<int64_t> operator""_fC() {
   return femto_coulomb_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_coulomb_t<int64_t> operator""_pC() {
+template <char... _digits> constexpr pico_coulomb_t<int64_t> operator""_pC() {
   return pico_coulomb_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_coulomb_t<int64_t> operator""_nC() {
+template <char... _digits> constexpr nano_coulomb_t<int64_t> operator""_nC() {
   return nano_coulomb_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_coulomb_t<int64_t> operator""_uC() {
+template <char... _digits> constexpr micro_coulomb_t<int64_t> operator""_uC() {
   return micro_coulomb_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_coulomb_t<int64_t> operator""_mC() {
+template <char... _digits> constexpr milli_coulomb_t<int64_t> operator""_mC() {
   return milli_coulomb_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr coulomb_t<int64_t> operator""_C() {
-  return coulomb_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr coulomb_t<int64_t> operator""_C() {
+  return coulomb_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_coulomb_t<int64_t> operator""_kC() {
+template <char... _digits> constexpr kilo_coulomb_t<int64_t> operator""_kC() {
   return kilo_coulomb_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_coulomb_t<int64_t> operator""_MC() {
+template <char... _digits> constexpr mega_coulomb_t<int64_t> operator""_MC() {
   return mega_coulomb_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_coulomb_t<int64_t> operator""_GC() {
+template <char... _digits> constexpr giga_coulomb_t<int64_t> operator""_GC() {
   return giga_coulomb_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_coulomb_t<int64_t> operator""_TC() {
+template <char... _digits> constexpr tera_coulomb_t<int64_t> operator""_TC() {
   return tera_coulomb_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_coulomb_t<int64_t> operator""_PC() {
+template <char... _digits> constexpr peta_coulomb_t<int64_t> operator""_PC() {
   return peta_coulomb_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr exa_coulomb_t<int64_t> operator""_EC() {
-  return exa_coulomb_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr exa_coulomb_t<int64_t> operator""_EC() {
+  return exa_coulomb_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_coulomb_t<long double> operator""_aC(long double value) {
