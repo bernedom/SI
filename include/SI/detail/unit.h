@@ -10,10 +10,10 @@
  **/
 #pragma once
 
-#ifdef DISABLE_IMPLICIT_RATIO_CONVERSION
-#define _SI_ENABLE_IMPLICIT_RATIO_CONVERSION false
+#ifdef SI_DISABLE_IMPLICIT_RATIO_CONVERSION
+#define SI_ENABLE_IMPLICIT_RATIO_CONVERSION false
 #else
-#define _SI_ENABLE_IMPLICIT_RATIO_CONVERSION true
+#define SI_ENABLE_IMPLICIT_RATIO_CONVERSION true
 #endif
 
 #include "detail.h"
@@ -68,7 +68,7 @@ struct unit_t {
   operator==(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
 
     static_assert(
-        _SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
             std::ratio_equal<ratio, _rhs_ratio>::value,
         "Implicit ratio conversion disabled, convert before comparing");
 
@@ -106,7 +106,7 @@ struct unit_t {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
     static_assert(
-        _SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
             std::ratio_equal<ratio, _rhs_ratio>::value,
         "Implicit ratio conversion disabled, convert before comparing");
 
@@ -123,7 +123,7 @@ struct unit_t {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
     static_assert(
-        _SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
             std::ratio_equal<ratio, _rhs_ratio>::value,
         "Implicit ratio conversion disabled, convert before comparing");
 
@@ -160,7 +160,7 @@ struct unit_t {
                   "_rhs_ratio is a std::ratio");
 
     static_assert(
-        _SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
             std::ratio_equal<ratio, _rhs_ratio>::value,
         "Implicit ratio conversion disabled, convert before comparing");
 
@@ -198,7 +198,7 @@ struct unit_t {
                   "_rhs_ratio is a std::ratio");
     static_assert(_rhs_exponent > 0, "_rhs_Exponent is positive");
     static_assert(
-        _SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
             std::ratio_equal<ratio, _rhs_ratio>::value,
         "Implicit ratio conversion disabled, convert before dividing");
 
@@ -221,7 +221,7 @@ struct unit_t {
       typename std::enable_if<_rhs_exponent == _exponent>::type * = nullptr>
   constexpr _type operator/(
       const unit_t<_symbol, _rhs_exponent, _type, _rhs_ratio> &rhs) const {
-    static_assert(_SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+    static_assert(SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
                       std::ratio_equal<_rhs_ratio, _ratio>::value,
                   "Implicit ratio conversion disabled, convert to same ratio "
                   "before dividing");
@@ -245,7 +245,7 @@ struct unit_t {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
     static_assert(
-        _SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
             std::ratio_equal<ratio, _rhs_ratio>::value,
         "Implicit ratio conversion disabled, convert before adding values");
 
@@ -261,7 +261,7 @@ struct unit_t {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
     static_assert(
-        _SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
             std::ratio_equal<ratio, _rhs_ratio>::value,
         "Implicit ratio conversion disabled, convert before subtracting");
 
@@ -285,7 +285,7 @@ template <
     typename std::enable_if<std::is_integral<_type>::value>::type * = nullptr>
 constexpr auto operator/(const _type &lhs,
                          const unit_t<_symbol, _exponent, _type, _ratio> &rhs) {
-  static_assert(_SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+  static_assert(SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
                     std::ratio_equal<std::ratio<1>, _ratio>::value,
                 "Implicit ratio conversion disabled, convert to ratio<1> "
                 "before dividing");
@@ -303,7 +303,7 @@ template <char _symbol, char _exponent, typename _type, typename _ratio,
               * = nullptr>
 constexpr auto operator/(const _type &lhs,
                          const unit_t<_symbol, _exponent, _type, _ratio> &rhs) {
-  static_assert(_SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+  static_assert(SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
                     std::ratio_equal<_ratio, std::ratio<1>>::value,
                 "Implicit ratio conversion disabled, convert to ratio<1> "
                 "before dividing");
