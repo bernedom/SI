@@ -14,50 +14,50 @@
 
 namespace SI {
 
-template <typename _Type, typename _Ratio>
-using mass_t = detail::unit_t<'M', 1, _Type, _Ratio>;
+template <typename _type, typename _ratio>
+using mass_t = detail::unit_t<'M', 1, _type, _ratio>;
 
-template <typename _Type> using femto_gram_t = mass_t<_Type, std::atto>;
-template <typename _Type> using pico_gram_t = mass_t<_Type, std::femto>;
-template <typename _Type> using nano_gram_t = mass_t<_Type, std::pico>;
-template <typename _Type> using micro_gram_t = mass_t<_Type, std::nano>;
-template <typename _Type> using milli_gram_t = mass_t<_Type, std::micro>;
-template <typename _Type> using gram_t = mass_t<_Type, std::milli>;
-template <typename _Type> using kilo_gram_t = mass_t<_Type, std::ratio<1>>;
-template <typename _Type> using ton_t = mass_t<_Type, std::kilo>;
+template <typename _type> using femto_gram_t = mass_t<_type, std::atto>;
+template <typename _type> using pico_gram_t = mass_t<_type, std::femto>;
+template <typename _type> using nano_gram_t = mass_t<_type, std::pico>;
+template <typename _type> using micro_gram_t = mass_t<_type, std::nano>;
+template <typename _type> using milli_gram_t = mass_t<_type, std::micro>;
+template <typename _type> using gram_t = mass_t<_type, std::milli>;
+template <typename _type> using kilo_gram_t = mass_t<_type, std::ratio<1>>;
+template <typename _type> using ton_t = mass_t<_type, std::kilo>;
 
 inline namespace literals {
 
-template <char... _Digits> constexpr femto_gram_t<int64_t> operator""_fg() {
-  return femto_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr femto_gram_t<int64_t> operator""_fg() {
+  return femto_gram_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_gram_t<int64_t> operator""_pg() {
-  return pico_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr pico_gram_t<int64_t> operator""_pg() {
+  return pico_gram_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_gram_t<int64_t> operator""_ng() {
-  return nano_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr nano_gram_t<int64_t> operator""_ng() {
+  return nano_gram_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_gram_t<int64_t> operator""_ug() {
-  return micro_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr micro_gram_t<int64_t> operator""_ug() {
+  return micro_gram_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_gram_t<int64_t> operator""_mg() {
-  return milli_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr milli_gram_t<int64_t> operator""_mg() {
+  return milli_gram_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr gram_t<int64_t> operator""_g() {
-  return gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr gram_t<int64_t> operator""_g() {
+  return gram_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_gram_t<int64_t> operator""_kg() {
-  return kilo_gram_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr kilo_gram_t<int64_t> operator""_kg() {
+  return kilo_gram_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr ton_t<int64_t> operator""_t() {
-  return ton_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr ton_t<int64_t> operator""_t() {
+  return ton_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr femto_gram_t<long double> operator""_fg(long double value) {

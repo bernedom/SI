@@ -17,79 +17,79 @@
 #include "magnetic_flux.h"
 
 namespace SI {
-template <typename _Type, class _Ratio = std::ratio<1>>
-using inductance_t = detail::unit_t<'L', 1, _Type, _Ratio>;
+template <typename _type, class _ratio = std::ratio<1>>
+using inductance_t = detail::unit_t<'L', 1, _type, _ratio>;
 
 /// specific units
-template <typename _Type> using atto_henry_t = inductance_t<_Type, std::atto>;
-template <typename _Type> using femto_henry_t = inductance_t<_Type, std::femto>;
-template <typename _Type> using pico_henry_t = inductance_t<_Type, std::pico>;
-template <typename _Type> using nano_henry_t = inductance_t<_Type, std::nano>;
-template <typename _Type> using micro_henry_t = inductance_t<_Type, std::micro>;
-template <typename _Type> using milli_henry_t = inductance_t<_Type, std::milli>;
-template <typename _Type> using henry_t = inductance_t<_Type, std::ratio<1>>;
-template <typename _Type> using kilo_henry_t = inductance_t<_Type, std::kilo>;
-template <typename _Type> using mega_henry_t = inductance_t<_Type, std::mega>;
-template <typename _Type> using giga_henry_t = inductance_t<_Type, std::giga>;
-template <typename _Type> using tera_henry_t = inductance_t<_Type, std::tera>;
-template <typename _Type> using peta_henry_t = inductance_t<_Type, std::peta>;
-template <typename _Type> using exa_henry_t = inductance_t<_Type, std::exa>;
+template <typename _type> using atto_henry_t = inductance_t<_type, std::atto>;
+template <typename _type> using femto_henry_t = inductance_t<_type, std::femto>;
+template <typename _type> using pico_henry_t = inductance_t<_type, std::pico>;
+template <typename _type> using nano_henry_t = inductance_t<_type, std::nano>;
+template <typename _type> using micro_henry_t = inductance_t<_type, std::micro>;
+template <typename _type> using milli_henry_t = inductance_t<_type, std::milli>;
+template <typename _type> using henry_t = inductance_t<_type, std::ratio<1>>;
+template <typename _type> using kilo_henry_t = inductance_t<_type, std::kilo>;
+template <typename _type> using mega_henry_t = inductance_t<_type, std::mega>;
+template <typename _type> using giga_henry_t = inductance_t<_type, std::giga>;
+template <typename _type> using tera_henry_t = inductance_t<_type, std::tera>;
+template <typename _type> using peta_henry_t = inductance_t<_type, std::peta>;
+template <typename _type> using exa_henry_t = inductance_t<_type, std::exa>;
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(inductance_t, magnetic_flux_t, electric_current_t)
 } // namespace detail
 
 inline namespace literals {
-template <char... _Digits> constexpr atto_henry_t<int64_t> operator""_aH() {
-  return atto_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr atto_henry_t<int64_t> operator""_aH() {
+  return atto_henry_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_henry_t<int64_t> operator""_fH() {
-  return femto_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr femto_henry_t<int64_t> operator""_fH() {
+  return femto_henry_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_henry_t<int64_t> operator""_pH() {
-  return pico_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr pico_henry_t<int64_t> operator""_pH() {
+  return pico_henry_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_henry_t<int64_t> operator""_nH() {
-  return nano_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr nano_henry_t<int64_t> operator""_nH() {
+  return nano_henry_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_henry_t<int64_t> operator""_uH() {
-  return micro_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr micro_henry_t<int64_t> operator""_uH() {
+  return micro_henry_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_henry_t<int64_t> operator""_mH() {
-  return milli_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr milli_henry_t<int64_t> operator""_mH() {
+  return milli_henry_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr henry_t<int64_t> operator""_H() {
-  return henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr henry_t<int64_t> operator""_H() {
+  return henry_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_henry_t<int64_t> operator""_kH() {
-  return kilo_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr kilo_henry_t<int64_t> operator""_kH() {
+  return kilo_henry_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_henry_t<int64_t> operator""_MH() {
-  return mega_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr mega_henry_t<int64_t> operator""_MH() {
+  return mega_henry_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_henry_t<int64_t> operator""_GH() {
-  return giga_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr giga_henry_t<int64_t> operator""_GH() {
+  return giga_henry_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_henry_t<int64_t> operator""_TH() {
-  return tera_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr tera_henry_t<int64_t> operator""_TH() {
+  return tera_henry_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_henry_t<int64_t> operator""_PH() {
-  return peta_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr peta_henry_t<int64_t> operator""_PH() {
+  return peta_henry_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr exa_henry_t<int64_t> operator""_EH() {
-  return exa_henry_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr exa_henry_t<int64_t> operator""_EH() {
+  return exa_henry_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_henry_t<long double> operator""_aH(long double value) {

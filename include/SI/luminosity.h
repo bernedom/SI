@@ -15,89 +15,89 @@
 
 namespace SI {
 
-template <typename _Type, typename _Ratio>
-using luminosity_t = detail::unit_t<'J', 1, _Type, _Ratio>;
+template <typename _type, typename _ratio>
+using luminosity_t = detail::unit_t<'J', 1, _type, _ratio>;
 
-template <typename _Type> using atto_candela_t = luminosity_t<_Type, std::atto>;
-template <typename _Type>
-using femto_candela_t = luminosity_t<_Type, std::femto>;
-template <typename _Type> using pico_candela_t = luminosity_t<_Type, std::pico>;
-template <typename _Type> using nano_candela_t = luminosity_t<_Type, std::nano>;
-template <typename _Type>
-using micro_candela_t = luminosity_t<_Type, std::micro>;
-template <typename _Type>
-using milli_candela_t = luminosity_t<_Type, std::milli>;
-template <typename _Type> using candela_t = luminosity_t<_Type, std::ratio<1>>;
-template <typename _Type> using kilo_candela_t = luminosity_t<_Type, std::kilo>;
-template <typename _Type> using mega_candela_t = luminosity_t<_Type, std::mega>;
-template <typename _Type> using giga_candela_t = luminosity_t<_Type, std::giga>;
-template <typename _Type> using tera_candela_t = luminosity_t<_Type, std::tera>;
-template <typename _Type> using peta_candela_t = luminosity_t<_Type, std::peta>;
-template <typename _Type> using exa_candela_t = luminosity_t<_Type, std::exa>;
+template <typename _type> using atto_candela_t = luminosity_t<_type, std::atto>;
+template <typename _type>
+using femto_candela_t = luminosity_t<_type, std::femto>;
+template <typename _type> using pico_candela_t = luminosity_t<_type, std::pico>;
+template <typename _type> using nano_candela_t = luminosity_t<_type, std::nano>;
+template <typename _type>
+using micro_candela_t = luminosity_t<_type, std::micro>;
+template <typename _type>
+using milli_candela_t = luminosity_t<_type, std::milli>;
+template <typename _type> using candela_t = luminosity_t<_type, std::ratio<1>>;
+template <typename _type> using kilo_candela_t = luminosity_t<_type, std::kilo>;
+template <typename _type> using mega_candela_t = luminosity_t<_type, std::mega>;
+template <typename _type> using giga_candela_t = luminosity_t<_type, std::giga>;
+template <typename _type> using tera_candela_t = luminosity_t<_type, std::tera>;
+template <typename _type> using peta_candela_t = luminosity_t<_type, std::peta>;
+template <typename _type> using exa_candela_t = luminosity_t<_type, std::exa>;
 
 inline namespace literals {
 
-template <char... _Digits> constexpr atto_candela_t<int64_t> operator""_acd() {
+template <char... _digits> constexpr atto_candela_t<int64_t> operator""_acd() {
   return atto_candela_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_candela_t<int64_t> operator""_fcd() {
+template <char... _digits> constexpr femto_candela_t<int64_t> operator""_fcd() {
   return femto_candela_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_candela_t<int64_t> operator""_pcd() {
+template <char... _digits> constexpr pico_candela_t<int64_t> operator""_pcd() {
   return pico_candela_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_candela_t<int64_t> operator""_ncd() {
+template <char... _digits> constexpr nano_candela_t<int64_t> operator""_ncd() {
   return nano_candela_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_candela_t<int64_t> operator""_ucd() {
+template <char... _digits> constexpr micro_candela_t<int64_t> operator""_ucd() {
   return micro_candela_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_candela_t<int64_t> operator""_mcd() {
+template <char... _digits> constexpr milli_candela_t<int64_t> operator""_mcd() {
   return milli_candela_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr candela_t<int64_t> operator""_cd() {
-  return candela_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr candela_t<int64_t> operator""_cd() {
+  return candela_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_candela_t<int64_t> operator""_kcd() {
+template <char... _digits> constexpr kilo_candela_t<int64_t> operator""_kcd() {
   return kilo_candela_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_candela_t<int64_t> operator""_Mcd() {
+template <char... _digits> constexpr mega_candela_t<int64_t> operator""_Mcd() {
   return mega_candela_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_candela_t<int64_t> operator""_Gcd() {
+template <char... _digits> constexpr giga_candela_t<int64_t> operator""_Gcd() {
   return giga_candela_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_candela_t<int64_t> operator""_Tcd() {
+template <char... _digits> constexpr tera_candela_t<int64_t> operator""_Tcd() {
   return tera_candela_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_candela_t<int64_t> operator""_Pcd() {
+template <char... _digits> constexpr peta_candela_t<int64_t> operator""_Pcd() {
   return peta_candela_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr exa_candela_t<int64_t> operator""_Ecd() {
-  return exa_candela_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr exa_candela_t<int64_t> operator""_Ecd() {
+  return exa_candela_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_candela_t<long double> operator""_acd(long double value) {

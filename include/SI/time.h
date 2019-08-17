@@ -18,72 +18,72 @@
 namespace SI {
 
 namespace detail {
-template <char _Exponent, typename _Type, typename _Ratio>
-using time_base_t = detail::unit_t<'T', _Exponent, _Type, _Ratio>;
+template <char _exponent, typename _type, typename _ratio>
+using time_base_t = detail::unit_t<'T', _exponent, _type, _ratio>;
 }
-template <typename _Type, typename _Ratio>
-using time_t = detail::time_base_t<1, _Type, _Ratio>;
+template <typename _type, typename _ratio>
+using time_t = detail::time_base_t<1, _type, _ratio>;
 
-template <typename _Type, typename _Ratio>
-using time_squared_t = detail::time_base_t<2, _Type, _Ratio>;
+template <typename _type, typename _ratio>
+using time_squared_t = detail::time_base_t<2, _type, _ratio>;
 
-template <typename _Type> using atto_seconds_t = time_t<_Type, std::atto>;
-template <typename _Type> using femto_seconds_t = time_t<_Type, std::femto>;
-template <typename _Type> using pico_seconds_t = time_t<_Type, std::pico>;
-template <typename _Type> using nano_seconds_t = time_t<_Type, std::nano>;
-template <typename _Type>
-using micro_seconds_t = time_t<_Type, std::chrono::microseconds::period>;
-template <typename _Type>
-using milli_seconds_t = time_t<_Type, std::chrono::milliseconds::period>;
-template <typename _Type> using seconds_t = time_t<_Type, std::ratio<1>>;
-template <typename _Type>
-using minutes_t = time_t<_Type, std::chrono::minutes::period>;
-template <typename _Type>
-using hours_t = time_t<_Type, std::chrono::hours::period>;
+template <typename _type> using atto_seconds_t = time_t<_type, std::atto>;
+template <typename _type> using femto_seconds_t = time_t<_type, std::femto>;
+template <typename _type> using pico_seconds_t = time_t<_type, std::pico>;
+template <typename _type> using nano_seconds_t = time_t<_type, std::nano>;
+template <typename _type>
+using micro_seconds_t = time_t<_type, std::chrono::microseconds::period>;
+template <typename _type>
+using milli_seconds_t = time_t<_type, std::chrono::milliseconds::period>;
+template <typename _type> using seconds_t = time_t<_type, std::ratio<1>>;
+template <typename _type>
+using minutes_t = time_t<_type, std::chrono::minutes::period>;
+template <typename _type>
+using hours_t = time_t<_type, std::chrono::hours::period>;
 
 inline namespace literals {
 
-template <char... _Digits> constexpr atto_seconds_t<int64_t> operator""_as() {
+template <char... _digits> constexpr atto_seconds_t<int64_t> operator""_as() {
   return atto_seconds_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_seconds_t<int64_t> operator""_fs() {
+template <char... _digits> constexpr femto_seconds_t<int64_t> operator""_fs() {
   return femto_seconds_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_seconds_t<int64_t> operator""_ps() {
+template <char... _digits> constexpr pico_seconds_t<int64_t> operator""_ps() {
   return pico_seconds_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_seconds_t<int64_t> operator""_ns() {
+template <char... _digits> constexpr nano_seconds_t<int64_t> operator""_ns() {
   return nano_seconds_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits>
+template <char... _digits>
 constexpr SI::micro_seconds_t<int64_t> operator"" _us() {
   return SI::micro_seconds_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits>
+template <char... _digits>
 constexpr SI::milli_seconds_t<int64_t> operator"" _ms() {
   return SI::milli_seconds_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
-template <char... _Digits> constexpr SI::seconds_t<int64_t> operator"" _s() {
-  return SI::seconds_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
-}
-
-template <char... _Digits> constexpr SI::minutes_t<int64_t> operator"" _min() {
-  return SI::minutes_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr SI::seconds_t<int64_t> operator"" _s() {
+  return SI::seconds_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr hours_t<int64_t> operator"" _h() {
-  return hours_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr SI::minutes_t<int64_t> operator"" _min() {
+  return SI::minutes_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
+template <char... _digits> constexpr hours_t<int64_t> operator"" _h() {
+  return hours_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_seconds_t<long double> operator""_as(long double value) {

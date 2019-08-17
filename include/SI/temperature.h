@@ -16,80 +16,80 @@ namespace SI {
 
 /// @todo find a way to encapuslate unit symbol Theta
 /// @todo consider adding Celsius and fahrenheit
-template <typename _Type, typename _Ratio>
-using temperature_t = detail::unit_t<'t', 1, _Type, _Ratio>;
-template <typename _Type> using atto_kelvin_t = temperature_t<_Type, std::atto>;
-template <typename _Type>
-using femto_kelvin_t = temperature_t<_Type, std::femto>;
-template <typename _Type> using pico_kelvin_t = temperature_t<_Type, std::pico>;
-template <typename _Type> using nano_kelvin_t = temperature_t<_Type, std::nano>;
-template <typename _Type>
-using micro_kelvin_t = temperature_t<_Type, std::micro>;
-template <typename _Type>
-using milli_kelvin_t = temperature_t<_Type, std::milli>;
-template <typename _Type> using kelvin_t = temperature_t<_Type, std::ratio<1>>;
-template <typename _Type> using kilo_kelvin_t = temperature_t<_Type, std::kilo>;
-template <typename _Type> using mega_kelvin_t = temperature_t<_Type, std::mega>;
-template <typename _Type> using giga_kelvin_t = temperature_t<_Type, std::giga>;
-template <typename _Type> using tera_kelvin_t = temperature_t<_Type, std::tera>;
-template <typename _Type> using peta_kelvin_t = temperature_t<_Type, std::peta>;
-template <typename _Type> using exa_kelvin_t = temperature_t<_Type, std::exa>;
+template <typename _type, typename _ratio>
+using temperature_t = detail::unit_t<'t', 1, _type, _ratio>;
+template <typename _type> using atto_kelvin_t = temperature_t<_type, std::atto>;
+template <typename _type>
+using femto_kelvin_t = temperature_t<_type, std::femto>;
+template <typename _type> using pico_kelvin_t = temperature_t<_type, std::pico>;
+template <typename _type> using nano_kelvin_t = temperature_t<_type, std::nano>;
+template <typename _type>
+using micro_kelvin_t = temperature_t<_type, std::micro>;
+template <typename _type>
+using milli_kelvin_t = temperature_t<_type, std::milli>;
+template <typename _type> using kelvin_t = temperature_t<_type, std::ratio<1>>;
+template <typename _type> using kilo_kelvin_t = temperature_t<_type, std::kilo>;
+template <typename _type> using mega_kelvin_t = temperature_t<_type, std::mega>;
+template <typename _type> using giga_kelvin_t = temperature_t<_type, std::giga>;
+template <typename _type> using tera_kelvin_t = temperature_t<_type, std::tera>;
+template <typename _type> using peta_kelvin_t = temperature_t<_type, std::peta>;
+template <typename _type> using exa_kelvin_t = temperature_t<_type, std::exa>;
 
 inline namespace literals {
 
-template <char... _Digits> constexpr atto_kelvin_t<int64_t> operator""_aK() {
-  return atto_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr atto_kelvin_t<int64_t> operator""_aK() {
+  return atto_kelvin_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_kelvin_t<int64_t> operator""_fK() {
+template <char... _digits> constexpr femto_kelvin_t<int64_t> operator""_fK() {
   return femto_kelvin_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_kelvin_t<int64_t> operator""_pK() {
-  return pico_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr pico_kelvin_t<int64_t> operator""_pK() {
+  return pico_kelvin_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_kelvin_t<int64_t> operator""_nK() {
-  return nano_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr nano_kelvin_t<int64_t> operator""_nK() {
+  return nano_kelvin_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_kelvin_t<int64_t> operator""_uK() {
+template <char... _digits> constexpr micro_kelvin_t<int64_t> operator""_uK() {
   return micro_kelvin_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_kelvin_t<int64_t> operator""_mK() {
+template <char... _digits> constexpr milli_kelvin_t<int64_t> operator""_mK() {
   return milli_kelvin_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kelvin_t<int64_t> operator""_K() {
-  return kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr kelvin_t<int64_t> operator""_K() {
+  return kelvin_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_kelvin_t<int64_t> operator""_kK() {
-  return kilo_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr kilo_kelvin_t<int64_t> operator""_kK() {
+  return kilo_kelvin_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_kelvin_t<int64_t> operator""_MK() {
-  return mega_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr mega_kelvin_t<int64_t> operator""_MK() {
+  return mega_kelvin_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_kelvin_t<int64_t> operator""_GK() {
-  return giga_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr giga_kelvin_t<int64_t> operator""_GK() {
+  return giga_kelvin_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_kelvin_t<int64_t> operator""_TK() {
-  return tera_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr tera_kelvin_t<int64_t> operator""_TK() {
+  return tera_kelvin_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_kelvin_t<int64_t> operator""_PK() {
-  return peta_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr peta_kelvin_t<int64_t> operator""_PK() {
+  return peta_kelvin_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr exa_kelvin_t<int64_t> operator""_EK() {
-  return exa_kelvin_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr exa_kelvin_t<int64_t> operator""_EK() {
+  return exa_kelvin_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_kelvin_t<long double> operator""_aK(long double value) {

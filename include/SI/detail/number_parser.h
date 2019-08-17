@@ -17,29 +17,29 @@ namespace SI::detail::parsing {
 
 /// struct converting a char digit into an int
 /// allowed digits are [0-9][a-fA-F][']
-template <intmax_t _base, char _Str_digit> struct Digit_impl {
-  static_assert((_Str_digit >= '0' && _Str_digit <= '9') ||
-                (_Str_digit >= 'a' && _Str_digit <= 'f') ||
-                (_Str_digit >= 'A' && _Str_digit <= 'F') || _Str_digit == '\'');
+template <intmax_t _base, char _str_digit> struct Digit_impl {
+  static_assert((_str_digit >= '0' && _str_digit <= '9') ||
+                (_str_digit >= 'a' && _str_digit <= 'f') ||
+                (_str_digit >= 'A' && _str_digit <= 'F') || _str_digit == '\'');
 
   static_assert(_base >= 2, "minimum representation is binary (base = 2)");
   static_assert(_base < 17, "maximum representation is hex (base == 16)");
 
-  static constexpr bool is_valid_digit = _Str_digit == '\'' ? false : true;
+  static constexpr bool is_valid_digit = _str_digit == '\'' ? false : true;
   static constexpr intmax_t value =
-      (_Str_digit >= '0' && _Str_digit <= '9')
-          ? _Str_digit - '0'
-          : (_Str_digit >= 'a' && _Str_digit <= 'f')
-                ? 10 + (_Str_digit - 'a')
-                : (_Str_digit >= 'A' && _Str_digit <= 'F')
-                      ? 10 + (_Str_digit - 'A')
+      (_str_digit >= '0' && _str_digit <= '9')
+          ? _str_digit - '0'
+          : (_str_digit >= 'a' && _str_digit <= 'f')
+                ? 10 + (_str_digit - 'a')
+                : (_str_digit >= 'A' && _str_digit <= 'F')
+                      ? 10 + (_str_digit - 'A')
                       : std::numeric_limits<intmax_t>::quiet_NaN();
   static_assert(!is_valid_digit || value < _base, "Digit is valid for base");
 };
 
 // Interface class to access Digit
-template <intmax_t _base, char _Str_digit>
-struct Digit : public Digit_impl<_base, _Str_digit> {};
+template <intmax_t _base, char _str_digit>
+struct Digit : public Digit_impl<_base, _str_digit> {};
 
 /// Struct containing a power to a base; used as multiplicator of each position
 /// in a number

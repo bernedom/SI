@@ -17,23 +17,23 @@
 #include "force.h"
 
 namespace SI {
-template <typename _Type, class _Ratio = std::ratio<1>>
-using pressure_t = detail::unit_t<'p', 1, _Type, _Ratio>;
+template <typename _type, class _ratio = std::ratio<1>>
+using pressure_t = detail::unit_t<'p', 1, _type, _ratio>;
 
 /// specific units
-template <typename _Type> using atto_pascal_t = pressure_t<_Type, std::atto>;
-template <typename _Type> using femto_pascal_t = pressure_t<_Type, std::femto>;
-template <typename _Type> using pico_pascal_t = pressure_t<_Type, std::pico>;
-template <typename _Type> using nano_pascal_t = pressure_t<_Type, std::nano>;
-template <typename _Type> using micro_pascal_t = pressure_t<_Type, std::micro>;
-template <typename _Type> using milli_pascal_t = pressure_t<_Type, std::milli>;
-template <typename _Type> using pascal_t = pressure_t<_Type, std::ratio<1>>;
-template <typename _Type> using kilo_pascal_t = pressure_t<_Type, std::kilo>;
-template <typename _Type> using mega_pascal_t = pressure_t<_Type, std::mega>;
-template <typename _Type> using giga_pascal_t = pressure_t<_Type, std::giga>;
-template <typename _Type> using tera_pascal_t = pressure_t<_Type, std::tera>;
-template <typename _Type> using peta_pascal_t = pressure_t<_Type, std::peta>;
-template <typename _Type> using exa_pascal_t = pressure_t<_Type, std::exa>;
+template <typename _type> using atto_pascal_t = pressure_t<_type, std::atto>;
+template <typename _type> using femto_pascal_t = pressure_t<_type, std::femto>;
+template <typename _type> using pico_pascal_t = pressure_t<_type, std::pico>;
+template <typename _type> using nano_pascal_t = pressure_t<_type, std::nano>;
+template <typename _type> using micro_pascal_t = pressure_t<_type, std::micro>;
+template <typename _type> using milli_pascal_t = pressure_t<_type, std::milli>;
+template <typename _type> using pascal_t = pressure_t<_type, std::ratio<1>>;
+template <typename _type> using kilo_pascal_t = pressure_t<_type, std::kilo>;
+template <typename _type> using mega_pascal_t = pressure_t<_type, std::mega>;
+template <typename _type> using giga_pascal_t = pressure_t<_type, std::giga>;
+template <typename _type> using tera_pascal_t = pressure_t<_type, std::tera>;
+template <typename _type> using peta_pascal_t = pressure_t<_type, std::peta>;
+template <typename _type> using exa_pascal_t = pressure_t<_type, std::exa>;
 
 namespace detail {
 
@@ -41,59 +41,59 @@ BUILD_UNIT_FROM_DIVISON(pressure_t, force_t, area_t)
 }
 
 inline namespace literals {
-template <char... _Digits> constexpr atto_pascal_t<int64_t> operator""_apa() {
-  return atto_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr atto_pascal_t<int64_t> operator""_apa() {
+  return atto_pascal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_pascal_t<int64_t> operator""_fpa() {
+template <char... _digits> constexpr femto_pascal_t<int64_t> operator""_fpa() {
   return femto_pascal_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_pascal_t<int64_t> operator""_ppa() {
-  return pico_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr pico_pascal_t<int64_t> operator""_ppa() {
+  return pico_pascal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_pascal_t<int64_t> operator""_npa() {
-  return nano_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr nano_pascal_t<int64_t> operator""_npa() {
+  return nano_pascal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_pascal_t<int64_t> operator""_upa() {
+template <char... _digits> constexpr micro_pascal_t<int64_t> operator""_upa() {
   return micro_pascal_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_pascal_t<int64_t> operator""_mpa() {
+template <char... _digits> constexpr milli_pascal_t<int64_t> operator""_mpa() {
   return milli_pascal_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pascal_t<int64_t> operator""_pa() {
-  return pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr pascal_t<int64_t> operator""_pa() {
+  return pascal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_pascal_t<int64_t> operator""_kpa() {
-  return kilo_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr kilo_pascal_t<int64_t> operator""_kpa() {
+  return kilo_pascal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_pascal_t<int64_t> operator""_Mpa() {
-  return mega_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr mega_pascal_t<int64_t> operator""_Mpa() {
+  return mega_pascal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_pascal_t<int64_t> operator""_Gpa() {
-  return giga_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr giga_pascal_t<int64_t> operator""_Gpa() {
+  return giga_pascal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_pascal_t<int64_t> operator""_Tpa() {
-  return tera_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr tera_pascal_t<int64_t> operator""_Tpa() {
+  return tera_pascal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_pascal_t<int64_t> operator""_Ppa() {
-  return peta_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr peta_pascal_t<int64_t> operator""_Ppa() {
+  return peta_pascal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr exa_pascal_t<int64_t> operator""_Epa() {
-  return exa_pascal_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr exa_pascal_t<int64_t> operator""_Epa() {
+  return exa_pascal_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_pascal_t<long double> operator""_apa(long double value) {

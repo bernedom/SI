@@ -16,99 +16,99 @@
 
 namespace SI {
 
-template <typename _Type, class _Ratio = std::ratio<1>>
-using equivalent_dose_t = detail::unit_t<'D', 1, _Type, _Ratio>;
+template <typename _type, class _ratio = std::ratio<1>>
+using equivalent_dose_t = detail::unit_t<'D', 1, _type, _ratio>;
 
 /// specific units
-template <typename _Type>
-using atto_sievert_t = equivalent_dose_t<_Type, std::atto>;
-template <typename _Type>
-using femto_sievert_t = equivalent_dose_t<_Type, std::femto>;
-template <typename _Type>
-using pico_sievert_t = equivalent_dose_t<_Type, std::pico>;
-template <typename _Type>
-using nano_sievert_t = equivalent_dose_t<_Type, std::nano>;
-template <typename _Type>
-using micro_sievert_t = equivalent_dose_t<_Type, std::micro>;
-template <typename _Type>
-using milli_sievert_t = equivalent_dose_t<_Type, std::milli>;
-template <typename _Type>
-using sievert_t = equivalent_dose_t<_Type, std::ratio<1>>;
-template <typename _Type>
-using kilo_sievert_t = equivalent_dose_t<_Type, std::kilo>;
-template <typename _Type>
-using mega_sievert_t = equivalent_dose_t<_Type, std::mega>;
-template <typename _Type>
-using giga_sievert_t = equivalent_dose_t<_Type, std::giga>;
-template <typename _Type>
-using tera_sievert_t = equivalent_dose_t<_Type, std::tera>;
-template <typename _Type>
-using peta_sievert_t = equivalent_dose_t<_Type, std::peta>;
-template <typename _Type>
-using exa_sievert_t = equivalent_dose_t<_Type, std::exa>;
+template <typename _type>
+using atto_sievert_t = equivalent_dose_t<_type, std::atto>;
+template <typename _type>
+using femto_sievert_t = equivalent_dose_t<_type, std::femto>;
+template <typename _type>
+using pico_sievert_t = equivalent_dose_t<_type, std::pico>;
+template <typename _type>
+using nano_sievert_t = equivalent_dose_t<_type, std::nano>;
+template <typename _type>
+using micro_sievert_t = equivalent_dose_t<_type, std::micro>;
+template <typename _type>
+using milli_sievert_t = equivalent_dose_t<_type, std::milli>;
+template <typename _type>
+using sievert_t = equivalent_dose_t<_type, std::ratio<1>>;
+template <typename _type>
+using kilo_sievert_t = equivalent_dose_t<_type, std::kilo>;
+template <typename _type>
+using mega_sievert_t = equivalent_dose_t<_type, std::mega>;
+template <typename _type>
+using giga_sievert_t = equivalent_dose_t<_type, std::giga>;
+template <typename _type>
+using tera_sievert_t = equivalent_dose_t<_type, std::tera>;
+template <typename _type>
+using peta_sievert_t = equivalent_dose_t<_type, std::peta>;
+template <typename _type>
+using exa_sievert_t = equivalent_dose_t<_type, std::exa>;
 
 inline namespace literals {
-template <char... _Digits> constexpr atto_sievert_t<int64_t> operator""_aSv() {
+template <char... _digits> constexpr atto_sievert_t<int64_t> operator""_aSv() {
   return atto_sievert_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_sievert_t<int64_t> operator""_fSv() {
+template <char... _digits> constexpr femto_sievert_t<int64_t> operator""_fSv() {
   return femto_sievert_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_sievert_t<int64_t> operator""_pSv() {
+template <char... _digits> constexpr pico_sievert_t<int64_t> operator""_pSv() {
   return pico_sievert_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_sievert_t<int64_t> operator""_nSv() {
+template <char... _digits> constexpr nano_sievert_t<int64_t> operator""_nSv() {
   return nano_sievert_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_sievert_t<int64_t> operator""_uSv() {
+template <char... _digits> constexpr micro_sievert_t<int64_t> operator""_uSv() {
   return micro_sievert_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_sievert_t<int64_t> operator""_mSv() {
+template <char... _digits> constexpr milli_sievert_t<int64_t> operator""_mSv() {
   return milli_sievert_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr sievert_t<int64_t> operator""_Sv() {
-  return sievert_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr sievert_t<int64_t> operator""_Sv() {
+  return sievert_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_sievert_t<int64_t> operator""_kSv() {
+template <char... _digits> constexpr kilo_sievert_t<int64_t> operator""_kSv() {
   return kilo_sievert_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_sievert_t<int64_t> operator""_MSv() {
+template <char... _digits> constexpr mega_sievert_t<int64_t> operator""_MSv() {
   return mega_sievert_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_sievert_t<int64_t> operator""_GSv() {
+template <char... _digits> constexpr giga_sievert_t<int64_t> operator""_GSv() {
   return giga_sievert_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_sievert_t<int64_t> operator""_TSv() {
+template <char... _digits> constexpr tera_sievert_t<int64_t> operator""_TSv() {
   return tera_sievert_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_sievert_t<int64_t> operator""_PSv() {
+template <char... _digits> constexpr peta_sievert_t<int64_t> operator""_PSv() {
   return peta_sievert_t<int64_t>{
-      SI::detail::parsing::Number<_Digits...>::value};
+      SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr exa_sievert_t<int64_t> operator""_ESv() {
-  return exa_sievert_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr exa_sievert_t<int64_t> operator""_ESv() {
+  return exa_sievert_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_sievert_t<long double> operator""_aSv(long double value) {

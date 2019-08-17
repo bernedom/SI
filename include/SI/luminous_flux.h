@@ -18,90 +18,90 @@
 
 namespace SI {
 
-template <typename _Type, class _Ratio = std::ratio<1>>
-using luminous_flux_t = detail::unit_t<'m', 1, _Type, _Ratio>;
+template <typename _type, class _ratio = std::ratio<1>>
+using luminous_flux_t = detail::unit_t<'m', 1, _type, _ratio>;
 
 /// specific units
-template <typename _Type>
-using atto_lumen_t = luminous_flux_t<_Type, std::atto>;
-template <typename _Type>
-using femto_lumen_t = luminous_flux_t<_Type, std::femto>;
-template <typename _Type>
-using pico_lumen_t = luminous_flux_t<_Type, std::pico>;
-template <typename _Type>
-using nano_lumen_t = luminous_flux_t<_Type, std::nano>;
-template <typename _Type>
-using micro_lumen_t = luminous_flux_t<_Type, std::micro>;
-template <typename _Type>
-using milli_lumen_t = luminous_flux_t<_Type, std::milli>;
-template <typename _Type> using lumen_t = luminous_flux_t<_Type, std::ratio<1>>;
-template <typename _Type>
-using kilo_lumen_t = luminous_flux_t<_Type, std::kilo>;
-template <typename _Type>
-using mega_lumen_t = luminous_flux_t<_Type, std::mega>;
-template <typename _Type>
-using giga_lumen_t = luminous_flux_t<_Type, std::giga>;
-template <typename _Type>
-using tera_lumen_t = luminous_flux_t<_Type, std::tera>;
-template <typename _Type>
-using peta_lumen_t = luminous_flux_t<_Type, std::peta>;
-template <typename _Type> using exa_lumen_t = luminous_flux_t<_Type, std::exa>;
+template <typename _type>
+using atto_lumen_t = luminous_flux_t<_type, std::atto>;
+template <typename _type>
+using femto_lumen_t = luminous_flux_t<_type, std::femto>;
+template <typename _type>
+using pico_lumen_t = luminous_flux_t<_type, std::pico>;
+template <typename _type>
+using nano_lumen_t = luminous_flux_t<_type, std::nano>;
+template <typename _type>
+using micro_lumen_t = luminous_flux_t<_type, std::micro>;
+template <typename _type>
+using milli_lumen_t = luminous_flux_t<_type, std::milli>;
+template <typename _type> using lumen_t = luminous_flux_t<_type, std::ratio<1>>;
+template <typename _type>
+using kilo_lumen_t = luminous_flux_t<_type, std::kilo>;
+template <typename _type>
+using mega_lumen_t = luminous_flux_t<_type, std::mega>;
+template <typename _type>
+using giga_lumen_t = luminous_flux_t<_type, std::giga>;
+template <typename _type>
+using tera_lumen_t = luminous_flux_t<_type, std::tera>;
+template <typename _type>
+using peta_lumen_t = luminous_flux_t<_type, std::peta>;
+template <typename _type> using exa_lumen_t = luminous_flux_t<_type, std::exa>;
 
 namespace detail {
 BUILD_UNIT_FROM_MULTIPLICATION(luminous_flux_t, solid_angle_t, luminosity_t)
 }
 
 inline namespace literals {
-template <char... _Digits> constexpr atto_lumen_t<int64_t> operator""_alm() {
-  return atto_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr atto_lumen_t<int64_t> operator""_alm() {
+  return atto_lumen_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_lumen_t<int64_t> operator""_flm() {
-  return femto_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr femto_lumen_t<int64_t> operator""_flm() {
+  return femto_lumen_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_lumen_t<int64_t> operator""_plm() {
-  return pico_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr pico_lumen_t<int64_t> operator""_plm() {
+  return pico_lumen_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_lumen_t<int64_t> operator""_nlm() {
-  return nano_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr nano_lumen_t<int64_t> operator""_nlm() {
+  return nano_lumen_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_lumen_t<int64_t> operator""_ulm() {
-  return micro_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr micro_lumen_t<int64_t> operator""_ulm() {
+  return micro_lumen_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_lumen_t<int64_t> operator""_mlm() {
-  return milli_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr milli_lumen_t<int64_t> operator""_mlm() {
+  return milli_lumen_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr lumen_t<int64_t> operator""_lm() {
-  return lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr lumen_t<int64_t> operator""_lm() {
+  return lumen_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_lumen_t<int64_t> operator""_klm() {
-  return kilo_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr kilo_lumen_t<int64_t> operator""_klm() {
+  return kilo_lumen_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_lumen_t<int64_t> operator""_Mlm() {
-  return mega_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr mega_lumen_t<int64_t> operator""_Mlm() {
+  return mega_lumen_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_lumen_t<int64_t> operator""_Glm() {
-  return giga_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr giga_lumen_t<int64_t> operator""_Glm() {
+  return giga_lumen_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_lumen_t<int64_t> operator""_Tlm() {
-  return tera_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr tera_lumen_t<int64_t> operator""_Tlm() {
+  return tera_lumen_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_lumen_t<int64_t> operator""_Plm() {
-  return peta_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr peta_lumen_t<int64_t> operator""_Plm() {
+  return peta_lumen_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr exa_lumen_t<int64_t> operator""_Elm() {
-  return exa_lumen_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr exa_lumen_t<int64_t> operator""_Elm() {
+  return exa_lumen_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_lumen_t<long double> operator""_alm(long double value) {

@@ -22,10 +22,10 @@
 namespace SI::detail {
 
 /// to check if a template is an instatiation of std::ratio
-template <typename _Tp> struct is_ratio : std::false_type {};
+template <typename _type> struct is_ratio : std::false_type {};
 
-template <intmax_t _Num, intmax_t _Den>
-struct is_ratio<std::ratio<_Num, _Den>> : std::true_type {};
+template <intmax_t _num, intmax_t _den>
+struct is_ratio<std::ratio<_num, _den>> : std::true_type {};
 
 template <typename T, typename std::enable_if<
                           std::is_floating_point<T>::value>::type * = nullptr>

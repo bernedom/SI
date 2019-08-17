@@ -5,11 +5,11 @@
 using namespace SI::detail;
 
 namespace {
-template <typename _Type, typename _Ratio>
-using unit_Z_t = SI::detail::unit_t<'Z', 1, _Type, _Ratio>;
+template <typename _type, typename _ratio>
+using unit_Z_t = SI::detail::unit_t<'Z', 1, _type, _ratio>;
 
-template <typename _Type, typename _Ratio>
-using unit_X_t = SI::detail::unit_t<'X', 1, _Type, _Ratio>;
+template <typename _type, typename _ratio>
+using unit_X_t = SI::detail::unit_t<'X', 1, _type, _ratio>;
 } // namespace
 
 TEMPLATE_TEST_CASE("GIVEN to values of different type AND ratio is the same "

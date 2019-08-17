@@ -19,36 +19,36 @@
 namespace SI {
 
 /// @todo find a way to use Ohm as dimension symbol
-template <typename _Type, class _Ratio = std::ratio<1>>
-using electric_resistance_t = detail::unit_t<'O', 1, _Type, _Ratio>;
+template <typename _type, class _ratio = std::ratio<1>>
+using electric_resistance_t = detail::unit_t<'O', 1, _type, _ratio>;
 
 /// specific units
-template <typename _Type>
-using atto_ohm_t = electric_resistance_t<_Type, std::atto>;
-template <typename _Type>
-using femto_ohm_t = electric_resistance_t<_Type, std::femto>;
-template <typename _Type>
-using pico_ohm_t = electric_resistance_t<_Type, std::pico>;
-template <typename _Type>
-using nano_ohm_t = electric_resistance_t<_Type, std::nano>;
-template <typename _Type>
-using micro_ohm_t = electric_resistance_t<_Type, std::micro>;
-template <typename _Type>
-using milli_ohm_t = electric_resistance_t<_Type, std::milli>;
-template <typename _Type>
-using ohm_t = electric_resistance_t<_Type, std::ratio<1>>;
-template <typename _Type>
-using kilo_ohm_t = electric_resistance_t<_Type, std::kilo>;
-template <typename _Type>
-using mega_ohm_t = electric_resistance_t<_Type, std::mega>;
-template <typename _Type>
-using giga_ohm_t = electric_resistance_t<_Type, std::giga>;
-template <typename _Type>
-using tera_ohm_t = electric_resistance_t<_Type, std::tera>;
-template <typename _Type>
-using peta_ohm_t = electric_resistance_t<_Type, std::peta>;
-template <typename _Type>
-using exa_ohm_t = electric_resistance_t<_Type, std::exa>;
+template <typename _type>
+using atto_ohm_t = electric_resistance_t<_type, std::atto>;
+template <typename _type>
+using femto_ohm_t = electric_resistance_t<_type, std::femto>;
+template <typename _type>
+using pico_ohm_t = electric_resistance_t<_type, std::pico>;
+template <typename _type>
+using nano_ohm_t = electric_resistance_t<_type, std::nano>;
+template <typename _type>
+using micro_ohm_t = electric_resistance_t<_type, std::micro>;
+template <typename _type>
+using milli_ohm_t = electric_resistance_t<_type, std::milli>;
+template <typename _type>
+using ohm_t = electric_resistance_t<_type, std::ratio<1>>;
+template <typename _type>
+using kilo_ohm_t = electric_resistance_t<_type, std::kilo>;
+template <typename _type>
+using mega_ohm_t = electric_resistance_t<_type, std::mega>;
+template <typename _type>
+using giga_ohm_t = electric_resistance_t<_type, std::giga>;
+template <typename _type>
+using tera_ohm_t = electric_resistance_t<_type, std::tera>;
+template <typename _type>
+using peta_ohm_t = electric_resistance_t<_type, std::peta>;
+template <typename _type>
+using exa_ohm_t = electric_resistance_t<_type, std::exa>;
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(electric_resistance_t, electric_potential_t,
@@ -56,66 +56,66 @@ BUILD_UNIT_FROM_DIVISON(electric_resistance_t, electric_potential_t,
 
 /// Builds conductance from 1/conductance, to avoid include cycles the base
 /// unit_t is used instead of the type alias electric_conductance_t
-template <typename _Type, class _Ratio = std::ratio<1>>
+template <typename _type, class _ratio = std::ratio<1>>
 constexpr auto
-operator/(const _Type scalar,
-          const detail::unit_t<'G', 1, _Type, _Ratio> &conductance) {
-  return electric_resistance_t<_Type, std::ratio<_Ratio::den, _Ratio::num>>{
+operator/(const _type scalar,
+          const detail::unit_t<'G', 1, _type, _ratio> &conductance) {
+  return electric_resistance_t<_type, std::ratio<_ratio::den, _ratio::num>>{
       scalar / conductance.raw_value()};
 }
 } // namespace detail
 
 inline namespace literals {
-template <char... _Digits> constexpr atto_ohm_t<int64_t> operator""_aOhm() {
-  return atto_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr atto_ohm_t<int64_t> operator""_aOhm() {
+  return atto_ohm_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr femto_ohm_t<int64_t> operator""_fOhm() {
-  return femto_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr femto_ohm_t<int64_t> operator""_fOhm() {
+  return femto_ohm_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr pico_ohm_t<int64_t> operator""_pOhm() {
-  return pico_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr pico_ohm_t<int64_t> operator""_pOhm() {
+  return pico_ohm_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr nano_ohm_t<int64_t> operator""_nOhm() {
-  return nano_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr nano_ohm_t<int64_t> operator""_nOhm() {
+  return nano_ohm_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr micro_ohm_t<int64_t> operator""_uOhm() {
-  return micro_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr micro_ohm_t<int64_t> operator""_uOhm() {
+  return micro_ohm_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr milli_ohm_t<int64_t> operator""_mOhm() {
-  return milli_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr milli_ohm_t<int64_t> operator""_mOhm() {
+  return milli_ohm_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr ohm_t<int64_t> operator""_Ohm() {
-  return ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr ohm_t<int64_t> operator""_Ohm() {
+  return ohm_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr kilo_ohm_t<int64_t> operator""_kOhm() {
-  return kilo_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr kilo_ohm_t<int64_t> operator""_kOhm() {
+  return kilo_ohm_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr mega_ohm_t<int64_t> operator""_MOhm() {
-  return mega_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr mega_ohm_t<int64_t> operator""_MOhm() {
+  return mega_ohm_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr giga_ohm_t<int64_t> operator""_GOhm() {
-  return giga_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr giga_ohm_t<int64_t> operator""_GOhm() {
+  return giga_ohm_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr tera_ohm_t<int64_t> operator""_TOhm() {
-  return tera_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr tera_ohm_t<int64_t> operator""_TOhm() {
+  return tera_ohm_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr peta_ohm_t<int64_t> operator""_POhm() {
-  return peta_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr peta_ohm_t<int64_t> operator""_POhm() {
+  return peta_ohm_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _Digits> constexpr exa_ohm_t<int64_t> operator""_EOhm() {
-  return exa_ohm_t<int64_t>{SI::detail::parsing::Number<_Digits...>::value};
+template <char... _digits> constexpr exa_ohm_t<int64_t> operator""_EOhm() {
+  return exa_ohm_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
 constexpr atto_ohm_t<long double> operator""_aOhm(long double value) {

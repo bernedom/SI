@@ -3,8 +3,8 @@
 /// helper literal
 
 namespace {
-template <char... _Digits> constexpr int64_t operator""_literal_op() {
-  return SI::detail::parsing::Number<_Digits...>::value;
+template <char... _digits> constexpr int64_t operator""_literal_op() {
+  return SI::detail::parsing::Number<_digits...>::value;
 }
 
 int overflow_test_pass() {

@@ -20,8 +20,8 @@
 namespace SI {
 
 /// Type for velocity where v = L / T
-template <typename _Type, typename _Ratio>
-using velocity_t = detail::unit_t<'v', 1, _Type, _Ratio>;
+template <typename _type, typename _ratio>
+using velocity_t = detail::unit_t<'v', 1, _type, _ratio>;
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(velocity_t, length_t, time_t)
