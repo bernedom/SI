@@ -30,7 +30,7 @@ testPureCmakeInstallation(){
     cmake ${ROOT_DIR} -B${SI_BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DBUILD_TESTING=off -G Ninja
     cmake --build ${SI_BUILD_DIR} --config Release --target install
     assertEquals "Installation build successful" 0 $?
-    cmake ${ROOT_DIR}/example -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -G Ninja
+    cmake ${ROOT_DIR}/test/installation-tests -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -G Ninja
     cmake --build ${BUILD_DIR}
     assertEquals "build against installation successful" 0 $?
     
@@ -45,7 +45,7 @@ testCpackInstallation(){
     ${SI_BUILD_DIR}/install-SI.sh --prefix=${INSTALL_PATH} --skip-license --exclude-subdir
     assertEquals "Installation script successful" 0 $?
     
-    cmake ${ROOT_DIR}/example -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -G Ninja
+    cmake ${ROOT_DIR}/test/installation-tests -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -G Ninja
     cmake --build ${BUILD_DIR}
     assertEquals "build against installation successful" 0 $?
     
