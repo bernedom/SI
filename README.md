@@ -32,16 +32,16 @@ int main(int, char **) {
 
 SI provides conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) with strong **type safety at compile time**. All units are special typedefs of the templated struct `SI::unit_t`. Only the value of the unit is stored internally, the ratio (i.e. milli, micro, kilo...) is determined as a type trait to allow all units to have the same resolution across the whole implemented ratios. SI handles operations of units of the same ratios as well as when the ratios are different. Operations of between units of the same ratio are overhead-free, else there is additional computation cost to adjust the values to the units. By passing the flag `SI_DISABLE_IMPLICIT_RATIO_CONVERSION` to the compiler implicit ratio conversion is not done and fails with a compiler error. 
 
-It is possible to supply custom ratios to the  built-in types and they are fully compatible for calculation with other units. However the necessary literals or typedefs have to be supplied by the user. For instance  `SI::velocity_t<double, std::ratio<1000, 36>>` would be "kilo meter per one-hundreth-of-an-hour".
+It is possible to supply custom ratios to the  built-in types and they are fully compatible for calculation with other units. However the necessary literals or typedefs have to be supplied by the user. For instance  `SI::velocity_t<double, std::ratio<1000, 36>>` would be "kilo metre per one-hundreth-of-an-hour".
 
 ## SI Base units
 
 For each Unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the internation system of units](https://en.wikipedia.org/wiki/Metric_prefix)
-The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. `meter_t, milli_meter_t, kilo_meter_t`. The prefix or interfix is marked with an `*` in the tables below. 
+The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. `metre_t, milli_metre_t, kilo_metre_t`. The prefix or interfix is marked with an `*` in the tables below. 
 
 | Unit                        | Dimension Symbol | Unit Symbol | implemented ratios                                  | unit typedefs                     |
 | --------------------------- | ---------------- | ----------- | --------------------------------------------------- | --------------------------------- |
-| Length                      | L                | m           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_meter_t`                       |
+| Length                      | L                | m           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_metre_t`                       |
 | Time                        | T                | s           | 10<sup>-18</sup> to 10<sup>0</sup> and 60/1, 3600/1 | `*_seconds_t, minutes_t, hours_t` |
 | Mass*                       | M                | kg          | 10<sup>-15</sup> to 10<sup>3</sup>                  | `*_gram_t `, `ton_t`              |
 | Electric current            | I                | A           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_ampere_t`                      |
@@ -57,8 +57,8 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metric
 
 | Unit         | Dimension Symbol | Exponent | Unit Symbol | implemented ratios                  | unit typedefs      |
 | ------------ | ---------------- | -------- | ----------- | ----------------------------------- | ------------------ |
-| Area         | L                | 2        | m2          | 10<sup>-18</sup> to 10<sup>18</sup> | `square_*_meter_t` |
-| Volume       | L                | 3        | m3          | 10<sup>-18</sup> to 10<sup>18</sup> | `cubic_*_meter_t`  |
+| Area         | L                | 2        | m2          | 10<sup>-18</sup> to 10<sup>18</sup> | `square_*_metre_t` |
+| Volume       | L                | 3        | m3          | 10<sup>-18</sup> to 10<sup>18</sup> | `cubic_*_metre_t`  |
 | Frequency    | T                | -1       | Hz          | 10<sup>-18</sup> to 10<sup>18</sup> | `*_hertz_t`        |
 | Angle*       | r                | 1        | rad         | 10<sup>-18</sup> to 1               | `*_radiant_t`      |
 | Solid Angle* | R                | 1        | sr          | 10<sup>-18</sup> to 1               | `*_sterradiant_t`  |
@@ -127,7 +127,7 @@ Consider running the build/install command with setting the install prefix, if y
 -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/SI-install
 ```
 
-The folder `example` contains a standalone sample program to check for succesful installation.
+The folder `test/installation-tests` contains a standalone sample program to check for succesful installation.
 
 #### Installing using `cpack`
 

@@ -202,3 +202,21 @@ TEST_CASE("GIVEN a value of 1m WHEN multiplied with -1 THEN result is -1m") {
 
   STATIC_REQUIRE(one_m * -1 == neg_one_m);
 }
+
+// namespace {
+// // helper struct to paramterize test below
+// template <typename lhs, typename rhs> struct type_tuple {
+//   using lhs_type = lhs;
+//   using rhs_type = rhs;
+// };
+// } // namespace
+
+// TEMPLATE_TEST_CASE(
+//     "GIVEN a length value WHEN spelled 'metre' THEN type is the same as "
+//     "'meter'",
+//     "[length][alternative_spelling]",
+//     (type_tuple<SI::meter_t<int64_t>, SI::metre_t<int64_t>>)) {
+//   STATIC_REQUIRE(
+//       std::is_same_v<typename TestType::lhs_type, typename
+//       TestType::rhs_type>);
+// }
