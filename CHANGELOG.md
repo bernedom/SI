@@ -2,6 +2,7 @@
 
 ## 1.2.0
 
+*   Changed spelling of length unit from 'meter' to 'metre' as this is the official SI spelling according to the [bureao international des Poids and Mesures](https://www.bipm.org/en/measurement-units/)
 *   added `SI_` prefix to preprocessor flag to disable ratio conversion to `SI_DISABLE_IMPLICIT_RATIO_CONVERSION` to scope it closer
 *   Renamed template parameters to fit with c++ naming convention ([See this stackoverflow thread](https://stackoverflow.com/questions/228783/what-are-the-rules-about-using-an-underscore-in-a-c-identifier))
 
