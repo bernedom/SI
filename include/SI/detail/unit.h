@@ -253,6 +253,25 @@ struct unit_t {
         raw_value() +
         unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).raw_value()};
   }
+
+  /// add value of the same type
+  template <typename _rhs_ratio>
+  constexpr unit_t&
+  operator+=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) {
+
+    static_assert(detail::is_ratio<_rhs_ratio>::value,
+                  "_rhs_ratio is a std::ratio");
+    static_assert(
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before adding values");
+
+    value_ +=
+        unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).raw_value();
+
+    return *this;
+  }
+
   /// subtracts two values, returning type is type of lhs
   template <typename _rhs_ratio>
   constexpr unit_t
