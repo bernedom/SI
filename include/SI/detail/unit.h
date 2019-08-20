@@ -290,7 +290,7 @@ struct unit_t {
   }
 
   /// negate operation
-  constexpr unit_t operator-() { return {-value_}; }
+  constexpr unit_t operator-() const { return {-value_}; }
 
 private:
   _type value_;
