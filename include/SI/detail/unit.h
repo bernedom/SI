@@ -148,6 +148,13 @@ struct unit_t {
                                                       rhs.raw_value()};
   }
 
+  /// multiply with a non-unit scalar
+  constexpr unit_t& operator*=(const _type f) {
+      value_ *= f;
+
+      return *this;
+  }
+
   /// multiplication multiply with a same unit, with different exponent
   /// and different ratio
   /// the exponents this and rhs are added, the resulting ratio the ratio
