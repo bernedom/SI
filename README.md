@@ -9,7 +9,7 @@
 # SI - Type safety for physical units
 A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units).
 
-An illustrative example: 
+An illustrative example:
 ```cpp
 #include <SI/electric_charge.h>
 #include <SI/mass.h>
@@ -30,14 +30,14 @@ int main(int, char **) {
 }
 ```
 
-SI provides conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) with strong **type safety at compile time**. All units are special typedefs of the templated struct `SI::unit_t`. Only the value of the unit is stored internally, the ratio (i.e. milli, micro, kilo...) is determined as a type trait to allow all units to have the same resolution across the whole implemented ratios. SI handles operations of units of the same ratios as well as when the ratios are different. Operations of between units of the same ratio are overhead-free, else there is additional computation cost to adjust the values to the units. By passing the flag `SI_DISABLE_IMPLICIT_RATIO_CONVERSION` to the compiler implicit ratio conversion is not done and fails with a compiler error. 
+SI provides conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) with strong **type safety at compile time**. All units are special typedefs of the templated struct `SI::unit_t`. Only the value of the unit is stored internally, the ratio (i.e. milli, micro, kilo...) is determined as a type trait to allow all units to have the same resolution across the whole implemented ratios. SI handles operations of units of the same ratios as well as when the ratios are different. Operations of between units of the same ratio are overhead-free, else there is additional computation cost to adjust the values to the units. By passing the flag `SI_DISABLE_IMPLICIT_RATIO_CONVERSION` to the compiler implicit ratio conversion is not done and fails with a compiler error.
 
 It is possible to supply custom ratios to the  built-in types and they are fully compatible for calculation with other units. However the necessary literals or typedefs have to be supplied by the user. For instance  `SI::velocity_t<double, std::ratio<1000, 36>>` would be "kilo metre per one-hundreth-of-an-hour".
 
 ## SI Base units
 
 For each Unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the internation system of units](https://en.wikipedia.org/wiki/Metric_prefix)
-The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. `metre_t, milli_metre_t, kilo_metre_t`. The prefix or interfix is marked with an `*` in the tables below. 
+The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. `metre_t, milli_metre_t, kilo_metre_t`. The prefix or interfix is marked with an `*` in the tables below.
 
 | Unit                        | Dimension Symbol | Unit Symbol | implemented ratios                                  | unit typedefs                     |
 | --------------------------- | ---------------- | ----------- | --------------------------------------------------- | --------------------------------- |
@@ -84,6 +84,7 @@ All units that can be built from other units are also decayable to the respectiv
 | Power                | P                | W           | E/T              | aW to EW             | `*_watt_t`      |
 | Magnetic Flux        | f*               | Wb          | U \* T           | aWb to EWb           | `*_weber_t`     |
 | Magnetic Field       | B                | T           | f/L^2            | aT to ET             | `*_tesla_t`     |
+| Momentum             | p                | kg⋅m/s      | M \* v           | none                 | none            |
 | Inductance           | l                | H           | f / I            | aH to EH             | `*_henry_t`     |
 | Luminous flux        | m**              | lm          | J \* R           | alm to Elm           | `*_lumen_t`     |
 | Illuminance          | i*               | lx          | m / a            | alx to Elx           | `*_lux_t`       |
@@ -92,9 +93,9 @@ All units that can be built from other units are also decayable to the respectiv
 | Equivalent Dose      | H                | Sv          |                  | aSv to ESv           | `*_sievert_t`   |
 | Catalytic activity   | K                | kat         | N / T            | akat to Ekat         | `*_katal_t`     |
 
-\* These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`but. Illuminace should be E<sub>b</sub>. 
+\* These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`but. Illuminace should be E<sub>b</sub>.
 
-\** luminous flux should be Φ<sub>v</sub> which is even more less supported than `Φ (Phi)` itself. 
+\** luminous flux should be Φ<sub>v</sub> which is even more less supported than `Φ (Phi)` itself.
 
 ## Building & compatibility
 
@@ -116,7 +117,7 @@ substitute `--config Debug` with `--config Release` for optimized builds
 To install SI use the commands below: this will install SI into `/usr/local/lib/cmake/SI`
 
 ```bash
-mkdir build && cd build 
+mkdir build && cd build
 cmake ..
 cmake --build . --config Release --target install -- -j $(nproc)
 ```
@@ -139,7 +140,7 @@ cmake ..
 cmake --build . --config Release --target package -- -j $(nproc)
 ```
 
-This creates gzipped archives containing all files as well as an installation script `SI-<version>-<plattform>.sh`. 
+This creates gzipped archives containing all files as well as an installation script `SI-<version>-<plattform>.sh`.
 
 ```bash
 cd build
@@ -159,8 +160,8 @@ sudo apt update
 sudo apt install libstdc++-8-dev
 ```
 
-## A word on testing 
+## A word on testing
 
-I'm using more or less strict TDD for implementing the functionality. First to check if the code actually does what I want it to do, but also as a way to set examples how SI is used. The nice benefit of it being, that I'm dogfooding the library to myself while developing. I'm using [Catch2](https://github.com/catchorg/Catch2) as a unit-testing framework, however since the goal is to be able to do as much as possible during compile time most of the tests are performed with Catch2 `STATIC_REQUIRES` which contatain `static_asserts` and run-time `REQUIRE`s as testing assert. 
+I'm using more or less strict TDD for implementing the functionality. First to check if the code actually does what I want it to do, but also as a way to set examples how SI is used. The nice benefit of it being, that I'm dogfooding the library to myself while developing. I'm using [Catch2](https://github.com/catchorg/Catch2) as a unit-testing framework, however since the goal is to be able to do as much as possible during compile time most of the tests are performed with Catch2 `STATIC_REQUIRES` which contatain `static_asserts` and run-time `REQUIRE`s as testing assert.
 
 This means if the tests compile then the tests are correct. To compile only with runtime check pass `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE` to the compilers.
