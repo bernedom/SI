@@ -25,6 +25,19 @@ tearDown(){
     fi
 }
 
+testVersionNumberConsistency()
+{
+    CHANGELOG_VERSION=$(sed -n -E '/## [0-9]+\.[0-9]+\.[0-9]+/p' ${ROOT_DIR}/CHANGELOG.md | head -1 | grep -E -o '[0-9]+\.[0-9]+\.[0-9]+')
+    ORIG_DIR=$(pwd)
+    cmake ${ROOT_DIR} -B${SI_BUILD_DIR} -DBUILD_TESTING=off -G Ninja
+    cd ${SI_BUILD_DIR}
+    CMAKE_VERSION=$(cmake --system-information|grep -E "VERSION:STATIC"|grep -E -o '[0-9]+\.[0-9]+\.[0-9]+')
+    cd ${ORIG_DIR}
+    
+    assertEquals "version in changelog (${CHANGELOG_VERSION}) does not match cmake version (${CMAKE_VERSION})" $CHANGELOG_VERSION $CMAKE_VERSION
+}
+
+
 testPureCmakeInstallation(){
     # install SI
     cmake ${ROOT_DIR} -B${SI_BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DBUILD_TESTING=off -G Ninja
@@ -51,18 +64,19 @@ testCpackInstallation(){
     
 }
 
-testVersionNumberConsistency()
+testConanInstallation()
 {
-    CHANGELOG_VERSION=$(sed -n -E '/## [0-9]+\.[0-9]+\.[0-9]+/p' ${ROOT_DIR}/CHANGELOG.md | head -1 | grep -E -o '[0-9]+\.[0-9]+\.[0-9]+')
-    ORIG_DIR=$(pwd)
-    cmake ${ROOT_DIR} -B${SI_BUILD_DIR} -DBUILD_TESTING=off -G Ninja
-    cd ${SI_BUILD_DIR}
-    CMAKE_VERSION=$(cmake --system-information|grep -E "VERSION:STATIC"|grep -E -o '[0-9]+\.[0-9]+\.[0-9]+')
-    cd ${ORIG_DIR}
-    
-    assertEquals "version in changelog (${CHANGELOG_VERSION}) does not match cmake version (${CMAKE_VERSION})" $CHANGELOG_VERSION $CMAKE_VERSION
-    
+    conan create ${ROOT_DIR} SI/testing
+    assertEquals "Conan installation build successful" 0 $?
+    conan install -if ${BUILD_DIR} ${ROOT_DIR}/test/conan-installation-test/
+    assertEquals "Conan installation successful" 0 $?
+
+    cmake ${ROOT_DIR}/test/conan-installation-test -B${BUILD_DIR} -G Ninja
+    cmake --build ${BUILD_DIR}
+    assertEquals "build against installation successful" 0 $?
+
 }
+
 
 # Load shUnit2.
 . shunit2

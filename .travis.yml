@@ -55,6 +55,8 @@ matrix:
       name: compilation tests
       env:
          - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+      before_script:
+        - pip install conan
       script:
         - ./test/compilation-tests.sh
              
