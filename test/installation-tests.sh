@@ -68,15 +68,15 @@ testConanInstallation()
 {
     conan create ${ROOT_DIR} SI/testing
     assertEquals "Conan installation build successful" 0 $?
-    conan install -if ${BUILD_DIR} ${ROOT_DIR}/test/conan-installation-test/
+    conan install -if ${BUILD_DIR} ${ROOT_DIR}/test/conan-installation-test
     assertEquals "Conan installation successful" 0 $?
-
+    
     cmake ${ROOT_DIR}/test/conan-installation-test -B${BUILD_DIR} -G Ninja
     cmake --build ${BUILD_DIR}
     assertEquals "build against installation successful" 0 $?
-
+    
     conan remove -f SI
-
+    
 }
 
 testConanCmakeIntegratedInstallation()
@@ -84,10 +84,10 @@ testConanCmakeIntegratedInstallation()
     conan create ${ROOT_DIR} SI/testing
     assertEquals "Conan installation build successful" 0 $?
     
-    cmake ${ROOT_DIR}/test/conan-cmake-installation-test -B${BUILD_DIR} -G Ninja
+    cmake ${ROOT_DIR}/test/conan-cmake-installation-test -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release -G Ninja
     cmake --build ${BUILD_DIR}
     assertEquals "build against installation successful" 0 $?
-
+    
     conan remove -f SI
 }
 

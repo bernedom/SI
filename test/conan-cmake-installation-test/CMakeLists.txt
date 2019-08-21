@@ -15,7 +15,7 @@ endif()
 
 include(${CMAKE_BINARY_DIR}/conan.cmake)
 conan_cmake_run(REQUIRES
-                SI/1.2.0
+                SI/1.2.0@SI/testing
                 BASIC_SETUP
                 CMAKE_TARGETS)
 
