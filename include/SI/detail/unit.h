@@ -149,10 +149,15 @@ struct unit_t {
   }
 
   /// multiply with a non-unit scalar
-  constexpr unit_t& operator*=(const _type f) {
-      value_ *= f;
+  constexpr unit_t &operator*=(const _type scalar) {
+    value_ *= scalar;
+    return *this;
+  }
 
-      return *this;
+  /// divide with a non-unit scalar
+  constexpr unit_t &operator/=(const _type scalar) {
+    value_ /= scalar;
+    return *this;
   }
 
   /// multiplication multiply with a same unit, with different exponent
@@ -263,7 +268,7 @@ struct unit_t {
 
   /// add value of the same type
   template <typename _rhs_ratio>
-  constexpr unit_t&
+  constexpr unit_t &
   operator+=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) {
 
     static_assert(detail::is_ratio<_rhs_ratio>::value,
