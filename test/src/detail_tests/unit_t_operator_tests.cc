@@ -458,24 +458,6 @@ TEST_CASE("GIVEN unit and scalar WHEN multiplied with assignment "
   REQUIRE(v1.raw_value() == 14);
 }
 
-TEST_CASE("GIVEN two units WHEN added with assignment "
-          "THEN result stored in first unit") {
-  unit_t<'X', 1, int64_t, std::kilo> v1{2};
-  unit_t<'X', 1, int64_t, std::mega> v2{3};
-
-  v1 += v2;
-
-  REQUIRE(v1.raw_value() == 3002);
-}
-
-TEST_CASE("GIVEN unit WHEN negated "
-          "THEN result should be negation") {
-  constexpr unit_t<'X', 1, int64_t, std::kilo> v1{2};
-  constexpr unit_t<'X', 1, int64_t, std::kilo> v2{-v1};
-
-  STATIC_REQUIRE(v2.raw_value() == -2);
-}
-
 TEST_CASE("GIVEN a unit and a scalar WHEN divided with assigment THEN result "
           "is stored int the unit") {
   unit_t<'X', 1, int64_t, std::ratio<1>> v1{10};
@@ -484,4 +466,32 @@ TEST_CASE("GIVEN a unit and a scalar WHEN divided with assigment THEN result "
   v1 /= scalar;
   REQUIRE(v1.raw_value() == 5);
   REQUIRE(unit_t<'X', 1, int64_t, std::ratio<1>>{5} == v1);
+}
+
+TEST_CASE("GIVEN two units WHEN added with assignment "
+          "THEN result stored in first unit AND ratio is calculated in") {
+  unit_t<'X', 1, int64_t, std::kilo> v1{2};
+  constexpr unit_t<'X', 1, int64_t, std::mega> v2{3};
+
+  v1 += v2;
+
+  REQUIRE(v1.raw_value() == 3002);
+}
+
+TEST_CASE("GIVEN two units WHEN subtracted with assignment THEN result is "
+          "stored in the first unit AND ratio is calculated in") {
+  unit_t<'X', 1, int64_t, std::mega> v1{3};
+  unit_t<'X', 1, int64_t, std::kilo> v2{2000};
+
+  v1 -= v2;
+
+  REQUIRE(v1.raw_value() == 1);
+}
+
+TEST_CASE("GIVEN unit WHEN negated "
+          "THEN result should be negation") {
+  constexpr unit_t<'X', 1, int64_t, std::kilo> v1{2};
+  constexpr unit_t<'X', 1, int64_t, std::kilo> v2{-v1};
+
+  STATIC_REQUIRE(v2.raw_value() == -2);
 }

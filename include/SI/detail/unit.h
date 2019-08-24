@@ -31,6 +31,7 @@ constexpr auto unit_cast(const _rhs_T &rhs);
 template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
 
 /// @todo add assignement operator, copy ctor, move ctor
+/// @todo add non-casting version of operators -= and +=
 
 /**
  * @brief base template class for holding values of type _type to be multiplied
@@ -266,7 +267,7 @@ struct unit_t {
         unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).raw_value()};
   }
 
-  /// add value of the same type
+  /// add value of the same type but possibly different ratio
   template <typename _rhs_ratio>
   constexpr unit_t &
   operator+=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) {
@@ -279,6 +280,24 @@ struct unit_t {
         "Implicit ratio conversion disabled, convert before adding values");
 
     value_ +=
+        unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).raw_value();
+
+    return *this;
+  }
+
+  /// subtract value of the same type but possibly different ratio
+  template <typename _rhs_ratio>
+  constexpr unit_t &
+  operator-=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) {
+
+    static_assert(detail::is_ratio<_rhs_ratio>::value,
+                  "_rhs_ratio is a std::ratio");
+    static_assert(
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before adding values");
+
+    value_ -=
         unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).raw_value();
 
     return *this;
