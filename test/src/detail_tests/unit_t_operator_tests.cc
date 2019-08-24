@@ -447,3 +447,34 @@ TEST_CASE("GIVEN two units with the same value but different ratios AND values "
 
   STATIC_REQUIRE(v1 == v2);
 }
+
+
+TEST_CASE("GIVEN unit and scalar WHEN multiplied with assignment "
+          "THEN result stored in unit") {
+  unit_t<'X', 1, int64_t, std::kilo> v1{2};
+  constexpr int scalar = 7;
+
+  v1 *= scalar;
+
+  REQUIRE(v1.raw_value() == 14);
+}
+
+
+TEST_CASE("GIVEN two units WHEN added with assignment "
+          "THEN result stored in first unit") {
+  unit_t<'X', 1, int64_t, std::kilo> v1{2};
+  unit_t<'X', 1, int64_t, std::mega> v2{3};
+
+  v1 += v2;
+
+  REQUIRE(v1.raw_value() == 3002);
+}
+
+
+TEST_CASE("GIVEN unit WHEN negated "
+          "THEN result should be negation") {
+  constexpr unit_t<'X', 1, int64_t, std::kilo> v1{2};
+  constexpr unit_t<'X', 1, int64_t, std::kilo> v2{-v1};
+
+  STATIC_REQUIRE(v2.raw_value() == -2);
+}
