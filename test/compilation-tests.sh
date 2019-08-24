@@ -134,6 +134,19 @@ testOperatorAddFailsWhenImplicitConversionDisabled()
     buildSingleTarget ${TARGET} FAIL
 }
 
+testOperatorAddAssignmentCompilesWhenDefaultInvocation()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_add_assignment_test.cc.o
+    buildSingleTarget ${TARGET} PASS
+}
+
+
+testOperatorAddAssignmentFailsWhenImplicitConversionDisabled()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_add_assignment_test.cc.o
+    buildSingleTarget ${TARGET} FAIL
+}
+
 
 testOperatorSubtractCompilesWhenDefaultInvocation()
 {
@@ -145,6 +158,19 @@ testOperatorSubtractCompilesWhenDefaultInvocation()
 testOperatorSubtractFailsWhenImplicitConversionDisabled()
 {
     TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_subtract_test.cc.o
+    buildSingleTarget ${TARGET} FAIL
+}
+
+testOperatorSbutractAssignmentCompilesWhenDefaultInvocation()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_subtract_assignment_test.cc.o
+    buildSingleTarget ${TARGET} PASS
+}
+
+
+testOperatorSubtractAssignmentFailsWhenImplicitConversionDisabled()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_subtract_assignment_test.cc.o
     buildSingleTarget ${TARGET} FAIL
 }
 
