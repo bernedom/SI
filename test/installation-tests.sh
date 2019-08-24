@@ -4,7 +4,6 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 ROOT_DIR=$(realpath ${SCRIPT_DIR}/../)
 
-
 setUp(){
     SI_BUILD_DIR=$(mktemp -d)
     INSTALL_PATH=$(mktemp -d)
@@ -82,17 +81,17 @@ testConanInstallation()
     
 }
 
-testConanCmakeIntegratedInstallation()
-{
-    conan create ${ROOT_DIR} SI/testing
-    assertEquals "Conan installation build successful" 0 $?
-    
-    cmake ${ROOT_DIR}/test/conan-cmake-installation-test -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release -G Ninja
-    cmake --build ${BUILD_DIR}
-    assertEquals "build against installation successful" 0 $?
-    # cleanup
-    conan remove -f SI
-}
+# testConanCmakeIntegratedInstallation()
+# {
+#     conan create ${ROOT_DIR} SI/testing
+#     assertEquals "Conan installation build successful" 0 $?
+
+#     cmake ${ROOT_DIR}/test/conan-cmake-installation-test -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release -G Ninja
+#     cmake --build ${BUILD_DIR}
+#     assertEquals "build against installation successful" 0 $?
+#     # cleanup
+#     conan remove -f SI
+# }
 
 
 # Load shUnit2.

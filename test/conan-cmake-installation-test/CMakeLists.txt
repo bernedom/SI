@@ -9,15 +9,12 @@ if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
       "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
   file(
     DOWNLOAD
-    "https://raw.githubusercontent.com/conan-io/cmake-conan/master/conan.cmake"
-    "${CMAKE_BINARY_DIR}/conan.cmake")
+      "https://raw.githubusercontent.com/conan-io/cmake-conan/master/conan.cmake"
+      "${CMAKE_BINARY_DIR}/conan.cmake")
 endif()
 
 include(${CMAKE_BINARY_DIR}/conan.cmake)
-conan_cmake_run(REQUIRES
-                SI/1.2.0@SI/testing
-                BASIC_SETUP
-                CMAKE_TARGETS)
+conan_cmake_run(REQUIRES SI/1.3.0@SI/testing BASIC_SETUP CMAKE_TARGETS)
 
 find_package(SI CONFIG REQUIRED)
 

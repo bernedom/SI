@@ -1,5 +1,5 @@
 [requires]
-SI/1.2.0@SI/testing
+SI/1.3.0@SI/testing
 
 [generators]
 cmake
