@@ -1,5 +1,10 @@
 # Changelog 
 
+## 1.3.0
+
+*   Added operators +=, *=, /=, -= (Thanks to [Kicer96](https://github.com/Kicer86) for the initial work)
+*   Added packaging options for conan.io
+
 ## 1.2.0
 
 *   Changed spelling of length unit from 'meter' to 'metre' as this is the official SI spelling according to the [bureao international des Poids and Mesures](https://www.bipm.org/en/measurement-units/)

@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.12)
 project(
   "SI"
   VERSION
-    1.2.0
+    1.3.0
     DESCRIPTION
     "A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units."
     HOMEPAGE_URL
