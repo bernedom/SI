@@ -84,7 +84,7 @@ All units that can be built from other units are also decayable to the respectiv
 | Power                | P                | W           | E/T              | aW to EW             | `*_watt_t`      |
 | Magnetic Flux        | f*               | Wb          | U \* T           | aWb to EWb           | `*_weber_t`     |
 | Magnetic Field       | B                | T           | f/L^2            | aT to ET             | `*_tesla_t`     |
-| Momentum             | p                | kg⋅m/s      | M \* v           | none                 | none            |
+| Momentum             | o*               | kg⋅m/s      | M \* v           | none                 | none            |
 | Inductance           | l                | H           | f / I            | aH to EH             | `*_henry_t`     |
 | Luminous flux        | m**              | lm          | J \* R           | alm to Elm           | `*_lumen_t`     |
 | Illuminance          | i*               | lx          | m / a            | alx to Elx           | `*_lux_t`       |

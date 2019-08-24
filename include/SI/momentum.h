@@ -19,9 +19,9 @@
 
 namespace SI {
 
-/// Type for momentum where p = v * M
+/// Type for momentum where o = v * M
 template <typename _type, typename _ratio>
-using momentum_t = detail::unit_t<'p', 1, _type, _ratio>;
+using momentum_t = detail::unit_t<'o', 1, _type, _ratio>;
 
 namespace detail {
 BUILD_UNIT_FROM_MULTIPLICATION(momentum_t, velocity_t, mass_t)
