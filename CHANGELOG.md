@@ -2,7 +2,8 @@
 
 ## 1.3.0
 
-*   Added operators +=, *=, /=, -= (Thanks to https://github.com/Kicer86 for the initial work)
+*   Added operators +=, *=, /=, -= (Thanks to [Kicer96](https://github.com/Kicer86) for the initial work)
+*   Added packaging options for conan.io
 
 ## 1.2.0
 
