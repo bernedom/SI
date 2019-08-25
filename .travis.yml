@@ -1,11 +1,10 @@
 language: cpp
-dist: xenial
+dist: bionic
 
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-xenial-6.0
     packages:
       - cmake
       - g++-7
@@ -15,6 +14,9 @@ addons:
       - libstdc++-8-dev
       - shunit2
       - ninja-build
+      - python3
+      - python3-pip
+      - python3-setuptools
   homebrew:
     packages:
       - ninja
@@ -48,6 +50,8 @@ matrix:
       name: installation tests
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+      before_script:
+        - pip3 install conan
       script: 
         - ./test/installation-tests.sh
 
