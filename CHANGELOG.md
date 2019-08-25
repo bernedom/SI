@@ -3,6 +3,7 @@
 ## 1.3.0
 
 *   Added operators +=, *=, /=, -= (Thanks to [Kicer96](https://github.com/Kicer86) for the initial work)
+*   Added momentum (Thanks to [Kicer96](https://github.com/Kicer86))
 *   Added packaging options for conan.io
 
 ## 1.2.0
