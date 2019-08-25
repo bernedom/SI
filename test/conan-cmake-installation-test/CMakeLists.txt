@@ -14,7 +14,7 @@ if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
 endif()
 
 include(${CMAKE_BINARY_DIR}/conan.cmake)
-conan_cmake_run(REQUIRES SI/1.3.0@SI/testing BASIC_SETUP CMAKE_TARGETS)
+conan_cmake_run(CONANFILE conanfile.txt BASIC_SETUP CMAKE_TARGETS)
 
 find_package(SI CONFIG REQUIRED)
 
