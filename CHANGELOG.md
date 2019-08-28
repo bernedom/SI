@@ -1,10 +1,10 @@
 # Changelog 
 
-## 1.3.0
+## 1.2.1
 
 *   Added operators +=, *=, /=, -= (Thanks to [Kicer96](https://github.com/Kicer86) for the initial work)
 *   Added momentum (Thanks to [Kicer96](https://github.com/Kicer86))
-*   Added packaging options for conan.io
+*   Added packaging information for conan.io and deployment to bintray
 
 ## 1.2.0
 

@@ -3,7 +3,7 @@ from conans import ConanFile, CMake
 
 class SiConan(ConanFile):
     name = "SI"
-    version = "1.3.0"
+    version = "1.2.1"
     license = "MIT"
     author = "Dominik Berner <dominik.berner+SI-conan@gmail.com"
     url = "https://github.com/bernedom/SI"
