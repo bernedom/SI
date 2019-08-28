@@ -79,4 +79,4 @@ script:
 stages:
 - Test
 - name: deploy-unstable
-  if: branch = master
+  if: branch = master AND type NOT IN (pull_request)
