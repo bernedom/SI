@@ -3,23 +3,23 @@ dist: bionic
 addons:
   apt:
     sources:
-    - ubuntu-toolchain-r-test
+      - ubuntu-toolchain-r-test
     packages:
-    - cmake
-    - g++-7
-    - g++-8
-    - clang-5.0
-    - clang-6.0
-    - libstdc++-8-dev
-    - shunit2
-    - ninja-build
-    - python3
-    - python3-pip
-    - python3-setuptools
+      - cmake
+      - g++-7
+      - g++-8
+      - clang-5.0
+      - clang-6.0
+      - libstdc++-8-dev
+      - shunit2
+      - ninja-build
+      - python3
+      - python3-pip
+      - python3-setuptools
   homebrew:
     packages:
-    - ninja
-    - shunit2
+      - ninja
+      - shunit2
 os: linux
 env:
   - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
@@ -28,55 +28,66 @@ env:
   - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
 matrix:
   include:
-  - os: windows
-    name: Windows Visual Studio 15 2017
-    script:
-    - cmake --version
-    - mkdir build && cd build && cmake .. -G "Visual Studio 15 2017" -A x64
-    - cmake --build . --config Debug
-    - ctest -C Debug
-  
-  - os: osx
-    osx_image: xcode10.2
-    compiler: clang
-    env:
-    - MATRIX_EVAL=""
-  
-  - os: linux
-    name: installation tests
-    env:
-    - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
-    before_script:
-    - pip3 install conan
-    script:
-    - "./test/installation-tests.sh"
-  - os: linux
-    name: compilation tests
-    env:
-    - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
-    script:
-    - "./test/compilation-tests.sh"
-  
-  - stage: deploy-unstable
-    os: linux
-    env: MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
-    before_script:
-    - pip3 install conan
-    script:
-    - conan remote add bernedom https://api.bintray.com/conan/bernedom/conan 
-    - conan create . SI/unstable
-    - conan upload SI/*@SI/unstable --all -c -r bernedom
+    - os: windows
+      name: Windows Visual Studio 15 2017
+      script:
+        - cmake --version
+        - mkdir build && cd build && cmake .. -G "Visual Studio 15 2017" -A x64
+        - cmake --build . --config Debug
+        - ctest -C Debug
+
+    - os: osx
+      osx_image: xcode10.2
+      compiler: clang
+      env:
+        - MATRIX_EVAL=""
+
+    - os: linux
+      name: installation tests
+      env:
+        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+      before_script:
+        - pip3 install conan
+      script:
+        - "./test/installation-tests.sh"
+    - os: linux
+      name: compilation tests
+      env:
+        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+      script:
+        - "./test/compilation-tests.sh"
+
+    - stage: deploy-unstable
+      os: linux
+      env: MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+      before_script:
+        - pip3 install conan
+      script:
+        - conan remote add bernedom https://api.bintray.com/conan/bernedom/conan
+        - conan create . SI/unstable
+        - conan upload SI/*@SI/unstable --all -c -r bernedom
+
+    - stage: deploy-stable
+      os: linux
+      env: MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+      before_script:
+        - pip3 install conan
+      script:
+        - conan remote add bernedom https://api.bintray.com/conan/bernedom/conan
+        - conan create . SI/stable
+        - conan upload SI/*@SI/stable --all -c -r bernedom
 
 before_install:
-- eval "${MATRIX_EVAL}"
+  - eval "${MATRIX_EVAL}"
 script:
-- cmake --version
-- mkdir build && cd build && cmake .. -G Ninja
-- cmake --build . --config Debug
-- ctest -C Debug
-
+  - cmake --version
+  - mkdir build && cd build && cmake .. -G Ninja
+  - cmake --build . --config Debug
+  - ctest -C Debug
 
 stages:
-- Test
-- name: deploy-unstable
-  if: branch = master AND type NOT IN (pull_request)
+  - Test
+  - name: deploy-unstable
+    if: branch = master AND type NOT IN (pull_request) AND tag IS NOT present
+  - name: deploy-stable
+    if: type NOT IN (pull_request) AND tag IS present AND tag ~= /^[0-9]+\.[0-9]+\.[0-9]+$/
