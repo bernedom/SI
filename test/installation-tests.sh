@@ -101,7 +101,6 @@ testConanCmakeIntegratedInstallation()
     
     # cleanup
     conan remove -f *@SI/testing
-    
 }
 
 

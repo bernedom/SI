@@ -114,39 +114,9 @@ substitute `--config Debug` with `--config Release` for optimized builds
 
 ### Installing
 
-To install SI use the commands below: this will install SI into `/usr/local/lib/cmake/SI`
+The default installation location for SI is  `/usr/local/lib/SI`. SI can be installed using raw cmake, cpack (cmakes package mechanism), or as a conan.io package provided from [Bintray](https://bintray.com/bernedom/conan/SI%3ASI)
 
-```bash
-mkdir build && cd build
-cmake ..
-cmake --build . --config Release --target install -- -j $(nproc)
-```
-
-Consider running the build/install command with setting the install prefix, if you do not want to install SI system wide
-
-```bash
--DCMAKE_INSTALL_PREFIX:PATH=${HOME}/SI-install
-```
-
-The folder `test/installation-tests` contains a standalone sample program to check for succesful installation.
-
-#### Installing using `cpack`
-
-To build the `cpack` package use:
-
-```bash
-mkdir build && cd build
-cmake ..
-cmake --build . --config Release --target package -- -j $(nproc)
-```
-
-This creates gzipped archives containing all files as well as an installation script `SI-<version>-<plattform>.sh`.
-
-```bash
-cd build
-mkdir ${HOME}/SI-install
-./SI-1.0.1-Linux.sh --prefix=$HOME/SI-install --skip-license --exclude-subdir
-```
+See [the installation guide](https://github.com/bernedom/SI/blob/master/doc/installation-guide.md) for detailed instructions
 
 ## Building the tests
 
