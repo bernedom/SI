@@ -84,3 +84,14 @@ TEST_CASE("GIVEN a unit AND ratio is kilo WHEN passed to an stringstream THEN "
   ss << v;
   REQUIRE(ss.str() == "100kxx");
 }
+
+TEST_CASE("GIVEN a unit AND ratio is atto WHEN passed to an stringstream THEN "
+          "resulting string contains value and unit symbol AND unit symbol is "
+          "prefixed with 'a'") {
+  constexpr SI::detail::unit_t<'X', 1, int64_t, std::atto> v{100};
+
+  std::stringstream ss;
+
+  ss << v;
+  REQUIRE(ss.str() == "100axx");
+}
