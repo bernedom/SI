@@ -13,29 +13,55 @@ template <> struct unit_symbol<'X', std::ratio<1>> {
 };
 
 template <typename _ratio> struct unit_symbol<'X', _ratio> {
-  static constexpr const char *value = concatter<'k', 'x', 'x'>::value_;
+  static constexpr const char *value =
+      concat_ratio_unit_symbol<ratio_prefix<_ratio>::value, 'x', 'x'>::value_;
 };
-// template <> struct unit_symbol<'X', std::kilo> {
-//   static constexpr const char *value = "kxx";
-// };
 
 } // namespace SI::detail
 
 TEST_CASE("GIVEN a single character WHEN concated with an string THEN "
           "character is prepended to string") {
-  constexpr const SI::detail::concatter<'x', 'A', 'B', 'C'> v;
+  constexpr const SI::detail::concat_ratio_unit_symbol<'x', 'A', 'B', 'C'> v;
   STATIC_REQUIRE(decltype(v)::value_[0] == 'x');
   STATIC_REQUIRE(decltype(v)::value_[1] == 'A');
   STATIC_REQUIRE(decltype(v)::value_[2] == 'B');
   STATIC_REQUIRE(decltype(v)::value_[3] == 'C');
 }
 
-TEST_CASE("GIVEN a character sequence WHEN passed to test_char_list THEN "
+TEST_CASE("GIVEN a character sequence WHEN passed to unit_ratio_symbol THEN "
           "string is stored inside struct") {
-  constexpr const SI::detail::test_char_list<'A', 'B', 'C'> v;
+  constexpr const SI::detail::unit_ratio_symbol<'A', 'B', 'C'> v;
   STATIC_REQUIRE(decltype(v)::value_[0] == 'A');
   STATIC_REQUIRE(decltype(v)::value_[1] == 'B');
   STATIC_REQUIRE(decltype(v)::value_[2] == 'C');
+}
+
+// honest tests
+
+TEST_CASE("GIVEN a ratio atto WHEN passed to ratio_prefix THEN resulting char "
+          "is 'a'") {
+  STATIC_REQUIRE(SI::detail::ratio_prefix<std::atto>::value == 'a');
+}
+
+namespace {
+template <typename _ratio, char _literal> struct helper_struct {
+  using ratio = _ratio;
+  using literal = std::integral_constant<char, _literal>;
+};
+} // namespace
+
+TEMPLATE_TEST_CASE(
+    "GIVEN a ratio WHEN passed to ratio_prefix THEN resulting "
+    "char is the SI-defined literal",
+    "[detail][streaming]", (helper_struct<std::atto, 'a'>),
+    (helper_struct<std::femto, 'f'>), (helper_struct<std::pico, 'p'>),
+    (helper_struct<std::nano, 'n'>), (helper_struct<std::micro, 'u'>),
+    (helper_struct<std::milli, 'm'>), (helper_struct<std::kilo, 'k'>),
+    (helper_struct<std::mega, 'M'>), (helper_struct<std::giga, 'G'>),
+    (helper_struct<std::peta, 'P'>), (helper_struct<std::exa, 'E'>)) {
+
+  STATIC_REQUIRE(SI::detail::ratio_prefix<typename TestType::ratio>::value ==
+                 TestType::literal::value);
 }
 
 TEST_CASE("GIVEN a unit AND ratio is <1> WHEN passed to an stringstream THEN "
