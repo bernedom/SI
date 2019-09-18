@@ -1,12 +1,15 @@
 #include "detail/unit.h"
 
+#include <array>
 #include <ostream>
+#include <string_view>
 
 namespace SI::detail {
 
 template <char... Cs> struct unit_ratio_symbol {
   static_assert(sizeof...(Cs) > 0, "Empty strings are disallowed");
-  static constexpr const char value_[] = {Cs..., '\0'};
+  static constexpr const std::array<char, sizeof...(Cs)> value{Cs...};
+  static constexpr const std::string_view str{value.data(), value.size()};
 };
 
 template <char Cat, char... Cs>
@@ -51,6 +54,6 @@ template <char _symbol, char _exponent, typename _type, typename _ratio>
 std::ostream &
 operator<<(std::ostream &stream,
            const SI::detail::unit_t<_symbol, _exponent, _type, _ratio> &unit) {
-  stream << unit.raw_value() << SI::detail::unit_symbol<_symbol, _ratio>::value;
+  stream << unit.raw_value() << SI::detail::unit_symbol<_symbol, _ratio>::str;
   return stream;
 }
