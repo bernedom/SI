@@ -8,19 +8,14 @@ namespace SI::detail {
 
 template <char... Cs> struct unit_ratio_symbol {
   static_assert(sizeof...(Cs) > 0, "Empty strings are disallowed");
+  // using double curly braces to because of a bug in clang5
+  // See https://bugs.llvm.org/show_bug.cgi?id=21629
   static constexpr const std::array<char, sizeof...(Cs)> value{Cs...};
   static constexpr const std::string_view str{value.data(), value.size()};
 };
 
-template <char Cat, char... Cs>
-struct concat_ratio_unit_symbol : unit_ratio_symbol<Cat, Cs...> {
-  static_assert(sizeof...(Cs) > 0, "Empty strings are disallowed");
-};
-
 /// Base struct. Unusable needs template overloading
-template <char _dimension_symbol, typename _ratio> struct unit_symbol {
-  static constexpr const char *value = "";
-};
+template <char _dimension_symbol, typename _ratio> struct unit_symbol {};
 
 /// base template for ratio prefix, unusable
 template <typename _ratio> struct ratio_prefix : std::false_type {};

@@ -8,26 +8,14 @@
 namespace SI::detail {
 
 // specialize unit_symbol for usage with stream operators
-template <> struct unit_symbol<'X', std::ratio<1>> {
-  static constexpr const std::string_view str{"xx"};
-};
+template <>
+struct unit_symbol<'X', std::ratio<1>> : unit_ratio_symbol<'x', 'x'> {};
 
-template <typename _ratio> struct unit_symbol<'X', _ratio> {
-  static constexpr const auto value =
-      concat_ratio_unit_symbol<ratio_prefix<_ratio>::value, 'x', 'x'>::value;
-  static constexpr const std::string_view str{value.data(), value.size()};
-};
+template <typename _ratio>
+struct unit_symbol<'X', _ratio>
+    : unit_ratio_symbol<ratio_prefix<_ratio>::value, 'x', 'x'> {};
 
 } // namespace SI::detail
-
-TEST_CASE("GIVEN a single character WHEN concated with an string THEN "
-          "character is prepended to string") {
-  constexpr const SI::detail::concat_ratio_unit_symbol<'x', 'A', 'B', 'C'> v;
-  STATIC_REQUIRE(decltype(v)::str[0] == 'x');
-  STATIC_REQUIRE(decltype(v)::str[1] == 'A');
-  STATIC_REQUIRE(decltype(v)::str[2] == 'B');
-  STATIC_REQUIRE(decltype(v)::str[3] == 'C');
-}
 
 TEST_CASE("GIVEN a character sequence WHEN passed to unit_ratio_symbol THEN "
           "string is stored inside struct") {
