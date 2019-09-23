@@ -15,7 +15,8 @@ template <char... Cs> struct unit_ratio_symbol {
 };
 
 /// Base struct. Unusable needs template overloading
-template <char _dimension_symbol, typename _ratio> struct unit_symbol {};
+template <char _dimension_symbol, typename _ratio>
+struct unit_symbol : public std::false_type {};
 
 /// base template for ratio prefix, unusable
 template <typename _ratio> struct ratio_prefix : std::false_type {};
