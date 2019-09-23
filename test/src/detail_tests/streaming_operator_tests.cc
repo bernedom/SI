@@ -5,21 +5,23 @@
 #include <cstring>
 #include <sstream>
 
-namespace SI::detail {
+namespace SI {
 
 // specialize unit_symbol for usage with stream operators
 template <>
-struct unit_symbol<'X', std::ratio<1>> : unit_ratio_symbol<'x', 'x'> {};
+struct unit_symbol<'X', std::ratio<1>>
+    : SI::detail::unit_symbol_impl<'x', 'x'> {};
 
 template <typename _ratio>
 struct unit_symbol<'X', _ratio>
-    : unit_ratio_symbol<ratio_prefix<_ratio>::value, 'x', 'x'> {};
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'x',
+                                   'x'> {};
 
-} // namespace SI::detail
+} // namespace SI
 
-TEST_CASE("GIVEN a character sequence WHEN passed to unit_ratio_symbol THEN "
+TEST_CASE("GIVEN a character sequence WHEN passed to unit_symbol_impl THEN "
           "string is stored inside struct") {
-  constexpr const SI::detail::unit_ratio_symbol<'A', 'B', 'C'> v;
+  constexpr const SI::detail::unit_symbol_impl<'A', 'B', 'C'> v;
   STATIC_REQUIRE(decltype(v)::str[0] == 'A');
   STATIC_REQUIRE(decltype(v)::str[1] == 'B');
   STATIC_REQUIRE(decltype(v)::str[2] == 'C');
