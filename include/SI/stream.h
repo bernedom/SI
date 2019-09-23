@@ -10,7 +10,7 @@ template <char... Cs> struct unit_ratio_symbol {
   static_assert(sizeof...(Cs) > 0, "Empty strings are disallowed");
   // using double curly braces to because of a bug in clang5
   // See https://bugs.llvm.org/show_bug.cgi?id=21629
-  static constexpr const std::array<char, sizeof...(Cs)> value{Cs...};
+  static constexpr const std::array<char, sizeof...(Cs)> value{{Cs...}};
   static constexpr const std::string_view str{value.data(), value.size()};
 };
 
