@@ -1,6 +1,8 @@
 #include <catch.hpp>
 
 #include <SI/electric_current.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI::literals;
 
@@ -171,4 +173,108 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _EA THEN result is a "
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::electric_current_t<long double, std::exa>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto ampere WHEN passed to a streaming operator THEN "
+          "result is '1aA'") {
+  constexpr auto value = 1_aA;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1aA");
+}
+
+TEST_CASE("GIVEN a 1 femto ampere WHEN passed to a streaming operator THEN "
+          "result is '1fA'") {
+  constexpr auto value = 1_fA;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fA");
+}
+
+TEST_CASE("GIVEN a 1 pico ampere WHEN passed to a streaming operator THEN "
+          "result is '1pA'") {
+  constexpr auto value = 1_pA;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pA");
+}
+
+TEST_CASE("GIVEN a 1 nano ampere WHEN passed to a streaming operator THEN "
+          "result is '1pA'") {
+  constexpr auto value = 1_nA;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nA");
+}
+
+TEST_CASE("GIVEN a 1 micro ampere WHEN passed to a streaming operator THEN "
+          "result is '1uA'") {
+  constexpr auto value = 1_uA;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1uA");
+}
+
+TEST_CASE("GIVEN a 1 milli ampere WHEN passed to a streaming operator THEN "
+          "result is '1mA'") {
+  constexpr auto value = 1_mA;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mA");
+}
+
+TEST_CASE("GIVEN a 1 ampere WHEN passed to a streaming operator THEN result is "
+          "'1A'") {
+  constexpr auto value = 1_A;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1A");
+}
+
+TEST_CASE("GIVEN a 1 kilo ampere WHEN passed to a streaming operator THEN "
+          "result is '1kA'") {
+  constexpr auto value = 1_kA;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kA");
+}
+
+TEST_CASE("GIVEN a 1 mega ampere WHEN passed to a streaming operator THEN "
+          "result is '1MA'") {
+  constexpr auto value = 1_MA;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1MA");
+}
+
+TEST_CASE("GIVEN a 1 giga ampere WHEN passed to a streaming operator THEN "
+          "result is '1GA'") {
+  constexpr auto value = 1_GA;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1GA");
+}
+
+TEST_CASE("GIVEN a 1 tera ampere WHEN passed to a streaming operator THEN "
+          "result is '1TA'") {
+  constexpr auto value = 1_TA;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1TA");
+}
+
+TEST_CASE("GIVEN a 1 exa ampere WHEN passed to a streaming operator THEN "
+          "result is '1EA'") {
+  constexpr auto value = 1_EA;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1EA");
+}
+
+TEST_CASE("GIVEN a 1 peta ampere WHEN passed to a streaming operator THEN "
+          "result is '1PA'") {
+  constexpr auto value = 1_PA;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1PA");
 }

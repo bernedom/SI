@@ -1,5 +1,6 @@
 #pragma once
 #include <array>
+#include <ratio>
 #include <string_view>
 #include <type_traits>
 
