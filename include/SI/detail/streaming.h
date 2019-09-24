@@ -1,3 +1,4 @@
+#pragma once
 #include <array>
 #include <string_view>
 #include <type_traits>
@@ -28,14 +29,24 @@ struct ratio_prefix<std::micro> : std::integral_constant<char, 'u'> {};
 template <>
 struct ratio_prefix<std::milli> : std::integral_constant<char, 'm'> {};
 template <>
+struct ratio_prefix<std::centi> : std::integral_constant<char, 'c'> {};
+template <>
 struct ratio_prefix<std::kilo> : std::integral_constant<char, 'k'> {};
 template <>
 struct ratio_prefix<std::mega> : std::integral_constant<char, 'M'> {};
 template <>
 struct ratio_prefix<std::giga> : std::integral_constant<char, 'G'> {};
 template <>
+struct ratio_prefix<std::tera> : std::integral_constant<char, 'T'> {};
+template <>
 struct ratio_prefix<std::peta> : std::integral_constant<char, 'P'> {};
 template <>
 struct ratio_prefix<std::exa> : std::integral_constant<char, 'E'> {};
 
 } // namespace SI::detail
+namespace SI {
+/// Base struct. Unusable needs template overloading
+template <char _dimension_symbol, typename _ratio>
+struct unit_symbol : public std::false_type {};
+
+} // namespace SI

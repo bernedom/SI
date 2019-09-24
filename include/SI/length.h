@@ -14,6 +14,7 @@
 #include <stdexcept>
 
 #include "detail/number_parser.h"
+#include "detail/streaming.h"
 #include "detail/unit.h"
 
 namespace SI {
@@ -35,6 +36,15 @@ template <typename _type> using giga_metre_t = length_t<_type, std::giga>;
 template <typename _type> using tera_metre_t = length_t<_type, std::tera>;
 template <typename _type> using peta_metre_t = length_t<_type, std::peta>;
 template <typename _type> using exa_metre_t = length_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'L', std::ratio<1>> : SI::detail::unit_symbol_impl<'m'> {};
+
+template <typename _ratio>
+struct unit_symbol<'L', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value,
+                                   'm'> {};
 
 inline namespace literals {
 template <char... _digits> constexpr atto_metre_t<int64_t> operator""_am() {
