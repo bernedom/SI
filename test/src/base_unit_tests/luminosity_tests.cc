@@ -1,6 +1,8 @@
 #include <catch.hpp>
 
 #include <SI/luminosity.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI::literals;
 
@@ -171,4 +173,109 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _Ecd THEN result is a "
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::luminosity_t<long double, std::exa>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto candela WHEN passed to a streaming operator THEN "
+          "result is '1acd'") {
+  constexpr auto value = 1_acd;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1acd");
+}
+
+TEST_CASE("GIVEN a 1 femto candela WHEN passed to a streaming operator THEN "
+          "result is '1fcd'") {
+  constexpr auto value = 1_fcd;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fcd");
+}
+
+TEST_CASE("GIVEN a 1 pico candela WHEN passed to a streaming operator THEN "
+          "result is '1pcd'") {
+  constexpr auto value = 1_pcd;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pcd");
+}
+
+TEST_CASE("GIVEN a 1 nano candela WHEN passed to a streaming operator THEN "
+          "result is '1pcd'") {
+  constexpr auto value = 1_ncd;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1ncd");
+}
+
+TEST_CASE("GIVEN a 1 micro candela WHEN passed to a streaming operator THEN "
+          "result is '1ucd'") {
+  constexpr auto value = 1_ucd;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1ucd");
+}
+
+TEST_CASE("GIVEN a 1 milli candela WHEN passed to a streaming operator THEN "
+          "result is '1mcd'") {
+  constexpr auto value = 1_mcd;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mcd");
+}
+
+TEST_CASE(
+    "GIVEN a 1 candela WHEN passed to a streaming operator THEN result is "
+    "'1cd'") {
+  constexpr auto value = 1_cd;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1cd");
+}
+
+TEST_CASE("GIVEN a 1 kilo candela WHEN passed to a streaming operator THEN "
+          "result is '1kcd'") {
+  constexpr auto value = 1_kcd;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kcd");
+}
+
+TEST_CASE("GIVEN a 1 mega candela WHEN passed to a streaming operator THEN "
+          "result is '1Mcd'") {
+  constexpr auto value = 1_Mcd;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Mcd");
+}
+
+TEST_CASE("GIVEN a 1 giga candela WHEN passed to a streaming operator THEN "
+          "result is '1Gcd'") {
+  constexpr auto value = 1_Gcd;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Gcd");
+}
+
+TEST_CASE("GIVEN a 1 tera candela WHEN passed to a streaming operator THEN "
+          "result is '1Tcd'") {
+  constexpr auto value = 1_Tcd;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Tcd");
+}
+
+TEST_CASE("GIVEN a 1 exa candela WHEN passed to a streaming operator THEN "
+          "result is '1Ecd'") {
+  constexpr auto value = 1_Ecd;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Ecd");
+}
+
+TEST_CASE("GIVEN a 1 peta candela WHEN passed to a streaming operator THEN "
+          "result is '1Pcd'") {
+  constexpr auto value = 1_Pcd;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Pcd");
 }
