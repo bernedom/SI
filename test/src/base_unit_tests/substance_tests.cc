@@ -1,6 +1,8 @@
 #include <catch.hpp>
 
+#include <SI/stream.h>
 #include <SI/substance.h>
+#include <sstream>
 
 using namespace SI::literals;
 
@@ -170,4 +172,108 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _Emol THEN result is a "
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::substance_t<long double, std::exa>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto mol WHEN passed to a streaming operator THEN "
+          "result is '1amol'") {
+  constexpr auto value = 1_amol;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1amol");
+}
+
+TEST_CASE("GIVEN a 1 femto mol WHEN passed to a streaming operator THEN "
+          "result is '1fmol'") {
+  constexpr auto value = 1_fmol;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fmol");
+}
+
+TEST_CASE("GIVEN a 1 pico mol WHEN passed to a streaming operator THEN "
+          "result is '1pmol'") {
+  constexpr auto value = 1_pmol;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pmol");
+}
+
+TEST_CASE("GIVEN a 1 nano mol WHEN passed to a streaming operator THEN "
+          "result is '1pmol'") {
+  constexpr auto value = 1_nmol;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nmol");
+}
+
+TEST_CASE("GIVEN a 1 micro mol WHEN passed to a streaming operator THEN "
+          "result is '1umol'") {
+  constexpr auto value = 1_umol;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1umol");
+}
+
+TEST_CASE("GIVEN a 1 milli mol WHEN passed to a streaming operator THEN "
+          "result is '1mmol'") {
+  constexpr auto value = 1_mmol;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mmol");
+}
+
+TEST_CASE("GIVEN a 1 mol WHEN passed to a streaming operator THEN result is "
+          "'1mol'") {
+  constexpr auto value = 1_mol;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mol");
+}
+
+TEST_CASE("GIVEN a 1 kilo mol WHEN passed to a streaming operator THEN "
+          "result is '1kmol'") {
+  constexpr auto value = 1_kmol;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kmol");
+}
+
+TEST_CASE("GIVEN a 1 mega mol WHEN passed to a streaming operator THEN "
+          "result is '1Mmol'") {
+  constexpr auto value = 1_Mmol;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Mmol");
+}
+
+TEST_CASE("GIVEN a 1 giga mol WHEN passed to a streaming operator THEN "
+          "result is '1Gmol'") {
+  constexpr auto value = 1_Gmol;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Gmol");
+}
+
+TEST_CASE("GIVEN a 1 tera mol WHEN passed to a streaming operator THEN "
+          "result is '1Tmol'") {
+  constexpr auto value = 1_Tmol;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Tmol");
+}
+
+TEST_CASE("GIVEN a 1 exa mol WHEN passed to a streaming operator THEN "
+          "result is '1Emol'") {
+  constexpr auto value = 1_Emol;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Emol");
+}
+
+TEST_CASE("GIVEN a 1 peta mol WHEN passed to a streaming operator THEN "
+          "result is '1Pmol'") {
+  constexpr auto value = 1_Pmol;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Pmol");
 }
