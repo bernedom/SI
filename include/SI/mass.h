@@ -10,7 +10,10 @@
  **/
 #pragma once
 #include "detail/number_parser.h"
+#include "detail/streaming.h"
 #include "detail/unit.h"
+
+///@todo add kilkton (kilotonne), megatonne etc
 
 namespace SI {
 
@@ -25,6 +28,26 @@ template <typename _type> using milli_gram_t = mass_t<_type, std::micro>;
 template <typename _type> using gram_t = mass_t<_type, std::milli>;
 template <typename _type> using kilo_gram_t = mass_t<_type, std::ratio<1>>;
 template <typename _type> using ton_t = mass_t<_type, std::kilo>;
+
+// specialize unit_symbol for usage with stream operators
+// due to the standard SI unit being 'kg' instead of 'g'
+// ratios has to be multiplied by 1000/1 and explicit template specialization is
+// needed for the 'ton' and 'gram'
+template <>
+struct unit_symbol<'M', std::ratio<1>>
+    : SI::detail::unit_symbol_impl<'k', 'g'> {};
+
+template <>
+struct unit_symbol<'M', std::milli> : SI::detail::unit_symbol_impl<'g'> {};
+
+template <>
+struct unit_symbol<'M', std::kilo> : SI::detail::unit_symbol_impl<'t'> {};
+
+template <typename _ratio>
+struct unit_symbol<'M', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<std::ratio_multiply<
+                                       _ratio, std::kilo>>::value,
+                                   'g'> {};
 
 inline namespace literals {
 
