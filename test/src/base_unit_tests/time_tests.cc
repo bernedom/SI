@@ -1,6 +1,8 @@
 #include <catch.hpp>
 
+#include <SI/stream.h>
 #include <SI/time.h>
+#include <sstream>
 
 using namespace SI::literals;
 
@@ -115,4 +117,77 @@ TEST_CASE(
     "GIVEN a value WHEN constructed with literal _negative duration test") {
   constexpr auto minus_one = -1_s;
   STATIC_REQUIRE(minus_one.raw_value() == -1);
+}
+
+TEST_CASE("GIVEN a 1 atto seconds WHEN passed to a streaming operator THEN "
+          "result is '1as'") {
+  constexpr auto value = 1_as;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1as");
+}
+
+TEST_CASE("GIVEN a 1 femto seconds WHEN passed to a streaming operator THEN "
+          "result is '1fs'") {
+  constexpr auto value = 1_fs;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fs");
+}
+
+TEST_CASE("GIVEN a 1 pico seconds WHEN passed to a streaming operator THEN "
+          "result is '1ps'") {
+  constexpr auto value = 1_ps;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1ps");
+}
+
+TEST_CASE("GIVEN a 1 nano seconds WHEN passed to a streaming operator THEN "
+          "result is '1ps'") {
+  constexpr auto value = 1_ns;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1ns");
+}
+
+TEST_CASE("GIVEN a 1 micro seconds WHEN passed to a streaming operator THEN "
+          "result is '1us'") {
+  constexpr auto value = 1_us;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1us");
+}
+
+TEST_CASE("GIVEN a 1 milli seconds WHEN passed to a streaming operator THEN "
+          "result is '1ms'") {
+  constexpr auto value = 1_ms;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1ms");
+}
+
+TEST_CASE(
+    "GIVEN a 1 seconds WHEN passed to a streaming operator THEN result is "
+    "'1s'") {
+  constexpr auto value = 1_s;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1s");
+}
+
+TEST_CASE("GIVEN a 1 min WHEN passed to a streaming operator THEN result is "
+          "'1min'") {
+  constexpr auto value = 1_min;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1min");
+}
+
+TEST_CASE("GIVEN a 1 hour WHEN passed to a streaming operator THEN result is "
+          "'1h'") {
+  constexpr auto value = 1_h;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1h");
 }

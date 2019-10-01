@@ -14,7 +14,9 @@
 #include <ratio>
 
 #include "detail/number_parser.h"
+#include "detail/streaming.h"
 #include "detail/unit.h"
+
 namespace SI {
 
 namespace detail {
@@ -40,6 +42,26 @@ template <typename _type>
 using minutes_t = time_t<_type, std::chrono::minutes::period>;
 template <typename _type>
 using hours_t = time_t<_type, std::chrono::hours::period>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'T', std::ratio<1>> : SI::detail::unit_symbol_impl<'s'> {};
+
+template <>
+struct unit_symbol<'T', std::ratio<60, 1>>
+    : SI::detail::unit_symbol_impl<'m', 'i', 'n'> {};
+
+template <>
+struct unit_symbol<'T', std::ratio<3600, 1>>
+    : SI::detail::unit_symbol_impl<'h'> {};
+
+template <typename _ratio>
+struct unit_symbol<'T', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value,
+                                   's'> {
+  static_assert(std::ratio_less_equal<_ratio, std::ratio<1>>::value,
+                "Generic streaming only implemented for ratios <=1");
+};
 
 inline namespace literals {
 
