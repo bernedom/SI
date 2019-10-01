@@ -47,7 +47,7 @@ struct ratio_prefix<std::exa> : std::integral_constant<char, 'E'> {};
 } // namespace SI::detail
 namespace SI {
 /// Base struct. Unusable needs template overloading
-template <char _dimension_symbol, typename _ratio>
+template <char _dimension_symbol, typename _ratio, char _exponent = 1>
 struct unit_symbol : public std::false_type {};
 
 } // namespace SI
