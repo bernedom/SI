@@ -34,6 +34,33 @@ using cubic_centi_metre_t = volume_t<_type, std::ratio<1, 1000000>>;
 template <typename _type>
 using cubic_milli_metre_t = volume_t<_type, std::nano>;
 
+//@todo find a way to get the square root of the ratio to generalize the custom
+// types
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'L', std::ratio<1>, 2>
+    : SI::detail::unit_symbol_impl<'m', '2'> {};
+
+template <>
+struct unit_symbol<'L', std::ratio<1, 10000>, 2>
+    : SI::detail::unit_symbol_impl<'c', 'm', '2'> {};
+
+template <>
+struct unit_symbol<'L', std::micro, 2>
+    : SI::detail::unit_symbol_impl<'m', 'm', '2'> {};
+
+template <>
+struct unit_symbol<'L', std::ratio<1>, 3>
+    : SI::detail::unit_symbol_impl<'m', '3'> {};
+
+template <>
+struct unit_symbol<'L', std::ratio<1, 1000000>, 3>
+    : SI::detail::unit_symbol_impl<'c', 'm', '3'> {};
+
+template <>
+struct unit_symbol<'L', std::nano, 3>
+    : SI::detail::unit_symbol_impl<'m', 'm', '3'> {};
+
 inline namespace literals {
 template <char... _digits> constexpr square_metre_t<int64_t> operator""_m2() {
   return square_metre_t<int64_t>{
