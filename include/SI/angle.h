@@ -11,6 +11,7 @@
 #pragma once
 
 #include "detail/number_parser.h"
+#include "detail/streaming.h"
 #include "detail/unit.h"
 
 namespace SI {
@@ -25,6 +26,19 @@ template <typename _type> using nano_radiant_t = angle_t<_type, std::nano>;
 template <typename _type> using micro_radiant_t = angle_t<_type, std::micro>;
 template <typename _type> using milli_radiant_t = angle_t<_type, std::milli>;
 template <typename _type> using radiant_t = angle_t<_type, std::ratio<1>>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'r', std::ratio<1>>
+    : SI::detail::unit_symbol_impl<'r', 'a', 'd'> {};
+
+template <typename _ratio>
+struct unit_symbol<'r', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'r',
+                                   'a', 'd'> {
+  static_assert(std::ratio_less_equal<_ratio, std::ratio<1>>::value,
+                "Generic streaming only implemented for ratios <=1");
+};
 
 inline namespace literals {
 
