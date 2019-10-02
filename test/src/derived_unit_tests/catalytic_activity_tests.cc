@@ -1,8 +1,10 @@
 #include <catch.hpp>
 
 #include <SI/catalytic_activity.h>
+#include <SI/stream.h>
 #include <SI/substance.h>
 #include <SI/time.h>
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _akat THEN result is a "
@@ -218,4 +220,108 @@ TEMPLATE_TEST_CASE(
   STATIC_REQUIRE(
       std::is_same<decltype(result),
                    const SI::time_t<TestType, std::ratio<1>>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto katal WHEN passed to a streaming operator THEN "
+          "result is '1akat'") {
+  constexpr auto value = 1_akat;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1akat");
+}
+
+TEST_CASE("GIVEN a 1 femto katal WHEN passed to a streaming operator THEN "
+          "result is '1fkat'") {
+  constexpr auto value = 1_fkat;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fkat");
+}
+
+TEST_CASE("GIVEN a 1 pico katal WHEN passed to a streaming operator THEN "
+          "result is '1pkat'") {
+  constexpr auto value = 1_pkat;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pkat");
+}
+
+TEST_CASE("GIVEN a 1 nano katal WHEN passed to a streaming operator THEN "
+          "result is '1pkat'") {
+  constexpr auto value = 1_nkat;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nkat");
+}
+
+TEST_CASE("GIVEN a 1 micro katal WHEN passed to a streaming operator THEN "
+          "result is '1ukat'") {
+  constexpr auto value = 1_ukat;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1ukat");
+}
+
+TEST_CASE("GIVEN a 1 milli katal WHEN passed to a streaming operator THEN "
+          "result is '1mkat'") {
+  constexpr auto value = 1_mkat;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mkat");
+}
+
+TEST_CASE("GIVEN a 1 katal WHEN passed to a streaming operator THEN result is "
+          "'1kat'") {
+  constexpr auto value = 1_kat;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kat");
+}
+
+TEST_CASE("GIVEN a 1 kilo katal WHEN passed to a streaming operator THEN "
+          "result is '1kkat'") {
+  constexpr auto value = 1_kkat;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kkat");
+}
+
+TEST_CASE("GIVEN a 1 mega katal WHEN passed to a streaming operator THEN "
+          "result is '1Mkat'") {
+  constexpr auto value = 1_Mkat;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Mkat");
+}
+
+TEST_CASE("GIVEN a 1 giga katal WHEN passed to a streaming operator THEN "
+          "result is '1Gkat'") {
+  constexpr auto value = 1_Gkat;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Gkat");
+}
+
+TEST_CASE("GIVEN a 1 tera katal WHEN passed to a streaming operator THEN "
+          "result is '1Tkat'") {
+  constexpr auto value = 1_Tkat;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Tkat");
+}
+
+TEST_CASE("GIVEN a 1 exa katal WHEN passed to a streaming operator THEN "
+          "result is '1Ekat'") {
+  constexpr auto value = 1_Ekat;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Ekat");
+}
+
+TEST_CASE("GIVEN a 1 peta katal WHEN passed to a streaming operator THEN "
+          "result is '1Pkat'") {
+  constexpr auto value = 1_Pkat;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Pkat");
 }
