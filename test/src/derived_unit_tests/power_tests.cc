@@ -2,7 +2,9 @@
 
 #include <SI/energy.h>
 #include <SI/power.h>
+#include <SI/stream.h>
 #include <SI/time.h>
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _aW THEN result is a "
@@ -201,4 +203,108 @@ TEMPLATE_TEST_CASE("GIVEN a energy value WHEN divided by a power value THEN "
   STATIC_REQUIRE(
       std::is_same<decltype(result),
                    const SI::time_t<TestType, std::ratio<1>>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto Watt WHEN passed to a streaming operator THEN "
+          "result is '1aW'") {
+  constexpr auto value = 1_aW;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1aW");
+}
+
+TEST_CASE("GIVEN a 1 femto Watt WHEN passed to a streaming operator THEN "
+          "result is '1fW'") {
+  constexpr auto value = 1_fW;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fW");
+}
+
+TEST_CASE("GIVEN a 1 pico Watt WHEN passed to a streaming operator THEN "
+          "result is '1pW'") {
+  constexpr auto value = 1_pW;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pW");
+}
+
+TEST_CASE("GIVEN a 1 nano Watt WHEN passed to a streaming operator THEN "
+          "result is '1pW'") {
+  constexpr auto value = 1_nW;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nW");
+}
+
+TEST_CASE("GIVEN a 1 micro Watt WHEN passed to a streaming operator THEN "
+          "result is '1uW'") {
+  constexpr auto value = 1_uW;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1uW");
+}
+
+TEST_CASE("GIVEN a 1 milli Watt WHEN passed to a streaming operator THEN "
+          "result is '1mW'") {
+  constexpr auto value = 1_mW;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mW");
+}
+
+TEST_CASE("GIVEN a 1 Watt WHEN passed to a streaming operator THEN result is "
+          "'1W'") {
+  constexpr auto value = 1_W;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1W");
+}
+
+TEST_CASE("GIVEN a 1 kilo Watt WHEN passed to a streaming operator THEN "
+          "result is '1kW'") {
+  constexpr auto value = 1_kW;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kW");
+}
+
+TEST_CASE("GIVEN a 1 mega Watt WHEN passed to a streaming operator THEN "
+          "result is '1MW'") {
+  constexpr auto value = 1_MW;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1MW");
+}
+
+TEST_CASE("GIVEN a 1 giga Watt WHEN passed to a streaming operator THEN "
+          "result is '1GW'") {
+  constexpr auto value = 1_GW;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1GW");
+}
+
+TEST_CASE("GIVEN a 1 tera Watt WHEN passed to a streaming operator THEN "
+          "result is '1TW'") {
+  constexpr auto value = 1_TW;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1TW");
+}
+
+TEST_CASE("GIVEN a 1 exa Watt WHEN passed to a streaming operator THEN "
+          "result is '1EW'") {
+  constexpr auto value = 1_EW;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1EW");
+}
+
+TEST_CASE("GIVEN a 1 peta Watt WHEN passed to a streaming operator THEN "
+          "result is '1PW'") {
+  constexpr auto value = 1_PW;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1PW");
 }

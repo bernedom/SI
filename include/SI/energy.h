@@ -12,6 +12,7 @@
 
 #include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
+#include "detail/streaming.h"
 #include "detail/unit.h"
 #include "force.h"
 #include "length.h"
@@ -35,6 +36,15 @@ template <typename _type> using giga_joule_t = energy_t<_type, std::giga>;
 template <typename _type> using tera_joule_t = energy_t<_type, std::tera>;
 template <typename _type> using peta_joule_t = energy_t<_type, std::peta>;
 template <typename _type> using exa_joule_t = energy_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'E', std::ratio<1>> : SI::detail::unit_symbol_impl<'J'> {};
+
+template <typename _ratio>
+struct unit_symbol<'E', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value,
+                                   'J'> {};
 
 namespace detail {
 BUILD_UNIT_FROM_MULTIPLICATION(energy_t, force_t, length_t)

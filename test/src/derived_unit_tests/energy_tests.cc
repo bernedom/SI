@@ -2,6 +2,8 @@
 
 #include <SI/energy.h>
 #include <SI/pressure.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _aJ THEN result is a "
@@ -239,4 +241,108 @@ TEMPLATE_TEST_CASE("GIVEN a energy value WHEN divided by pressure THEN then "
   STATIC_REQUIRE(
       std::is_same<decltype(result),
                    const SI::volume_t<TestType, std::ratio<1>>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto Joule WHEN passed to a streaming operator THEN "
+          "result is '1aJ'") {
+  constexpr auto value = 1_aJ;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1aJ");
+}
+
+TEST_CASE("GIVEN a 1 femto Joule WHEN passed to a streaming operator THEN "
+          "result is '1fJ'") {
+  constexpr auto value = 1_fJ;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fJ");
+}
+
+TEST_CASE("GIVEN a 1 pico Joule WHEN passed to a streaming operator THEN "
+          "result is '1pJ'") {
+  constexpr auto value = 1_pJ;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pJ");
+}
+
+TEST_CASE("GIVEN a 1 nano Joule WHEN passed to a streaming operator THEN "
+          "result is '1pJ'") {
+  constexpr auto value = 1_nJ;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nJ");
+}
+
+TEST_CASE("GIVEN a 1 micro Joule WHEN passed to a streaming operator THEN "
+          "result is '1uJ'") {
+  constexpr auto value = 1_uJ;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1uJ");
+}
+
+TEST_CASE("GIVEN a 1 milli Joule WHEN passed to a streaming operator THEN "
+          "result is '1mJ'") {
+  constexpr auto value = 1_mJ;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mJ");
+}
+
+TEST_CASE("GIVEN a 1 Joule WHEN passed to a streaming operator THEN result is "
+          "'1J'") {
+  constexpr auto value = 1_J;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1J");
+}
+
+TEST_CASE("GIVEN a 1 kilo Joule WHEN passed to a streaming operator THEN "
+          "result is '1kJ'") {
+  constexpr auto value = 1_kJ;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kJ");
+}
+
+TEST_CASE("GIVEN a 1 mega Joule WHEN passed to a streaming operator THEN "
+          "result is '1MJ'") {
+  constexpr auto value = 1_MJ;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1MJ");
+}
+
+TEST_CASE("GIVEN a 1 giga Joule WHEN passed to a streaming operator THEN "
+          "result is '1GJ'") {
+  constexpr auto value = 1_GJ;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1GJ");
+}
+
+TEST_CASE("GIVEN a 1 tera Joule WHEN passed to a streaming operator THEN "
+          "result is '1TJ'") {
+  constexpr auto value = 1_TJ;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1TJ");
+}
+
+TEST_CASE("GIVEN a 1 exa Joule WHEN passed to a streaming operator THEN "
+          "result is '1EJ'") {
+  constexpr auto value = 1_EJ;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1EJ");
+}
+
+TEST_CASE("GIVEN a 1 peta Joule WHEN passed to a streaming operator THEN "
+          "result is '1PJ'") {
+  constexpr auto value = 1_PJ;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1PJ");
 }

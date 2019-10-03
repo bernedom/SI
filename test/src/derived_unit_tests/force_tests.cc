@@ -1,6 +1,8 @@
 #include <catch.hpp>
 
 #include <SI/force.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _aN THEN result is a "
@@ -197,4 +199,108 @@ TEMPLATE_TEST_CASE("GIVEN a force value WHEN divided by mass THEN then "
   STATIC_REQUIRE(
       std::is_same<decltype(result),
                    const SI::acceleration_t<TestType, std::ratio<1>>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto Newton WHEN passed to a streaming operator THEN "
+          "result is '1aN'") {
+  constexpr auto value = 1_aN;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1aN");
+}
+
+TEST_CASE("GIVEN a 1 femto Newton WHEN passed to a streaming operator THEN "
+          "result is '1fN'") {
+  constexpr auto value = 1_fN;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fN");
+}
+
+TEST_CASE("GIVEN a 1 pico Newton WHEN passed to a streaming operator THEN "
+          "result is '1pN'") {
+  constexpr auto value = 1_pN;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pN");
+}
+
+TEST_CASE("GIVEN a 1 nano Newton WHEN passed to a streaming operator THEN "
+          "result is '1pN'") {
+  constexpr auto value = 1_nN;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nN");
+}
+
+TEST_CASE("GIVEN a 1 micro Newton WHEN passed to a streaming operator THEN "
+          "result is '1uN'") {
+  constexpr auto value = 1_uN;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1uN");
+}
+
+TEST_CASE("GIVEN a 1 milli Newton WHEN passed to a streaming operator THEN "
+          "result is '1mN'") {
+  constexpr auto value = 1_mN;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mN");
+}
+
+TEST_CASE("GIVEN a 1 Newton WHEN passed to a streaming operator THEN result is "
+          "'1N'") {
+  constexpr auto value = 1_N;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1N");
+}
+
+TEST_CASE("GIVEN a 1 kilo Newton WHEN passed to a streaming operator THEN "
+          "result is '1kN'") {
+  constexpr auto value = 1_kN;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kN");
+}
+
+TEST_CASE("GIVEN a 1 mega Newton WHEN passed to a streaming operator THEN "
+          "result is '1MN'") {
+  constexpr auto value = 1_MN;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1MN");
+}
+
+TEST_CASE("GIVEN a 1 giga Newton WHEN passed to a streaming operator THEN "
+          "result is '1GN'") {
+  constexpr auto value = 1_GN;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1GN");
+}
+
+TEST_CASE("GIVEN a 1 tera Newton WHEN passed to a streaming operator THEN "
+          "result is '1TN'") {
+  constexpr auto value = 1_TN;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1TN");
+}
+
+TEST_CASE("GIVEN a 1 exa Newton WHEN passed to a streaming operator THEN "
+          "result is '1EN'") {
+  constexpr auto value = 1_EN;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1EN");
+}
+
+TEST_CASE("GIVEN a 1 peta Newton WHEN passed to a streaming operator THEN "
+          "result is '1PN'") {
+  constexpr auto value = 1_PN;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1PN");
 }

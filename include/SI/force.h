@@ -36,6 +36,15 @@ template <typename _type> using tera_newton_t = force_t<_type, std::tera>;
 template <typename _type> using peta_newton_t = force_t<_type, std::peta>;
 template <typename _type> using exa_newton_t = force_t<_type, std::exa>;
 
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'F', std::ratio<1>> : SI::detail::unit_symbol_impl<'N'> {};
+
+template <typename _ratio>
+struct unit_symbol<'F', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value,
+                                   'N'> {};
+
 namespace detail {
 BUILD_UNIT_FROM_MULTIPLICATION(force_t, mass_t, acceleration_t)
 }
