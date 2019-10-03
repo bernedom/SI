@@ -2,6 +2,8 @@
 
 #include <SI/electric_conductance.h>
 #include <SI/electric_resistance.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _aOhm THEN result is a "
@@ -259,4 +261,108 @@ TEMPLATE_TEST_CASE("GIVEN a scalar WHEN divided by a conductance value THEN "
   STATIC_REQUIRE(std::ratio_equal<typename decltype(result)::ratio,
                                   typename TestType::ratio_rhs>::value);
   STATIC_REQUIRE(result == expected);
+}
+
+TEST_CASE("GIVEN a 1 atto Ohm WHEN passed to a streaming operator THEN "
+          "result is '1aOhm'") {
+  constexpr auto value = 1_aOhm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1aOhm");
+}
+
+TEST_CASE("GIVEN a 1 femto Ohm WHEN passed to a streaming operator THEN "
+          "result is '1fOhm'") {
+  constexpr auto value = 1_fOhm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fOhm");
+}
+
+TEST_CASE("GIVEN a 1 pico Ohm WHEN passed to a streaming operator THEN "
+          "result is '1pOhm'") {
+  constexpr auto value = 1_pOhm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pOhm");
+}
+
+TEST_CASE("GIVEN a 1 nano Ohm WHEN passed to a streaming operator THEN "
+          "result is '1pOhm'") {
+  constexpr auto value = 1_nOhm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nOhm");
+}
+
+TEST_CASE("GIVEN a 1 micro Ohm WHEN passed to a streaming operator THEN "
+          "result is '1uOhm'") {
+  constexpr auto value = 1_uOhm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1uOhm");
+}
+
+TEST_CASE("GIVEN a 1 milli Ohm WHEN passed to a streaming operator THEN "
+          "result is '1mOhm'") {
+  constexpr auto value = 1_mOhm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mOhm");
+}
+
+TEST_CASE("GIVEN a 1 Ohm WHEN passed to a streaming operator THEN result is "
+          "'1Ohm'") {
+  constexpr auto value = 1_Ohm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Ohm");
+}
+
+TEST_CASE("GIVEN a 1 kilo Ohm WHEN passed to a streaming operator THEN "
+          "result is '1kOhm'") {
+  constexpr auto value = 1_kOhm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kOhm");
+}
+
+TEST_CASE("GIVEN a 1 mega Ohm WHEN passed to a streaming operator THEN "
+          "result is '1MOhm'") {
+  constexpr auto value = 1_MOhm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1MOhm");
+}
+
+TEST_CASE("GIVEN a 1 giga Ohm WHEN passed to a streaming operator THEN "
+          "result is '1GOhm'") {
+  constexpr auto value = 1_GOhm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1GOhm");
+}
+
+TEST_CASE("GIVEN a 1 tera Ohm WHEN passed to a streaming operator THEN "
+          "result is '1TOhm'") {
+  constexpr auto value = 1_TOhm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1TOhm");
+}
+
+TEST_CASE("GIVEN a 1 exa Ohm WHEN passed to a streaming operator THEN "
+          "result is '1EOhm'") {
+  constexpr auto value = 1_EOhm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1EOhm");
+}
+
+TEST_CASE("GIVEN a 1 peta Ohm WHEN passed to a streaming operator THEN "
+          "result is '1POhm'") {
+  constexpr auto value = 1_POhm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1POhm");
 }

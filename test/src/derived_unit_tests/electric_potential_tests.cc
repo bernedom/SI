@@ -4,6 +4,8 @@
 #include <SI/electric_potential.h>
 #include <SI/energy.h>
 #include <SI/power.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _aV THEN result is a "
@@ -267,4 +269,108 @@ TEMPLATE_TEST_CASE(
   STATIC_REQUIRE(std::is_same<
                  decltype(result),
                  const SI::electric_charge_t<TestType, std::ratio<1>>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto Volt WHEN passed to a streaming operator THEN "
+          "result is '1aV'") {
+  constexpr auto value = 1_aV;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1aV");
+}
+
+TEST_CASE("GIVEN a 1 femto Volt WHEN passed to a streaming operator THEN "
+          "result is '1fV'") {
+  constexpr auto value = 1_fV;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fV");
+}
+
+TEST_CASE("GIVEN a 1 pico Volt WHEN passed to a streaming operator THEN "
+          "result is '1pV'") {
+  constexpr auto value = 1_pV;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pV");
+}
+
+TEST_CASE("GIVEN a 1 nano Volt WHEN passed to a streaming operator THEN "
+          "result is '1pV'") {
+  constexpr auto value = 1_nV;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nV");
+}
+
+TEST_CASE("GIVEN a 1 micro Volt WHEN passed to a streaming operator THEN "
+          "result is '1uV'") {
+  constexpr auto value = 1_uV;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1uV");
+}
+
+TEST_CASE("GIVEN a 1 milli Volt WHEN passed to a streaming operator THEN "
+          "result is '1mV'") {
+  constexpr auto value = 1_mV;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mV");
+}
+
+TEST_CASE("GIVEN a 1 Volt WHEN passed to a streaming operator THEN result is "
+          "'1V'") {
+  constexpr auto value = 1_V;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1V");
+}
+
+TEST_CASE("GIVEN a 1 kilo Volt WHEN passed to a streaming operator THEN "
+          "result is '1kV'") {
+  constexpr auto value = 1_kV;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kV");
+}
+
+TEST_CASE("GIVEN a 1 mega Volt WHEN passed to a streaming operator THEN "
+          "result is '1MV'") {
+  constexpr auto value = 1_MV;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1MV");
+}
+
+TEST_CASE("GIVEN a 1 giga Volt WHEN passed to a streaming operator THEN "
+          "result is '1GV'") {
+  constexpr auto value = 1_GV;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1GV");
+}
+
+TEST_CASE("GIVEN a 1 tera Volt WHEN passed to a streaming operator THEN "
+          "result is '1TV'") {
+  constexpr auto value = 1_TV;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1TV");
+}
+
+TEST_CASE("GIVEN a 1 exa Volt WHEN passed to a streaming operator THEN "
+          "result is '1EV'") {
+  constexpr auto value = 1_EV;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1EV");
+}
+
+TEST_CASE("GIVEN a 1 peta Volt WHEN passed to a streaming operator THEN "
+          "result is '1PV'") {
+  constexpr auto value = 1_PV;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1PV");
 }

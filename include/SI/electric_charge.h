@@ -12,10 +12,10 @@
 
 #include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
+#include "detail/streaming.h"
 #include "detail/unit.h"
 #include "electric_current.h"
 #include "time.h"
-
 namespace SI {
 
 /// unit for electric charge 'Q' where Q = T * I
@@ -49,6 +49,15 @@ template <typename _type>
 using peta_coulomb_t = electric_charge_t<_type, std::peta>;
 template <typename _type>
 using exa_coulomb_t = electric_charge_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'Q', std::ratio<1>> : SI::detail::unit_symbol_impl<'C'> {};
+
+template <typename _ratio>
+struct unit_symbol<'Q', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value,
+                                   'C'> {};
 
 /// @todo find out why the operators have to be in SI::detail
 /// maybe using preceeding :: helps

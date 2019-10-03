@@ -18,7 +18,8 @@
 
 namespace SI {
 
-/// @todo find a way to use Ohm as dimension symbol
+/// @todo find a way to use Ohm as dimension symbol or switch to R (occupied by
+/// solid angle)
 template <typename _type, class _ratio = std::ratio<1>>
 using electric_resistance_t = detail::unit_t<'O', 1, _type, _ratio>;
 
@@ -49,6 +50,16 @@ template <typename _type>
 using peta_ohm_t = electric_resistance_t<_type, std::peta>;
 template <typename _type>
 using exa_ohm_t = electric_resistance_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'O', std::ratio<1>>
+    : SI::detail::unit_symbol_impl<'O', 'h', 'm'> {};
+
+template <typename _ratio>
+struct unit_symbol<'O', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'O',
+                                   'h', 'm'> {};
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(electric_resistance_t, electric_potential_t,
