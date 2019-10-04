@@ -1,6 +1,9 @@
 #include <catch.hpp>
 
 #include <SI/absorbed_dose.h>
+#include <SI/stream.h>
+
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _aGy THEN result is a "
@@ -170,4 +173,108 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _EGy THEN result is a "
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::absorbed_dose_t<long double, std::exa>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto Gray WHEN passed to a streaming operator THEN "
+          "result is '1aGy'") {
+  constexpr auto value = 1_aGy;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1aGy");
+}
+
+TEST_CASE("GIVEN a 1 femto Gray WHEN passed to a streaming operator THEN "
+          "result is '1fGy'") {
+  constexpr auto value = 1_fGy;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fGy");
+}
+
+TEST_CASE("GIVEN a 1 pico Gray WHEN passed to a streaming operator THEN "
+          "result is '1pGy'") {
+  constexpr auto value = 1_pGy;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pGy");
+}
+
+TEST_CASE("GIVEN a 1 nano Gray WHEN passed to a streaming operator THEN "
+          "result is '1pGy'") {
+  constexpr auto value = 1_nGy;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nGy");
+}
+
+TEST_CASE("GIVEN a 1 micro Gray WHEN passed to a streaming operator THEN "
+          "result is '1uGy'") {
+  constexpr auto value = 1_uGy;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1uGy");
+}
+
+TEST_CASE("GIVEN a 1 milli Gray WHEN passed to a streaming operator THEN "
+          "result is '1mGy'") {
+  constexpr auto value = 1_mGy;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mGy");
+}
+
+TEST_CASE("GIVEN a 1 Gray WHEN passed to a streaming operator THEN result is "
+          "'1Gy'") {
+  constexpr auto value = 1_Gy;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Gy");
+}
+
+TEST_CASE("GIVEN a 1 kilo Gray WHEN passed to a streaming operator THEN "
+          "result is '1kGy'") {
+  constexpr auto value = 1_kGy;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kGy");
+}
+
+TEST_CASE("GIVEN a 1 mega Gray WHEN passed to a streaming operator THEN "
+          "result is '1MGy'") {
+  constexpr auto value = 1_MGy;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1MGy");
+}
+
+TEST_CASE("GIVEN a 1 giga Gray WHEN passed to a streaming operator THEN "
+          "result is '1GGy'") {
+  constexpr auto value = 1_GGy;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1GGy");
+}
+
+TEST_CASE("GIVEN a 1 tera Gray WHEN passed to a streaming operator THEN "
+          "result is '1TGy'") {
+  constexpr auto value = 1_TGy;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1TGy");
+}
+
+TEST_CASE("GIVEN a 1 exa Gray WHEN passed to a streaming operator THEN "
+          "result is '1EGy'") {
+  constexpr auto value = 1_EGy;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1EGy");
+}
+
+TEST_CASE("GIVEN a 1 peta Gray WHEN passed to a streaming operator THEN "
+          "result is '1PGy'") {
+  constexpr auto value = 1_PGy;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1PGy");
 }

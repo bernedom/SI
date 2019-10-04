@@ -1,5 +1,11 @@
 # Changelog 
 
+## 1.3.0
+
+*   Streaming operators for all dimension symbols
+*   Bugfix: Fixed dimension symbol clash between absorbed dose and equivalent dose 
+*   Bugfix: Fixed dimension symbol clash between length and inductance
+
 ## 1.2.1
 
 *   Added operators +=, *=, /=, -= (Thanks to [Kicer96](https://github.com/Kicer86) for the initial work)

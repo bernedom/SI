@@ -13,6 +13,7 @@
 #include "area.h"
 #include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
+#include "detail/string.h"
 #include "detail/unit.h"
 #include "magnetic_flux.h"
 
@@ -48,6 +49,15 @@ using tera_tesla_t = magnetic_field_t<_type, std::tera>;
 template <typename _type>
 using peta_tesla_t = magnetic_field_t<_type, std::peta>;
 template <typename _type> using exa_tesla_t = magnetic_field_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'B', std::ratio<1>> : SI::detail::unit_symbol_impl<'T'> {};
+
+template <typename _ratio>
+struct unit_symbol<'B', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value,
+                                   'T'> {};
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(magnetic_field_t, magnetic_flux_t, area_t)

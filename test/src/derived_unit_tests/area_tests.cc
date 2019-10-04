@@ -1,5 +1,7 @@
 #include <SI/area.h>
+#include <SI/stream.h>
 #include <catch.hpp>
+#include <sstream>
 
 using namespace SI::literals;
 
@@ -157,4 +159,57 @@ TEST_CASE("GIVEN a lenght value with ratio 1 AND a length value with ratio "
   STATIC_REQUIRE(expected == a);
   STATIC_REQUIRE(a == a_commutative);
   STATIC_REQUIRE(a_commutative == a);
+}
+
+TEST_CASE(
+    "GIVEN a 1 square millimetre WHEN passed to a streaming operator THEN "
+    "result is '1mm2'") {
+  constexpr auto value = 1_mm2;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mm2");
+}
+
+TEST_CASE(
+    "GIVEN a 1  square centimetre WHEN passed to a streaming operator THEN "
+    "result is '1cm2'") {
+  constexpr auto value = 1_cm2;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1cm2");
+}
+
+TEST_CASE(
+    "GIVEN a 1 square metre WHEN passed to a streaming operator THEN result is "
+    "'1m2'") {
+  constexpr auto value = 1_m2;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1m2");
+}
+
+TEST_CASE("GIVEN a 1 cubic millimetre WHEN passed to a streaming operator THEN "
+          "result is '1mm3'") {
+  constexpr auto value = 1_mm3;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mm3");
+}
+
+TEST_CASE(
+    "GIVEN a 1  cubic centimetre WHEN passed to a streaming operator THEN "
+    "result is '1cm3'") {
+  constexpr auto value = 1_cm3;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1cm3");
+}
+
+TEST_CASE(
+    "GIVEN a 1 cubic metre WHEN passed to a streaming operator THEN result is "
+    "'1m3'") {
+  constexpr auto value = 1_m3;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1m3");
 }

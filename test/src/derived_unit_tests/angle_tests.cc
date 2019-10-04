@@ -1,6 +1,8 @@
 #include <catch.hpp>
 
 #include <SI/angle.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _arad THEN result is a "
@@ -86,4 +88,61 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _rad THEN result is a "
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::angle_t<long double, std::ratio<1>>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto radiant WHEN passed to a streaming operator THEN "
+          "result is '1arad'") {
+  constexpr auto value = 1_arad;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1arad");
+}
+
+TEST_CASE("GIVEN a 1 femto radiant WHEN passed to a streaming operator THEN "
+          "result is '1frad'") {
+  constexpr auto value = 1_frad;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1frad");
+}
+
+TEST_CASE("GIVEN a 1 pico radiant WHEN passed to a streaming operator THEN "
+          "result is '1prad'") {
+  constexpr auto value = 1_prad;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1prad");
+}
+
+TEST_CASE("GIVEN a 1 nano radiant WHEN passed to a streaming operator THEN "
+          "result is '1prad'") {
+  constexpr auto value = 1_nrad;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nrad");
+}
+
+TEST_CASE("GIVEN a 1 micro radiant WHEN passed to a streaming operator THEN "
+          "result is '1urad'") {
+  constexpr auto value = 1_urad;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1urad");
+}
+
+TEST_CASE("GIVEN a 1 milli radiant WHEN passed to a streaming operator THEN "
+          "result is '1mrad'") {
+  constexpr auto value = 1_mrad;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mrad");
+}
+
+TEST_CASE(
+    "GIVEN a 1 radiant WHEN passed to a streaming operator THEN result is "
+    "'1rad'") {
+  constexpr auto value = 1_rad;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1rad");
 }

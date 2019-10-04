@@ -1,6 +1,8 @@
 #include <catch.hpp>
 
 #include <SI/electric_charge.h>
+#include <SI/stream.h>
+#include <sstream>
 
 namespace {
 /// helper template to compare variable-types ignoring const
@@ -301,4 +303,109 @@ TEST_CASE("GIVEN electric charge Q with ratio<1000,1> WHEN divided by time T "
       std::ratio_equal<decltype(result)::ratio, std::ratio<50, 3>>::value);
 
   STATIC_REQUIRE(result.raw_value() == 2);
+}
+
+TEST_CASE("GIVEN a 1 atto Coulomb WHEN passed to a streaming operator THEN "
+          "result is '1aC'") {
+  constexpr auto value = 1_aC;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1aC");
+}
+
+TEST_CASE("GIVEN a 1 femto Coulomb WHEN passed to a streaming operator THEN "
+          "result is '1fC'") {
+  constexpr auto value = 1_fC;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fC");
+}
+
+TEST_CASE("GIVEN a 1 pico Coulomb WHEN passed to a streaming operator THEN "
+          "result is '1pC'") {
+  constexpr auto value = 1_pC;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pC");
+}
+
+TEST_CASE("GIVEN a 1 nano Coulomb WHEN passed to a streaming operator THEN "
+          "result is '1pC'") {
+  constexpr auto value = 1_nC;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nC");
+}
+
+TEST_CASE("GIVEN a 1 micro Coulomb WHEN passed to a streaming operator THEN "
+          "result is '1uC'") {
+  constexpr auto value = 1_uC;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1uC");
+}
+
+TEST_CASE("GIVEN a 1 milli Coulomb WHEN passed to a streaming operator THEN "
+          "result is '1mC'") {
+  constexpr auto value = 1_mC;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mC");
+}
+
+TEST_CASE(
+    "GIVEN a 1 Coulomb WHEN passed to a streaming operator THEN result is "
+    "'1C'") {
+  constexpr auto value = 1_C;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1C");
+}
+
+TEST_CASE("GIVEN a 1 kilo Coulomb WHEN passed to a streaming operator THEN "
+          "result is '1kC'") {
+  constexpr auto value = 1_kC;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kC");
+}
+
+TEST_CASE("GIVEN a 1 mega Coulomb WHEN passed to a streaming operator THEN "
+          "result is '1MC'") {
+  constexpr auto value = 1_MC;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1MC");
+}
+
+TEST_CASE("GIVEN a 1 giga Coulomb WHEN passed to a streaming operator THEN "
+          "result is '1GC'") {
+  constexpr auto value = 1_GC;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1GC");
+}
+
+TEST_CASE("GIVEN a 1 tera Coulomb WHEN passed to a streaming operator THEN "
+          "result is '1TC'") {
+  constexpr auto value = 1_TC;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1TC");
+}
+
+TEST_CASE("GIVEN a 1 exa Coulomb WHEN passed to a streaming operator THEN "
+          "result is '1EC'") {
+  constexpr auto value = 1_EC;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1EC");
+}
+
+TEST_CASE("GIVEN a 1 peta Coulomb WHEN passed to a streaming operator THEN "
+          "result is '1PC'") {
+  constexpr auto value = 1_PC;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1PC");
 }

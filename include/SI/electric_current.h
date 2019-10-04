@@ -11,6 +11,7 @@
 #pragma once
 
 #include "detail/number_parser.h"
+#include "detail/string.h"
 #include "detail/unit.h"
 
 namespace SI {
@@ -44,6 +45,15 @@ template <typename _type>
 using peta_ampere_t = electric_current_t<_type, std::peta>;
 template <typename _type>
 using exa_ampere_t = electric_current_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'I', std::ratio<1>> : SI::detail::unit_symbol_impl<'A'> {};
+
+template <typename _ratio>
+struct unit_symbol<'I', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value,
+                                   'A'> {};
 
 inline namespace literals {
 

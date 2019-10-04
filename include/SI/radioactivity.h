@@ -12,8 +12,8 @@
 
 #include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
+#include "detail/string.h"
 #include "detail/unit.h"
-
 namespace SI {
 
 /// @todo check how to make this the same/an alias of hertz
@@ -49,6 +49,16 @@ template <typename _type>
 using peta_becquerel_t = radioactivity_t<_type, std::peta>;
 template <typename _type>
 using exa_becquerel_t = radioactivity_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'A', std::ratio<1>>
+    : SI::detail::unit_symbol_impl<'B', 'q'> {};
+
+template <typename _ratio>
+struct unit_symbol<'A', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'B',
+                                   'q'> {};
 
 inline namespace literals {
 template <char... _digits>

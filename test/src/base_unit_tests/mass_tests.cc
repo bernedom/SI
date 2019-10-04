@@ -1,6 +1,8 @@
 #include <catch.hpp>
 
 #include <SI/mass.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI::literals;
 
@@ -95,4 +97,68 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _t THEN result is a "
   constexpr auto one_f = 1.0_t;
   STATIC_REQUIRE(std::is_same<decltype(one_f),
                               const SI::mass_t<long double, std::kilo>>::value);
+}
+
+TEST_CASE("GIVEN a 1 femto gram WHEN passed to a streaming operator THEN "
+          "result is '1fg'") {
+  constexpr auto value = 1_fg;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fg");
+}
+
+TEST_CASE("GIVEN a 1 pico gram WHEN passed to a streaming operator THEN "
+          "result is '1pg'") {
+  constexpr auto value = 1_pg;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pg");
+}
+
+TEST_CASE("GIVEN a 1 nano gram WHEN passed to a streaming operator THEN "
+          "result is '1pg'") {
+  constexpr auto value = 1_ng;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1ng");
+}
+
+TEST_CASE("GIVEN a 1 micro gram WHEN passed to a streaming operator THEN "
+          "result is '1ug'") {
+  constexpr auto value = 1_ug;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1ug");
+}
+
+TEST_CASE("GIVEN a 1 milli gram WHEN passed to a streaming operator THEN "
+          "result is '1mg'") {
+  constexpr auto value = 1_mg;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mg");
+}
+
+TEST_CASE("GIVEN a 1 gram WHEN passed to a streaming operator THEN result is "
+          "'1g'") {
+  constexpr auto value = 1_g;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1g");
+}
+
+TEST_CASE("GIVEN a 1 kilo gram WHEN passed to a streaming operator THEN "
+          "result is '1kg'") {
+  constexpr auto value = 1_kg;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kg");
+}
+
+TEST_CASE("GIVEN a 1 mega gram WHEN passed to a streaming operator THEN "
+          "result is '1Mg'") {
+  constexpr auto value = 1_t;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1t");
 }

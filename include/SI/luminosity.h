@@ -11,6 +11,7 @@
 #pragma once
 
 #include "detail/number_parser.h"
+#include "detail/string.h"
 #include "detail/unit.h"
 
 namespace SI {
@@ -34,6 +35,16 @@ template <typename _type> using giga_candela_t = luminosity_t<_type, std::giga>;
 template <typename _type> using tera_candela_t = luminosity_t<_type, std::tera>;
 template <typename _type> using peta_candela_t = luminosity_t<_type, std::peta>;
 template <typename _type> using exa_candela_t = luminosity_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'J', std::ratio<1>>
+    : SI::detail::unit_symbol_impl<'c', 'd'> {};
+
+template <typename _ratio>
+struct unit_symbol<'J', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'c',
+                                   'd'> {};
 
 inline namespace literals {
 

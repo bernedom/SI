@@ -12,6 +12,7 @@
 
 #include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
+#include "detail/string.h"
 #include "detail/unit.h"
 #include "substance.h"
 #include "time.h"
@@ -48,6 +49,16 @@ template <typename _type>
 using peta_katal_t = catalytic_activity_t<_type, std::peta>;
 template <typename _type>
 using exa_katal_t = catalytic_activity_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'K', std::ratio<1>>
+    : SI::detail::unit_symbol_impl<'k', 'a', 't'> {};
+
+template <typename _ratio>
+struct unit_symbol<'K', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'k',
+                                   'a', 't'> {};
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(catalytic_activity_t, substance_t, time_t)

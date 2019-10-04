@@ -3,6 +3,8 @@
 #include <SI/electric_current.h>
 #include <SI/inductance.h>
 #include <SI/magnetic_flux.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _aH THEN result is a "
@@ -217,4 +219,108 @@ TEMPLATE_TEST_CASE("GIVEN a magnetic_flux value WHEN divided by a "
   STATIC_REQUIRE(std::is_same<
                  decltype(result),
                  const SI::electric_current_t<TestType, std::ratio<1>>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto Henry WHEN passed to a streaming operator THEN "
+          "result is '1aH'") {
+  constexpr auto value = 1_aH;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1aH");
+}
+
+TEST_CASE("GIVEN a 1 femto Henry WHEN passed to a streaming operator THEN "
+          "result is '1fH'") {
+  constexpr auto value = 1_fH;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fH");
+}
+
+TEST_CASE("GIVEN a 1 pico Henry WHEN passed to a streaming operator THEN "
+          "result is '1pH'") {
+  constexpr auto value = 1_pH;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pH");
+}
+
+TEST_CASE("GIVEN a 1 nano Henry WHEN passed to a streaming operator THEN "
+          "result is '1pH'") {
+  constexpr auto value = 1_nH;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nH");
+}
+
+TEST_CASE("GIVEN a 1 micro Henry WHEN passed to a streaming operator THEN "
+          "result is '1uH'") {
+  constexpr auto value = 1_uH;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1uH");
+}
+
+TEST_CASE("GIVEN a 1 milli Henry WHEN passed to a streaming operator THEN "
+          "result is '1mH'") {
+  constexpr auto value = 1_mH;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mH");
+}
+
+TEST_CASE("GIVEN a 1 Henry WHEN passed to a streaming operator THEN result is "
+          "'1H'") {
+  constexpr auto value = 1_H;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1H");
+}
+
+TEST_CASE("GIVEN a 1 kilo Henry WHEN passed to a streaming operator THEN "
+          "result is '1kH'") {
+  constexpr auto value = 1_kH;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kH");
+}
+
+TEST_CASE("GIVEN a 1 mega Henry WHEN passed to a streaming operator THEN "
+          "result is '1MH'") {
+  constexpr auto value = 1_MH;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1MH");
+}
+
+TEST_CASE("GIVEN a 1 giga Henry WHEN passed to a streaming operator THEN "
+          "result is '1GH'") {
+  constexpr auto value = 1_GH;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1GH");
+}
+
+TEST_CASE("GIVEN a 1 tera Henry WHEN passed to a streaming operator THEN "
+          "result is '1TH'") {
+  constexpr auto value = 1_TH;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1TH");
+}
+
+TEST_CASE("GIVEN a 1 exa Henry WHEN passed to a streaming operator THEN "
+          "result is '1EH'") {
+  constexpr auto value = 1_EH;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1EH");
+}
+
+TEST_CASE("GIVEN a 1 peta Henry WHEN passed to a streaming operator THEN "
+          "result is '1PH'") {
+  constexpr auto value = 1_PH;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1PH");
 }

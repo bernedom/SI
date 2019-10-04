@@ -1,6 +1,8 @@
 #include <catch.hpp>
 
 #include <SI/length.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI;
 
@@ -203,20 +205,114 @@ TEST_CASE("GIVEN a value of 1m WHEN multiplied with -1 THEN result is -1m") {
   STATIC_REQUIRE(one_m * -1 == neg_one_m);
 }
 
-// namespace {
-// // helper struct to paramterize test below
-// template <typename lhs, typename rhs> struct type_tuple {
-//   using lhs_type = lhs;
-//   using rhs_type = rhs;
-// };
-// } // namespace
+TEST_CASE("GIVEN a 1 atto metre WHEN passed to a streaming operator THEN "
+          "result is '1am'") {
+  constexpr auto value = 1_am;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1am");
+}
 
-// TEMPLATE_TEST_CASE(
-//     "GIVEN a length value WHEN spelled 'metre' THEN type is the same as "
-//     "'meter'",
-//     "[length][alternative_spelling]",
-//     (type_tuple<SI::meter_t<int64_t>, SI::metre_t<int64_t>>)) {
-//   STATIC_REQUIRE(
-//       std::is_same_v<typename TestType::lhs_type, typename
-//       TestType::rhs_type>);
-// }
+TEST_CASE("GIVEN a 1 femto metre WHEN passed to a streaming operator THEN "
+          "result is '1fm'") {
+  constexpr auto value = 1_fm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fm");
+}
+
+TEST_CASE("GIVEN a 1 pico metre WHEN passed to a streaming operator THEN "
+          "result is '1pm'") {
+  constexpr auto value = 1_pm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pm");
+}
+
+TEST_CASE("GIVEN a 1 nano metre WHEN passed to a streaming operator THEN "
+          "result is '1pm'") {
+  constexpr auto value = 1_nm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nm");
+}
+
+TEST_CASE("GIVEN a 1 micro metre WHEN passed to a streaming operator THEN "
+          "result is '1um'") {
+  constexpr auto value = 1_um;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1um");
+}
+
+TEST_CASE("GIVEN a 1 milli metre WHEN passed to a streaming operator THEN "
+          "result is '1mm'") {
+  constexpr auto value = 1_mm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mm");
+}
+
+TEST_CASE("GIVEN a 1 centi metre WHEN passed to a streaming operator THEN "
+          "result is '1cm'") {
+  constexpr auto value = 1_cm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1cm");
+}
+
+TEST_CASE(
+    "GIVEN a 1 metre WHEN passed to a streaming operator THEN result is '1m'") {
+  constexpr auto value = 1_m;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1m");
+}
+
+TEST_CASE("GIVEN a 1 kilo metre WHEN passed to a streaming operator THEN "
+          "result is '1km'") {
+  constexpr auto value = 1_km;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1km");
+}
+
+TEST_CASE("GIVEN a 1 mega metre WHEN passed to a streaming operator THEN "
+          "result is '1Mm'") {
+  constexpr auto value = 1_Mm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Mm");
+}
+
+TEST_CASE("GIVEN a 1 giga metre WHEN passed to a streaming operator THEN "
+          "result is '1Gm'") {
+  constexpr auto value = 1_Gm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Gm");
+}
+
+TEST_CASE("GIVEN a 1 tera metre WHEN passed to a streaming operator THEN "
+          "result is '1Tm'") {
+  constexpr auto value = 1_Tm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Tm");
+}
+
+TEST_CASE("GIVEN a 1 exa metre WHEN passed to a streaming operator THEN "
+          "result is '1Em'") {
+  constexpr auto value = 1_Em;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Em");
+}
+
+TEST_CASE("GIVEN a 1 peta metre WHEN passed to a streaming operator THEN "
+          "result is '1Pm'") {
+  constexpr auto value = 1_Pm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Pm");
+}

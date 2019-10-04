@@ -2,6 +2,8 @@
 
 #include <SI/illuminance.h>
 #include <SI/luminous_flux.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _alx THEN result is a "
@@ -216,4 +218,108 @@ TEMPLATE_TEST_CASE("GIVEN a luminous_flux value WHEN divided by a "
   STATIC_REQUIRE(
       std::is_same<decltype(result),
                    const SI::area_t<TestType, std::ratio<1>>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto Lux WHEN passed to a streaming operator THEN "
+          "result is '1alx'") {
+  constexpr auto value = 1_alx;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1alx");
+}
+
+TEST_CASE("GIVEN a 1 femto Lux WHEN passed to a streaming operator THEN "
+          "result is '1flx'") {
+  constexpr auto value = 1_flx;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1flx");
+}
+
+TEST_CASE("GIVEN a 1 pico Lux WHEN passed to a streaming operator THEN "
+          "result is '1plx'") {
+  constexpr auto value = 1_plx;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1plx");
+}
+
+TEST_CASE("GIVEN a 1 nano Lux WHEN passed to a streaming operator THEN "
+          "result is '1plx'") {
+  constexpr auto value = 1_nlx;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nlx");
+}
+
+TEST_CASE("GIVEN a 1 micro Lux WHEN passed to a streaming operator THEN "
+          "result is '1ulx'") {
+  constexpr auto value = 1_ulx;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1ulx");
+}
+
+TEST_CASE("GIVEN a 1 milli Lux WHEN passed to a streaming operator THEN "
+          "result is '1mlx'") {
+  constexpr auto value = 1_mlx;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mlx");
+}
+
+TEST_CASE("GIVEN a 1 Lux WHEN passed to a streaming operator THEN result is "
+          "'1lx'") {
+  constexpr auto value = 1_lx;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1lx");
+}
+
+TEST_CASE("GIVEN a 1 kilo Lux WHEN passed to a streaming operator THEN "
+          "result is '1klx'") {
+  constexpr auto value = 1_klx;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1klx");
+}
+
+TEST_CASE("GIVEN a 1 mega Lux WHEN passed to a streaming operator THEN "
+          "result is '1Mlx'") {
+  constexpr auto value = 1_Mlx;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Mlx");
+}
+
+TEST_CASE("GIVEN a 1 giga Lux WHEN passed to a streaming operator THEN "
+          "result is '1Glx'") {
+  constexpr auto value = 1_Glx;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Glx");
+}
+
+TEST_CASE("GIVEN a 1 tera Lux WHEN passed to a streaming operator THEN "
+          "result is '1Tlx'") {
+  constexpr auto value = 1_Tlx;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Tlx");
+}
+
+TEST_CASE("GIVEN a 1 exa Lux WHEN passed to a streaming operator THEN "
+          "result is '1Elx'") {
+  constexpr auto value = 1_Elx;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Elx");
+}
+
+TEST_CASE("GIVEN a 1 peta Lux WHEN passed to a streaming operator THEN "
+          "result is '1Plx'") {
+  constexpr auto value = 1_Plx;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Plx");
 }

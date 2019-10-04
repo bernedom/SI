@@ -12,6 +12,7 @@
 
 #include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
+#include "detail/string.h"
 #include "detail/unit.h"
 #include "energy.h"
 
@@ -33,6 +34,15 @@ template <typename _type> using giga_watt_t = power_t<_type, std::giga>;
 template <typename _type> using tera_watt_t = power_t<_type, std::tera>;
 template <typename _type> using peta_watt_t = power_t<_type, std::peta>;
 template <typename _type> using exa_watt_t = power_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'P', std::ratio<1>> : SI::detail::unit_symbol_impl<'W'> {};
+
+template <typename _ratio>
+struct unit_symbol<'P', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value,
+                                   'W'> {};
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(power_t, energy_t, time_t)

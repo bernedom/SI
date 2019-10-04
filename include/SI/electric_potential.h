@@ -12,6 +12,7 @@
 
 #include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
+#include "detail/string.h"
 #include "detail/unit.h"
 #include "electric_charge.h"
 #include "electric_current.h"
@@ -49,6 +50,15 @@ template <typename _type>
 using peta_volt_t = electric_potential_t<_type, std::peta>;
 template <typename _type>
 using exa_volt_t = electric_potential_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'U', std::ratio<1>> : SI::detail::unit_symbol_impl<'V'> {};
+
+template <typename _ratio>
+struct unit_symbol<'U', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value,
+                                   'V'> {};
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(electric_potential_t, power_t, electric_current_t)

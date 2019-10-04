@@ -1,6 +1,8 @@
 #include <catch.hpp>
 
 #include <SI/frequency.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _aHz THEN result is a "
@@ -169,4 +171,108 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _EHz THEN result is a "
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::frequency_t<long double, std::exa>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto Hertz WHEN passed to a streaming operator THEN "
+          "result is '1aHz'") {
+  constexpr auto value = 1_aHz;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1aHz");
+}
+
+TEST_CASE("GIVEN a 1 femto Hertz WHEN passed to a streaming operator THEN "
+          "result is '1fHz'") {
+  constexpr auto value = 1_fHz;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fHz");
+}
+
+TEST_CASE("GIVEN a 1 pico Hertz WHEN passed to a streaming operator THEN "
+          "result is '1pHz'") {
+  constexpr auto value = 1_pHz;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pHz");
+}
+
+TEST_CASE("GIVEN a 1 nano Hertz WHEN passed to a streaming operator THEN "
+          "result is '1pHz'") {
+  constexpr auto value = 1_nHz;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nHz");
+}
+
+TEST_CASE("GIVEN a 1 micro Hertz WHEN passed to a streaming operator THEN "
+          "result is '1uHz'") {
+  constexpr auto value = 1_uHz;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1uHz");
+}
+
+TEST_CASE("GIVEN a 1 milli Hertz WHEN passed to a streaming operator THEN "
+          "result is '1mHz'") {
+  constexpr auto value = 1_mHz;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mHz");
+}
+
+TEST_CASE("GIVEN a 1 Hertz WHEN passed to a streaming operator THEN result is "
+          "'1Hz'") {
+  constexpr auto value = 1_Hz;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Hz");
+}
+
+TEST_CASE("GIVEN a 1 kilo Hertz WHEN passed to a streaming operator THEN "
+          "result is '1kHz'") {
+  constexpr auto value = 1_kHz;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kHz");
+}
+
+TEST_CASE("GIVEN a 1 mega Hertz WHEN passed to a streaming operator THEN "
+          "result is '1MHz'") {
+  constexpr auto value = 1_MHz;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1MHz");
+}
+
+TEST_CASE("GIVEN a 1 giga Hertz WHEN passed to a streaming operator THEN "
+          "result is '1GHz'") {
+  constexpr auto value = 1_GHz;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1GHz");
+}
+
+TEST_CASE("GIVEN a 1 tera Hertz WHEN passed to a streaming operator THEN "
+          "result is '1THz'") {
+  constexpr auto value = 1_THz;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1THz");
+}
+
+TEST_CASE("GIVEN a 1 exa Hertz WHEN passed to a streaming operator THEN "
+          "result is '1EHz'") {
+  constexpr auto value = 1_EHz;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1EHz");
+}
+
+TEST_CASE("GIVEN a 1 peta Hertz WHEN passed to a streaming operator THEN "
+          "result is '1PHz'") {
+  constexpr auto value = 1_PHz;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1PHz");
 }

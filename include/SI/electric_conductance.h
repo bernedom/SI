@@ -49,6 +49,15 @@ using peta_siemens_t = electric_conductance_t<_type, std::peta>;
 template <typename _type>
 using exa_siemens_t = electric_conductance_t<_type, std::exa>;
 
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'G', std::ratio<1>> : SI::detail::unit_symbol_impl<'S'> {};
+
+template <typename _ratio>
+struct unit_symbol<'G', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value,
+                                   'S'> {};
+
 namespace detail {
 
 BUILD_UNIT_FROM_DIVISON(electric_conductance_t, electric_current_t,
