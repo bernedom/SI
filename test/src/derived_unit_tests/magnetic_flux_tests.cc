@@ -2,7 +2,9 @@
 
 #include <SI/electric_potential.h>
 #include <SI/magnetic_flux.h>
+#include <SI/stream.h>
 #include <SI/time.h>
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _aWb THEN result is a "
@@ -201,4 +203,108 @@ TEMPLATE_TEST_CASE(
   STATIC_REQUIRE(
       std::is_same<decltype(result),
                    const SI::time_t<TestType, std::ratio<1>>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto Weber WHEN passed to a streaming operator WHEN "
+          "result is '1aWb'") {
+  constexpr auto value = 1_aWb;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1aWb");
+}
+
+TEST_CASE("GIVEN a 1 femto Weber WHEN passed to a streaming operator WHEN "
+          "result is '1fWb'") {
+  constexpr auto value = 1_fWb;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fWb");
+}
+
+TEST_CASE("GIVEN a 1 pico Weber WHEN passed to a streaming operator WHEN "
+          "result is '1pWb'") {
+  constexpr auto value = 1_pWb;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pWb");
+}
+
+TEST_CASE("GIVEN a 1 nano Weber WHEN passed to a streaming operator WHEN "
+          "result is '1pWb'") {
+  constexpr auto value = 1_nWb;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nWb");
+}
+
+TEST_CASE("GIVEN a 1 micro Weber WHEN passed to a streaming operator WHEN "
+          "result is '1uWb'") {
+  constexpr auto value = 1_uWb;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1uWb");
+}
+
+TEST_CASE("GIVEN a 1 milli Weber WHEN passed to a streaming operator WHEN "
+          "result is '1mWb'") {
+  constexpr auto value = 1_mWb;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mWb");
+}
+
+TEST_CASE("GIVEN a 1 Weber WHEN passed to a streaming operator WHEN result is "
+          "'1Wb'") {
+  constexpr auto value = 1_Wb;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Wb");
+}
+
+TEST_CASE("GIVEN a 1 kilo Weber WHEN passed to a streaming operator WHEN "
+          "result is '1kWb'") {
+  constexpr auto value = 1_kWb;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kWb");
+}
+
+TEST_CASE("GIVEN a 1 mega Weber WHEN passed to a streaming operator WHEN "
+          "result is '1MWb'") {
+  constexpr auto value = 1_MWb;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1MWb");
+}
+
+TEST_CASE("GIVEN a 1 giga Weber WHEN passed to a streaming operator WHEN "
+          "result is '1GWb'") {
+  constexpr auto value = 1_GWb;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1GWb");
+}
+
+TEST_CASE("GIVEN a 1 tera Weber WHEN passed to a streaming operator WHEN "
+          "result is '1TWb'") {
+  constexpr auto value = 1_TWb;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1TWb");
+}
+
+TEST_CASE("GIVEN a 1 exa Weber WHEN passed to a streaming operator WHEN "
+          "result is '1EWb'") {
+  constexpr auto value = 1_EWb;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1EWb");
+}
+
+TEST_CASE("GIVEN a 1 peta Weber WHEN passed to a streaming operator WHEN "
+          "result is '1PWb'") {
+  constexpr auto value = 1_PWb;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1PWb");
 }

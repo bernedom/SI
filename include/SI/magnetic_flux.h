@@ -12,6 +12,7 @@
 
 #include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
+#include "detail/streaming.h"
 #include "detail/unit.h"
 #include "electric_potential.h"
 #include "time.h"
@@ -47,6 +48,16 @@ using tera_weber_t = magnetic_flux_t<_type, std::tera>;
 template <typename _type>
 using peta_weber_t = magnetic_flux_t<_type, std::peta>;
 template <typename _type> using exa_weber_t = magnetic_flux_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'f', std::ratio<1>>
+    : SI::detail::unit_symbol_impl<'W', 'b'> {};
+
+template <typename _ratio>
+struct unit_symbol<'f', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'W',
+                                   'b'> {};
 
 namespace detail {
 BUILD_UNIT_FROM_MULTIPLICATION(magnetic_flux_t, electric_potential_t, time_t)
