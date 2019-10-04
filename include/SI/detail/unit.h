@@ -58,6 +58,7 @@ struct unit_t {
 
   /// Construct with value v
   constexpr unit_t(_type v) : value_{v} {}
+  constexpr unit_t() = default;
 
   /// returns the stored value as raw type
   constexpr _type raw_value() const { return value_; }
