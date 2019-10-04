@@ -1,6 +1,6 @@
 
 #pragma once
-#include "detail/streaming.h"
+#include "detail/string.h"
 #include "detail/unit.h"
 
 #include <ostream>

@@ -12,7 +12,7 @@
 
 #include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
-#include "detail/streaming.h"
+#include "detail/string.h"
 #include "detail/unit.h"
 #include "electric_current.h"
 #include "time.h"

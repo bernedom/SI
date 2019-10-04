@@ -6,6 +6,7 @@
 
 namespace SI::detail {
 
+/// Compile time string provider for conversion of unit types to stringsa
 template <char... Cs> struct unit_symbol_impl {
   static_assert(sizeof...(Cs) > 0, "Empty strings are disallowed");
   // using double curly braces to because of a bug in clang5

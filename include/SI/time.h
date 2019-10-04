@@ -14,7 +14,7 @@
 #include <ratio>
 
 #include "detail/number_parser.h"
-#include "detail/streaming.h"
+#include "detail/string.h"
 #include "detail/unit.h"
 
 namespace SI {
