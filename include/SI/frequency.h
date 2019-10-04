@@ -10,6 +10,8 @@
  **/
 #pragma once
 
+#include "detail/streaming.h"
+#include "detail/unit.h"
 #include "time.h"
 
 namespace SI {
@@ -31,6 +33,16 @@ template <typename _type> using giga_hertz_t = frequency_t<_type, std::giga>;
 template <typename _type> using tera_hertz_t = frequency_t<_type, std::tera>;
 template <typename _type> using peta_hertz_t = frequency_t<_type, std::peta>;
 template <typename _type> using exa_hertz_t = frequency_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'T', std::ratio<1>, -1>
+    : SI::detail::unit_symbol_impl<'H', 'z'> {};
+
+template <typename _ratio>
+struct unit_symbol<'T', _ratio, -1>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'H',
+                                   'z'> {};
 
 inline namespace literals {
 template <char... _digits> constexpr atto_hertz_t<int64_t> operator""_aHz() {
