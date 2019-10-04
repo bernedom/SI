@@ -326,6 +326,19 @@ TEST_CASE(
   ss >> metre;
 
   REQUIRE(metre == 1_m);
+  REQUIRE(!ss.fail());
+}
+
+TEST_CASE(
+    "GIVEN a string of '1km' WHEN streamed into length_t THEN value is '1") {
+  std::stringstream ss;
+  ss << "1km";
+  SI::kilo_metre_t<int64_t> metre{0};
+
+  ss >> metre;
+
+  REQUIRE(metre == 1_km);
+  REQUIRE(!ss.fail());
 }
 
 TEST_CASE("GIVEN a string of '1km' WHEN streamed into metre_t THEN conversion "
@@ -335,6 +348,18 @@ TEST_CASE("GIVEN a string of '1km' WHEN streamed into metre_t THEN conversion "
   ss << "1km";
 
   SI::metre_t<int64_t> metre{0};
+  ss >> metre;
+
+  REQUIRE(ss.fail());
+}
+
+TEST_CASE("GIVEN a string of '1x' WHEN streamed into metre_t THEN conversion "
+          "fails") {
+
+  std::stringstream ss;
+  ss << "1kx";
+
+  SI::kilo_metre_t<int64_t> metre{0};
   ss >> metre;
 
   REQUIRE(ss.fail());

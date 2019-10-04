@@ -20,9 +20,11 @@ std::istream &
 operator>>(std::istream &stream,
            SI::detail::unit_t<_symbol, _exponent, _type, _ratio> &obj) {
   _type v;
-  char ratio_prefix;
-  stream >> v >> ratio_prefix;
-  if (ratio_prefix != SI::detail::ratio_prefix<_ratio>::value) {
+  std::string unit_symbol;
+  stream >> v >> unit_symbol;
+
+  if (unit_symbol.compare(SI::unit_symbol<_symbol, _ratio, _exponent>::str) !=
+      0) {
     stream.setstate(std::ios::failbit);
   }
   obj.set_raw_value(v);
