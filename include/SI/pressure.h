@@ -35,6 +35,16 @@ template <typename _type> using tera_pascal_t = pressure_t<_type, std::tera>;
 template <typename _type> using peta_pascal_t = pressure_t<_type, std::peta>;
 template <typename _type> using exa_pascal_t = pressure_t<_type, std::exa>;
 
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'p', std::ratio<1>>
+    : SI::detail::unit_symbol_impl<'p', 'a'> {};
+
+template <typename _ratio>
+struct unit_symbol<'p', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'p',
+                                   'a'> {};
+
 namespace detail {
 
 BUILD_UNIT_FROM_DIVISON(pressure_t, force_t, area_t)

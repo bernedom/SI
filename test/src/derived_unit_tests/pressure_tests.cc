@@ -3,6 +3,8 @@
 #include <SI/area.h>
 #include <SI/force.h>
 #include <SI/pressure.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _apa THEN result is a "
@@ -205,4 +207,108 @@ TEMPLATE_TEST_CASE("GIVEN a force value WHEN divided by a pressure value THEN "
   STATIC_REQUIRE(
       std::is_same<decltype(result),
                    const SI::area_t<TestType, std::ratio<1>>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto Pascal WHEN passed to a streaming operator WHEN "
+          "result is '1apa'") {
+  constexpr auto value = 1_apa;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1apa");
+}
+
+TEST_CASE("GIVEN a 1 femto Pascal WHEN passed to a streaming operator WHEN "
+          "result is '1fpa'") {
+  constexpr auto value = 1_fpa;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fpa");
+}
+
+TEST_CASE("GIVEN a 1 pico Pascal WHEN passed to a streaming operator WHEN "
+          "result is '1ppa'") {
+  constexpr auto value = 1_ppa;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1ppa");
+}
+
+TEST_CASE("GIVEN a 1 nano Pascal WHEN passed to a streaming operator WHEN "
+          "result is '1ppa'") {
+  constexpr auto value = 1_npa;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1npa");
+}
+
+TEST_CASE("GIVEN a 1 micro Pascal WHEN passed to a streaming operator WHEN "
+          "result is '1upa'") {
+  constexpr auto value = 1_upa;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1upa");
+}
+
+TEST_CASE("GIVEN a 1 milli Pascal WHEN passed to a streaming operator WHEN "
+          "result is '1mpa'") {
+  constexpr auto value = 1_mpa;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mpa");
+}
+
+TEST_CASE("GIVEN a 1 Pascal WHEN passed to a streaming operator WHEN result is "
+          "'1pa'") {
+  constexpr auto value = 1_pa;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pa");
+}
+
+TEST_CASE("GIVEN a 1 kilo Pascal WHEN passed to a streaming operator WHEN "
+          "result is '1kpa'") {
+  constexpr auto value = 1_kpa;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kpa");
+}
+
+TEST_CASE("GIVEN a 1 mega Pascal WHEN passed to a streaming operator WHEN "
+          "result is '1Mpa'") {
+  constexpr auto value = 1_Mpa;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Mpa");
+}
+
+TEST_CASE("GIVEN a 1 giga Pascal WHEN passed to a streaming operator WHEN "
+          "result is '1Gpa'") {
+  constexpr auto value = 1_Gpa;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Gpa");
+}
+
+TEST_CASE("GIVEN a 1 tera Pascal WHEN passed to a streaming operator WHEN "
+          "result is '1Tpa'") {
+  constexpr auto value = 1_Tpa;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Tpa");
+}
+
+TEST_CASE("GIVEN a 1 exa Pascal WHEN passed to a streaming operator WHEN "
+          "result is '1Epa'") {
+  constexpr auto value = 1_Epa;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Epa");
+}
+
+TEST_CASE("GIVEN a 1 peta Pascal WHEN passed to a streaming operator WHEN "
+          "result is '1Ppa'") {
+  constexpr auto value = 1_Ppa;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Ppa");
 }
