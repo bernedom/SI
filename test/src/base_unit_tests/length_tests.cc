@@ -318,7 +318,7 @@ TEST_CASE("GIVEN a 1 peta metre WHEN passed to a streaming operator THEN "
 }
 
 TEST_CASE(
-    "GIVEN a string of '1m' WHEN streamed into length_t THEN ratio is 1") {
+    "GIVEN a string of '1m' WHEN streamed into length_t THEN value is '1") {
   std::stringstream ss;
   ss << "1m";
   SI::metre_t<int64_t> metre{0};
@@ -326,4 +326,16 @@ TEST_CASE(
   ss >> metre;
 
   REQUIRE(metre == 1_m);
+}
+
+TEST_CASE("GIVEN a string of '1km' WHEN streamed into metre_t THEN conversion "
+          "fails") {
+
+  std::stringstream ss;
+  ss << "1km";
+
+  SI::metre_t<int64_t> metre{0};
+  ss >> metre;
+
+  REQUIRE(ss.fail());
 }
