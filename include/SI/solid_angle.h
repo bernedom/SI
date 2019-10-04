@@ -11,6 +11,7 @@
 #pragma once
 
 #include "detail/number_parser.h"
+#include "detail/streaming.h"
 #include "detail/unit.h"
 
 namespace SI {
@@ -32,6 +33,19 @@ template <typename _type>
 using milli_sterradiant_t = solid_angle_t<_type, std::milli>;
 template <typename _type>
 using sterradiant_t = solid_angle_t<_type, std::ratio<1>>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'R', std::ratio<1>>
+    : SI::detail::unit_symbol_impl<'s', 'r'> {};
+
+template <typename _ratio>
+struct unit_symbol<'R', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 's',
+                                   'r'> {
+  static_assert(std::ratio_less_equal<_ratio, std::ratio<1>>::value,
+                "Values with ratio > 1/1 not implemented");
+};
 
 inline namespace literals {
 
