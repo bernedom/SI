@@ -2,7 +2,9 @@
 
 ## 1.3.0
 
-*   Bugfix: Fixexd dimension symbol clash between absorbed dose and equivalent dose 
+*   Streaming operators for all dimension symbols
+*   Bugfix: Fixed dimension symbol clash between absorbed dose and equivalent dose 
+*   Bugfix: Fixed dimension symbol clash between length and inductance
 
 ## 1.2.1
 

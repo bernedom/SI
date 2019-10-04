@@ -12,13 +12,14 @@
 
 #include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
+#include "detail/streaming.h"
 #include "detail/unit.h"
 #include "electric_current.h"
 #include "magnetic_flux.h"
 
 namespace SI {
 template <typename _type, class _ratio = std::ratio<1>>
-using inductance_t = detail::unit_t<'L', 1, _type, _ratio>;
+using inductance_t = detail::unit_t<'l', 1, _type, _ratio>;
 
 /// specific units
 template <typename _type> using atto_henry_t = inductance_t<_type, std::atto>;
@@ -34,6 +35,15 @@ template <typename _type> using giga_henry_t = inductance_t<_type, std::giga>;
 template <typename _type> using tera_henry_t = inductance_t<_type, std::tera>;
 template <typename _type> using peta_henry_t = inductance_t<_type, std::peta>;
 template <typename _type> using exa_henry_t = inductance_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'l', std::ratio<1>> : SI::detail::unit_symbol_impl<'H'> {};
+
+template <typename _ratio>
+struct unit_symbol<'l', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value,
+                                   'H'> {};
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(inductance_t, magnetic_flux_t, electric_current_t)
