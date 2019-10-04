@@ -316,3 +316,14 @@ TEST_CASE("GIVEN a 1 peta metre WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1Pm");
 }
+
+TEST_CASE(
+    "GIVEN a string of '1m' WHEN streamed into length_t THEN ratio is 1") {
+  std::stringstream ss;
+  ss << "1m";
+  SI::metre_t<int64_t> metre{0};
+
+  ss >> metre;
+
+  REQUIRE(metre == 1_m);
+}
