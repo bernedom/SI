@@ -3,6 +3,8 @@
 #include <SI/luminosity.h>
 #include <SI/luminous_flux.h>
 #include <SI/solid_angle.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _alm THEN result is a "
@@ -215,4 +217,108 @@ TEMPLATE_TEST_CASE(
   STATIC_REQUIRE(
       std::is_same<decltype(result),
                    const SI::solid_angle_t<TestType, std::ratio<1>>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto Lumen WHEN passed to a streaming operator THEN "
+          "result is '1alm'") {
+  constexpr auto value = 1_alm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1alm");
+}
+
+TEST_CASE("GIVEN a 1 femto Lumen WHEN passed to a streaming operator THEN "
+          "result is '1flm'") {
+  constexpr auto value = 1_flm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1flm");
+}
+
+TEST_CASE("GIVEN a 1 pico Lumen WHEN passed to a streaming operator THEN "
+          "result is '1plm'") {
+  constexpr auto value = 1_plm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1plm");
+}
+
+TEST_CASE("GIVEN a 1 nano Lumen WHEN passed to a streaming operator THEN "
+          "result is '1plm'") {
+  constexpr auto value = 1_nlm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nlm");
+}
+
+TEST_CASE("GIVEN a 1 micro Lumen WHEN passed to a streaming operator THEN "
+          "result is '1ulm'") {
+  constexpr auto value = 1_ulm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1ulm");
+}
+
+TEST_CASE("GIVEN a 1 milli Lumen WHEN passed to a streaming operator THEN "
+          "result is '1mlm'") {
+  constexpr auto value = 1_mlm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mlm");
+}
+
+TEST_CASE("GIVEN a 1 Lumen WHEN passed to a streaming operator THEN result is "
+          "'1lm'") {
+  constexpr auto value = 1_lm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1lm");
+}
+
+TEST_CASE("GIVEN a 1 kilo Lumen WHEN passed to a streaming operator THEN "
+          "result is '1klm'") {
+  constexpr auto value = 1_klm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1klm");
+}
+
+TEST_CASE("GIVEN a 1 mega Lumen WHEN passed to a streaming operator THEN "
+          "result is '1Mlm'") {
+  constexpr auto value = 1_Mlm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Mlm");
+}
+
+TEST_CASE("GIVEN a 1 giga Lumen WHEN passed to a streaming operator THEN "
+          "result is '1Glm'") {
+  constexpr auto value = 1_Glm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Glm");
+}
+
+TEST_CASE("GIVEN a 1 tera Lumen WHEN passed to a streaming operator THEN "
+          "result is '1Tlm'") {
+  constexpr auto value = 1_Tlm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Tlm");
+}
+
+TEST_CASE("GIVEN a 1 exa Lumen WHEN passed to a streaming operator THEN "
+          "result is '1Elm'") {
+  constexpr auto value = 1_Elm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Elm");
+}
+
+TEST_CASE("GIVEN a 1 peta Lumen WHEN passed to a streaming operator THEN "
+          "result is '1Plm'") {
+  constexpr auto value = 1_Plm;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Plm");
 }

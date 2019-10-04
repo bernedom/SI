@@ -47,6 +47,16 @@ template <typename _type>
 using peta_lumen_t = luminous_flux_t<_type, std::peta>;
 template <typename _type> using exa_lumen_t = luminous_flux_t<_type, std::exa>;
 
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'m', std::ratio<1>>
+    : SI::detail::unit_symbol_impl<'l', 'm'> {};
+
+template <typename _ratio>
+struct unit_symbol<'m', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'l',
+                                   'm'> {};
+
 namespace detail {
 BUILD_UNIT_FROM_MULTIPLICATION(luminous_flux_t, solid_angle_t, luminosity_t)
 }

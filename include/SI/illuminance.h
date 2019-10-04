@@ -13,6 +13,7 @@
 #include "area.h"
 #include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
+#include "detail/streaming.h"
 #include "detail/unit.h"
 #include "luminous_flux.h"
 
@@ -34,6 +35,16 @@ template <typename _type> using giga_lux_t = illuminance_t<_type, std::giga>;
 template <typename _type> using tera_lux_t = illuminance_t<_type, std::tera>;
 template <typename _type> using peta_lux_t = illuminance_t<_type, std::peta>;
 template <typename _type> using exa_lux_t = illuminance_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'i', std::ratio<1>>
+    : SI::detail::unit_symbol_impl<'l', 'x'> {};
+
+template <typename _ratio>
+struct unit_symbol<'i', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'l',
+                                   'x'> {};
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(illuminance_t, luminous_flux_t, area_t)
