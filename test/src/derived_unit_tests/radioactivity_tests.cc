@@ -1,6 +1,8 @@
 #include <catch.hpp>
 
 #include <SI/radioactivity.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _aBq THEN result is a "
@@ -170,4 +172,108 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _EBq THEN result is a "
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::radioactivity_t<long double, std::exa>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto Bequel WHEN passed to a streaming operator THEN "
+          "result is '1aBq'") {
+  constexpr auto value = 1_aBq;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1aBq");
+}
+
+TEST_CASE("GIVEN a 1 femto Bequel WHEN passed to a streaming operator THEN "
+          "result is '1fBq'") {
+  constexpr auto value = 1_fBq;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fBq");
+}
+
+TEST_CASE("GIVEN a 1 pico Bequel WHEN passed to a streaming operator THEN "
+          "result is '1pBq'") {
+  constexpr auto value = 1_pBq;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pBq");
+}
+
+TEST_CASE("GIVEN a 1 nano Bequel WHEN passed to a streaming operator THEN "
+          "result is '1pBq'") {
+  constexpr auto value = 1_nBq;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nBq");
+}
+
+TEST_CASE("GIVEN a 1 micro Bequel WHEN passed to a streaming operator THEN "
+          "result is '1uBq'") {
+  constexpr auto value = 1_uBq;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1uBq");
+}
+
+TEST_CASE("GIVEN a 1 milli Bequel WHEN passed to a streaming operator THEN "
+          "result is '1mBq'") {
+  constexpr auto value = 1_mBq;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mBq");
+}
+
+TEST_CASE("GIVEN a 1 Bequel WHEN passed to a streaming operator THEN result is "
+          "'1Bq'") {
+  constexpr auto value = 1_Bq;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Bq");
+}
+
+TEST_CASE("GIVEN a 1 kilo Bequel WHEN passed to a streaming operator THEN "
+          "result is '1kBq'") {
+  constexpr auto value = 1_kBq;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kBq");
+}
+
+TEST_CASE("GIVEN a 1 mega Bequel WHEN passed to a streaming operator THEN "
+          "result is '1MBq'") {
+  constexpr auto value = 1_MBq;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1MBq");
+}
+
+TEST_CASE("GIVEN a 1 giga Bequel WHEN passed to a streaming operator THEN "
+          "result is '1GBq'") {
+  constexpr auto value = 1_GBq;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1GBq");
+}
+
+TEST_CASE("GIVEN a 1 tera Bequel WHEN passed to a streaming operator THEN "
+          "result is '1TBq'") {
+  constexpr auto value = 1_TBq;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1TBq");
+}
+
+TEST_CASE("GIVEN a 1 exa Bequel WHEN passed to a streaming operator THEN "
+          "result is '1EBq'") {
+  constexpr auto value = 1_EBq;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1EBq");
+}
+
+TEST_CASE("GIVEN a 1 peta Bequel WHEN passed to a streaming operator THEN "
+          "result is '1PBq'") {
+  constexpr auto value = 1_PBq;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1PBq");
 }

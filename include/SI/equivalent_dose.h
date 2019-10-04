@@ -12,12 +12,13 @@
 
 #include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
+#include "detail/streaming.h"
 #include "detail/unit.h"
 
 namespace SI {
 
 template <typename _type, class _ratio = std::ratio<1>>
-using equivalent_dose_t = detail::unit_t<'D', 1, _type, _ratio>;
+using equivalent_dose_t = detail::unit_t<'H', 1, _type, _ratio>;
 
 /// specific units
 template <typename _type>
@@ -46,6 +47,16 @@ template <typename _type>
 using peta_sievert_t = equivalent_dose_t<_type, std::peta>;
 template <typename _type>
 using exa_sievert_t = equivalent_dose_t<_type, std::exa>;
+
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'H', std::ratio<1>>
+    : SI::detail::unit_symbol_impl<'S', 'v'> {};
+
+template <typename _ratio>
+struct unit_symbol<'H', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'S',
+                                   'v'> {};
 
 inline namespace literals {
 template <char... _digits> constexpr atto_sievert_t<int64_t> operator""_aSv() {

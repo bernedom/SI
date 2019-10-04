@@ -1,6 +1,8 @@
 #include <catch.hpp>
 
 #include <SI/equivalent_dose.h>
+#include <SI/stream.h>
+#include <sstream>
 
 using namespace SI::literals;
 TEST_CASE("GIVEN a value WHEN constructed with literal _aSv THEN result is a "
@@ -170,4 +172,109 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _ESv THEN result is a "
   STATIC_REQUIRE(
       std::is_same<decltype(one_f),
                    const SI::equivalent_dose_t<long double, std::exa>>::value);
+}
+
+TEST_CASE("GIVEN a 1 atto Sievert WHEN passed to a streaming operator THEN "
+          "result is '1aSv'") {
+  constexpr auto value = 1_aSv;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1aSv");
+}
+
+TEST_CASE("GIVEN a 1 femto Sievert WHEN passed to a streaming operator THEN "
+          "result is '1fSv'") {
+  constexpr auto value = 1_fSv;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1fSv");
+}
+
+TEST_CASE("GIVEN a 1 pico Sievert WHEN passed to a streaming operator THEN "
+          "result is '1pSv'") {
+  constexpr auto value = 1_pSv;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1pSv");
+}
+
+TEST_CASE("GIVEN a 1 nano Sievert WHEN passed to a streaming operator THEN "
+          "result is '1pSv'") {
+  constexpr auto value = 1_nSv;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1nSv");
+}
+
+TEST_CASE("GIVEN a 1 micro Sievert WHEN passed to a streaming operator THEN "
+          "result is '1uSv'") {
+  constexpr auto value = 1_uSv;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1uSv");
+}
+
+TEST_CASE("GIVEN a 1 milli Sievert WHEN passed to a streaming operator THEN "
+          "result is '1mSv'") {
+  constexpr auto value = 1_mSv;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1mSv");
+}
+
+TEST_CASE(
+    "GIVEN a 1 Sievert WHEN passed to a streaming operator THEN result is "
+    "'1Sv'") {
+  constexpr auto value = 1_Sv;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1Sv");
+}
+
+TEST_CASE("GIVEN a 1 kilo Sievert WHEN passed to a streaming operator THEN "
+          "result is '1kSv'") {
+  constexpr auto value = 1_kSv;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1kSv");
+}
+
+TEST_CASE("GIVEN a 1 mega Sievert WHEN passed to a streaming operator THEN "
+          "result is '1MSv'") {
+  constexpr auto value = 1_MSv;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1MSv");
+}
+
+TEST_CASE("GIVEN a 1 giga Sievert WHEN passed to a streaming operator THEN "
+          "result is '1GSv'") {
+  constexpr auto value = 1_GSv;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1GSv");
+}
+
+TEST_CASE("GIVEN a 1 tera Sievert WHEN passed to a streaming operator THEN "
+          "result is '1TSv'") {
+  constexpr auto value = 1_TSv;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1TSv");
+}
+
+TEST_CASE("GIVEN a 1 exa Sievert WHEN passed to a streaming operator THEN "
+          "result is '1ESv'") {
+  constexpr auto value = 1_ESv;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1ESv");
+}
+
+TEST_CASE("GIVEN a 1 peta Sievert WHEN passed to a streaming operator THEN "
+          "result is '1PSv'") {
+  constexpr auto value = 1_PSv;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == "1PSv");
 }
