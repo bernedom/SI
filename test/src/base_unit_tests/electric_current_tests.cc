@@ -278,3 +278,144 @@ TEST_CASE("GIVEN a 1 peta ampere WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1PA");
 }
+
+TEST_CASE(
+    "GIVEN a string of '1aA' WHEN streamed into atto_ampere_t THEN result "
+    "is a value of 1 atto_ampere_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1aA";
+  SI::atto_ampere_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_aA);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fA' WHEN streamed into femto_ampere_t THEN result "
+    "is a value of 1 femto_ampere_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fA";
+  SI::femto_ampere_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fA);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1pA' WHEN streamed into pico_ampere_t THEN result "
+    "is a value of 1 pico_ampere_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pA";
+  SI::pico_ampere_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pA);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1nA' WHEN streamed into nano_ampere_t THEN result "
+    "is a value of 1 nano_ampere_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nA";
+  SI::nano_ampere_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nA);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1uA' WHEN streamed into micro_ampere_t THEN result "
+    "is a value of 1 micro_ampere_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1uA";
+  SI::micro_ampere_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_uA);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mA' WHEN streamed into milli_ampere_t THEN result "
+    "is a value of 1 milli_ampere_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mA";
+  SI::milli_ampere_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mA);
+}
+
+TEST_CASE("GIVEN a string of '1A' WHEN streamed into ampere_t THEN result "
+          "is a value of 1 ampere_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1A";
+  SI::ampere_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_A);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1kA' WHEN streamed into kilo_ampere_t THEN result "
+    "is a value of 1 kilo_ampere_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kA";
+  SI::kilo_ampere_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kA);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1MA' WHEN streamed into mega_ampere_t THEN result "
+    "is a value of 1 mega_ampere_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1MA";
+  SI::mega_ampere_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_MA);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1GA' WHEN streamed into giga_ampere_t THEN result "
+    "is a value of 1 giga_ampere_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1GA";
+  SI::giga_ampere_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_GA);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1TA' WHEN streamed into tera_ampere_t THEN result "
+    "is a value of 1 tera_ampere_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1TA";
+  SI::tera_ampere_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_TA);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1PA' WHEN streamed into peta_ampere_t THEN result "
+    "is a value of 1 peta_ampere_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1PA";
+  SI::peta_ampere_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_PA);
+}
+
+TEST_CASE("GIVEN a string of '1EA' WHEN streamed into exa_ampere_t THEN result "
+          "is a value of 1 exa_ampere_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1EA";
+  SI::exa_ampere_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_EA);
+}
