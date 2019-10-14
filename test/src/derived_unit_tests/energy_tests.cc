@@ -346,3 +346,136 @@ TEST_CASE("GIVEN a 1 peta Joule WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1PJ");
 }
+
+TEST_CASE("GIVEN a string of '1aJ' WHEN streamed into atto_joule_t THEN result "
+          "is a value of 1 atto_joule_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1aJ";
+  SI::atto_joule_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_aJ);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fJ' WHEN streamed into femto_joule_t THEN result "
+    "is a value of 1 femto_joule_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fJ";
+  SI::femto_joule_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fJ);
+}
+
+TEST_CASE("GIVEN a string of '1pJ' WHEN streamed into pico_joule_t THEN result "
+          "is a value of 1 pico_joule_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pJ";
+  SI::pico_joule_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pJ);
+}
+
+TEST_CASE("GIVEN a string of '1nJ' WHEN streamed into nano_joule_t THEN result "
+          "is a value of 1 nano_joule_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nJ";
+  SI::nano_joule_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nJ);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1uJ' WHEN streamed into micro_joule_t THEN result "
+    "is a value of 1 micro_joule_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1uJ";
+  SI::micro_joule_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_uJ);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mJ' WHEN streamed into milli_joule_t THEN result "
+    "is a value of 1 milli_joule_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mJ";
+  SI::milli_joule_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mJ);
+}
+
+TEST_CASE("GIVEN a string of '1J' WHEN streamed into joule_t THEN result "
+          "is a value of 1 joule_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1J";
+  SI::joule_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_J);
+}
+
+TEST_CASE("GIVEN a string of '1kJ' WHEN streamed into kilo_joule_t THEN result "
+          "is a value of 1 kilo_joule_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kJ";
+  SI::kilo_joule_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kJ);
+}
+
+TEST_CASE("GIVEN a string of '1MJ' WHEN streamed into mega_joule_t THEN result "
+          "is a value of 1 mega_joule_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1MJ";
+  SI::mega_joule_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_MJ);
+}
+
+TEST_CASE("GIVEN a string of '1GJ' WHEN streamed into giga_joule_t THEN result "
+          "is a value of 1 giga_joule_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1GJ";
+  SI::giga_joule_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_GJ);
+}
+
+TEST_CASE("GIVEN a string of '1TJ' WHEN streamed into tera_joule_t THEN result "
+          "is a value of 1 tera_joule_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1TJ";
+  SI::tera_joule_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_TJ);
+}
+
+TEST_CASE("GIVEN a string of '1PJ' WHEN streamed into peta_joule_t THEN result "
+          "is a value of 1 peta_joule_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1PJ";
+  SI::peta_joule_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_PJ);
+}
+
+TEST_CASE("GIVEN a string of '1EJ' WHEN streamed into exa_joule_t THEN result "
+          "is a value of 1 exa_joule_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1EJ";
+  SI::exa_joule_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_EJ);
+}
