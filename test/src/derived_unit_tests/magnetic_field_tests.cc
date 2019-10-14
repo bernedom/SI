@@ -311,3 +311,136 @@ TEST_CASE("GIVEN a 1 peta Tesla WTEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1PT");
 }
+
+TEST_CASE("GIVEN a string of '1aT' WHEN streamed into atto_tesla_t THEN result "
+          "is a value of 1 atto_tesla_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1aT";
+  SI::atto_tesla_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_aT);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fT' WHEN streamed into femto_tesla_t THEN result "
+    "is a value of 1 femto_tesla_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fT";
+  SI::femto_tesla_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fT);
+}
+
+TEST_CASE("GIVEN a string of '1pT' WHEN streamed into pico_tesla_t THEN result "
+          "is a value of 1 pico_tesla_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pT";
+  SI::pico_tesla_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pT);
+}
+
+TEST_CASE("GIVEN a string of '1nT' WHEN streamed into nano_tesla_t THEN result "
+          "is a value of 1 nano_tesla_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nT";
+  SI::nano_tesla_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nT);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1uT' WHEN streamed into micro_tesla_t THEN result "
+    "is a value of 1 micro_tesla_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1uT";
+  SI::micro_tesla_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_uT);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mT' WHEN streamed into milli_tesla_t THEN result "
+    "is a value of 1 milli_tesla_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mT";
+  SI::milli_tesla_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mT);
+}
+
+TEST_CASE("GIVEN a string of '1T' WHEN streamed into tesla_t THEN result "
+          "is a value of 1 tesla_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1T";
+  SI::tesla_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_T);
+}
+
+TEST_CASE("GIVEN a string of '1kT' WHEN streamed into kilo_tesla_t THEN result "
+          "is a value of 1 kilo_tesla_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kT";
+  SI::kilo_tesla_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kT);
+}
+
+TEST_CASE("GIVEN a string of '1MT' WHEN streamed into mega_tesla_t THEN result "
+          "is a value of 1 mega_tesla_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1MT";
+  SI::mega_tesla_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_MT);
+}
+
+TEST_CASE("GIVEN a string of '1GT' WHEN streamed into giga_tesla_t THEN result "
+          "is a value of 1 giga_tesla_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1GT";
+  SI::giga_tesla_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_GT);
+}
+
+TEST_CASE("GIVEN a string of '1TT' WHEN streamed into tera_tesla_t THEN result "
+          "is a value of 1 tera_tesla_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1TT";
+  SI::tera_tesla_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_TT);
+}
+
+TEST_CASE("GIVEN a string of '1PT' WHEN streamed into peta_tesla_t THEN result "
+          "is a value of 1 peta_tesla_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1PT";
+  SI::peta_tesla_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_PT);
+}
+
+TEST_CASE("GIVEN a string of '1ET' WHEN streamed into exa_tesla_t THEN result "
+          "is a value of 1 exa_tesla_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1ET";
+  SI::exa_tesla_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_ET);
+}
