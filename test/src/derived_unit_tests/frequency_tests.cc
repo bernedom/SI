@@ -276,3 +276,136 @@ TEST_CASE("GIVEN a 1 peta Hertz WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1PHz");
 }
+
+TEST_CASE("GIVEN a string of '1aHz' WHEN streamed into atto_hertz_t THEN result "
+          "is a value of 1 atto_hertz_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1aHz";
+  SI::atto_hertz_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_aHz);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fHz' WHEN streamed into femto_hertz_t THEN result "
+    "is a value of 1 femto_hertz_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fHz";
+  SI::femto_hertz_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fHz);
+}
+
+TEST_CASE("GIVEN a string of '1pHz' WHEN streamed into pico_hertz_t THEN result "
+          "is a value of 1 pico_hertz_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pHz";
+  SI::pico_hertz_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pHz);
+}
+
+TEST_CASE("GIVEN a string of '1nHz' WHEN streamed into nano_hertz_t THEN result "
+          "is a value of 1 nano_hertz_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nHz";
+  SI::nano_hertz_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nHz);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1uHz' WHEN streamed into micro_hertz_t THEN result "
+    "is a value of 1 micro_hertz_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1uHz";
+  SI::micro_hertz_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_uHz);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mHz' WHEN streamed into milli_hertz_t THEN result "
+    "is a value of 1 milli_hertz_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mHz";
+  SI::milli_hertz_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mHz);
+}
+
+TEST_CASE("GIVEN a string of '1Hz' WHEN streamed into hertz_t THEN result "
+          "is a value of 1 hertz_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Hz";
+  SI::hertz_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Hz);
+}
+
+TEST_CASE("GIVEN a string of '1kHz' WHEN streamed into kilo_hertz_t THEN result "
+          "is a value of 1 kilo_hertz_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kHz";
+  SI::kilo_hertz_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kHz);
+}
+
+TEST_CASE("GIVEN a string of '1MHz' WHEN streamed into mega_hertz_t THEN result "
+          "is a value of 1 mega_hertz_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1MHz";
+  SI::mega_hertz_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_MHz);
+}
+
+TEST_CASE("GIVEN a string of '1GHz' WHEN streamed into giga_hertz_t THEN result "
+          "is a value of 1 giga_hertz_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1GHz";
+  SI::giga_hertz_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_GHz);
+}
+
+TEST_CASE("GIVEN a string of '1THz' WHEN streamed into tera_hertz_t THEN result "
+          "is a value of 1 tera_hertz_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1THz";
+  SI::tera_hertz_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_THz);
+}
+
+TEST_CASE("GIVEN a string of '1PHz' WHEN streamed into peta_hertz_t THEN result "
+          "is a value of 1 peta_hertz_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1PHz";
+  SI::peta_hertz_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_PHz);
+}
+
+TEST_CASE("GIVEN a string of '1EHz' WHEN streamed into exa_hertz_t THEN result "
+          "is a value of 1 exa_hertz_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1EHz";
+  SI::exa_hertz_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_EHz);
+}
