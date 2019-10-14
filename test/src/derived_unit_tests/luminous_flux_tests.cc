@@ -322,3 +322,136 @@ TEST_CASE("GIVEN a 1 peta Lumen WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1Plm");
 }
+
+TEST_CASE("GIVEN a string of '1alm' WHEN streamed into atto_lumen_t THEN result "
+          "is a value of 1 atto_lumen_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1alm";
+  SI::atto_lumen_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_alm);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1flm' WHEN streamed into femto_lumen_t THEN result "
+    "is a value of 1 femto_lumen_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1flm";
+  SI::femto_lumen_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_flm);
+}
+
+TEST_CASE("GIVEN a string of '1plm' WHEN streamed into pico_lumen_t THEN result "
+          "is a value of 1 pico_lumen_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1plm";
+  SI::pico_lumen_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_plm);
+}
+
+TEST_CASE("GIVEN a string of '1nlm' WHEN streamed into nano_lumen_t THEN result "
+          "is a value of 1 nano_lumen_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nlm";
+  SI::nano_lumen_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nlm);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1ulm' WHEN streamed into micro_lumen_t THEN result "
+    "is a value of 1 micro_lumen_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1ulm";
+  SI::micro_lumen_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_ulm);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mlm' WHEN streamed into milli_lumen_t THEN result "
+    "is a value of 1 milli_lumen_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mlm";
+  SI::milli_lumen_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mlm);
+}
+
+TEST_CASE("GIVEN a string of '1lm' WHEN streamed into lumen_t THEN result "
+          "is a value of 1 lumen_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1lm";
+  SI::lumen_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_lm);
+}
+
+TEST_CASE("GIVEN a string of '1klm' WHEN streamed into kilo_lumen_t THEN result "
+          "is a value of 1 kilo_lumen_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1klm";
+  SI::kilo_lumen_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_klm);
+}
+
+TEST_CASE("GIVEN a string of '1Mlm' WHEN streamed into mega_lumen_t THEN result "
+          "is a value of 1 mega_lumen_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Mlm";
+  SI::mega_lumen_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Mlm);
+}
+
+TEST_CASE("GIVEN a string of '1Glm' WHEN streamed into giga_lumen_t THEN result "
+          "is a value of 1 giga_lumen_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Glm";
+  SI::giga_lumen_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Glm);
+}
+
+TEST_CASE("GIVEN a string of '1Tlm' WHEN streamed into tera_lumen_t THEN result "
+          "is a value of 1 tera_lumen_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Tlm";
+  SI::tera_lumen_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Tlm);
+}
+
+TEST_CASE("GIVEN a string of '1Plm' WHEN streamed into peta_lumen_t THEN result "
+          "is a value of 1 peta_lumen_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Plm";
+  SI::peta_lumen_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Plm);
+}
+
+TEST_CASE("GIVEN a string of '1Elm' WHEN streamed into exa_lumen_t THEN result "
+          "is a value of 1 exa_lumen_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Elm";
+  SI::exa_lumen_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Elm);
+}

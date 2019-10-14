@@ -323,3 +323,136 @@ TEST_CASE("GIVEN a 1 peta Lux WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1Plx");
 }
+
+TEST_CASE("GIVEN a string of '1alx' WHEN streamed into atto_lux_t THEN result "
+          "is a value of 1 atto_lux_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1alx";
+  SI::atto_lux_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_alx);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1flx' WHEN streamed into femto_lux_t THEN result "
+    "is a value of 1 femto_lux_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1flx";
+  SI::femto_lux_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_flx);
+}
+
+TEST_CASE("GIVEN a string of '1plx' WHEN streamed into pico_lux_t THEN result "
+          "is a value of 1 pico_lux_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1plx";
+  SI::pico_lux_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_plx);
+}
+
+TEST_CASE("GIVEN a string of '1nlx' WHEN streamed into nano_lux_t THEN result "
+          "is a value of 1 nano_lux_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nlx";
+  SI::nano_lux_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nlx);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1ulx' WHEN streamed into micro_lux_t THEN result "
+    "is a value of 1 micro_lux_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1ulx";
+  SI::micro_lux_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_ulx);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mlx' WHEN streamed into milli_lux_t THEN result "
+    "is a value of 1 milli_lux_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mlx";
+  SI::milli_lux_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mlx);
+}
+
+TEST_CASE("GIVEN a string of '1lx' WHEN streamed into lux_t THEN result "
+          "is a value of 1 lux_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1lx";
+  SI::lux_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_lx);
+}
+
+TEST_CASE("GIVEN a string of '1klx' WHEN streamed into kilo_lux_t THEN result "
+          "is a value of 1 kilo_lux_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1klx";
+  SI::kilo_lux_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_klx);
+}
+
+TEST_CASE("GIVEN a string of '1Mlx' WHEN streamed into mega_lux_t THEN result "
+          "is a value of 1 mega_lux_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Mlx";
+  SI::mega_lux_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Mlx);
+}
+
+TEST_CASE("GIVEN a string of '1Glx' WHEN streamed into giga_lux_t THEN result "
+          "is a value of 1 giga_lux_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Glx";
+  SI::giga_lux_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Glx);
+}
+
+TEST_CASE("GIVEN a string of '1Tlx' WHEN streamed into tera_lux_t THEN result "
+          "is a value of 1 tera_lux_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Tlx";
+  SI::tera_lux_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Tlx);
+}
+
+TEST_CASE("GIVEN a string of '1Plx' WHEN streamed into peta_lux_t THEN result "
+          "is a value of 1 peta_lux_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Plx";
+  SI::peta_lux_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Plx);
+}
+
+TEST_CASE("GIVEN a string of '1Elx' WHEN streamed into exa_lux_t THEN result "
+          "is a value of 1 exa_lux_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Elx";
+  SI::exa_lux_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Elx);
+}
