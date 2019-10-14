@@ -191,3 +191,99 @@ TEST_CASE("GIVEN a 1 hour WHEN passed to a streaming operator THEN result is "
   ss << value;
   REQUIRE(ss.str() == "1h");
 }
+
+TEST_CASE(
+    "GIVEN a string of '1as' WHEN streamed into atto_seconds_t THEN result "
+    "is a value of 1 atto_seconds_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1as";
+  SI::atto_seconds_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_as);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fs' WHEN streamed into femto_seconds_t THEN result "
+    "is a value of 1 femto_seconds_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fs";
+  SI::femto_seconds_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fs);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1ps' WHEN streamed into pico_seconds_t THEN result "
+    "is a value of 1 pico_seconds_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1ps";
+  SI::pico_seconds_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_ps);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1ns' WHEN streamed into nano_seconds_t THEN result "
+    "is a value of 1 nano_seconds_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1ns";
+  SI::nano_seconds_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_ns);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1us' WHEN streamed into micro_seconds_t THEN result "
+    "is a value of 1 micro_seconds_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1us";
+  SI::micro_seconds_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_us);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1ms' WHEN streamed into milli_seconds_t THEN result "
+    "is a value of 1 milli_seconds_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1ms";
+  SI::milli_seconds_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_ms);
+}
+
+TEST_CASE("GIVEN a string of '1s' WHEN streamed into seconds_t THEN result "
+          "is a value of 1 seconds_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1s";
+  SI::seconds_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_s);
+}
+
+TEST_CASE("GIVEN a string of '1min' WHEN streamed into minutes_t THEN result "
+          "is a value of 1 minutes_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1min";
+  SI::minutes_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_min);
+}
+
+TEST_CASE("GIVEN a string of '1h' WHEN streamed into hours_t THEN result "
+          "is a value of 1 hours_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1h";
+  SI::hours_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_h);
+}
