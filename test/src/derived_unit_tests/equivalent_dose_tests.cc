@@ -278,3 +278,137 @@ TEST_CASE("GIVEN a 1 peta Sievert WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1PSv");
 }
+
+
+TEST_CASE("GIVEN a string of '1aSv' WHEN streamed into atto_sievert_t THEN result "
+          "is a value of 1 atto_sievert_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1aSv";
+  SI::atto_sievert_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_aSv);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fSv' WHEN streamed into femto_sievert_t THEN result "
+    "is a value of 1 femto_sievert_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fSv";
+  SI::femto_sievert_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fSv);
+}
+
+TEST_CASE("GIVEN a string of '1pSv' WHEN streamed into pico_sievert_t THEN result "
+          "is a value of 1 pico_sievert_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pSv";
+  SI::pico_sievert_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pSv);
+}
+
+TEST_CASE("GIVEN a string of '1nSv' WHEN streamed into nano_sievert_t THEN result "
+          "is a value of 1 nano_sievert_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nSv";
+  SI::nano_sievert_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nSv);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1uSv' WHEN streamed into micro_sievert_t THEN result "
+    "is a value of 1 micro_sievert_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1uSv";
+  SI::micro_sievert_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_uSv);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mSv' WHEN streamed into milli_sievert_t THEN result "
+    "is a value of 1 milli_sievert_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mSv";
+  SI::milli_sievert_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mSv);
+}
+
+TEST_CASE("GIVEN a string of '1Sv' WHEN streamed into sievert_t THEN result "
+          "is a value of 1 sievert_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Sv";
+  SI::sievert_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Sv);
+}
+
+TEST_CASE("GIVEN a string of '1kSv' WHEN streamed into kilo_sievert_t THEN result "
+          "is a value of 1 kilo_sievert_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kSv";
+  SI::kilo_sievert_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kSv);
+}
+
+TEST_CASE("GIVEN a string of '1MSv' WHEN streamed into mega_sievert_t THEN result "
+          "is a value of 1 mega_sievert_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1MSv";
+  SI::mega_sievert_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_MSv);
+}
+
+TEST_CASE("GIVEN a string of '1GSv' WHEN streamed into giga_sievert_t THEN result "
+          "is a value of 1 giga_sievert_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1GSv";
+  SI::giga_sievert_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_GSv);
+}
+
+TEST_CASE("GIVEN a string of '1TSv' WHEN streamed into tera_sievert_t THEN result "
+          "is a value of 1 tera_sievert_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1TSv";
+  SI::tera_sievert_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_TSv);
+}
+
+TEST_CASE("GIVEN a string of '1PSv' WHEN streamed into peta_sievert_t THEN result "
+          "is a value of 1 peta_sievert_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1PSv";
+  SI::peta_sievert_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_PSv);
+}
+
+TEST_CASE("GIVEN a string of '1ESv' WHEN streamed into exa_sievert_t THEN result "
+          "is a value of 1 exa_sievert_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1ESv";
+  SI::exa_sievert_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_ESv);
+}

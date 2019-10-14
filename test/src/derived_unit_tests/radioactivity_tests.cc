@@ -174,7 +174,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _EBq THEN result is a "
                    const SI::radioactivity_t<long double, std::exa>>::value);
 }
 
-TEST_CASE("GIVEN a 1 atto Bequel WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 atto becquerel WHEN passed to a streaming operator THEN "
           "result is '1aBq'") {
   constexpr auto value = 1_aBq;
   std::stringstream ss;
@@ -182,7 +182,7 @@ TEST_CASE("GIVEN a 1 atto Bequel WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1aBq");
 }
 
-TEST_CASE("GIVEN a 1 femto Bequel WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 femto becquerel WHEN passed to a streaming operator THEN "
           "result is '1fBq'") {
   constexpr auto value = 1_fBq;
   std::stringstream ss;
@@ -190,7 +190,7 @@ TEST_CASE("GIVEN a 1 femto Bequel WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1fBq");
 }
 
-TEST_CASE("GIVEN a 1 pico Bequel WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 pico becquerel WHEN passed to a streaming operator THEN "
           "result is '1pBq'") {
   constexpr auto value = 1_pBq;
   std::stringstream ss;
@@ -198,7 +198,7 @@ TEST_CASE("GIVEN a 1 pico Bequel WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1pBq");
 }
 
-TEST_CASE("GIVEN a 1 nano Bequel WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 nano becquerel WHEN passed to a streaming operator THEN "
           "result is '1pBq'") {
   constexpr auto value = 1_nBq;
   std::stringstream ss;
@@ -206,7 +206,7 @@ TEST_CASE("GIVEN a 1 nano Bequel WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1nBq");
 }
 
-TEST_CASE("GIVEN a 1 micro Bequel WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 micro becquerel WHEN passed to a streaming operator THEN "
           "result is '1uBq'") {
   constexpr auto value = 1_uBq;
   std::stringstream ss;
@@ -214,7 +214,7 @@ TEST_CASE("GIVEN a 1 micro Bequel WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1uBq");
 }
 
-TEST_CASE("GIVEN a 1 milli Bequel WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 milli becquerel WHEN passed to a streaming operator THEN "
           "result is '1mBq'") {
   constexpr auto value = 1_mBq;
   std::stringstream ss;
@@ -222,15 +222,16 @@ TEST_CASE("GIVEN a 1 milli Bequel WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1mBq");
 }
 
-TEST_CASE("GIVEN a 1 Bequel WHEN passed to a streaming operator THEN result is "
-          "'1Bq'") {
+TEST_CASE(
+    "GIVEN a 1 becquerel WHEN passed to a streaming operator THEN result is "
+    "'1Bq'") {
   constexpr auto value = 1_Bq;
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == "1Bq");
 }
 
-TEST_CASE("GIVEN a 1 kilo Bequel WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 kilo becquerel WHEN passed to a streaming operator THEN "
           "result is '1kBq'") {
   constexpr auto value = 1_kBq;
   std::stringstream ss;
@@ -238,7 +239,7 @@ TEST_CASE("GIVEN a 1 kilo Bequel WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1kBq");
 }
 
-TEST_CASE("GIVEN a 1 mega Bequel WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 mega becquerel WHEN passed to a streaming operator THEN "
           "result is '1MBq'") {
   constexpr auto value = 1_MBq;
   std::stringstream ss;
@@ -246,7 +247,7 @@ TEST_CASE("GIVEN a 1 mega Bequel WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1MBq");
 }
 
-TEST_CASE("GIVEN a 1 giga Bequel WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 giga becquerel WHEN passed to a streaming operator THEN "
           "result is '1GBq'") {
   constexpr auto value = 1_GBq;
   std::stringstream ss;
@@ -254,7 +255,7 @@ TEST_CASE("GIVEN a 1 giga Bequel WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1GBq");
 }
 
-TEST_CASE("GIVEN a 1 tera Bequel WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 tera becquerel WHEN passed to a streaming operator THEN "
           "result is '1TBq'") {
   constexpr auto value = 1_TBq;
   std::stringstream ss;
@@ -262,7 +263,7 @@ TEST_CASE("GIVEN a 1 tera Bequel WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1TBq");
 }
 
-TEST_CASE("GIVEN a 1 exa Bequel WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 exa becquerel WHEN passed to a streaming operator THEN "
           "result is '1EBq'") {
   constexpr auto value = 1_EBq;
   std::stringstream ss;
@@ -270,10 +271,152 @@ TEST_CASE("GIVEN a 1 exa Bequel WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1EBq");
 }
 
-TEST_CASE("GIVEN a 1 peta Bequel WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 peta becquerel WHEN passed to a streaming operator THEN "
           "result is '1PBq'") {
   constexpr auto value = 1_PBq;
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == "1PBq");
+}
+
+TEST_CASE(
+    "GIVEN a string of '1aBq' WHEN streamed into atto_becquerel_t THEN result "
+    "is a value of 1 atto_becquerel_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1aBq";
+  SI::atto_becquerel_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_aBq);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fBq' WHEN streamed into femto_becquerel_t THEN result "
+    "is a value of 1 femto_becquerel_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fBq";
+  SI::femto_becquerel_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fBq);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1pBq' WHEN streamed into pico_becquerel_t THEN result "
+    "is a value of 1 pico_becquerel_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pBq";
+  SI::pico_becquerel_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pBq);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1nBq' WHEN streamed into nano_becquerel_t THEN result "
+    "is a value of 1 nano_becquerel_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nBq";
+  SI::nano_becquerel_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nBq);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1uBq' WHEN streamed into micro_becquerel_t THEN result "
+    "is a value of 1 micro_becquerel_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1uBq";
+  SI::micro_becquerel_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_uBq);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mBq' WHEN streamed into milli_becquerel_t THEN result "
+    "is a value of 1 milli_becquerel_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mBq";
+  SI::milli_becquerel_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mBq);
+}
+
+TEST_CASE("GIVEN a string of '1Bq' WHEN streamed into becquerel_t THEN result "
+          "is a value of 1 becquerel_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Bq";
+  SI::becquerel_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Bq);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1kBq' WHEN streamed into kilo_becquerel_t THEN result "
+    "is a value of 1 kilo_becquerel_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kBq";
+  SI::kilo_becquerel_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kBq);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1MBq' WHEN streamed into mega_becquerel_t THEN result "
+    "is a value of 1 mega_becquerel_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1MBq";
+  SI::mega_becquerel_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_MBq);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1GBq' WHEN streamed into giga_becquerel_t THEN result "
+    "is a value of 1 giga_becquerel_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1GBq";
+  SI::giga_becquerel_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_GBq);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1TBq' WHEN streamed into tera_becquerel_t THEN result "
+    "is a value of 1 tera_becquerel_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1TBq";
+  SI::tera_becquerel_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_TBq);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1PBq' WHEN streamed into peta_becquerel_t THEN result "
+    "is a value of 1 peta_becquerel_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1PBq";
+  SI::peta_becquerel_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_PBq);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1EBq' WHEN streamed into exa_becquerel_t THEN result "
+    "is a value of 1 exa_becquerel_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1EBq";
+  SI::exa_becquerel_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_EBq);
 }

@@ -278,3 +278,136 @@ TEST_CASE("GIVEN a 1 peta Gray WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1PGy");
 }
+
+TEST_CASE("GIVEN a string of '1aGy' WHEN streamed into atto_gray_t THEN result "
+          "is a value of 1 atto_gray_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1aGy";
+  SI::atto_gray_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_aGy);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fGy' WHEN streamed into femto_gray_t THEN result "
+    "is a value of 1 femto_gray_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fGy";
+  SI::femto_gray_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fGy);
+}
+
+TEST_CASE("GIVEN a string of '1pGy' WHEN streamed into pico_gray_t THEN result "
+          "is a value of 1 pico_gray_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pGy";
+  SI::pico_gray_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pGy);
+}
+
+TEST_CASE("GIVEN a string of '1nGy' WHEN streamed into nano_gray_t THEN result "
+          "is a value of 1 nano_gray_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nGy";
+  SI::nano_gray_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nGy);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1uGy' WHEN streamed into micro_gray_t THEN result "
+    "is a value of 1 micro_gray_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1uGy";
+  SI::micro_gray_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_uGy);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mGy' WHEN streamed into milli_gray_t THEN result "
+    "is a value of 1 milli_gray_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mGy";
+  SI::milli_gray_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mGy);
+}
+
+TEST_CASE("GIVEN a string of '1Gy' WHEN streamed into gray_t THEN result "
+          "is a value of 1 gray_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Gy";
+  SI::gray_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Gy);
+}
+
+TEST_CASE("GIVEN a string of '1kGy' WHEN streamed into kilo_gray_t THEN result "
+          "is a value of 1 kilo_gray_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kGy";
+  SI::kilo_gray_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kGy);
+}
+
+TEST_CASE("GIVEN a string of '1MGy' WHEN streamed into mega_gray_t THEN result "
+          "is a value of 1 mega_gray_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1MGy";
+  SI::mega_gray_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_MGy);
+}
+
+TEST_CASE("GIVEN a string of '1GGy' WHEN streamed into giga_gray_t THEN result "
+          "is a value of 1 giga_gray_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1GGy";
+  SI::giga_gray_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_GGy);
+}
+
+TEST_CASE("GIVEN a string of '1TGy' WHEN streamed into tera_gray_t THEN result "
+          "is a value of 1 tera_gray_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1TGy";
+  SI::tera_gray_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_TGy);
+}
+
+TEST_CASE("GIVEN a string of '1PGy' WHEN streamed into peta_gray_t THEN result "
+          "is a value of 1 peta_gray_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1PGy";
+  SI::peta_gray_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_PGy);
+}
+
+TEST_CASE("GIVEN a string of '1EGy' WHEN streamed into exa_gray_t THEN result "
+          "is a value of 1 exa_gray_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1EGy";
+  SI::exa_gray_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_EGy);
+}
