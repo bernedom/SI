@@ -278,3 +278,143 @@ TEST_CASE("GIVEN a 1 peta Kelvin WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1PK");
 }
+TEST_CASE(
+    "GIVEN a string of '1aK' WHEN streamed into atto_kelvin_t THEN result "
+    "is a value of 1 atto_kelvin_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1aK";
+  SI::atto_kelvin_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_aK);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fK' WHEN streamed into femto_kelvin_t THEN result "
+    "is a value of 1 femto_kelvin_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fK";
+  SI::femto_kelvin_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fK);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1pK' WHEN streamed into pico_kelvin_t THEN result "
+    "is a value of 1 pico_kelvin_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pK";
+  SI::pico_kelvin_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pK);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1nK' WHEN streamed into nano_kelvin_t THEN result "
+    "is a value of 1 nano_kelvin_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nK";
+  SI::nano_kelvin_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nK);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1uK' WHEN streamed into micro_kelvin_t THEN result "
+    "is a value of 1 micro_kelvin_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1uK";
+  SI::micro_kelvin_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_uK);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mK' WHEN streamed into milli_kelvin_t THEN result "
+    "is a value of 1 milli_kelvin_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mK";
+  SI::milli_kelvin_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mK);
+}
+
+TEST_CASE("GIVEN a string of '1K' WHEN streamed into kelvin_t THEN result "
+          "is a value of 1 kelvin_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1K";
+  SI::kelvin_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_K);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1kK' WHEN streamed into kilo_kelvin_t THEN result "
+    "is a value of 1 kilo_kelvin_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kK";
+  SI::kilo_kelvin_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kK);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1MK' WHEN streamed into mega_kelvin_t THEN result "
+    "is a value of 1 mega_kelvin_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1MK";
+  SI::mega_kelvin_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_MK);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1GK' WHEN streamed into giga_kelvin_t THEN result "
+    "is a value of 1 giga_kelvin_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1GK";
+  SI::giga_kelvin_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_GK);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1TK' WHEN streamed into tera_kelvin_t THEN result "
+    "is a value of 1 tera_kelvin_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1TK";
+  SI::tera_kelvin_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_TK);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1PK' WHEN streamed into peta_kelvin_t THEN result "
+    "is a value of 1 peta_kelvin_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1PK";
+  SI::peta_kelvin_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_PK);
+}
+
+TEST_CASE("GIVEN a string of '1EK' WHEN streamed into exa_kelvin_t THEN result "
+          "is a value of 1 exa_kelvin_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1EK";
+  SI::exa_kelvin_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_EK);
+}
