@@ -364,3 +364,136 @@ TEST_CASE("GIVEN a string of '1x' WHEN streamed into metre_t THEN conversion "
 
   REQUIRE(ss.fail());
 }
+
+TEST_CASE("GIVEN a string of '1am' WHEN streamed into atto_metre_t THEN result "
+          "is a value of 1 atto_metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1am";
+  SI::atto_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_am);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fm' WHEN streamed into femto_metre_t THEN result "
+    "is a value of 1 femto_metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fm";
+  SI::femto_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fm);
+}
+
+TEST_CASE("GIVEN a string of '1pm' WHEN streamed into pico_metre_t THEN result "
+          "is a value of 1 pico_metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pm";
+  SI::pico_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pm);
+}
+
+TEST_CASE("GIVEN a string of '1nm' WHEN streamed into nano_metre_t THEN result "
+          "is a value of 1 nano_metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nm";
+  SI::nano_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nm);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1um' WHEN streamed into micro_metre_t THEN result "
+    "is a value of 1 micro_metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1um";
+  SI::micro_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_um);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mm' WHEN streamed into milli_metre_t THEN result "
+    "is a value of 1 milli_metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mm";
+  SI::milli_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mm);
+}
+
+TEST_CASE("GIVEN a string of '1m' WHEN streamed into metre_t THEN result "
+          "is a value of 1 metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1m";
+  SI::metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_m);
+}
+
+TEST_CASE("GIVEN a string of '1km' WHEN streamed into kilo_metre_t THEN result "
+          "is a value of 1 kilo_metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1km";
+  SI::kilo_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_km);
+}
+
+TEST_CASE("GIVEN a string of '1Mm' WHEN streamed into mega_metre_t THEN result "
+          "is a value of 1 mega_metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Mm";
+  SI::mega_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Mm);
+}
+
+TEST_CASE("GIVEN a string of '1Gm' WHEN streamed into giga_metre_t THEN result "
+          "is a value of 1 giga_metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Gm";
+  SI::giga_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Gm);
+}
+
+TEST_CASE("GIVEN a string of '1Tm' WHEN streamed into tera_metre_t THEN result "
+          "is a value of 1 tera_metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Tm";
+  SI::tera_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Tm);
+}
+
+TEST_CASE("GIVEN a string of '1Pm' WHEN streamed into peta_metre_t THEN result "
+          "is a value of 1 peta_metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Pm";
+  SI::peta_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Pm);
+}
+
+TEST_CASE("GIVEN a string of '1Em' WHEN streamed into exa_metre_t THEN result "
+          "is a value of 1 exa_metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Em";
+  SI::exa_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Em);
+}
