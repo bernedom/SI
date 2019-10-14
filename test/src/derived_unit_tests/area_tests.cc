@@ -213,3 +213,69 @@ TEST_CASE(
   ss << value;
   REQUIRE(ss.str() == "1m3");
 }
+
+TEST_CASE("GIVEN a string of '1mm2' WHEN streamed into square_milli_metre_t "
+          "THEN result "
+          "is a value of 1 milli_square metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mm2";
+  SI::square_milli_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mm2);
+}
+
+TEST_CASE("GIVEN a string of '1cm2' WHEN streamed into square_centimetre_t "
+          "THEN result "
+          "is a value of 1 kilo_square metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1cm2";
+  SI::square_centi_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_cm2);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1m2' WHEN streamed into square_metre_t THEN result "
+    "is a value of 1 square metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1m2";
+  SI::square_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_m2);
+}
+
+TEST_CASE("GIVEN a string of '1mm3' WHEN streamed into cubic_milli_metre_t "
+          "THEN result "
+          "is a value of 1 milli_cubic metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mm3";
+  SI::cubic_milli_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mm3);
+}
+
+TEST_CASE("GIVEN a string of '1cm3' WHEN streamed into cubic_centimetre_t "
+          "THEN result "
+          "is a value of 1 kilo_cubic metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1cm3";
+  SI::cubic_centi_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_cm3);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1m3' WHEN streamed into cubic_metre_t THEN result "
+    "is a value of 1 cubic metre_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1m3";
+  SI::cubic_metre_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_m3);
+}
