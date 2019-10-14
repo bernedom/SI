@@ -279,3 +279,135 @@ TEST_CASE("GIVEN a 1 peta candela WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1Pcd");
 }
+TEST_CASE("GIVEN a string of '1acd' WHEN streamed into atto_candela_t THEN result "
+          "is a value of 1 atto_candela_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1acd";
+  SI::atto_candela_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_acd);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fcd' WHEN streamed into femto_candela_t THEN result "
+    "is a value of 1 femto_candela_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fcd";
+  SI::femto_candela_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fcd);
+}
+
+TEST_CASE("GIVEN a string of '1pcd' WHEN streamed into pico_candela_t THEN result "
+          "is a value of 1 pico_candela_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pcd";
+  SI::pico_candela_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pcd);
+}
+
+TEST_CASE("GIVEN a string of '1ncd' WHEN streamed into nano_candela_t THEN result "
+          "is a value of 1 nano_candela_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1ncd";
+  SI::nano_candela_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_ncd);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1ucd' WHEN streamed into micro_candela_t THEN result "
+    "is a value of 1 micro_candela_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1ucd";
+  SI::micro_candela_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_ucd);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mcd' WHEN streamed into milli_candela_t THEN result "
+    "is a value of 1 milli_candela_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mcd";
+  SI::milli_candela_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mcd);
+}
+
+TEST_CASE("GIVEN a string of '1cd' WHEN streamed into candela_t THEN result "
+          "is a value of 1 candela_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1cd";
+  SI::candela_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_cd);
+}
+
+TEST_CASE("GIVEN a string of '1kcd' WHEN streamed into kilo_candela_t THEN result "
+          "is a value of 1 kilo_candela_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kcd";
+  SI::kilo_candela_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kcd);
+}
+
+TEST_CASE("GIVEN a string of '1Mcd' WHEN streamed into mega_candela_t THEN result "
+          "is a value of 1 mega_candela_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Mcd";
+  SI::mega_candela_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Mcd);
+}
+
+TEST_CASE("GIVEN a string of '1Gcd' WHEN streamed into giga_candela_t THEN result "
+          "is a value of 1 giga_candela_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Gcd";
+  SI::giga_candela_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Gcd);
+}
+
+TEST_CASE("GIVEN a string of '1Tcd' WHEN streamed into tera_candela_t THEN result "
+          "is a value of 1 tera_candela_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Tcd";
+  SI::tera_candela_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Tcd);
+}
+
+TEST_CASE("GIVEN a string of '1Pcd' WHEN streamed into peta_candela_t THEN result "
+          "is a value of 1 peta_candela_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Pcd";
+  SI::peta_candela_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Pcd);
+}
+
+TEST_CASE("GIVEN a string of '1Ecd' WHEN streamed into exa_candela_t THEN result "
+          "is a value of 1 exa_candela_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Ecd";
+  SI::exa_candela_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Ecd);
+}
