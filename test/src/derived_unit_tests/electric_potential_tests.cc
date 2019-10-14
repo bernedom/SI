@@ -374,3 +374,136 @@ TEST_CASE("GIVEN a 1 peta Volt WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1PV");
 }
+
+TEST_CASE("GIVEN a string of '1aV' WHEN streamed into atto_volt_t THEN result "
+          "is a value of 1 atto_volt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1aV";
+  SI::atto_volt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_aV);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fV' WHEN streamed into femto_volt_t THEN result "
+    "is a value of 1 femto_volt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fV";
+  SI::femto_volt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fV);
+}
+
+TEST_CASE("GIVEN a string of '1pV' WHEN streamed into pico_volt_t THEN result "
+          "is a value of 1 pico_volt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pV";
+  SI::pico_volt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pV);
+}
+
+TEST_CASE("GIVEN a string of '1nV' WHEN streamed into nano_volt_t THEN result "
+          "is a value of 1 nano_volt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nV";
+  SI::nano_volt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nV);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1uV' WHEN streamed into micro_volt_t THEN result "
+    "is a value of 1 micro_volt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1uV";
+  SI::micro_volt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_uV);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mV' WHEN streamed into milli_volt_t THEN result "
+    "is a value of 1 milli_volt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mV";
+  SI::milli_volt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mV);
+}
+
+TEST_CASE("GIVEN a string of '1V' WHEN streamed into volt_t THEN result "
+          "is a value of 1 volt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1V";
+  SI::volt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_V);
+}
+
+TEST_CASE("GIVEN a string of '1kV' WHEN streamed into kilo_volt_t THEN result "
+          "is a value of 1 kilo_volt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kV";
+  SI::kilo_volt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kV);
+}
+
+TEST_CASE("GIVEN a string of '1MV' WHEN streamed into mega_volt_t THEN result "
+          "is a value of 1 mega_volt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1MV";
+  SI::mega_volt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_MV);
+}
+
+TEST_CASE("GIVEN a string of '1GV' WHEN streamed into giga_volt_t THEN result "
+          "is a value of 1 giga_volt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1GV";
+  SI::giga_volt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_GV);
+}
+
+TEST_CASE("GIVEN a string of '1TV' WHEN streamed into tera_volt_t THEN result "
+          "is a value of 1 tera_volt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1TV";
+  SI::tera_volt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_TV);
+}
+
+TEST_CASE("GIVEN a string of '1PV' WHEN streamed into peta_volt_t THEN result "
+          "is a value of 1 peta_volt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1PV";
+  SI::peta_volt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_PV);
+}
+
+TEST_CASE("GIVEN a string of '1EV' WHEN streamed into exa_volt_t THEN result "
+          "is a value of 1 exa_volt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1EV";
+  SI::exa_volt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_EV);
+}

@@ -359,3 +359,145 @@ TEST_CASE("GIVEN a 1 peta Siemens WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1PS");
 }
+
+TEST_CASE(
+    "GIVEN a string of '1aS' WHEN streamed into atto_siemens_t THEN result "
+    "is a value of 1 atto_siemens_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1aS";
+  SI::atto_siemens_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_aS);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fS' WHEN streamed into femto_siemens_t THEN result "
+    "is a value of 1 femto_siemens_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fS";
+  SI::femto_siemens_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fS);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1pS' WHEN streamed into pico_siemens_t THEN result "
+    "is a value of 1 pico_siemens_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pS";
+  SI::pico_siemens_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pS);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1nS' WHEN streamed into nano_siemens_t THEN result "
+    "is a value of 1 nano_siemens_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nS";
+  SI::nano_siemens_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nS);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1uS' WHEN streamed into micro_siemens_t THEN result "
+    "is a value of 1 micro_siemens_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1uS";
+  SI::micro_siemens_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_uS);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mS' WHEN streamed into milli_siemens_t THEN result "
+    "is a value of 1 milli_siemens_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mS";
+  SI::milli_siemens_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mS);
+}
+
+TEST_CASE("GIVEN a string of '1S' WHEN streamed into siemens_t THEN result "
+          "is a value of 1 siemens_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1S";
+  SI::siemens_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_S);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1kS' WHEN streamed into kilo_siemens_t THEN result "
+    "is a value of 1 kilo_siemens_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kS";
+  SI::kilo_siemens_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kS);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1MS' WHEN streamed into mega_siemens_t THEN result "
+    "is a value of 1 mega_siemens_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1MS";
+  SI::mega_siemens_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_MS);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1GS' WHEN streamed into giga_siemens_t THEN result "
+    "is a value of 1 giga_siemens_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1GS";
+  SI::giga_siemens_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_GS);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1TS' WHEN streamed into tera_siemens_t THEN result "
+    "is a value of 1 tera_siemens_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1TS";
+  SI::tera_siemens_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_TS);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1PS' WHEN streamed into peta_siemens_t THEN result "
+    "is a value of 1 peta_siemens_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1PS";
+  SI::peta_siemens_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_PS);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1ES' WHEN streamed into exa_siemens_t THEN result "
+    "is a value of 1 exa_siemens_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1ES";
+  SI::exa_siemens_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_ES);
+}
