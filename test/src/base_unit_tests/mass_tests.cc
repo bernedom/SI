@@ -162,3 +162,83 @@ TEST_CASE("GIVEN a 1 mega gram WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1t");
 }
+
+TEST_CASE("GIVEN a string of '1fg' WHEN streamed into femto_gram_t THEN result "
+          "is a value of 1 femto_gram_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fg";
+  SI::femto_gram_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fg);
+}
+
+TEST_CASE("GIVEN a string of '1pg' WHEN streamed into pico_gram_t THEN result "
+          "is a value of 1 pico_gram_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pg";
+  SI::pico_gram_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pg);
+}
+
+TEST_CASE("GIVEN a string of '1ng' WHEN streamed into nano_gram_t THEN result "
+          "is a value of 1 nano_gram_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1ng";
+  SI::nano_gram_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_ng);
+}
+
+TEST_CASE("GIVEN a string of '1ug' WHEN streamed into micro_gram_t THEN result "
+          "is a value of 1 micro_gram_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1ug";
+  SI::micro_gram_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_ug);
+}
+
+TEST_CASE("GIVEN a string of '1mg' WHEN streamed into milli_gram_t THEN result "
+          "is a value of 1 milli_gram_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mg";
+  SI::milli_gram_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mg);
+}
+
+TEST_CASE("GIVEN a string of '1g' WHEN streamed into gram_t THEN result "
+          "is a value of 1 gram_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1g";
+  SI::gram_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_g);
+}
+
+TEST_CASE("GIVEN a string of '1kg' WHEN streamed into kilo_gram_t THEN result "
+          "is a value of 1 kilo_gram_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kg";
+  SI::kilo_gram_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kg);
+}
+
+TEST_CASE("GIVEN a string of '1t' WHEN streamed into ton_t THEN result "
+          "is a value of 1 ton_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1t";
+  SI::ton_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_t);
+}
