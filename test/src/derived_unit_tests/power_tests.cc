@@ -308,3 +308,136 @@ TEST_CASE("GIVEN a 1 peta Watt WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1PW");
 }
+
+TEST_CASE("GIVEN a string of '1aW' WHEN streamed into atto_watt_t THEN result "
+          "is a value of 1 atto_watt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1aW";
+  SI::atto_watt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_aW);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fW' WHEN streamed into femto_watt_t THEN result "
+    "is a value of 1 femto_watt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fW";
+  SI::femto_watt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fW);
+}
+
+TEST_CASE("GIVEN a string of '1pW' WHEN streamed into pico_watt_t THEN result "
+          "is a value of 1 pico_watt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pW";
+  SI::pico_watt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pW);
+}
+
+TEST_CASE("GIVEN a string of '1nW' WHEN streamed into nano_watt_t THEN result "
+          "is a value of 1 nano_watt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nW";
+  SI::nano_watt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nW);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1uW' WHEN streamed into micro_watt_t THEN result "
+    "is a value of 1 micro_watt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1uW";
+  SI::micro_watt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_uW);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mW' WHEN streamed into milli_watt_t THEN result "
+    "is a value of 1 milli_watt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mW";
+  SI::milli_watt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mW);
+}
+
+TEST_CASE("GIVEN a string of '1W' WHEN streamed into watt_t THEN result "
+          "is a value of 1 watt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1W";
+  SI::watt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_W);
+}
+
+TEST_CASE("GIVEN a string of '1kW' WHEN streamed into kilo_watt_t THEN result "
+          "is a value of 1 kilo_watt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kW";
+  SI::kilo_watt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kW);
+}
+
+TEST_CASE("GIVEN a string of '1MW' WHEN streamed into mega_watt_t THEN result "
+          "is a value of 1 mega_watt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1MW";
+  SI::mega_watt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_MW);
+}
+
+TEST_CASE("GIVEN a string of '1GW' WHEN streamed into giga_watt_t THEN result "
+          "is a value of 1 giga_watt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1GW";
+  SI::giga_watt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_GW);
+}
+
+TEST_CASE("GIVEN a string of '1TW' WHEN streamed into tera_watt_t THEN result "
+          "is a value of 1 tera_watt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1TW";
+  SI::tera_watt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_TW);
+}
+
+TEST_CASE("GIVEN a string of '1PW' WHEN streamed into peta_watt_t THEN result "
+          "is a value of 1 peta_watt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1PW";
+  SI::peta_watt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_PW);
+}
+
+TEST_CASE("GIVEN a string of '1EW' WHEN streamed into exa_watt_t THEN result "
+          "is a value of 1 exa_watt_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1EW";
+  SI::exa_watt_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_EW);
+}

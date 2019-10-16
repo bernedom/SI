@@ -6,8 +6,10 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ec7f65662b91480a9968bd77bd32c66c)](https://www.codacy.com/app/bernedom/SI?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bernedom/SI&amp;utm_campaign=Badge_Grade)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/bernedom/SI.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/bernedom/SI/context:cpp)
 
+
+
 # SI - Type safety for physical units
-A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units).
+A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units). For a quick start see [the installation guide](https://github.com/bernedom/SI/blob/master/doc/installation-guide.md).
 
 An illustrative example:
 ```cpp
@@ -37,7 +39,7 @@ It is possible to supply custom ratios to the  built-in types and they are fully
 ## SI Base units
 
 For each Unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the internation system of units](https://en.wikipedia.org/wiki/Metric_prefix)
-The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. `metre_t, milli_metre_t, kilo_metre_t`. The prefix or interfix is marked with an `*` in the tables below.
+The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. `metre_t, milli_metre_t, kilo_metre_t`. The prefix or interfix is marked with an `*` in the tables below. Units which have defined typedefs and literals can be converted to strings using [the stream operators](doc/implentation-details.md#implementation-details-of-si). 
 
 | Unit                        | Dimension Symbol | Unit Symbol | implemented ratios                                  | unit typedefs                     |
 | --------------------------- | ---------------- | ----------- | --------------------------------------------------- | --------------------------------- |

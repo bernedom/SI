@@ -324,3 +324,136 @@ TEST_CASE("GIVEN a 1 peta Henry WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1PH");
 }
+
+TEST_CASE("GIVEN a string of '1aH' WHEN streamed into atto_henry_t THEN result "
+          "is a value of 1 atto_henry_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1aH";
+  SI::atto_henry_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_aH);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fH' WHEN streamed into femto_henry_t THEN result "
+    "is a value of 1 femto_henry_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fH";
+  SI::femto_henry_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fH);
+}
+
+TEST_CASE("GIVEN a string of '1pH' WHEN streamed into pico_henry_t THEN result "
+          "is a value of 1 pico_henry_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pH";
+  SI::pico_henry_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pH);
+}
+
+TEST_CASE("GIVEN a string of '1nH' WHEN streamed into nano_henry_t THEN result "
+          "is a value of 1 nano_henry_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nH";
+  SI::nano_henry_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nH);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1uH' WHEN streamed into micro_henry_t THEN result "
+    "is a value of 1 micro_henry_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1uH";
+  SI::micro_henry_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_uH);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mH' WHEN streamed into milli_henry_t THEN result "
+    "is a value of 1 milli_henry_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mH";
+  SI::milli_henry_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mH);
+}
+
+TEST_CASE("GIVEN a string of '1H' WHEN streamed into henry_t THEN result "
+          "is a value of 1 henry_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1H";
+  SI::henry_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_H);
+}
+
+TEST_CASE("GIVEN a string of '1kH' WHEN streamed into kilo_henry_t THEN result "
+          "is a value of 1 kilo_henry_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kH";
+  SI::kilo_henry_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kH);
+}
+
+TEST_CASE("GIVEN a string of '1MH' WHEN streamed into mega_henry_t THEN result "
+          "is a value of 1 mega_henry_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1MH";
+  SI::mega_henry_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_MH);
+}
+
+TEST_CASE("GIVEN a string of '1GH' WHEN streamed into giga_henry_t THEN result "
+          "is a value of 1 giga_henry_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1GH";
+  SI::giga_henry_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_GH);
+}
+
+TEST_CASE("GIVEN a string of '1TH' WHEN streamed into tera_henry_t THEN result "
+          "is a value of 1 tera_henry_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1TH";
+  SI::tera_henry_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_TH);
+}
+
+TEST_CASE("GIVEN a string of '1PH' WHEN streamed into peta_henry_t THEN result "
+          "is a value of 1 peta_henry_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1PH";
+  SI::peta_henry_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_PH);
+}
+
+TEST_CASE("GIVEN a string of '1EH' WHEN streamed into exa_henry_t THEN result "
+          "is a value of 1 exa_henry_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1EH";
+  SI::exa_henry_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_EH);
+}

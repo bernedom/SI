@@ -325,3 +325,136 @@ TEST_CASE("GIVEN a 1 peta katal WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1Pkat");
 }
+
+TEST_CASE("GIVEN a string of '1akat' WHEN streamed into atto_katal_t THEN result "
+          "is a value of 1 atto_katal_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1akat";
+  SI::atto_katal_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_akat);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fkat' WHEN streamed into femto_katal_t THEN result "
+    "is a value of 1 femto_katal_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fkat";
+  SI::femto_katal_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fkat);
+}
+
+TEST_CASE("GIVEN a string of '1pkat' WHEN streamed into pico_katal_t THEN result "
+          "is a value of 1 pico_katal_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pkat";
+  SI::pico_katal_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pkat);
+}
+
+TEST_CASE("GIVEN a string of '1nkat' WHEN streamed into nano_katal_t THEN result "
+          "is a value of 1 nano_katal_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nkat";
+  SI::nano_katal_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nkat);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1ukat' WHEN streamed into micro_katal_t THEN result "
+    "is a value of 1 micro_katal_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1ukat";
+  SI::micro_katal_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_ukat);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mkat' WHEN streamed into milli_katal_t THEN result "
+    "is a value of 1 milli_katal_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mkat";
+  SI::milli_katal_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mkat);
+}
+
+TEST_CASE("GIVEN a string of '1kat' WHEN streamed into katal_t THEN result "
+          "is a value of 1 katal_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kat";
+  SI::katal_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kat);
+}
+
+TEST_CASE("GIVEN a string of '1kkat' WHEN streamed into kilo_katal_t THEN result "
+          "is a value of 1 kilo_katal_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kkat";
+  SI::kilo_katal_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kkat);
+}
+
+TEST_CASE("GIVEN a string of '1Mkat' WHEN streamed into mega_katal_t THEN result "
+          "is a value of 1 mega_katal_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Mkat";
+  SI::mega_katal_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Mkat);
+}
+
+TEST_CASE("GIVEN a string of '1Gkat' WHEN streamed into giga_katal_t THEN result "
+          "is a value of 1 giga_katal_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Gkat";
+  SI::giga_katal_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Gkat);
+}
+
+TEST_CASE("GIVEN a string of '1Tkat' WHEN streamed into tera_katal_t THEN result "
+          "is a value of 1 tera_katal_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Tkat";
+  SI::tera_katal_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Tkat);
+}
+
+TEST_CASE("GIVEN a string of '1Pkat' WHEN streamed into peta_katal_t THEN result "
+          "is a value of 1 peta_katal_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Pkat";
+  SI::peta_katal_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Pkat);
+}
+
+TEST_CASE("GIVEN a string of '1Ekat' WHEN streamed into exa_katal_t THEN result "
+          "is a value of 1 exa_katal_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Ekat";
+  SI::exa_katal_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Ekat);
+}

@@ -155,3 +155,80 @@ TEST_CASE(
   ss << value;
   REQUIRE(ss.str() == "1sr");
 }
+
+TEST_CASE("GIVEN a string of '1asr' WHEN streamed into atto_sterradiant_t THEN "
+          "result "
+          "is a value of 1 atto_sterradiant_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1asr";
+  SI::atto_sterradiant_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_asr);
+}
+
+TEST_CASE("GIVEN a string of '1fsr' WHEN streamed into femto_sterradiant_t "
+          "THEN result "
+          "is a value of 1 femto_sterradiant_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fsr";
+  SI::femto_sterradiant_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fsr);
+}
+
+TEST_CASE("GIVEN a string of '1psr' WHEN streamed into pico_sterradiant_t THEN "
+          "result "
+          "is a value of 1 pico_sterradiant_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1psr";
+  SI::pico_sterradiant_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_psr);
+}
+
+TEST_CASE("GIVEN a string of '1nsr' WHEN streamed into nano_sterradiant_t THEN "
+          "result "
+          "is a value of 1 nano_sterradiant_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nsr";
+  SI::nano_sterradiant_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nsr);
+}
+
+TEST_CASE("GIVEN a string of '1usr' WHEN streamed into micro_sterradiant_t "
+          "THEN result "
+          "is a value of 1 micro_sterradiant_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1usr";
+  SI::micro_sterradiant_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_usr);
+}
+
+TEST_CASE("GIVEN a string of '1msr' WHEN streamed into milli_sterradiant_t "
+          "THEN result "
+          "is a value of 1 milli_sterradiant_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1msr";
+  SI::milli_sterradiant_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_msr);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1sr' WHEN streamed into sterradiant_t THEN result "
+    "is a value of 1 sterradiant_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1sr";
+  SI::sterradiant_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_sr);
+}

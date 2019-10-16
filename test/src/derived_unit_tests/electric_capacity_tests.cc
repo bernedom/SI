@@ -328,3 +328,136 @@ TEST_CASE("GIVEN a 1 peta Farad WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == "1PF");
 }
+
+TEST_CASE("GIVEN a string of '1aF' WHEN streamed into atto_farad_t THEN result "
+          "is a value of 1 atto_farad_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1aF";
+  SI::atto_farad_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_aF);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1fF' WHEN streamed into femto_farad_t THEN result "
+    "is a value of 1 femto_farad_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1fF";
+  SI::femto_farad_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_fF);
+}
+
+TEST_CASE("GIVEN a string of '1pF' WHEN streamed into pico_farad_t THEN result "
+          "is a value of 1 pico_farad_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1pF";
+  SI::pico_farad_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_pF);
+}
+
+TEST_CASE("GIVEN a string of '1nF' WHEN streamed into nano_farad_t THEN result "
+          "is a value of 1 nano_farad_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1nF";
+  SI::nano_farad_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_nF);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1uF' WHEN streamed into micro_farad_t THEN result "
+    "is a value of 1 micro_farad_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1uF";
+  SI::micro_farad_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_uF);
+}
+
+TEST_CASE(
+    "GIVEN a string of '1mF' WHEN streamed into milli_farad_t THEN result "
+    "is a value of 1 milli_farad_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1mF";
+  SI::milli_farad_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_mF);
+}
+
+TEST_CASE("GIVEN a string of '1F' WHEN streamed into farad_t THEN result "
+          "is a value of 1 farad_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1F";
+  SI::farad_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_F);
+}
+
+TEST_CASE("GIVEN a string of '1kF' WHEN streamed into kilo_farad_t THEN result "
+          "is a value of 1 kilo_farad_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1kF";
+  SI::kilo_farad_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_kF);
+}
+
+TEST_CASE("GIVEN a string of '1MF' WHEN streamed into mega_farad_t THEN result "
+          "is a value of 1 mega_farad_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1MF";
+  SI::mega_farad_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_MF);
+}
+
+TEST_CASE("GIVEN a string of '1GF' WHEN streamed into giga_farad_t THEN result "
+          "is a value of 1 giga_farad_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1GF";
+  SI::giga_farad_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_GF);
+}
+
+TEST_CASE("GIVEN a string of '1TF' WHEN streamed into tera_farad_t THEN result "
+          "is a value of 1 tera_farad_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1TF";
+  SI::tera_farad_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_TF);
+}
+
+TEST_CASE("GIVEN a string of '1PF' WHEN streamed into peta_farad_t THEN result "
+          "is a value of 1 peta_farad_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1PF";
+  SI::peta_farad_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_PF);
+}
+
+TEST_CASE("GIVEN a string of '1EF' WHEN streamed into exa_farad_t THEN result "
+          "is a value of 1 exa_farad_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1EF";
+  SI::exa_farad_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_EF);
+}

@@ -58,9 +58,12 @@ struct unit_t {
 
   /// Construct with value v
   constexpr unit_t(_type v) : value_{v} {}
+  // @todo consider making that private and friending operator>>
+  constexpr unit_t() = default;
 
   /// returns the stored value as raw type
   constexpr _type raw_value() const { return value_; }
+  void set_raw_value(_type v) { value_ = v; }
 
   /// Comparison operator takes considers different ratios, i.e. 1000
   /// micros === 1 milli
