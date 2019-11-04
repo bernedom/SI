@@ -34,9 +34,20 @@ testVersionNumberConsistency()
     cd ${ROOT_DIR};
     CONAN_VERSION=$(python3 -c 'from conanfile import SiConan; print(SiConan.version)')
     cd ${ORIG_DIR}
+    GIT_VERSION_EXACT=$(git describe --tags | grep -E -o '^[0-9]+\.[0-9]+\.[0-9]+$')
+    
     
     assertEquals "version in changelog (${CHANGELOG_VERSION}) does not match cmake version (${CMAKE_VERSION})" $CHANGELOG_VERSION $CMAKE_VERSION
     assertEquals "version in cmake (${CMAKE_VERSION}) does not match conan version (${CONAN_VERSION})" $CMAKE_VERSION $CONAN_VERSION
+    
+    if [ "${GIT_VERSION_EXACT}" != "" ]; then
+        assertEquals "version in files (${CMAKE_VERSION}) does not match git tag for release  (${GIT_VERSION_EXACT})" ${CMAKE_VERSION} ${GIT_VERSION_EXACT}
+    else
+        GIT_VERSION=$(git describe --tags | grep -E -o '^[0-9]+\.[0-9]+\.[0-9]+')
+        assertNotEquals "version in files (${CMAKE_VERSION}) matches already existing release (${GIT_VERSION}):" ${CMAKE_VERSION} ${GIT_VERSION}
+    fi
+    
+    
 }
 
 
