@@ -1,5 +1,9 @@
 # Changelog 
 
+## 1.3.1
+
+*   Put version number in file comments (and testing for it)
+
 ## 1.3.0
 
 *   Streaming operators for all dimension symbols
