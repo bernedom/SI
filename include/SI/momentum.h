@@ -4,6 +4,7 @@
  * for handling pyhsical values defined in the International System of
  * Units
  *
+ * https://github.com/bernedom/SI
  *
  * SPDX-License-Identifier: MIT
  *
@@ -14,8 +15,8 @@
 
 #include "detail/number_parser.h"
 #include "detail/unit.h"
-#include "velocity.h"
 #include "mass.h"
+#include "velocity.h"
 
 namespace SI {
 

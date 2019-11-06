@@ -4,6 +4,7 @@
  * for handling pyhsical values defined in the International System of
  * Units
  *
+ * https://github.com/bernedom/SI
  *
  * SPDX-License-Identifier: MIT
  *
