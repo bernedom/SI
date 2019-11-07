@@ -18,6 +18,8 @@ target_include_directories(
 
 target_compile_features(SI_detail_tests PRIVATE cxx_std_17)
 
+# TODO Add flags for Appleclang as it is not catched by the generator expression
+# below
 target_compile_options(
   SI_detail_tests
   PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>

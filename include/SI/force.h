@@ -1,10 +1,11 @@
 
 /**
- * This file is part of "SI",
+ * This file is part of "SI" version 1.3.1
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
  *
+ * https://github.com/bernedom/SI
  *
  * SPDX-License-Identifier: MIT
  *
