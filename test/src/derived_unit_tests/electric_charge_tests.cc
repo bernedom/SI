@@ -202,7 +202,7 @@ TEST_CASE("GIVEN value for electric charge WHEN divided by electric current "
   constexpr auto charge = 1_C;
   constexpr auto current = 1_A;
 
-  constexpr auto result = charge / current;
+  [[maybe_unused]] constexpr auto result = charge / current;
 
   STATIC_REQUIRE(is_same_ignore_const<decltype(result), decltype(1_s)>::value);
 }
@@ -211,7 +211,7 @@ TEST_CASE("GIVEN value for electric charge WHEN divided by time THEN result is "
           "electric current") {
   constexpr auto charge = 1_C;
   constexpr auto time = 1_s;
-  constexpr auto result = charge / time;
+  [[maybe_unused]] constexpr auto result = charge / time;
 
   STATIC_REQUIRE(is_same_ignore_const<decltype(result), decltype(1_A)>::value);
 }
@@ -410,8 +410,9 @@ TEST_CASE("GIVEN a 1 peta Coulomb WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1PC");
 }
 
-TEST_CASE("GIVEN a string of '1aC' WHEN streamed into atto_coulomb_t THEN result "
-          "is a value of 1 atto_coulomb_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1aC' WHEN streamed into atto_coulomb_t THEN result "
+    "is a value of 1 atto_coulomb_t AND stream is good") {
   std::stringstream ss;
   ss << "1aC";
   SI::atto_coulomb_t<int64_t> value{0};
@@ -431,8 +432,9 @@ TEST_CASE(
   REQUIRE(value == 1_fC);
 }
 
-TEST_CASE("GIVEN a string of '1pC' WHEN streamed into pico_coulomb_t THEN result "
-          "is a value of 1 pico_coulomb_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1pC' WHEN streamed into pico_coulomb_t THEN result "
+    "is a value of 1 pico_coulomb_t AND stream is good") {
   std::stringstream ss;
   ss << "1pC";
   SI::pico_coulomb_t<int64_t> value{0};
@@ -441,8 +443,9 @@ TEST_CASE("GIVEN a string of '1pC' WHEN streamed into pico_coulomb_t THEN result
   REQUIRE(value == 1_pC);
 }
 
-TEST_CASE("GIVEN a string of '1nC' WHEN streamed into nano_coulomb_t THEN result "
-          "is a value of 1 nano_coulomb_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1nC' WHEN streamed into nano_coulomb_t THEN result "
+    "is a value of 1 nano_coulomb_t AND stream is good") {
   std::stringstream ss;
   ss << "1nC";
   SI::nano_coulomb_t<int64_t> value{0};
@@ -483,8 +486,9 @@ TEST_CASE("GIVEN a string of '1C' WHEN streamed into coulomb_t THEN result "
   REQUIRE(value == 1_C);
 }
 
-TEST_CASE("GIVEN a string of '1kC' WHEN streamed into kilo_coulomb_t THEN result "
-          "is a value of 1 kilo_coulomb_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1kC' WHEN streamed into kilo_coulomb_t THEN result "
+    "is a value of 1 kilo_coulomb_t AND stream is good") {
   std::stringstream ss;
   ss << "1kC";
   SI::kilo_coulomb_t<int64_t> value{0};
@@ -493,8 +497,9 @@ TEST_CASE("GIVEN a string of '1kC' WHEN streamed into kilo_coulomb_t THEN result
   REQUIRE(value == 1_kC);
 }
 
-TEST_CASE("GIVEN a string of '1MC' WHEN streamed into mega_coulomb_t THEN result "
-          "is a value of 1 mega_coulomb_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1MC' WHEN streamed into mega_coulomb_t THEN result "
+    "is a value of 1 mega_coulomb_t AND stream is good") {
   std::stringstream ss;
   ss << "1MC";
   SI::mega_coulomb_t<int64_t> value{0};
@@ -503,8 +508,9 @@ TEST_CASE("GIVEN a string of '1MC' WHEN streamed into mega_coulomb_t THEN result
   REQUIRE(value == 1_MC);
 }
 
-TEST_CASE("GIVEN a string of '1GC' WHEN streamed into giga_coulomb_t THEN result "
-          "is a value of 1 giga_coulomb_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1GC' WHEN streamed into giga_coulomb_t THEN result "
+    "is a value of 1 giga_coulomb_t AND stream is good") {
   std::stringstream ss;
   ss << "1GC";
   SI::giga_coulomb_t<int64_t> value{0};
@@ -513,8 +519,9 @@ TEST_CASE("GIVEN a string of '1GC' WHEN streamed into giga_coulomb_t THEN result
   REQUIRE(value == 1_GC);
 }
 
-TEST_CASE("GIVEN a string of '1TC' WHEN streamed into tera_coulomb_t THEN result "
-          "is a value of 1 tera_coulomb_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1TC' WHEN streamed into tera_coulomb_t THEN result "
+    "is a value of 1 tera_coulomb_t AND stream is good") {
   std::stringstream ss;
   ss << "1TC";
   SI::tera_coulomb_t<int64_t> value{0};
@@ -523,8 +530,9 @@ TEST_CASE("GIVEN a string of '1TC' WHEN streamed into tera_coulomb_t THEN result
   REQUIRE(value == 1_TC);
 }
 
-TEST_CASE("GIVEN a string of '1PC' WHEN streamed into peta_coulomb_t THEN result "
-          "is a value of 1 peta_coulomb_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1PC' WHEN streamed into peta_coulomb_t THEN result "
+    "is a value of 1 peta_coulomb_t AND stream is good") {
   std::stringstream ss;
   ss << "1PC";
   SI::peta_coulomb_t<int64_t> value{0};
@@ -533,8 +541,9 @@ TEST_CASE("GIVEN a string of '1PC' WHEN streamed into peta_coulomb_t THEN result
   REQUIRE(value == 1_PC);
 }
 
-TEST_CASE("GIVEN a string of '1EC' WHEN streamed into exa_coulomb_t THEN result "
-          "is a value of 1 exa_coulomb_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1EC' WHEN streamed into exa_coulomb_t THEN result "
+    "is a value of 1 exa_coulomb_t AND stream is good") {
   std::stringstream ss;
   ss << "1EC";
   SI::exa_coulomb_t<int64_t> value{0};
