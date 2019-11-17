@@ -3,6 +3,7 @@
 ## 1.3.1
 
 *   Put version number in file comments (and testing for it)
+*   Overall linting
 
 ## 1.3.0
 
