@@ -9,9 +9,10 @@ TEMPLATE_TEST_CASE("GIVEN two values of the same unit type WHEN assigned with "
                    "[unit_t][operator*]", int64_t, long double) {
 
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{123};
-  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2 = v1;
+  unit_t<'X', 1, TestType, std::ratio<1>> v2{0};
+  v2 = v1;
 
-  STATIC_REQUIRE(v1 == v2);
+  REQUIRE(v1 == v2);
 }
 
 TEMPLATE_TEST_CASE(

@@ -68,6 +68,33 @@ testSISelfFailedCompilationWhenImplicitConversionDisabled() {
     assertNotEquals "Building fails" $? 0
 }
 
+testOperatorCopyAssignmentCompilesWhenDefaultInvocation()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_copy_assignment_test.cc.o
+    buildSingleTarget ${TARGET} DEFAULTBUILD PASS
+}
+
+
+testOperatorCopyAssignmentFailsWhenImplicitConversionDisabled()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_copy_assignment_test.cc.o
+    buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
+}
+
+testOperatorCopyAssigmentWithSameRatioCompilesWhenDefaultInvocation()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_copy_assignment_same_ratio_test.cc.o
+    buildSingleTarget ${TARGET} DEFAULTBUILD PASS
+}
+
+
+testOperatorCopyAssigmentWithSameRatioCompilesWhenImplicitConversionDisabled()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_copy_assignment_same_ratio_test.cc.o
+    buildSingleTarget ${TARGET} RESTRICTEDBUILD PASS
+}
+
+
 testOperatorEqualsCompilesWhenDefaultInvocation()
 {
     TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_equals_test.cc.o
@@ -133,6 +160,7 @@ testOperatorAddFailsWhenImplicitConversionDisabled()
     TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_add_test.cc.o
     buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
 }
+
 
 testOperatorAddAssignmentCompilesWhenDefaultInvocation()
 {

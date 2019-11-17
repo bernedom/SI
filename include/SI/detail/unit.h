@@ -80,6 +80,11 @@ struct unit_t {
 
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
+    static_assert(
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before assigning");
+
     *this = unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs);
     return *this;
   }

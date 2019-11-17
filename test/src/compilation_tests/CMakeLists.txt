@@ -24,4 +24,6 @@ target_sources(${PROJECT_NAME}
                operator_divide_from_integral_test.cc
                operator_divide_from_floating_point_test.cc
                parsing_overflow_test.cc
-               parsing_overflow_test_pass_compilation.cc)
+               parsing_overflow_test_pass_compilation.cc
+               operator_copy_assignment_test.cc
+               operator_copy_assignment_same_ratio_test.cc)
