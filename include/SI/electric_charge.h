@@ -60,8 +60,6 @@ struct unit_symbol<'Q', _ratio>
     : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value,
                                    'C'> {};
 
-/// @todo find out why the operators have to be in SI::detail
-/// maybe using preceeding :: helps
 namespace detail {
 BUILD_UNIT_FROM_MULTIPLICATION(electric_charge_t, electric_current_t, time_t)
 }
