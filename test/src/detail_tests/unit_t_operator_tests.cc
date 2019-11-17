@@ -15,6 +15,23 @@ TEMPLATE_TEST_CASE("GIVEN two values of the same unit type WHEN assigned with "
 }
 
 TEMPLATE_TEST_CASE(
+    "GIVEN two values of the same unit type AND different ratios WHEN assigned "
+    "with "
+    "= THEN the values are equal afterwards and ratios are preserved",
+    "[unit_t][operator*]", int64_t, long double) {
+
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1000};
+  unit_t<'X', 1, TestType, std::kilo> v2{0};
+  // due to guaranteed copy elision, this cannot be assigned at construction
+  // time
+  /// @todo check if this is still true if copy ctor is there as well
+  v2 = v1;
+
+  REQUIRE(v1 == v2);
+  REQUIRE(v2.raw_value() == 1);
+}
+
+TEMPLATE_TEST_CASE(
     "GIVEN two values with exponent 1 WHEN multiplied THEN exponent is 2",
     "[unit_t][operator*]", int64_t, long double) {
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{0};

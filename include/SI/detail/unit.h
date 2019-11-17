@@ -31,7 +31,8 @@ constexpr auto unit_cast(const _rhs_T &rhs);
 
 template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
 
-/// @todo add assignement operator, copy ctor, move ctor
+/// @todo add assignement operator, copy ctor for different ratios
+/// @todo move operator and ctor should only work for same ratio
 /// @todo add non-casting version of operators -= and +=
 
 /**
@@ -63,11 +64,29 @@ struct unit_t {
   constexpr unit_t() = default;
 
   /// returns the stored value as raw type
+  /// @todo rename to just value() and deprecate raw_value()
   constexpr _type raw_value() const { return value_; }
   void set_raw_value(_type v) { value_ = v; }
 
+  /// Assignment for same ratio
+  constexpr unit_t &operator=(const unit_t &rhs) = default;
+
+  /// Assignment if of same unit but different ratio
+  template <typename _rhs_ratio,
+            typename std::enable_if<
+                !std::ratio_equal<_rhs_ratio, _ratio>::value>::type * = nullptr>
+  constexpr auto &
+  operator=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) {
+
+    static_assert(detail::is_ratio<_rhs_ratio>::value,
+                  "_rhs_ratio is a std::ratio");
+    *this = unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs);
+    return *this;
+  }
+
   /// Comparison operator takes considers different ratios, i.e. 1000
-  /// micros === 1 milli
+  /// micro == 1 milli
+  ////@todo remove = std::ratio<1>
   template <typename _rhs_ratio = std::ratio<1>>
   constexpr bool
   operator==(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
