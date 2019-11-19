@@ -60,8 +60,20 @@ struct unit_t {
 
   /// Construct with value v
   constexpr unit_t(_type v) : value_{v} {}
-  // @todo consider making that private and friending operator>>
   constexpr unit_t() = default;
+  constexpr unit_t(const unit_t &) = default;
+
+  template <typename _rhs_ratio>
+  constexpr unit_t(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs)
+      : value_{unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs)
+                   .raw_value()} {
+    static_assert(detail::is_ratio<_rhs_ratio>::value,
+                  "_rhs_ratio is a std::ratio");
+    static_assert(
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before assigning");
+  }
 
   /// returns the stored value as raw type
   /// @todo rename to just value() and deprecate raw_value()

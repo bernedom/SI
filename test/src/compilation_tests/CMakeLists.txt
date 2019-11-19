@@ -10,6 +10,8 @@ target_link_libraries(${PROJECT_NAME} SI::SI)
 target_sources(${PROJECT_NAME}
                PRIVATE
                main.cc
+               copy_ctor_test.cc
+               copy_ctor_with_same_ratio_test.cc
                operator_equals_test.cc
                operator_lessthan_test.cc
                operator_greaterthan_test.cc

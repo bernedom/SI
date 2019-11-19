@@ -13,11 +13,11 @@ buildSingleTarget()
         assertEquals "Configuration successful" $? 0
         
     else
-        cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_CXX_FLAGS="-DSI_DISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja >/dev/null
+        cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_CXX_FLAGS="-DSI_DISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja > /dev/null
         assertEquals "Configuration successful" $? 0
     fi
     
-    cmake --build ${BUILD_DIR} --config Release --target $1
+    cmake --build ${BUILD_DIR} --config Release --target $1 > /dev/null
     RESULT=$?
     
     if [ "${3}" == "PASS" ]; then
@@ -32,8 +32,8 @@ oneTimeSetUp(){
     BUILD_DIR=$(mktemp -d)
     
     # install SI
-    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DBUILD_TESTING=off -G Ninja
-    cmake --build ${BUILD_DIR} --config Release --target install
+    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DBUILD_TESTING=off -G Ninja > /dev/null
+    cmake --build ${BUILD_DIR} --config Release --target install > /dev/null
     
     if [ -d ${BUILD_DIR} ]; then
         rm -rf ${BUILD_DIR}
@@ -52,20 +52,44 @@ tearDown(){
 
 testSISelfSuccessfulCompilationWhenDefaultInvocation() {
     
-    cmake ${ROOT_DIR} -B${BUILD_DIR} -G Ninja
+    cmake ${ROOT_DIR} -B${BUILD_DIR} -G Ninja > /dev/null
     assertEquals "Configuration successful" $? 0
-    cmake --build ${BUILD_DIR} --config Release
+    cmake --build ${BUILD_DIR} --config Release > /dev/null
     assertEquals "Building successful" $? 0
-    
-    
 }
 
 testSISelfFailedCompilationWhenImplicitConversionDisabled() {
     
-    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_CXX_FLAGS="-DSI_DISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja
+    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_CXX_FLAGS="-DSI_DISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja > /dev/null
     assertEquals "Configuration successful" $? 0
     cmake --build ${BUILD_DIR} --config Release
     assertNotEquals "Building fails" $? 0
+}
+
+testOperatorCopyCtorWithSameRatioCompilesWhenDefaultInvocation()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/copy_ctor_with_same_ratio_test.cc.o
+    buildSingleTarget ${TARGET} DEFAULTBUILD PASS
+}
+
+
+testOperatorCopyCtorWithSameRatioCompilesWhenImplicitConversionDisabled()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/copy_ctor_with_same_ratio_test.cc.o
+    buildSingleTarget ${TARGET} RESTRICTEDBUILD PASS
+}
+
+testOperatorCopyCtorCompilesWhenDefaultInvocation()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/copy_ctor_test.cc.o
+    buildSingleTarget ${TARGET} DEFAULTBUILD PASS
+}
+
+
+testOperatorCopyCtorFailsWhenImplicitConversionDisabled()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/copy_ctor_test.cc.o
+    buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
 }
 
 testOperatorCopyAssignmentCompilesWhenDefaultInvocation()
