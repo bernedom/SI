@@ -62,6 +62,7 @@ struct unit_t {
   constexpr unit_t(_type v) : value_{v} {}
   constexpr unit_t() = default;
   constexpr unit_t(const unit_t &) = default;
+  ~unit_t() = default;
 
   template <typename _rhs_ratio>
   constexpr unit_t(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs)
