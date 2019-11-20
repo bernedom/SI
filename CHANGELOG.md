@@ -2,7 +2,7 @@
 
 ## 1.4.0
 
-*   Assignment operator works for different ratios
+*   Rule of five: assignment and construction for units with different ratios
 
 ## 1.3.1
 
