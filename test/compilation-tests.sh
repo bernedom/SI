@@ -133,19 +133,43 @@ testOperatorCopyAssignmentFailsWhenImplicitConversionDisabled()
     buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
 }
 
-testOperatorCopyAssigmentWithSameRatioCompilesWhenDefaultInvocation()
+testOperatorCopyAssignmentWithSameRatioCompilesWhenDefaultInvocation()
 {
     TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_copy_assignment_same_ratio_test.cc.o
     buildSingleTarget ${TARGET} DEFAULTBUILD PASS
 }
 
 
-testOperatorCopyAssigmentWithSameRatioCompilesWhenImplicitConversionDisabled()
+testOperatorCopyAssignmentWithSameRatioCompilesWhenImplicitConversionDisabled()
 {
     TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_copy_assignment_same_ratio_test.cc.o
     buildSingleTarget ${TARGET} RESTRICTEDBUILD PASS
 }
 
+testOperatorMoveAssignmentCompilesWhenDefaultInvocation()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_move_assignment_test.cc.o
+    buildSingleTarget ${TARGET} DEFAULTBUILD PASS
+}
+
+
+testOperatorMoveAssignmentFailsWhenImplicitConversionDisabled()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_move_assignment_test.cc.o
+    buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
+}
+
+testOperatorMoveAssignmentWithSameRatioCompilesWhenDefaultInvocation()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_move_assignment_same_ratio_test.cc.o
+    buildSingleTarget ${TARGET} DEFAULTBUILD PASS
+}
+
+testOperatorMoveAssignmentWithSameRatioCompilesWhenImplicitConversionDisabled()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_move_assignment_same_ratio_test.cc.o
+    buildSingleTarget ${TARGET} RESTRICTEDBUILD PASS
+}
 
 testOperatorEqualsCompilesWhenDefaultInvocation()
 {
