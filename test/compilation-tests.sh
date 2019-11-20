@@ -92,6 +92,34 @@ testOperatorCopyCtorFailsWhenImplicitConversionDisabled()
     buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
 }
 
+testOperatorMoveCtorWithSameRatioCompilesWhenDefaultInvocation()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/move_ctor_with_same_ratio_test.cc.o
+    buildSingleTarget ${TARGET} DEFAULTBUILD PASS
+}
+
+
+testOperatorMoveCtorWithSameRatioCompilesWhenImplicitConversionDisabled()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/move_ctor_with_same_ratio_test.cc.o
+    buildSingleTarget ${TARGET} RESTRICTEDBUILD PASS
+}
+
+testOperatorMoveCtorCompilesWhenDefaultInvocation()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/move_ctor_test.cc.o
+    buildSingleTarget ${TARGET} DEFAULTBUILD PASS
+}
+
+
+testOperatorMoveCtorFailsWhenImplicitConversionDisabled()
+{
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/move_ctor_test.cc.o
+    buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
+}
+
+
+
 testOperatorCopyAssignmentCompilesWhenDefaultInvocation()
 {
     TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_copy_assignment_test.cc.o

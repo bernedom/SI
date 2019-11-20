@@ -31,8 +31,7 @@ constexpr auto unit_cast(const _rhs_T &rhs);
 
 template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
 
-/// @todo add assignement operator, copy ctor for different ratios
-/// @todo move operator and ctor should only work for same ratio
+/// @todo add in-place unit_cast for move operators
 /// @todo add non-casting version of operators -= and +=
 
 /**
@@ -99,11 +98,14 @@ struct unit_t {
   /// Assignment for same ratio
   constexpr unit_t &operator=(const unit_t &rhs) = default;
 
-  /// Assignment if of same unit but different ratio
+  /// Move assigmnment for same ratio
+  constexpr unit_t &operator=(unit_t &&rhs) = default;
+
+  /// Assignment of same unit but different ratio
   template <typename _rhs_ratio,
             typename std::enable_if<
                 !std::ratio_equal<_rhs_ratio, _ratio>::value>::type * = nullptr>
-  constexpr auto &
+  constexpr unit_t &
   operator=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) {
 
     static_assert(detail::is_ratio<_rhs_ratio>::value,
@@ -114,6 +116,25 @@ struct unit_t {
         "Implicit ratio conversion disabled, convert before assigning");
 
     *this = unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs);
+    return *this;
+  }
+
+  /// Move assignment of same unit but different ratio
+  template <typename _rhs_ratio,
+            typename std::enable_if<
+                !std::ratio_equal<_rhs_ratio, _ratio>::value>::type * = nullptr>
+  constexpr unit_t &
+  operator=(unit_t<_symbol, _exponent, _type, _rhs_ratio> &&rhs) {
+
+    static_assert(detail::is_ratio<_rhs_ratio>::value,
+                  "_rhs_ratio is a std::ratio");
+    static_assert(
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before assigning");
+
+    *this =
+        std::move(unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs));
     return *this;
   }
 

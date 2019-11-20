@@ -23,9 +23,6 @@ TEMPLATE_TEST_CASE(
 
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1000};
   unit_t<'X', 1, TestType, std::kilo> v2{0};
-  // due to guaranteed copy elision, this cannot be assigned at construction
-  // time
-  /// @todo check if this is still true if copy ctor is there as well
   v2 = v1;
 
   REQUIRE(v1 == v2);
@@ -65,6 +62,7 @@ TEMPLATE_TEST_CASE(
 
   REQUIRE(v1 == v2);
 }
+
 TEMPLATE_TEST_CASE(
     "GIVEN two values of the same unit type AND different ratios WHEN move "
     "constructed THEN the values are equal afterwards and ratios are preserved",
@@ -72,6 +70,33 @@ TEMPLATE_TEST_CASE(
 
   unit_t<'X', 1, TestType, std::ratio<1>> v1{1000};
   unit_t<'X', 1, TestType, std::kilo> v2{std::move(v1)};
+
+  REQUIRE(v1 == v2);
+  REQUIRE(v2.raw_value() == 1);
+}
+
+TEMPLATE_TEST_CASE("GIVEN two values of the same unit type WHEN move assigned"
+                   "THEN the values are equal afterwards",
+                   "[unit_t][operator*]", int64_t, long double) {
+
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{123};
+  unit_t<'X', 1, TestType, std::ratio<1>> v2{0};
+
+  v2 = std::move(v1);
+
+  REQUIRE(v1 == v2);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN two values of the same unit type AND different ratios WHEN move "
+    "assigned "
+    "with "
+    "= THEN the values are equal afterwards and ratios are preserved",
+    "[unit_t][operator*]", int64_t, long double) {
+
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1000};
+  unit_t<'X', 1, TestType, std::kilo> v2{0};
+  v2 = std::move(v1);
 
   REQUIRE(v1 == v2);
   REQUIRE(v2.raw_value() == 1);

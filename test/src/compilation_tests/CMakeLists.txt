@@ -12,6 +12,8 @@ target_sources(${PROJECT_NAME}
                main.cc
                copy_ctor_test.cc
                copy_ctor_with_same_ratio_test.cc
+               move_ctor_test.cc
+               move_ctor_with_same_ratio_test.cc
                operator_equals_test.cc
                operator_lessthan_test.cc
                operator_greaterthan_test.cc
