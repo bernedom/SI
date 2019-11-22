@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.3.1
+ * This file is part of "SI" version 1.4.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -37,7 +37,8 @@ using cubic_milli_metre_t = volume_t<_type, std::nano>;
 
 //@todo find a way to get the square root of the ratio to generalize the custom
 // types
-// specialize unit_symbol for usage with stream operators
+
+// specialized unit_symbol for usage with stream operators
 template <>
 struct unit_symbol<'L', std::ratio<1>, 2>
     : SI::detail::unit_symbol_impl<'m', '2'> {};

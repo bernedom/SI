@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.3.1
+ * This file is part of "SI" version 1.4.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -31,7 +31,7 @@ constexpr auto unit_cast(const _rhs_T &rhs);
 
 template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
 
-/// @todo add assignement operator, copy ctor, move ctor
+/// @todo add in-place unit_cast for move operators
 /// @todo add non-casting version of operators -= and +=
 
 /**
@@ -59,15 +59,88 @@ struct unit_t {
 
   /// Construct with value v
   constexpr unit_t(_type v) : value_{v} {}
-  // @todo consider making that private and friending operator>>
   constexpr unit_t() = default;
+  constexpr unit_t(const unit_t &) = default;
+  constexpr unit_t(unit_t &&) = default;
+
+  ~unit_t() = default;
+
+  template <typename _rhs_ratio>
+  constexpr unit_t(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs)
+      : value_{unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs)
+                   .raw_value()} {
+    static_assert(detail::is_ratio<_rhs_ratio>::value,
+                  "_rhs_ratio is a std::ratio");
+    static_assert(
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before assigning");
+  }
+
+  template <typename _rhs_ratio>
+  constexpr unit_t(unit_t<_symbol, _exponent, _type, _rhs_ratio> &&rhs)
+      : value_{
+            std::move(unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs)
+                          .raw_value())} {
+    static_assert(detail::is_ratio<_rhs_ratio>::value,
+                  "_rhs_ratio is a std::ratio");
+    static_assert(
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before assigning");
+  }
 
   /// returns the stored value as raw type
+  /// @todo rename to just value() and deprecate raw_value()
   constexpr _type raw_value() const { return value_; }
   void set_raw_value(_type v) { value_ = v; }
 
+  /// Assignment for same ratio
+  constexpr unit_t &operator=(const unit_t &rhs) = default;
+
+  /// Move assigmnment for same ratio
+  constexpr unit_t &operator=(unit_t &&rhs) = default;
+
+  /// Assignment of same unit but different ratio
+  template <typename _rhs_ratio,
+            typename std::enable_if<
+                !std::ratio_equal<_rhs_ratio, _ratio>::value>::type * = nullptr>
+  constexpr unit_t &
+  operator=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) {
+
+    static_assert(detail::is_ratio<_rhs_ratio>::value,
+                  "_rhs_ratio is a std::ratio");
+    static_assert(
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before assigning");
+
+    *this = unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs);
+    return *this;
+  }
+
+  /// Move assignment of same unit but different ratio
+  template <typename _rhs_ratio,
+            typename std::enable_if<
+                !std::ratio_equal<_rhs_ratio, _ratio>::value>::type * = nullptr>
+  constexpr unit_t &
+  operator=(unit_t<_symbol, _exponent, _type, _rhs_ratio> &&rhs) {
+
+    static_assert(detail::is_ratio<_rhs_ratio>::value,
+                  "_rhs_ratio is a std::ratio");
+    static_assert(
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before assigning");
+
+    *this =
+        std::move(unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs));
+    return *this;
+  }
+
   /// Comparison operator takes considers different ratios, i.e. 1000
-  /// micros === 1 milli
+  /// micro == 1 milli
+  ////@todo remove = std::ratio<1>
   template <typename _rhs_ratio = std::ratio<1>>
   constexpr bool
   operator==(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {

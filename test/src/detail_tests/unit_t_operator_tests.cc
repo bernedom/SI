@@ -4,6 +4,104 @@
 
 using namespace SI::detail;
 
+TEMPLATE_TEST_CASE("GIVEN two values of the same unit type WHEN assigned with "
+                   "= THEN the values are equal afterwards",
+                   "[unit_t][operator*]", int64_t, long double) {
+
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{123};
+  unit_t<'X', 1, TestType, std::ratio<1>> v2{0};
+  v2 = v1;
+
+  REQUIRE(v1 == v2);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN two values of the same unit type AND different ratios WHEN assigned "
+    "with "
+    "= THEN the values are equal afterwards and ratios are preserved",
+    "[unit_t][operator*]", int64_t, long double) {
+
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1000};
+  unit_t<'X', 1, TestType, std::kilo> v2{0};
+  v2 = v1;
+
+  REQUIRE(v1 == v2);
+  REQUIRE(v2.raw_value() == 1);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN two values of the same unit type WHEN copy constructed"
+    "THEN the values are equal afterwards",
+    "[unit_t][operator*]", int64_t, long double) {
+
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{123};
+  unit_t<'X', 1, TestType, std::ratio<1>> v2{v1};
+
+  REQUIRE(v1 == v2);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN two values of the same unit type AND different ratios WHEN copy "
+    "constructed THEN the values are equal afterwards and ratios are preserved",
+    "[unit_t][operator*]", int64_t, long double) {
+
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1000};
+  unit_t<'X', 1, TestType, std::kilo> v2{v1};
+
+  REQUIRE(v1 == v2);
+  REQUIRE(v2.raw_value() == 1);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN two values of the same unit type WHEN move constructed"
+    "THEN the values are equal afterwards",
+    "[unit_t][operator*]", int64_t, long double) {
+
+  unit_t<'X', 1, TestType, std::ratio<1>> v1{123};
+  unit_t<'X', 1, TestType, std::ratio<1>> v2{std::move(v1)};
+
+  REQUIRE(v1 == v2);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN two values of the same unit type AND different ratios WHEN move "
+    "constructed THEN the values are equal afterwards and ratios are preserved",
+    "[unit_t][operator*]", int64_t, long double) {
+
+  unit_t<'X', 1, TestType, std::ratio<1>> v1{1000};
+  unit_t<'X', 1, TestType, std::kilo> v2{std::move(v1)};
+
+  REQUIRE(v1 == v2);
+  REQUIRE(v2.raw_value() == 1);
+}
+
+TEMPLATE_TEST_CASE("GIVEN two values of the same unit type WHEN move assigned"
+                   "THEN the values are equal afterwards",
+                   "[unit_t][operator*]", int64_t, long double) {
+
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{123};
+  unit_t<'X', 1, TestType, std::ratio<1>> v2{0};
+
+  v2 = std::move(v1);
+
+  REQUIRE(v1 == v2);
+}
+
+TEMPLATE_TEST_CASE(
+    "GIVEN two values of the same unit type AND different ratios WHEN move "
+    "assigned "
+    "with "
+    "= THEN the values are equal afterwards and ratios are preserved",
+    "[unit_t][operator*]", int64_t, long double) {
+
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1000};
+  unit_t<'X', 1, TestType, std::kilo> v2{0};
+  v2 = std::move(v1);
+
+  REQUIRE(v1 == v2);
+  REQUIRE(v2.raw_value() == 1);
+}
+
 TEMPLATE_TEST_CASE(
     "GIVEN two values with exponent 1 WHEN multiplied THEN exponent is 2",
     "[unit_t][operator*]", int64_t, long double) {

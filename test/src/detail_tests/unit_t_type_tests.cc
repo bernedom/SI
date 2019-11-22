@@ -10,7 +10,7 @@ TEST_CASE("GIVEN a variable of type unit_t WHEN passed to is_unit THEN result "
   STATIC_REQUIRE(is_unit_t<decltype(v1)>::value == true);
 }
 
-TEMPLATE_TEST_CASE("GIVEN a variable of simple type WHEN passed to is?unit "
+TEMPLATE_TEST_CASE("GIVEN a variable of simple type WHEN passed to is_unit "
                    "THEN result false",
                    "[is unit test]", int, char, float, double) {
 
@@ -84,3 +84,5 @@ TEMPLATE_TEST_CASE(
   STATIC_REQUIRE(
       std::is_same<result_type, unit_t<'X', 1, TestType, std::milli>>::value);
 }
+
+// TEST_CASE("GIVEN A unit ")

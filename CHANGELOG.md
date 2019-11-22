@@ -1,5 +1,9 @@
 # Changelog 
 
+## 1.4.0
+
+*   Rule of five: assignment and construction for units with different ratios
+
 ## 1.3.1
 
 *   Put version number in file comments (and testing for it)
