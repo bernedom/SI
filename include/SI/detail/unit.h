@@ -32,7 +32,6 @@ constexpr auto unit_cast(const _rhs_T &rhs);
 template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
 
 /// @todo add in-place unit_cast for move operators
-/// @todo add non-casting version of operators -= and +=
 
 /**
  * @brief base template class for holding values of type _type to be multiplied
@@ -344,8 +343,16 @@ struct unit_t {
         unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).raw_value()};
   }
 
+  /// add-assign value of the same unit
+  constexpr unit_t &operator+=(const unit_t &rhs) {
+    value_ += rhs.raw_value();
+    return *this;
+  }
+
   /// add value of the same type but possibly different ratio
-  template <typename _rhs_ratio>
+  template <typename _rhs_ratio,
+            typename std::enable_if<
+                !std::ratio_equal<_rhs_ratio, _ratio>::value>::type * = nullptr>
   constexpr unit_t &
   operator+=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) {
 
