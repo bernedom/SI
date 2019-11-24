@@ -362,8 +362,16 @@ struct unit_t {
     return *this;
   }
 
+  /// Subtract-assign value of the same unit
+  constexpr unit_t &operator-=(const unit_t &rhs) {
+    value_ -= rhs.raw_value();
+    return *this;
+  }
+
   /// subtract value of the same type but possibly different ratio
-  template <typename _rhs_ratio>
+  template <typename _rhs_ratio,
+            typename std::enable_if<
+                !std::ratio_equal<_rhs_ratio, _ratio>::value>::type * = nullptr>
   constexpr unit_t &
   operator-=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) {
 
@@ -422,8 +430,8 @@ constexpr auto operator/(const _type &lhs,
 }
 
 /// operator to divide primitive type by unit encapsulating the same type
-/// template specialisation for floating point types, to avoid possible loss of
-/// precision when adjusting for ratio
+/// template specialisation for floating point types, to avoid possible loss
+/// of precision when adjusting for ratio
 /// @results unit with negative exponent
 template <char _symbol, char _exponent, typename _type, typename _ratio,
           typename std::enable_if<std::is_floating_point<_type>::value>::type
@@ -485,10 +493,10 @@ struct unit_with_common_ratio {
                                         typename _unit_rhs::ratio>::ratio>;
 };
 
-/// divide a value of a certain unit with another value of a possibly different
-/// type resulting in a new type, the resulting exponent is specified by
-/// resulting unit using a variadic template to simplify usage of implentation
-/// the internal type of the result is the internal type of lhs
+/// divide a value of a certain unit with another value of a possibly
+/// different type resulting in a new type, the resulting exponent is
+/// specified by resulting unit using a variadic template to simplify usage of
+/// implentation the internal type of the result is the internal type of lhs
 template <template <typename...> typename _resulting_unit, typename _unit_lhs,
           typename _unit_rhs>
 constexpr auto cross_unit_divide(const _unit_lhs &lhs, const _unit_rhs &rhs) {
@@ -503,9 +511,9 @@ constexpr auto cross_unit_divide(const _unit_lhs &lhs, const _unit_rhs &rhs) {
   return _resulting_unit<typename _unit_lhs::internal_type, resulting_ratio>{
       lhs.raw_value() / rhs.raw_value()};
 }
-/// multiply a value of a unit witn another value of a possibly different value
-/// resulting in a value of a new type with exponent 1
-/// the internal type of the result is the internal type of lhs
+/// multiply a value of a unit witn another value of a possibly different
+/// value resulting in a value of a new type with exponent 1 the internal type
+/// of the result is the internal type of lhs
 /// @todo add function that works with variable exponent units and remove
 /// special typedefs for time
 

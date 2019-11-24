@@ -576,10 +576,21 @@ TEST_CASE("GIVEN two units WHEN added with assignment "
   REQUIRE(v1.raw_value() == 3002);
 }
 
+TEST_CASE("GIVEN two units with same ratio WHEN subtracted with assignment "
+          "THEN result is "
+          "stored in the first unit AND ratio is calculated in") {
+  unit_t<'X', 1, int64_t, std::ratio<1>> v1{3};
+  constexpr unit_t<'X', 1, int64_t, std::ratio<1>> v2{2000};
+
+  v1 -= v2;
+
+  REQUIRE(v1.raw_value() == 1);
+}
+
 TEST_CASE("GIVEN two units WHEN subtracted with assignment THEN result is "
           "stored in the first unit AND ratio is calculated in") {
   unit_t<'X', 1, int64_t, std::mega> v1{3};
-  unit_t<'X', 1, int64_t, std::kilo> v2{2000};
+  constexpr unit_t<'X', 1, int64_t, std::kilo> v2{2000};
 
   v1 -= v2;
 
