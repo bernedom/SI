@@ -76,9 +76,13 @@ matrix:
 
 before_install:
   - eval "${MATRIX_EVAL}"
+
+before_script:
+  - pip3 install conan
+
 script:
   - cmake --version
-  - mkdir build && cd build && cmake .. -G Ninja
+  - mkdir build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Release -G Ninja
   - cmake --build . --config Debug
   - ctest -C Debug
 
