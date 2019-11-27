@@ -1,4 +1,4 @@
-#include <catch.hpp>
+#include <catch2/catch.hpp>
 
 #include <SI/electric_capacity.h>
 #include <SI/electric_charge.h>

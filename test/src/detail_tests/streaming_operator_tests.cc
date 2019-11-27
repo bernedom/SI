@@ -1,6 +1,6 @@
 #include <SI/detail/unit.h>
 #include <SI/stream.h>
-#include <catch.hpp>
+#include <catch2/catch.hpp>
 
 #include <cstring>
 #include <sstream>

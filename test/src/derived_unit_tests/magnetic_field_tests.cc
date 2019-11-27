@@ -1,4 +1,4 @@
-#include <catch.hpp>
+#include <catch2/catch.hpp>
 
 #include <SI/electric_potential.h>
 #include <SI/magnetic_field.h>
