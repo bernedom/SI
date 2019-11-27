@@ -27,6 +27,8 @@ matrix:
   include:
     - os: windows
       name: Windows Visual Studio 15 2017
+      before_script:
+        - choco install python3 --pre
       script:
         - cmake --version
         - mkdir build && cd build && cmake .. -G "Visual Studio 15 2017" -A x64
