@@ -2,12 +2,10 @@ cmake_minimum_required(VERSION 3.12)
 
 project(
   "SI"
-  VERSION
-    1.4.0
-    DESCRIPTION
+  VERSION 1.4.0
+  DESCRIPTION
     "A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units."
-    HOMEPAGE_URL
-    "https://github.com/bernedom/SI")
+  HOMEPAGE_URL "https://github.com/bernedom/SI")
 
 add_library(${PROJECT_NAME} INTERFACE)
 # add alias so the project can be uses with add_subdirectory
@@ -25,32 +23,39 @@ target_include_directories(
 
 target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_17)
 
+find_program(CONAN conan)
+if(NOT CONAN)
+  message(WARNING "Conan not found. Skipping tests")
+  set(BUILD_TESTING FALSE)
+endif()
 if(BUILD_TESTING)
   add_subdirectory(test)
 endif()
 
 # locations are provided by GNUInstallDirs
-install(TARGETS ${PROJECT_NAME}
-        EXPORT ${PROJECT_NAME}_Targets
-        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(
+  TARGETS ${PROJECT_NAME}
+  EXPORT ${PROJECT_NAME}_Targets
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 include(CMakePackageConfigHelpers)
-write_basic_package_version_file("${PROJECT_NAME}ConfigVersion.cmake"
-                                 VERSION ${PROJECT_VERSION}
-                                 COMPATIBILITY SameMajorVersion)
+write_basic_package_version_file(
+  "${PROJECT_NAME}ConfigVersion.cmake"
+  VERSION ${PROJECT_VERSION}
+  COMPATIBILITY SameMajorVersion)
 
 configure_package_config_file(
   "${PROJECT_SOURCE_DIR}/cmake/${PROJECT_NAME}Config.cmake.in"
-  "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
-  INSTALL_DESTINATION
+  "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake" INSTALL_DESTINATION
   ${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME}/cmake)
 
-install(EXPORT ${PROJECT_NAME}_Targets
-        FILE ${PROJECT_NAME}Targets.cmake
-        NAMESPACE ${PROJECT_NAME}::
-        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME}/cmake)
+install(
+  EXPORT ${PROJECT_NAME}_Targets
+  FILE ${PROJECT_NAME}Targets.cmake
+  NAMESPACE ${PROJECT_NAME}::
+  DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME}/cmake)
 
 install(FILES "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
               "${PROJECT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
