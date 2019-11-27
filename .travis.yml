@@ -29,6 +29,9 @@ matrix:
       name: Windows Visual Studio 15 2017
       before_script:
         - choco install python3 --pre
+        - export PATH="$(powershell -Command '("Process", "Machine" | % {  [Environment]::GetEnvironmentVariable("PATH", $_) -Split ";" -Replace "\\$", ""} | Select -Unique | % { cygpath $_ }) -Join ":"')"
+        - echo $PATH
+        - pip3 install conan
       script:
         - cmake --version
         - mkdir build && cd build && cmake .. -G "Visual Studio 15 2017" -A x64
