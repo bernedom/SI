@@ -33,6 +33,8 @@ matrix:
         - echo $PATH
         - pip3 install conan
       script:
+        - conan profile new default --detect
+        - conan profile show default
         - cmake --version
         - mkdir build && cd build && cmake .. -G "Visual Studio 15 2017" -A x64
         - cmake --build . --config Debug
