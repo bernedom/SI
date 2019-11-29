@@ -1,0 +1,23 @@
+version: "{build}"
+
+image: Visual Studio 2017
+
+configuration:
+  - Debug
+
+platform:
+  - x64
+
+matrix:
+  fast_finish: true
+
+before_build:
+  - cmd: |-
+      mkdir build
+      cd build
+      cmake --version
+      cmake .. -G "Visual Studio 15 2017" -A x64
+
+build_script:
+  - cmd: cmake --build . --config %CONFIGURATION%
+  - cmd: ctest -C %CONFIGURATION%
