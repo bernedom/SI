@@ -32,8 +32,8 @@ matrix:
         - export PATH="$(powershell -Command '("Process", "Machine" | % {  [Environment]::GetEnvironmentVariable("PATH", $_) -Split ";" -Replace "\\$", ""} | Select -Unique | % { cygpath $_ }) -Join ":"')"
         - echo $PATH
         - pip3 install conan
+        - conan user
       script:
-        - conan profile new default --detect
         - conan profile update settings.compiler="Visual Studio" default
         - conan profile update settings.compiler.version=15 default
         - conan profile show default
