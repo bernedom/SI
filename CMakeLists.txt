@@ -25,6 +25,34 @@ target_include_directories(
 
 target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_17)
 
+find_program(CONAN conan)
+if(NOT CONAN)
+  message(WARNING "Conan not found. Skipping tests")
+  set(BUILD_TESTING FALSE)
+
+else()
+  # setting up conan to download.cmake automatically, you can also just copy the
+  # conan.cmake file
+  if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
+    message(
+      STATUS
+        "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
+    file(
+      DOWNLOAD
+        "https://raw.githubusercontent.com/conan-io/cmake-conan/master/conan.cmake"
+        "${CMAKE_BINARY_DIR}/conan.cmake")
+  endif()
+
+  include(${CMAKE_BINARY_DIR}/conan.cmake)
+  conan_cmake_run(CONANFILE
+                  conanfile.txt
+                  BASIC_SETUP
+                  CMAKE_TARGETS
+                  BUILD
+                  missing)
+
+  # find_package(Catch2 REQUIRED)
+endif()
 if(BUILD_TESTING)
   add_subdirectory(test)
 endif()

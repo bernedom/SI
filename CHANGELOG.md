@@ -3,6 +3,7 @@
 ## 1.4.0
 
 *   Rule of five: assignment and construction for units with different ratios
+*   Retrieving Catch2 with conan to avoid having it in the repo (This no effect on using SI) 
 
 ## 1.3.1
 

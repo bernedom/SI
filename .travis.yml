@@ -25,14 +25,6 @@ env:
   - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
 matrix:
   include:
-    - os: windows
-      name: Windows Visual Studio 15 2017
-      script:
-        - cmake --version
-        - mkdir build && cd build && cmake .. -G "Visual Studio 15 2017" -A x64
-        - cmake --build . --config Debug
-        - ctest -C Debug
-
     - os: osx
       osx_image: xcode10.2
       compiler: clang
@@ -76,9 +68,13 @@ matrix:
 
 before_install:
   - eval "${MATRIX_EVAL}"
+
+before_script:
+  - pip3 install conan
+
 script:
   - cmake --version
-  - mkdir build && cd build && cmake .. -G Ninja
+  - mkdir build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug -G Ninja
   - cmake --build . --config Debug
   - ctest -C Debug
 

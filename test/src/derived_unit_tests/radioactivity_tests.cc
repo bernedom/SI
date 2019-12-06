@@ -1,4 +1,4 @@
-#include <catch.hpp>
+#include <catch2/catch.hpp>
 
 #include <SI/radioactivity.h>
 #include <SI/stream.h>

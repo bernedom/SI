@@ -124,7 +124,8 @@ See [the installation guide](https://github.com/bernedom/SI/blob/master/doc/inst
 
 ## Building the tests
 
-The tests use [Catch2](https://github.com/catchorg/Catch2) version 2.7 which relies on libstdc++8
+The tests use [Catch2](https://github.com/catchorg/Catch2) version 2.11. Catch is retrieved as a conan package. If conan is not found, the tests will not be built. 
+
 
 For ubuntu releases < 18.04 use:
 

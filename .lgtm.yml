@@ -1,0 +1,13 @@
+extraction:
+  cpp:
+    prepare:
+      packages:
+        - python-pip
+        - ca-certificates
+    after_prepare:
+      - pip3 install conan --user --upgrade
+      - ls ~/.local/bin
+      - export PATH=$PATH:~/.local/bin
+      - conan --version
+      - conan profile new default --detect
+      - conan remote update conan-center https://conan.bintray.com False

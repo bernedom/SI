@@ -1,6 +1,6 @@
 #include <SI/area.h>
 #include <SI/stream.h>
-#include <catch.hpp>
+#include <catch2/catch.hpp>
 #include <sstream>
 
 using namespace SI::literals;
