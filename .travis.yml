@@ -25,23 +25,6 @@ env:
   - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
 matrix:
   include:
-    - os: windows
-      name: Windows Visual Studio 15 2017
-      before_script:
-        - choco install python3 --pre
-        - export PATH="$(powershell -Command '("Process", "Machine" | % {  [Environment]::GetEnvironmentVariable("PATH", $_) -Split ";" -Replace "\\$", ""} | Select -Unique | % { cygpath $_ }) -Join ":"')"
-        - echo $PATH
-        - pip3 install conan
-        - conan user
-      script:
-        - conan profile update settings.compiler="Visual Studio" default
-        - conan profile update settings.compiler.version=15 default
-        - conan profile show default
-        - cmake --version
-        - mkdir build && cd build && cmake .. -G "Visual Studio 15 2017" -A x64
-        - cmake --build . --config Debug
-        - ctest -C Debug
-
     - os: osx
       osx_image: xcode10.2
       compiler: clang
