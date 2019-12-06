@@ -1,0 +1,11 @@
+extraction:
+  cpp:
+    prepare: # Customizable step used by all languages.
+      packages:
+        - python-pip
+    after_prepare: # Customizable step used by all languages.
+      - pip3 install conan --user
+      - ls ~/.local/bin
+      - export PATH=$PATH:~/.local/bin
+      - conan --version
+      - conan profile new default --detect
