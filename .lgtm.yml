@@ -1,12 +1,13 @@
 extraction:
   cpp:
-    prepare: # Customizable step used by all languages.
+    prepare:
       packages:
         - python-pip
         - ca-certificates
-    after_prepare: # Customizable step used by all languages.
+    after_prepare:
       - pip3 install conan --user --upgrade
       - ls ~/.local/bin
       - export PATH=$PATH:~/.local/bin
       - conan --version
       - conan profile new default --detect
+      - conan remote update conan-center https://conan.bintray.com False
