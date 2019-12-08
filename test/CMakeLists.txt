@@ -151,4 +151,4 @@ target_compile_options(
 add_test(NAME SI_detail_tests COMMAND SI_detail_tests)
 add_test(NAME SI_base_unit_tests COMMAND SI_base_unit_tests)
 add_test(NAME SI_derived_unit_tests COMMAND SI_derived_unit_tests)
-add_test(NAME SI_unit_benchmarks COMMAND SI_unit_benchmarks)
+# add_test(NAME SI_unit_benchmarks COMMAND SI_unit_benchmarks)

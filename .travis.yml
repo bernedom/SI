@@ -39,12 +39,23 @@ matrix:
         - pip3 install conan
       script:
         - "./test/installation-tests.sh"
+
     - os: linux
       name: compilation tests
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
       script:
         - "./test/compilation-tests.sh"
+
+    - os: linux
+      name: benchmarks
+      env:
+        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+      script:
+        - cmake --version
+        - mkdir build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug -G Ninja
+        - cmake --build . --config Release
+        - ./bin/SI_unit_benchmarks
 
     - stage: deploy-unstable
       os: linux
