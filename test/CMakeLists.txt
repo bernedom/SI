@@ -24,12 +24,14 @@ target_link_libraries(SI_detail_tests CONAN_PKG::Catch2)
 # below
 target_compile_options(
   SI_detail_tests
-  PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
-          $<$<CXX_COMPILER_ID:MSVC>:/W4>
-          $<$<CXX_COMPILER_ID:MSVC>:/WX>
-          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Wall>
-          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Werror>
-          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-pedantic>)
+  PRIVATE
+    $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
+    $<$<CXX_COMPILER_ID:MSVC>:/W4>
+    $<$<CXX_COMPILER_ID:MSVC>:/WX>
+    $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-Wall>
+    $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-Werror>
+    $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-pedantic>
+)
 
 # add `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE to switch to runtime only checks
 # target_compile_definitions(SI_detail_tests PRIVATE
@@ -58,12 +60,14 @@ target_link_libraries(SI_base_unit_tests CONAN_PKG::Catch2)
 
 target_compile_options(
   SI_base_unit_tests
-  PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
-          $<$<CXX_COMPILER_ID:MSVC>:/W4>
-          $<$<CXX_COMPILER_ID:MSVC>:/WX>
-          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Wall>
-          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Werror>
-          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-pedantic>)
+  PRIVATE
+    $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
+    $<$<CXX_COMPILER_ID:MSVC>:/W4>
+    $<$<CXX_COMPILER_ID:MSVC>:/WX>
+    $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-Wall>
+    $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-Werror>
+    $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-pedantic>
+)
 
 # add `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE to switch to runtime only checks
 # target_compile_definitions(SI_base_unit_tests PRIVATE
@@ -110,17 +114,41 @@ target_link_libraries(SI_derived_unit_tests CONAN_PKG::Catch2)
 
 target_compile_options(
   SI_derived_unit_tests
-  PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
-          $<$<CXX_COMPILER_ID:MSVC>:/W4>
-          $<$<CXX_COMPILER_ID:MSVC>:/WX>
-          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Wall>
-          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Werror>
-          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-pedantic>)
+  PRIVATE
+    $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
+    $<$<CXX_COMPILER_ID:MSVC>:/W4>
+    $<$<CXX_COMPILER_ID:MSVC>:/WX>
+    $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-Wall>
+    $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-Werror>
+    $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-pedantic>
+)
 
-# add `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE to switch to runtime only checks
-# target_compile_definitions(SI_derived_unit_tests PRIVATE
-# CATCH_CONFIG_RUNTIME_STATIC_REQUIRE)
+add_executable(SI_unit_benchmarks)
+target_sources(SI_unit_benchmarks PRIVATE src/Catch2Main.cc
+               src/benchmarks/unit_benchmarks.cc)
+
+target_include_directories(
+  SI_unit_benchmarks
+  PRIVATE $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+          $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>)
+
+target_compile_features(SI_unit_benchmarks PRIVATE cxx_std_17)
+target_link_libraries(SI_unit_benchmarks CONAN_PKG::Catch2)
+
+target_compile_options(
+  SI_unit_benchmarks
+  PRIVATE
+    $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
+    $<$<CXX_COMPILER_ID:MSVC>:/W4>
+    $<$<CXX_COMPILER_ID:MSVC>:/WX>
+    $<$<CXX_COMPILER_ID:MSVC>:/DCATCH_CONFIG_ENABLE_BENCHMARKING>
+    $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-Wall>
+    $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-Werror>
+    $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-pedantic>
+    $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-DCATCH_CONFIG_ENABLE_BENCHMARKING>
+)
 
 add_test(NAME SI_detail_tests COMMAND SI_detail_tests)
 add_test(NAME SI_base_unit_tests COMMAND SI_base_unit_tests)
 add_test(NAME SI_derived_unit_tests COMMAND SI_derived_unit_tests)
+# add_test(NAME SI_unit_benchmarks COMMAND SI_unit_benchmarks)
