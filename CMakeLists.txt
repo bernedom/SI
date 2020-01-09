@@ -45,7 +45,7 @@ else()
   conan_cmake_run(CONANFILE conanfile.txt BASIC_SETUP CMAKE_TARGETS BUILD
                   missing)
 
-  # find_package(Catch2 REQUIRED)
+  find_package(Catch2 REQUIRED)
 endif()
 if(BUILD_TESTING)
   add_subdirectory(test)

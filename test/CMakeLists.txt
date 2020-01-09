@@ -134,7 +134,7 @@ target_include_directories(
           $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>)
 
 target_compile_features(SI_unit_benchmarks PRIVATE cxx_std_17)
-target_link_libraries(SI_unit_benchmarks CONAN_PKG::Catch2)
+target_link_libraries(SI_unit_benchmarks Catch2::Catch2)
 
 target_compile_options(
   SI_unit_benchmarks
