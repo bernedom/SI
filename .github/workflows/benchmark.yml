@@ -4,10 +4,14 @@ on:
 
 jobs:
   benchmark:
-    name: Run C++ benchmark example
+    name: Run SI benchmarks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: install dependencies
+        run: |
+          sudo -H pip3 install setuptools wheel
+          sudo -H pip3 install conan
       - name: Build and run benchmarks with Catch2
         run: |
           mkdir build && cd build
@@ -15,7 +19,7 @@ jobs:
           cmake --build . --config Release --target SI_unit_benchmarks
           ./bin/SI_unit_benchmarks | tee benchmark_result.txt
       - name: Store benchmark result
-        uses: rhysd/github-action-benchmark@v1.6.7
+        uses: rhysd/github-action-benchmark@v1.7.0
         with:
           name: Catch2 Benchmark
           tool: "catch2"
