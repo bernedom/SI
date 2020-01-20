@@ -1,5 +1,9 @@
 # Changelog 
 
+## 1.4.1
+
+*   Documentation
+
 ## 1.4.0
 
 *   Rule of five: assignment and construction for units with different ratios
