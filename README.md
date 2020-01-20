@@ -140,3 +140,7 @@ sudo apt install libstdc++-8-dev
 I'm using more or less strict TDD for implementing the functionality. First to check if the code actually does what I want it to do, but also as a way to set examples how SI is used. The nice benefit of it being, that I'm dogfooding the library to myself while developing. I'm using [Catch2](https://github.com/catchorg/Catch2) as a unit-testing framework, however since the goal is to be able to do as much as possible during compile time most of the tests are performed with Catch2 `STATIC_REQUIRES` which contatain `static_asserts` and run-time `REQUIRE`s as testing assert.
 
 This means if the tests compile then the tests are correct. To compile only with runtime check pass `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE` to the compilers.
+
+## Packaging
+
+SI is available as 'raw' download from this repo but also as [conan package](https://bintray.com/bernedom/conan/SI%3ASI/_latestVersion). All releases are available from `SI/stable` from bintray. Getting SI from there is the preferred way.  
