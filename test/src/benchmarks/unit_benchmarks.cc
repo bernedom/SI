@@ -13,6 +13,21 @@ using ratio_milli_unit = unit_t<'X', 1, int64_t, std::milli>;
 TEST_CASE("Unit_assignment") {
 
   SECTION("Assignment") {
+    BENCHMARK_ADVANCED("Raw number assignment (reference)")
+    (Catch::Benchmark::Chronometer meter) {
+      std::vector<int64_t> source(10000);
+      std::vector<int64_t> target(10000, 0);
+      for (size_t i = 0; i < source.size(); ++i) {
+        source[i] = i;
+      }
+
+      meter.measure([&] {
+        for (size_t i = 0; i < source.size(); ++i) {
+          target[i] = source[i];
+        }
+        return target;
+      });
+    };
     BENCHMARK_ADVANCED("Same unit same ratio assignment")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<ratio_one_unit> source(10000);
