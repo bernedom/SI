@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1579643483161,
+  "lastUpdate": 1579643821949,
   "repoUrl": "https://github.com/bernedom/SI",
   "entries": {
     "Catch2 Benchmark": [
@@ -76,6 +76,51 @@ window.BENCHMARK_DATA = {
             "range": "+/- 1.981",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dominik.berner@gmail.com",
+            "name": "Dominik Berner",
+            "username": "bernedom"
+          },
+          "committer": {
+            "email": "dominik.berner@gmail.com",
+            "name": "Dominik Berner",
+            "username": "bernedom"
+          },
+          "distinct": true,
+          "id": "20376504a69e870f9a8fd2faba7723827e210c05",
+          "message": "Added reference benchmark",
+          "timestamp": "2020-01-21T22:55:50+01:00",
+          "tree_id": "fea0db17abdcb4c59db9e4bc8a2e443edda5c9c6",
+          "url": "https://github.com/bernedom/SI/commit/20376504a69e870f9a8fd2faba7723827e210c05"
+        },
+        "date": 1579643821540,
+        "tool": "catch2",
+        "benches": [
+          {
+            "name": "Raw number assignment (reference)",
+            "value": 9.129,
+            "range": "+/- 482",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Same unit same ratio assignment",
+            "value": 8.387,
+            "range": "+/- 2.126",
+            "unit": "us",
+            "extra": "100 samples\n5 iterations"
+          },
+          {
+            "name": "Same unit different ratio assignment",
+            "value": 9.951,
+            "range": "+/- 329",
+            "unit": "us",
+            "extra": "100 samples\n3 iterations"
           }
         ]
       }
