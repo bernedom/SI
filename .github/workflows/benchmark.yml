@@ -1,0 +1,36 @@
+name: Continous Benchmark
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  benchmark:
+    name: Run SI benchmarks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install dependencies
+        run: |
+          sudo -H pip3 install setuptools wheel
+          sudo -H pip3 install conan
+      - name: Build and run benchmarks with Catch2
+        run: |
+          mkdir build && cd build
+          cmake -DCMAKE_BUILD_TYPE=Release ..
+          cmake --build . --config Release --target SI_unit_benchmarks
+          ./bin/SI_unit_benchmarks | tee benchmark_result.txt
+      - name: Store benchmark result
+        uses: rhysd/github-action-benchmark@v1.7.0
+        with:
+          name: Catch2 Benchmark
+          tool: "catch2"
+          output-file-path: build/benchmark_result.txt
+          # Use personal access token instead of GITHUB_TOKEN due to https://github.community/t5/GitHub-Actions/Github-action-not-triggering-gh-pages-upon-push/td-p/26869/highlight/false
+          github-token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+          auto-push: true
+          # Show alert with commit comment on detecting possible performance regression
+          alert-threshold: "200%"
+          comment-on-alert: true
+          fail-on-alert: true
+          alert-comment-cc-users: "@bernedom"
