@@ -125,7 +125,8 @@ target_compile_options(
 
 add_executable(SI_unit_benchmarks)
 target_sources(SI_unit_benchmarks PRIVATE src/Catch2Main.cc
-               src/benchmarks/unit_assignment_benchmarks.cc)
+               src/benchmarks/unit_assignment_benchmarks.cc
+               src/benchmarks/detail_benchmarks.cc)
 
 target_include_directories(
   SI_unit_benchmarks

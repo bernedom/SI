@@ -183,6 +183,47 @@ TEST_CASE("Unit_assignment") {
     };
   }
 
+  /// @todo investigate division by ratio_milli resulting in floating point
+  /// error
+  SECTION("scalar-unit-division") {
+    BENCHMARK_ADVANCED("int64_t by unit division")
+    (Catch::Benchmark::Chronometer meter) {
+      std::vector<int64_t> dividend(10000);
+      std::vector<ratio_kilo_unit> divisor(dividend.size());
+      std::vector<unit_t<'X', -1, int64_t, std::kilo>> result(dividend.size());
+      for (size_t i = 0; i < dividend.size(); ++i) {
+        dividend[i] = i + 10000;
+        divisor[i] = ratio_kilo_unit(static_cast<int64_t>(i + 1));
+      }
+
+      meter.measure([&] {
+        for (size_t i = 0; i < divisor.size(); ++i) {
+          REQUIRE(divisor[i].raw_value() > 0);
+          result[i] = dividend[i] / divisor[i];
+        }
+        return result;
+      });
+    };
+    BENCHMARK_ADVANCED("long double by unit division")
+    (Catch::Benchmark::Chronometer meter) {
+      std::vector<long double> dividend(10000);
+      std::vector<unit_t<'X', 1, long double, std::kilo>> divisor(10000);
+      std::vector<unit_t<'X', -1, long double, std::kilo>> result(10000);
+      for (size_t i = 0; i < dividend.size(); ++i) {
+        dividend[i] = static_cast<long double>(i + 10000);
+        divisor[i] = unit_t<'X', 1, long double, std::kilo>{
+            static_cast<long double>(i + 1)};
+      }
+
+      meter.measure([&] {
+        for (size_t i = 0; i < divisor.size(); ++i) {
+          result[i] = dividend[i] / divisor[i];
+        }
+        return result;
+      });
+    };
+  }
+
   // SECTION("multiply-Assignment") {
   //   BENCHMARK_ADVANCED("Raw number multiply assignment (reference)")
   //   (Catch::Benchmark::Chronometer meter) {
