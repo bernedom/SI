@@ -34,7 +34,7 @@ int main(int, char **) {
 }
 ```
 
-SI provides conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) with strong **type safety at compile time**. All units are special typedefs of the templated struct `SI::unit_t`. Only the value of the unit is stored internally, the ratio (i.e. milli, micro, kilo...) is determined as a type trait to allow all units to have the same resolution across the whole implemented ratios. SI handles operations of units of the same ratios as well as when the ratios are different. Operations of between units of the same ratio are overhead-free, else there is additional computation cost to adjust the values to the units. By passing the flag `SI_DISABLE_IMPLICIT_RATIO_CONVERSION` to the compiler implicit ratio conversion is not done and fails with a compiler error. See the [continous benchmarks](https://si.dominikberner.ch/dev/bench/) for comparing the reference measurements and the implementation in SI.
+SI provides conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) with strong **type safety at compile time**. All units are special typedefs of the templated struct `SI::unit_t`. Only the value of the unit is stored internally, the ratio (i.e. milli, micro, kilo...) is determined as a type trait to allow all units to have the same resolution across the whole implemented ratios. SI handles operations of units of the same ratios as well as when the ratios are different. Operations of between units of the same ratio are overhead-free, else there is additional computation cost to adjust the values to the units. By passing the flag `SI_DISABLE_IMPLICIT_RATIO_CONVERSION` to the compiler implicit ratio conversion is not done and fails with a compiler error. See the [continuous benchmarks](https://si.dominikberner.ch/dev/bench/) for comparing the reference measurements and the implementation in SI.
 
 It is possible to supply custom ratios to the  built-in types and they are fully compatible for calculation with other units. However the necessary literals or typedefs have to be supplied by the user. For instance  `SI::velocity_t<double, std::ratio<1000, 36>>` would be "kilo metre per one-hundreth-of-an-hour".
 
@@ -42,7 +42,7 @@ It is possible to supply custom ratios to the  built-in types and they are fully
 
 ## SI Base units
 
-For each Unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the internation system of units](https://en.wikipedia.org/wiki/Metric_prefix)
+For each Unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the international system of units](https://en.wikipedia.org/wiki/Metric_prefix)
 The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. `metre_t, milli_metre_t, kilo_metre_t`. The prefix or interfix is marked with an `*` in the tables below. Units which have defined typedefs and literals can be converted to strings using [the stream operators](doc/implentation-details.md#implementation-details-of-si). 
 
 | Unit                        | Dimension Symbol | Unit Symbol | implemented ratios                                  | unit typedefs                     |
@@ -105,7 +105,7 @@ All units that can be built from other units are also decayable to the respectiv
 
 ## Building & compatibility
 
-SI is a header only libary that uses **C++17** features. Building is tested using cmake > 3.5 and verified for g++7, g++8, clang5, clang6, clang7, msvc 19, and AppleClang 10.0.
+SI is a header only lirbary that uses **C++17** features. Building is tested using cmake > 3.5 and verified for g++7, g++8, clang5, clang6, clang7, msvc 19, and AppleClang 10.0.
 
 to build use
 
