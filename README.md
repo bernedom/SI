@@ -11,7 +11,7 @@
 
 
 # SI - Type safety for physical units
-A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units). For a quick start see [the installation guide](https://github.com/bernedom/SI/blob/master/doc/installation-guide.md).
+A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units). For a quick start see [the installation guide](https://github.com/bernedom/SI/blob/master/doc/installation-guide.md). Contributions and comments are welcome, Check the [contribution guidelines](CONTRIBUTING.md) for further information. 
 
 An illustrative example:
 ```cpp
@@ -121,25 +121,6 @@ substitute `--config Debug` with `--config Release` for optimized builds
 The default installation location for SI is  `/usr/local/lib/SI`. SI can be installed using raw cmake, cpack (cmakes package mechanism), or as a conan.io package provided from [Bintray](https://bintray.com/bernedom/conan/SI%3ASI)
 
 See [the installation guide](https://github.com/bernedom/SI/blob/master/doc/installation-guide.md) for detailed instructions
-
-## Building the tests
-
-The tests use [Catch2](https://github.com/catchorg/Catch2) version 2.11. Catch is retrieved as a conan package. If conan is not found, the tests will not be built. 
-
-
-For ubuntu releases < 18.04 use:
-
-```bash
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-sudo apt update
-sudo apt install libstdc++-8-dev
-```
-
-## A word on testing
-
-I'm using more or less strict TDD for implementing the functionality. First to check if the code actually does what I want it to do, but also as a way to set examples how SI is used. The nice benefit of it being, that I'm dogfooding the library to myself while developing. I'm using [Catch2](https://github.com/catchorg/Catch2) as a unit-testing framework, however since the goal is to be able to do as much as possible during compile time most of the tests are performed with Catch2 `STATIC_REQUIRES` which contatain `static_asserts` and run-time `REQUIRE`s as testing assert.
-
-This means if the tests compile then the tests are correct. To compile only with runtime check pass `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE` to the compilers.
 
 ## Packaging
 
