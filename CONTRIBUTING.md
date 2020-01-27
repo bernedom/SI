@@ -10,11 +10,9 @@ Contributions and suggestions to this repo are highly welcome.
 4.  If you're branching off from a release commit, all version numbers have to be increased. 
 5.  Before merging all checks have to pass
 
-
 ## Building the tests
 
 The tests use [Catch2](https://github.com/catchorg/Catch2) version 2.11. Catch is retrieved as a conan package. If conan is not found, the tests will not be built. 
-
 
 For ubuntu releases < 18.04 use:
 
