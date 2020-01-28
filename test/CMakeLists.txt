@@ -1,5 +1,30 @@
 cmake_minimum_required(VERSION 3.12)
 
+find_program(CONAN conan)
+if(NOT CONAN)
+  message(WARNING "Conan not found. Skipping tests")
+  return()
+
+else()
+  # setting up conan to download.cmake automatically, you can also just copy the
+  # conan.cmake file
+  if(NOT EXISTS "${CMAKE_CURRENT_BINARY_DIR}/conan.cmake")
+    message(
+      STATUS
+        "Downloading conan.cmake from https://github.com/bernedom/cmake-conan")
+    file(
+      DOWNLOAD
+      "https://raw.githubusercontent.com/bernedom/cmake-conan/finding-conanbuildinfo/conan.cmake"
+      "${CMAKE_CURRENT_BINARY_DIR}/conan.cmake")
+  endif()
+
+  include(${CMAKE_CURRENT_BINARY_DIR}/conan.cmake)
+  conan_cmake_run(CONANFILE conanfile.txt BASIC_SETUP CMAKE_TARGETS BUILD
+                  missing)
+
+  find_package(Catch2 REQUIRED)
+endif()
+
 add_executable(SI_detail_tests)
 target_sources(
   SI_detail_tests
@@ -124,9 +149,10 @@ target_compile_options(
 )
 
 add_executable(SI_unit_benchmarks)
-target_sources(SI_unit_benchmarks PRIVATE src/Catch2Main.cc
-               src/benchmarks/unit_assignment_benchmarks.cc
-               src/benchmarks/detail_benchmarks.cc)
+target_sources(
+  SI_unit_benchmarks PRIVATE src/Catch2Main.cc
+  src/benchmarks/unit_assignment_benchmarks.cc
+  src/benchmarks/detail_benchmarks.cc)
 
 target_include_directories(
   SI_unit_benchmarks
