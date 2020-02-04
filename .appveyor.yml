@@ -30,4 +30,6 @@ build_script:
   - cmd: ctest -C %CONFIGURATION%
 test_script:
   - cmd: cd ..
+  - cmd: curl -L0 https://github.com/kward/shunit2/archive/v2.1.7.zip --output shunit2.zip
+  - cmd: unzip -j -n shunit2.zip
   - cmd: bash ./test/installation-tests.sh
