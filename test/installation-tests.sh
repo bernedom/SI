@@ -28,7 +28,7 @@ testVersionNumberConsistency() {
     CHANGELOG_VERSION=$(sed -n -E '/## [0-9]+\.[0-9]+\.[0-9]+/p' ${ROOT_DIR}/CHANGELOG.md | head -1 | grep -E -o '[0-9]+\.[0-9]+\.[0-9]+')
     ORIG_DIR=$(pwd)
     uname -a
-    cmake ${ROOT_DIR} -B${SI_BUILD_DIR} -DBUILD_TESTING=off -DCMAKE_BUILD_TYPE=Debug -G Ninja
+    cmake ${ROOT_DIR} -B${SI_BUILD_DIR} -DBUILD_TESTING=off -DCMAKE_BUILD_TYPE=Debug
     cd ${SI_BUILD_DIR}
     CMAKE_VERSION=$(cmake --system-information | grep -E "VERSION:STATIC" | grep -E -o '[0-9]+\.[0-9]+\.[0-9]+')
     cd ${ROOT_DIR}
@@ -55,10 +55,10 @@ testVersionNumberConsistency() {
 
 testPureCmakeInstallation() {
     # install SI
-    cmake ${ROOT_DIR} -B${SI_BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DBUILD_TESTING=off -DCMAKE_BUILD_TYPE=Release -G Ninja
+    cmake ${ROOT_DIR} -B${SI_BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DBUILD_TESTING=off -DCMAKE_BUILD_TYPE=Release
     cmake --build ${SI_BUILD_DIR} --config Release --target install
     assertEquals "Installation build successful" 0 $?
-    cmake ${ROOT_DIR}/test/installation-tests -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -G Ninja
+    cmake ${ROOT_DIR}/test/installation-tests -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH}
     cmake --build ${BUILD_DIR}
     assertEquals "build against installation successful" 0 $?
     
@@ -66,13 +66,13 @@ testPureCmakeInstallation() {
 
 testCpackInstallation() {
     # install SI
-    cmake ${ROOT_DIR} -B${SI_BUILD_DIR} -DCPACK_PACKAGE_FILE_NAME=install-SI -DBUILD_TESTING=off -DCMAKE_BUILD_TYPE=Release -G Ninja
+    cmake ${ROOT_DIR} -B${SI_BUILD_DIR} -DCPACK_PACKAGE_FILE_NAME=install-SI -DBUILD_TESTING=off -DCMAKE_BUILD_TYPE=Release
     cmake --build ${SI_BUILD_DIR} --config Release --target package
     assertEquals "Installation build successful" 0 $?
     ${SI_BUILD_DIR}/install-SI.sh --prefix=${INSTALL_PATH} --skip-license --exclude-subdir
     assertEquals "Installation script successful" 0 $?
     
-    cmake ${ROOT_DIR}/test/installation-tests -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -G Ninja
+    cmake ${ROOT_DIR}/test/installation-tests -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH}
     cmake --build ${BUILD_DIR}
     assertEquals "build against installation successful" 0 $?
     
@@ -88,7 +88,7 @@ testConanInstallation() {
     conan install -if ${BUILD_DIR} ${ROOT_DIR}/test/conan-installation-test
     assertEquals "Conan installation successful" 0 $?
     
-    cmake ${ROOT_DIR}/test/conan-installation-test -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release -G Ninja
+    cmake ${ROOT_DIR}/test/conan-installation-test -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release
     cmake --build ${BUILD_DIR}
     assertEquals "build against installation successful" 0 $?
     
@@ -104,7 +104,7 @@ testConanCmakeIntegratedInstallation() {
     conan create ${ROOT_DIR} SI/testing
     assertEquals "Conan installation build successful" 0 $?
     
-    cmake ${ROOT_DIR}/test/conan-cmake-installation-test -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release -G Ninja
+    cmake ${ROOT_DIR}/test/conan-cmake-installation-test -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release
     cmake --build ${BUILD_DIR}
     assertEquals "build against installation successful" 0 $?
     
