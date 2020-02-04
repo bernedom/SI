@@ -79,9 +79,10 @@ testCpackInstallation() {
     if [ ${OS_NAME} == "Linux" ]; then
         ${SI_BUILD_DIR}/install-SI.sh --prefix=${INSTALL_PATH} --skip-license --exclude-subdir
     else
-        echo "Using NSIS installer"
-        ${SI_BUILD_DIR}/install-SI.exe /SD /D=${INSTALL_PATH}
-        echo "done"
+        # echo "Using NSIS installer"
+        # ${SI_BUILD_DIR}/install-SI.exe /V=5 /SD /D=${INSTALL_PATH}
+        # echo "done"
+        return
     fi
     
     
