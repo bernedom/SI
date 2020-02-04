@@ -11,10 +11,16 @@ platform:
 matrix:
   fast_finish: true
 
+environment:
+  matrix:
+    - PYTHON: "C:\\Python37"
+
 install:
   - cmd: echo "Downloading conan..."
-  - cmd: set PATH=%PATH%;%PYTHON%/Scripts/
-  - cmd: pip.exe install conan
+  - cmd: set PATH=%PYTHON%;%PYTHON%/Scripts/;%PATH%;
+  - cmd: python --version
+  - cmd: where pip.exe
+  - cmd: python -m pip install conan
   - cmd: conan user # Create the conan data directory
   - cmd: conan --version
 

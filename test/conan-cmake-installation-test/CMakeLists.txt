@@ -3,14 +3,14 @@ cmake_minimum_required(VERSION 3.12)
 project("SI-Example-conan")
 
 # Download automatically, you can also just copy the conan.cmake file
-if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
+if(NOT EXISTS "${CMAKE_CURRENT_BINARY_DIR}/conan.cmake")
   message(
     STATUS
-      "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
+      "Downloading conan.cmake from https://github.com/bernedom/cmake-conan")
   file(
     DOWNLOAD
-      "https://raw.githubusercontent.com/conan-io/cmake-conan/master/conan.cmake"
-      "${CMAKE_BINARY_DIR}/conan.cmake")
+    "https://raw.githubusercontent.com/bernedom/cmake-conan/finding-conanbuildinfo/conan.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/conan.cmake")
 endif()
 
 include(${CMAKE_BINARY_DIR}/conan.cmake)
