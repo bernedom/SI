@@ -2,4 +2,4 @@
 SI/[>1.0 <2.0]@SI/testing
 
 [generators]
-cmake
+cmake_find_package
