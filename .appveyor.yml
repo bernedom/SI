@@ -28,3 +28,6 @@ before_build:
 build_script:
   - cmd: cmake --build . --config %CONFIGURATION%
   - cmd: ctest -C %CONFIGURATION%
+test_script:
+  - cmd: cd ..
+  - cmd: bash ./test/installation-tests.sh
