@@ -19,7 +19,7 @@ jobs:
           mkdir build && cd build
           cmake -DCMAKE_BUILD_TYPE=Release ..
           cmake --build . --config Release --target SI_unit_benchmarks
-          ./bin/SI_unit_benchmarks | tee benchmark_result.txt
+          ./test/bin/SI_unit_benchmarks | tee benchmark_result.txt
       - name: Store benchmark result
         uses: rhysd/github-action-benchmark@v1.7.0
         with:
