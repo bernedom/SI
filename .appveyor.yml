@@ -11,10 +11,16 @@ platform:
 matrix:
   fast_finish: true
 
+environment:
+  matrix:
+    - PYTHON: "C:\\Python37"
+
 install:
   - cmd: echo "Downloading conan..."
-  - cmd: set PATH=%PATH%;%PYTHON%/Scripts/
-  - cmd: pip.exe install conan
+  - cmd: set PATH=%PYTHON%;%PYTHON%/Scripts/;%PATH%;
+  - cmd: python --version
+  - cmd: where pip.exe
+  - cmd: python -m pip install conan
   - cmd: conan user # Create the conan data directory
   - cmd: conan --version
 
@@ -28,3 +34,8 @@ before_build:
 build_script:
   - cmd: cmake --build . --config %CONFIGURATION%
   - cmd: ctest -C %CONFIGURATION%
+test_script:
+  - cmd: cd ..
+  - cmd: curl -L0 https://github.com/kward/shunit2/archive/v2.1.7.zip --output shunit2.zip
+  - cmd: unzip -j -n shunit2.zip
+  - cmd: bash ./test/installation-tests.sh

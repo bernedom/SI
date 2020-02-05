@@ -13,7 +13,7 @@ class SiConan(ConanFile):
               "cplusplus-library", "cplusplus-17")
     exports_sources = "include/*", "CMakeLists.txt", "test/*", "cmake/SIConfig.cmake.in", "LICENSE"
     no_copy_source = True
-    generators = "cmake", "txt", "cmake_paths"
+    generators = "cmake", "txt", "cmake_find_package"
     build_requires = "Catch2/2.11.0@catchorg/stable"
 
     def _configure_cmake(self):
