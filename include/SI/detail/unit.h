@@ -23,7 +23,6 @@
 #include <type_traits>
 
 /// Namespace containing all SI units
-/// @todo add opertors for /= and *=
 namespace SI::detail {
 
 // forward declarations
