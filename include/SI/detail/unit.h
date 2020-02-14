@@ -23,7 +23,6 @@
 #include <type_traits>
 
 /// Namespace containing all SI units
-/// @todo add opertors for /= and *=
 namespace SI::detail {
 
 // forward declarations
@@ -140,8 +139,7 @@ struct unit_t {
 
   /// Comparison operator takes considers different ratios, i.e. 1000
   /// micro == 1 milli
-  ////@todo remove = std::ratio<1>
-  template <typename _rhs_ratio = std::ratio<1>>
+  template <typename _rhs_ratio>
   constexpr bool
   operator==(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
 
@@ -170,7 +168,7 @@ struct unit_t {
   }
 
   /// compares two values, considers different ratios.
-  template <typename _rhs_ratio = std::ratio<1>>
+  template <typename _rhs_ratio>
   constexpr bool
   operator!=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
