@@ -4,6 +4,7 @@
 
 *   Added micro-benchmarks for operations on `unit_t`
 *   Pulling catch2 for testing with conan is only done if testing is enabled
+*   Removed defaults for template parameters for `==` and `!=`
 
 ## 1.4.0
 
