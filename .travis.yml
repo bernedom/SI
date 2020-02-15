@@ -32,28 +32,21 @@ matrix:
         - MATRIX_EVAL=""
 
     - os: osx
-      name: osx installation tests
+      name: osx integration tests
+      before_script:
+        - pip3 install conan
+      script:
+        - "./test/installation-tests.sh"
+        - "./test/compilation-tests.sh"
+
+    - os: linux
+      name: linux integration tests
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
       before_script:
         - pip3 install conan
       script:
         - "./test/installation-tests.sh"
-
-    - os: linux
-      name: installation tests
-      env:
-        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
-      before_script:
-        - pip3 install conan
-      script:
-        - "./test/installation-tests.sh"
-
-    - os: linux
-      name: compilation tests
-      env:
-        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
-      script:
         - "./test/compilation-tests.sh"
 
     - stage: deploy-unstable
