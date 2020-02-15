@@ -14,8 +14,8 @@
 #include "area.h"
 #include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
-#include "detail/string.h"
 #include "detail/unit.h"
+#include "detail/unit_symbol.h"
 #include "magnetic_flux.h"
 
 namespace SI {

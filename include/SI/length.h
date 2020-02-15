@@ -15,8 +15,8 @@
 #include <stdexcept>
 
 #include "detail/number_parser.h"
-#include "detail/string.h"
 #include "detail/unit.h"
+#include "detail/unit_symbol.h"
 
 namespace SI {
 /// @todo add astronomic units

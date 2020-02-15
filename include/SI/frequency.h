@@ -11,8 +11,8 @@
  **/
 #pragma once
 
-#include "detail/string.h"
 #include "detail/unit.h"
+#include "detail/unit_symbol.h"
 #include "time.h"
 
 namespace SI {

@@ -12,8 +12,8 @@
 #pragma once
 
 #include "detail/number_parser.h"
-#include "detail/string.h"
 #include "detail/unit.h"
+#include "detail/unit_symbol.h"
 
 namespace SI {
 /// Type for angle (which should be buildable from m/m (sin/cos))
