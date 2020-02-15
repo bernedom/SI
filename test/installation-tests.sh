@@ -33,6 +33,7 @@ testVersionNumberConsistency() {
     cd ${SI_BUILD_DIR}
     CMAKE_VERSION=$(cmake --system-information | grep -E "VERSION:STATIC" | grep -E -o '[0-9]+\.[0-9]+\.[0-9]+')
     cd ${ROOT_DIR}
+    echo "OS: ${OS_NAME}"
     if [ ${OS_NAME} == "Linux" ]; then
         CONAN_VERSION=$(python3 -c 'from conanfile import SiConan; print(SiConan.version)')
     else
