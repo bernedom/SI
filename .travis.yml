@@ -31,6 +31,15 @@ matrix:
       env:
         - MATRIX_EVAL=""
 
+    - os: osx
+      name: osx installation tests
+      env:
+        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+      before_script:
+        - pip3 install conan
+      script:
+        - "./test/installation-tests.sh"
+
     - os: linux
       name: installation tests
       env:
