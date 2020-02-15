@@ -37,8 +37,6 @@ matrix:
       compiler: clang
       env:
         - MATRIX_EVAL=""
-      before_script:
-        - pip3 install conan
       script:
         - "./test/installation-tests.sh"
         - "./test/compilation-tests.sh"
@@ -47,8 +45,6 @@ matrix:
       name: linux integration tests
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
-      before_script:
-        - pip3 install conan
       script:
         - "./test/installation-tests.sh"
         - "./test/compilation-tests.sh"
@@ -56,8 +52,6 @@ matrix:
     - stage: deploy-unstable
       os: linux
       env: MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
-      before_script:
-        - pip3 install conan
       script:
         - conan remote add bernedom https://api.bintray.com/conan/bernedom/conan
         - conan create . SI/unstable
@@ -66,8 +60,6 @@ matrix:
     - stage: deploy-stable
       os: linux
       env: MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
-      before_script:
-        - pip3 install conan
       script:
         - conan remote add bernedom https://api.bintray.com/conan/bernedom/conan
         - conan create . SI/stable
