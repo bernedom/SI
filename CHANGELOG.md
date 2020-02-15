@@ -1,5 +1,9 @@
 # Changelog 
 
+## 1.4.2
+
+*   Installation tests for OSX and Windows
+
 ## 1.4.1
 
 *   Added micro-benchmarks for operations on `unit_t`
