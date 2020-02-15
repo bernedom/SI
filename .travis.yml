@@ -33,6 +33,10 @@ matrix:
 
     - os: osx
       name: osx integration tests
+      osx_image: xcode10.2
+      compiler: clang
+      env:
+        - MATRIX_EVAL=""
       before_script:
         - pip3 install conan
       script:
