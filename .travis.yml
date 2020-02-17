@@ -31,27 +31,27 @@ matrix:
       env:
         - MATRIX_EVAL=""
 
-    - os: linux
-      name: installation tests
+    - os: osx
+      name: osx integration tests
+      osx_image: xcode10.2
+      compiler: clang
       env:
-        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
-      before_script:
-        - pip3 install conan
+        - MATRIX_EVAL=""
       script:
         - "./test/installation-tests.sh"
+        - "./test/compilation-tests.sh"
 
     - os: linux
-      name: compilation tests
+      name: linux integration tests
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
       script:
+        - "./test/installation-tests.sh"
         - "./test/compilation-tests.sh"
 
     - stage: deploy-unstable
       os: linux
       env: MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
-      before_script:
-        - pip3 install conan
       script:
         - conan remote add bernedom https://api.bintray.com/conan/bernedom/conan
         - conan create . SI/unstable
@@ -60,8 +60,6 @@ matrix:
     - stage: deploy-stable
       os: linux
       env: MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
-      before_script:
-        - pip3 install conan
       script:
         - conan remote add bernedom https://api.bintray.com/conan/bernedom/conan
         - conan create . SI/stable

@@ -33,7 +33,7 @@ testVersionNumberConsistency() {
     cd ${SI_BUILD_DIR}
     CMAKE_VERSION=$(cmake --system-information | grep -E "VERSION:STATIC" | grep -E -o '[0-9]+\.[0-9]+\.[0-9]+')
     cd ${ROOT_DIR}
-    if [ ${OS_NAME} == "Linux" ]; then
+    if [ ${OS_NAME} == "Linux" ] || [ ${OS_NAME} == "Darwin" ]; then
         CONAN_VERSION=$(python3 -c 'from conanfile import SiConan; print(SiConan.version)')
     else
         echo "Building for Non-Linux"
@@ -76,7 +76,7 @@ testCpackInstallation() {
     cmake --build ${SI_BUILD_DIR} --config Release --target package
     assertEquals "Installation build successful" 0 $?
     
-    if [ ${OS_NAME} == "Linux" ]; then
+    if [ ${OS_NAME} == "Linux" || ${OS_NAME} == "Darwin" ]; then
         ${SI_BUILD_DIR}/install-SI.sh --prefix=${INSTALL_PATH} --skip-license --exclude-subdir
     else
         # echo "Using NSIS installer"

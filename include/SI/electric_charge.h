@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.4.1
+ * This file is part of "SI" version 1.4.2
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -13,8 +13,8 @@
 
 #include "detail/number_parser.h"
 #include "detail/operator_helpers.h"
-#include "detail/string.h"
 #include "detail/unit.h"
+#include "detail/unit_symbol.h"
 #include "electric_current.h"
 #include "time.h"
 namespace SI {

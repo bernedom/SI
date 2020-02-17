@@ -1,5 +1,10 @@
 # Changelog 
 
+## 1.4.2
+
+*   Installation tests for OSX and Windows
+*   Renamed SI/detail/string.h to unit_symbol.h because of resolution-problems in osx/xcode
+
 ## 1.4.1
 
 *   Added micro-benchmarks for operations on `unit_t`
