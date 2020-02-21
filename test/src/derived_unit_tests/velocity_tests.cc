@@ -71,22 +71,7 @@ TEST_CASE("GIVEN a value of 10km/h WHEN compared to a value of 80kmh THEN "
   constexpr auto ten_kmh = 10.0_km / 1.0_h;
   constexpr auto eighty_kmh = 80.0_km / 1.0_h;
 
-  using gcd_unit = typename SI::detail::unit_with_common_ratio<
-      typename std::remove_reference<decltype(ten_kmh)>::type,
-      typename std::remove_reference<decltype(eighty_kmh)>::type>::type;
-
-  std::cout << "SAME RAT: " << gcd_unit::ratio::num << ": "
-            << gcd_unit::ratio::den << "\n";
-  std::cout << "V " << SI::detail::unit_cast<gcd_unit>(ten_kmh).raw_value()
-            << " 2" << SI::detail::unit_cast<gcd_unit>(eighty_kmh).raw_value();
-
-  constexpr auto gcd_cast_ten = SI::detail::unit_cast<gcd_unit>(ten_kmh);
-  constexpr auto gcd_cast_eighty = SI::detail::unit_cast<gcd_unit>(eighty_kmh);
-
-  STATIC_REQUIRE(
-      std::is_same<decltype(gcd_cast_ten), decltype(gcd_cast_eighty)>::value);
-
   STATIC_REQUIRE(std::is_same<decltype(ten_kmh), decltype(eighty_kmh)>::value);
-  REQUIRE(gcd_cast_ten.raw_value() == gcd_cast_eighty.raw_value());
-  REQUIRE(ten_kmh < eighty_kmh);
+
+  STATIC_REQUIRE(ten_kmh < eighty_kmh);
 }

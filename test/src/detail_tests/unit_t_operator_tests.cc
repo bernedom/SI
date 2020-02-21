@@ -478,8 +478,8 @@ TEMPLATE_TEST_CASE(
     "compared with less than operator THEN result is true",
     "[unit_t][operator<]", int64_t, long double) {
 
-  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1};
-  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{0};
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{0};
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{1};
 
   STATIC_REQUIRE(v1 < v2);
 }
@@ -489,8 +489,8 @@ TEMPLATE_TEST_CASE("GIVEN two units v1 and v2 AND v1 is smaller than v2 AND "
                    "compared with less than operator THEN result is true",
                    "[unit_t][operator<]", int64_t, long double) {
 
-  constexpr unit_t<'X', 1, TestType, std::kilo> v1{10};
-  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{1000};
+  constexpr unit_t<'X', 1, TestType, std::kilo> v1{1};
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{10000};
 
   STATIC_REQUIRE(v1 < v2);
 }
@@ -521,8 +521,8 @@ TEMPLATE_TEST_CASE(
     "compared with greater than operator THEN result is true",
     "[unit_t][operator>]", int64_t, long double) {
 
-  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{1};
-  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{0};
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v1{0};
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{1};
 
   STATIC_REQUIRE(v2 > v1);
 }
@@ -532,8 +532,8 @@ TEMPLATE_TEST_CASE("GIVEN two units v1 and v2 AND v1 is smaller than v2 AND "
                    "compared with greater than operator THEN result is true",
                    "[unit_t][operator>]", int64_t, long double) {
 
-  constexpr unit_t<'X', 1, TestType, std::kilo> v1{10};
-  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{1000};
+  constexpr unit_t<'X', 1, TestType, std::kilo> v1{1};
+  constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{10000};
 
   STATIC_REQUIRE(v2 > v1);
 }
