@@ -482,6 +482,7 @@ TEMPLATE_TEST_CASE(
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{1};
 
   STATIC_REQUIRE(v1 < v2);
+  STATIC_REQUIRE(v1 <= v1);
 }
 
 TEMPLATE_TEST_CASE("GIVEN two units v1 and v2 AND v1 is smaller than v2 AND "
@@ -493,6 +494,7 @@ TEMPLATE_TEST_CASE("GIVEN two units v1 and v2 AND v1 is smaller than v2 AND "
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{10000};
 
   STATIC_REQUIRE(v1 < v2);
+  STATIC_REQUIRE(v1 <= v2);
 }
 
 TEMPLATE_TEST_CASE(
@@ -506,7 +508,7 @@ TEMPLATE_TEST_CASE(
 }
 
 TEMPLATE_TEST_CASE(
-    "GIVEN two units with same absolute value AND differnt ratio WHEN "
+    "GIVEN two units with same absolute value AND different ratio WHEN "
     "compared with greater than operator THEN result is false",
     "[unit_t][operator>]", int64_t, long double) {
 
@@ -525,6 +527,7 @@ TEMPLATE_TEST_CASE(
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{1};
 
   STATIC_REQUIRE(v2 > v1);
+  STATIC_REQUIRE(v2 >= v1);
 }
 
 TEMPLATE_TEST_CASE("GIVEN two units v1 and v2 AND v1 is smaller than v2 AND "
@@ -536,6 +539,7 @@ TEMPLATE_TEST_CASE("GIVEN two units v1 and v2 AND v1 is smaller than v2 AND "
   constexpr unit_t<'X', 1, TestType, std::ratio<1>> v2{10000};
 
   STATIC_REQUIRE(v2 > v1);
+  STATIC_REQUIRE(v2 >= v1);
 }
 
 TEST_CASE("GIVEN two units with the same value but different ratios AND values "

@@ -1,7 +1,6 @@
 #include <catch2/catch.hpp>
 
 #include <SI/velocity.h>
-#include <iostream>
 
 using namespace SI::literals;
 

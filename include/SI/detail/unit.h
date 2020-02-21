@@ -195,6 +195,12 @@ struct unit_t {
 
   template <typename _rhs_ratio>
   constexpr bool
+  operator<=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
+    return !(*this > rhs);
+  }
+
+  template <typename _rhs_ratio>
+  constexpr bool
   operator>(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
@@ -209,6 +215,12 @@ struct unit_t {
 
     return unit_cast<gcd_unit>(*this).raw_value() >
            unit_cast<gcd_unit>(rhs).raw_value();
+  }
+
+  template <typename _rhs_ratio>
+  constexpr bool
+  operator>=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
+    return !(*this < rhs);
   }
 
   /// multiply with a non-unit scalar
