@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.4.2
+ * This file is part of "SI" version 1.5.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -38,7 +38,7 @@ template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
  *with a ratio _ratio
  *
  * @tparam _symbol dimension symbol of the unit (see
- *https://en.wikipedia.org/wiki/SI_base_unit)
+ * https://en.wikipedia.org/wiki/SI_base_unit)
  * @tparam _ratio Ratio in relation to the base unit of a SI unit
  * @tparam _type internal representation of the value
  * @tparam _exponent the exponent to the unit (i.e. length ==  m^1, area == m^2,
@@ -189,8 +189,14 @@ struct unit_t {
     using gcd_unit = typename unit_with_common_ratio<
         typename std::remove_reference<decltype(rhs)>::type,
         typename std::remove_reference<decltype(*this)>::type>::type;
-    return unit_cast<gcd_unit>(rhs).raw_value() <
-           unit_cast<gcd_unit>(*this).raw_value();
+    return unit_cast<gcd_unit>(*this).raw_value() <
+           unit_cast<gcd_unit>(rhs).raw_value();
+  }
+
+  template <typename _rhs_ratio>
+  constexpr bool
+  operator<=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
+    return !(*this > rhs);
   }
 
   template <typename _rhs_ratio>
@@ -207,8 +213,14 @@ struct unit_t {
         typename std::remove_reference<decltype(rhs)>::type,
         typename std::remove_reference<decltype(*this)>::type>::type;
 
-    return unit_cast<gcd_unit>(rhs).raw_value() >
-           unit_cast<gcd_unit>(*this).raw_value();
+    return unit_cast<gcd_unit>(*this).raw_value() >
+           unit_cast<gcd_unit>(rhs).raw_value();
+  }
+
+  template <typename _rhs_ratio>
+  constexpr bool
+  operator>=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
+    return !(*this < rhs);
   }
 
   /// multiply with a non-unit scalar
@@ -482,7 +494,7 @@ constexpr auto unit_cast(const _rhs_T &rhs) {
       std::ratio_divide<typename _rhs_T::ratio, typename _target_type::ratio>;
 
   return _target_type{
-      (rhs.raw_value() * conversion_ratio::num / conversion_ratio::den)};
+      ((rhs.raw_value() * conversion_ratio::num) / conversion_ratio::den)};
 }
 
 template <typename _unit_lhs, typename _unit_rhs>

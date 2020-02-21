@@ -17,6 +17,10 @@ addons:
     packages:
       - ninja
       - shunit2
+    # temporary workaround for this problem
+    # https://travis-ci.community/t/macos-build-fails-because-of-homebrew-bundle-unknown-command/7296/10
+    update: true
+
 os: linux
 env:
   - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"

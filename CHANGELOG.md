@@ -1,7 +1,9 @@
 # Changelog 
 
-## 1.4.2
+## 1.5.0
 
+*   Bugfix: Operators < and > where comparing the wrong way round (this is embarassing)
+*   Added Operators <= and =>
 *   Installation tests for OSX and Windows
 *   Renamed SI/detail/string.h to unit_symbol.h because of resolution-problems in osx/xcode
 

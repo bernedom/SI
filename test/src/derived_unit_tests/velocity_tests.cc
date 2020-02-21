@@ -64,3 +64,13 @@ TEMPLATE_TEST_CASE(
   STATIC_REQUIRE(
       std::is_same<decltype(result), decltype(result_commutative)>::value);
 }
+
+TEST_CASE("GIVEN a value of 10km/h WHEN compared to a value of 80kmh THEN "
+          "10km/h is smaller") {
+  constexpr auto ten_kmh = 10.0_km / 1.0_h;
+  constexpr auto eighty_kmh = 80.0_km / 1.0_h;
+
+  STATIC_REQUIRE(std::is_same<decltype(ten_kmh), decltype(eighty_kmh)>::value);
+
+  STATIC_REQUIRE(ten_kmh < eighty_kmh);
+}
