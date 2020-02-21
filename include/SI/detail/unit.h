@@ -482,7 +482,7 @@ constexpr auto unit_cast(const _rhs_T &rhs) {
       std::ratio_divide<typename _rhs_T::ratio, typename _target_type::ratio>;
 
   return _target_type{
-      (rhs.raw_value() * conversion_ratio::num / conversion_ratio::den)};
+      ((rhs.raw_value() * conversion_ratio::num) / conversion_ratio::den)};
 }
 
 template <typename _unit_lhs, typename _unit_rhs>
