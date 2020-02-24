@@ -23,6 +23,7 @@ install:
   - cmd: python -m pip install conan
   - cmd: conan user # Create the conan data directory
   - cmd: conan --version
+  - cmd: choco install ninja
 
 before_build:
   - cmd: |-
