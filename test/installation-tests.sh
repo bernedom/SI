@@ -28,17 +28,17 @@ tearDown() {
 testVersionNumberConsistency() {
     CHANGELOG_VERSION=$(sed -n -E '/## [0-9]+\.[0-9]+\.[0-9]+/p' ${ROOT_DIR}/CHANGELOG.md | head -1 | grep -E -o '[0-9]+\.[0-9]+\.[0-9]+')
     ORIG_DIR=$(pwd)
-    
+    if [ -x "$(command -v python3)" ]; then
+        PYTHON_CMD=python3
+    else
+        PYTHON_CMD=python
+    fi
+    echo Using $(${PYTHON_CMD} --version)
     cmake ${ROOT_DIR} -B${SI_BUILD_DIR} -DBUILD_TESTING=off -DCMAKE_BUILD_TYPE=Debug
     cd ${SI_BUILD_DIR}
     CMAKE_VERSION=$(cmake --system-information | grep -E "VERSION:STATIC" | grep -E -o '[0-9]+\.[0-9]+\.[0-9]+')
     cd ${ROOT_DIR}
-    if [ ${OS_NAME} == "Linux" ] || [ ${OS_NAME} == "Darwin" ]; then
-        CONAN_VERSION=$(python3 -c 'from conanfile import SiConan; print(SiConan.version)')
-    else
-        echo "Building for Non-Linux"
-        CONAN_VERSION=$(python -c 'from conanfile import SiConan; print(SiConan.version)')
-    fi
+    CONAN_VERSION=$(${PYTHON_CMD} -c 'from conanfile import SiConan; print(SiConan.version)')
     cd ${ORIG_DIR}
     GIT_VERSION_EXACT=$(git describe --tags | grep -E -o '^[0-9]+\.[0-9]+\.[0-9]+$')
     
