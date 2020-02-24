@@ -12,6 +12,7 @@ matrix:
   fast_finish: true
 
 environment:
+  CMAKE_BUILD_PARALLEL_LEVEL: 8
   matrix:
     - PYTHON: "C:\\Python37"
 
