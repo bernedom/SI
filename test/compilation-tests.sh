@@ -10,20 +10,20 @@ buildSingleTarget()
     
     if [ "${2}" == "DEFAULTBUILD" ]; then
         cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_BUILD_TYPE=Release -G Ninja > /dev/null
-        assertEquals "Configuration successful" $? 0
+        assertEquals "Configuration successful" 0 $?
         
     else
         cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-DSI_DISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja > /dev/null
-        assertEquals "Configuration successful" $? 0
+        assertEquals "Configuration successful" 0 $?
     fi
     
     cmake --build ${BUILD_DIR} --config Release --target $1 > /dev/null
     RESULT=$?
     
     if [ "${3}" == "PASS" ]; then
-        assertEquals "Building successful" $RESULT 0
+        assertEquals "Building successful" 0 $RESULT
     else
-        assertNotEquals "Building fails" $RESULT 0
+        assertNotEquals "Building fails" 0 $RESULT
     fi
 }
 
@@ -53,17 +53,17 @@ tearDown(){
 testSISelfSuccessfulCompilationWhenDefaultInvocation() {
     
     cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release -G Ninja > /dev/null
-    assertEquals "Configuration successful" $? 0
+    assertEquals "Configuration successful" 0 $?
     cmake --build ${BUILD_DIR} --config Release > /dev/null
-    assertEquals "Building successful" $? 0
+    assertEquals "Building successful" 0 $?
 }
 
 testSISelfFailedCompilationWhenImplicitConversionDisabled() {
     
     cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-DSI_DISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja > /dev/null
-    assertEquals "Configuration successful" $? 0
+    assertEquals "Configuration successful" 0 $?
     cmake --build ${BUILD_DIR} --config Release
-    assertNotEquals "Building fails" $? 0
+    assertNotEquals "Building fails" 0 $?
 }
 
 testOperatorCopyCtorWithSameRatioCompilesWhenDefaultInvocation()
