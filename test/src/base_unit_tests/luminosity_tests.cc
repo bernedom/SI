@@ -180,6 +180,7 @@ TEST_CASE("GIVEN a 1 atto candela WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_acd;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1acd");
 }
 
@@ -188,6 +189,7 @@ TEST_CASE("GIVEN a 1 femto candela WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_fcd;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fcd");
 }
 
@@ -196,6 +198,7 @@ TEST_CASE("GIVEN a 1 pico candela WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_pcd;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pcd");
 }
 
@@ -204,6 +207,7 @@ TEST_CASE("GIVEN a 1 nano candela WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_ncd;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1ncd");
 }
 
@@ -212,6 +216,7 @@ TEST_CASE("GIVEN a 1 micro candela WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_ucd;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1ucd");
 }
 
@@ -220,6 +225,7 @@ TEST_CASE("GIVEN a 1 milli candela WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mcd;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mcd");
 }
 
@@ -229,6 +235,7 @@ TEST_CASE(
   constexpr auto value = 1_cd;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1cd");
 }
 
@@ -237,6 +244,7 @@ TEST_CASE("GIVEN a 1 kilo candela WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_kcd;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1kcd");
 }
 
@@ -245,6 +253,7 @@ TEST_CASE("GIVEN a 1 mega candela WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Mcd;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Mcd");
 }
 
@@ -253,6 +262,7 @@ TEST_CASE("GIVEN a 1 giga candela WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Gcd;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Gcd");
 }
 
@@ -261,6 +271,7 @@ TEST_CASE("GIVEN a 1 tera candela WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Tcd;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Tcd");
 }
 
@@ -269,6 +280,7 @@ TEST_CASE("GIVEN a 1 exa candela WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Ecd;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Ecd");
 }
 
@@ -277,10 +289,12 @@ TEST_CASE("GIVEN a 1 peta candela WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Pcd;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Pcd");
 }
-TEST_CASE("GIVEN a string of '1acd' WHEN streamed into atto_candela_t THEN result "
-          "is a value of 1 atto_candela_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1acd' WHEN streamed into atto_candela_t THEN result "
+    "is a value of 1 atto_candela_t AND stream is good") {
   std::stringstream ss;
   ss << "1acd";
   SI::atto_candela_t<int64_t> value{0};
@@ -300,8 +314,9 @@ TEST_CASE(
   REQUIRE(value == 1_fcd);
 }
 
-TEST_CASE("GIVEN a string of '1pcd' WHEN streamed into pico_candela_t THEN result "
-          "is a value of 1 pico_candela_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1pcd' WHEN streamed into pico_candela_t THEN result "
+    "is a value of 1 pico_candela_t AND stream is good") {
   std::stringstream ss;
   ss << "1pcd";
   SI::pico_candela_t<int64_t> value{0};
@@ -310,8 +325,9 @@ TEST_CASE("GIVEN a string of '1pcd' WHEN streamed into pico_candela_t THEN resul
   REQUIRE(value == 1_pcd);
 }
 
-TEST_CASE("GIVEN a string of '1ncd' WHEN streamed into nano_candela_t THEN result "
-          "is a value of 1 nano_candela_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1ncd' WHEN streamed into nano_candela_t THEN result "
+    "is a value of 1 nano_candela_t AND stream is good") {
   std::stringstream ss;
   ss << "1ncd";
   SI::nano_candela_t<int64_t> value{0};
@@ -352,8 +368,9 @@ TEST_CASE("GIVEN a string of '1cd' WHEN streamed into candela_t THEN result "
   REQUIRE(value == 1_cd);
 }
 
-TEST_CASE("GIVEN a string of '1kcd' WHEN streamed into kilo_candela_t THEN result "
-          "is a value of 1 kilo_candela_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1kcd' WHEN streamed into kilo_candela_t THEN result "
+    "is a value of 1 kilo_candela_t AND stream is good") {
   std::stringstream ss;
   ss << "1kcd";
   SI::kilo_candela_t<int64_t> value{0};
@@ -362,8 +379,9 @@ TEST_CASE("GIVEN a string of '1kcd' WHEN streamed into kilo_candela_t THEN resul
   REQUIRE(value == 1_kcd);
 }
 
-TEST_CASE("GIVEN a string of '1Mcd' WHEN streamed into mega_candela_t THEN result "
-          "is a value of 1 mega_candela_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1Mcd' WHEN streamed into mega_candela_t THEN result "
+    "is a value of 1 mega_candela_t AND stream is good") {
   std::stringstream ss;
   ss << "1Mcd";
   SI::mega_candela_t<int64_t> value{0};
@@ -372,8 +390,9 @@ TEST_CASE("GIVEN a string of '1Mcd' WHEN streamed into mega_candela_t THEN resul
   REQUIRE(value == 1_Mcd);
 }
 
-TEST_CASE("GIVEN a string of '1Gcd' WHEN streamed into giga_candela_t THEN result "
-          "is a value of 1 giga_candela_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1Gcd' WHEN streamed into giga_candela_t THEN result "
+    "is a value of 1 giga_candela_t AND stream is good") {
   std::stringstream ss;
   ss << "1Gcd";
   SI::giga_candela_t<int64_t> value{0};
@@ -382,8 +401,9 @@ TEST_CASE("GIVEN a string of '1Gcd' WHEN streamed into giga_candela_t THEN resul
   REQUIRE(value == 1_Gcd);
 }
 
-TEST_CASE("GIVEN a string of '1Tcd' WHEN streamed into tera_candela_t THEN result "
-          "is a value of 1 tera_candela_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1Tcd' WHEN streamed into tera_candela_t THEN result "
+    "is a value of 1 tera_candela_t AND stream is good") {
   std::stringstream ss;
   ss << "1Tcd";
   SI::tera_candela_t<int64_t> value{0};
@@ -392,8 +412,9 @@ TEST_CASE("GIVEN a string of '1Tcd' WHEN streamed into tera_candela_t THEN resul
   REQUIRE(value == 1_Tcd);
 }
 
-TEST_CASE("GIVEN a string of '1Pcd' WHEN streamed into peta_candela_t THEN result "
-          "is a value of 1 peta_candela_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1Pcd' WHEN streamed into peta_candela_t THEN result "
+    "is a value of 1 peta_candela_t AND stream is good") {
   std::stringstream ss;
   ss << "1Pcd";
   SI::peta_candela_t<int64_t> value{0};
@@ -402,8 +423,9 @@ TEST_CASE("GIVEN a string of '1Pcd' WHEN streamed into peta_candela_t THEN resul
   REQUIRE(value == 1_Pcd);
 }
 
-TEST_CASE("GIVEN a string of '1Ecd' WHEN streamed into exa_candela_t THEN result "
-          "is a value of 1 exa_candela_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1Ecd' WHEN streamed into exa_candela_t THEN result "
+    "is a value of 1 exa_candela_t AND stream is good") {
   std::stringstream ss;
   ss << "1Ecd";
   SI::exa_candela_t<int64_t> value{0};

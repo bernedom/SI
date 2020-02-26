@@ -210,6 +210,7 @@ TEST_CASE("GIVEN a 1 atto Watt WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_aW;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1aW");
 }
 
@@ -218,6 +219,7 @@ TEST_CASE("GIVEN a 1 femto Watt WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_fW;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fW");
 }
 
@@ -226,6 +228,7 @@ TEST_CASE("GIVEN a 1 pico Watt WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_pW;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pW");
 }
 
@@ -234,6 +237,7 @@ TEST_CASE("GIVEN a 1 nano Watt WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nW;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nW");
 }
 
@@ -242,6 +246,7 @@ TEST_CASE("GIVEN a 1 micro Watt WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_uW;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1uW");
 }
 
@@ -250,6 +255,7 @@ TEST_CASE("GIVEN a 1 milli Watt WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mW;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mW");
 }
 
@@ -258,6 +264,7 @@ TEST_CASE("GIVEN a 1 Watt WHEN passed to a streaming operator THEN result is "
   constexpr auto value = 1_W;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1W");
 }
 
@@ -266,6 +273,7 @@ TEST_CASE("GIVEN a 1 kilo Watt WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_kW;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1kW");
 }
 
@@ -274,6 +282,7 @@ TEST_CASE("GIVEN a 1 mega Watt WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_MW;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1MW");
 }
 
@@ -282,6 +291,7 @@ TEST_CASE("GIVEN a 1 giga Watt WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_GW;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1GW");
 }
 
@@ -290,6 +300,7 @@ TEST_CASE("GIVEN a 1 tera Watt WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_TW;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1TW");
 }
 
@@ -298,6 +309,7 @@ TEST_CASE("GIVEN a 1 exa Watt WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_EW;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1EW");
 }
 
@@ -306,6 +318,7 @@ TEST_CASE("GIVEN a 1 peta Watt WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_PW;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1PW");
 }
 
@@ -319,9 +332,8 @@ TEST_CASE("GIVEN a string of '1aW' WHEN streamed into atto_watt_t THEN result "
   REQUIRE(value == 1_aW);
 }
 
-TEST_CASE(
-    "GIVEN a string of '1fW' WHEN streamed into femto_watt_t THEN result "
-    "is a value of 1 femto_watt_t AND stream is good") {
+TEST_CASE("GIVEN a string of '1fW' WHEN streamed into femto_watt_t THEN result "
+          "is a value of 1 femto_watt_t AND stream is good") {
   std::stringstream ss;
   ss << "1fW";
   SI::femto_watt_t<int64_t> value{0};
@@ -350,9 +362,8 @@ TEST_CASE("GIVEN a string of '1nW' WHEN streamed into nano_watt_t THEN result "
   REQUIRE(value == 1_nW);
 }
 
-TEST_CASE(
-    "GIVEN a string of '1uW' WHEN streamed into micro_watt_t THEN result "
-    "is a value of 1 micro_watt_t AND stream is good") {
+TEST_CASE("GIVEN a string of '1uW' WHEN streamed into micro_watt_t THEN result "
+          "is a value of 1 micro_watt_t AND stream is good") {
   std::stringstream ss;
   ss << "1uW";
   SI::micro_watt_t<int64_t> value{0};
@@ -361,9 +372,8 @@ TEST_CASE(
   REQUIRE(value == 1_uW);
 }
 
-TEST_CASE(
-    "GIVEN a string of '1mW' WHEN streamed into milli_watt_t THEN result "
-    "is a value of 1 milli_watt_t AND stream is good") {
+TEST_CASE("GIVEN a string of '1mW' WHEN streamed into milli_watt_t THEN result "
+          "is a value of 1 milli_watt_t AND stream is good") {
   std::stringstream ss;
   ss << "1mW";
   SI::milli_watt_t<int64_t> value{0};

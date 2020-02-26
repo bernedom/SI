@@ -179,6 +179,7 @@ TEST_CASE("GIVEN a 1 atto becquerel WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_aBq;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1aBq");
 }
 
@@ -187,6 +188,7 @@ TEST_CASE("GIVEN a 1 femto becquerel WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_fBq;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fBq");
 }
 
@@ -195,6 +197,7 @@ TEST_CASE("GIVEN a 1 pico becquerel WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_pBq;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pBq");
 }
 
@@ -203,6 +206,7 @@ TEST_CASE("GIVEN a 1 nano becquerel WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nBq;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nBq");
 }
 
@@ -211,6 +215,7 @@ TEST_CASE("GIVEN a 1 micro becquerel WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_uBq;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1uBq");
 }
 
@@ -219,6 +224,7 @@ TEST_CASE("GIVEN a 1 milli becquerel WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mBq;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mBq");
 }
 
@@ -228,6 +234,7 @@ TEST_CASE(
   constexpr auto value = 1_Bq;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Bq");
 }
 
@@ -236,6 +243,7 @@ TEST_CASE("GIVEN a 1 kilo becquerel WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_kBq;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1kBq");
 }
 
@@ -244,6 +252,7 @@ TEST_CASE("GIVEN a 1 mega becquerel WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_MBq;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1MBq");
 }
 
@@ -252,6 +261,7 @@ TEST_CASE("GIVEN a 1 giga becquerel WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_GBq;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1GBq");
 }
 
@@ -260,6 +270,7 @@ TEST_CASE("GIVEN a 1 tera becquerel WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_TBq;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1TBq");
 }
 
@@ -268,6 +279,7 @@ TEST_CASE("GIVEN a 1 exa becquerel WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_EBq;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1EBq");
 }
 
@@ -276,6 +288,7 @@ TEST_CASE("GIVEN a 1 peta becquerel WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_PBq;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1PBq");
 }
 

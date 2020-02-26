@@ -4,8 +4,10 @@
 
 using namespace SI::literals;
 
-TEST_CASE("GIVEN a velocity value in meters per second WHEN multiplied by mass value in "
-          "kilograms THEN result is a momentum value AND ratio of result is 1") {
+TEST_CASE(
+    "GIVEN a velocity value in meters per second WHEN multiplied by mass value "
+    "in "
+    "kilograms THEN result is a momentum value AND ratio of result is 1") {
   constexpr auto velocity = 1_m / 1_s;
   constexpr auto one = velocity * 1_kg;
 
@@ -23,10 +25,9 @@ TEST_CASE("GIVEN a velocity value in meters per second WHEN multiplied by mass v
       std::ratio_equal<std::ratio<1>, decltype(one_f)::ratio>::value);
 }
 
-TEMPLATE_TEST_CASE(
-    "GIVEN momentum value WHEN divided by mass THEN result is a "
-    "velocity value",
-    "[length][operator_tests]", int64_t, long double) {
+TEMPLATE_TEST_CASE("GIVEN momentum value WHEN divided by mass THEN result is a "
+                   "velocity value",
+                   "[length][operator_tests]", int64_t, long double) {
 
   constexpr SI::momentum_t<TestType, std::ratio<1>> o{1};
   constexpr SI::mass_t<TestType, std::ratio<1>> M{1};

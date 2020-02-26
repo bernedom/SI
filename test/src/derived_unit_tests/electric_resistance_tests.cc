@@ -268,6 +268,7 @@ TEST_CASE("GIVEN a 1 atto Ohm WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_aOhm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1aOhm");
 }
 
@@ -276,6 +277,7 @@ TEST_CASE("GIVEN a 1 femto Ohm WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_fOhm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fOhm");
 }
 
@@ -284,6 +286,7 @@ TEST_CASE("GIVEN a 1 pico Ohm WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_pOhm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pOhm");
 }
 
@@ -292,6 +295,7 @@ TEST_CASE("GIVEN a 1 nano Ohm WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nOhm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nOhm");
 }
 
@@ -300,6 +304,7 @@ TEST_CASE("GIVEN a 1 micro Ohm WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_uOhm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1uOhm");
 }
 
@@ -308,6 +313,7 @@ TEST_CASE("GIVEN a 1 milli Ohm WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mOhm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mOhm");
 }
 
@@ -316,6 +322,7 @@ TEST_CASE("GIVEN a 1 Ohm WHEN passed to a streaming operator THEN result is "
   constexpr auto value = 1_Ohm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Ohm");
 }
 
@@ -324,6 +331,7 @@ TEST_CASE("GIVEN a 1 kilo Ohm WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_kOhm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1kOhm");
 }
 
@@ -332,6 +340,7 @@ TEST_CASE("GIVEN a 1 mega Ohm WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_MOhm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1MOhm");
 }
 
@@ -340,6 +349,7 @@ TEST_CASE("GIVEN a 1 giga Ohm WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_GOhm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1GOhm");
 }
 
@@ -348,6 +358,7 @@ TEST_CASE("GIVEN a 1 tera Ohm WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_TOhm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1TOhm");
 }
 
@@ -356,6 +367,7 @@ TEST_CASE("GIVEN a 1 exa Ohm WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_EOhm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1EOhm");
 }
 
@@ -364,6 +376,7 @@ TEST_CASE("GIVEN a 1 peta Ohm WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_POhm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1POhm");
 }
 

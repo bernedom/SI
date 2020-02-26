@@ -180,6 +180,7 @@ TEST_CASE("GIVEN a 1 atto ampere WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_aA;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1aA");
 }
 
@@ -188,6 +189,7 @@ TEST_CASE("GIVEN a 1 femto ampere WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_fA;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fA");
 }
 
@@ -196,6 +198,7 @@ TEST_CASE("GIVEN a 1 pico ampere WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_pA;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pA");
 }
 
@@ -204,6 +207,7 @@ TEST_CASE("GIVEN a 1 nano ampere WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nA;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nA");
 }
 
@@ -212,6 +216,7 @@ TEST_CASE("GIVEN a 1 micro ampere WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_uA;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1uA");
 }
 
@@ -220,6 +225,7 @@ TEST_CASE("GIVEN a 1 milli ampere WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mA;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mA");
 }
 
@@ -228,6 +234,7 @@ TEST_CASE("GIVEN a 1 ampere WHEN passed to a streaming operator THEN result is "
   constexpr auto value = 1_A;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1A");
 }
 
@@ -236,6 +243,7 @@ TEST_CASE("GIVEN a 1 kilo ampere WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_kA;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1kA");
 }
 
@@ -244,6 +252,7 @@ TEST_CASE("GIVEN a 1 mega ampere WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_MA;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1MA");
 }
 
@@ -252,6 +261,7 @@ TEST_CASE("GIVEN a 1 giga ampere WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_GA;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1GA");
 }
 
@@ -260,6 +270,7 @@ TEST_CASE("GIVEN a 1 tera ampere WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_TA;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1TA");
 }
 
@@ -268,6 +279,7 @@ TEST_CASE("GIVEN a 1 exa ampere WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_EA;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1EA");
 }
 
@@ -276,6 +288,7 @@ TEST_CASE("GIVEN a 1 peta ampere WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_PA;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1PA");
 }
 

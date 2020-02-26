@@ -225,6 +225,7 @@ TEST_CASE("GIVEN a 1 atto Lux WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_alx;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1alx");
 }
 
@@ -233,6 +234,7 @@ TEST_CASE("GIVEN a 1 femto Lux WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_flx;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1flx");
 }
 
@@ -241,6 +243,7 @@ TEST_CASE("GIVEN a 1 pico Lux WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_plx;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1plx");
 }
 
@@ -249,6 +252,7 @@ TEST_CASE("GIVEN a 1 nano Lux WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nlx;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nlx");
 }
 
@@ -257,6 +261,7 @@ TEST_CASE("GIVEN a 1 micro Lux WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_ulx;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1ulx");
 }
 
@@ -265,6 +270,7 @@ TEST_CASE("GIVEN a 1 milli Lux WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mlx;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mlx");
 }
 
@@ -273,6 +279,7 @@ TEST_CASE("GIVEN a 1 Lux WHEN passed to a streaming operator THEN result is "
   constexpr auto value = 1_lx;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1lx");
 }
 
@@ -281,6 +288,7 @@ TEST_CASE("GIVEN a 1 kilo Lux WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_klx;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1klx");
 }
 
@@ -289,6 +297,7 @@ TEST_CASE("GIVEN a 1 mega Lux WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Mlx;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Mlx");
 }
 
@@ -297,6 +306,7 @@ TEST_CASE("GIVEN a 1 giga Lux WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Glx;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Glx");
 }
 
@@ -305,6 +315,7 @@ TEST_CASE("GIVEN a 1 tera Lux WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Tlx;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Tlx");
 }
 
@@ -313,6 +324,7 @@ TEST_CASE("GIVEN a 1 exa Lux WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Elx;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Elx");
 }
 
@@ -321,6 +333,7 @@ TEST_CASE("GIVEN a 1 peta Lux WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Plx;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Plx");
 }
 
@@ -334,9 +347,8 @@ TEST_CASE("GIVEN a string of '1alx' WHEN streamed into atto_lux_t THEN result "
   REQUIRE(value == 1_alx);
 }
 
-TEST_CASE(
-    "GIVEN a string of '1flx' WHEN streamed into femto_lux_t THEN result "
-    "is a value of 1 femto_lux_t AND stream is good") {
+TEST_CASE("GIVEN a string of '1flx' WHEN streamed into femto_lux_t THEN result "
+          "is a value of 1 femto_lux_t AND stream is good") {
   std::stringstream ss;
   ss << "1flx";
   SI::femto_lux_t<int64_t> value{0};
@@ -365,9 +377,8 @@ TEST_CASE("GIVEN a string of '1nlx' WHEN streamed into nano_lux_t THEN result "
   REQUIRE(value == 1_nlx);
 }
 
-TEST_CASE(
-    "GIVEN a string of '1ulx' WHEN streamed into micro_lux_t THEN result "
-    "is a value of 1 micro_lux_t AND stream is good") {
+TEST_CASE("GIVEN a string of '1ulx' WHEN streamed into micro_lux_t THEN result "
+          "is a value of 1 micro_lux_t AND stream is good") {
   std::stringstream ss;
   ss << "1ulx";
   SI::micro_lux_t<int64_t> value{0};
@@ -376,9 +387,8 @@ TEST_CASE(
   REQUIRE(value == 1_ulx);
 }
 
-TEST_CASE(
-    "GIVEN a string of '1mlx' WHEN streamed into milli_lux_t THEN result "
-    "is a value of 1 milli_lux_t AND stream is good") {
+TEST_CASE("GIVEN a string of '1mlx' WHEN streamed into milli_lux_t THEN result "
+          "is a value of 1 milli_lux_t AND stream is good") {
   std::stringstream ss;
   ss << "1mlx";
   SI::milli_lux_t<int64_t> value{0};
