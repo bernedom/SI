@@ -224,6 +224,7 @@ TEST_CASE("GIVEN a 1 atto Lumen WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_alm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1alm");
 }
 
@@ -232,6 +233,7 @@ TEST_CASE("GIVEN a 1 femto Lumen WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_flm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1flm");
 }
 
@@ -240,6 +242,7 @@ TEST_CASE("GIVEN a 1 pico Lumen WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_plm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1plm");
 }
 
@@ -248,6 +251,7 @@ TEST_CASE("GIVEN a 1 nano Lumen WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nlm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nlm");
 }
 
@@ -256,6 +260,7 @@ TEST_CASE("GIVEN a 1 micro Lumen WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_ulm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1ulm");
 }
 
@@ -264,6 +269,7 @@ TEST_CASE("GIVEN a 1 milli Lumen WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mlm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mlm");
 }
 
@@ -272,6 +278,7 @@ TEST_CASE("GIVEN a 1 Lumen WHEN passed to a streaming operator THEN result is "
   constexpr auto value = 1_lm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1lm");
 }
 
@@ -280,6 +287,7 @@ TEST_CASE("GIVEN a 1 kilo Lumen WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_klm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1klm");
 }
 
@@ -288,6 +296,7 @@ TEST_CASE("GIVEN a 1 mega Lumen WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Mlm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Mlm");
 }
 
@@ -296,6 +305,7 @@ TEST_CASE("GIVEN a 1 giga Lumen WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Glm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Glm");
 }
 
@@ -304,6 +314,7 @@ TEST_CASE("GIVEN a 1 tera Lumen WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Tlm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Tlm");
 }
 
@@ -312,6 +323,7 @@ TEST_CASE("GIVEN a 1 exa Lumen WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Elm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Elm");
 }
 
@@ -320,11 +332,13 @@ TEST_CASE("GIVEN a 1 peta Lumen WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Plm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Plm");
 }
 
-TEST_CASE("GIVEN a string of '1alm' WHEN streamed into atto_lumen_t THEN result "
-          "is a value of 1 atto_lumen_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1alm' WHEN streamed into atto_lumen_t THEN result "
+    "is a value of 1 atto_lumen_t AND stream is good") {
   std::stringstream ss;
   ss << "1alm";
   SI::atto_lumen_t<int64_t> value{0};
@@ -344,8 +358,9 @@ TEST_CASE(
   REQUIRE(value == 1_flm);
 }
 
-TEST_CASE("GIVEN a string of '1plm' WHEN streamed into pico_lumen_t THEN result "
-          "is a value of 1 pico_lumen_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1plm' WHEN streamed into pico_lumen_t THEN result "
+    "is a value of 1 pico_lumen_t AND stream is good") {
   std::stringstream ss;
   ss << "1plm";
   SI::pico_lumen_t<int64_t> value{0};
@@ -354,8 +369,9 @@ TEST_CASE("GIVEN a string of '1plm' WHEN streamed into pico_lumen_t THEN result 
   REQUIRE(value == 1_plm);
 }
 
-TEST_CASE("GIVEN a string of '1nlm' WHEN streamed into nano_lumen_t THEN result "
-          "is a value of 1 nano_lumen_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1nlm' WHEN streamed into nano_lumen_t THEN result "
+    "is a value of 1 nano_lumen_t AND stream is good") {
   std::stringstream ss;
   ss << "1nlm";
   SI::nano_lumen_t<int64_t> value{0};
@@ -396,8 +412,9 @@ TEST_CASE("GIVEN a string of '1lm' WHEN streamed into lumen_t THEN result "
   REQUIRE(value == 1_lm);
 }
 
-TEST_CASE("GIVEN a string of '1klm' WHEN streamed into kilo_lumen_t THEN result "
-          "is a value of 1 kilo_lumen_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1klm' WHEN streamed into kilo_lumen_t THEN result "
+    "is a value of 1 kilo_lumen_t AND stream is good") {
   std::stringstream ss;
   ss << "1klm";
   SI::kilo_lumen_t<int64_t> value{0};
@@ -406,8 +423,9 @@ TEST_CASE("GIVEN a string of '1klm' WHEN streamed into kilo_lumen_t THEN result 
   REQUIRE(value == 1_klm);
 }
 
-TEST_CASE("GIVEN a string of '1Mlm' WHEN streamed into mega_lumen_t THEN result "
-          "is a value of 1 mega_lumen_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1Mlm' WHEN streamed into mega_lumen_t THEN result "
+    "is a value of 1 mega_lumen_t AND stream is good") {
   std::stringstream ss;
   ss << "1Mlm";
   SI::mega_lumen_t<int64_t> value{0};
@@ -416,8 +434,9 @@ TEST_CASE("GIVEN a string of '1Mlm' WHEN streamed into mega_lumen_t THEN result 
   REQUIRE(value == 1_Mlm);
 }
 
-TEST_CASE("GIVEN a string of '1Glm' WHEN streamed into giga_lumen_t THEN result "
-          "is a value of 1 giga_lumen_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1Glm' WHEN streamed into giga_lumen_t THEN result "
+    "is a value of 1 giga_lumen_t AND stream is good") {
   std::stringstream ss;
   ss << "1Glm";
   SI::giga_lumen_t<int64_t> value{0};
@@ -426,8 +445,9 @@ TEST_CASE("GIVEN a string of '1Glm' WHEN streamed into giga_lumen_t THEN result 
   REQUIRE(value == 1_Glm);
 }
 
-TEST_CASE("GIVEN a string of '1Tlm' WHEN streamed into tera_lumen_t THEN result "
-          "is a value of 1 tera_lumen_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1Tlm' WHEN streamed into tera_lumen_t THEN result "
+    "is a value of 1 tera_lumen_t AND stream is good") {
   std::stringstream ss;
   ss << "1Tlm";
   SI::tera_lumen_t<int64_t> value{0};
@@ -436,8 +456,9 @@ TEST_CASE("GIVEN a string of '1Tlm' WHEN streamed into tera_lumen_t THEN result 
   REQUIRE(value == 1_Tlm);
 }
 
-TEST_CASE("GIVEN a string of '1Plm' WHEN streamed into peta_lumen_t THEN result "
-          "is a value of 1 peta_lumen_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1Plm' WHEN streamed into peta_lumen_t THEN result "
+    "is a value of 1 peta_lumen_t AND stream is good") {
   std::stringstream ss;
   ss << "1Plm";
   SI::peta_lumen_t<int64_t> value{0};

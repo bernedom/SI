@@ -101,6 +101,7 @@ TEST_CASE("GIVEN a 1 atto sterradiant WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_asr;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1asr");
 }
 
@@ -110,6 +111,7 @@ TEST_CASE(
   constexpr auto value = 1_fsr;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fsr");
 }
 
@@ -118,6 +120,7 @@ TEST_CASE("GIVEN a 1 pico sterradiant WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_psr;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1psr");
 }
 
@@ -126,6 +129,7 @@ TEST_CASE("GIVEN a 1 nano sterradiant WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_nsr;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nsr");
 }
 
@@ -135,6 +139,7 @@ TEST_CASE(
   constexpr auto value = 1_usr;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1usr");
 }
 
@@ -144,6 +149,7 @@ TEST_CASE(
   constexpr auto value = 1_msr;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1msr");
 }
 
@@ -153,6 +159,7 @@ TEST_CASE(
   constexpr auto value = 1_sr;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1sr");
 }
 

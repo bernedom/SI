@@ -214,6 +214,7 @@ TEST_CASE("GIVEN a 1 atto Pascal WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_apa;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1apa");
 }
 
@@ -222,6 +223,7 @@ TEST_CASE("GIVEN a 1 femto Pascal WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_fpa;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fpa");
 }
 
@@ -230,6 +232,7 @@ TEST_CASE("GIVEN a 1 pico Pascal WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_ppa;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1ppa");
 }
 
@@ -238,6 +241,7 @@ TEST_CASE("GIVEN a 1 nano Pascal WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_npa;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1npa");
 }
 
@@ -246,6 +250,7 @@ TEST_CASE("GIVEN a 1 micro Pascal WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_upa;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1upa");
 }
 
@@ -254,6 +259,7 @@ TEST_CASE("GIVEN a 1 milli Pascal WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_mpa;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mpa");
 }
 
@@ -262,6 +268,7 @@ TEST_CASE("GIVEN a 1 Pascal WHEN passed to a streaming operator WHEN result is "
   constexpr auto value = 1_pa;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pa");
 }
 
@@ -270,6 +277,7 @@ TEST_CASE("GIVEN a 1 kilo Pascal WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_kpa;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1kpa");
 }
 
@@ -278,6 +286,7 @@ TEST_CASE("GIVEN a 1 mega Pascal WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_Mpa;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Mpa");
 }
 
@@ -286,6 +295,7 @@ TEST_CASE("GIVEN a 1 giga Pascal WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_Gpa;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Gpa");
 }
 
@@ -294,6 +304,7 @@ TEST_CASE("GIVEN a 1 tera Pascal WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_Tpa;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Tpa");
 }
 
@@ -302,6 +313,7 @@ TEST_CASE("GIVEN a 1 exa Pascal WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_Epa;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Epa");
 }
 
@@ -310,11 +322,13 @@ TEST_CASE("GIVEN a 1 peta Pascal WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_Ppa;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Ppa");
 }
 
-TEST_CASE("GIVEN a string of '1apa' WHEN streamed into atto_pascal_t THEN result "
-          "is a value of 1 atto_pascal_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1apa' WHEN streamed into atto_pascal_t THEN result "
+    "is a value of 1 atto_pascal_t AND stream is good") {
   std::stringstream ss;
   ss << "1apa";
   SI::atto_pascal_t<int64_t> value{0};
@@ -334,8 +348,9 @@ TEST_CASE(
   REQUIRE(value == 1_fpa);
 }
 
-TEST_CASE("GIVEN a string of '1ppa' WHEN streamed into pico_pascal_t THEN result "
-          "is a value of 1 pico_pascal_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1ppa' WHEN streamed into pico_pascal_t THEN result "
+    "is a value of 1 pico_pascal_t AND stream is good") {
   std::stringstream ss;
   ss << "1ppa";
   SI::pico_pascal_t<int64_t> value{0};
@@ -344,8 +359,9 @@ TEST_CASE("GIVEN a string of '1ppa' WHEN streamed into pico_pascal_t THEN result
   REQUIRE(value == 1_ppa);
 }
 
-TEST_CASE("GIVEN a string of '1npa' WHEN streamed into nano_pascal_t THEN result "
-          "is a value of 1 nano_pascal_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1npa' WHEN streamed into nano_pascal_t THEN result "
+    "is a value of 1 nano_pascal_t AND stream is good") {
   std::stringstream ss;
   ss << "1npa";
   SI::nano_pascal_t<int64_t> value{0};
@@ -386,8 +402,9 @@ TEST_CASE("GIVEN a string of '1pa' WHEN streamed into pascal_t THEN result "
   REQUIRE(value == 1_pa);
 }
 
-TEST_CASE("GIVEN a string of '1kpa' WHEN streamed into kilo_pascal_t THEN result "
-          "is a value of 1 kilo_pascal_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1kpa' WHEN streamed into kilo_pascal_t THEN result "
+    "is a value of 1 kilo_pascal_t AND stream is good") {
   std::stringstream ss;
   ss << "1kpa";
   SI::kilo_pascal_t<int64_t> value{0};
@@ -396,8 +413,9 @@ TEST_CASE("GIVEN a string of '1kpa' WHEN streamed into kilo_pascal_t THEN result
   REQUIRE(value == 1_kpa);
 }
 
-TEST_CASE("GIVEN a string of '1Mpa' WHEN streamed into mega_pascal_t THEN result "
-          "is a value of 1 mega_pascal_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1Mpa' WHEN streamed into mega_pascal_t THEN result "
+    "is a value of 1 mega_pascal_t AND stream is good") {
   std::stringstream ss;
   ss << "1Mpa";
   SI::mega_pascal_t<int64_t> value{0};
@@ -406,8 +424,9 @@ TEST_CASE("GIVEN a string of '1Mpa' WHEN streamed into mega_pascal_t THEN result
   REQUIRE(value == 1_Mpa);
 }
 
-TEST_CASE("GIVEN a string of '1Gpa' WHEN streamed into giga_pascal_t THEN result "
-          "is a value of 1 giga_pascal_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1Gpa' WHEN streamed into giga_pascal_t THEN result "
+    "is a value of 1 giga_pascal_t AND stream is good") {
   std::stringstream ss;
   ss << "1Gpa";
   SI::giga_pascal_t<int64_t> value{0};
@@ -416,8 +435,9 @@ TEST_CASE("GIVEN a string of '1Gpa' WHEN streamed into giga_pascal_t THEN result
   REQUIRE(value == 1_Gpa);
 }
 
-TEST_CASE("GIVEN a string of '1Tpa' WHEN streamed into tera_pascal_t THEN result "
-          "is a value of 1 tera_pascal_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1Tpa' WHEN streamed into tera_pascal_t THEN result "
+    "is a value of 1 tera_pascal_t AND stream is good") {
   std::stringstream ss;
   ss << "1Tpa";
   SI::tera_pascal_t<int64_t> value{0};
@@ -426,8 +446,9 @@ TEST_CASE("GIVEN a string of '1Tpa' WHEN streamed into tera_pascal_t THEN result
   REQUIRE(value == 1_Tpa);
 }
 
-TEST_CASE("GIVEN a string of '1Ppa' WHEN streamed into peta_pascal_t THEN result "
-          "is a value of 1 peta_pascal_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1Ppa' WHEN streamed into peta_pascal_t THEN result "
+    "is a value of 1 peta_pascal_t AND stream is good") {
   std::stringstream ss;
   ss << "1Ppa";
   SI::peta_pascal_t<int64_t> value{0};
@@ -436,8 +457,9 @@ TEST_CASE("GIVEN a string of '1Ppa' WHEN streamed into peta_pascal_t THEN result
   REQUIRE(value == 1_Ppa);
 }
 
-TEST_CASE("GIVEN a string of '1Epa' WHEN streamed into exa_pascal_t THEN result "
-          "is a value of 1 exa_pascal_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1Epa' WHEN streamed into exa_pascal_t THEN result "
+    "is a value of 1 exa_pascal_t AND stream is good") {
   std::stringstream ss;
   ss << "1Epa";
   SI::exa_pascal_t<int64_t> value{0};

@@ -310,6 +310,7 @@ TEST_CASE("GIVEN a 1 atto Coulomb WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_aC;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1aC");
 }
 
@@ -318,6 +319,7 @@ TEST_CASE("GIVEN a 1 femto Coulomb WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_fC;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fC");
 }
 
@@ -326,6 +328,7 @@ TEST_CASE("GIVEN a 1 pico Coulomb WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_pC;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pC");
 }
 
@@ -334,6 +337,7 @@ TEST_CASE("GIVEN a 1 nano Coulomb WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nC;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nC");
 }
 
@@ -342,6 +346,7 @@ TEST_CASE("GIVEN a 1 micro Coulomb WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_uC;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1uC");
 }
 
@@ -350,6 +355,7 @@ TEST_CASE("GIVEN a 1 milli Coulomb WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mC;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mC");
 }
 
@@ -359,6 +365,7 @@ TEST_CASE(
   constexpr auto value = 1_C;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1C");
 }
 
@@ -367,6 +374,7 @@ TEST_CASE("GIVEN a 1 kilo Coulomb WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_kC;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1kC");
 }
 
@@ -375,6 +383,7 @@ TEST_CASE("GIVEN a 1 mega Coulomb WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_MC;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1MC");
 }
 
@@ -383,6 +392,7 @@ TEST_CASE("GIVEN a 1 giga Coulomb WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_GC;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1GC");
 }
 
@@ -391,6 +401,7 @@ TEST_CASE("GIVEN a 1 tera Coulomb WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_TC;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1TC");
 }
 
@@ -399,6 +410,7 @@ TEST_CASE("GIVEN a 1 exa Coulomb WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_EC;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1EC");
 }
 
@@ -407,6 +419,7 @@ TEST_CASE("GIVEN a 1 peta Coulomb WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_PC;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1PC");
 }
 

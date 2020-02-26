@@ -180,6 +180,7 @@ TEST_CASE("GIVEN a 1 atto Kelvin WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_aK;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1aK");
 }
 
@@ -188,6 +189,7 @@ TEST_CASE("GIVEN a 1 femto Kelvin WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_fK;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fK");
 }
 
@@ -196,6 +198,7 @@ TEST_CASE("GIVEN a 1 pico Kelvin WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_pK;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pK");
 }
 
@@ -204,6 +207,7 @@ TEST_CASE("GIVEN a 1 nano Kelvin WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nK;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nK");
 }
 
@@ -212,6 +216,7 @@ TEST_CASE("GIVEN a 1 micro Kelvin WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_uK;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1uK");
 }
 
@@ -220,6 +225,7 @@ TEST_CASE("GIVEN a 1 milli Kelvin WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mK;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mK");
 }
 
@@ -228,6 +234,7 @@ TEST_CASE("GIVEN a 1 Kelvin WHEN passed to a streaming operator THEN result is "
   constexpr auto value = 1_K;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1K");
 }
 
@@ -236,6 +243,7 @@ TEST_CASE("GIVEN a 1 kilo Kelvin WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_kK;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1kK");
 }
 
@@ -244,6 +252,7 @@ TEST_CASE("GIVEN a 1 mega Kelvin WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_MK;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1MK");
 }
 
@@ -252,6 +261,7 @@ TEST_CASE("GIVEN a 1 giga Kelvin WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_GK;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1GK");
 }
 
@@ -260,6 +270,7 @@ TEST_CASE("GIVEN a 1 tera Kelvin WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_TK;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1TK");
 }
 
@@ -268,6 +279,7 @@ TEST_CASE("GIVEN a 1 exa Kelvin WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_EK;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1EK");
 }
 
@@ -276,6 +288,7 @@ TEST_CASE("GIVEN a 1 peta Kelvin WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_PK;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1PK");
 }
 TEST_CASE(

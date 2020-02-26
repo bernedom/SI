@@ -260,6 +260,8 @@ TEST_CASE("GIVEN a 1 atto Siemens WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_aS;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1aS");
 }
 
@@ -268,6 +270,8 @@ TEST_CASE("GIVEN a 1 femto Siemens WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_fS;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fS");
 }
 
@@ -276,6 +280,8 @@ TEST_CASE("GIVEN a 1 pico Siemens WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_pS;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pS");
 }
 
@@ -284,6 +290,8 @@ TEST_CASE("GIVEN a 1 nano Siemens WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nS;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nS");
 }
 
@@ -292,6 +300,8 @@ TEST_CASE("GIVEN a 1 micro Siemens WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_uS;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1uS");
 }
 
@@ -300,6 +310,8 @@ TEST_CASE("GIVEN a 1 milli Siemens WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mS;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mS");
 }
 
@@ -309,6 +321,8 @@ TEST_CASE(
   constexpr auto value = 1_S;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1S");
 }
 
@@ -317,6 +331,8 @@ TEST_CASE("GIVEN a 1 kilo Siemens WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_kS;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1kS");
 }
 
@@ -325,6 +341,8 @@ TEST_CASE("GIVEN a 1 mega Siemens WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_MS;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1MS");
 }
 
@@ -333,6 +351,8 @@ TEST_CASE("GIVEN a 1 giga Siemens WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_GS;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1GS");
 }
 
@@ -341,6 +361,8 @@ TEST_CASE("GIVEN a 1 tera Siemens WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_TS;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1TS");
 }
 
@@ -349,6 +371,8 @@ TEST_CASE("GIVEN a 1 exa Siemens WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_ES;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1ES");
 }
 
@@ -357,6 +381,8 @@ TEST_CASE("GIVEN a 1 peta Siemens WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_PS;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1PS");
 }
 

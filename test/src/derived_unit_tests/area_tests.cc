@@ -167,6 +167,7 @@ TEST_CASE(
   constexpr auto value = 1_mm2;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mm2");
 }
 
@@ -176,6 +177,7 @@ TEST_CASE(
   constexpr auto value = 1_cm2;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1cm2");
 }
 
@@ -185,6 +187,7 @@ TEST_CASE(
   constexpr auto value = 1_m2;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1m2");
 }
 
@@ -193,6 +196,7 @@ TEST_CASE("GIVEN a 1 cubic millimetre WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mm3;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mm3");
 }
 
@@ -202,6 +206,7 @@ TEST_CASE(
   constexpr auto value = 1_cm3;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1cm3");
 }
 
@@ -211,6 +216,7 @@ TEST_CASE(
   constexpr auto value = 1_m3;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1m3");
 }
 

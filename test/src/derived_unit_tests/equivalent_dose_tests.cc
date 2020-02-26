@@ -179,6 +179,7 @@ TEST_CASE("GIVEN a 1 atto Sievert WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_aSv;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1aSv");
 }
 
@@ -187,6 +188,7 @@ TEST_CASE("GIVEN a 1 femto Sievert WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_fSv;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fSv");
 }
 
@@ -195,6 +197,7 @@ TEST_CASE("GIVEN a 1 pico Sievert WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_pSv;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pSv");
 }
 
@@ -203,6 +206,7 @@ TEST_CASE("GIVEN a 1 nano Sievert WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nSv;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nSv");
 }
 
@@ -211,6 +215,7 @@ TEST_CASE("GIVEN a 1 micro Sievert WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_uSv;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1uSv");
 }
 
@@ -219,6 +224,7 @@ TEST_CASE("GIVEN a 1 milli Sievert WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mSv;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mSv");
 }
 
@@ -228,6 +234,7 @@ TEST_CASE(
   constexpr auto value = 1_Sv;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Sv");
 }
 
@@ -236,6 +243,7 @@ TEST_CASE("GIVEN a 1 kilo Sievert WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_kSv;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1kSv");
 }
 
@@ -244,6 +252,7 @@ TEST_CASE("GIVEN a 1 mega Sievert WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_MSv;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1MSv");
 }
 
@@ -252,6 +261,7 @@ TEST_CASE("GIVEN a 1 giga Sievert WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_GSv;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1GSv");
 }
 
@@ -260,6 +270,7 @@ TEST_CASE("GIVEN a 1 tera Sievert WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_TSv;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1TSv");
 }
 
@@ -268,6 +279,7 @@ TEST_CASE("GIVEN a 1 exa Sievert WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_ESv;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1ESv");
 }
 
@@ -276,12 +288,13 @@ TEST_CASE("GIVEN a 1 peta Sievert WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_PSv;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1PSv");
 }
 
-
-TEST_CASE("GIVEN a string of '1aSv' WHEN streamed into atto_sievert_t THEN result "
-          "is a value of 1 atto_sievert_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1aSv' WHEN streamed into atto_sievert_t THEN result "
+    "is a value of 1 atto_sievert_t AND stream is good") {
   std::stringstream ss;
   ss << "1aSv";
   SI::atto_sievert_t<int64_t> value{0};
@@ -301,8 +314,9 @@ TEST_CASE(
   REQUIRE(value == 1_fSv);
 }
 
-TEST_CASE("GIVEN a string of '1pSv' WHEN streamed into pico_sievert_t THEN result "
-          "is a value of 1 pico_sievert_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1pSv' WHEN streamed into pico_sievert_t THEN result "
+    "is a value of 1 pico_sievert_t AND stream is good") {
   std::stringstream ss;
   ss << "1pSv";
   SI::pico_sievert_t<int64_t> value{0};
@@ -311,8 +325,9 @@ TEST_CASE("GIVEN a string of '1pSv' WHEN streamed into pico_sievert_t THEN resul
   REQUIRE(value == 1_pSv);
 }
 
-TEST_CASE("GIVEN a string of '1nSv' WHEN streamed into nano_sievert_t THEN result "
-          "is a value of 1 nano_sievert_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1nSv' WHEN streamed into nano_sievert_t THEN result "
+    "is a value of 1 nano_sievert_t AND stream is good") {
   std::stringstream ss;
   ss << "1nSv";
   SI::nano_sievert_t<int64_t> value{0};
@@ -353,8 +368,9 @@ TEST_CASE("GIVEN a string of '1Sv' WHEN streamed into sievert_t THEN result "
   REQUIRE(value == 1_Sv);
 }
 
-TEST_CASE("GIVEN a string of '1kSv' WHEN streamed into kilo_sievert_t THEN result "
-          "is a value of 1 kilo_sievert_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1kSv' WHEN streamed into kilo_sievert_t THEN result "
+    "is a value of 1 kilo_sievert_t AND stream is good") {
   std::stringstream ss;
   ss << "1kSv";
   SI::kilo_sievert_t<int64_t> value{0};
@@ -363,8 +379,9 @@ TEST_CASE("GIVEN a string of '1kSv' WHEN streamed into kilo_sievert_t THEN resul
   REQUIRE(value == 1_kSv);
 }
 
-TEST_CASE("GIVEN a string of '1MSv' WHEN streamed into mega_sievert_t THEN result "
-          "is a value of 1 mega_sievert_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1MSv' WHEN streamed into mega_sievert_t THEN result "
+    "is a value of 1 mega_sievert_t AND stream is good") {
   std::stringstream ss;
   ss << "1MSv";
   SI::mega_sievert_t<int64_t> value{0};
@@ -373,8 +390,9 @@ TEST_CASE("GIVEN a string of '1MSv' WHEN streamed into mega_sievert_t THEN resul
   REQUIRE(value == 1_MSv);
 }
 
-TEST_CASE("GIVEN a string of '1GSv' WHEN streamed into giga_sievert_t THEN result "
-          "is a value of 1 giga_sievert_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1GSv' WHEN streamed into giga_sievert_t THEN result "
+    "is a value of 1 giga_sievert_t AND stream is good") {
   std::stringstream ss;
   ss << "1GSv";
   SI::giga_sievert_t<int64_t> value{0};
@@ -383,8 +401,9 @@ TEST_CASE("GIVEN a string of '1GSv' WHEN streamed into giga_sievert_t THEN resul
   REQUIRE(value == 1_GSv);
 }
 
-TEST_CASE("GIVEN a string of '1TSv' WHEN streamed into tera_sievert_t THEN result "
-          "is a value of 1 tera_sievert_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1TSv' WHEN streamed into tera_sievert_t THEN result "
+    "is a value of 1 tera_sievert_t AND stream is good") {
   std::stringstream ss;
   ss << "1TSv";
   SI::tera_sievert_t<int64_t> value{0};
@@ -393,8 +412,9 @@ TEST_CASE("GIVEN a string of '1TSv' WHEN streamed into tera_sievert_t THEN resul
   REQUIRE(value == 1_TSv);
 }
 
-TEST_CASE("GIVEN a string of '1PSv' WHEN streamed into peta_sievert_t THEN result "
-          "is a value of 1 peta_sievert_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1PSv' WHEN streamed into peta_sievert_t THEN result "
+    "is a value of 1 peta_sievert_t AND stream is good") {
   std::stringstream ss;
   ss << "1PSv";
   SI::peta_sievert_t<int64_t> value{0};
@@ -403,8 +423,9 @@ TEST_CASE("GIVEN a string of '1PSv' WHEN streamed into peta_sievert_t THEN resul
   REQUIRE(value == 1_PSv);
 }
 
-TEST_CASE("GIVEN a string of '1ESv' WHEN streamed into exa_sievert_t THEN result "
-          "is a value of 1 exa_sievert_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1ESv' WHEN streamed into exa_sievert_t THEN result "
+    "is a value of 1 exa_sievert_t AND stream is good") {
   std::stringstream ss;
   ss << "1ESv";
   SI::exa_sievert_t<int64_t> value{0};

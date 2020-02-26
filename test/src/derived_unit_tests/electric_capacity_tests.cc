@@ -230,6 +230,7 @@ TEST_CASE("GIVEN a 1 atto Farad WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_aF;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1aF");
 }
 
@@ -238,6 +239,7 @@ TEST_CASE("GIVEN a 1 femto Farad WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_fF;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fF");
 }
 
@@ -246,6 +248,7 @@ TEST_CASE("GIVEN a 1 pico Farad WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_pF;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pF");
 }
 
@@ -254,6 +257,7 @@ TEST_CASE("GIVEN a 1 nano Farad WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nF;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nF");
 }
 
@@ -262,6 +266,7 @@ TEST_CASE("GIVEN a 1 micro Farad WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_uF;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1uF");
 }
 
@@ -270,6 +275,7 @@ TEST_CASE("GIVEN a 1 milli Farad WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mF;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mF");
 }
 
@@ -278,6 +284,7 @@ TEST_CASE("GIVEN a 1 Farad WHEN passed to a streaming operator THEN result is "
   constexpr auto value = 1_F;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1F");
 }
 
@@ -286,6 +293,7 @@ TEST_CASE("GIVEN a 1 kilo Farad WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_kF;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1kF");
 }
 
@@ -294,6 +302,7 @@ TEST_CASE("GIVEN a 1 mega Farad WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_MF;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1MF");
 }
 
@@ -302,6 +311,7 @@ TEST_CASE("GIVEN a 1 giga Farad WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_GF;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1GF");
 }
 
@@ -310,6 +320,7 @@ TEST_CASE("GIVEN a 1 tera Farad WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_TF;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1TF");
 }
 
@@ -318,6 +329,7 @@ TEST_CASE("GIVEN a 1 exa Farad WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_EF;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1EF");
 }
 
@@ -326,6 +338,7 @@ TEST_CASE("GIVEN a 1 peta Farad WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_PF;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1PF");
 }
 

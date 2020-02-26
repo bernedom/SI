@@ -226,6 +226,7 @@ TEST_CASE("GIVEN a 1 atto Henry WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_aH;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1aH");
 }
 
@@ -234,6 +235,7 @@ TEST_CASE("GIVEN a 1 femto Henry WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_fH;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fH");
 }
 
@@ -242,6 +244,7 @@ TEST_CASE("GIVEN a 1 pico Henry WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_pH;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pH");
 }
 
@@ -250,6 +253,7 @@ TEST_CASE("GIVEN a 1 nano Henry WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nH;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nH");
 }
 
@@ -258,6 +262,7 @@ TEST_CASE("GIVEN a 1 micro Henry WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_uH;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1uH");
 }
 
@@ -266,6 +271,7 @@ TEST_CASE("GIVEN a 1 milli Henry WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mH;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mH");
 }
 
@@ -274,6 +280,7 @@ TEST_CASE("GIVEN a 1 Henry WHEN passed to a streaming operator THEN result is "
   constexpr auto value = 1_H;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1H");
 }
 
@@ -282,6 +289,7 @@ TEST_CASE("GIVEN a 1 kilo Henry WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_kH;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1kH");
 }
 
@@ -290,6 +298,7 @@ TEST_CASE("GIVEN a 1 mega Henry WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_MH;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1MH");
 }
 
@@ -298,6 +307,7 @@ TEST_CASE("GIVEN a 1 giga Henry WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_GH;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1GH");
 }
 
@@ -306,6 +316,7 @@ TEST_CASE("GIVEN a 1 tera Henry WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_TH;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1TH");
 }
 
@@ -314,6 +325,7 @@ TEST_CASE("GIVEN a 1 exa Henry WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_EH;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1EH");
 }
 
@@ -322,6 +334,7 @@ TEST_CASE("GIVEN a 1 peta Henry WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_PH;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1PH");
 }
 

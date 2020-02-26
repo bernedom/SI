@@ -210,6 +210,7 @@ TEST_CASE("GIVEN a 1 atto metre WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_am;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1am");
 }
 
@@ -218,6 +219,7 @@ TEST_CASE("GIVEN a 1 femto metre WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_fm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fm");
 }
 
@@ -226,6 +228,7 @@ TEST_CASE("GIVEN a 1 pico metre WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_pm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pm");
 }
 
@@ -234,6 +237,7 @@ TEST_CASE("GIVEN a 1 nano metre WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nm");
 }
 
@@ -242,6 +246,7 @@ TEST_CASE("GIVEN a 1 micro metre WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_um;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1um");
 }
 
@@ -250,6 +255,7 @@ TEST_CASE("GIVEN a 1 milli metre WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mm");
 }
 
@@ -258,6 +264,7 @@ TEST_CASE("GIVEN a 1 centi metre WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_cm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1cm");
 }
 
@@ -266,6 +273,7 @@ TEST_CASE(
   constexpr auto value = 1_m;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1m");
 }
 
@@ -274,6 +282,7 @@ TEST_CASE("GIVEN a 1 kilo metre WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_km;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1km");
 }
 
@@ -282,6 +291,7 @@ TEST_CASE("GIVEN a 1 mega metre WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Mm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Mm");
 }
 
@@ -290,6 +300,7 @@ TEST_CASE("GIVEN a 1 giga metre WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Gm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Gm");
 }
 
@@ -298,6 +309,7 @@ TEST_CASE("GIVEN a 1 tera metre WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Tm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Tm");
 }
 
@@ -306,6 +318,7 @@ TEST_CASE("GIVEN a 1 exa metre WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Em;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Em");
 }
 
@@ -314,6 +327,7 @@ TEST_CASE("GIVEN a 1 peta metre WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Pm;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Pm");
 }
 

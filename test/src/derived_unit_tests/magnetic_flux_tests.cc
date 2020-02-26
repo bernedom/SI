@@ -210,6 +210,7 @@ TEST_CASE("GIVEN a 1 atto Weber WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_aWb;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1aWb");
 }
 
@@ -218,6 +219,7 @@ TEST_CASE("GIVEN a 1 femto Weber WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_fWb;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fWb");
 }
 
@@ -226,6 +228,7 @@ TEST_CASE("GIVEN a 1 pico Weber WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_pWb;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pWb");
 }
 
@@ -234,6 +237,7 @@ TEST_CASE("GIVEN a 1 nano Weber WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_nWb;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nWb");
 }
 
@@ -242,6 +246,7 @@ TEST_CASE("GIVEN a 1 micro Weber WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_uWb;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1uWb");
 }
 
@@ -250,6 +255,7 @@ TEST_CASE("GIVEN a 1 milli Weber WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_mWb;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mWb");
 }
 
@@ -258,6 +264,7 @@ TEST_CASE("GIVEN a 1 Weber WHEN passed to a streaming operator WHEN result is "
   constexpr auto value = 1_Wb;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Wb");
 }
 
@@ -266,6 +273,7 @@ TEST_CASE("GIVEN a 1 kilo Weber WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_kWb;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1kWb");
 }
 
@@ -274,6 +282,7 @@ TEST_CASE("GIVEN a 1 mega Weber WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_MWb;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1MWb");
 }
 
@@ -282,6 +291,7 @@ TEST_CASE("GIVEN a 1 giga Weber WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_GWb;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1GWb");
 }
 
@@ -290,6 +300,7 @@ TEST_CASE("GIVEN a 1 tera Weber WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_TWb;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1TWb");
 }
 
@@ -298,6 +309,7 @@ TEST_CASE("GIVEN a 1 exa Weber WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_EWb;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1EWb");
 }
 
@@ -306,11 +318,13 @@ TEST_CASE("GIVEN a 1 peta Weber WHEN passed to a streaming operator WHEN "
   constexpr auto value = 1_PWb;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1PWb");
 }
 
-TEST_CASE("GIVEN a string of '1aWb' WHEN streamed into atto_weber_t THEN result "
-          "is a value of 1 atto_weber_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1aWb' WHEN streamed into atto_weber_t THEN result "
+    "is a value of 1 atto_weber_t AND stream is good") {
   std::stringstream ss;
   ss << "1aWb";
   SI::atto_weber_t<int64_t> value{0};
@@ -330,8 +344,9 @@ TEST_CASE(
   REQUIRE(value == 1_fWb);
 }
 
-TEST_CASE("GIVEN a string of '1pWb' WHEN streamed into pico_weber_t THEN result "
-          "is a value of 1 pico_weber_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1pWb' WHEN streamed into pico_weber_t THEN result "
+    "is a value of 1 pico_weber_t AND stream is good") {
   std::stringstream ss;
   ss << "1pWb";
   SI::pico_weber_t<int64_t> value{0};
@@ -340,8 +355,9 @@ TEST_CASE("GIVEN a string of '1pWb' WHEN streamed into pico_weber_t THEN result 
   REQUIRE(value == 1_pWb);
 }
 
-TEST_CASE("GIVEN a string of '1nWb' WHEN streamed into nano_weber_t THEN result "
-          "is a value of 1 nano_weber_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1nWb' WHEN streamed into nano_weber_t THEN result "
+    "is a value of 1 nano_weber_t AND stream is good") {
   std::stringstream ss;
   ss << "1nWb";
   SI::nano_weber_t<int64_t> value{0};
@@ -382,8 +398,9 @@ TEST_CASE("GIVEN a string of '1Wb' WHEN streamed into weber_t THEN result "
   REQUIRE(value == 1_Wb);
 }
 
-TEST_CASE("GIVEN a string of '1kWb' WHEN streamed into kilo_weber_t THEN result "
-          "is a value of 1 kilo_weber_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1kWb' WHEN streamed into kilo_weber_t THEN result "
+    "is a value of 1 kilo_weber_t AND stream is good") {
   std::stringstream ss;
   ss << "1kWb";
   SI::kilo_weber_t<int64_t> value{0};
@@ -392,8 +409,9 @@ TEST_CASE("GIVEN a string of '1kWb' WHEN streamed into kilo_weber_t THEN result 
   REQUIRE(value == 1_kWb);
 }
 
-TEST_CASE("GIVEN a string of '1MWb' WHEN streamed into mega_weber_t THEN result "
-          "is a value of 1 mega_weber_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1MWb' WHEN streamed into mega_weber_t THEN result "
+    "is a value of 1 mega_weber_t AND stream is good") {
   std::stringstream ss;
   ss << "1MWb";
   SI::mega_weber_t<int64_t> value{0};
@@ -402,8 +420,9 @@ TEST_CASE("GIVEN a string of '1MWb' WHEN streamed into mega_weber_t THEN result 
   REQUIRE(value == 1_MWb);
 }
 
-TEST_CASE("GIVEN a string of '1GWb' WHEN streamed into giga_weber_t THEN result "
-          "is a value of 1 giga_weber_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1GWb' WHEN streamed into giga_weber_t THEN result "
+    "is a value of 1 giga_weber_t AND stream is good") {
   std::stringstream ss;
   ss << "1GWb";
   SI::giga_weber_t<int64_t> value{0};
@@ -412,8 +431,9 @@ TEST_CASE("GIVEN a string of '1GWb' WHEN streamed into giga_weber_t THEN result 
   REQUIRE(value == 1_GWb);
 }
 
-TEST_CASE("GIVEN a string of '1TWb' WHEN streamed into tera_weber_t THEN result "
-          "is a value of 1 tera_weber_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1TWb' WHEN streamed into tera_weber_t THEN result "
+    "is a value of 1 tera_weber_t AND stream is good") {
   std::stringstream ss;
   ss << "1TWb";
   SI::tera_weber_t<int64_t> value{0};
@@ -422,8 +442,9 @@ TEST_CASE("GIVEN a string of '1TWb' WHEN streamed into tera_weber_t THEN result 
   REQUIRE(value == 1_TWb);
 }
 
-TEST_CASE("GIVEN a string of '1PWb' WHEN streamed into peta_weber_t THEN result "
-          "is a value of 1 peta_weber_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1PWb' WHEN streamed into peta_weber_t THEN result "
+    "is a value of 1 peta_weber_t AND stream is good") {
   std::stringstream ss;
   ss << "1PWb";
   SI::peta_weber_t<int64_t> value{0};

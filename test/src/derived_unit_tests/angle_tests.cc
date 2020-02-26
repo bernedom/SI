@@ -95,6 +95,7 @@ TEST_CASE("GIVEN a 1 atto radiant WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_arad;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1arad");
 }
 
@@ -103,6 +104,7 @@ TEST_CASE("GIVEN a 1 femto radiant WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_frad;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1frad");
 }
 
@@ -111,6 +113,7 @@ TEST_CASE("GIVEN a 1 pico radiant WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_prad;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1prad");
 }
 
@@ -119,6 +122,7 @@ TEST_CASE("GIVEN a 1 nano radiant WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nrad;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nrad");
 }
 
@@ -127,6 +131,7 @@ TEST_CASE("GIVEN a 1 micro radiant WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_urad;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1urad");
 }
 
@@ -135,6 +140,7 @@ TEST_CASE("GIVEN a 1 milli radiant WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mrad;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mrad");
 }
 
@@ -144,6 +150,7 @@ TEST_CASE(
   constexpr auto value = 1_rad;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1rad");
 }
 

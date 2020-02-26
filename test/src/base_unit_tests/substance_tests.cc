@@ -179,6 +179,7 @@ TEST_CASE("GIVEN a 1 atto mol WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_amol;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1amol");
 }
 
@@ -187,6 +188,7 @@ TEST_CASE("GIVEN a 1 femto mol WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_fmol;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fmol");
 }
 
@@ -195,6 +197,7 @@ TEST_CASE("GIVEN a 1 pico mol WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_pmol;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pmol");
 }
 
@@ -203,6 +206,7 @@ TEST_CASE("GIVEN a 1 nano mol WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nmol;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nmol");
 }
 
@@ -211,6 +215,7 @@ TEST_CASE("GIVEN a 1 micro mol WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_umol;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1umol");
 }
 
@@ -219,6 +224,7 @@ TEST_CASE("GIVEN a 1 milli mol WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mmol;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mmol");
 }
 
@@ -227,6 +233,7 @@ TEST_CASE("GIVEN a 1 mol WHEN passed to a streaming operator THEN result is "
   constexpr auto value = 1_mol;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mol");
 }
 
@@ -235,6 +242,7 @@ TEST_CASE("GIVEN a 1 kilo mol WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_kmol;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1kmol");
 }
 
@@ -243,6 +251,7 @@ TEST_CASE("GIVEN a 1 mega mol WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Mmol;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Mmol");
 }
 
@@ -251,6 +260,7 @@ TEST_CASE("GIVEN a 1 giga mol WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Gmol;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Gmol");
 }
 
@@ -259,6 +269,7 @@ TEST_CASE("GIVEN a 1 tera mol WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Tmol;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Tmol");
 }
 
@@ -267,6 +278,7 @@ TEST_CASE("GIVEN a 1 exa mol WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Emol;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Emol");
 }
 
@@ -275,8 +287,10 @@ TEST_CASE("GIVEN a 1 peta mol WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_Pmol;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1Pmol");
-}TEST_CASE("GIVEN a string of '1amol' WHEN streamed into atto_mol_t THEN result "
+}
+TEST_CASE("GIVEN a string of '1amol' WHEN streamed into atto_mol_t THEN result "
           "is a value of 1 atto_mol_t AND stream is good") {
   std::stringstream ss;
   ss << "1amol";

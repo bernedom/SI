@@ -2,7 +2,7 @@
 
 ## 1.5.1
 
-*   Running compilation tests on windows and osx
+*   Added `SI::to_string()` function to avoid using streams
 
 ## 1.5.0
 

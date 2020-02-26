@@ -206,6 +206,7 @@ TEST_CASE("GIVEN a 1 atto Newton WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_aN;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1aN");
 }
 
@@ -214,6 +215,7 @@ TEST_CASE("GIVEN a 1 femto Newton WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_fN;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1fN");
 }
 
@@ -222,6 +224,7 @@ TEST_CASE("GIVEN a 1 pico Newton WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_pN;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1pN");
 }
 
@@ -230,6 +233,7 @@ TEST_CASE("GIVEN a 1 nano Newton WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_nN;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1nN");
 }
 
@@ -238,6 +242,7 @@ TEST_CASE("GIVEN a 1 micro Newton WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_uN;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1uN");
 }
 
@@ -246,6 +251,7 @@ TEST_CASE("GIVEN a 1 milli Newton WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_mN;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1mN");
 }
 
@@ -254,6 +260,7 @@ TEST_CASE("GIVEN a 1 Newton WHEN passed to a streaming operator THEN result is "
   constexpr auto value = 1_N;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1N");
 }
 
@@ -262,6 +269,7 @@ TEST_CASE("GIVEN a 1 kilo Newton WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_kN;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1kN");
 }
 
@@ -270,6 +278,7 @@ TEST_CASE("GIVEN a 1 mega Newton WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_MN;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1MN");
 }
 
@@ -278,6 +287,7 @@ TEST_CASE("GIVEN a 1 giga Newton WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_GN;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1GN");
 }
 
@@ -286,6 +296,7 @@ TEST_CASE("GIVEN a 1 tera Newton WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_TN;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1TN");
 }
 
@@ -294,6 +305,7 @@ TEST_CASE("GIVEN a 1 exa Newton WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_EN;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1EN");
 }
 
@@ -302,12 +314,13 @@ TEST_CASE("GIVEN a 1 peta Newton WHEN passed to a streaming operator THEN "
   constexpr auto value = 1_PN;
   std::stringstream ss;
   ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == "1PN");
 }
 
-
-TEST_CASE("GIVEN a string of '1aN' WHEN streamed into atto_newton_t THEN result "
-          "is a value of 1 atto_newton_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1aN' WHEN streamed into atto_newton_t THEN result "
+    "is a value of 1 atto_newton_t AND stream is good") {
   std::stringstream ss;
   ss << "1aN";
   SI::atto_newton_t<int64_t> value{0};
@@ -327,8 +340,9 @@ TEST_CASE(
   REQUIRE(value == 1_fN);
 }
 
-TEST_CASE("GIVEN a string of '1pN' WHEN streamed into pico_newton_t THEN result "
-          "is a value of 1 pico_newton_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1pN' WHEN streamed into pico_newton_t THEN result "
+    "is a value of 1 pico_newton_t AND stream is good") {
   std::stringstream ss;
   ss << "1pN";
   SI::pico_newton_t<int64_t> value{0};
@@ -337,8 +351,9 @@ TEST_CASE("GIVEN a string of '1pN' WHEN streamed into pico_newton_t THEN result 
   REQUIRE(value == 1_pN);
 }
 
-TEST_CASE("GIVEN a string of '1nN' WHEN streamed into nano_newton_t THEN result "
-          "is a value of 1 nano_newton_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1nN' WHEN streamed into nano_newton_t THEN result "
+    "is a value of 1 nano_newton_t AND stream is good") {
   std::stringstream ss;
   ss << "1nN";
   SI::nano_newton_t<int64_t> value{0};
@@ -379,8 +394,9 @@ TEST_CASE("GIVEN a string of '1N' WHEN streamed into newton_t THEN result "
   REQUIRE(value == 1_N);
 }
 
-TEST_CASE("GIVEN a string of '1kN' WHEN streamed into kilo_newton_t THEN result "
-          "is a value of 1 kilo_newton_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1kN' WHEN streamed into kilo_newton_t THEN result "
+    "is a value of 1 kilo_newton_t AND stream is good") {
   std::stringstream ss;
   ss << "1kN";
   SI::kilo_newton_t<int64_t> value{0};
@@ -389,8 +405,9 @@ TEST_CASE("GIVEN a string of '1kN' WHEN streamed into kilo_newton_t THEN result 
   REQUIRE(value == 1_kN);
 }
 
-TEST_CASE("GIVEN a string of '1MN' WHEN streamed into mega_newton_t THEN result "
-          "is a value of 1 mega_newton_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1MN' WHEN streamed into mega_newton_t THEN result "
+    "is a value of 1 mega_newton_t AND stream is good") {
   std::stringstream ss;
   ss << "1MN";
   SI::mega_newton_t<int64_t> value{0};
@@ -399,8 +416,9 @@ TEST_CASE("GIVEN a string of '1MN' WHEN streamed into mega_newton_t THEN result 
   REQUIRE(value == 1_MN);
 }
 
-TEST_CASE("GIVEN a string of '1GN' WHEN streamed into giga_newton_t THEN result "
-          "is a value of 1 giga_newton_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1GN' WHEN streamed into giga_newton_t THEN result "
+    "is a value of 1 giga_newton_t AND stream is good") {
   std::stringstream ss;
   ss << "1GN";
   SI::giga_newton_t<int64_t> value{0};
@@ -409,8 +427,9 @@ TEST_CASE("GIVEN a string of '1GN' WHEN streamed into giga_newton_t THEN result 
   REQUIRE(value == 1_GN);
 }
 
-TEST_CASE("GIVEN a string of '1TN' WHEN streamed into tera_newton_t THEN result "
-          "is a value of 1 tera_newton_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1TN' WHEN streamed into tera_newton_t THEN result "
+    "is a value of 1 tera_newton_t AND stream is good") {
   std::stringstream ss;
   ss << "1TN";
   SI::tera_newton_t<int64_t> value{0};
@@ -419,8 +438,9 @@ TEST_CASE("GIVEN a string of '1TN' WHEN streamed into tera_newton_t THEN result 
   REQUIRE(value == 1_TN);
 }
 
-TEST_CASE("GIVEN a string of '1PN' WHEN streamed into peta_newton_t THEN result "
-          "is a value of 1 peta_newton_t AND stream is good") {
+TEST_CASE(
+    "GIVEN a string of '1PN' WHEN streamed into peta_newton_t THEN result "
+    "is a value of 1 peta_newton_t AND stream is good") {
   std::stringstream ss;
   ss << "1PN";
   SI::peta_newton_t<int64_t> value{0};
