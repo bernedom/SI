@@ -12,6 +12,7 @@ matrix:
   fast_finish: true
 
 environment:
+  CMAKE_BUILD_PARALLEL_LEVEL: 8
   matrix:
     - PYTHON: "C:\\Python37"
 
@@ -23,6 +24,7 @@ install:
   - cmd: python -m pip install conan
   - cmd: conan user # Create the conan data directory
   - cmd: conan --version
+  - cmd: choco install ninja
 
 before_build:
   - cmd: |-

@@ -1,5 +1,9 @@
 # Changelog 
 
+## 1.5.1
+
+*   Running compilation tests on windows and osx
+
 ## 1.5.0
 
 *   Bugfix: Operators < and > where comparing the wrong way round (this is embarassing)
