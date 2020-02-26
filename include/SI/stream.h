@@ -40,3 +40,12 @@ operator>>(std::istream &stream,
   obj.set_raw_value(v);
   return stream;
 }
+
+namespace SI {
+template <char _symbol, char _exponent, typename _type, typename _ratio>
+std::string
+to_string(const SI::detail::unit_t<_symbol, _exponent, _type, _ratio> &value) {
+  return std::to_string(value.raw_value())
+      .append(SI::unit_symbol<_symbol, _ratio, _exponent>::str);
+}
+} // namespace SI

@@ -2,7 +2,6 @@
 #include <SI/stream.h>
 #include <catch2/catch.hpp>
 
-#include <cstring>
 #include <sstream>
 
 namespace SI {
@@ -85,4 +84,11 @@ TEST_CASE("GIVEN a unit AND ratio is atto WHEN passed to an stringstream THEN "
 
   ss << v;
   REQUIRE(ss.str() == "100axx");
+}
+
+TEST_CASE("GIVEN a unit AND with ratio 1:1 WHEN converted to string THEN result is iunit symbol")
+{
+  constexpr SI::detail::unit_t<'X', 1, int64_t, std::ratio<1>> v{100};
+
+  REQUIRE(SI::to_string(v) == "100xx");
 }
