@@ -7,7 +7,7 @@
 
 ## 1.5.0
 
-*   Bugfix: Operators < and > where comparing the wrong way round (this is embarassing)
+*   Bugfix: Operators < and > where comparing the wrong way round (this is embarrassing)
 *   Added Operators <= and =>
 *   Installation tests for OSX and Windows
 *   Renamed SI/detail/string.h to unit_symbol.h because of resolution-problems in osx/xcode
@@ -48,7 +48,7 @@
 
 ## 1.1.1
 
-*   Unified usage of template arugments in unit_t
+*   Unified usage of template arguments in unit_t
 *   electric conductance can be built from 1/Ohm (including all ratios)
 *   electric resistance can be built from 1/S (including all ratios)
 
@@ -57,7 +57,7 @@
 *   Implicit / automatic conversions between units of different ratio can be disabled with the preprocessor flag `DISABLE_IMPLICIT_RATIO_CONVERSION`
 *   Fixed division of units with same exponent so it considers ratio
 *   Bugfix in division of units with different exponent and different ratios
-*   Multiplying units with different ratios results in mutiplied ratios instead of gcd of ratios squared
+*   Multiplying units with different ratios results in multiplied ratios instead of gcd of ratios squared
 *   Added division of units by a scalar
 
 ## 1.0.1
@@ -70,7 +70,7 @@
 
 *   Literal operators return explicit return types instead of auto
 *   Removed indirection for overflow check when parsing ints
-*   Fixed typo of luminosity unit from candea -> candela
+*   Fixed typo of luminosity unit from candela -> candela
 
 ## 0.0.5
 
@@ -81,12 +81,12 @@
 ## 0.0.4 
 
 *   Added CHANGELOG.md
-*   Fixed bug in number parser, magnitude of a numbrer is correctly counted even if a digit separator is present
+*   Fixed bug in number parser, magnitude of a number is correctly counted even if a digit separator is present
 
 ## 0.0.3
 
 *   template specialization to differentiate scalar/unit for floating point and integral values
-*   Ran linter, minor cosmetical changes
+*   Ran linter, minor cosmetic changes
 
 ## 0.0.2
 
@@ -96,4 +96,4 @@
 
 ## 0.0.1
 
-Initial relase, containig the base operators and template classes as well as typedefs the base units and named derived units of the  [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units)
+Initial release, containing the base operators and template classes as well as typedefs the base units and named derived units of the  [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units)
