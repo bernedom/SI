@@ -62,6 +62,14 @@ struct unit_t {
   constexpr unit_t(const unit_t &) = default;
   constexpr unit_t(unit_t &&) = default;
 
+  /// construct from other unit with implicitely convertible type
+  template <typename _type_rhs>
+  constexpr unit_t(const unit_t<_symbol, _exponent, _type_rhs, _ratio> &rhs)
+      : value_(rhs.raw_value()) {
+    static_assert(std::is_convertible<_type_rhs, _type>::value,
+                  "Internal representation is convertible");
+  }
+
   ~unit_t() = default;
 
   template <typename _rhs_ratio>
