@@ -3,6 +3,7 @@
 ## 1.5.1
 
 *   Added `SI::to_string()` function to avoid using streams
+*   Update to Catch2 v2.11.1 for testing
 
 ## 1.5.0
 
