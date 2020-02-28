@@ -15,25 +15,29 @@ TEST_CASE("Unit_assignment") {
   SECTION("Construction") {
     BENCHMARK_ADVANCED("Default construction")
     (Catch::Benchmark::Chronometer meter) {
-      std::vector<Catch::storage_for<ratio_one_unit>> storage(meter.runs());
+      std::vector<Catch::Benchmark::storage_for<ratio_one_unit>> storage(
+          meter.runs());
       meter.measure([&](int i) { storage[i].construct(); });
     };
     BENCHMARK_ADVANCED("Value initialized construction")
     (Catch::Benchmark::Chronometer meter) {
-      std::vector<Catch::storage_for<ratio_one_unit>> storage(meter.runs());
+      std::vector<Catch::Benchmark::storage_for<ratio_one_unit>> storage(
+          meter.runs());
       meter.measure(
           [&](int i) { storage[i].construct(static_cast<int64_t>(i)); });
     };
     BENCHMARK_ADVANCED("copy construction same ratio")
     (Catch::Benchmark::Chronometer meter) {
-      std::vector<Catch::storage_for<ratio_one_unit>> storage(meter.runs());
+      std::vector<Catch::Benchmark::storage_for<ratio_one_unit>> storage(
+          meter.runs());
       const ratio_one_unit seed{1001};
       meter.measure([&](int i) { storage[i].construct(seed); });
     };
 
     BENCHMARK_ADVANCED("copy construction different ratio")
     (Catch::Benchmark::Chronometer meter) {
-      std::vector<Catch::storage_for<ratio_one_unit>> storage(meter.runs());
+      std::vector<Catch::Benchmark::storage_for<ratio_one_unit>> storage(
+          meter.runs());
       const ratio_kilo_unit seed{1};
       meter.measure([&](int i) { storage[i].construct(seed); });
     };

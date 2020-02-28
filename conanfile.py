@@ -14,7 +14,7 @@ class SiConan(ConanFile):
     exports_sources = "include/*", "CMakeLists.txt", "test/*", "cmake/SIConfig.cmake.in", "LICENSE"
     no_copy_source = True
     generators = "cmake", "txt", "cmake_find_package"
-    build_requires = "Catch2/2.11.0@catchorg/stable"
+    build_requires = "Catch2/2.11.1@catchorg/stable"
 
     def _configure_cmake(self):
         cmake = CMake(self)
