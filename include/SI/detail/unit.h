@@ -522,7 +522,7 @@ struct unit_with_common_ratio {
 /// divide a value of a certain unit with another value of a possibly
 /// different type resulting in a new type, the resulting exponent is
 /// specified by resulting unit using a variadic template to simplify usage of
-/// implentation the internal type of the result is the internal type of lhs
+/// implementation the internal type of the result is the internal type of lhs
 template <template <typename...> typename _resulting_unit, typename _unit_lhs,
           typename _unit_rhs>
 constexpr auto cross_unit_divide(const _unit_lhs &lhs, const _unit_rhs &rhs) {
