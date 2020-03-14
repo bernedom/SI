@@ -1,5 +1,9 @@
 # Changelog 
 
+## 1.6.0
+
+*   Implicit type conversion for units (i.e. between `double` and `float`)
+
 ## 1.5.1
 
 *   Added `SI::to_string()` function to avoid using streams
