@@ -147,9 +147,9 @@ struct unit_t {
 
   /// Comparison operator takes considers different ratios, i.e. 1000
   /// micro == 1 milli
-  template <typename _type_rhs, typename _rhs_ratio>
+  template <typename _rhs_type, typename _rhs_ratio>
   constexpr bool operator==(
-      const unit_t<_symbol, _exponent, _type_rhs, _rhs_ratio> &rhs) const {
+      const unit_t<_symbol, _exponent, _rhs_type, _rhs_ratio> &rhs) const {
 
     static_assert(
         SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
@@ -176,9 +176,9 @@ struct unit_t {
   }
 
   /// compares two values, considers different ratios.
-  template <typename _rhs_ratio>
-  constexpr bool
-  operator!=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
+  template <typename _rhs_type, typename _rhs_ratio>
+  constexpr bool operator!=(
+      const unit_t<_symbol, _exponent, _rhs_type, _rhs_ratio> &rhs) const {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
     return !(*this == rhs);

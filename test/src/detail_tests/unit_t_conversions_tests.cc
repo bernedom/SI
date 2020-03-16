@@ -16,15 +16,33 @@ TEST_CASE("GIVEN a declared unit of type int64_t WHEN copy-constructed "
   STATIC_REQUIRE(v_int.raw_value() == 1);
 }
 
-TEST_CASE("GIVEN a declared unit of long double WHEN assigned a unit of type "
+TEST_CASE("GIVEN a declared unit of int32_t WHEN assigned a unit of type "
           "int64_t THEN value is implicitely converted") {
   constexpr unit_t<'X', 1, int32_t> v_int32{1};
   constexpr unit_t<'X', 1, int64_t> v_int64 = v_int32;
 
   STATIC_REQUIRE(
       std::is_same<decltype(v_int64)::internal_type, int64_t>::value);
-  STATIC_REQUIRE(v_int32 == v_int64);
+  STATIC_REQUIRE(v_int32.raw_value() == v_int64.raw_value());
 }
 
-  double dd = i;
-  REQUIRE(dd > 0);
+TEST_CASE("GIVEN a declared unit of int32_t WHEN compared with an unit of type "
+          "int64_t THEN value is implicitely converted") {
+
+  constexpr unit_t<'X', 1, int32_t> v_int32{123};
+  constexpr unit_t<'X', 1, int64_t> v_int64{123};
+
+  STATIC_REQUIRE(v_int32 == v_int64);
+  STATIC_REQUIRE_FALSE(v_int32 != v_int64);
+}
+
+TEST_CASE(
+    "GIVEN a declared unit of int32_t WHEN compared with an unit of type "
+    "int64_t AND ratio is different THEN value is implicitely converted") {
+
+  constexpr unit_t<'X', 1, int32_t> v_int32{123};
+  constexpr unit_t<'X', 1, int64_t, std::milli> v_int64{123000};
+
+  STATIC_REQUIRE(v_int32 == v_int64);
+  STATIC_REQUIRE_FALSE(v_int32 != v_int64);
+}
