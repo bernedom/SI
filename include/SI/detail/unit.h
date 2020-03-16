@@ -72,8 +72,8 @@ struct unit_t {
 
   ~unit_t() = default;
 
-  template <typename _rhs_ratio>
-  constexpr unit_t(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs)
+  template <typename _rhs_type, typename _rhs_ratio>
+  constexpr unit_t(const unit_t<_symbol, _exponent, _rhs_type, _rhs_ratio> &rhs)
       : value_{unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs)
                    .raw_value()} {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
