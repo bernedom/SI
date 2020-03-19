@@ -235,34 +235,22 @@ struct unit_t {
   constexpr unit_t operator*(const _type f) const { return {value_ * f}; }
 
   /// multiply with an unit of the same ratio
-  template <char _rhs_Exponent>
-  constexpr auto
-  operator*(const unit_t<_symbol, _rhs_Exponent, _type, _ratio> &rhs) const {
+  template <char _rhs_exponent, typename _rhs_type>
+  constexpr auto operator*(
+      const unit_t<_symbol, _rhs_exponent, _rhs_type, _ratio> &rhs) const {
 
-    return unit_t<_symbol, _rhs_Exponent + _exponent, _type,
+    return unit_t<_symbol, _rhs_exponent + _exponent, _type,
                   std::ratio_multiply<ratio, _ratio>>{raw_value() *
                                                       rhs.raw_value()};
-  }
-
-  /// multiply with a non-unit scalar
-  constexpr unit_t &operator*=(const _type scalar) {
-    value_ *= scalar;
-    return *this;
-  }
-
-  /// divide with a non-unit scalar
-  constexpr unit_t &operator/=(const _type scalar) {
-    value_ /= scalar;
-    return *this;
   }
 
   /// multiplication multiply with a same unit, with different exponent
   /// and different ratio
   /// the exponents this and rhs are added, the resulting ratio the ratio
   /// multiplied.
-  template <char _rhs_exponent, typename _rhs_ratio>
+  template <char _rhs_exponent, typename _rhs_ratio, typename _rhs_type>
   constexpr auto operator*(
-      const unit_t<_symbol, _rhs_exponent, _type, _rhs_ratio> &rhs) const {
+      const unit_t<_symbol, _rhs_exponent, _rhs_type, _rhs_ratio> &rhs) const {
 
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
@@ -275,6 +263,18 @@ struct unit_t {
     return unit_t<_symbol, _exponent + _rhs_exponent, _type,
                   std::ratio_multiply<ratio, _rhs_ratio>>{value_ *
                                                           rhs.raw_value()};
+  }
+
+  /// multiply with a non-unit scalar
+  constexpr unit_t &operator*=(const _type scalar) {
+    value_ *= scalar;
+    return *this;
+  }
+
+  /// divide with a non-unit scalar
+  constexpr unit_t &operator/=(const _type scalar) {
+    value_ /= scalar;
+    return *this;
   }
 
   /// divide by a non-unit scalar

@@ -116,3 +116,38 @@ TEST_CASE(
   STATIC_REQUIRE(v_int32 > v_int64);
   STATIC_REQUIRE(v_int32 >= v_int64);
 }
+
+TEST_CASE("GIVEN a declared unit of int64_t WHEN multiplied an unit of "
+          "type int32_t THEN value is implicitely converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{2};
+  constexpr unit_t<'X', 1, int64_t> v_int64{5};
+  constexpr auto result = v_int64 * v_int32;
+
+  STATIC_REQUIRE(
+      std::is_same<const unit_t<'X', 2, int64_t>, decltype(result)>::value);
+}
+
+TEST_CASE(
+    "GIVEN a declared unit of int64_t WHEN multiplied an unit of "
+    "type int32_t AND ratio is different THEN value is implicitely converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{2};
+  constexpr unit_t<'X', 1, int64_t, std::milli> v_int64{5000};
+  constexpr auto result = v_int64 * v_int32;
+
+  STATIC_REQUIRE(std::is_same<const unit_t<'X', 2, int64_t, std::milli>,
+                              decltype(result)>::value);
+}
+
+TEST_CASE(
+    "GIVEN a declared unit of int64_t WHEN multiply-assigned raw value of "
+    "type int64_t THEN value is implicitely converted") {
+  int32_t raw_value{2};
+  unit_t<'X', 1, int64_t> v_int64{5};
+  const auto result = v_int64 * raw_value;
+  v_int64 *= raw_value;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(v_int64),
+                   std::remove_const<decltype(result)>::type>::value);
+  REQUIRE(result == v_int64);
+}
