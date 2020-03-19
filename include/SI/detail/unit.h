@@ -184,9 +184,9 @@ struct unit_t {
     return !(*this == rhs);
   }
 
-  template <typename _rhs_ratio>
-  constexpr bool
-  operator<(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
+  template <typename _rhs_type, typename _rhs_ratio>
+  constexpr bool operator<(
+      const unit_t<_symbol, _exponent, _rhs_type, _rhs_ratio> &rhs) const {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
     static_assert(
@@ -201,15 +201,15 @@ struct unit_t {
            unit_cast<gcd_unit>(rhs).raw_value();
   }
 
-  template <typename _rhs_ratio>
-  constexpr bool
-  operator<=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
+  template <typename _rhs_type, typename _rhs_ratio>
+  constexpr bool operator<=(
+      const unit_t<_symbol, _exponent, _rhs_type, _rhs_ratio> &rhs) const {
     return !(*this > rhs);
   }
 
-  template <typename _rhs_ratio>
-  constexpr bool
-  operator>(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
+  template <typename _rhs_type, typename _rhs_ratio>
+  constexpr bool operator>(
+      const unit_t<_symbol, _exponent, _rhs_type, _rhs_ratio> &rhs) const {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
     static_assert(
@@ -225,9 +225,9 @@ struct unit_t {
            unit_cast<gcd_unit>(rhs).raw_value();
   }
 
-  template <typename _rhs_ratio>
-  constexpr bool
-  operator>=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
+  template <typename _rhs_type, typename _rhs_ratio>
+  constexpr bool operator>=(
+      const unit_t<_symbol, _exponent, _rhs_type, _rhs_ratio> &rhs) const {
     return !(*this < rhs);
   }
 

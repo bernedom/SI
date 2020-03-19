@@ -78,3 +78,41 @@ TEST_CASE(
   STATIC_REQUIRE(v_int32 == v_int64);
   STATIC_REQUIRE_FALSE(v_int32 != v_int64);
 }
+
+TEST_CASE("GIVEN a declared unit of int32_t WHEN compared with < to an unit of "
+          "type int64_t THEN value is implicitely converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{123};
+  constexpr unit_t<'X', 1, int64_t> v_int64{124};
+
+  STATIC_REQUIRE(v_int32 < v_int64);
+  STATIC_REQUIRE(v_int32 <= v_int64);
+}
+
+TEST_CASE(
+    "GIVEN a declared unit of int32_t WHEN compared with < to an unit of "
+    "type int64_t AND ratio is different THEN value is implicitely converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{123};
+  constexpr unit_t<'X', 1, int64_t, std::milli> v_int64{124000};
+
+  STATIC_REQUIRE(v_int32 < v_int64);
+  STATIC_REQUIRE(v_int32 <= v_int64);
+}
+
+TEST_CASE("GIVEN a declared unit of int32_t WHEN compared with > to an unit of "
+          "type int64_t THEN value is implicitely converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{124};
+  constexpr unit_t<'X', 1, int64_t> v_int64{123};
+
+  STATIC_REQUIRE(v_int32 > v_int64);
+  STATIC_REQUIRE(v_int32 >= v_int64);
+}
+
+TEST_CASE(
+    "GIVEN a declared unit of int32_t WHEN compared with > to an unit of "
+    "type int64_t AND ratio is different THEN value is implicitely converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{124};
+  constexpr unit_t<'X', 1, int64_t, std::milli> v_int64{123000};
+
+  STATIC_REQUIRE(v_int32 > v_int64);
+  STATIC_REQUIRE(v_int32 >= v_int64);
+}
