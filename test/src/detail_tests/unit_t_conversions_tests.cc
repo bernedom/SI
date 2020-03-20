@@ -6,6 +6,8 @@
 
 using namespace SI::detail;
 
+/// @todo add tests for operator +, -
+
 TEST_CASE("GIVEN a declared unit of type int64_t WHEN copy-constructed "
           "with a unit of type int8_t THEN value is implicitly converted") {
 
@@ -117,7 +119,7 @@ TEST_CASE(
   STATIC_REQUIRE(v_int32 >= v_int64);
 }
 
-TEST_CASE("GIVEN a declared unit of int64_t WHEN multiplied an unit of "
+TEST_CASE("GIVEN a declared unit of int64_t WHEN multiplied with an unit of "
           "type int32_t THEN value is implicitely converted") {
   constexpr unit_t<'X', 1, int32_t> v_int32{2};
   constexpr unit_t<'X', 1, int64_t> v_int64{5};
@@ -128,7 +130,7 @@ TEST_CASE("GIVEN a declared unit of int64_t WHEN multiplied an unit of "
 }
 
 TEST_CASE(
-    "GIVEN a declared unit of int64_t WHEN multiplied an unit of "
+    "GIVEN a declared unit of int64_t WHEN multiplied with an unit of "
     "type int32_t AND ratio is different THEN value is implicitely converted") {
   constexpr unit_t<'X', 1, int32_t> v_int32{2};
   constexpr unit_t<'X', 1, int64_t, std::milli> v_int64{5000};
@@ -151,3 +153,71 @@ TEST_CASE(
                    std::remove_const<decltype(result)>::type>::value);
   REQUIRE(result == v_int64);
 }
+
+TEST_CASE("GIVEN a declared unit of int64_t WHEN divided by scalar of "
+          "type int32_t THEN value is implicitely converted") {
+  constexpr int32_t v_int32{2};
+  unit_t<'X', 1, int64_t> v_int64{10};
+  auto result = v_int64 / v_int32;
+  v_int64 /= v_int32;
+
+  STATIC_REQUIRE(
+      std::is_same<unit_t<'X', 1, int64_t>, decltype(result)>::value);
+  REQUIRE(result.raw_value() == 5);
+  REQUIRE(result == v_int64);
+}
+
+TEST_CASE("GIVEN a declared unit of int64_t WHEN divided by an unit of "
+          "type int32_t AND exponent is the same THEN value is implicitely "
+          "converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{2};
+  constexpr unit_t<'X', 1, int64_t> v_int64{5};
+  constexpr auto result = v_int64 / v_int32;
+
+  STATIC_REQUIRE(std::is_same<const int64_t, decltype(result)>::value);
+}
+
+TEST_CASE("GIVEN a declared unit of int64_t WHEN divided by an unit of "
+          "type int32_t AND exponent is not the same THEN value is implicitely "
+          "converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{2};
+  constexpr unit_t<'X', 2, int64_t> v_int64{5};
+  constexpr auto result = v_int64 / v_int32;
+
+  STATIC_REQUIRE(
+      std::is_same<const unit_t<'X', 1, int64_t>, decltype(result)>::value);
+}
+
+TEST_CASE("GIVEN a declared unit of int64_t WHEN divided by an unit of "
+          "type int32_t AND exponent is not the same AND ratio is not the same "
+          "THEN value is implicitely "
+          "converted") {
+  constexpr unit_t<'X', 1, int32_t, std::milli> v_int32{2000};
+  constexpr unit_t<'X', 2, int64_t> v_int64{5};
+  constexpr auto result = v_int64 / v_int32;
+
+  STATIC_REQUIRE(std::is_same<const unit_t<'X', 1, int64_t, std::kilo>,
+                              decltype(result)>::value);
+}
+
+TEST_CASE("GIVEN a scaler of int64_t WHEN divided by an unit of "
+          "type int32_t THEN value is implicitely converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{2};
+  constexpr int64_t v_int64{10};
+  constexpr auto result = v_int64 / v_int32;
+
+  STATIC_REQUIRE(
+      std::is_same<const unit_t<'X', -1, int64_t>, decltype(result)>::value);
+}
+
+TEST_CASE("GIVEN a scaler of double WHEN divided by an unit of "
+          "type float THEN value is implicitely converted") {
+  constexpr unit_t<'X', 1, float> v_float{2};
+  constexpr double v_double{10};
+  constexpr auto result = v_double / v_float;
+
+  STATIC_REQUIRE(
+      std::is_same<const unit_t<'X', -1, double>, decltype(result)>::value);
+}
+
+//@todo add scalar / unit division
