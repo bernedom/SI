@@ -6,8 +6,6 @@
 
 using namespace SI::detail;
 
-/// @todo add tests for operator +, -
-
 TEST_CASE("GIVEN a declared unit of type int64_t WHEN copy-constructed "
           "with a unit of type int8_t THEN value is implicitly converted") {
 
@@ -220,4 +218,48 @@ TEST_CASE("GIVEN a scaler of double WHEN divided by an unit of "
       std::is_same<const unit_t<'X', -1, double>, decltype(result)>::value);
 }
 
-//@todo add scalar / unit division
+TEST_CASE("GIVEN a declared unit of int32_t WHEN added to an unit of "
+          "type int64_t  THEN value is implicitely converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{123};
+  unit_t<'X', 1, int64_t> v_int64{123};
+  auto result = v_int64 + v_int32;
+  v_int64 += v_int32;
+
+  STATIC_REQUIRE(std::is_same<decltype(result), decltype(v_int64)>::value);
+  REQUIRE(v_int64 == result);
+}
+
+TEST_CASE(
+    "GIVEN a declared unit of int32_t WHEN added to an unit of "
+    "type int64_t AND ratio is different THEN value is implicitely converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{123};
+  unit_t<'X', 1, int64_t, std::milli> v_int64{124000};
+  auto result = v_int64 + v_int32;
+  v_int64 += v_int32;
+
+  STATIC_REQUIRE(std::is_same<decltype(result), decltype(v_int64)>::value);
+  REQUIRE(v_int64 == result);
+}
+
+TEST_CASE("GIVEN a declared unit of int32_t WHEN subtracted from an unit of "
+          "type int64_t  THEN value is implicitely converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{123};
+  unit_t<'X', 1, int64_t> v_int64{123};
+  auto result = v_int64 + v_int32;
+  v_int64 += v_int32;
+
+  STATIC_REQUIRE(std::is_same<decltype(result), decltype(v_int64)>::value);
+  REQUIRE(v_int64 == result);
+}
+
+TEST_CASE(
+    "GIVEN a declared unit of int32_t WHEN subtracted from an unit of "
+    "type int64_t AND ratio is different THEN value is implicitely converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{123};
+  unit_t<'X', 1, int64_t, std::milli> v_int64{124000};
+  auto result = v_int64 - v_int32;
+  v_int64 -= v_int32;
+
+  STATIC_REQUIRE(std::is_same<decltype(result), decltype(v_int64)>::value);
+  REQUIRE(v_int64 == result);
+}

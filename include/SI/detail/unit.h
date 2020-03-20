@@ -346,9 +346,9 @@ struct unit_t {
   }
 
   /// adds two values, returning type is type of lhs
-  template <typename _rhs_ratio>
-  constexpr unit_t
-  operator+(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
+  template <typename _rhs_type, typename _rhs_ratio>
+  constexpr unit_t operator+(
+      const unit_t<_symbol, _exponent, _rhs_type, _rhs_ratio> &rhs) const {
 
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
@@ -369,11 +369,11 @@ struct unit_t {
   }
 
   /// add value of the same type but possibly different ratio
-  template <typename _rhs_ratio,
+  template <typename _rhs_type, typename _rhs_ratio,
             typename std::enable_if<
                 !std::ratio_equal<_rhs_ratio, _ratio>::value>::type * = nullptr>
   constexpr unit_t &
-  operator+=(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) {
+  operator+=(const unit_t<_symbol, _exponent, _rhs_type, _rhs_ratio> &rhs) {
 
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
@@ -388,6 +388,23 @@ struct unit_t {
     return *this;
   }
 
+  /// subtracts two values, returning type is type of lhs
+  template <typename _rhs_type, typename _rhs_ratio>
+  constexpr unit_t operator-(
+      const unit_t<_symbol, _exponent, _rhs_type, _rhs_ratio> &rhs) const {
+
+    static_assert(detail::is_ratio<_rhs_ratio>::value,
+                  "_rhs_ratio is a std::ratio");
+    static_assert(
+        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
+            std::ratio_equal<ratio, _rhs_ratio>::value,
+        "Implicit ratio conversion disabled, convert before subtracting");
+
+    return unit_t{
+        raw_value() +
+        -unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).raw_value()};
+  }
+
   /// Subtract-assign value of the same unit
   constexpr unit_t &operator-=(const unit_t &rhs) {
     value_ -= rhs.raw_value();
@@ -395,7 +412,7 @@ struct unit_t {
   }
 
   /// subtract value of the same type but possibly different ratio
-  template <typename _rhs_ratio,
+  template <typename _rhs_type, typename _rhs_ratio,
             typename std::enable_if<
                 !std::ratio_equal<_rhs_ratio, _ratio>::value>::type * = nullptr>
   constexpr unit_t &
@@ -412,23 +429,6 @@ struct unit_t {
         unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).raw_value();
 
     return *this;
-  }
-
-  /// subtracts two values, returning type is type of lhs
-  template <typename _rhs_ratio>
-  constexpr unit_t
-  operator-(const unit_t<_symbol, _exponent, _type, _rhs_ratio> &rhs) const {
-
-    static_assert(detail::is_ratio<_rhs_ratio>::value,
-                  "_rhs_ratio is a std::ratio");
-    static_assert(
-        SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
-            std::ratio_equal<ratio, _rhs_ratio>::value,
-        "Implicit ratio conversion disabled, convert before subtracting");
-
-    return unit_t{
-        raw_value() +
-        -unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).raw_value()};
   }
 
   /// negate operation
