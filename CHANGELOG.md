@@ -2,7 +2,7 @@
 
 ## 1.6.0
 
-*   Implicit type conversion for units (i.e. between `double` and `float`)
+*   Implicit type conversion for units (i.e. between units with internal `double` and `float` representation)
 
 ## 1.5.1
 

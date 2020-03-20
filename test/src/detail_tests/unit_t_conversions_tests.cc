@@ -245,8 +245,8 @@ TEST_CASE("GIVEN a declared unit of int32_t WHEN subtracted from an unit of "
           "type int64_t  THEN value is implicitely converted") {
   constexpr unit_t<'X', 1, int32_t> v_int32{123};
   unit_t<'X', 1, int64_t> v_int64{123};
-  auto result = v_int64 + v_int32;
-  v_int64 += v_int32;
+  auto result = v_int64 - v_int32;
+  v_int64 -= v_int32;
 
   STATIC_REQUIRE(std::is_same<decltype(result), decltype(v_int64)>::value);
   REQUIRE(v_int64 == result);
