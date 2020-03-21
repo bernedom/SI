@@ -263,3 +263,25 @@ TEST_CASE(
   STATIC_REQUIRE(std::is_same<decltype(result), decltype(v_int64)>::value);
   REQUIRE(v_int64 == result);
 }
+
+TEST_CASE("GIVEN a declared unit of int32_t WHEN cast to an unit of type "
+          "int64_t THEN "
+          "value is implicitely converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{123};
+  constexpr unit_t<'X', 1, int64_t, std::milli> v_int64{123000};
+  constexpr auto result =
+      SI::detail::unit_cast<unit_t<'X', 1, int64_t, std::milli>>(v_int32);
+  STATIC_REQUIRE(std::is_same<decltype(result), decltype(v_int64)>::value);
+  STATIC_REQUIRE(v_int64 == result);
+}
+
+TEST_CASE("GIVEN a declared unit of int64_t WHEN cast to an unit of type "
+          "int32_t THEN "
+          "value is implicitely converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{123};
+  constexpr unit_t<'X', 1, int64_t, std::milli> v_int64{123000};
+  constexpr auto result =
+      SI::detail::unit_cast<unit_t<'X', 1, int32_t>>(v_int64);
+  STATIC_REQUIRE(std::is_same<decltype(result), decltype(v_int32)>::value);
+  STATIC_REQUIRE(v_int32 == result);
+}
