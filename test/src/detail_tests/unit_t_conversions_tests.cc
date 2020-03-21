@@ -283,38 +283,59 @@ TEST_CASE("GIVEN a declared unit of int32_t WHEN cast to an unit of type "
   STATIC_REQUIRE(v_int64 == result);
 }
 
-TEST_CASE("GIVEN a declared unit of int64_t WHEN cast to an unit of type "
-          "int32_t THEN "
-          "value is implicitely converted") {
-  constexpr unit_t<'X', 1, int32_t> v_int32{123};
-  constexpr unit_t<'X', 1, int64_t, std::milli> v_int64{123000};
-  constexpr auto result =
-      SI::detail::unit_cast<unit_t<'X', 1, int32_t>>(v_int64);
-  STATIC_REQUIRE(std::is_same<decltype(result), decltype(v_int32)>::value);
-  STATIC_REQUIRE(v_int32 == result);
-}
-
 TEST_CASE("GIVEN to values of different type AND ratio is the same AND "
           "internal type is different"
           "WHEN divided THEN resulting unit is as specified AND ratio "
           "is the same AND exponent is specified by resulting unit") {
-  constexpr unit_t<'X', 1, int32_t, std::ratio<1>> v1{1};
-  constexpr unit_t<'Y', 1, int64_t, std::ratio<1>> v2{1};
+  constexpr unit_t<'X', 1, int64_t, std::ratio<1>> v1{1};
+  constexpr unit_t<'Y', 1, int32_t, std::ratio<1>> v2{1};
 
   constexpr auto result = SI::detail::cross_unit_divide<unit_Z_t>(v1, v2);
   STATIC_REQUIRE(std::is_same<decltype(result),
-                              const unit_Z_t<int32_t, std::ratio<1>>>::value);
+                              const unit_Z_t<int64_t, std::ratio<1>>>::value);
   STATIC_REQUIRE(decltype(result)::exponent::value == 1);
 }
 
 TEST_CASE("GIVEN to values of different type AND ratio is the same "
           "WHEN multiplied THEN resulting unit is as specified AND ratio is "
           "the same") {
-  constexpr unit_t<'X', 1, int32_t, std::ratio<1>> v1{1};
-  constexpr unit_t<'Y', 1, int64_t, std::ratio<1>> v2{1};
+  constexpr unit_t<'X', 1, int64_t, std::ratio<1>> v1{1};
+  constexpr unit_t<'Y', 1, int32_t, std::ratio<1>> v2{1};
 
   constexpr auto result = SI::detail::cross_unit_multiply<unit_Z_t>(v1, v2);
   STATIC_REQUIRE(std::is_same<decltype(result),
-                              const unit_Z_t<int32_t, std::ratio<1>>>::value);
+                              const unit_Z_t<int64_t, std::ratio<1>>>::value);
   STATIC_REQUIRE(decltype(result)::exponent::value == 1);
+}
+
+TEST_CASE("GIVEN a unit with internal type of int32_t WHEN static_cast to unit "
+          "of int64_t THEN value is converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{2};
+  constexpr auto result = static_cast<unit_t<'X', 1, int64_t>>(v_int32);
+
+  STATIC_REQUIRE(
+      std::is_same<const unit_t<'X', 1, int64_t>, decltype(result)>::value);
+  STATIC_REQUIRE(result.raw_value() == 2);
+}
+
+TEST_CASE("GIVEN a unit with internal type of int32_t WHEN static_cast to unit "
+          "of int64_t AND ratio is different THEN value is converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int32{2};
+  constexpr auto result =
+      static_cast<unit_t<'X', 1, int64_t, std::milli>>(v_int32);
+
+  STATIC_REQUIRE(std::is_same<const unit_t<'X', 1, int64_t, std::milli>,
+                              decltype(result)>::value);
+  STATIC_REQUIRE(result.raw_value() == 2000);
+}
+
+TEST_CASE("GIVEN a unit with internal type of float WHEN static_cast to unit "
+          "of int64_t AND ratio is different THEN value is converted") {
+  constexpr unit_t<'X', 1, int32_t> v_int{2};
+  constexpr auto result =
+      static_cast<unit_t<'X', 1, double, std::milli>>(v_int);
+
+  STATIC_REQUIRE(std::is_same<const unit_t<'X', 1, double, std::milli>,
+                              decltype(result)>::value);
+  STATIC_REQUIRE(result.raw_value() == 2000);
 }
