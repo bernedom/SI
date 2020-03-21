@@ -6,6 +6,14 @@
 
 using namespace SI::detail;
 
+namespace {
+template <typename _type, typename _ratio>
+using unit_Z_t = SI::detail::unit_t<'Z', 1, _type, _ratio>;
+
+template <typename _type, typename _ratio>
+using unit_X_t = SI::detail::unit_t<'X', 1, _type, _ratio>;
+} // namespace
+
 TEST_CASE("GIVEN a declared unit of type int64_t WHEN copy-constructed "
           "with a unit of type int8_t THEN value is implicitly converted") {
 
@@ -284,4 +292,29 @@ TEST_CASE("GIVEN a declared unit of int64_t WHEN cast to an unit of type "
       SI::detail::unit_cast<unit_t<'X', 1, int32_t>>(v_int64);
   STATIC_REQUIRE(std::is_same<decltype(result), decltype(v_int32)>::value);
   STATIC_REQUIRE(v_int32 == result);
+}
+
+TEST_CASE("GIVEN to values of different type AND ratio is the same AND "
+          "internal type is different"
+          "WHEN divided THEN resulting unit is as specified AND ratio "
+          "is the same AND exponent is specified by resulting unit") {
+  constexpr unit_t<'X', 1, int32_t, std::ratio<1>> v1{1};
+  constexpr unit_t<'Y', 1, int64_t, std::ratio<1>> v2{1};
+
+  constexpr auto result = SI::detail::cross_unit_divide<unit_Z_t>(v1, v2);
+  STATIC_REQUIRE(std::is_same<decltype(result),
+                              const unit_Z_t<int32_t, std::ratio<1>>>::value);
+  STATIC_REQUIRE(decltype(result)::exponent::value == 1);
+}
+
+TEST_CASE("GIVEN to values of different type AND ratio is the same "
+          "WHEN multiplied THEN resulting unit is as specified AND ratio is "
+          "the same") {
+  constexpr unit_t<'X', 1, int32_t, std::ratio<1>> v1{1};
+  constexpr unit_t<'Y', 1, int64_t, std::ratio<1>> v2{1};
+
+  constexpr auto result = SI::detail::cross_unit_multiply<unit_Z_t>(v1, v2);
+  STATIC_REQUIRE(std::is_same<decltype(result),
+                              const unit_Z_t<int32_t, std::ratio<1>>>::value);
+  STATIC_REQUIRE(decltype(result)::exponent::value == 1);
 }

@@ -538,8 +538,8 @@ constexpr auto cross_unit_divide(const _unit_lhs &lhs, const _unit_rhs &rhs) {
 
   using resulting_ratio = typename std::ratio_divide<typename _unit_lhs::ratio,
                                                      typename _unit_rhs::ratio>;
-  return _resulting_unit<typename _unit_lhs::internal_type, resulting_ratio>{
-      lhs.raw_value() / rhs.raw_value()};
+  return _resulting_unit<typename _unit_lhs::internal_type, resulting_ratio>(
+      lhs.raw_value() / rhs.raw_value());
 }
 /// multiply a value of a unit witn another value of a possibly different
 /// value resulting in a value of a new type with exponent 1 the internal type
@@ -558,8 +558,8 @@ constexpr auto cross_unit_multiply(const _unit_lhs &lhs, const _unit_rhs &rhs) {
   using resulting_ratio =
       typename std::ratio_multiply<typename _unit_lhs::ratio,
                                    typename _unit_rhs::ratio>;
-  return _resulting_unit<typename _unit_lhs::internal_type, resulting_ratio>{
-      lhs.raw_value() * rhs.raw_value()};
+  return _resulting_unit<typename _unit_lhs::internal_type, resulting_ratio>(
+      lhs.raw_value() * rhs.raw_value());
 }
 
 } // namespace SI::detail
