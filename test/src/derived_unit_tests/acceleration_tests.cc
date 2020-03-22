@@ -97,3 +97,17 @@ TEMPLATE_TEST_CASE(
       std::is_same<decltype(result),
                    const SI::time_squared_t<TestType, std::ratio<1>>>::value);
 }
+
+TEMPLATE_TEST_CASE(
+    "GIVEN a squared velocity value WHEN divided by length THEN result is "
+    "a accleration value",
+    "[acceleration][operators]", int64_t, long double) {
+  constexpr SI::velocity_squared_t<TestType, std::ratio<1>> v2{1};
+  constexpr SI::length_t<TestType, std::ratio<1>> L{1};
+
+  constexpr auto result = v2 / L;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(result),
+                   const SI::acceleration_t<TestType, std::ratio<1>>>::value);
+}
