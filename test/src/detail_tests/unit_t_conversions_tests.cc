@@ -328,14 +328,3 @@ TEST_CASE("GIVEN a unit with internal type of int32_t WHEN static_cast to unit "
                               decltype(result)>::value);
   STATIC_REQUIRE(result.raw_value() == 2000);
 }
-
-TEST_CASE("GIVEN a unit with internal type of float WHEN static_cast to unit "
-          "of int64_t AND ratio is different THEN value is converted") {
-  constexpr unit_t<'X', 1, int32_t> v_int{2};
-  constexpr auto result =
-      static_cast<unit_t<'X', 1, double, std::milli>>(v_int);
-
-  STATIC_REQUIRE(std::is_same<const unit_t<'X', 1, double, std::milli>,
-                              decltype(result)>::value);
-  STATIC_REQUIRE(result.raw_value() == 2000);
-}
