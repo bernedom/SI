@@ -24,6 +24,9 @@ namespace SI {
 template <typename _type, typename _ratio>
 using velocity_t = detail::unit_t<'v', 1, _type, _ratio>;
 
+template <typename _type, typename _ratio>
+using velocity_squared_t = detail::unit_t<'v', 2, _type, _ratio>;
+
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(velocity_t, length_t, time_t)
 }
