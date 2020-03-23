@@ -3,6 +3,8 @@
 ## 1.6.0
 
 *   Implicit type conversion for units (i.e. between units with internal `double` and `float` representation)
+*   Turn installation of by setting the cmake option `SI_INSTALL_LIBRARY` to `OFF` (default is `ON`)
+*   Acceleration is buildable from v^2 / l 
 
 ## 1.5.1
 

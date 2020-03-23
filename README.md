@@ -76,7 +76,7 @@ All units that can be built from other units are also decayable to the respectiv
 | Unit                 | Dimension Symbol | Unit Symbol | builable from    | implemented literals | unit typedefs   |
 | -------------------- | ---------------- | ----------- | ---------------- | -------------------- | --------------- |
 | Velocity             | v                | m/s         | L / T            | none                 | none            |
-| Acceleration         | a                | m/s^2       | v / T            | none                 | none            |
+| Acceleration         | a                | m/s^2       | v / T, v^2 / L   | none                 | none            |
 | Electric charge      | Q                | C           | I \* T           | aC to EC             | `*_coulomb_t`   |
 | Electric potential   | U                | V           | P / I, E/Q       | aV to EV             | `*_volt_t`      |
 | Electric resistance  | O*               | Ohm (Ω)     | U / I, 1/G       | aOhm to EOhm         | `*_ohm_t`       |
