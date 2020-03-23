@@ -70,6 +70,18 @@ testPureCmakeInstallation() {
     
 }
 
+testPureCmakeInstallationWithInstallOptionTurnedOff() {
+    # install SI
+    cmake ${ROOT_DIR} -B${SI_BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DBUILD_TESTING=off -DSI_INSTALL_LIBRARY=OFF -DCMAKE_BUILD_TYPE=Release
+    cmake --build ${SI_BUILD_DIR} --config Release --target install
+    assertEquals "Installation build successful" 0 $?
+    
+    DIRECTORY_CONTENTS=$(ls -A ${INSTALL_PATH})
+    EMPTY=""
+    assertEquals "Installation directory is empty" "${EMPTY}" "${DIRECTORY_CONTENTS}"
+    
+}
+
 testCpackInstallation() {
     # install SI
     cmake ${ROOT_DIR} -B${SI_BUILD_DIR} -DCPACK_PACKAGE_FILE_NAME=install-SI -DBUILD_TESTING=off -DCMAKE_BUILD_TYPE=Release
