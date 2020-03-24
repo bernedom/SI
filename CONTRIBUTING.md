@@ -6,9 +6,10 @@ Contributions and suggestions to this repo are highly welcome.
 
 1.  All code has to have a corresponding test, even if it is just a minor change
 2.  run `clang-format` with the llvm style for formatting 
-3.  If any new units are added update the tables README.md
-4.  If you're branching off from a release commit, all version numbers have to be increased. 
-5.  Before merging all checks have to pass
+3.  If any new units are added update the tables [README.md](README.md)
+4.  Describe your changes in [CHANGELOG.md](CHANGELOG.md)
+5.  If you're branching off from a release commit, all version numbers have to be increased. 
+6.  Before merging all checks have to pass
 
 ## Building the tests
 
