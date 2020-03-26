@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.6.0
+ * This file is part of "SI" version 1.6.1
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -433,6 +433,18 @@ struct unit_t {
 
   /// negate operation
   constexpr unit_t operator-() const { return {-value_}; }
+
+  unit_t &operator++() {
+    ++value_;
+    return *this;
+  }
+
+  unit_t operator++(int) {
+    auto ret_val(*this);
+    ++(*this);
+
+    return ret_val;
+  }
 
 private:
   _type value_;

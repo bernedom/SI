@@ -1,5 +1,9 @@
 # Changelog 
 
+## 1.6.1
+
+*   Add operators `++` and `--` for units containing integral types
+
 ## 1.6.0
 
 *   Implicit type conversion for units (i.e. between units with internal `double` and `float` representation)
