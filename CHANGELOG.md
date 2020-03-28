@@ -2,7 +2,7 @@
 
 ## 1.6.1
 
-*   Add operators `++` and `--` for units containing integral types
+*   Add operators `++` and `--` for units
 
 ## 1.6.0
 

@@ -637,6 +637,20 @@ TEST_CASE(
   REQUIRE(v1 == expected);
 }
 
-// todo add test for failing ++/--
-// todo add post-fix increment
-// TODO add decrement operator
+TEST_CASE(
+    "GIVEN a unit AND type is integral WHEN decremented with prefix -- THEN "
+    "result is proper increment") {
+  unit_t<'X', 1, int64_t> v1{2};
+  constexpr unit_t<'X', 1, int64_t> expected{1};
+  --v1;
+  REQUIRE(v1 == expected);
+}
+
+TEST_CASE(
+    "GIVEN a unit AND type is integral WHEN decremented with postfix -- THEN "
+    "result is proper increment") {
+  unit_t<'X', 1, int64_t> v1{2};
+  constexpr unit_t<'X', 1, int64_t> expected{1};
+  v1--;
+  REQUIRE(v1 == expected);
+}
