@@ -140,5 +140,13 @@ testConanCmakeIntegratedInstallation() {
     conan remove -f *@SI/testing
 }
 
+testUsageAsSubdirectory() {
+    # install SI
+    cmake ${ROOT_DIR}/test/installation-test-subdirectory -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release
+    cmake --build ${BUILD_DIR}
+    assertEquals "build against installation successful" 0 $?
+    
+}
+
 # Load shUnit2.
 . shunit2
