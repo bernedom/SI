@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.6.0
+ * This file is part of "SI" version 1.6.1
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -434,9 +434,36 @@ struct unit_t {
   /// negate operation
   constexpr unit_t operator-() const { return {-value_}; }
 
+  /// increment by prefix ++
+  unit_t &operator++() {
+    ++value_;
+    return *this;
+  }
+  /// incrment by postfix ++
+  unit_t operator++(int) {
+    auto ret_val(*this);
+    ++(*this);
+
+    return ret_val;
+  }
+
+  /// decrement by prefix --
+  unit_t &operator--() {
+    --value_;
+    return *this;
+  }
+
+  /// decrement by postfix --
+  unit_t operator--(int) {
+    auto ret_val(*this);
+    --(*this);
+
+    return ret_val;
+  }
+
 private:
   _type value_;
-}; // namespace SI
+};
 
 /// operator to divide primitive type by unit encapsulating the same type
 /// template specialisation handling integer types
