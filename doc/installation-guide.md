@@ -57,5 +57,6 @@ use `SI/unstable` to get the latest development builds. See the [official conan 
 
 ## Using as a subdirectory (not installing at all)
 
-Although not the preferred way, SI can be included in any cmake project by putting it into a directory and including it with `add_subdirectory()`. Depending on the project setup this means that SI should not be installed on its own. Setting the option `SI_INSTALL_LIBRARY=OFF` will prevent SI from installing any files. 
-While this is possible this should be considered smell when setting up projects, rather use cmake install or conan for dependency resolution. 
+Although not the preferred way, SI can be included in any cmake project by putting it into a directory and including it with `add_subdirectory()`. Depending on the project setup this means that SI should not be installed on its own. Setting the option `SI_INSTALL_LIBRARY=OFF` will prevent SI from installing any files although the preferred method is using `add_subdirectory(path/to/SI ${PROJECT_BINARY_DIR}/SI-build EXCLUDE_FROM_ALL)`. 
+
+If using as a subdirectory with `EXCLUDE_FROM_ALL` the SI testing has to be disabled by setting `SI_BUILD_TESTING=OFF` in cmake. 

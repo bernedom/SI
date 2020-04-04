@@ -124,4 +124,4 @@ See [the installation guide](https://github.com/bernedom/SI/blob/master/doc/inst
 
 ## Packaging
 
-SI is available as 'raw' download from this repo but also as [conan package](https://bintray.com/bernedom/conan/SI%3ASI/_latestVersion). All releases are available from `SI/stable` from bintray. Getting SI from there is the preferred way.  
+SI is available as 'raw' download from this repo but also as [conan package](https://bintray.com/bernedom/conan/SI%3ASI/_latestVersion). All releases are available from `SI/stable` from bintray. Getting SI from there is the preferred way.

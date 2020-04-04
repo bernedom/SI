@@ -16,6 +16,7 @@ include(CTest)
 
 option(SI_INSTALL_LIBRARY
        "Enable installing of SI library into default locations" ON)
+option(SI_BUILD_TESTING "Build and run SI tests " ON)
 
 # Adding the install interface generator expression makes sure that the include
 # files are installed to the proper location (provided by GNUInstallDirs)
@@ -26,7 +27,7 @@ target_include_directories(
 
 target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_17)
 
-if(BUILD_TESTING)
+if(BUILD_TESTING AND SI_BUILD_TESTING)
   add_subdirectory(test)
 endif()
 
