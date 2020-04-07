@@ -3,6 +3,7 @@
 ## 1.6.1
 
 *   Add operators `++` and `--` for units
+*   Add cmake option `SI_ENABLE_TESTING` (default `ON`) to selectively disable tests for SI if used with `add_subdirectory()` and `EXCLUDE_FROM_ALL`
 
 ## 1.6.0
 
