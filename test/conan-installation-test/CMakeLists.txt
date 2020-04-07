@@ -7,5 +7,6 @@ conan_basic_setup(TARGETS)
 
 find_package(SI CONFIG REQUIRED)
 
-add_executable(${PROJECT_NAME} src/main.cc)
+add_executable(${PROJECT_NAME}
+               ${CMAKE_CURRENT_SOURCE_DIR}/../src/installation-tests/main.cc)
 target_link_libraries(${PROJECT_NAME} SI::SI)
