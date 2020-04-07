@@ -4,5 +4,6 @@ project("SI-Example")
 
 add_subdirectory(../../ ${PROJECT_BINARY_DIR}/SI-build EXCLUDE_FROM_ALL)
 
-add_executable(${PROJECT_NAME} src/main.cc)
+add_executable(${PROJECT_NAME}
+               ${CMAKE_CURRENT_SOURCE_DIR}/../src/installation-tests/main.cc)
 target_link_libraries(${PROJECT_NAME} SI)
