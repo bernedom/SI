@@ -1,5 +1,9 @@
 # Changelog 
 
+## 1.7.0
+
+*   Add literals for km/h (`_km_p_h`) m/s (`m_p_s`)
+
 ## 1.6.1
 
 *   Add operators `++` and `--` for units

@@ -27,8 +27,42 @@ using velocity_t = detail::unit_t<'v', 1, _type, _ratio>;
 template <typename _type, typename _ratio>
 using velocity_squared_t = detail::unit_t<'v', 2, _type, _ratio>;
 
+template <typename _type>
+using metre_per_second_t = velocity_t<_type, std::ratio<1>::type>;
+
+// ratio is calculated, so it gets reduced depending on the compiler
+// so that 1_km/1_h results the same type as 1_km_p_h
+template <typename _type>
+using kilometre_per_hour_t =
+    velocity_t<_type, std::ratio_divide<std::kilo, std::ratio<3600, 1>>::type>;
+
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(velocity_t, length_t, time_t)
+} // namespace detail
+
+inline namespace literals {
+
+template <char... _digits>
+constexpr metre_per_second_t<int64_t> operator""_m_p_s() {
+  return metre_per_second_t<int64_t>{
+      SI::detail::parsing::Number<_digits...>::value};
 }
+
+template <char... _digits>
+constexpr kilometre_per_hour_t<int64_t> operator""_km_p_h() {
+  return kilometre_per_hour_t<int64_t>{
+      SI::detail::parsing::Number<_digits...>::value};
+}
+
+constexpr metre_per_second_t<long double> operator""_m_p_s(long double value) {
+  return metre_per_second_t<long double>{value};
+}
+
+constexpr kilometre_per_hour_t<long double>
+operator""_km_p_h(long double value) {
+  return kilometre_per_hour_t<long double>{value};
+}
+
+} // namespace literals
 
 } // namespace SI
