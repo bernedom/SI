@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.6.1
+ * This file is part of "SI" version 1.7.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -32,6 +32,7 @@ constexpr auto unit_cast(const _rhs_T &rhs);
 template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
 
 /// @todo add in-place unit_cast for move operators
+/// @todo add logarithmic units (decibel)
 
 /**
  * @brief base template class for holding values of type _type to be multiplied

@@ -2,7 +2,7 @@
 
 #include <SI/velocity.h>
 
-using namespace SI::literals;
+using namespace SI;
 
 TEST_CASE("GIVEN a length value in meters WHEN divided by time value in "
           "seconds THEN result is a velocity value AND ratio of result is 1") {
@@ -73,4 +73,45 @@ TEST_CASE("GIVEN a value of 10km/h WHEN compared to a value of 80kmh THEN "
   STATIC_REQUIRE(std::is_same<decltype(ten_kmh), decltype(eighty_kmh)>::value);
 
   STATIC_REQUIRE(ten_kmh < eighty_kmh);
+}
+
+TEST_CASE(
+    "GIVEN a value WHEN constructed with literal _km_p_h THEN result is a "
+    "velocity type AND ratio 1000 to 3600") {
+  constexpr auto one_kmh_literal = 1_km_p_h;
+  constexpr auto one_kmh_literal_double = 1.0_km_p_h;
+  constexpr auto expected_type = 1_km / 1_h;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(expected_type), decltype(one_kmh_literal)>::value);
+  STATIC_REQUIRE(one_kmh_literal == expected_type);
+  STATIC_REQUIRE(std::ratio_equal<decltype(one_kmh_literal)::ratio,
+                                  std::ratio<1000, 3600>>::value);
+  STATIC_REQUIRE(std::ratio_equal<decltype(one_kmh_literal_double)::ratio,
+                                  std::ratio<1000, 3600>>::value);
+  STATIC_REQUIRE(std::is_same<decltype(one_kmh_literal),
+                              const SI::kilometre_per_hour_t<int64_t>>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_kmh_literal_double),
+                   const SI::kilometre_per_hour_t<long double>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _m_p_h THEN result is a "
+          "velocity type AND ratio 1") {
+  constexpr auto one_m_ps_literal = 1_m_p_s;
+  constexpr auto one_m_ps_literal_double = 1.0_m_p_s;
+  constexpr auto expected_type = 1_m / 1_s;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(expected_type), decltype(one_m_ps_literal)>::value);
+  STATIC_REQUIRE(one_m_ps_literal == expected_type);
+  STATIC_REQUIRE(std::ratio_equal<decltype(one_m_ps_literal)::ratio,
+                                  std::ratio<1>>::value);
+  STATIC_REQUIRE(std::ratio_equal<decltype(one_m_ps_literal_double)::ratio,
+                                  std::ratio<1>>::value);
+  STATIC_REQUIRE(std::is_same<decltype(one_m_ps_literal),
+                              const SI::metre_per_second_t<int64_t>>::value);
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_m_ps_literal_double),
+                   const SI::metre_per_second_t<long double>>::value);
 }
