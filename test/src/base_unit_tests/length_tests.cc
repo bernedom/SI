@@ -175,6 +175,21 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _Em THEN result is a "
                    const SI::length_t<long double, std::exa>>::value);
 }
 
+TEST_CASE("GIVEN a value WHEN constructed with literal _AU THEN result is a "
+          "length type AND ratio 149597870691 to 1") {
+  constexpr auto one = 1_AU;
+  STATIC_REQUIRE(
+      std::is_same<
+          decltype(one),
+          const SI::length_t<int64_t, std::ratio<149597870691, 1>>>::value);
+
+  constexpr auto one_f = 1.0_AU;
+  STATIC_REQUIRE(
+      std::is_same<
+          decltype(one_f),
+          const SI::length_t<long double, std::ratio<149597870691, 1>>>::value);
+}
+
 TEST_CASE("GIVEN a value WHEN constructed with literal _km THEN it is one "
           "thousand _m") {
   constexpr auto one_k = 1_km;
@@ -233,7 +248,7 @@ TEST_CASE("GIVEN a 1 pico metre WHEN passed to a streaming operator THEN "
 }
 
 TEST_CASE("GIVEN a 1 nano metre WHEN passed to a streaming operator THEN "
-          "result is '1pm'") {
+          "result is '1nm'") {
   constexpr auto value = 1_nm;
   std::stringstream ss;
   ss << value;
