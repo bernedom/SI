@@ -2,7 +2,8 @@
 
 ## 1.7.0
 
-*   Add literals for km/h (`_km_p_h`) m/s (`m_p_s`)
+*   Add literals and typedefs for km/h (`_km_p_h`) m/s (`m_p_s`)
+*   Add literals for astronomical units (AU) and lightyears (ly)
 
 ## 1.6.1
 

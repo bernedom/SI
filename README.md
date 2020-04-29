@@ -43,15 +43,15 @@ It is possible to supply custom ratios to the built-in types and they are fully 
 For each Unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the international system of units](https://en.wikipedia.org/wiki/Metric_prefix)
 The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. `metre_t, milli_metre_t, kilo_metre_t`. The prefix or interfix is marked with an `*` in the tables below. Units which have defined typedefs and literals can be converted to strings using [the stream operators](doc/implementation-details.md#implementation-details-of-si).
 
-| Unit                        | Dimension Symbol | Unit Symbol | implemented ratios                                  | unit typedefs                     |
-| --------------------------- | ---------------- | ----------- | --------------------------------------------------- | --------------------------------- |
-| Length                      | L                | m           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_metre_t`                       |
-| Time                        | T                | s           | 10<sup>-18</sup> to 10<sup>0</sup> and 60/1, 3600/1 | `*_seconds_t, minutes_t, hours_t` |
-| Mass*                       | M                | kg          | 10<sup>-15</sup> to 10<sup>3</sup>                  | `*_gram_t`, `ton_t`               |
-| Electric current            | I                | A           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_ampere_t`                      |
-| Thermodynamic temperature** | t                | K           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_kelvin_t`                      |
-| Amount of substance         | N                | mol         | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_mol_t`                         |
-| Luminousity                 | J                | cd          | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_candela_t`                     |
+| Unit                        | Dimension Symbol | Unit Symbol | implemented ratios                                  | unit typedefs                                                    |
+| --------------------------- | ---------------- | ----------- | --------------------------------------------------- | ---------------------------------------------------------------- |
+| Length                      | L                | m           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_metre_t`, `astronimcal_unit_t` (`_AU`), `lightyear_t` (`_ly`) |
+| Time                        | T                | s           | 10<sup>-18</sup> to 10<sup>0</sup> and 60/1, 3600/1 | `*_seconds_t, minutes_t, hours_t`                                |
+| Mass*                       | M                | kg          | 10<sup>-15</sup> to 10<sup>3</sup>                  | `*_gram_t`, `ton_t`                                              |
+| Electric current            | I                | A           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_ampere_t`                                                     |
+| Thermodynamic temperature** | t                | K           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_kelvin_t`                                                     |
+| Amount of substance         | N                | mol         | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_mol_t`                                                        |
+| Luminousity                 | J                | cd          | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_candela_t`                                                    |
 
 \* for mass the base ratio is `kg` (not `g`) as it is defined in the SI unit table. So there is a mismatch between the literal prefix and the internal representation.
 

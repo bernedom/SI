@@ -190,6 +190,21 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _AU THEN result is a "
           const SI::length_t<long double, std::ratio<149597870691, 1>>>::value);
 }
 
+TEST_CASE("GIVEN a value WHEN constructed with literal _ly THEN result is a "
+          "length type AND ratio 9460730777119564 to 1") {
+  constexpr auto one = 1_ly;
+  STATIC_REQUIRE(
+      std::is_same<
+          decltype(one),
+          const SI::length_t<int64_t, std::ratio<9460730777119564, 1>>>::value);
+
+  constexpr auto one_f = 1.0_ly;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one_f),
+                   const SI::length_t<long double,
+                                      std::ratio<9460730777119564, 1>>>::value);
+}
+
 TEST_CASE("GIVEN a value WHEN constructed with literal _km THEN it is one "
           "thousand _m") {
   constexpr auto one_k = 1_km;
