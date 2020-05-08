@@ -19,7 +19,7 @@
 #include "detail/unit_symbol.h"
 
 namespace SI {
-/// @todo add astronomic units
+
 template <typename _type, typename _ratio>
 using length_t = detail::unit_t<'L', 1, _type, _ratio>;
 

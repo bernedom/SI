@@ -33,6 +33,9 @@ template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
 
 /// @todo add in-place unit_cast for move operators
 /// @todo add logarithmic units (decibel)
+/// @todo add constants for speed of light, planck constant, elementary charge,
+/// boltzmann constant, avorgadro constant and  luminous efficacy of
+/// monochromatic radiation of frequency
 
 /**
  * @brief base template class for holding values of type _type to be multiplied
