@@ -38,13 +38,6 @@ template <typename _type> using tera_metre_t = length_t<_type, std::tera>;
 template <typename _type> using peta_metre_t = length_t<_type, std::peta>;
 template <typename _type> using exa_metre_t = length_t<_type, std::exa>;
 
-/// @todo consider moving non-SI types to own namespace or own files
-/// possibly create a whole file for all astronomical units like parsecs etc
-template <typename _type>
-using astronomic_unit_t = length_t<_type, std::ratio<149597870691, 1>>;
-template <typename _type>
-using lightyear_t = length_t<_type, std::ratio<9460730777119564, 1>>;
-
 // specialize unit_symbol for usage with stream operators
 template <>
 struct unit_symbol<'L', std::ratio<1>> : SI::detail::unit_symbol_impl<'m'> {};
@@ -111,16 +104,6 @@ template <char... _digits> constexpr exa_metre_t<int64_t> operator""_Em() {
   return exa_metre_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _digits>
-constexpr astronomic_unit_t<int64_t> operator""_AU() {
-  return astronomic_unit_t<int64_t>{
-      SI::detail::parsing::Number<_digits...>::value};
-}
-
-template <char... _digits> constexpr lightyear_t<int64_t> operator""_ly() {
-  return lightyear_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
-}
-
 constexpr atto_metre_t<long double> operator""_am(long double value) {
   return atto_metre_t<long double>{value};
 }
@@ -175,14 +158,6 @@ constexpr peta_metre_t<long double> operator""_Pm(long double value) {
 
 constexpr exa_metre_t<long double> operator""_Em(long double value) {
   return exa_metre_t<long double>{value};
-}
-
-constexpr astronomic_unit_t<long double> operator""_AU(long double value) {
-  return astronomic_unit_t<long double>{value};
-}
-
-constexpr lightyear_t<long double> operator""_ly(long double value) {
-  return lightyear_t<long double>{value};
 }
 
 } // namespace literals

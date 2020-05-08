@@ -74,7 +74,8 @@ target_sources(
   src/base_unit_tests/temperature_tests.cc
   src/base_unit_tests/substance_tests.cc
   src/base_unit_tests/luminosity_tests.cc
-  src/base_unit_tests/length_tests.cc)
+  src/base_unit_tests/length_tests.cc
+  src/base_unit_tests/astronomic_tests.cc)
 
 target_include_directories(
   SI_base_unit_tests
