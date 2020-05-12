@@ -36,12 +36,12 @@ int main(int, char **) {
 
 SI provides conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) with strong **type safety at compile time**. All units are special typedefs of the templated struct `SI::unit_t`. Only the value of the unit is stored internally, the ratio (i.e. milli, micro, kilo...) is determined as a type trait to allow all units to have the same resolution across the whole implemented ratios. SI handles operations of units of the same ratios as well as when the ratios are different. Operations of between units of the same ratio are overhead-free, else there is additional computation cost to adjust the values to the units. By passing the flag `SI_DISABLE_IMPLICIT_RATIO_CONVERSION` to the compiler implicit ratio conversion is not done and fails with a compiler error. See the [continuous benchmarks](https://si.dominikberner.ch/dev/bench/) for comparing the reference measurements and the implementation in SI.
 
-It is possible to supply custom ratios to the built-in types and they are fully compatible for calculation with other units. However the necessary literals or typedefs have to be supplied by the user. For instance  `SI::velocity_t<double, std::ratio<1000, 36>>` would be "kilo metre per one-hundreth-of-an-hour".
+It is possible to supply custom ratios to the built-in types and they are fully compatible for calculation with other units. However the necessary literals or typedefs have to be supplied by the user. For instance  `SI::velocity_t<double, std::ratio<1000, 36>>` would be "kilometre per one-hundreth-of-an-hour".
 
 ## SI Base units
 
-For each Unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the international system of units](https://en.wikipedia.org/wiki/Metric_prefix)
-The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. `metre_t, milli_metre_t, kilo_metre_t`. The prefix or interfix is marked with an `*` in the tables below. Units which have defined typedefs and literals can be converted to strings using [the stream operators](doc/implementation-details.md#implementation-details-of-si).
+For each unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the international system of units](https://en.wikipedia.org/wiki/Metric_prefix)
+The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. `metre_t, milli_metre_t, kilo_metre_t`. The prefix or interfix is marked with an `*` in the tables below. Units that have defined typedefs and literals can be converted to strings using [the stream operators](doc/implementation-details.md##conversion-to-strings-using-stream-operators).
 
 | Unit                        | Dimension Symbol | Unit Symbol | implemented ratios                                  | unit typedefs                     |
 | --------------------------- | ---------------- | ----------- | --------------------------------------------------- | --------------------------------- |
@@ -71,7 +71,7 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metric
 
 ## Derived units with special names
 
-All units that can be built from other units are also decayable to the respective units by inversing the mathematical operation. I.e if `Q = I * T` then `Q / I = T` and `Q / T = I`
+All units that can be built from other units decay to the respective units by inverting the mathematical operation. I.e if `Q = I * T` then `Q / I = T` and `Q / T = I`
 
 | Unit                 | Dimension Symbol | Unit Symbol | builable from    | implemented literals | unit typedefs                                  |
 | -------------------- | ---------------- | ----------- | ---------------- | -------------------- | ---------------------------------------------- |
@@ -111,7 +111,7 @@ Non standard units are not regulated by the [BIPM](https://www.bipm.org/) but ar
 
 ## Building & compatibility
 
-SI is a header only lirbary that uses **C++17** features. Building is tested using cmake > 3.5 and verified for g++7, g++8, clang5, clang6, clang7, msvc 19, and AppleClang 10.0. It uses conan to download any dependencies for testing, but can be used without it, if the tests are not built. 
+SI is a header-only library that uses **C++17** features. Building is tested using cmake > 3.5 and verified for g++7, g++8, clang5, clang6, clang7, msvc 19, and AppleClang 10.0. It uses conan to download any dependencies for testing, but can be used without it, if the tests are not built. 
 
 to build use:
 
@@ -133,3 +133,7 @@ See [the installation guide](https://github.com/bernedom/SI/blob/master/doc/inst
 ## Packaging
 
 SI is available as 'raw' download from this repo but also as [conan package](https://bintray.com/bernedom/conan/SI%3ASI/_latestVersion). All releases are available from `SI/stable` from bintray. Getting SI from there is the preferred way.
+
+## Implementation details
+
+For further information and deeper technical details refer to the [implementation details document](doc/implementation-details.md)
