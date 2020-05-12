@@ -105,7 +105,6 @@ All units that can be built from other units are also decayable to the respectiv
 
 Non standard units are not regulated by the [BIPM](https://www.bipm.org/) but are accepted for use with the SI standard. 
 
-
 | Unit                       | Dimension Symbol | literals   | implemented ratios                                                     | unit typedefs                                                           |
 | -------------------------- | ---------------- | ---------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | Astronomic Units of length | L                | AU, ly, pc | 149597870691:1 (AU), 9460730777119564:1 (ly), 30856775814913700:1 (pc) | `astronimcal_unit_t` (`_AU`), `lightyear_t` (`_ly`), `parsec_t` (`_pc`) |
