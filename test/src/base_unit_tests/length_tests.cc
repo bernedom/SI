@@ -233,7 +233,7 @@ TEST_CASE("GIVEN a 1 pico metre WHEN passed to a streaming operator THEN "
 }
 
 TEST_CASE("GIVEN a 1 nano metre WHEN passed to a streaming operator THEN "
-          "result is '1pm'") {
+          "result is '1nm'") {
   constexpr auto value = 1_nm;
   std::stringstream ss;
   ss << value;

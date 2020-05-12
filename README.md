@@ -10,7 +10,7 @@
 
 # SI - Type safety for physical units
 
-A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units). For a quick start see [the installation guide](https://github.com/bernedom/SI/blob/master/doc/installation-guide.md). Contributions and comments are welcome, please check the [contribution guidelines](CONTRIBUTING.md) for further information.
+A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) regulated by the [International Bureau of Weights and Measures (BIPM)](https://www.bipm.org/en/about-us/)  and published in the [SI brochure](https://www.bipm.org/en/publications/si-brochure/). For a quick start see [the installation guide](https://github.com/bernedom/SI/blob/master/doc/installation-guide.md). Contributions and comments are welcome, please check the [contribution guidelines](CONTRIBUTING.md) for further information.
 
 An illustrative example:
 
@@ -100,6 +100,14 @@ All units that can be built from other units are also decayable to the respectiv
 \* These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`but. Illuminace should be E<sub>b</sub>.
 
 \** luminous flux should be Φ<sub>v</sub> which is even more less supported than `Φ (Phi)` itself.
+
+## Non-Standard Units
+
+Non standard units are not regulated by the [BIPM](https://www.bipm.org/) but are accepted for use with the SI standard. 
+
+| Unit                       | Dimension Symbol | literals   | implemented ratios                                                     | unit typedefs                                                           |
+| -------------------------- | ---------------- | ---------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Astronomic Units of length | L                | AU, ly, pc | 149597870691:1 (AU), 9460730777119564:1 (ly), 30856775814913700:1 (pc) | `astronimcal_unit_t` (`_AU`), `lightyear_t` (`_ly`), `parsec_t` (`_pc`) |
 
 ## Building & compatibility
 

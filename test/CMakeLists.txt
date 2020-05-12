@@ -128,7 +128,8 @@ target_sources(
   src/derived_unit_tests/equivalent_dose_tests.cc
   src/derived_unit_tests/catalytic_activity_tests.cc
   src/derived_unit_tests/angle_tests.cc
-  src/derived_unit_tests/solid_angle_tests.cc)
+  src/derived_unit_tests/solid_angle_tests.cc
+  src/derived_unit_tests/astronomic_tests.cc)
 
 target_include_directories(
   SI_derived_unit_tests
