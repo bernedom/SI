@@ -20,9 +20,10 @@ jobs:
         run: cmake --build . --target api_doc
         working-directory: ./build
       - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/master'
         uses: JamesIves/github-pages-deploy-action@3.4.9
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build/doc/ # The folder the action should deploy.
+          FOLDER: build/doc/html # The folder the action should deploy.
           TARGET_FOLDER: doc/
