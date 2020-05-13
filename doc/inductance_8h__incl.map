@@ -1,0 +1,21 @@
+<map id="SI/inductance.h" name="SI/inductance.h">
+<area shape="rect" id="node2" href="$number__parser_8h.html" title="detail/number_parser.h" alt="" coords="1187,901,1341,928"/>
+<area shape="rect" id="node5" href="$operator__helpers_8h.html" title="detail/operator_helpers.h" alt="" coords="1353,677,1517,704"/>
+<area shape="rect" id="node11" href="$unit_8h.html" title="detail/unit.h" alt="" coords="646,752,735,779"/>
+<area shape="rect" id="node12" href="$unit__symbol_8h.html" title="detail/unit_symbol.h" alt="" coords="344,752,483,779"/>
+<area shape="rect" id="node15" href="$electric__current_8h.html" title="electric_current.h" alt="" coords="347,677,469,704"/>
+<area shape="rect" id="node16" href="$magnetic__flux_8h.html" title="magnetic_flux.h" alt="" coords="252,80,367,107"/>
+<area shape="rect" id="node6" href="$detail_8h.html" title="detail.h" alt="" coords="859,827,923,853"/>
+<area shape="rect" id="node17" href="$electric__potential_8h.html" title="electric_potential.h" alt="" coords="548,155,679,181"/>
+<area shape="rect" id="node19" href="$time_8h.html" title="time.h" alt="" coords="939,677,997,704"/>
+<area shape="rect" id="node18" href="$electric__charge_8h.html" title="electric_charge.h" alt="" coords="697,603,818,629"/>
+<area shape="rect" id="node21" href="$energy_8h.html" title="energy.h" alt="" coords="1025,304,1097,331"/>
+<area shape="rect" id="node29" href="$power_8h.html" title="power.h" alt="" coords="947,229,1015,256"/>
+<area shape="rect" id="node22" href="$force_8h.html" title="force.h" alt="" coords="1030,453,1093,480"/>
+<area shape="rect" id="node25" href="$length_8h.html" title="length.h" alt="" coords="1126,677,1194,704"/>
+<area shape="rect" id="node27" href="$pressure_8h.html" title="pressure.h" alt="" coords="1105,379,1188,405"/>
+<area shape="rect" id="node23" href="$acceleration_8h.html" title="acceleration.h" alt="" coords="1007,528,1110,555"/>
+<area shape="rect" id="node26" href="$mass_8h.html" title="mass.h" alt="" coords="849,677,914,704"/>
+<area shape="rect" id="node24" href="$velocity_8h.html" title="velocity.h" alt="" coords="1046,603,1125,629"/>
+<area shape="rect" id="node28" href="$area_8h.html" title="area.h" alt="" coords="1135,528,1193,555"/>
+</map>
