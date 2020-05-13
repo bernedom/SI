@@ -5,7 +5,8 @@ project(
   VERSION 1.7.0
   DESCRIPTION
     "A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units."
-  HOMEPAGE_URL "https://github.com/bernedom/SI")
+  HOMEPAGE_URL "https://github.com/bernedom/SI"
+  LANGUAGES CXX)
 
 add_library(${PROJECT_NAME} INTERFACE)
 # add alias so the project can be uses with add_subdirectory
@@ -30,6 +31,8 @@ target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_17)
 if(BUILD_TESTING AND SI_BUILD_TESTING)
   add_subdirectory(test)
 endif()
+
+add_subdirectory(doc)
 
 # locations are provided by GNUInstallDirs
 install(

@@ -4,6 +4,7 @@
 
 *   Add literals and typedefs for km/h (`_km_p_h`) m/s (`m_p_s`)
 *   Add literals for astronomical units of length (AU), lightyears (ly) and parsecs (pc)
+*   API documentation is built over the cmake-target `api_doc`
 
 ## 1.6.1
 
