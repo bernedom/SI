@@ -1,0 +1,21 @@
+name: API documentation
+on:
+  push:
+
+jobs:
+  generate-documentation:
+    name: generate-doxygen
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install dependencies
+        run: |
+          sudo apt install doxygen graphviz
+      - name: prepare-build
+        run: mkdir build
+      - name: cmake-configuration
+        run: cmake -DCMAKE_BUILD_TYPE=Debug ..
+        working-directory: ./build
+      - name: build-documentation
+        run: cmake --build . --target api_doc
+        working-directory: ./build
