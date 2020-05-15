@@ -15,9 +15,16 @@ add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 include(GNUInstallDirs)
 include(CTest)
 
+if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+  set(IS_TOPLEVEL_PROJECT TRUE)
+else()
+  set(IS_TOPLEVEL_PROJECT FALSE)
+endif()
+
 option(SI_INSTALL_LIBRARY
-       "Enable installing of SI library into default locations" ON)
-option(SI_BUILD_TESTING "Build and run SI tests " ON)
+       "Enable installing of SI library into default locations" ${IS_TOPLEVEL_PROJECT})
+option(SI_BUILD_TESTING "Build and run SI tests " ${IS_TOPLEVEL_PROJECT})
+option(SI_BUILD_DOC "Generate SI documentation" ${IS_TOPLEVEL_PROJECT})
 
 # Adding the install interface generator expression makes sure that the include
 # files are installed to the proper location (provided by GNUInstallDirs)
@@ -32,7 +39,9 @@ if(BUILD_TESTING AND SI_BUILD_TESTING)
   add_subdirectory(test)
 endif()
 
-add_subdirectory(doc)
+if(SI_BUILD_DOC)
+  add_subdirectory(doc)
+endif()
 
 # locations are provided by GNUInstallDirs
 install(
