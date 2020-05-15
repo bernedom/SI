@@ -1,5 +1,9 @@
 # Changelog 
 
+## 1.7.1
+
+*   Documentation and tests are only built if built as top-level project
+
 ## 1.7.0
 
 *   Add literals and typedefs for km/h (`_km_p_h`) m/s (`m_p_s`)
