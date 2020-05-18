@@ -34,6 +34,7 @@ template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
 /// @todo add in-place unit_cast for move operators
 /// @todo add logarithmic units (decibel)
 /// @todo add constants for speed of light, planck constant, elementary charge,
+/// @todo allow fractions as exponents
 /// boltzmann constant, avorgadro constant and  luminous efficacy of
 /// monochromatic radiation of frequency
 
@@ -48,7 +49,7 @@ template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
  * @tparam _exponent the exponent to the unit (i.e. length ==  m^1, area == m^2,
  *volume = m^3)
  **/
-template <char _symbol, char _exponent, typename _type,
+template <char _symbol, int8_t _exponent, typename _type,
           typename _ratio = std::ratio<1>>
 struct unit_t {
   static_assert(std::is_arithmetic<_type>::value,
@@ -57,7 +58,7 @@ struct unit_t {
   static_assert(detail::is_ratio<_ratio>::value, "_ratio is a std::ratio");
   using ratio = _ratio;
   using internal_type = _type;
-  using exponent = std::integral_constant<char, _exponent>;
+  using exponent = std::integral_constant<int8_t, _exponent>;
   using symbol = std::integral_constant<char, _symbol>;
 
   /// Construct with value v
@@ -239,7 +240,7 @@ struct unit_t {
   constexpr unit_t operator*(const _type f) const { return {value_ * f}; }
 
   /// multiply with an unit of the same ratio
-  template <char _rhs_exponent, typename _rhs_type>
+  template <int8_t _rhs_exponent, typename _rhs_type>
   constexpr auto operator*(
       const unit_t<_symbol, _rhs_exponent, _rhs_type, _ratio> &rhs) const {
 
@@ -252,7 +253,7 @@ struct unit_t {
   /// and different ratio
   /// the exponents this and rhs are added, the resulting ratio the ratio
   /// multiplied.
-  template <char _rhs_exponent, typename _rhs_ratio, typename _rhs_type>
+  template <int8_t _rhs_exponent, typename _rhs_ratio, typename _rhs_type>
   constexpr auto operator*(
       const unit_t<_symbol, _rhs_exponent, _rhs_type, _rhs_ratio> &rhs) const {
 
@@ -281,7 +282,7 @@ struct unit_t {
   /// divide with same unit with same ratio but not the same exponent
   /// @returns unit with exponents subtracted from each others
   template <
-      char _rhs_exponent, typename _rhs_type,
+      int8_t _rhs_exponent, typename _rhs_type,
       typename std::enable_if<_rhs_exponent != _exponent>::type * = nullptr>
   constexpr auto operator/(
       const unit_t<_symbol, _rhs_exponent, _rhs_type, _ratio> &rhs) const {
@@ -296,7 +297,7 @@ struct unit_t {
   /// the ratio of the result is the gcd of the two ratios and the exponents are
   /// subtracted
   template <
-      char _rhs_exponent, typename _rhs_type, typename _rhs_ratio,
+      int8_t _rhs_exponent, typename _rhs_type, typename _rhs_ratio,
       typename std::enable_if<_rhs_exponent != _exponent>::type * = nullptr>
   constexpr auto operator/(
       const unit_t<_symbol, _rhs_exponent, _rhs_type, _rhs_ratio> &rhs) const {
@@ -323,7 +324,7 @@ struct unit_t {
   /// if the same units of the same exponent but different ratio are divided
   /// then the result is a scalar
   template <
-      char _rhs_exponent, typename _rhs_type, typename _rhs_ratio,
+      int8_t _rhs_exponent, typename _rhs_type, typename _rhs_ratio,
       typename std::enable_if<_rhs_exponent == _exponent>::type * = nullptr>
   constexpr _type operator/(
       const unit_t<_symbol, _rhs_exponent, _rhs_type, _rhs_ratio> &rhs) const {
@@ -473,7 +474,7 @@ private:
 /// template specialisation handling integer types
 /// @results unit with negative exponent
 template <
-    typename _type, char _symbol, char _exponent, typename _rhs_type,
+    typename _type, char _symbol, int8_t _exponent, typename _rhs_type,
     typename _ratio,
     typename std::enable_if<std::is_integral<_type>::value>::type * = nullptr>
 constexpr auto
@@ -492,7 +493,7 @@ operator/(const _type &lhs,
 /// template specialisation for floating point types, to avoid possible loss
 /// of precision when adjusting for ratio
 /// @results unit with negative exponent
-template <typename _type, char _symbol, char _exponent, typename _rhs_type,
+template <typename _type, char _symbol, int8_t _exponent, typename _rhs_type,
           typename _ratio,
           typename std::enable_if<std::is_floating_point<_type>::value>::type
               * = nullptr>
@@ -513,12 +514,12 @@ operator/(const _type &lhs,
 template <typename _unit> struct is_unit_t : std::false_type {};
 
 /// template specialisation to check if a type is a unit_t (true if unit_t)
-template <char _symbol, char _exponent, typename _ratio, typename _type>
+template <char _symbol, int8_t _exponent, typename _ratio, typename _type>
 struct is_unit_t<const unit_t<_symbol, _exponent, _type, _ratio>>
     : std::true_type {};
 
 /// non-const specialisation of check above
-template <char _symbol, char _exponent, typename _ratio, typename _type>
+template <char _symbol, int8_t _exponent, typename _ratio, typename _type>
 struct is_unit_t<unit_t<_symbol, _exponent, _type, _ratio>> : std::true_type {};
 
 /// function to cast between two units of the same type

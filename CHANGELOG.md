@@ -2,6 +2,7 @@
 
 ## 1.7.1
 
+*   Changed exponent type to `int8_t` as `char` might be unsigned 
 *   Documentation and tests are only built if built as top-level project
 
 ## 1.7.0
