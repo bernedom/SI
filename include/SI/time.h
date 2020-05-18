@@ -21,7 +21,7 @@
 namespace SI {
 
 namespace detail {
-template <char _exponent, typename _type, typename _ratio>
+template <int8_t _exponent, typename _type, typename _ratio>
 using time_base_t = detail::unit_t<'T', _exponent, _type, _ratio>;
 }
 template <typename _type, typename _ratio>
