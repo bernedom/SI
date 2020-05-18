@@ -41,5 +41,5 @@ var searchData=
   ['exa_5fvolt_5ft',['exa_volt_t',['../namespaceSI.html#ac88c6554feb427b2cde1a92ad5a3a8de',1,'SI']]],
   ['exa_5fwatt_5ft',['exa_watt_t',['../namespaceSI.html#a7cbfcf0feb956b70016fba1ee93cee27',1,'SI']]],
   ['exa_5fweber_5ft',['exa_weber_t',['../namespaceSI.html#aaa85c4f9afa7c53947774d8f79822a1f',1,'SI']]],
-  ['exponent',['exponent',['../structSI_1_1detail_1_1unit__t.html#a07aa261044d44d36092bc220cb8bc534',1,'SI::detail::unit_t']]]
+  ['exponent',['exponent',['../structSI_1_1detail_1_1unit__t.html#a4b25320b98d75be9e4d3a228af956846',1,'SI::detail::unit_t']]]
 ];

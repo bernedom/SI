@@ -141,7 +141,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a7e9aaedc94cb30877243cf6e1c7e5b2b"><td class="memTemplParams" colspan="2">template&lt;char _exponent, typename _type , typename _ratio &gt; </td></tr>
+<tr class="memitem:a7e9aaedc94cb30877243cf6e1c7e5b2b"><td class="memTemplParams" colspan="2">template&lt;int8_t _exponent, typename _type , typename _ratio &gt; </td></tr>
 <tr class="memitem:a7e9aaedc94cb30877243cf6e1c7e5b2b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#a7e9aaedc94cb30877243cf6e1c7e5b2b">time_base_t</a> = <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt; 'T', _exponent, _type, _ratio &gt;</td></tr>
 <tr class="separator:a7e9aaedc94cb30877243cf6e1c7e5b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -154,7 +154,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a45af83e9f353597a58012c58577724fb"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#a45af83e9f353597a58012c58577724fb">unit_cast</a> (const _rhs_T &amp;rhs)</td></tr>
 <tr class="memdesc:a45af83e9f353597a58012c58577724fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">function to cast between two units of the same type  <a href="#a45af83e9f353597a58012c58577724fb">More...</a><br /></td></tr>
 <tr class="separator:a45af83e9f353597a58012c58577724fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2614dd22817f47500394f7311a09b68"><td class="memTemplParams" colspan="2">template&lt;typename _type , char _symbol, char _exponent, typename _rhs_type , typename _ratio , typename std::enable_if&lt; std::is_integral&lt; _type &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:ae2614dd22817f47500394f7311a09b68"><td class="memTemplParams" colspan="2">template&lt;typename _type , char _symbol, int8_t _exponent, typename _rhs_type , typename _ratio , typename std::enable_if&lt; std::is_integral&lt; _type &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
 <tr class="memitem:ae2614dd22817f47500394f7311a09b68"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#ae2614dd22817f47500394f7311a09b68">operator/</a> (const _type &amp;lhs, const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _exponent, _rhs_type, _ratio &gt; &amp;rhs)</td></tr>
 <tr class="separator:ae2614dd22817f47500394f7311a09b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72bcb436f9c71971933bd49859c77b24"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename... &gt; typename _resulting_unit, typename _unit_lhs , typename _unit_rhs &gt; </td></tr>
@@ -181,7 +181,7 @@ Functions</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _exponent, typename _type , typename _ratio &gt; </div>
+template&lt;int8_t _exponent, typename _type , typename _ratio &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="namespaceSI_1_1detail.html#a7e9aaedc94cb30877243cf6e1c7e5b2b">SI::detail::time_base_t</a> = typedef <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt;'T', _exponent, _type, _ratio&gt;</td>
@@ -360,7 +360,7 @@ template&lt;typename T , typename std::enable_if&lt; std::is_floating_point&lt; 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename _type , char _symbol, char _exponent, typename _rhs_type , typename _ratio , typename std::enable_if&lt; std::is_integral&lt; _type &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename _type , char _symbol, int8_t _exponent, typename _rhs_type , typename _ratio , typename std::enable_if&lt; std::is_integral&lt; _type &gt;::value &gt;::type *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">constexpr auto SI::detail::operator/ </td>
