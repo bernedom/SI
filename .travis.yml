@@ -50,6 +50,7 @@ matrix:
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
       script:
+        - "./test/version-consistency.sh"
         - "./test/installation-tests.sh"
         - "./test/compilation-tests.sh"
 
