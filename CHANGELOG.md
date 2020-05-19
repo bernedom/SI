@@ -1,5 +1,9 @@
 # Changelog 
 
+## 1.7.2
+
+*   Separate test for version consistency from installation tests
+
 ## 1.7.1
 
 *   Changed exponent type to `int8_t` as `char` might be unsigned 
