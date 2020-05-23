@@ -1,9 +1,11 @@
-- [implementation details of SI](#implementation-details-of-si)
+- [Implementation details of SI](#implementation-details-of-si)
   - [How specific units are defined](#how-specific-units-are-defined)
   - [Implicit ratio conversion & possible loss of precision](#implicit-ratio-conversion--possible-loss-of-precision)
   - [Conversion to strings](#conversion-to-strings)
 
-# implementation details of SI
+# Implementation details of SI
+
+The API documentation is available at https://si.dominikberner.ch/doc/
 
 ## How specific units are defined
 
