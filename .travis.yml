@@ -50,8 +50,17 @@ matrix:
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
       script:
+        - "./test/version-consistency.sh"
         - "./test/installation-tests.sh"
         - "./test/compilation-tests.sh"
+
+    - if: type = pull_request OR branch = master OR tag IS present
+      os: linux
+      name: version consistency check
+      env:
+        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+      script:
+        - "./test/version-consistency.sh"
 
     - stage: deploy-unstable
       os: linux
