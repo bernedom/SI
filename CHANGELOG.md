@@ -2,6 +2,7 @@
 
 ## 1.7.2
 
+*   Correct naming for angle types `radian_t` (was `radiant_t`)
 *   Separate test for version consistency from installation tests
 
 ## 1.7.1

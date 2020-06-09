@@ -20,13 +20,13 @@ namespace SI {
 template <typename _type, typename _ratio>
 using angle_t = detail::unit_t<'r', 1, _type, _ratio>;
 
-template <typename _type> using atto_radiant_t = angle_t<_type, std::atto>;
-template <typename _type> using femto_radiant_t = angle_t<_type, std::femto>;
-template <typename _type> using pico_radiant_t = angle_t<_type, std::pico>;
-template <typename _type> using nano_radiant_t = angle_t<_type, std::nano>;
-template <typename _type> using micro_radiant_t = angle_t<_type, std::micro>;
-template <typename _type> using milli_radiant_t = angle_t<_type, std::milli>;
-template <typename _type> using radiant_t = angle_t<_type, std::ratio<1>>;
+template <typename _type> using atto_radian_t = angle_t<_type, std::atto>;
+template <typename _type> using femto_radian_t = angle_t<_type, std::femto>;
+template <typename _type> using pico_radian_t = angle_t<_type, std::pico>;
+template <typename _type> using nano_radian_t = angle_t<_type, std::nano>;
+template <typename _type> using micro_radian_t = angle_t<_type, std::micro>;
+template <typename _type> using milli_radian_t = angle_t<_type, std::milli>;
+template <typename _type> using radian_t = angle_t<_type, std::ratio<1>>;
 
 // specialize unit_symbol for usage with stream operators
 template <>
@@ -43,69 +43,63 @@ struct unit_symbol<'r', _ratio>
 
 inline namespace literals {
 
-template <char... _digits> constexpr atto_radiant_t<int64_t> operator""_arad() {
-  return atto_radiant_t<int64_t>{
+template <char... _digits> constexpr atto_radian_t<int64_t> operator""_arad() {
+  return atto_radian_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
+template <char... _digits> constexpr femto_radian_t<int64_t> operator""_frad() {
+  return femto_radian_t<int64_t>{
       SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _digits>
-constexpr femto_radiant_t<int64_t> operator""_frad() {
-  return femto_radiant_t<int64_t>{
+template <char... _digits> constexpr pico_radian_t<int64_t> operator""_prad() {
+  return pico_radian_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
+template <char... _digits> constexpr nano_radian_t<int64_t> operator""_nrad() {
+  return nano_radian_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
+template <char... _digits> constexpr micro_radian_t<int64_t> operator""_urad() {
+  return micro_radian_t<int64_t>{
       SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _digits> constexpr pico_radiant_t<int64_t> operator""_prad() {
-  return pico_radiant_t<int64_t>{
+template <char... _digits> constexpr milli_radian_t<int64_t> operator""_mrad() {
+  return milli_radian_t<int64_t>{
       SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _digits> constexpr nano_radiant_t<int64_t> operator""_nrad() {
-  return nano_radiant_t<int64_t>{
-      SI::detail::parsing::Number<_digits...>::value};
+template <char... _digits> constexpr radian_t<int64_t> operator""_rad() {
+  return radian_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
-template <char... _digits>
-constexpr micro_radiant_t<int64_t> operator""_urad() {
-  return micro_radiant_t<int64_t>{
-      SI::detail::parsing::Number<_digits...>::value};
+constexpr atto_radian_t<long double> operator""_arad(long double value) {
+  return atto_radian_t<long double>{value};
 }
 
-template <char... _digits>
-constexpr milli_radiant_t<int64_t> operator""_mrad() {
-  return milli_radiant_t<int64_t>{
-      SI::detail::parsing::Number<_digits...>::value};
+constexpr femto_radian_t<long double> operator""_frad(long double value) {
+  return femto_radian_t<long double>{value};
 }
 
-template <char... _digits> constexpr radiant_t<int64_t> operator""_rad() {
-  return radiant_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+constexpr pico_radian_t<long double> operator""_prad(long double value) {
+  return pico_radian_t<long double>{value};
 }
 
-constexpr atto_radiant_t<long double> operator""_arad(long double value) {
-  return atto_radiant_t<long double>{value};
+constexpr nano_radian_t<long double> operator""_nrad(long double value) {
+  return nano_radian_t<long double>{value};
 }
 
-constexpr femto_radiant_t<long double> operator""_frad(long double value) {
-  return femto_radiant_t<long double>{value};
+constexpr micro_radian_t<long double> operator""_urad(long double value) {
+  return micro_radian_t<long double>{value};
 }
 
-constexpr pico_radiant_t<long double> operator""_prad(long double value) {
-  return pico_radiant_t<long double>{value};
+constexpr milli_radian_t<long double> operator""_mrad(long double value) {
+  return milli_radian_t<long double>{value};
 }
 
-constexpr nano_radiant_t<long double> operator""_nrad(long double value) {
-  return nano_radiant_t<long double>{value};
-}
-
-constexpr micro_radiant_t<long double> operator""_urad(long double value) {
-  return micro_radiant_t<long double>{value};
-}
-
-constexpr milli_radiant_t<long double> operator""_mrad(long double value) {
-  return milli_radiant_t<long double>{value};
-}
-
-constexpr radiant_t<long double> operator""_rad(long double value) {
-  return radiant_t<long double>{value};
+constexpr radian_t<long double> operator""_rad(long double value) {
+  return radian_t<long double>{value};
 }
 
 } // namespace literals

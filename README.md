@@ -64,8 +64,8 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metric
 | Area         | L                | 2        | m2          | 10<sup>-18</sup> to 10<sup>18</sup> | `square_*_metre_t` |
 | Volume       | L                | 3        | m3          | 10<sup>-18</sup> to 10<sup>18</sup> | `cubic_*_metre_t`  |
 | Frequency    | T                | -1       | Hz          | 10<sup>-18</sup> to 10<sup>18</sup> | `*_hertz_t`        |
-| Angle*       | r                | 1        | rad         | 10<sup>-18</sup> to 1               | `*_radiant_t`      |
-| Solid Angle* | R                | 1        | sr          | 10<sup>-18</sup> to 1               | `*_sterradiant_t`  |
+| Angle*       | r                | 1        | rad         | 10<sup>-18</sup> to 1               | `*_radian_t`       |
+| Solid Angle* | R                | 1        | sr          | 10<sup>-18</sup> to 1               | `*_sterradian_t`   |
 
 \* Angle and solid angle are simple containers, not containing any functionality to do angle/room-angle computation such as an overflow after 2*pi.
 

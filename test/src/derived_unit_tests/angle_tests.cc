@@ -155,76 +155,76 @@ TEST_CASE(
 }
 
 TEST_CASE(
-    "GIVEN a string of '1arad' WHEN streamed into atto_radiant_t THEN result "
-    "is a value of 1 atto_radiant_t AND stream is good") {
+    "GIVEN a string of '1arad' WHEN streamed into atto_radian_t THEN result "
+    "is a value of 1 atto_radian_t AND stream is good") {
   std::stringstream ss;
   ss << "1arad";
-  SI::atto_radiant_t<int64_t> value{0};
+  SI::atto_radian_t<int64_t> value{0};
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_arad);
 }
 
 TEST_CASE(
-    "GIVEN a string of '1frad' WHEN streamed into femto_radiant_t THEN result "
-    "is a value of 1 femto_radiant_t AND stream is good") {
+    "GIVEN a string of '1frad' WHEN streamed into femto_radian_t THEN result "
+    "is a value of 1 femto_radian_t AND stream is good") {
   std::stringstream ss;
   ss << "1frad";
-  SI::femto_radiant_t<int64_t> value{0};
+  SI::femto_radian_t<int64_t> value{0};
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_frad);
 }
 
 TEST_CASE(
-    "GIVEN a string of '1prad' WHEN streamed into pico_radiant_t THEN result "
-    "is a value of 1 pico_radiant_t AND stream is good") {
+    "GIVEN a string of '1prad' WHEN streamed into pico_radian_t THEN result "
+    "is a value of 1 pico_radian_t AND stream is good") {
   std::stringstream ss;
   ss << "1prad";
-  SI::pico_radiant_t<int64_t> value{0};
+  SI::pico_radian_t<int64_t> value{0};
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_prad);
 }
 
 TEST_CASE(
-    "GIVEN a string of '1nrad' WHEN streamed into nano_radiant_t THEN result "
-    "is a value of 1 nano_radiant_t AND stream is good") {
+    "GIVEN a string of '1nrad' WHEN streamed into nano_radian_t THEN result "
+    "is a value of 1 nano_radian_t AND stream is good") {
   std::stringstream ss;
   ss << "1nrad";
-  SI::nano_radiant_t<int64_t> value{0};
+  SI::nano_radian_t<int64_t> value{0};
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_nrad);
 }
 
 TEST_CASE(
-    "GIVEN a string of '1urad' WHEN streamed into micro_radiant_t THEN result "
-    "is a value of 1 micro_radiant_t AND stream is good") {
+    "GIVEN a string of '1urad' WHEN streamed into micro_radian_t THEN result "
+    "is a value of 1 micro_radian_t AND stream is good") {
   std::stringstream ss;
   ss << "1urad";
-  SI::micro_radiant_t<int64_t> value{0};
+  SI::micro_radian_t<int64_t> value{0};
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_urad);
 }
 
 TEST_CASE(
-    "GIVEN a string of '1mrad' WHEN streamed into milli_radiant_t THEN result "
-    "is a value of 1 milli_radiant_t AND stream is good") {
+    "GIVEN a string of '1mrad' WHEN streamed into milli_radian_t THEN result "
+    "is a value of 1 milli_radian_t AND stream is good") {
   std::stringstream ss;
   ss << "1mrad";
-  SI::milli_radiant_t<int64_t> value{0};
+  SI::milli_radian_t<int64_t> value{0};
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_mrad);
 }
 
-TEST_CASE("GIVEN a string of '1rad' WHEN streamed into radiant_t THEN result "
-          "is a value of 1 radiant_t AND stream is good") {
+TEST_CASE("GIVEN a string of '1rad' WHEN streamed into radian_t THEN result "
+          "is a value of 1 radian_t AND stream is good") {
   std::stringstream ss;
   ss << "1rad";
-  SI::radiant_t<int64_t> value{0};
+  SI::radian_t<int64_t> value{0};
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_rad);
