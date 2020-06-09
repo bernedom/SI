@@ -14,7 +14,7 @@ var searchData=
   ['square_5fcenti_5fmetre_5ft',['square_centi_metre_t',['../namespaceSI.html#ab2fb670015aa218627a63b5199265295',1,'SI']]],
   ['square_5fmetre_5ft',['square_metre_t',['../namespaceSI.html#a759a94cb97a49531cd3fc5d30dee4280',1,'SI']]],
   ['square_5fmilli_5fmetre_5ft',['square_milli_metre_t',['../namespaceSI.html#a83e8280f6ed15afa20e2178f3590d579',1,'SI']]],
-  ['sterradiant_5ft',['sterradiant_t',['../namespaceSI.html#a63118615914ae8373035b98ba75db449',1,'SI']]],
+  ['sterradian_5ft',['sterradian_t',['../namespaceSI.html#a0152a944fe2ace70ea8781b803723a43',1,'SI']]],
   ['str',['str',['../structSI_1_1detail_1_1unit__symbol__impl.html#ae0b7859073d98747f567de47f7650c27',1,'SI::detail::unit_symbol_impl']]],
   ['stream_2eh',['stream.h',['../stream_8h.html',1,'']]],
   ['substance_2eh',['substance.h',['../substance_8h.html',1,'']]],
