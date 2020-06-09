@@ -1,5 +1,9 @@
 # Changelog 
 
+## 1.7.3
+
+*   Extended technical documentation
+
 ## 1.7.2
 
 *   Correct naming for angle types `radian_t` (was `radiant_t`)
