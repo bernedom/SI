@@ -654,3 +654,14 @@ TEST_CASE(
   v1--;
   REQUIRE(v1 == expected);
 }
+
+TEST_CASE(
+    "GIVEN a unit AND type is integral WHEN assigned to a value with bigger "
+    "ratio AND value is smaller than ratio THEN integer-rounding-applies") {
+  constexpr unit_t<'X', 1, int64_t> almost_a_kilo{999};
+  constexpr unit_t<'X', 1, int64_t, std::kilo> zero_kilo{0};
+  constexpr unit_t<'X', 1, int64_t, std::kilo> kilo_value = almost_a_kilo;
+
+  STATIC_REQUIRE(zero_kilo == kilo_value);
+  STATIC_REQUIRE(kilo_value.raw_value() == 0);
+}

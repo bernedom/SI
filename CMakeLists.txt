@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 
 project(
   "SI"
-  VERSION 1.7.2
+  VERSION 1.7.3
   DESCRIPTION
     "A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units."
   HOMEPAGE_URL "https://github.com/bernedom/SI"
@@ -22,7 +22,8 @@ else()
 endif()
 
 option(SI_INSTALL_LIBRARY
-       "Enable installing of SI library into default locations" ${IS_TOPLEVEL_PROJECT})
+       "Enable installing of SI library into default locations"
+       ${IS_TOPLEVEL_PROJECT})
 option(SI_BUILD_TESTING "Build and run SI tests " ${IS_TOPLEVEL_PROJECT})
 option(SI_BUILD_DOC "Generate SI documentation" ${IS_TOPLEVEL_PROJECT})
 
