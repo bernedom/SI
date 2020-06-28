@@ -35,9 +35,6 @@ using cubic_centi_metre_t = volume_t<_type, std::ratio<1, 1000000>>;
 template <typename _type>
 using cubic_milli_metre_t = volume_t<_type, std::nano>;
 
-//@todo find a way to get the square root of the ratio to generalize the custom
-// types
-
 // specialized unit_symbol for usage with stream operators
 template <>
 struct unit_symbol<'L', std::ratio<1>, 2>
