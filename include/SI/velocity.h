@@ -36,11 +36,23 @@ template <typename _type>
 using kilometre_per_hour_t =
     velocity_t<_type, std::ratio_divide<std::kilo, std::ratio<3600, 1>>::type>;
 
+template <typename _type>
+using speed_of_light_t = velocity_t<_type, std::ratio<299792458, 1>::type>;
+
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(velocity_t, length_t, time_t)
 } // namespace detail
 
 inline namespace literals {
+
+template <char... _digits> constexpr speed_of_light_t<int64_t> operator""_c() {
+  return speed_of_light_t<int64_t>{
+      SI::detail::parsing::Number<_digits...>::value};
+}
+
+constexpr speed_of_light_t<long double> operator""_c(long double value) {
+  return speed_of_light_t<long double>{value};
+}
 
 template <char... _digits>
 constexpr metre_per_second_t<int64_t> operator""_m_p_s() {

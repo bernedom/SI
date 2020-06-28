@@ -3,6 +3,7 @@
 ## 1.7.3
 
 *   Extended technical documentation
+*   Add speed of light to velocity
 
 ## 1.7.2
 

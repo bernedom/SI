@@ -73,29 +73,29 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metric
 
 All units that can be built from other units decay to the respective units by inverting the mathematical operation. I.e if `Q = I * T` then `Q / I = T` and `Q / T = I`
 
-| Unit                 | Dimension Symbol | Unit Symbol | builable from    | implemented literals | unit typedefs                                  |
-| -------------------- | ---------------- | ----------- | ---------------- | -------------------- | ---------------------------------------------- |
-| Velocity             | v                | m/s         | L / T            | `m_p_s`, `km_p_h`    | `metre_per_second_t`, `kilometre_per_second_t` |
-| Acceleration         | a                | m/s^2       | v / T, v^2 / L   | none                 | none                                           |
-| Electric charge      | Q                | C           | I \* T           | aC to EC             | `*_coulomb_t`                                  |
-| Electric potential   | U                | V           | P / I, E/Q       | aV to EV             | `*_volt_t`                                     |
-| Electric resistance  | O*               | Ohm (Ω)     | U / I, 1/G       | aOhm to EOhm         | `*_ohm_t`                                      |
-| Electric conductance | G                | S           | I / U, 1/R       | aS to ES             | `*_siemens_t`                                  |
-| Electric capacity    | C                | F           | Q / U            | aF to EF             | `*_farad_t`                                    |
-| Force                | F                | N           | M \* a           | aN to EN             | `*_newton_t`                                   |
-| Pressure             | p                | pa          | F / L^2          | apa to Epa           | `*_pascal_t`                                   |
-| Energy               | E                | J           | F \* L, p \* L^3 | aJ to EJ             | `*_joule_t`                                    |
-| Power                | P                | W           | E/T              | aW to EW             | `*_watt_t`                                     |
-| Magnetic Flux        | f*               | Wb          | U \* T           | aWb to EWb           | `*_weber_t`                                    |
-| Magnetic Field       | B                | T           | f/L^2            | aT to ET             | `*_tesla_t`                                    |
-| Momentum             | o*               | kg⋅m/s      | M \* v           | none                 | none                                           |
-| Inductance           | l                | H           | f / I            | aH to EH             | `*_henry_t`                                    |
-| Luminous flux        | m**              | lm          | J \* R           | alm to Elm           | `*_lumen_t`                                    |
-| Luminance            | i*               | lx          | m / a            | alx to Elx           | `*_lux_t`                                      |
-| Radioactivity        | A                | Bq          |                  | aBq to EBq           | `*_becquerel_t`                                |
-| Absorbed Dose        | D                | Gy          |                  | aGy to EGy           | `*_gray_t`                                     |
-| Equivalent Dose      | H                | Sv          |                  | aSv to ESv           | `*_sievert_t`                                  |
-| Catalytic activity   | K                | kat         | N / T            | akat to Ekat         | `*_katal_t`                                    |
+| Unit                 | Dimension Symbol | Unit Symbol | builable from    | implemented literals    | unit typedefs                                                      |
+| -------------------- | ---------------- | ----------- | ---------------- | ----------------------- | ------------------------------------------------------------------ |
+| Velocity             | v                | m/s         | L / T            | `m_p_s`, `km_p_h`, `_c` | `metre_per_second_t`, `kilometre_per_second_t`, `speed_of_light_t` |
+| Acceleration         | a                | m/s^2       | v / T, v^2 / L   | none                    | none                                                               |
+| Electric charge      | Q                | C           | I \* T           | aC to EC                | `*_coulomb_t`                                                      |
+| Electric potential   | U                | V           | P / I, E/Q       | aV to EV                | `*_volt_t`                                                         |
+| Electric resistance  | O*               | Ohm (Ω)     | U / I, 1/G       | aOhm to EOhm            | `*_ohm_t`                                                          |
+| Electric conductance | G                | S           | I / U, 1/R       | aS to ES                | `*_siemens_t`                                                      |
+| Electric capacity    | C                | F           | Q / U            | aF to EF                | `*_farad_t`                                                        |
+| Force                | F                | N           | M \* a           | aN to EN                | `*_newton_t`                                                       |
+| Pressure             | p                | pa          | F / L^2          | apa to Epa              | `*_pascal_t`                                                       |
+| Energy               | E                | J           | F \* L, p \* L^3 | aJ to EJ                | `*_joule_t`                                                        |
+| Power                | P                | W           | E/T              | aW to EW                | `*_watt_t`                                                         |
+| Magnetic Flux        | f*               | Wb          | U \* T           | aWb to EWb              | `*_weber_t`                                                        |
+| Magnetic Field       | B                | T           | f/L^2            | aT to ET                | `*_tesla_t`                                                        |
+| Momentum             | o*               | kg⋅m/s      | M \* v           | none                    | none                                                               |
+| Inductance           | l                | H           | f / I            | aH to EH                | `*_henry_t`                                                        |
+| Luminous flux        | m**              | lm          | J \* R           | alm to Elm              | `*_lumen_t`                                                        |
+| Luminance            | i*               | lx          | m / a            | alx to Elx              | `*_lux_t`                                                          |
+| Radioactivity        | A                | Bq          |                  | aBq to EBq              | `*_becquerel_t`                                                    |
+| Absorbed Dose        | D                | Gy          |                  | aGy to EGy              | `*_gray_t`                                                         |
+| Equivalent Dose      | H                | Sv          |                  | aSv to ESv              | `*_sievert_t`                                                      |
+| Catalytic activity   | K                | kat         | N / T            | akat to Ekat            | `*_katal_t`                                                        |
 
 \* These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`but. Illuminace should be E<sub>b</sub>.
 
