@@ -4,6 +4,7 @@ var searchData=
   ['siemens_5ft',['siemens_t',['../namespaceSI.html#a13acb004109ed8818d7917b3ef4fb2c9',1,'SI']]],
   ['sievert_5ft',['sievert_t',['../namespaceSI.html#a8331fa2aef02757972dc387d31d6df99',1,'SI']]],
   ['solid_5fangle_5ft',['solid_angle_t',['../namespaceSI.html#a5b515f1b28c2daa10dd522fca2dbe713',1,'SI']]],
+  ['speed_5fof_5flight_5ft',['speed_of_light_t',['../namespaceSI.html#a35b317a659d5176638fe934ae792a354',1,'SI']]],
   ['square_5fcenti_5fmetre_5ft',['square_centi_metre_t',['../namespaceSI.html#ab2fb670015aa218627a63b5199265295',1,'SI']]],
   ['square_5fmetre_5ft',['square_metre_t',['../namespaceSI.html#a759a94cb97a49531cd3fc5d30dee4280',1,'SI']]],
   ['square_5fmilli_5fmetre_5ft',['square_milli_metre_t',['../namespaceSI.html#a83e8280f6ed15afa20e2178f3590d579',1,'SI']]],
