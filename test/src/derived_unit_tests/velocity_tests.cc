@@ -4,6 +4,21 @@
 
 using namespace SI;
 
+TEST_CASE("GIVEN a value WHEN constructed with literal _c THEN result is a "
+          "velocity type AND ratio is 299792458 to 1 (light speed)") {
+  constexpr auto one = 1_c;
+  STATIC_REQUIRE(
+      std::is_same<
+          decltype(one),
+          const SI::velocity_t<int64_t, std::ratio<299792458, 1>>>::value);
+
+  constexpr auto one_f = 1.0_c;
+  STATIC_REQUIRE(
+      std::is_same<
+          decltype(one_f),
+          const SI::velocity_t<long double, std::ratio<299792458, 1>>>::value);
+}
+
 TEST_CASE("GIVEN a length value in meters WHEN divided by time value in "
           "seconds THEN result is a velocity value AND ratio of result is 1") {
   constexpr auto one = 1_m / 1_s;

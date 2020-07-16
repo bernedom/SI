@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 3.12)
 
 find_package(Doxygen)
 
-# todo check for if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME) to only build if
-# SI is built
 if(NOT Doxygen_FOUND)
   message(
     WARNING
