@@ -1,6 +1,6 @@
 
 /**
- * This file is part of "SI" version 1.7.3
+ * This file is part of "SI" version 1.7.4
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units

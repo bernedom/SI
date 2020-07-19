@@ -50,7 +50,6 @@ matrix:
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
       script:
-        - "./test/version-consistency.sh"
         - "./test/installation-tests.sh"
         - "./test/compilation-tests.sh"
 
@@ -85,7 +84,6 @@ before_script:
   - pip3 install conan
 
 script:
-  - cmake --version
   - mkdir build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug -G Ninja
   - cmake --build . --config Debug
   - ctest -C Debug
