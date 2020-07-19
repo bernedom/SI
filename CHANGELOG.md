@@ -1,4 +1,8 @@
-# Changelog 
+# Changelog
+
+## 1.7.4
+
+*   Cleanup of obsolete code
 
 ## 1.7.3
 
