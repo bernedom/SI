@@ -9,7 +9,7 @@ if(NOT EXISTS "${CMAKE_CURRENT_BINARY_DIR}/conan.cmake")
       "Downloading conan.cmake from https://github.com/bernedom/cmake-conan")
   file(
     DOWNLOAD
-    "https://raw.githubusercontent.com/bernedom/cmake-conan/finding-conanbuildinfo/conan.cmake"
+    "https://raw.githubusercontent.com/conan-io/cmake-conan/develop/conan.cmake"
     "${CMAKE_CURRENT_BINARY_DIR}/conan.cmake")
 endif()
 
