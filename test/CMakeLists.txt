@@ -18,7 +18,7 @@ else()
         "Downloading conan.cmake from https://github.com/bernedom/cmake-conan")
     file(
       DOWNLOAD
-      "https://raw.githubusercontent.com/conan-io/cmake-conan/develop/conan.cmake"
+      "https://raw.githubusercontent.com/conan-io/cmake-conan/v0.15/conan.cmake"
       "${CMAKE_CURRENT_BINARY_DIR}/conan.cmake")
   endif()
   include(${CMAKE_CURRENT_BINARY_DIR}/conan.cmake)
