@@ -187,8 +187,6 @@ TEST_CASE("Unit_assignment") {
     };
   }
 
-  /// @todo investigate division by ratio_milli resulting in floating point
-  /// error
   SECTION("scalar-unit-division") {
     BENCHMARK_ADVANCED("int64_t by unit division")
     (Catch::Benchmark::Chronometer meter) {
