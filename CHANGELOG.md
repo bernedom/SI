@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.5
+
+*   `conanfile.py` pulls the version out of `CMakeLists.txt` for packaging
+
 ## 1.7.4
 
 *   If SI is built from within conan the conanbuildinfo provided by conan will be used instead of getting it from github
