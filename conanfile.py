@@ -1,9 +1,10 @@
 from conans import ConanFile, CMake
+from conans.tools import load
+import re, os
 
 
 class SiConan(ConanFile):
     name = "SI"
-    version = "1.7.4"
     license = "MIT"
     author = "Dominik Berner <dominik.berner+SI-conan@gmail.com"
     url = "https://github.com/bernedom/SI"
@@ -21,6 +22,13 @@ class SiConan(ConanFile):
         # Add additional settings with cmake.definitions["SOME_DEFINITION"] = True
         cmake.configure()
         return cmake
+
+    def set_version(self):
+        cmake = load(os.path.join(self.recipe_folder, "CMakeLists.txt"))
+        
+        version = re.search(r"(?:[ \t]*)(?:VERSION\s+?)(\d+\.\d+\.\d+)", cmake).group(1)
+        self.version = version
+
 
     def build(self):
         cmake = self._configure_cmake()
