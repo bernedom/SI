@@ -172,3 +172,4 @@ constexpr exa_katal_t<long double> operator""_Ekat(long double value) {
 
 } // namespace literals
 } // namespace SI
+

@@ -38,3 +38,4 @@ TEMPLATE_TEST_CASE("GIVEN momentum value WHEN divided by mass THEN result is a "
       std::is_same<decltype(result),
                    const SI::velocity_t<TestType, std::ratio<1>>>::value);
 }
+

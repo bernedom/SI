@@ -595,3 +595,4 @@ constexpr auto cross_unit_multiply(const _unit_lhs &lhs, const _unit_rhs &rhs) {
 }
 
 } // namespace SI::detail
+

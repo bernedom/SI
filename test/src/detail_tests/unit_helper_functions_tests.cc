@@ -97,3 +97,4 @@ TEST_CASE("GIVEN two values AND ratio is 1 WHEN multiplied with each other AND "
   STATIC_REQUIRE(decltype(result_func)::exponent::value <
                  decltype(result_operator)::exponent::value);
 }
+

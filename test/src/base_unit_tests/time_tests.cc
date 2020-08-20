@@ -296,3 +296,4 @@ TEST_CASE("GIVEN a string of '1h' WHEN streamed into hours_t THEN result "
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_h);
 }
+

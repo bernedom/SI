@@ -155,3 +155,4 @@ constexpr exa_gray_t<long double> operator""_EGy(long double value) {
 
 } // namespace literals
 } // namespace SI
+

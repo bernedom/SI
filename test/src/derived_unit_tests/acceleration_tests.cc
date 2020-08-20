@@ -139,3 +139,4 @@ TEMPLATE_TEST_CASE("GIVEN a squared velocity value WHEN divided by an "
       std::is_same<decltype(result),
                    const SI::length_t<TestType, std::ratio<1>>>::value);
 }
+

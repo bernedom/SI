@@ -250,3 +250,4 @@ TEST_CASE("GIVEN a string of '1t' WHEN streamed into ton_t THEN result "
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_t);
 }
+
