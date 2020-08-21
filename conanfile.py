@@ -5,14 +5,14 @@ import re, os
 
 class SiConan(ConanFile):
     name = "SI"
-    license = "MIT"    
+    license = "MIT"
     url = "https://bintray.com/beta/#/bernedom/conan/SI:SI"
     homepage = "https://github.com/bernedom/SI"
     description = "A header only c++ library that provides type safety and user defined literals \
          for handling pyhsical values defined in the International System of Units."
     topics = ("physical units", "SI-unit-conversion",
               "cplusplus-library", "cplusplus-17")
-    exports_sources = "include/*", "CMakeLists.txt", "test/*", "doc/CMakeLists.txt", "doc/*.md", "cmake/SIConfig.cmake.in"
+    exports_sources = "include/*", "CMakeLists.txt", "test/*", "doc/CMakeLists.txt", "doc/*.md", "cmake/SIConfig.cmake.in", "LICENSE"
     no_copy_source = True
     generators = "cmake", "txt", "cmake_find_package"
     build_requires = "Catch2/2.11.1@catchorg/stable"
