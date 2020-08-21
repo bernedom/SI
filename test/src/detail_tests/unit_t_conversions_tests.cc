@@ -328,3 +328,4 @@ TEST_CASE("GIVEN a unit with internal type of int32_t WHEN static_cast to unit "
                               decltype(result)>::value);
   STATIC_REQUIRE(result.raw_value() == 2000);
 }
+

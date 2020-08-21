@@ -191,3 +191,4 @@ constexpr exa_becquerel_t<long double> operator""_EBq(long double value) {
 
 } // namespace literals
 } // namespace SI
+

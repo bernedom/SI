@@ -29,3 +29,4 @@ BUILD_UNIT_FROM_MULTIPLICATION(momentum_t, velocity_t, mass_t)
 }
 
 } // namespace SI
+

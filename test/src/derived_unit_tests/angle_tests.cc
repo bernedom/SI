@@ -229,3 +229,4 @@ TEST_CASE("GIVEN a string of '1rad' WHEN streamed into radian_t THEN result "
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_rad);
 }
+

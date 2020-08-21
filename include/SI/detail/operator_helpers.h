@@ -65,3 +65,4 @@
                            const UNIT_RHS<_type, _ratio_rhs> &rhs) {           \
     return detail::cross_unit_divide<UNIT_LHS>(lhs, rhs);                      \
   }
+

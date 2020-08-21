@@ -145,3 +145,4 @@ TEST_CASE("GIVEN a value of an integral type AND a value of floating point "
   STATIC_REQUIRE(std::is_same<long double,
                               typename decltype(result)::internal_type>::value);
 }
+

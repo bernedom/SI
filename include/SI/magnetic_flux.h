@@ -171,3 +171,4 @@ constexpr exa_weber_t<long double> operator""_EWb(long double value) {
 
 } // namespace literals
 } // namespace SI
+

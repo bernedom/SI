@@ -238,3 +238,4 @@ TEST_CASE("GIVEN a string of '1sr' WHEN streamed into sterradian_t THEN result "
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_sr);
 }
+

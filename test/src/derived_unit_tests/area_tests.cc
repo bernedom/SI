@@ -285,3 +285,4 @@ TEST_CASE(
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_m3);
 }
+
