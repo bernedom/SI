@@ -4,7 +4,7 @@ var searchData=
   ['magnetic_5ffield_5ft',['magnetic_field_t',['../namespaceSI.html#a2609583ddc859f0d23e012f66265cb11',1,'SI']]],
   ['magnetic_5fflux_2eh',['magnetic_flux.h',['../magnetic__flux_8h.html',1,'']]],
   ['magnetic_5fflux_5ft',['magnetic_flux_t',['../namespaceSI.html#a4d9edfb675fb2e987b6c413e7a347088',1,'SI']]],
-  ['magnitude',['Magnitude',['../structSI_1_1detail_1_1parsing_1_1Magnitude.html',1,'SI::detail::parsing::Magnitude&lt; _base, _digit, _digits &gt;'],['../structSI_1_1detail_1_1parsing_1_1Number__impl.html#aeccc7fd57058b579560f75555d2d0e2d',1,'SI::detail::parsing::Number_impl::magnitude()'],['../structSI_1_1detail_1_1parsing_1_1Number__impl_3_01__base_00_01__digit_01_4.html#a9564fe70ec678e573ffdbd72daca122e',1,'SI::detail::parsing::Number_impl&lt; _base, _digit &gt;::magnitude()']]],
+  ['magnitude',['Magnitude',['../structSI_1_1detail_1_1parsing_1_1Magnitude.html',1,'SI::detail::parsing::Magnitude&lt; _base, _digit, _digits &gt;'],['../structSI_1_1detail_1_1parsing_1_1Number__impl.html#a09ba8cdde4a94706260c427ad3497107',1,'SI::detail::parsing::Number_impl::magnitude()'],['../structSI_1_1detail_1_1parsing_1_1Number__impl_3_01__base_00_01__digit_01_4.html#a39a409d3859111eaa5ba0ef451c1e8f0',1,'SI::detail::parsing::Number_impl&lt; _base, _digit &gt;::magnitude()']]],
   ['magnitude_3c_20_5fbase_2c_20_5fdigit_20_3e',['Magnitude&lt; _base, _digit &gt;',['../structSI_1_1detail_1_1parsing_1_1Magnitude_3_01__base_00_01__digit_01_4.html',1,'SI::detail::parsing']]],
   ['mass_2eh',['mass.h',['../mass_8h.html',1,'']]],
   ['mass_5ft',['mass_t',['../namespaceSI.html#a0db0b34d70fbde9f8b1c1ccb4e78a97c',1,'SI']]],

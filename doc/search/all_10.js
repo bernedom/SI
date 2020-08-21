@@ -21,7 +21,7 @@ var searchData=
   ['ratio_5fprefix_3c_20std_3a_3atera_20_3e',['ratio_prefix&lt; std::tera &gt;',['../structSI_1_1detail_1_1ratio__prefix_3_01std_1_1tera_01_4.html',1,'SI::detail']]],
   ['raw_5fvalue',['raw_value',['../structSI_1_1detail_1_1unit__t.html#abebcc8fbf72d27c40f64411b7259cbdf',1,'SI::detail::unit_t']]],
   ['readme_2emd',['README.md',['../README_8md.html',1,'']]],
-  ['recursive_5fmagnitude',['recursive_magnitude',['../structSI_1_1detail_1_1parsing_1_1Magnitude.html#ad4cddc6cfd489e157a9d25fb1be08364',1,'SI::detail::parsing::Magnitude']]],
+  ['recursive_5fmagnitude',['recursive_magnitude',['../structSI_1_1detail_1_1parsing_1_1Magnitude.html#aa0b748f8412df22a0c39e99daf351432',1,'SI::detail::parsing::Magnitude']]],
   ['recursive_5fnumber',['recursive_number',['../structSI_1_1detail_1_1parsing_1_1Number__impl.html#a396e9d368ca10499eb8688db593aa465',1,'SI::detail::parsing::Number_impl']]],
   ['recursive_5fpower',['recursive_power',['../structSI_1_1detail_1_1parsing_1_1Power__impl.html#a409a334ac9f21892902c1da948f1238e',1,'SI::detail::parsing::Power_impl']]]
 ];

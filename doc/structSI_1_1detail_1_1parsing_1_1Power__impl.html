@@ -85,11 +85,11 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a00dc52a0a35d93a18fd5ed7a74e762b9"><td class="memItemLeft" align="right" valign="top">static constexpr intmax_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1parsing_1_1Power__impl.html#a00dc52a0a35d93a18fd5ed7a74e762b9">power</a></td></tr>
-<tr class="separator:a00dc52a0a35d93a18fd5ed7a74e762b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76a067d245aca492035c68bc52ca6d08"><td class="memItemLeft" align="right" valign="top">static constexpr std::intmax_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1parsing_1_1Power__impl.html#a76a067d245aca492035c68bc52ca6d08">power</a></td></tr>
+<tr class="separator:a76a067d245aca492035c68bc52ca6d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;intmax_t _base, char _digit, char... _digits&gt;<br />
+<div class="textblock"><h3>template&lt;std::intmax_t _base, char _digit, char... _digits&gt;<br />
 struct SI::detail::parsing::Power_impl&lt; _base, _digit, _digits &gt;</h3>
 
 <p>Struct containing a power to a base; used as multiplicator of each position in a number </p>
@@ -100,7 +100,7 @@ struct SI::detail::parsing::Power_impl&lt; _base, _digit, _digits &gt;</h3>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;intmax_t _base, char _digit, char... _digits&gt; </div>
+template&lt;std::intmax_t _base, char _digit, char... _digits&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structSI_1_1detail_1_1parsing_1_1Power__impl.html">SI::detail::parsing::Power_impl</a>&lt; _base, _digit, _digits &gt;::<a class="el" href="structSI_1_1detail_1_1parsing_1_1Power__impl.html#a0f98f6140fd17b6ca3520f5774f0bd2b">digit</a> =  <a class="el" href="structSI_1_1detail_1_1parsing_1_1Digit.html">Digit</a>&lt;_base, _digit&gt;</td>
@@ -116,7 +116,7 @@ template&lt;intmax_t _base, char _digit, char... _digits&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;intmax_t _base, char _digit, char... _digits&gt; </div>
+template&lt;std::intmax_t _base, char _digit, char... _digits&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structSI_1_1detail_1_1parsing_1_1Power__impl.html">SI::detail::parsing::Power_impl</a>&lt; _base, _digit, _digits &gt;::<a class="el" href="structSI_1_1detail_1_1parsing_1_1Power__impl.html#a409a334ac9f21892902c1da948f1238e">recursive_power</a> =  <a class="el" href="structSI_1_1detail_1_1parsing_1_1Power__impl.html">Power_impl</a>&lt;_base, _digits...&gt;</td>
@@ -127,19 +127,19 @@ template&lt;intmax_t _base, char _digit, char... _digits&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a00dc52a0a35d93a18fd5ed7a74e762b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00dc52a0a35d93a18fd5ed7a74e762b9">&#9670;&nbsp;</a></span>power</h2>
+<a id="a76a067d245aca492035c68bc52ca6d08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76a067d245aca492035c68bc52ca6d08">&#9670;&nbsp;</a></span>power</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;intmax_t _base, char _digit, char... _digits&gt; </div>
+template&lt;std::intmax_t _base, char _digit, char... _digits&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr intmax_t <a class="el" href="structSI_1_1detail_1_1parsing_1_1Power__impl.html">SI::detail::parsing::Power_impl</a>&lt; _base, _digit, _digits &gt;::power</td>
+          <td class="memname">constexpr std::intmax_t <a class="el" href="structSI_1_1detail_1_1parsing_1_1Power__impl.html">SI::detail::parsing::Power_impl</a>&lt; _base, _digit, _digits &gt;::power</td>
         </tr>
       </table>
   </td>
@@ -148,7 +148,7 @@ template&lt;intmax_t _base, char _digit, char... _digits&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="structSI_1_1detail_1_1parsing_1_1Digit__impl.html#adae00525861e6fa791a8e303362fb59f">digit::is_valid_digit</a></div><div class="line">                                        ? (<a class="code" href="structSI_1_1detail_1_1parsing_1_1Power__impl.html#a00dc52a0a35d93a18fd5ed7a74e762b9">recursive_power::power</a> * _base)</div><div class="line">                                        : <a class="code" href="structSI_1_1detail_1_1parsing_1_1Power__impl.html#a00dc52a0a35d93a18fd5ed7a74e762b9">recursive_power::power</a></div></div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="structSI_1_1detail_1_1parsing_1_1Digit__impl.html#adae00525861e6fa791a8e303362fb59f">digit::is_valid_digit</a></div><div class="line">                                             ? (<a class="code" href="structSI_1_1detail_1_1parsing_1_1Power__impl.html#a76a067d245aca492035c68bc52ca6d08">recursive_power::power</a> * _base)</div><div class="line">                                             : <a class="code" href="structSI_1_1detail_1_1parsing_1_1Power__impl.html#a76a067d245aca492035c68bc52ca6d08">recursive_power::power</a></div></div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>

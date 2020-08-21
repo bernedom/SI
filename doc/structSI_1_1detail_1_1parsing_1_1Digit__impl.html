@@ -87,11 +87,11 @@ Inheritance diagram for SI::detail::parsing::Digit_impl&lt; _base, _str_digit &g
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:adae00525861e6fa791a8e303362fb59f"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1parsing_1_1Digit__impl.html#adae00525861e6fa791a8e303362fb59f">is_valid_digit</a> = _str_digit == '\'' ? false : true</td></tr>
 <tr class="separator:adae00525861e6fa791a8e303362fb59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dca352fd391c320fbbdc6168e82e45d"><td class="memItemLeft" align="right" valign="top">static constexpr intmax_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1parsing_1_1Digit__impl.html#a7dca352fd391c320fbbdc6168e82e45d">value</a></td></tr>
-<tr class="separator:a7dca352fd391c320fbbdc6168e82e45d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b60d0c746e02f280d7a7730ce28e54"><td class="memItemLeft" align="right" valign="top">static constexpr std::intmax_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1parsing_1_1Digit__impl.html#a51b60d0c746e02f280d7a7730ce28e54">value</a></td></tr>
+<tr class="separator:a51b60d0c746e02f280d7a7730ce28e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;intmax_t _base, char _str_digit&gt;<br />
+<div class="textblock"><h3>template&lt;std::intmax_t _base, char _str_digit&gt;<br />
 struct SI::detail::parsing::Digit_impl&lt; _base, _str_digit &gt;</h3>
 
 <p>struct converting a char digit into an int allowed digits are [0-9][a-fA-F]['] </p>
@@ -102,7 +102,7 @@ struct SI::detail::parsing::Digit_impl&lt; _base, _str_digit &gt;</h3>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;intmax_t _base, char _str_digit&gt; </div>
+template&lt;std::intmax_t _base, char _str_digit&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -120,19 +120,19 @@ template&lt;intmax_t _base, char _str_digit&gt; </div>
 
 </div>
 </div>
-<a id="a7dca352fd391c320fbbdc6168e82e45d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7dca352fd391c320fbbdc6168e82e45d">&#9670;&nbsp;</a></span>value</h2>
+<a id="a51b60d0c746e02f280d7a7730ce28e54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51b60d0c746e02f280d7a7730ce28e54">&#9670;&nbsp;</a></span>value</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;intmax_t _base, char _str_digit&gt; </div>
+template&lt;std::intmax_t _base, char _str_digit&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr intmax_t <a class="el" href="structSI_1_1detail_1_1parsing_1_1Digit__impl.html">SI::detail::parsing::Digit_impl</a>&lt; _base, _str_digit &gt;::value</td>
+          <td class="memname">constexpr std::intmax_t <a class="el" href="structSI_1_1detail_1_1parsing_1_1Digit__impl.html">SI::detail::parsing::Digit_impl</a>&lt; _base, _str_digit &gt;::value</td>
         </tr>
       </table>
   </td>
@@ -141,7 +141,7 @@ template&lt;intmax_t _base, char _str_digit&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">      (_str_digit &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; _str_digit &lt;= <span class="charliteral">&#39;9&#39;</span>)</div><div class="line">          ? _str_digit - <span class="charliteral">&#39;0&#39;</span></div><div class="line">          : (_str_digit &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; _str_digit &lt;= <span class="charliteral">&#39;f&#39;</span>)</div><div class="line">                ? 10 + (_str_digit - <span class="charliteral">&#39;a&#39;</span>)</div><div class="line">                : (_str_digit &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; _str_digit &lt;= <span class="charliteral">&#39;F&#39;</span>)</div><div class="line">                      ? 10 + (_str_digit - <span class="charliteral">&#39;A&#39;</span>)</div><div class="line">                      : std::numeric_limits&lt;intmax_t&gt;::quiet_NaN()</div></div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">      (_str_digit &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; _str_digit &lt;= <span class="charliteral">&#39;9&#39;</span>)</div><div class="line">          ? _str_digit - <span class="charliteral">&#39;0&#39;</span></div><div class="line">          : (_str_digit &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; _str_digit &lt;= <span class="charliteral">&#39;f&#39;</span>)</div><div class="line">                ? 10 + (_str_digit - <span class="charliteral">&#39;a&#39;</span>)</div><div class="line">                : (_str_digit &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; _str_digit &lt;= <span class="charliteral">&#39;F&#39;</span>)</div><div class="line">                      ? 10 + (_str_digit - <span class="charliteral">&#39;A&#39;</span>)</div><div class="line">                      : std::numeric_limits&lt;std::intmax_t&gt;::quiet_NaN()</div></div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
