@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.6
+
+*   Refactoring conanfile.py to create cmake object only once for a tiny bit more performance when packing
+
 ## 1.7.5
 
 *   `conanfile.py` pulls the version out of `CMakeLists.txt` for packaging.
