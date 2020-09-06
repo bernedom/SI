@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1598035829293,
+  "lastUpdate": 1599422739538,
   "repoUrl": "https://github.com/bernedom/SI",
   "entries": {
     "Catch2 Benchmark": [
@@ -6372,6 +6372,170 @@ window.BENCHMARK_DATA = {
             "name": "conversion by to_string",
             "value": 86,
             "range": "+/- 15",
+            "unit": "ns",
+            "extra": "100 samples\n357 iterations"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dominik.berner@gmail.com",
+            "name": "Dominik Berner",
+            "username": "bernedom"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ea9bdaf5ed85df46880ad5dcbd2c533ba582b581",
+          "message": "Merge pull request #73 from bernedom/refactoring/conanfile-create-cmake-only-once\n\nRefactoring/conanfile create cmake only once",
+          "timestamp": "2020-09-06T22:04:13+02:00",
+          "tree_id": "ccb2a5b02f40b0ca5aca5b045fb992d5c1d88e54",
+          "url": "https://github.com/bernedom/SI/commit/ea9bdaf5ed85df46880ad5dcbd2c533ba582b581"
+        },
+        "date": 1599422738501,
+        "tool": "catch2",
+        "benches": [
+          {
+            "name": "Default construction",
+            "value": 0,
+            "range": "+/- 0",
+            "unit": "ns",
+            "extra": "100 samples\n20353 iterations"
+          },
+          {
+            "name": "Value initialized construction",
+            "value": 0,
+            "range": "+/- 0",
+            "unit": "ns",
+            "extra": "100 samples\n26244 iterations"
+          },
+          {
+            "name": "copy construction same ratio",
+            "value": 0,
+            "range": "+/- 0",
+            "unit": "ns",
+            "extra": "100 samples\n26955 iterations"
+          },
+          {
+            "name": "copy construction different ratio",
+            "value": 0,
+            "range": "+/- 0",
+            "unit": "ns",
+            "extra": "100 samples\n27021 iterations"
+          },
+          {
+            "name": "Raw number assignment (reference)",
+            "value": 8.232,
+            "range": "+/- 2.958",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Same unit same ratio assignment",
+            "value": 7.704,
+            "range": "+/- 2.035",
+            "unit": "us",
+            "extra": "100 samples\n5 iterations"
+          },
+          {
+            "name": "Same unit different ratio assignment",
+            "value": 9.57,
+            "range": "+/- 2.988",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Raw number add assignment (reference)",
+            "value": 8.497,
+            "range": "+/- 2.307",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Same unit same ratio add assignment",
+            "value": 8.342,
+            "range": "+/- 2.614",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Same unit different ratio add assignment",
+            "value": 9.791,
+            "range": "+/- 2.627",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Raw number subtract assignment (reference)",
+            "value": 7.658,
+            "range": "+/- 1.56",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Same unit same ratio subtract assignment",
+            "value": 8.584,
+            "range": "+/- 2.28",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Same unit different ratio subtract assignment",
+            "value": 10.808,
+            "range": "+/- 3.652",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "int64_t by unit division",
+            "value": 441.274,
+            "range": "+/- 51.902",
+            "unit": "us",
+            "extra": "100 samples\n1 iterations"
+          },
+          {
+            "name": "long double by unit division",
+            "value": 52.783,
+            "range": "+/- 18.699",
+            "unit": "us",
+            "extra": "100 samples\n1 iterations"
+          },
+          {
+            "name": "unit_cast same ratio unit",
+            "value": 7.79,
+            "range": "+/- 2.737",
+            "unit": "us",
+            "extra": "100 samples\n5 iterations"
+          },
+          {
+            "name": "unit_cast different ratio unit",
+            "value": 9.357,
+            "range": "+/- 3.135",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "conversion by streams without construction",
+            "value": 77,
+            "range": "+/- 76",
+            "unit": "ns",
+            "extra": "100 samples\n7 iterations"
+          },
+          {
+            "name": "conversion by streams including construction",
+            "value": 407,
+            "range": "+/- 118",
+            "unit": "ns",
+            "extra": "100 samples\n67 iterations"
+          },
+          {
+            "name": "conversion by to_string",
+            "value": 82,
+            "range": "+/- 25",
             "unit": "ns",
             "extra": "100 samples\n357 iterations"
           }
