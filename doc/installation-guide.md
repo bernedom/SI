@@ -40,12 +40,21 @@ mkdir ${HOME}/SI-install
 
 ## Installation using conan.io
 
-As SI is not yet available on [conan-center](https://bintray.com/conan/conan-center) the current bintray repository has to be added to conan first to download SI.
+SI is available at [conan-center](https://conan.io/center/si/1.7.5/). As per convention of ConanCenter the package name here is `si` (lower case).
+
+Use the following in your `conanfile.txt`
+```
+[requires]
+si/[>1.0 <2.0]@SI/stable
+```
+
+### Early access and nightly builds
+
+For nightly builds and early access to versions use the custom repository https://api.bintray.com/conan/bernedom/conan
 
 ```bash
 conan remote add bernedom https://api.bintray.com/conan/bernedom/conan
 ```
-
 In the `conanfile.txt` SI is added like this, to ensure to get the latest version. 
 
 ```
@@ -53,7 +62,8 @@ In the `conanfile.txt` SI is added like this, to ensure to get the latest versio
 SI/[>1.0 <2.0]@SI/stable
 ```
 
-use `SI/unstable` to get the latest development builds. See the [official conan documentation](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_generator.html) on how to integrate the package into your cmake project.
+`SI/stable` are release builds and are considered usable. 
+Use `SI/unstable` to get the latest development builds. See the [official conan documentation](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_generator.html) on how to integrate the package into your cmake project.
 
 ## Using as a subdirectory (not installing at all)
 
