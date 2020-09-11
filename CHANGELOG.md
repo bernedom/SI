@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0
+
+*   Support for fractions as exponents
+
 ## 1.7.6
 
 *   Refactoring conanfile.py to create cmake object only once for a tiny bit more performance when packing
