@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1599422739538,
+  "lastUpdate": 1599802239631,
   "repoUrl": "https://github.com/bernedom/SI",
   "entries": {
     "Catch2 Benchmark": [
@@ -6536,6 +6536,170 @@ window.BENCHMARK_DATA = {
             "name": "conversion by to_string",
             "value": 82,
             "range": "+/- 25",
+            "unit": "ns",
+            "extra": "100 samples\n357 iterations"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dominik.berner@gmail.com",
+            "name": "Dominik Berner",
+            "username": "bernedom"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0f3c5bf7e0e9f80bb2dda5dda13f185ea3e985bf",
+          "message": "Merge pull request #74 from bernedom/documentation/conan-center-instructions\n\nUpdate installation instructions",
+          "timestamp": "2020-09-11T07:29:14+02:00",
+          "tree_id": "e60cb1c62063565d6a76ab7d2d3eddc6e0cbfd83",
+          "url": "https://github.com/bernedom/SI/commit/0f3c5bf7e0e9f80bb2dda5dda13f185ea3e985bf"
+        },
+        "date": 1599802238648,
+        "tool": "catch2",
+        "benches": [
+          {
+            "name": "Default construction",
+            "value": 0,
+            "range": "+/- 0",
+            "unit": "ns",
+            "extra": "100 samples\n20181 iterations"
+          },
+          {
+            "name": "Value initialized construction",
+            "value": 0,
+            "range": "+/- 0",
+            "unit": "ns",
+            "extra": "100 samples\n25038 iterations"
+          },
+          {
+            "name": "copy construction same ratio",
+            "value": 0,
+            "range": "+/- 0",
+            "unit": "ns",
+            "extra": "100 samples\n25478 iterations"
+          },
+          {
+            "name": "copy construction different ratio",
+            "value": 0,
+            "range": "+/- 0",
+            "unit": "ns",
+            "extra": "100 samples\n25931 iterations"
+          },
+          {
+            "name": "Raw number assignment (reference)",
+            "value": 8.193,
+            "range": "+/- 3.177",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Same unit same ratio assignment",
+            "value": 7.283,
+            "range": "+/- 1.952",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Same unit different ratio assignment",
+            "value": 10.185,
+            "range": "+/- 2.679",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Raw number add assignment (reference)",
+            "value": 8.421,
+            "range": "+/- 2.266",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Same unit same ratio add assignment",
+            "value": 7.904,
+            "range": "+/- 2.772",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Same unit different ratio add assignment",
+            "value": 9.915,
+            "range": "+/- 3.116",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Raw number subtract assignment (reference)",
+            "value": 8.513,
+            "range": "+/- 2.84",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Same unit same ratio subtract assignment",
+            "value": 7.979,
+            "range": "+/- 1.838",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Same unit different ratio subtract assignment",
+            "value": 12.097,
+            "range": "+/- 4.692",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "int64_t by unit division",
+            "value": 440.071,
+            "range": "+/- 59.501",
+            "unit": "us",
+            "extra": "100 samples\n1 iterations"
+          },
+          {
+            "name": "long double by unit division",
+            "value": 49.069,
+            "range": "+/- 17.155",
+            "unit": "us",
+            "extra": "100 samples\n1 iterations"
+          },
+          {
+            "name": "unit_cast same ratio unit",
+            "value": 7.879,
+            "range": "+/- 1.956",
+            "unit": "us",
+            "extra": "100 samples\n5 iterations"
+          },
+          {
+            "name": "unit_cast different ratio unit",
+            "value": 9.801,
+            "range": "+/- 2.652",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "conversion by streams without construction",
+            "value": 98,
+            "range": "+/- 229",
+            "unit": "ns",
+            "extra": "100 samples\n8 iterations"
+          },
+          {
+            "name": "conversion by streams including construction",
+            "value": 482,
+            "range": "+/- 178",
+            "unit": "ns",
+            "extra": "100 samples\n73 iterations"
+          },
+          {
+            "name": "conversion by to_string",
+            "value": 85,
+            "range": "+/- 31",
             "unit": "ns",
             "extra": "100 samples\n357 iterations"
           }
