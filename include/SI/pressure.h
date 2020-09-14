@@ -19,7 +19,7 @@
 
 namespace SI {
 template <typename _type, class _ratio = std::ratio<1>>
-using pressure_t = detail::unit_t<'p', 1, _type, _ratio>;
+using pressure_t = detail::unit_t<'p', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type> using atto_pascal_t = pressure_t<_type, std::atto>;

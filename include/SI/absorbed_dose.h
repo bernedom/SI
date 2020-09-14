@@ -18,7 +18,7 @@
 namespace SI {
 
 template <typename _type, class _ratio = std::ratio<1>>
-using absorbed_dose_t = detail::unit_t<'D', 1, _type, _ratio>;
+using absorbed_dose_t = detail::unit_t<'D', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type> using atto_gray_t = absorbed_dose_t<_type, std::atto>;

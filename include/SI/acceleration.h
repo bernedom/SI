@@ -19,7 +19,7 @@ namespace SI {
 
 /// Type for acceleration a = v / t or a = L / t^2
 template <typename _type, typename _ratio>
-using acceleration_t = detail::unit_t<'a', 1, _type, _ratio>;
+using acceleration_t = detail::unit_t<'a', std::ratio<1>, _type, _ratio>;
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(acceleration_t, velocity_t, time_t)

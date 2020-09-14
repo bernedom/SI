@@ -20,7 +20,8 @@
 namespace SI {
 
 template <typename _type, class _ratio = std::ratio<1>>
-using electric_conductance_t = detail::unit_t<'G', 1, _type, _ratio>;
+using electric_conductance_t =
+    detail::unit_t<'G', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type>
@@ -67,8 +68,9 @@ BUILD_UNIT_FROM_DIVISON(electric_conductance_t, electric_current_t,
 /// Builds conductance from 1/resistance, to avoid include cycles the base
 /// unit_t is used instead of the type alias electric_resistance_t
 template <typename _type, class _ratio = std::ratio<1>>
-constexpr auto operator/(const _type scalar,
-                         const unit_t<'O', 1, _type, _ratio> &resistance) {
+constexpr auto
+operator/(const _type scalar,
+          const unit_t<'O', std::ratio<1>, _type, _ratio> &resistance) {
   return electric_conductance_t<_type, std::ratio<_ratio::den, _ratio::num>>{
       scalar / resistance.raw_value()};
 }

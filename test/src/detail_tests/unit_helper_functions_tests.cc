@@ -6,10 +6,10 @@ using namespace SI::detail;
 
 namespace {
 template <typename _type, typename _ratio>
-using unit_Z_t = SI::detail::unit_t<'Z', 1, _type, _ratio>;
+using unit_Z_t = SI::detail::unit_t<'Z', std::ratio<1>, _type, _ratio>;
 
 template <typename _type, typename _ratio>
-using unit_X_t = SI::detail::unit_t<'X', 1, _type, _ratio>;
+using unit_X_t = SI::detail::unit_t<'X', std::ratio<1>, _type, _ratio>;
 } // namespace
 
 TEMPLATE_TEST_CASE("GIVEN to values of different type AND ratio is the same "
@@ -97,4 +97,3 @@ TEST_CASE("GIVEN two values AND ratio is 1 WHEN multiplied with each other AND "
   STATIC_REQUIRE(decltype(result_func)::exponent::value <
                  decltype(result_operator)::exponent::value);
 }
-

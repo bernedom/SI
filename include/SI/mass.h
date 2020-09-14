@@ -19,7 +19,7 @@
 namespace SI {
 
 template <typename _type, typename _ratio>
-using mass_t = detail::unit_t<'M', 1, _type, _ratio>;
+using mass_t = detail::unit_t<'M', std::ratio<1>, _type, _ratio>;
 
 template <typename _type> using femto_gram_t = mass_t<_type, std::atto>;
 template <typename _type> using pico_gram_t = mass_t<_type, std::femto>;

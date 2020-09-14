@@ -18,7 +18,7 @@
 namespace SI {
 
 template <typename _type, typename _ratio>
-using electric_current_t = detail::unit_t<'I', 1, _type, _ratio>;
+using electric_current_t = detail::unit_t<'I', std::ratio<1>, _type, _ratio>;
 
 template <typename _type>
 using atto_ampere_t = electric_current_t<_type, std::atto>;

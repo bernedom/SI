@@ -15,7 +15,7 @@
 
 namespace SI {
 template <typename _type, typename _ratio>
-using area_t = detail::unit_t<'L', 2, _type, _ratio>;
+using area_t = detail::unit_t<'L', std::ratio<2>, _type, _ratio>;
 
 template <typename _type> using square_metre_t = area_t<_type, std::ratio<1>>;
 template <typename _type>
@@ -27,7 +27,7 @@ using square_milli_metre_t =
     area_t<_type, std::ratio_multiply<std::milli, std::milli>>;
 
 template <typename _type, typename _ratio>
-using volume_t = detail::unit_t<'L', 3, _type, _ratio>;
+using volume_t = detail::unit_t<'L', std::ratio<3>, _type, _ratio>;
 
 template <typename _type> using cubic_metre_t = volume_t<_type, std::ratio<1>>;
 template <typename _type>
@@ -37,27 +37,27 @@ using cubic_milli_metre_t = volume_t<_type, std::nano>;
 
 // specialized unit_symbol for usage with stream operators
 template <>
-struct unit_symbol<'L', std::ratio<1>, 2>
+struct unit_symbol<'L', std::ratio<1>, std::ratio<2>>
     : SI::detail::unit_symbol_impl<'m', '2'> {};
 
 template <>
-struct unit_symbol<'L', std::ratio<1, 10000>, 2>
+struct unit_symbol<'L', std::ratio<1, 10000>, std::ratio<2>>
     : SI::detail::unit_symbol_impl<'c', 'm', '2'> {};
 
 template <>
-struct unit_symbol<'L', std::micro, 2>
+struct unit_symbol<'L', std::micro, std::ratio<2>>
     : SI::detail::unit_symbol_impl<'m', 'm', '2'> {};
 
 template <>
-struct unit_symbol<'L', std::ratio<1>, 3>
+struct unit_symbol<'L', std::ratio<1>, std::ratio<3>>
     : SI::detail::unit_symbol_impl<'m', '3'> {};
 
 template <>
-struct unit_symbol<'L', std::ratio<1, 1000000>, 3>
+struct unit_symbol<'L', std::ratio<1, 1000000>, std::ratio<3>>
     : SI::detail::unit_symbol_impl<'c', 'm', '3'> {};
 
 template <>
-struct unit_symbol<'L', std::nano, 3>
+struct unit_symbol<'L', std::nano, std::ratio<3>>
     : SI::detail::unit_symbol_impl<'m', 'm', '3'> {};
 
 inline namespace literals {

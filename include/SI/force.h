@@ -20,7 +20,7 @@
 
 namespace SI {
 template <typename _type, class _ratio = std::ratio<1>>
-using force_t = detail::unit_t<'F', 1, _type, _ratio>;
+using force_t = detail::unit_t<'F', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type> using atto_newton_t = force_t<_type, std::atto>;

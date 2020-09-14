@@ -22,7 +22,7 @@ namespace SI {
 
 /// @todo find a way to encapsulate   phi
 template <typename _type, class _ratio = std::ratio<1>>
-using magnetic_field_t = detail::unit_t<'B', 1, _type, _ratio>;
+using magnetic_field_t = detail::unit_t<'B', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type>

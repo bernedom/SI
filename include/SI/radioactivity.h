@@ -21,7 +21,7 @@ namespace SI {
 /// @todo think of how this can be built from 1/T (probably goes along with
 /// making it an alias of hertz)
 template <typename _type, class _ratio = std::ratio<1>>
-using radioactivity_t = detail::unit_t<'A', 1, _type, _ratio>;
+using radioactivity_t = detail::unit_t<'A', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type>

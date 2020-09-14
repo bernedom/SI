@@ -20,7 +20,7 @@
 
 namespace SI {
 template <typename _type, class _ratio = std::ratio<1>>
-using illuminance_t = detail::unit_t<'i', 1, _type, _ratio>;
+using illuminance_t = detail::unit_t<'i', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type> using atto_lux_t = illuminance_t<_type, std::atto>;

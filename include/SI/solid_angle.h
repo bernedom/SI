@@ -18,7 +18,7 @@
 namespace SI {
 
 template <typename _type, typename _ratio>
-using solid_angle_t = detail::unit_t<'R', 1, _type, _ratio>;
+using solid_angle_t = detail::unit_t<'R', std::ratio<1>, _type, _ratio>;
 
 template <typename _type>
 using atto_sterradian_t = solid_angle_t<_type, std::atto>;

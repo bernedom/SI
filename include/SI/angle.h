@@ -18,7 +18,7 @@
 namespace SI {
 /// Type for angle (which should be buildable from m/m (sin/cos))
 template <typename _type, typename _ratio>
-using angle_t = detail::unit_t<'r', 1, _type, _ratio>;
+using angle_t = detail::unit_t<'r', std::ratio<1>, _type, _ratio>;
 
 template <typename _type> using atto_radian_t = angle_t<_type, std::atto>;
 template <typename _type> using femto_radian_t = angle_t<_type, std::femto>;

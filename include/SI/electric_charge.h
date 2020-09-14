@@ -21,7 +21,7 @@ namespace SI {
 
 /// unit for electric charge 'Q' where Q = T * I
 template <typename _type, typename _ratio>
-using electric_charge_t = detail::unit_t<'Q', 1, _type, _ratio>;
+using electric_charge_t = detail::unit_t<'Q', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type>

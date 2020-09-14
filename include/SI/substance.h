@@ -17,7 +17,7 @@
 namespace SI {
 
 template <typename _type, typename _ratio>
-using substance_t = detail::unit_t<'N', 1, _type, _ratio>;
+using substance_t = detail::unit_t<'N', std::ratio<1>, _type, _ratio>;
 
 template <typename _type> using atto_mol_t = substance_t<_type, std::atto>;
 template <typename _type> using femto_mol_t = substance_t<_type, std::femto>;

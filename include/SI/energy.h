@@ -21,7 +21,7 @@
 
 namespace SI {
 template <typename _type, class _ratio = std::ratio<1>>
-using energy_t = detail::unit_t<'E', 1, _type, _ratio>;
+using energy_t = detail::unit_t<'E', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type> using atto_joule_t = energy_t<_type, std::atto>;

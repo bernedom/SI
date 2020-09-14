@@ -133,7 +133,7 @@ TEMPLATE_TEST_CASE(
 }
 
 template <typename _type, typename _ratio>
-using resulting_t = SI::detail::unit_t<'Y', 1, _type, _ratio>;
+using resulting_t = SI::detail::unit_t<'Y', std::ratio<1>, _type, _ratio>;
 
 TEST_CASE("GIVEN a value of an integral type AND a value of floating point "
           "type WHEN divided THEN result is of left hand type") {
@@ -145,4 +145,3 @@ TEST_CASE("GIVEN a value of an integral type AND a value of floating point "
   STATIC_REQUIRE(std::is_same<long double,
                               typename decltype(result)::internal_type>::value);
 }
-

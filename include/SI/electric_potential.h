@@ -22,7 +22,7 @@
 
 namespace SI {
 template <typename _type, class _ratio = std::ratio<1>>
-using electric_potential_t = detail::unit_t<'U', 1, _type, _ratio>;
+using electric_potential_t = detail::unit_t<'U', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type>

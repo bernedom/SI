@@ -22,10 +22,10 @@ namespace SI {
 
 /// Type for velocity where v = L / T
 template <typename _type, typename _ratio>
-using velocity_t = detail::unit_t<'v', 1, _type, _ratio>;
+using velocity_t = detail::unit_t<'v', std::ratio<1>, _type, _ratio>;
 
 template <typename _type, typename _ratio>
-using velocity_squared_t = detail::unit_t<'v', 2, _type, _ratio>;
+using velocity_squared_t = detail::unit_t<'v', std::ratio<2>, _type, _ratio>;
 
 template <typename _type>
 using metre_per_second_t = velocity_t<_type, std::ratio<1>::type>;

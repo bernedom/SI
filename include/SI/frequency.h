@@ -18,7 +18,7 @@
 namespace SI {
 /// @todo find a way to add alternative dimension symbol  (f) to frequency
 template <typename _type, class _ratio = std::ratio<1>>
-using frequency_t = detail::time_base_t<-1, _type, _ratio>;
+using frequency_t = detail::time_base_t<std::ratio<-1>, _type, _ratio>;
 
 /// specific units
 template <typename _type> using atto_hertz_t = frequency_t<_type, std::atto>;
@@ -37,11 +37,11 @@ template <typename _type> using exa_hertz_t = frequency_t<_type, std::exa>;
 
 // specialize unit_symbol for usage with stream operators
 template <>
-struct unit_symbol<'T', std::ratio<1>, -1>
+struct unit_symbol<'T', std::ratio<1>, std::ratio<-1>>
     : SI::detail::unit_symbol_impl<'H', 'z'> {};
 
 template <typename _ratio>
-struct unit_symbol<'T', _ratio, -1>
+struct unit_symbol<'T', _ratio, std::ratio<-1>>
     : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'H',
                                    'z'> {};
 

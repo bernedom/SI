@@ -20,7 +20,7 @@
 
 namespace SI {
 template <typename _type, class _ratio = std::ratio<1>>
-using inductance_t = detail::unit_t<'l', 1, _type, _ratio>;
+using inductance_t = detail::unit_t<'l', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type> using atto_henry_t = inductance_t<_type, std::atto>;

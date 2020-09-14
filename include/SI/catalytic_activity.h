@@ -21,7 +21,7 @@
 namespace SI {
 
 template <typename _type, class _ratio = std::ratio<1>>
-using catalytic_activity_t = detail::unit_t<'K', 1, _type, _ratio>;
+using catalytic_activity_t = detail::unit_t<'K', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type>

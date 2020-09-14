@@ -8,10 +8,10 @@ using namespace SI::detail;
 
 namespace {
 template <typename _type, typename _ratio>
-using unit_Z_t = SI::detail::unit_t<'Z', 1, _type, _ratio>;
+using unit_Z_t = SI::detail::unit_t<'Z', std::ratio<1>, _type, _ratio>;
 
 template <typename _type, typename _ratio>
-using unit_X_t = SI::detail::unit_t<'X', 1, _type, _ratio>;
+using unit_X_t = SI::detail::unit_t<'X', std::ratio<1>, _type, _ratio>;
 } // namespace
 
 TEST_CASE("GIVEN a declared unit of type int64_t WHEN copy-constructed "
@@ -328,4 +328,3 @@ TEST_CASE("GIVEN a unit with internal type of int32_t WHEN static_cast to unit "
                               decltype(result)>::value);
   STATIC_REQUIRE(result.raw_value() == 2000);
 }
-

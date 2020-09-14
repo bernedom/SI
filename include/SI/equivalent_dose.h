@@ -19,7 +19,7 @@
 namespace SI {
 
 template <typename _type, class _ratio = std::ratio<1>>
-using equivalent_dose_t = detail::unit_t<'H', 1, _type, _ratio>;
+using equivalent_dose_t = detail::unit_t<'H', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type>

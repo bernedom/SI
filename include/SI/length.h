@@ -21,7 +21,7 @@
 namespace SI {
 
 template <typename _type, typename _ratio>
-using length_t = detail::unit_t<'L', 1, _type, _ratio>;
+using length_t = detail::unit_t<'L', std::ratio<1>, _type, _ratio>;
 
 template <typename _type> using atto_metre_t = length_t<_type, std::atto>;
 template <typename _type> using femto_metre_t = length_t<_type, std::femto>;
