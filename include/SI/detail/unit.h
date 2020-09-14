@@ -22,6 +22,8 @@
 #include <ratio>
 #include <type_traits>
 
+// @todo create shortcut with exponent as uint with using directive
+
 /// Namespace containing all SI units
 namespace SI::detail {
 
@@ -285,35 +287,39 @@ struct unit_t {
 
   /// divide with same unit with same ratio but not the same exponent
   /// @returns unit with exponents subtracted from each others
-  template <
-      int8_t _rhs_exponent, typename _rhs_type,
-      typename std::enable_if<_rhs_exponent != _exponent>::type * = nullptr>
+  template <typename _rhs_exponent, typename _rhs_type,
+            typename std::enable_if<std::ratio_not_equal<
+                _rhs_exponent, _exponent>::value>::type * = nullptr>
   constexpr auto operator/(
       const unit_t<_symbol, _rhs_exponent, _rhs_type, _ratio> &rhs) const {
-    static_assert(_rhs_exponent > 0, "_rhs_Exponent is positive");
+    static_assert(detail::is_ratio<_rhs_exponent>::value,
+                  "rhs exponent is a ratio type");
     using rhs_t = typename std::remove_reference<decltype(rhs)>::type;
 
-    return unit_t<_symbol, _exponent - rhs_t::exponent::value, _type,
-                  std::ratio_divide<ratio, _ratio>>{value_ / rhs.raw_value()};
+    return unit_t<_symbol,
+                  std::ratio_subtract<_exponent, typename rhs_t::exponent>,
+                  _type, std::ratio_divide<ratio, _ratio>>{value_ /
+                                                           rhs.raw_value()};
   }
 
   /// divide with a same unit but different ratios
   /// the ratio of the result is the gcd of the two ratios and the exponents are
   /// subtracted
-  template <
-      int8_t _rhs_exponent, typename _rhs_type, typename _rhs_ratio,
-      typename std::enable_if<_rhs_exponent != _exponent>::type * = nullptr>
+  template <typename _rhs_exponent, typename _rhs_type, typename _rhs_ratio,
+            typename std::enable_if<std::ratio_not_equal<
+                _rhs_exponent, _exponent>::value>::type * = nullptr>
   constexpr auto operator/(
       const unit_t<_symbol, _rhs_exponent, _rhs_type, _rhs_ratio> &rhs) const {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
-    static_assert(_rhs_exponent > 0, "_rhs_Exponent is positive");
+    static_assert(detail::is_ratio<_rhs_exponent>::value,
+                  "rhs exponent is a ratio type");
     static_assert(
         SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
             std::ratio_equal<ratio, _rhs_ratio>::value,
         "Implicit ratio conversion disabled, convert before dividing");
 
-    return unit_t<_symbol, _exponent - _rhs_exponent, _type,
+    return unit_t<_symbol, std::ratio_subtract<exponent, _rhs_exponent>, _type,
                   std::ratio_divide<ratio, _rhs_ratio>>{value_ /
                                                         rhs.raw_value()};
   }
@@ -327,9 +333,9 @@ struct unit_t {
 
   /// if the same units of the same exponent but different ratio are divided
   /// then the result is a scalar
-  template <
-      int8_t _rhs_exponent, typename _rhs_type, typename _rhs_ratio,
-      typename std::enable_if<_rhs_exponent == _exponent>::type * = nullptr>
+  template <typename _rhs_exponent, typename _rhs_type, typename _rhs_ratio,
+            typename std::enable_if<std::ratio_equal<
+                _rhs_exponent, exponent>::value>::type * = nullptr>
   constexpr _type operator/(
       const unit_t<_symbol, _rhs_exponent, _rhs_type, _rhs_ratio> &rhs) const {
     static_assert(SI_ENABLE_IMPLICIT_RATIO_CONVERSION ||
@@ -339,7 +345,9 @@ struct unit_t {
 
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
-    static_assert(_rhs_exponent > 0, "_rhs_Exponent is positive");
+
+    static_assert(detail::is_ratio<_rhs_exponent>::value,
+                  "rhs exponent is a ratio type");
 
     using gcd_unit = typename unit_with_common_ratio<
         typename std::remove_reference<decltype(*this)>::type,
@@ -478,7 +486,7 @@ private:
 /// template specialisation handling integer types
 /// @results unit with negative exponent
 template <
-    typename _type, char _symbol, int8_t _exponent, typename _rhs_type,
+    typename _type, char _symbol, typename _exponent, typename _rhs_type,
     typename _ratio,
     typename std::enable_if<std::is_integral<_type>::value>::type * = nullptr>
 constexpr auto
@@ -488,16 +496,19 @@ operator/(const _type &lhs,
                     std::ratio_equal<std::ratio<1>, _ratio>::value,
                 "Implicit ratio conversion disabled, convert to ratio<1> "
                 "before dividing");
-  return unit_cast<unit_t<_symbol, -_exponent, _type, _ratio>>(
-      unit_t<_symbol, -_exponent, _type, std::ratio<1>>{
-          lhs / (rhs.raw_value() * (_ratio::num / _ratio::den))});
+  static_assert(detail::is_ratio<_exponent>::value, "Exponent is a ratio type");
+  return unit_cast<unit_t<
+      _symbol, std::ratio_multiply<std::ratio<-1>, _exponent>, _type, _ratio>>(
+      unit_t<_symbol, std::ratio_multiply<std::ratio<-1>, _exponent>, _type,
+             std::ratio<1>>{lhs /
+                            (rhs.raw_value() * (_ratio::num / _ratio::den))});
 }
 
 /// operator to divide primitive type by unit encapsulating the same type
 /// template specialisation for floating point types, to avoid possible loss
 /// of precision when adjusting for ratio
 /// @results unit with negative exponent
-template <typename _type, char _symbol, int8_t _exponent, typename _rhs_type,
+template <typename _type, char _symbol, typename _exponent, typename _rhs_type,
           typename _ratio,
           typename std::enable_if<std::is_floating_point<_type>::value>::type
               * = nullptr>
@@ -508,8 +519,11 @@ operator/(const _type &lhs,
                     std::ratio_equal<_ratio, std::ratio<1>>::value,
                 "Implicit ratio conversion disabled, convert to ratio<1> "
                 "before dividing");
-  return unit_cast<unit_t<_symbol, -_exponent, _type, _ratio>>(
-      unit_t<_symbol, -_exponent, _type, std::ratio<1>>{
+  static_assert(detail::is_ratio<_exponent>::value, "Exponent is a ratio type");
+  return unit_cast<unit_t<
+      _symbol, std::ratio_multiply<std::ratio<-1>, _exponent>, _type, _ratio>>(
+      unit_t<_symbol, std::ratio_multiply<std::ratio<-1>, _exponent>, _type,
+             std::ratio<1>>{
           lhs / (rhs.raw_value() * (static_cast<_type>(_ratio::num) /
                                     static_cast<_type>(_ratio::den)))});
 }
@@ -518,12 +532,12 @@ operator/(const _type &lhs,
 template <typename _unit> struct is_unit_t : std::false_type {};
 
 /// template specialisation to check if a type is a unit_t (true if unit_t)
-template <char _symbol, int8_t _exponent, typename _ratio, typename _type>
+template <char _symbol, typename _exponent, typename _ratio, typename _type>
 struct is_unit_t<const unit_t<_symbol, _exponent, _type, _ratio>>
     : std::true_type {};
 
 /// non-const specialisation of check above
-template <char _symbol, int8_t _exponent, typename _ratio, typename _type>
+template <char _symbol, typename _exponent, typename _ratio, typename _type>
 struct is_unit_t<unit_t<_symbol, _exponent, _type, _ratio>> : std::true_type {};
 
 /// function to cast between two units of the same type
@@ -534,7 +548,7 @@ constexpr auto unit_cast(const _rhs_T &rhs) {
   static_assert(
       is_unit_t<_rhs_T>::value ||
           std::is_base_of<
-              unit_t<_rhs_T::symbol::value, _rhs_T::exponent::value,
+              unit_t<_rhs_T::symbol::value, typename _rhs_T::exponent,
                      typename _rhs_T::internal_type, typename _rhs_T::ratio>,
               _rhs_T>::value,
       "is of type unit_t or a derived class");
@@ -553,7 +567,7 @@ struct unit_with_common_ratio {
                                     typename _unit_rhs::internal_type>::value);
   static_assert(_unit_lhs::symbol::value == _unit_rhs::symbol::value);
   using type =
-      unit_t<_unit_lhs::symbol::value, _unit_lhs::exponent::value,
+      unit_t<_unit_lhs::symbol::value, typename _unit_lhs::exponent,
              typename _unit_lhs::internal_type,
              typename detail::ratio_gcd<typename _unit_lhs::ratio,
                                         typename _unit_rhs::ratio>::ratio>;
