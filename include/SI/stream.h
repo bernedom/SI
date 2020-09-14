@@ -16,7 +16,7 @@
 #include <istream>
 #include <ostream>
 
-template <char _symbol, int8_t _exponent, typename _type, typename _ratio>
+template <char _symbol, typename _exponent, typename _type, typename _ratio>
 std::ostream &
 operator<<(std::ostream &stream,
            const SI::detail::unit_t<_symbol, _exponent, _type, _ratio> &unit) {
@@ -25,7 +25,7 @@ operator<<(std::ostream &stream,
   return stream;
 }
 
-template <char _symbol, int8_t _exponent, typename _type, typename _ratio>
+template <char _symbol, typename _exponent, typename _type, typename _ratio>
 std::istream &
 operator>>(std::istream &stream,
            SI::detail::unit_t<_symbol, _exponent, _type, _ratio> &obj) {
@@ -42,7 +42,7 @@ operator>>(std::istream &stream,
 }
 
 namespace SI {
-template <char _symbol, int8_t _exponent, typename _type, typename _ratio>
+template <char _symbol, typename _exponent, typename _type, typename _ratio>
 std::string
 to_string(const SI::detail::unit_t<_symbol, _exponent, _type, _ratio> &value) {
   return std::to_string(value.raw_value())
