@@ -49,16 +49,17 @@ template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
  * @tparam _exponent the exponent to the unit (i.e. length ==  m^1, area == m^2,
  *volume = m^3)
  **/
-template <char _symbol, int8_t _exponent, typename _type,
+template <char _symbol, typename _exponent, typename _type,
           typename _ratio = std::ratio<1>>
 struct unit_t {
   static_assert(std::is_arithmetic<_type>::value,
                 "Type is an arithmetic value");
-  static_assert(_exponent != 0, "Exponent is non-zero");
+  static_assert(detail::is_ratio<_exponent>::value,
+                "_exponent is a ratio type");
   static_assert(detail::is_ratio<_ratio>::value, "_ratio is a std::ratio");
   using ratio = _ratio;
   using internal_type = _type;
-  using exponent = std::integral_constant<int8_t, _exponent>;
+  using exponent = _exponent;
   using symbol = std::integral_constant<char, _symbol>;
 
   /// Construct with value v
@@ -240,11 +241,13 @@ struct unit_t {
   constexpr unit_t operator*(const _type f) const { return {value_ * f}; }
 
   /// multiply with an unit of the same ratio
-  template <int8_t _rhs_exponent, typename _rhs_type>
+  template <typename _rhs_exponent, typename _rhs_type>
   constexpr auto operator*(
       const unit_t<_symbol, _rhs_exponent, _rhs_type, _ratio> &rhs) const {
 
-    return unit_t<_symbol, _rhs_exponent + _exponent, _type,
+    static_assert(detail::is_ratio<_rhs_exponent>::value,
+                  "rhs exponent is a ratio type");
+    return unit_t<_symbol, std::ratio_add<_rhs_exponent, _exponent>, _type,
                   std::ratio_multiply<ratio, _ratio>>{raw_value() *
                                                       rhs.raw_value()};
   }
@@ -253,10 +256,11 @@ struct unit_t {
   /// and different ratio
   /// the exponents this and rhs are added, the resulting ratio the ratio
   /// multiplied.
-  template <int8_t _rhs_exponent, typename _rhs_ratio, typename _rhs_type>
+  template <typename _rhs_exponent, typename _rhs_ratio, typename _rhs_type>
   constexpr auto operator*(
       const unit_t<_symbol, _rhs_exponent, _rhs_type, _rhs_ratio> &rhs) const {
-
+    static_assert(detail::is_ratio<_rhs_exponent>::value,
+                  "rhs exponent is a ratio type");
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
 
@@ -265,7 +269,7 @@ struct unit_t {
             std::ratio_equal<ratio, _rhs_ratio>::value,
         "Implicit ratio conversion disabled, convert before comparing");
 
-    return unit_t<_symbol, _exponent + _rhs_exponent, _type,
+    return unit_t<_symbol, std::ratio_add<_exponent, _rhs_exponent>, _type,
                   std::ratio_multiply<ratio, _rhs_ratio>>{value_ *
                                                           rhs.raw_value()};
   }

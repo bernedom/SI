@@ -84,5 +84,3 @@ TEMPLATE_TEST_CASE(
   STATIC_REQUIRE(
       std::is_same<result_type, unit_t<'X', 1, TestType, std::milli>>::value);
 }
-
-// TEST_CASE("GIVEN A unit ")
