@@ -228,4 +228,3 @@ TEST_CASE("GIVEN A multidigit number AND the number contains multiple digit "
   using number = Number<'1', '\'', '2', '\'', '4'>;
   STATIC_REQUIRE(number::value == 124);
 }
-
