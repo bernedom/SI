@@ -221,12 +221,12 @@ TEST_CASE("GIVEN a scaler of int64_t WHEN divided by an unit of "
 
 TEST_CASE("GIVEN a scaler of double WHEN divided by an unit of "
           "type float THEN value is implicitely converted") {
-  constexpr unit_t<'X', 1, float> v_float{2};
+  constexpr unit_t<'X', std::ratio<1>, float> v_float{2};
   constexpr double v_double{10};
   constexpr auto result = v_double / v_float;
 
-  STATIC_REQUIRE(
-      std::is_same<const unit_t<'X', -1, double>, decltype(result)>::value);
+  STATIC_REQUIRE(std::is_same<const unit_t<'X', std::ratio<-1>, double>,
+                              decltype(result)>::value);
 }
 
 TEST_CASE("GIVEN a declared unit of int32_t WHEN added to an unit of "
@@ -297,7 +297,9 @@ TEST_CASE("GIVEN to values of different type AND ratio is the same AND "
   constexpr auto result = SI::detail::cross_unit_divide<unit_Z_t>(v1, v2);
   STATIC_REQUIRE(std::is_same<decltype(result),
                               const unit_Z_t<int64_t, std::ratio<1>>>::value);
-  STATIC_REQUIRE(decltype(result)::exponent::value == 1);
+
+  STATIC_REQUIRE(std::ratio_equal<typename decltype(result)::exponent,
+                                  std::ratio<1>>::value);
 }
 
 TEST_CASE("GIVEN to values of different type AND ratio is the same "
@@ -309,7 +311,9 @@ TEST_CASE("GIVEN to values of different type AND ratio is the same "
   constexpr auto result = SI::detail::cross_unit_multiply<unit_Z_t>(v1, v2);
   STATIC_REQUIRE(std::is_same<decltype(result),
                               const unit_Z_t<int64_t, std::ratio<1>>>::value);
-  STATIC_REQUIRE(decltype(result)::exponent::value == 1);
+
+  STATIC_REQUIRE(std::ratio_equal<typename decltype(result)::exponent,
+                                  std::ratio<1>>::value);
 }
 
 TEST_CASE("GIVEN a unit with internal type of int32_t WHEN static_cast to unit "

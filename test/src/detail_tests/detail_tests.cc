@@ -137,8 +137,10 @@ using resulting_t = SI::detail::unit_t<'Y', std::ratio<1>, _type, _ratio>;
 
 TEST_CASE("GIVEN a value of an integral type AND a value of floating point "
           "type WHEN divided THEN result is of left hand type") {
-  constexpr SI::detail::unit_t<'X', 1, long double, std::ratio<1>> v1{1};
-  constexpr SI::detail::unit_t<'X', 1, int64_t, std::ratio<1>> v2{1};
+  constexpr SI::detail::unit_t<'X', std::ratio<1>, long double, std::ratio<1>>
+      v1{1};
+  constexpr SI::detail::unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>> v2{
+      1};
 
   constexpr auto result = SI::detail::cross_unit_multiply<resulting_t>(v1, v2);
 

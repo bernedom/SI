@@ -24,7 +24,8 @@ TEST_CASE("String operations") {
     BENCHMARK_ADVANCED("conversion by streams without construction")
     (Catch::Benchmark::Chronometer meter) {
 
-      constexpr SI::detail::unit_t<'X', 1, int64_t, std::ratio<1>> v{100};
+      constexpr SI::detail::unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>>
+          v{100};
       std::stringstream ss;
 
       meter.measure([&] {
@@ -36,7 +37,8 @@ TEST_CASE("String operations") {
     BENCHMARK_ADVANCED("conversion by streams including construction")
     (Catch::Benchmark::Chronometer meter) {
 
-      constexpr SI::detail::unit_t<'X', 1, int64_t, std::ratio<1>> v{100};
+      constexpr SI::detail::unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>>
+          v{100};
 
       meter.measure([&] {
         std::stringstream ss;
@@ -48,7 +50,8 @@ TEST_CASE("String operations") {
     BENCHMARK_ADVANCED("conversion by to_string")
     (Catch::Benchmark::Chronometer meter) {
 
-      constexpr SI::detail::unit_t<'X', 1, int64_t, std::ratio<1>> v{100};
+      constexpr SI::detail::unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>>
+          v{100};
 
       meter.measure([&] { return SI::to_string(v); });
     };
