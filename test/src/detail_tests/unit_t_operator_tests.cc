@@ -223,7 +223,8 @@ TEMPLATE_TEST_CASE("GIVEN two units with different exponents WHEN divided THEN "
 
   constexpr auto result = v1 / v2;
 
-  STATIC_REQUIRE(decltype(result)::exponent::value == 1);
+  STATIC_REQUIRE(std::ratio_equal<typename decltype(result)::exponent,
+                                  std::ratio<1>>::value);
 }
 
 TEMPLATE_TEST_CASE("GIVEN two units with same exponent AND same ratio WHEN "
@@ -316,7 +317,8 @@ TEMPLATE_TEST_CASE(
   constexpr unit_t<'X', std::ratio<1>, TestType, std::ratio<1>> v2{1};
   constexpr auto result = v1 / v2;
 
-  STATIC_REQUIRE(decltype(result)::exponent::value == -1);
+  STATIC_REQUIRE(std::ratio_equal<typename decltype(result)::exponent,
+                                  std::ratio<-1>>::value);
 }
 
 TEST_CASE("GIVEN a unit with ratio<1> and a scalar AND internal type is "
@@ -349,7 +351,7 @@ TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
   constexpr unit_t<'X', std::ratio<1>, int64_t, std::deca> v2{2};
 
   constexpr auto result = v1 / v2;
-  constexpr unit_t<'X', -std::ratio<1>, int64_t, std::deca> expected{5};
+  constexpr unit_t<'X', std::ratio<-1>, int64_t, std::deca> expected{5};
   STATIC_REQUIRE(v2.raw_value() == 2);
   STATIC_REQUIRE(std::ratio_equal<std::deca, decltype(result)::ratio>::value);
   STATIC_REQUIRE(result.raw_value() == 5);
@@ -364,7 +366,7 @@ TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
   constexpr unit_t<'X', std::ratio<1>, long double, std::deca> v2{2};
 
   constexpr auto result = v1 / v2;
-  constexpr unit_t<'X', -1, long double, std::deca> expected{5};
+  constexpr unit_t<'X', std::ratio<-1>, long double, std::deca> expected{5};
   STATIC_REQUIRE(v2.raw_value() == 2);
   STATIC_REQUIRE(std::ratio_equal<std::deca, decltype(result)::ratio>::value);
   STATIC_REQUIRE(epsEqual(result.raw_value(), 5.0L));

@@ -5,9 +5,9 @@
 using namespace SI::detail;
 
 namespace {
-using ratio_one_unit = unit_t<'X', 1, int64_t, std::ratio<1>>;
-using ratio_kilo_unit = unit_t<'X', 1, int64_t, std::kilo>;
-using ratio_milli_unit = unit_t<'X', 1, int64_t, std::milli>;
+using ratio_one_unit = unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>>;
+using ratio_kilo_unit = unit_t<'X', std::ratio<1>, int64_t, std::kilo>;
+using ratio_milli_unit = unit_t<'X', std::ratio<1>, int64_t, std::milli>;
 } // namespace
 
 TEST_CASE("Unit_assignment") {
@@ -192,7 +192,8 @@ TEST_CASE("Unit_assignment") {
     (Catch::Benchmark::Chronometer meter) {
       std::vector<int64_t> dividend(10000);
       std::vector<ratio_kilo_unit> divisor(dividend.size());
-      std::vector<unit_t<'X', -1, int64_t, std::kilo>> result(dividend.size());
+      std::vector<unit_t<'X', std::ratio<-1>, int64_t, std::kilo>> result(
+          dividend.size());
       for (size_t i = 0; i < dividend.size(); ++i) {
         dividend[i] = i + 10000;
         divisor[i] = ratio_kilo_unit(static_cast<int64_t>(i + 1));
@@ -209,11 +210,13 @@ TEST_CASE("Unit_assignment") {
     BENCHMARK_ADVANCED("long double by unit division")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<long double> dividend(10000);
-      std::vector<unit_t<'X', 1, long double, std::kilo>> divisor(10000);
-      std::vector<unit_t<'X', -1, long double, std::kilo>> result(10000);
+      std::vector<unit_t<'X', std::ratio<1>, long double, std::kilo>> divisor(
+          10000);
+      std::vector<unit_t<'X', std::ratio<-1>, long double, std::kilo>> result(
+          10000);
       for (size_t i = 0; i < dividend.size(); ++i) {
         dividend[i] = static_cast<long double>(i + 10000);
-        divisor[i] = unit_t<'X', 1, long double, std::kilo>{
+        divisor[i] = unit_t<'X', std::ratio<1>, long double, std::kilo>{
             static_cast<long double>(i + 1)};
       }
 
