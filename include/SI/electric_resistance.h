@@ -73,7 +73,7 @@ constexpr auto operator/(
     const _type scalar,
     const detail::unit_t<'G', std::ratio<1>, _type, _ratio> &conductance) {
   return electric_resistance_t<_type, std::ratio<_ratio::den, _ratio::num>>{
-      scalar / conductance.raw_value()};
+      scalar / conductance.value()};
 }
 } // namespace detail
 

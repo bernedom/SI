@@ -20,8 +20,7 @@ template <char _symbol, typename _exponent, typename _type, typename _ratio>
 std::ostream &
 operator<<(std::ostream &stream,
            const SI::detail::unit_t<_symbol, _exponent, _type, _ratio> &unit) {
-  stream << unit.raw_value()
-         << SI::unit_symbol<_symbol, _ratio, _exponent>::str;
+  stream << unit.value() << SI::unit_symbol<_symbol, _ratio, _exponent>::str;
   return stream;
 }
 
@@ -37,7 +36,7 @@ operator>>(std::istream &stream,
       0) {
     stream.setstate(std::ios::failbit);
   }
-  obj.set_raw_value(v);
+  obj.setValue(v);
   return stream;
 }
 
@@ -45,7 +44,7 @@ namespace SI {
 template <char _symbol, typename _exponent, typename _type, typename _ratio>
 std::string
 to_string(const SI::detail::unit_t<_symbol, _exponent, _type, _ratio> &value) {
-  return std::to_string(value.raw_value())
+  return std::to_string(value.value())
       .append(SI::unit_symbol<_symbol, _ratio, _exponent>::str);
 }
 } // namespace SI

@@ -26,7 +26,7 @@ TEMPLATE_TEST_CASE(
   v2 = v1;
 
   REQUIRE(v1 == v2);
-  REQUIRE(v2.raw_value() == 1);
+  REQUIRE(v2.value() == 1);
 }
 
 TEMPLATE_TEST_CASE(
@@ -49,7 +49,7 @@ TEMPLATE_TEST_CASE(
   unit_t<'X', std::ratio<1>, TestType, std::kilo> v2{v1};
 
   REQUIRE(v1 == v2);
-  REQUIRE(v2.raw_value() == 1);
+  REQUIRE(v2.value() == 1);
 }
 
 TEMPLATE_TEST_CASE(
@@ -72,7 +72,7 @@ TEMPLATE_TEST_CASE(
   unit_t<'X', std::ratio<1>, TestType, std::kilo> v2{std::move(v1)};
 
   REQUIRE(v1 == v2);
-  REQUIRE(v2.raw_value() == 1);
+  REQUIRE(v2.value() == 1);
 }
 
 TEMPLATE_TEST_CASE("GIVEN two values of the same unit type WHEN move assigned"
@@ -99,7 +99,7 @@ TEMPLATE_TEST_CASE(
   v2 = std::move(v1);
 
   REQUIRE(v1 == v2);
-  REQUIRE(v2.raw_value() == 1);
+  REQUIRE(v2.value() == 1);
 }
 
 TEMPLATE_TEST_CASE(
@@ -167,7 +167,7 @@ TEST_CASE("GIVEN a unit WHEN divided by as scalar THEN result is correct") {
   constexpr auto r = v / 2;
   constexpr unit_t<'X', std::ratio<1>, int64_t, std::milli> expected{15};
 
-  STATIC_REQUIRE(r.raw_value() == 15);
+  STATIC_REQUIRE(r.value() == 15);
   STATIC_REQUIRE(r == expected);
   STATIC_REQUIRE(std::is_same<decltype(r), decltype(v)>::value);
 }
@@ -186,7 +186,7 @@ TEST_CASE(
   constexpr auto result = v1 * v2;
 
   STATIC_REQUIRE(result == unit_t<'X', std::ratio<2>, int64_t, std::milli>{60});
-  STATIC_REQUIRE(result.raw_value() == 60);
+  STATIC_REQUIRE(result.value() == 60);
   STATIC_REQUIRE(
       std::ratio_equal<typename decltype(result)::ratio, std::milli>::value);
 }
@@ -209,7 +209,7 @@ TEST_CASE(
       v1 *
       unit_cast<unit_t<'X', std::ratio<1>, long double, std::ratio<1>>>(v2);
 
-  STATIC_REQUIRE(epsEqual(result.raw_value(), 40.0L));
+  STATIC_REQUIRE(epsEqual(result.value(), 40.0L));
   STATIC_REQUIRE(result == expected);
   STATIC_REQUIRE(std::ratio_equal<typename decltype(result)::ratio,
                                   typename std::milli>::value);
@@ -264,7 +264,7 @@ TEST_CASE("GIVEN two units with different exponents AND different ratios WHEN  "
       std::is_same<decltype(result),
                    const SI::detail::unit_t<'X', std::ratio<1>, int64_t,
                                             std::kilo>>::value);
-  STATIC_REQUIRE(result.raw_value() == 2);
+  STATIC_REQUIRE(result.value() == 2);
 }
 
 TEST_CASE("GIVEN two units with different exponents AND same ratios WHEN "
@@ -278,7 +278,7 @@ TEST_CASE("GIVEN two units with different exponents AND same ratios WHEN "
       std::is_same<decltype(result),
                    const SI::detail::unit_t<'X', std::ratio<1>, int64_t,
                                             std::ratio<1>>>::value);
-  STATIC_REQUIRE(result.raw_value() == 2);
+  STATIC_REQUIRE(result.value() == 2);
 }
 
 TEST_CASE("GIVEN two units with the same ratio exponent 1 AND internal type is "
@@ -329,7 +329,7 @@ TEST_CASE("GIVEN a unit with ratio<1> and a scalar AND internal type is "
   constexpr unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>> v2{2};
   constexpr auto result = v1 / v2;
 
-  STATIC_REQUIRE(result.raw_value() == 500);
+  STATIC_REQUIRE(result.value() == 500);
 }
 
 TEST_CASE("GIVEN a unit with ratio<1> and a scalar AND internal type is "
@@ -340,7 +340,7 @@ TEST_CASE("GIVEN a unit with ratio<1> and a scalar AND internal type is "
   constexpr unit_t<'X', std::ratio<1>, long double, std::ratio<1>> v2{2};
   constexpr auto result = v1 / v2;
 
-  STATIC_REQUIRE(epsEqual(result.raw_value(), 500.0L));
+  STATIC_REQUIRE(epsEqual(result.value(), 500.0L));
 }
 
 TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
@@ -352,9 +352,9 @@ TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
 
   constexpr auto result = v1 / v2;
   constexpr unit_t<'X', std::ratio<-1>, int64_t, std::deca> expected{5};
-  STATIC_REQUIRE(v2.raw_value() == 2);
+  STATIC_REQUIRE(v2.value() == 2);
   STATIC_REQUIRE(std::ratio_equal<std::deca, decltype(result)::ratio>::value);
-  STATIC_REQUIRE(result.raw_value() == 5);
+  STATIC_REQUIRE(result.value() == 5);
   STATIC_REQUIRE(result == expected);
 }
 
@@ -367,9 +367,9 @@ TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
 
   constexpr auto result = v1 / v2;
   constexpr unit_t<'X', std::ratio<-1>, long double, std::deca> expected{5};
-  STATIC_REQUIRE(v2.raw_value() == 2);
+  STATIC_REQUIRE(v2.value() == 2);
   STATIC_REQUIRE(std::ratio_equal<std::deca, decltype(result)::ratio>::value);
-  STATIC_REQUIRE(epsEqual(result.raw_value(), 5.0L));
+  STATIC_REQUIRE(epsEqual(result.value(), 5.0L));
   STATIC_REQUIRE(result == expected);
 }
 
@@ -379,7 +379,7 @@ TEMPLATE_TEST_CASE("GIVEN a unit WHEN added to itself THEN resulting value is "
   constexpr unit_t<'X', std::ratio<1>, TestType, std::ratio<1>> v1{1};
   constexpr auto result = v1 + v1;
 
-  STATIC_REQUIRE(result.raw_value() == 2);
+  STATIC_REQUIRE(result.value() == 2);
   STATIC_REQUIRE(std::is_same<decltype(v1), decltype(result)>::value);
 }
 
@@ -433,7 +433,7 @@ TEMPLATE_TEST_CASE(
   constexpr auto result = v1 + v2;
   STATIC_REQUIRE(std::ratio_equal<typename decltype(result)::ratio,
                                   typename decltype(v1)::ratio>::value == true);
-  STATIC_REQUIRE(result.raw_value() == 1001);
+  STATIC_REQUIRE(result.value() == 1001);
 }
 
 TEMPLATE_TEST_CASE("GIVEN two units with value difference "
@@ -565,7 +565,7 @@ TEST_CASE("GIVEN unit and scalar WHEN multiplied with assignment "
 
   v1 *= scalar;
 
-  REQUIRE(v1.raw_value() == 14);
+  REQUIRE(v1.value() == 14);
 }
 
 TEST_CASE("GIVEN a unit and a scalar WHEN divided with assigment THEN result "
@@ -574,7 +574,7 @@ TEST_CASE("GIVEN a unit and a scalar WHEN divided with assigment THEN result "
   constexpr int64_t scalar{2};
 
   v1 /= scalar;
-  REQUIRE(v1.raw_value() == 5);
+  REQUIRE(v1.value() == 5);
   REQUIRE(unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>>{5} == v1);
 }
 
@@ -585,7 +585,7 @@ TEST_CASE("GIVEN two units with same ratio WHEN added with assignment "
 
   v1 += v2;
 
-  REQUIRE(v1.raw_value() == 5);
+  REQUIRE(v1.value() == 5);
 }
 
 TEST_CASE("GIVEN two units WHEN added with assignment "
@@ -595,7 +595,7 @@ TEST_CASE("GIVEN two units WHEN added with assignment "
 
   v1 += v2;
 
-  REQUIRE(v1.raw_value() == 3002);
+  REQUIRE(v1.value() == 3002);
 }
 
 TEST_CASE("GIVEN two units with same ratio WHEN subtracted with assignment "
@@ -606,7 +606,7 @@ TEST_CASE("GIVEN two units with same ratio WHEN subtracted with assignment "
 
   v1 -= v2;
 
-  REQUIRE(v1.raw_value() == 1);
+  REQUIRE(v1.value() == 1);
 }
 
 TEST_CASE("GIVEN two units WHEN subtracted with assignment THEN result is "
@@ -616,7 +616,7 @@ TEST_CASE("GIVEN two units WHEN subtracted with assignment THEN result is "
 
   v1 -= v2;
 
-  REQUIRE(v1.raw_value() == 1);
+  REQUIRE(v1.value() == 1);
 }
 
 TEST_CASE("GIVEN unit WHEN negated "
@@ -624,7 +624,7 @@ TEST_CASE("GIVEN unit WHEN negated "
   constexpr unit_t<'X', std::ratio<1>, int64_t, std::kilo> v1{2};
   constexpr unit_t<'X', std::ratio<1>, int64_t, std::kilo> v2{-v1};
 
-  STATIC_REQUIRE(v2.raw_value() == -2);
+  STATIC_REQUIRE(v2.value() == -2);
 }
 
 TEST_CASE(
@@ -672,5 +672,5 @@ TEST_CASE(
       almost_a_kilo;
 
   STATIC_REQUIRE(zero_kilo == kilo_value);
-  STATIC_REQUIRE(kilo_value.raw_value() == 0);
+  STATIC_REQUIRE(kilo_value.value() == 0);
 }

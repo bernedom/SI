@@ -21,7 +21,7 @@ TEST_CASE("GIVEN a declared unit of type int64_t WHEN copy-constructed "
   constexpr unit_t<'X', std::ratio<1>, int64_t> v_int(v_int8);
 
   STATIC_REQUIRE(std::is_same<decltype(v_int)::internal_type, int64_t>::value);
-  STATIC_REQUIRE(v_int.raw_value() == 1);
+  STATIC_REQUIRE(v_int.value() == 1);
 }
 
 TEST_CASE("GIVEN a declared unit of type int64_t WHEN copy-constructed "
@@ -32,7 +32,7 @@ TEST_CASE("GIVEN a declared unit of type int64_t WHEN copy-constructed "
   constexpr unit_t<'X', std::ratio<1>, int64_t, std::milli> v_int(v_int8);
 
   STATIC_REQUIRE(std::is_same<decltype(v_int)::internal_type, int64_t>::value);
-  STATIC_REQUIRE(v_int.raw_value() == 1000);
+  STATIC_REQUIRE(v_int.value() == 1000);
 }
 
 TEST_CASE("GIVEN a declared unit of type int64_t WHEN move-constructed "
@@ -42,7 +42,7 @@ TEST_CASE("GIVEN a declared unit of type int64_t WHEN move-constructed "
   constexpr unit_t<'X', std::ratio<1>, int64_t> v_int(std::move(v_int8));
 
   STATIC_REQUIRE(std::is_same<decltype(v_int)::internal_type, int64_t>::value);
-  STATIC_REQUIRE(v_int.raw_value() == 1);
+  STATIC_REQUIRE(v_int.value() == 1);
 }
 
 TEST_CASE("GIVEN a declared unit of type int64_t WHEN move-constructed "
@@ -54,7 +54,7 @@ TEST_CASE("GIVEN a declared unit of type int64_t WHEN move-constructed "
       std::move(v_int8));
 
   STATIC_REQUIRE(std::is_same<decltype(v_int)::internal_type, int64_t>::value);
-  STATIC_REQUIRE(v_int.raw_value() == 1000);
+  STATIC_REQUIRE(v_int.value() == 1000);
 }
 
 TEST_CASE("GIVEN a declared unit of int32_t WHEN assigned a unit of type "
@@ -64,7 +64,7 @@ TEST_CASE("GIVEN a declared unit of int32_t WHEN assigned a unit of type "
 
   STATIC_REQUIRE(
       std::is_same<decltype(v_int64)::internal_type, int64_t>::value);
-  STATIC_REQUIRE(v_int32.raw_value() == v_int64.raw_value());
+  STATIC_REQUIRE(v_int32.value() == v_int64.value());
 }
 
 TEST_CASE("GIVEN a declared unit of int32_t WHEN compared with an unit of type "
@@ -171,7 +171,7 @@ TEST_CASE("GIVEN a declared unit of int64_t WHEN divided by scalar of "
 
   STATIC_REQUIRE(std::is_same<unit_t<'X', std::ratio<1>, int64_t>,
                               decltype(result)>::value);
-  REQUIRE(result.raw_value() == 5);
+  REQUIRE(result.value() == 5);
   REQUIRE(result == v_int64);
 }
 
@@ -324,7 +324,7 @@ TEST_CASE("GIVEN a unit with internal type of int32_t WHEN static_cast to unit "
 
   STATIC_REQUIRE(std::is_same<const unit_t<'X', std::ratio<1>, int64_t>,
                               decltype(result)>::value);
-  STATIC_REQUIRE(result.raw_value() == 2);
+  STATIC_REQUIRE(result.value() == 2);
 }
 
 TEST_CASE("GIVEN a unit with internal type of int32_t WHEN static_cast to unit "
@@ -336,5 +336,5 @@ TEST_CASE("GIVEN a unit with internal type of int32_t WHEN static_cast to unit "
   STATIC_REQUIRE(
       std::is_same<const unit_t<'X', std::ratio<1>, int64_t, std::milli>,
                    decltype(result)>::value);
-  STATIC_REQUIRE(result.raw_value() == 2000);
+  STATIC_REQUIRE(result.value() == 2000);
 }

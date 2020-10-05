@@ -217,14 +217,14 @@ TEST_CASE("GIVEN value for electric charge WHEN divided by time THEN result is "
 }
 
 TEST_CASE("GIVEN values for I and T AND ratio is the same WHEN multiplied THEN "
-          "resulting value is I.raw_value() * T.raw_value()") {
+          "resulting value is I.value() * T.value()") {
   constexpr auto current = 1_A;
   constexpr auto time = 2_s;
   constexpr auto result = current * time;
   constexpr auto result_commutative = time * current;
 
-  STATIC_REQUIRE(result.raw_value() == 2);
-  STATIC_REQUIRE(result_commutative.raw_value() == 2);
+  STATIC_REQUIRE(result.value() == 2);
+  STATIC_REQUIRE(result_commutative.value() == 2);
 }
 
 TEST_CASE("GIVEN values for I and T AND ratio is not the same WHEN multiplied "
@@ -236,12 +236,12 @@ TEST_CASE("GIVEN values for I and T AND ratio is not the same WHEN multiplied "
 
   STATIC_REQUIRE(std::ratio_equal<decltype(result)::ratio, std::milli>::value);
 
-  STATIC_REQUIRE(result.raw_value() == 2000);
+  STATIC_REQUIRE(result.value() == 2000);
 
   STATIC_REQUIRE(std::ratio_equal<decltype(result_commutative)::ratio,
                                   decltype(result)::ratio>::value);
 
-  STATIC_REQUIRE(result_commutative.raw_value() == 2000);
+  STATIC_REQUIRE(result_commutative.value() == 2000);
 
   STATIC_REQUIRE(result_commutative == result);
 }
@@ -255,7 +255,7 @@ TEST_CASE("GIVEN electric charge Q with ratio<1> WHEN divided by electric "
 
   STATIC_REQUIRE(is_same_ignore_const<decltype(result), decltype(1_s)>::value);
 
-  STATIC_REQUIRE(result.raw_value() == 2);
+  STATIC_REQUIRE(result.value() == 2);
 }
 
 TEST_CASE(
@@ -267,7 +267,7 @@ TEST_CASE(
   constexpr auto result = charge / current;
 
   STATIC_REQUIRE(std::ratio_equal<decltype(result)::ratio, std::mega>::value);
-  STATIC_REQUIRE(result.raw_value() ==
+  STATIC_REQUIRE(result.value() ==
                  0); // result would be 2000 s which is 0.002 Mega-Seconds
 }
 
@@ -280,7 +280,7 @@ TEST_CASE("GIVEN electric charge Q with ratio<1000000,1>  AND type is floating "
   constexpr auto result = charge / current;
 
   STATIC_REQUIRE(std::ratio_equal<decltype(result)::ratio, std::mega>::value);
-  STATIC_REQUIRE(SI::detail::epsEqual(result.raw_value(), 0.002L));
+  STATIC_REQUIRE(SI::detail::epsEqual(result.value(), 0.002L));
 }
 
 TEST_CASE("GIVEN electric charge Q with ratio<1> WHEN divided by time T in "
@@ -302,7 +302,7 @@ TEST_CASE("GIVEN electric charge Q with ratio<1000,1> WHEN divided by time T "
   STATIC_REQUIRE(
       std::ratio_equal<decltype(result)::ratio, std::ratio<50, 3>>::value);
 
-  STATIC_REQUIRE(result.raw_value() == 2);
+  STATIC_REQUIRE(result.value() == 2);
 }
 
 TEST_CASE("GIVEN a 1 atto Coulomb WHEN passed to a streaming operator THEN "

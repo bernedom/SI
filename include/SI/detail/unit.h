@@ -70,7 +70,7 @@ struct unit_t {
   /// construct from other unit with implicitely convertible type
   template <typename _type_rhs>
   constexpr unit_t(const unit_t<_symbol, _exponent, _type_rhs, _ratio> &rhs)
-      : value_(rhs.raw_value()) {
+      : value_(rhs.value()) {
     static_assert(std::is_convertible<_type_rhs, _type>::value,
                   "Internal representation is convertible");
   }
@@ -79,8 +79,8 @@ struct unit_t {
 
   template <typename _rhs_type, typename _rhs_ratio>
   constexpr unit_t(const unit_t<_symbol, _exponent, _rhs_type, _rhs_ratio> &rhs)
-      : value_{unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs)
-                   .raw_value()} {
+      : value_{
+            unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).value()} {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
     static_assert(
@@ -93,7 +93,7 @@ struct unit_t {
   constexpr unit_t(unit_t<_symbol, _exponent, _type, _rhs_ratio> &&rhs)
       : value_{
             std::move(unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs)
-                          .raw_value())} {
+                          .value())} {
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
     static_assert(
@@ -103,9 +103,10 @@ struct unit_t {
   }
 
   /// returns the stored value as raw type
-  /// @todo rename to just value() and deprecate raw_value()
-  constexpr _type raw_value() const { return value_; }
-  void set_raw_value(_type v) { value_ = v; }
+  constexpr _type value() const { return value_; }
+
+  ///@todo set as friend to the stream-function
+  void setValue(_type v) { value_ = v; }
 
   /// Assignment for same ratio
   constexpr unit_t &operator=(const unit_t &rhs) = default;
@@ -172,11 +173,11 @@ struct unit_t {
 
     if constexpr (std::is_integral<_type>::value) {
 
-      return unit_cast<gcd_unit>(rhs).raw_value() ==
-             unit_cast<gcd_unit>(*this).raw_value();
+      return unit_cast<gcd_unit>(rhs).value() ==
+             unit_cast<gcd_unit>(*this).value();
     } else {
-      return detail::epsEqual(unit_cast<gcd_unit>(rhs).raw_value(),
-                              unit_cast<gcd_unit>(*this).raw_value());
+      return detail::epsEqual(unit_cast<gcd_unit>(rhs).value(),
+                              unit_cast<gcd_unit>(*this).value());
     }
   }
 
@@ -202,8 +203,8 @@ struct unit_t {
     using gcd_unit = typename unit_with_common_ratio<
         typename std::remove_reference<decltype(rhs)>::type,
         typename std::remove_reference<decltype(*this)>::type>::type;
-    return unit_cast<gcd_unit>(*this).raw_value() <
-           unit_cast<gcd_unit>(rhs).raw_value();
+    return unit_cast<gcd_unit>(*this).value() <
+           unit_cast<gcd_unit>(rhs).value();
   }
 
   template <typename _rhs_type, typename _rhs_ratio>
@@ -226,8 +227,8 @@ struct unit_t {
         typename std::remove_reference<decltype(rhs)>::type,
         typename std::remove_reference<decltype(*this)>::type>::type;
 
-    return unit_cast<gcd_unit>(*this).raw_value() >
-           unit_cast<gcd_unit>(rhs).raw_value();
+    return unit_cast<gcd_unit>(*this).value() >
+           unit_cast<gcd_unit>(rhs).value();
   }
 
   template <typename _rhs_type, typename _rhs_ratio>
@@ -247,8 +248,7 @@ struct unit_t {
     static_assert(detail::is_ratio<_rhs_exponent>::value,
                   "rhs exponent is a ratio type");
     return unit_t<_symbol, std::ratio_add<_rhs_exponent, _exponent>, _type,
-                  std::ratio_multiply<ratio, _ratio>>{raw_value() *
-                                                      rhs.raw_value()};
+                  std::ratio_multiply<ratio, _ratio>>{value() * rhs.value()};
   }
 
   /// multiplication multiply with a same unit, with different exponent
@@ -269,8 +269,7 @@ struct unit_t {
         "Implicit ratio conversion disabled, convert before comparing");
 
     return unit_t<_symbol, std::ratio_add<_exponent, _rhs_exponent>, _type,
-                  std::ratio_multiply<ratio, _rhs_ratio>>{value_ *
-                                                          rhs.raw_value()};
+                  std::ratio_multiply<ratio, _rhs_ratio>>{value_ * rhs.value()};
   }
 
   /// multiply with a non-unit scalar
@@ -296,7 +295,7 @@ struct unit_t {
     return unit_t<_symbol,
                   std::ratio_subtract<_exponent, typename rhs_t::exponent>,
                   _type, std::ratio_divide<ratio, _ratio>>{value_ /
-                                                           rhs.raw_value()};
+                                                           rhs.value()};
   }
 
   /// divide with a same unit but different ratios
@@ -317,15 +316,14 @@ struct unit_t {
         "Implicit ratio conversion disabled, convert before dividing");
 
     return unit_t<_symbol, std::ratio_subtract<exponent, _rhs_exponent>, _type,
-                  std::ratio_divide<ratio, _rhs_ratio>>{value_ /
-                                                        rhs.raw_value()};
+                  std::ratio_divide<ratio, _rhs_ratio>>{value_ / rhs.value()};
   }
 
   /// divide whit same unit result is a scalar
   template <typename _rhs_type>
   constexpr _type
   operator/(const unit_t<_symbol, _exponent, _rhs_type, _ratio> &rhs) {
-    return raw_value() / rhs.raw_value();
+    return value() / rhs.value();
   }
 
   /// if the same units of the same exponent but different ratio are divided
@@ -372,13 +370,13 @@ struct unit_t {
         "Implicit ratio conversion disabled, convert before adding values");
 
     return unit_t{
-        raw_value() +
-        unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).raw_value()};
+        value() +
+        unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).value()};
   }
 
   /// add-assign value of the same unit
   constexpr unit_t &operator+=(const unit_t &rhs) {
-    value_ += rhs.raw_value();
+    value_ += rhs.value();
     return *this;
   }
 
@@ -396,8 +394,7 @@ struct unit_t {
             std::ratio_equal<ratio, _rhs_ratio>::value,
         "Implicit ratio conversion disabled, convert before adding values");
 
-    value_ +=
-        unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).raw_value();
+    value_ += unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).value();
 
     return *this;
   }
@@ -415,13 +412,13 @@ struct unit_t {
         "Implicit ratio conversion disabled, convert before subtracting");
 
     return unit_t{
-        raw_value() +
-        -unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).raw_value()};
+        value() +
+        -unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).value()};
   }
 
   /// Subtract-assign value of the same unit
   constexpr unit_t &operator-=(const unit_t &rhs) {
-    value_ -= rhs.raw_value();
+    value_ -= rhs.value();
     return *this;
   }
 
@@ -439,8 +436,7 @@ struct unit_t {
             std::ratio_equal<ratio, _rhs_ratio>::value,
         "Implicit ratio conversion disabled, convert before adding values");
 
-    value_ -=
-        unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).raw_value();
+    value_ -= unit_cast<unit_t<_symbol, _exponent, _type, _ratio>>(rhs).value();
 
     return *this;
   }
@@ -497,8 +493,7 @@ operator/(const _type &lhs,
   return unit_cast<unit_t<
       _symbol, std::ratio_multiply<std::ratio<-1>, _exponent>, _type, _ratio>>(
       unit_t<_symbol, std::ratio_multiply<std::ratio<-1>, _exponent>, _type,
-             std::ratio<1>>{lhs /
-                            (rhs.raw_value() * (_ratio::num / _ratio::den))});
+             std::ratio<1>>{lhs / (rhs.value() * (_ratio::num / _ratio::den))});
 }
 
 /// operator to divide primitive type by unit encapsulating the same type
@@ -520,9 +515,9 @@ operator/(const _type &lhs,
   return unit_cast<unit_t<
       _symbol, std::ratio_multiply<std::ratio<-1>, _exponent>, _type, _ratio>>(
       unit_t<_symbol, std::ratio_multiply<std::ratio<-1>, _exponent>, _type,
-             std::ratio<1>>{
-          lhs / (rhs.raw_value() * (static_cast<_type>(_ratio::num) /
-                                    static_cast<_type>(_ratio::den)))});
+             std::ratio<1>>{lhs /
+                            (rhs.value() * (static_cast<_type>(_ratio::num) /
+                                            static_cast<_type>(_ratio::den)))});
 }
 
 /// helper template to check if a type is a unit_t (false for all other types)
@@ -553,7 +548,7 @@ constexpr auto unit_cast(const _rhs_T &rhs) {
       std::ratio_divide<typename _rhs_T::ratio, typename _target_type::ratio>;
 
   return _target_type(
-      ((rhs.raw_value() * conversion_ratio::num) / conversion_ratio::den));
+      ((rhs.value() * conversion_ratio::num) / conversion_ratio::den));
 }
 
 template <typename _unit_lhs, typename _unit_rhs>
@@ -586,7 +581,7 @@ constexpr auto cross_unit_divide(const _unit_lhs &lhs, const _unit_rhs &rhs) {
   using resulting_ratio = typename std::ratio_divide<typename _unit_lhs::ratio,
                                                      typename _unit_rhs::ratio>;
   return _resulting_unit<typename _unit_lhs::internal_type, resulting_ratio>(
-      lhs.raw_value() / rhs.raw_value());
+      lhs.value() / rhs.value());
 }
 /// multiply a value of a unit witn another value of a possibly different
 /// value resulting in a value of a new type with exponent 1 the internal type
@@ -606,7 +601,7 @@ constexpr auto cross_unit_multiply(const _unit_lhs &lhs, const _unit_rhs &rhs) {
       typename std::ratio_multiply<typename _unit_lhs::ratio,
                                    typename _unit_rhs::ratio>;
   return _resulting_unit<typename _unit_lhs::internal_type, resulting_ratio>(
-      lhs.raw_value() * rhs.raw_value());
+      lhs.value() * rhs.value());
 }
 
 } // namespace SI::detail

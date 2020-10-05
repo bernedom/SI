@@ -201,7 +201,7 @@ TEST_CASE("Unit_assignment") {
 
       meter.measure([&] {
         for (size_t i = 0; i < divisor.size(); ++i) {
-          REQUIRE(divisor[i].raw_value() > 0);
+          REQUIRE(divisor[i].value() > 0);
           result[i] = dividend[i] / divisor[i];
         }
         return result;

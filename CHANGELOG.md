@@ -3,6 +3,7 @@
 ## 2.0.0
 
 *   Support for fractions as exponents
+*   Rename access to stored scalar values to `value()` (from previously `raw_value()`)
 
 ## 1.7.6
 

@@ -45,7 +45,7 @@ TEST_CASE("GIVEN a value AND ratio is small AND type is integral WHEN "
   constexpr auto result =
       unit_cast<unit_t<'X', std::ratio<1>, int64_t, std::kilo>>(v1);
 
-  STATIC_REQUIRE(result.raw_value() == 0);
+  STATIC_REQUIRE(result.value() == 0);
 }
 TEST_CASE(
     "GIVEN a value AND ratio is small AND type is double WHEN "
@@ -69,7 +69,7 @@ TEMPLATE_TEST_CASE(
   STATIC_REQUIRE(
       std::is_same<decltype(result), const unit_t<'X', std::ratio<1>, TestType,
                                                   std::ratio<1>>>::value);
-  STATIC_REQUIRE(result.raw_value() == 1);
+  STATIC_REQUIRE(result.value() == 1);
 }
 
 TEMPLATE_TEST_CASE(
