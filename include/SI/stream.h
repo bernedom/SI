@@ -36,7 +36,7 @@ operator>>(std::istream &stream,
       0) {
     stream.setstate(std::ios::failbit);
   }
-  obj.setValue(v);
+  obj.value_ = v;
   return stream;
 }
 

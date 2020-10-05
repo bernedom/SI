@@ -22,6 +22,19 @@
 #include <ratio>
 #include <type_traits>
 
+namespace SI::detail
+{
+  // fwd declaration
+  template <char _symbol, typename _exponent, typename _type,
+          typename _ratio> struct unit_t;
+}
+
+// forward declaration
+template <char _symbol, typename _exponent, typename _type, typename _ratio>
+std::istream &
+operator>>(std::istream &stream,
+           SI::detail::unit_t<_symbol, _exponent, _type, _ratio> &obj);
+
 /// Namespace containing all SI units
 namespace SI::detail {
 
@@ -105,8 +118,7 @@ struct unit_t {
   /// returns the stored value as raw type
   constexpr _type value() const { return value_; }
 
-  ///@todo set as friend to the stream-function
-  void setValue(_type v) { value_ = v; }
+  friend std::istream &operator>> <>(std::istream &stream, unit_t &);
 
   /// Assignment for same ratio
   constexpr unit_t &operator=(const unit_t &rhs) = default;
