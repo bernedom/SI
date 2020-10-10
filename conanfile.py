@@ -4,6 +4,7 @@ import re, os
 
 
 class SiConan(ConanFile):
+    # todo rename to 'si' lower case to conform to conancenter standards
     name = "SI"
     license = "MIT"
     url = "https://bintray.com/beta/#/bernedom/conan/SI:SI"

@@ -2,8 +2,8 @@
 
 ## 2.0.0
 
-*   Support for fractions as exponents
-*   Rename access to stored scalar values to `value()` (from previously `raw_value()`)
+*   Support for fractions as exponents (Types from version 1.x.x are no longer supported)
+*   Rename access to stored scalar values to `value()` (from previously `raw_value()`) (Brakes interfaces from 1.x.x)
 
 ## 1.7.6
 
