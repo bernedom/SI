@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">1.7.6</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -141,7 +141,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a7e9aaedc94cb30877243cf6e1c7e5b2b"><td class="memTemplParams" colspan="2">template&lt;int8_t _exponent, typename _type , typename _ratio &gt; </td></tr>
+<tr class="memitem:a7e9aaedc94cb30877243cf6e1c7e5b2b"><td class="memTemplParams" colspan="2">template&lt;typename _exponent , typename _type , typename _ratio &gt; </td></tr>
 <tr class="memitem:a7e9aaedc94cb30877243cf6e1c7e5b2b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#a7e9aaedc94cb30877243cf6e1c7e5b2b">time_base_t</a> = <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt; 'T', _exponent, _type, _ratio &gt;</td></tr>
 <tr class="separator:a7e9aaedc94cb30877243cf6e1c7e5b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -154,7 +154,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a45af83e9f353597a58012c58577724fb"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#a45af83e9f353597a58012c58577724fb">unit_cast</a> (const _rhs_T &amp;rhs)</td></tr>
 <tr class="memdesc:a45af83e9f353597a58012c58577724fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">function to cast between two units of the same type  <a href="#a45af83e9f353597a58012c58577724fb">More...</a><br /></td></tr>
 <tr class="separator:a45af83e9f353597a58012c58577724fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2614dd22817f47500394f7311a09b68"><td class="memTemplParams" colspan="2">template&lt;typename _type , char _symbol, int8_t _exponent, typename _rhs_type , typename _ratio , typename std::enable_if&lt; std::is_integral&lt; _type &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:ae2614dd22817f47500394f7311a09b68"><td class="memTemplParams" colspan="2">template&lt;typename _type , char _symbol, typename _exponent , typename _rhs_type , typename _ratio , typename std::enable_if&lt; std::is_integral&lt; _type &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
 <tr class="memitem:ae2614dd22817f47500394f7311a09b68"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#ae2614dd22817f47500394f7311a09b68">operator/</a> (const _type &amp;lhs, const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _exponent, _rhs_type, _ratio &gt; &amp;rhs)</td></tr>
 <tr class="separator:ae2614dd22817f47500394f7311a09b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72bcb436f9c71971933bd49859c77b24"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename... &gt; typename _resulting_unit, typename _unit_lhs , typename _unit_rhs &gt; </td></tr>
@@ -163,15 +163,13 @@ Functions</h2></td></tr>
 <tr class="memitem:acae9252988e90f68da5060953a32159e"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename... &gt; typename _resulting_unit, typename _unit_lhs , typename _unit_rhs &gt; </td></tr>
 <tr class="memitem:acae9252988e90f68da5060953a32159e"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#acae9252988e90f68da5060953a32159e">cross_unit_multiply</a> (const _unit_lhs &amp;lhs, const _unit_rhs &amp;rhs)</td></tr>
 <tr class="separator:acae9252988e90f68da5060953a32159e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c9596cb33a11f2dd65866bf958848d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#a1c9596cb33a11f2dd65866bf958848d7">BUILD_UNIT_FROM_DIVISON</a> (<a class="el" href="namespaceSI.html#a53d44a469b4c311293e6fa4e8cfe68b7">electric_conductance_t</a>, <a class="el" href="namespaceSI.html#a24bd428fe03851644bdac64aa16e07a3">electric_current_t</a>, <a class="el" href="namespaceSI.html#a627c04cc2fff54fde28c7acb77c023d4">electric_potential_t</a>) template&lt; typename _type</td></tr>
+<tr class="memitem:a1c9596cb33a11f2dd65866bf958848d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#a1c9596cb33a11f2dd65866bf958848d7">BUILD_UNIT_FROM_DIVISON</a> (<a class="el" href="namespaceSI.html#a6f42e937c8881df1eb62cfe18efe337e">electric_conductance_t</a>, <a class="el" href="namespaceSI.html#af6b0ab281c8436b63542074ec36ea88e">electric_current_t</a>, <a class="el" href="namespaceSI.html#ae6af0981cddf4c69c74130d302b3b11d">electric_potential_t</a>) template&lt; typename _type</td></tr>
 <tr class="separator:a1c9596cb33a11f2dd65866bf958848d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb737a45e6f390083bd9b02b285b1dcf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#abb737a45e6f390083bd9b02b285b1dcf">BUILD_UNIT_FROM_DIVISON</a> (<a class="el" href="namespaceSI.html#af3f0de57402c8b73307be807dee7f6a5">electric_resistance_t</a>, <a class="el" href="namespaceSI.html#a627c04cc2fff54fde28c7acb77c023d4">electric_potential_t</a>, <a class="el" href="namespaceSI.html#a24bd428fe03851644bdac64aa16e07a3">electric_current_t</a>) template&lt; typename _type</td></tr>
-<tr class="separator:abb737a45e6f390083bd9b02b285b1dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Namespace containing implementation details for <a class="el" href="namespaceSI.html">SI</a>. </p>
 <p>Namespace containing all <a class="el" href="namespaceSI.html">SI</a> units.</p>
-<p>This file is part of "SI" version 1.7.6 A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units</p>
+<p>This file is part of "SI" version 2.0.0 A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units</p>
 <p><a href="https://github.com/bernedom/SI">https://github.com/bernedom/SI</a></p>
 <p>SPDX-License-Identifier: MIT </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
@@ -181,7 +179,7 @@ Functions</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int8_t _exponent, typename _type , typename _ratio &gt; </div>
+template&lt;typename _exponent , typename _type , typename _ratio &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="namespaceSI_1_1detail.html#a7e9aaedc94cb30877243cf6e1c7e5b2b">SI::detail::time_base_t</a> = typedef <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt;'T', _exponent, _type, _ratio&gt;</td>
@@ -193,7 +191,7 @@ template&lt;int8_t _exponent, typename _type , typename _ratio &gt; </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a1c9596cb33a11f2dd65866bf958848d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c9596cb33a11f2dd65866bf958848d7">&#9670;&nbsp;</a></span>BUILD_UNIT_FROM_DIVISON() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c9596cb33a11f2dd65866bf958848d7">&#9670;&nbsp;</a></span>BUILD_UNIT_FROM_DIVISON()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,19 +199,19 @@ template&lt;int8_t _exponent, typename _type , typename _ratio &gt; </div>
         <tr>
           <td class="memname">SI::detail::BUILD_UNIT_FROM_DIVISON </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceSI.html#a53d44a469b4c311293e6fa4e8cfe68b7">electric_conductance_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceSI.html#a6f42e937c8881df1eb62cfe18efe337e">electric_conductance_t</a>&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceSI.html#a24bd428fe03851644bdac64aa16e07a3">electric_current_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceSI.html#af6b0ab281c8436b63542074ec36ea88e">electric_current_t</a>&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceSI.html#a627c04cc2fff54fde28c7acb77c023d4">electric_potential_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceSI.html#ae6af0981cddf4c69c74130d302b3b11d">electric_potential_t</a>&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -223,41 +221,7 @@ template&lt;int8_t _exponent, typename _type , typename _ratio &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Builds conductance from 1/resistance, to avoid include cycles the base <a class="el" href="structSI_1_1detail_1_1unit__t.html" title="base template class for holding values of type _type to be multiplied with a ratio _ratio ...">unit_t</a> is used instead of the type alias electric_resistance_t </p>
-
-</div>
-</div>
-<a id="abb737a45e6f390083bd9b02b285b1dcf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb737a45e6f390083bd9b02b285b1dcf">&#9670;&nbsp;</a></span>BUILD_UNIT_FROM_DIVISON() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">SI::detail::BUILD_UNIT_FROM_DIVISON </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceSI.html#af3f0de57402c8b73307be807dee7f6a5">electric_resistance_t</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceSI.html#a627c04cc2fff54fde28c7acb77c023d4">electric_potential_t</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceSI.html#a24bd428fe03851644bdac64aa16e07a3">electric_current_t</a>&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Builds conductance from 1/resistance, to avoid include cycles the base <a class="el" href="structSI_1_1detail_1_1unit__t.html" title="base template class for holding values of type _type to be multiplied with a ratio _ratio ...">unit_t</a> is used instead of the type alias electric_resistance_t</p>
 <p>Builds conductance from 1/conductance, to avoid include cycles the base <a class="el" href="structSI_1_1detail_1_1unit__t.html" title="base template class for holding values of type _type to be multiplied with a ratio _ratio ...">unit_t</a> is used instead of the type alias electric_conductance_t </p>
 
 </div>
@@ -360,7 +324,7 @@ template&lt;typename T , typename std::enable_if&lt; std::is_floating_point&lt; 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename _type , char _symbol, int8_t _exponent, typename _rhs_type , typename _ratio , typename std::enable_if&lt; std::is_integral&lt; _type &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename _type , char _symbol, typename _exponent , typename _rhs_type , typename _ratio , typename std::enable_if&lt; std::is_integral&lt; _type &gt;::value &gt;::type *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">constexpr auto SI::detail::operator/ </td>

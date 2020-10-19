@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">1.7.6</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -94,9 +94,9 @@ Include dependency graph for frequency.h:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1unit__symbol_3_01'T'_00_01std_1_1ratio_3_011_01_4_00_01-1_01_4.html">SI::unit_symbol&lt; 'T', std::ratio&lt; 1 &gt;, -1 &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1unit__symbol_3_01'T'_00_01std_1_1ratio_3_011_01_4_00_01std_1_1ratio_3-1_01_4_01_4.html">SI::unit_symbol&lt; 'T', std::ratio&lt; 1 &gt;, std::ratio&lt;-1 &gt; &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1unit__symbol_3_01'T'_00_01__ratio_00_01-1_01_4.html">SI::unit_symbol&lt; 'T', _ratio, -1 &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1unit__symbol_3_01'T'_00_01__ratio_00_01std_1_1ratio_3-1_01_4_01_4.html">SI::unit_symbol&lt; 'T', _ratio, std::ratio&lt;-1 &gt; &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -108,9 +108,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a280af71e96023dad51db3ac84b90b59e"><td class="memTemplParams" colspan="2">template&lt;typename _type , class _ratio  = std::ratio&lt;1&gt;&gt; </td></tr>
-<tr class="memitem:a280af71e96023dad51db3ac84b90b59e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a280af71e96023dad51db3ac84b90b59e">SI::frequency_t</a> = detail::time_base_t&lt;-1, _type, _ratio &gt;</td></tr>
-<tr class="separator:a280af71e96023dad51db3ac84b90b59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa463096022d7bb402c6fa209c052daa0"><td class="memTemplParams" colspan="2">template&lt;typename _type , class _ratio  = std::ratio&lt;1&gt;&gt; </td></tr>
+<tr class="memitem:aa463096022d7bb402c6fa209c052daa0"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#aa463096022d7bb402c6fa209c052daa0">SI::frequency_t</a> = detail::time_base_t&lt; std::ratio&lt;-1 &gt;, _type, _ratio &gt;</td></tr>
+<tr class="separator:aa463096022d7bb402c6fa209c052daa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ed593821af2f248e11f0bdfa6e23f5e"><td class="memTemplParams" colspan="2">template&lt;typename _type &gt; </td></tr>
 <tr class="memitem:a1ed593821af2f248e11f0bdfa6e23f5e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a1ed593821af2f248e11f0bdfa6e23f5e">SI::atto_hertz_t</a> = frequency_t&lt; _type, std::atto &gt;</td></tr>
 <tr class="memdesc:a1ed593821af2f248e11f0bdfa6e23f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">specific units  <a href="namespaceSI.html#a1ed593821af2f248e11f0bdfa6e23f5e">More...</a><br /></td></tr>

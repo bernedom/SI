@@ -60,7 +60,7 @@ var searchData=
   ['power_5fimpl',['Power_impl',['../structSI_1_1detail_1_1parsing_1_1Power__impl.html',1,'SI::detail::parsing']]],
   ['power_5fimpl_3c_20_5fbase_2c_20_5fdigit_20_3e',['Power_impl&lt; _base, _digit &gt;',['../structSI_1_1detail_1_1parsing_1_1Power__impl_3_01__base_00_01__digit_01_4.html',1,'SI::detail::parsing']]],
   ['power_5fimpl_3c_20_5fbase_2c_20_5fdigits_2e_2e_2e_20_3e',['Power_impl&lt; _base, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Power__impl.html',1,'SI::detail::parsing']]],
-  ['power_5ft',['power_t',['../namespaceSI.html#a03e8e5e72ac74b397e2d1c43fad4de82',1,'SI']]],
+  ['power_5ft',['power_t',['../namespaceSI.html#afdf19b37b48ad02bba8a300492627222',1,'SI']]],
   ['pressure_2eh',['pressure.h',['../pressure_8h.html',1,'']]],
-  ['pressure_5ft',['pressure_t',['../namespaceSI.html#a183654ffcaf22f37b33eb63cd27cf7c1',1,'SI']]]
+  ['pressure_5ft',['pressure_t',['../namespaceSI.html#a78a956397198ccbae6b7356fa4a6de54',1,'SI']]]
 ];

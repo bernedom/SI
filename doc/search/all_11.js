@@ -4,13 +4,13 @@ var searchData=
   ['literals',['literals',['../namespaceSI_1_1literals.html',1,'SI']]],
   ['parsing',['parsing',['../namespaceSI_1_1detail_1_1parsing.html',1,'SI::detail']]],
   ['seconds_5ft',['seconds_t',['../namespaceSI.html#ae7d9b273c169f042a4f05247bc1a497f',1,'SI']]],
-  ['set_5fraw_5fvalue',['set_raw_value',['../structSI_1_1detail_1_1unit__t.html#a4e8e64c22749a3e68d40ada4a5a773ae',1,'SI::detail::unit_t']]],
+  ['setvalue',['setValue',['../structSI_1_1detail_1_1unit__t.html#a2165bb95dba2e598a8c78eb5816778a7',1,'SI::detail::unit_t']]],
   ['si',['SI',['../namespaceSI.html',1,'']]],
   ['si_5fenable_5fimplicit_5fratio_5fconversion',['SI_ENABLE_IMPLICIT_RATIO_CONVERSION',['../unit_8h.html#a4801616f306f098065c28d1c782ce0e0',1,'unit.h']]],
   ['siemens_5ft',['siemens_t',['../namespaceSI.html#a13acb004109ed8818d7917b3ef4fb2c9',1,'SI']]],
   ['sievert_5ft',['sievert_t',['../namespaceSI.html#a8331fa2aef02757972dc387d31d6df99',1,'SI']]],
   ['solid_5fangle_2eh',['solid_angle.h',['../solid__angle_8h.html',1,'']]],
-  ['solid_5fangle_5ft',['solid_angle_t',['../namespaceSI.html#a5b515f1b28c2daa10dd522fca2dbe713',1,'SI']]],
+  ['solid_5fangle_5ft',['solid_angle_t',['../namespaceSI.html#a06209f1215fb0859306c0b0cf6af1fb2',1,'SI']]],
   ['speed_5fof_5flight_5ft',['speed_of_light_t',['../namespaceSI.html#a35b317a659d5176638fe934ae792a354',1,'SI']]],
   ['square_5fcenti_5fmetre_5ft',['square_centi_metre_t',['../namespaceSI.html#ab2fb670015aa218627a63b5199265295',1,'SI']]],
   ['square_5fmetre_5ft',['square_metre_t',['../namespaceSI.html#a759a94cb97a49531cd3fc5d30dee4280',1,'SI']]],
@@ -19,6 +19,6 @@ var searchData=
   ['str',['str',['../structSI_1_1detail_1_1unit__symbol__impl.html#ae0b7859073d98747f567de47f7650c27',1,'SI::detail::unit_symbol_impl']]],
   ['stream_2eh',['stream.h',['../stream_8h.html',1,'']]],
   ['substance_2eh',['substance.h',['../substance_8h.html',1,'']]],
-  ['substance_5ft',['substance_t',['../namespaceSI.html#a869cca777ef94bd9c5f43c99cf844c4b',1,'SI']]],
+  ['substance_5ft',['substance_t',['../namespaceSI.html#a7be7c92c2cba00a3e69037ac466083d8',1,'SI']]],
   ['symbol',['symbol',['../structSI_1_1detail_1_1unit__t.html#abea949cea3dfb989f651efd568fead1b',1,'SI::detail::unit_t']]]
 ];

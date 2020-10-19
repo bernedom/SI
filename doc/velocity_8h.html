@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">1.7.6</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -127,13 +127,13 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:aedd0e84596f949c7d38b919efee5ac72"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
-<tr class="memitem:aedd0e84596f949c7d38b919efee5ac72"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#aedd0e84596f949c7d38b919efee5ac72">SI::velocity_t</a> = detail::unit_t&lt; 'v', 1, _type, _ratio &gt;</td></tr>
-<tr class="memdesc:aedd0e84596f949c7d38b919efee5ac72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for velocity where v = L / T.  <a href="namespaceSI.html#aedd0e84596f949c7d38b919efee5ac72">More...</a><br /></td></tr>
-<tr class="separator:aedd0e84596f949c7d38b919efee5ac72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98a33a3b11a477d07621d2d1aa122bc3"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
-<tr class="memitem:a98a33a3b11a477d07621d2d1aa122bc3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a98a33a3b11a477d07621d2d1aa122bc3">SI::velocity_squared_t</a> = detail::unit_t&lt; 'v', 2, _type, _ratio &gt;</td></tr>
-<tr class="separator:a98a33a3b11a477d07621d2d1aa122bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae46a5cfa6ab42b215af02f97839b65ee"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
+<tr class="memitem:ae46a5cfa6ab42b215af02f97839b65ee"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#ae46a5cfa6ab42b215af02f97839b65ee">SI::velocity_t</a> = detail::unit_t&lt; 'v', std::ratio&lt; 1 &gt;, _type, _ratio &gt;</td></tr>
+<tr class="memdesc:ae46a5cfa6ab42b215af02f97839b65ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for velocity where v = L / T.  <a href="namespaceSI.html#ae46a5cfa6ab42b215af02f97839b65ee">More...</a><br /></td></tr>
+<tr class="separator:ae46a5cfa6ab42b215af02f97839b65ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50f63e29c2cbf291ad2e033ff8a9419f"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
+<tr class="memitem:a50f63e29c2cbf291ad2e033ff8a9419f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a50f63e29c2cbf291ad2e033ff8a9419f">SI::velocity_squared_t</a> = detail::unit_t&lt; 'v', std::ratio&lt; 2 &gt;, _type, _ratio &gt;</td></tr>
+<tr class="separator:a50f63e29c2cbf291ad2e033ff8a9419f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb648d66ba9f56fb4072f8ca88b4b3e4"><td class="memTemplParams" colspan="2">template&lt;typename _type &gt; </td></tr>
 <tr class="memitem:abb648d66ba9f56fb4072f8ca88b4b3e4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#abb648d66ba9f56fb4072f8ca88b4b3e4">SI::metre_per_second_t</a> = velocity_t&lt; _type, std::ratio&lt; 1 &gt;::type &gt;</td></tr>
 <tr class="separator:abb648d66ba9f56fb4072f8ca88b4b3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>

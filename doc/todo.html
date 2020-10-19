@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">1.7.6</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -75,24 +75,23 @@ $(function() {
 <dt><a class="anchor" id="_todo000002"></a>Class <a class="el" href="structSI_1_1detail_1_1unit__t.html">SI::detail::unit_t&lt; _symbol, _exponent, _type, _ratio &gt;</a>  </dt>
 <dd><p class="startdd">add in-place unit_cast for move operators </p>
 <p>add logarithmic units (decibel) </p>
-<p>add constants for speed of light, planck constant, elementary charge, </p>
-<p class="enddd">allow fractions as exponents boltzmann constant, avorgadro constant and luminous efficacy of monochromatic radiation of frequency  </p>
+<p class="enddd">add constants for speed of light, planck constant, elementary charge, boltzmann constant, avorgadro constant and luminous efficacy of monochromatic radiation of frequency  </p>
 </dd>
-<dt><a class="anchor" id="_todo000004"></a>Member <a class="el" href="structSI_1_1detail_1_1unit__t.html#abebcc8fbf72d27c40f64411b7259cbdf">SI::detail::unit_t&lt; _symbol, _exponent, _type, _ratio &gt;::raw_value</a>  () const</dt>
-<dd>rename to just value() and deprecate <a class="el" href="structSI_1_1detail_1_1unit__t.html#abebcc8fbf72d27c40f64411b7259cbdf">raw_value()</a>  </dd>
-<dt><a class="anchor" id="_todo000005"></a>Member <a class="el" href="namespaceSI.html#af3f0de57402c8b73307be807dee7f6a5">SI::electric_resistance_t</a>  </dt>
+<dt><a class="anchor" id="_todo000004"></a>Member <a class="el" href="structSI_1_1detail_1_1unit__t.html#a2165bb95dba2e598a8c78eb5816778a7">SI::detail::unit_t&lt; _symbol, _exponent, _type, _ratio &gt;::setValue</a>  (_type v)</dt>
+<dd>set as friend to the stream-function  </dd>
+<dt><a class="anchor" id="_todo000005"></a>Member <a class="el" href="namespaceSI.html#acfe531810335fe392f116d1bb80638c1">SI::electric_resistance_t</a>  </dt>
 <dd>find a way to use Ohm as dimension symbol or switch to R (occupied by solid angle)  </dd>
-<dt><a class="anchor" id="_todo000006"></a>Member <a class="el" href="namespaceSI.html#a280af71e96023dad51db3ac84b90b59e">SI::frequency_t</a>  </dt>
+<dt><a class="anchor" id="_todo000006"></a>Member <a class="el" href="namespaceSI.html#aa463096022d7bb402c6fa209c052daa0">SI::frequency_t</a>  </dt>
 <dd>find a way to add alternative dimension symbol (f) to frequency  </dd>
-<dt><a class="anchor" id="_todo000007"></a>Member <a class="el" href="namespaceSI.html#a2609583ddc859f0d23e012f66265cb11">SI::magnetic_field_t</a>  </dt>
+<dt><a class="anchor" id="_todo000007"></a>Member <a class="el" href="namespaceSI.html#a86a815a1a2e665d11d0961075c832267">SI::magnetic_field_t</a>  </dt>
 <dd>find a way to encapsulate phi  </dd>
-<dt><a class="anchor" id="_todo000008"></a>Member <a class="el" href="namespaceSI.html#a4d9edfb675fb2e987b6c413e7a347088">SI::magnetic_flux_t</a>  </dt>
+<dt><a class="anchor" id="_todo000008"></a>Member <a class="el" href="namespaceSI.html#a905ac0fdcdba8a035f4ace27071844b4">SI::magnetic_flux_t</a>  </dt>
 <dd>find a way to encapsulate phi  </dd>
-<dt><a class="anchor" id="_todo000010"></a>Member <a class="el" href="namespaceSI.html#a9b25af4ab8d7d9a2d4bdc44f4ffc2c60">SI::radioactivity_t</a>  </dt>
+<dt><a class="anchor" id="_todo000010"></a>Member <a class="el" href="namespaceSI.html#a094f1145bcd58fd4f250ba2ead393c19">SI::radioactivity_t</a>  </dt>
 <dd><p class="startdd">check how to make this the same/an alias of hertz </p>
 <p class="enddd">think of how this can be built from 1/T (probably goes along with making it an alias of hertz)  </p>
 </dd>
-<dt><a class="anchor" id="_todo000011"></a>Member <a class="el" href="namespaceSI.html#ad8e046b09e25b1b21ca7b5632ccbccda">SI::temperature_t</a>  </dt>
+<dt><a class="anchor" id="_todo000011"></a>Member <a class="el" href="namespaceSI.html#a22c7b39177f61c6b0934b9d11ae64378">SI::temperature_t</a>  </dt>
 <dd><p class="startdd">find a way to encapuslate unit symbol Theta </p>
 <p class="enddd">consider adding Celsius and fahrenheit </p>
 </dd>

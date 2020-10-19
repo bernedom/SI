@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['set_5fraw_5fvalue',['set_raw_value',['../structSI_1_1detail_1_1unit__t.html#a4e8e64c22749a3e68d40ada4a5a773ae',1,'SI::detail::unit_t']]]
+  ['to_5fstring',['to_string',['../namespaceSI.html#a940e6c5680765888164264fa4ff3809d',1,'SI']]]
 ];

@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">1.7.6</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -140,15 +140,15 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a7e9aaedc94cb30877243cf6e1c7e5b2b"><td class="memTemplParams" colspan="2">template&lt;int8_t _exponent, typename _type , typename _ratio &gt; </td></tr>
+<tr class="memitem:a7e9aaedc94cb30877243cf6e1c7e5b2b"><td class="memTemplParams" colspan="2">template&lt;typename _exponent , typename _type , typename _ratio &gt; </td></tr>
 <tr class="memitem:a7e9aaedc94cb30877243cf6e1c7e5b2b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#a7e9aaedc94cb30877243cf6e1c7e5b2b">SI::detail::time_base_t</a> = detail::unit_t&lt; 'T', _exponent, _type, _ratio &gt;</td></tr>
 <tr class="separator:a7e9aaedc94cb30877243cf6e1c7e5b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc78880c49efc94fd090be25bdcc59a3"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
-<tr class="memitem:adc78880c49efc94fd090be25bdcc59a3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#adc78880c49efc94fd090be25bdcc59a3">SI::time_t</a> = detail::time_base_t&lt; 1, _type, _ratio &gt;</td></tr>
-<tr class="separator:adc78880c49efc94fd090be25bdcc59a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38cebbf14cb9d63403434e8902e75d61"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
-<tr class="memitem:a38cebbf14cb9d63403434e8902e75d61"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a38cebbf14cb9d63403434e8902e75d61">SI::time_squared_t</a> = detail::time_base_t&lt; 2, _type, _ratio &gt;</td></tr>
-<tr class="separator:a38cebbf14cb9d63403434e8902e75d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a090b909fb4fc34e2077dfd2a679b5415"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
+<tr class="memitem:a090b909fb4fc34e2077dfd2a679b5415"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a090b909fb4fc34e2077dfd2a679b5415">SI::time_t</a> = detail::time_base_t&lt; std::ratio&lt; 1 &gt;, _type, _ratio &gt;</td></tr>
+<tr class="separator:a090b909fb4fc34e2077dfd2a679b5415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9325cb6237bf0d4b822d6e6d75b0c514"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
+<tr class="memitem:a9325cb6237bf0d4b822d6e6d75b0c514"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a9325cb6237bf0d4b822d6e6d75b0c514">SI::time_squared_t</a> = detail::time_base_t&lt; std::ratio&lt; 2 &gt;, _type, _ratio &gt;</td></tr>
+<tr class="separator:a9325cb6237bf0d4b822d6e6d75b0c514"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af28e20207fc58e251acb8099aa6fdc4a"><td class="memTemplParams" colspan="2">template&lt;typename _type &gt; </td></tr>
 <tr class="memitem:af28e20207fc58e251acb8099aa6fdc4a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#af28e20207fc58e251acb8099aa6fdc4a">SI::atto_seconds_t</a> = time_t&lt; _type, std::atto &gt;</td></tr>
 <tr class="separator:af28e20207fc58e251acb8099aa6fdc4a"><td class="memSeparator" colspan="2">&#160;</td></tr>

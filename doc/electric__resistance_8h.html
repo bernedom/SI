@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">1.7.6</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -126,9 +126,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:af3f0de57402c8b73307be807dee7f6a5"><td class="memTemplParams" colspan="2">template&lt;typename _type , class _ratio  = std::ratio&lt;1&gt;&gt; </td></tr>
-<tr class="memitem:af3f0de57402c8b73307be807dee7f6a5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#af3f0de57402c8b73307be807dee7f6a5">SI::electric_resistance_t</a> = detail::unit_t&lt; 'O', 1, _type, _ratio &gt;</td></tr>
-<tr class="separator:af3f0de57402c8b73307be807dee7f6a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfe531810335fe392f116d1bb80638c1"><td class="memTemplParams" colspan="2">template&lt;typename _type , class _ratio  = std::ratio&lt;1&gt;&gt; </td></tr>
+<tr class="memitem:acfe531810335fe392f116d1bb80638c1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#acfe531810335fe392f116d1bb80638c1">SI::electric_resistance_t</a> = detail::unit_t&lt; 'O', std::ratio&lt; 1 &gt;, _type, _ratio &gt;</td></tr>
+<tr class="separator:acfe531810335fe392f116d1bb80638c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a472fd91d20d1ac4ab500089fdef2f91d"><td class="memTemplParams" colspan="2">template&lt;typename _type &gt; </td></tr>
 <tr class="memitem:a472fd91d20d1ac4ab500089fdef2f91d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a472fd91d20d1ac4ab500089fdef2f91d">SI::atto_ohm_t</a> = electric_resistance_t&lt; _type, std::atto &gt;</td></tr>
 <tr class="memdesc:a472fd91d20d1ac4ab500089fdef2f91d"><td class="mdescLeft">&#160;</td><td class="mdescRight">specific units  <a href="namespaceSI.html#a472fd91d20d1ac4ab500089fdef2f91d">More...</a><br /></td></tr>
@@ -172,8 +172,8 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abb737a45e6f390083bd9b02b285b1dcf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#abb737a45e6f390083bd9b02b285b1dcf">SI::detail::BUILD_UNIT_FROM_DIVISON</a> (electric_resistance_t, electric_potential_t, electric_current_t) template&lt; typename _type</td></tr>
-<tr class="separator:abb737a45e6f390083bd9b02b285b1dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c9596cb33a11f2dd65866bf958848d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#a1c9596cb33a11f2dd65866bf958848d7">SI::detail::BUILD_UNIT_FROM_DIVISON</a> (electric_conductance_t, electric_current_t, electric_potential_t) template&lt; typename _type</td></tr>
+<tr class="separator:a1c9596cb33a11f2dd65866bf958848d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad61c0c17ae35c530bb1785f0bfaf91f1"><td class="memTemplParams" colspan="2">template&lt;char... _digits&gt; </td></tr>
 <tr class="memitem:ad61c0c17ae35c530bb1785f0bfaf91f1"><td class="memTemplItemLeft" align="right" valign="top">constexpr atto_ohm_t&lt; int64_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1literals.html#ad61c0c17ae35c530bb1785f0bfaf91f1">SI::literals::operator&quot;&quot;_aOhm</a> ()</td></tr>
 <tr class="separator:ad61c0c17ae35c530bb1785f0bfaf91f1"><td class="memSeparator" colspan="2">&#160;</td></tr>

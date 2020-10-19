@@ -29,6 +29,6 @@ var searchData=
   ['femto_5fvolt_5ft',['femto_volt_t',['../namespaceSI.html#abc7f667b219745518fcc919cc70a70b9',1,'SI']]],
   ['femto_5fwatt_5ft',['femto_watt_t',['../namespaceSI.html#a2af0ee215588617accfacb4b754b87cf',1,'SI']]],
   ['femto_5fweber_5ft',['femto_weber_t',['../namespaceSI.html#a57211d5c6a9aa7915c77894976db764b',1,'SI']]],
-  ['force_5ft',['force_t',['../namespaceSI.html#ab72968b112c963389ca5dc2145c6dd87',1,'SI']]],
-  ['frequency_5ft',['frequency_t',['../namespaceSI.html#a280af71e96023dad51db3ac84b90b59e',1,'SI']]]
+  ['force_5ft',['force_t',['../namespaceSI.html#a30f856111df1f1a7f9b757f86a12f372',1,'SI']]],
+  ['frequency_5ft',['frequency_t',['../namespaceSI.html#aa463096022d7bb402c6fa209c052daa0',1,'SI']]]
 ];

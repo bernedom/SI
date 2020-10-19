@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">1.7.6</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -85,8 +85,8 @@ Public Types</h2></td></tr>
 <tr class="separator:a1516b2a87fab8d8404419702e9fdb501"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b797dc57dbf52bd532ffde0a2a3e247"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a4b797dc57dbf52bd532ffde0a2a3e247">internal_type</a> = _type</td></tr>
 <tr class="separator:a4b797dc57dbf52bd532ffde0a2a3e247"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b25320b98d75be9e4d3a228af956846"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a4b25320b98d75be9e4d3a228af956846">exponent</a> = std::integral_constant&lt; int8_t, _exponent &gt;</td></tr>
-<tr class="separator:a4b25320b98d75be9e4d3a228af956846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e84f19596c1fd4228b466b274ea3192"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a6e84f19596c1fd4228b466b274ea3192">exponent</a> = _exponent</td></tr>
+<tr class="separator:a6e84f19596c1fd4228b466b274ea3192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abea949cea3dfb989f651efd568fead1b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#abea949cea3dfb989f651efd568fead1b">symbol</a> = std::integral_constant&lt; char, _symbol &gt;</td></tr>
 <tr class="separator:abea949cea3dfb989f651efd568fead1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -113,10 +113,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad3364e685d5eb22a61958a1115ca3405"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_ratio &gt; </td></tr>
 <tr class="memitem:ad3364e685d5eb22a61958a1115ca3405"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#ad3364e685d5eb22a61958a1115ca3405">unit_t</a> (<a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _exponent, _type, _rhs_ratio &gt; &amp;&amp;rhs)</td></tr>
 <tr class="separator:ad3364e685d5eb22a61958a1115ca3405"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abebcc8fbf72d27c40f64411b7259cbdf"><td class="memItemLeft" align="right" valign="top">constexpr _type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#abebcc8fbf72d27c40f64411b7259cbdf">raw_value</a> () const</td></tr>
-<tr class="separator:abebcc8fbf72d27c40f64411b7259cbdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e8e64c22749a3e68d40ada4a5a773ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a4e8e64c22749a3e68d40ada4a5a773ae">set_raw_value</a> (_type v)</td></tr>
-<tr class="separator:a4e8e64c22749a3e68d40ada4a5a773ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6140abd917290bee1f19d98f56a2f87"><td class="memItemLeft" align="right" valign="top">constexpr _type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#ad6140abd917290bee1f19d98f56a2f87">value</a> () const</td></tr>
+<tr class="memdesc:ad6140abd917290bee1f19d98f56a2f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the stored value as raw type  <a href="#ad6140abd917290bee1f19d98f56a2f87">More...</a><br /></td></tr>
+<tr class="separator:ad6140abd917290bee1f19d98f56a2f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2165bb95dba2e598a8c78eb5816778a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a2165bb95dba2e598a8c78eb5816778a7">setValue</a> (_type v)</td></tr>
+<tr class="separator:a2165bb95dba2e598a8c78eb5816778a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a5e0ddb89157e3f2d3e798ee0f87754"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a4a5e0ddb89157e3f2d3e798ee0f87754">operator=</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;rhs)=default</td></tr>
 <tr class="memdesc:a4a5e0ddb89157e3f2d3e798ee0f87754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment for same ratio.  <a href="#a4a5e0ddb89157e3f2d3e798ee0f87754">More...</a><br /></td></tr>
 <tr class="separator:a4a5e0ddb89157e3f2d3e798ee0f87754"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,11 +154,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a19309c15ea6463a4a2220ecd80eedaec"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a19309c15ea6463a4a2220ecd80eedaec">operator*</a> (const _type f) const</td></tr>
 <tr class="memdesc:a19309c15ea6463a4a2220ecd80eedaec"><td class="mdescLeft">&#160;</td><td class="mdescRight">multiply with a non-unit scalar  <a href="#a19309c15ea6463a4a2220ecd80eedaec">More...</a><br /></td></tr>
 <tr class="separator:a19309c15ea6463a4a2220ecd80eedaec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af569beb6df356d2eeaf3d8f19e9ed8b7"><td class="memTemplParams" colspan="2">template&lt;int8_t _rhs_exponent, typename _rhs_type &gt; </td></tr>
+<tr class="memitem:af569beb6df356d2eeaf3d8f19e9ed8b7"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_exponent , typename _rhs_type &gt; </td></tr>
 <tr class="memitem:af569beb6df356d2eeaf3d8f19e9ed8b7"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#af569beb6df356d2eeaf3d8f19e9ed8b7">operator*</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _rhs_exponent, _rhs_type, _ratio &gt; &amp;rhs) const</td></tr>
 <tr class="memdesc:af569beb6df356d2eeaf3d8f19e9ed8b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">multiply with an unit of the same ratio  <a href="#af569beb6df356d2eeaf3d8f19e9ed8b7">More...</a><br /></td></tr>
 <tr class="separator:af569beb6df356d2eeaf3d8f19e9ed8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a637680bf10a38d313452b60ab38ebd60"><td class="memTemplParams" colspan="2">template&lt;int8_t _rhs_exponent, typename _rhs_ratio , typename _rhs_type &gt; </td></tr>
+<tr class="memitem:a637680bf10a38d313452b60ab38ebd60"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_exponent , typename _rhs_ratio , typename _rhs_type &gt; </td></tr>
 <tr class="memitem:a637680bf10a38d313452b60ab38ebd60"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a637680bf10a38d313452b60ab38ebd60">operator*</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _rhs_exponent, _rhs_type, _rhs_ratio &gt; &amp;rhs) const</td></tr>
 <tr class="separator:a637680bf10a38d313452b60ab38ebd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93178e87cc87b274065178fc415667ca"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a93178e87cc87b274065178fc415667ca">operator*=</a> (const _type scalar)</td></tr>
@@ -166,17 +167,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab9ea95a6f6da8f51f91e288d67f54e18"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#ab9ea95a6f6da8f51f91e288d67f54e18">operator/</a> (const _type f) const</td></tr>
 <tr class="memdesc:ab9ea95a6f6da8f51f91e288d67f54e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">divide by a non-unit scalar  <a href="#ab9ea95a6f6da8f51f91e288d67f54e18">More...</a><br /></td></tr>
 <tr class="separator:ab9ea95a6f6da8f51f91e288d67f54e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a240988ec83ef5d9c644ad4a4a8a167ed"><td class="memTemplParams" colspan="2">template&lt;int8_t _rhs_exponent, typename _rhs_type , typename std::enable_if&lt; _rhs_exponent !=_exponent &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:a240988ec83ef5d9c644ad4a4a8a167ed"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_exponent , typename _rhs_type , typename std::enable_if&lt; std::ratio_not_equal&lt; _rhs_exponent, _exponent &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
 <tr class="memitem:a240988ec83ef5d9c644ad4a4a8a167ed"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a240988ec83ef5d9c644ad4a4a8a167ed">operator/</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _rhs_exponent, _rhs_type, _ratio &gt; &amp;rhs) const</td></tr>
 <tr class="separator:a240988ec83ef5d9c644ad4a4a8a167ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e8534b067932ad6f2adaa5dc7a2bc3d"><td class="memTemplParams" colspan="2">template&lt;int8_t _rhs_exponent, typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; _rhs_exponent !=_exponent &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:a9e8534b067932ad6f2adaa5dc7a2bc3d"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_exponent , typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; std::ratio_not_equal&lt; _rhs_exponent, _exponent &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
 <tr class="memitem:a9e8534b067932ad6f2adaa5dc7a2bc3d"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a9e8534b067932ad6f2adaa5dc7a2bc3d">operator/</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _rhs_exponent, _rhs_type, _rhs_ratio &gt; &amp;rhs) const</td></tr>
 <tr class="separator:a9e8534b067932ad6f2adaa5dc7a2bc3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4616f6c84b6cb0723a34abe84d8b0002"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_type &gt; </td></tr>
 <tr class="memitem:a4616f6c84b6cb0723a34abe84d8b0002"><td class="memTemplItemLeft" align="right" valign="top">constexpr _type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a4616f6c84b6cb0723a34abe84d8b0002">operator/</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _exponent, _rhs_type, _ratio &gt; &amp;rhs)</td></tr>
 <tr class="memdesc:a4616f6c84b6cb0723a34abe84d8b0002"><td class="mdescLeft">&#160;</td><td class="mdescRight">divide whit same unit result is a scalar  <a href="#a4616f6c84b6cb0723a34abe84d8b0002">More...</a><br /></td></tr>
 <tr class="separator:a4616f6c84b6cb0723a34abe84d8b0002"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f2abca0f3699625f2de14b384ee9472"><td class="memTemplParams" colspan="2">template&lt;int8_t _rhs_exponent, typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; _rhs_exponent==_exponent &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:a4f2abca0f3699625f2de14b384ee9472"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_exponent , typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; std::ratio_equal&lt; _rhs_exponent, exponent &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
 <tr class="memitem:a4f2abca0f3699625f2de14b384ee9472"><td class="memTemplItemLeft" align="right" valign="top">constexpr _type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a4f2abca0f3699625f2de14b384ee9472">operator/</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _rhs_exponent, _rhs_type, _rhs_ratio &gt; &amp;rhs) const</td></tr>
 <tr class="separator:a4f2abca0f3699625f2de14b384ee9472"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c51124a77017271ecad7cb1b4249f48"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a6c51124a77017271ecad7cb1b4249f48">operator/=</a> (const _type scalar)</td></tr>
@@ -221,14 +222,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8b0f9cfd5964e792376bf6b3dead1318"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt;<br />
+<div class="textblock"><h3>template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt;<br />
 struct SI::detail::unit_t&lt; _symbol, _exponent, _type, _ratio &gt;</h3>
 
 <p>base template class for holding values of type _type to be multiplied with a ratio _ratio </p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd><p class="startdd">add in-place unit_cast for move operators </p>
 <p>add logarithmic units (decibel) </p>
-<p>add constants for speed of light, planck constant, elementary charge, </p>
-<p class="enddd">allow fractions as exponents boltzmann constant, avorgadro constant and luminous efficacy of monochromatic radiation of frequency </p>
+<p class="enddd">add constants for speed of light, planck constant, elementary charge, boltzmann constant, avorgadro constant and luminous efficacy of monochromatic radiation of frequency </p>
 </dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -240,16 +240,16 @@ struct SI::detail::unit_t&lt; _symbol, _exponent, _type, _ratio &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a4b25320b98d75be9e4d3a228af956846"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b25320b98d75be9e4d3a228af956846">&#9670;&nbsp;</a></span>exponent</h2>
+<a id="a6e84f19596c1fd4228b466b274ea3192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e84f19596c1fd4228b466b274ea3192">&#9670;&nbsp;</a></span>exponent</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structSI_1_1detail_1_1unit__t.html">SI::detail::unit_t</a>&lt; _symbol, _exponent, _type, _ratio &gt;::<a class="el" href="structSI_1_1detail_1_1unit__t.html#a4b25320b98d75be9e4d3a228af956846">exponent</a> =  std::integral_constant&lt;int8_t, _exponent&gt;</td>
+          <td class="memname">using <a class="el" href="structSI_1_1detail_1_1unit__t.html">SI::detail::unit_t</a>&lt; _symbol, _exponent, _type, _ratio &gt;::<a class="el" href="structSI_1_1detail_1_1unit__t.html#a6e84f19596c1fd4228b466b274ea3192">exponent</a> =  _exponent</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -262,7 +262,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structSI_1_1detail_1_1unit__t.html">SI::detail::unit_t</a>&lt; _symbol, _exponent, _type, _ratio &gt;::<a class="el" href="structSI_1_1detail_1_1unit__t.html#a4b797dc57dbf52bd532ffde0a2a3e247">internal_type</a> =  _type</td>
@@ -278,7 +278,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structSI_1_1detail_1_1unit__t.html">SI::detail::unit_t</a>&lt; _symbol, _exponent, _type, _ratio &gt;::<a class="el" href="structSI_1_1detail_1_1unit__t.html#a1516b2a87fab8d8404419702e9fdb501">ratio</a> =  _ratio</td>
@@ -294,7 +294,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structSI_1_1detail_1_1unit__t.html">SI::detail::unit_t</a>&lt; _symbol, _exponent, _type, _ratio &gt;::<a class="el" href="structSI_1_1detail_1_1unit__t.html#abea949cea3dfb989f651efd568fead1b">symbol</a> =  std::integral_constant&lt;char, _symbol&gt;</td>
@@ -311,7 +311,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -341,7 +341,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -368,7 +368,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -396,7 +396,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -424,7 +424,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _type_rhs &gt; </div>
 <table class="mlabels">
@@ -456,7 +456,7 @@ template&lt;typename _type_rhs &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -483,7 +483,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <table class="mlabels">
@@ -513,7 +513,7 @@ template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _rhs_ratio &gt; </div>
 <table class="mlabels">
@@ -544,7 +544,7 @@ template&lt;typename _rhs_ratio &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <table class="mlabels">
@@ -576,7 +576,7 @@ template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -606,9 +606,9 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;int8_t _rhs_exponent, typename _rhs_type &gt; </div>
+template&lt;typename _rhs_exponent , typename _rhs_type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -638,9 +638,9 @@ template&lt;int8_t _rhs_exponent, typename _rhs_type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;int8_t _rhs_exponent, typename _rhs_ratio , typename _rhs_type &gt; </div>
+template&lt;typename _rhs_exponent , typename _rhs_ratio , typename _rhs_type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -669,7 +669,7 @@ template&lt;int8_t _rhs_exponent, typename _rhs_ratio , typename _rhs_type &gt; 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -699,7 +699,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <table class="mlabels">
@@ -731,7 +731,7 @@ template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -760,7 +760,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -790,7 +790,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -820,7 +820,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; !std::ratio_equal&lt; _rhs_ratio, _ratio &gt;::value &gt;::type *  = nullptr&gt; </div>
 <table class="mlabels">
@@ -852,7 +852,7 @@ template&lt;typename _rhs_type , typename _rhs_ratio , typename std::enable_if&l
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <table class="mlabels">
@@ -884,7 +884,7 @@ template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -913,7 +913,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -942,7 +942,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -972,7 +972,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1002,7 +1002,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; !std::ratio_equal&lt; _rhs_ratio, _ratio &gt;::value &gt;::type *  = nullptr&gt; </div>
 <table class="mlabels">
@@ -1034,7 +1034,7 @@ template&lt;typename _rhs_type , typename _rhs_ratio , typename std::enable_if&l
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1064,9 +1064,9 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;int8_t _rhs_exponent, typename _rhs_type , typename std::enable_if&lt; _rhs_exponent !=_exponent &gt;::type *  = nullptr&gt; </div>
+template&lt;typename _rhs_exponent , typename _rhs_type , typename std::enable_if&lt; std::ratio_not_equal&lt; _rhs_exponent, _exponent &gt;::value &gt;::type *  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1095,9 +1095,9 @@ template&lt;int8_t _rhs_exponent, typename _rhs_type , typename std::enable_if&l
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;int8_t _rhs_exponent, typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; _rhs_exponent !=_exponent &gt;::type *  = nullptr&gt; </div>
+template&lt;typename _rhs_exponent , typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; std::ratio_not_equal&lt; _rhs_exponent, _exponent &gt;::value &gt;::type *  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1126,7 +1126,7 @@ template&lt;int8_t _rhs_exponent, typename _rhs_type , typename _rhs_ratio , typ
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _rhs_type &gt; </div>
 <table class="mlabels">
@@ -1158,9 +1158,9 @@ template&lt;typename _rhs_type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;int8_t _rhs_exponent, typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; _rhs_exponent==_exponent &gt;::type *  = nullptr&gt; </div>
+template&lt;typename _rhs_exponent , typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; std::ratio_equal&lt; _rhs_exponent, exponent &gt;::value &gt;::type *  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1189,7 +1189,7 @@ template&lt;int8_t _rhs_exponent, typename _rhs_type , typename _rhs_ratio , typ
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1219,7 +1219,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <table class="mlabels">
@@ -1249,7 +1249,7 @@ template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <table class="mlabels">
@@ -1279,7 +1279,7 @@ template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1309,7 +1309,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1339,7 +1339,7 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _rhs_ratio , typename std::enable_if&lt; !std::ratio_equal&lt; _rhs_ratio, _ratio &gt;::value &gt;::type *  = nullptr&gt; </div>
 <table class="mlabels">
@@ -1371,7 +1371,7 @@ template&lt;typename _rhs_ratio , typename std::enable_if&lt; !std::ratio_equal&
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _rhs_ratio , typename std::enable_if&lt; !std::ratio_equal&lt; _rhs_ratio, _ratio &gt;::value &gt;::type *  = nullptr&gt; </div>
 <table class="mlabels">
@@ -1403,7 +1403,7 @@ template&lt;typename _rhs_ratio , typename std::enable_if&lt; !std::ratio_equal&
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <table class="mlabels">
@@ -1434,7 +1434,7 @@ template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <table class="mlabels">
@@ -1464,7 +1464,7 @@ template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 <table class="mlabels">
@@ -1488,47 +1488,19 @@ template&lt;typename _rhs_type , typename _rhs_ratio &gt; </div>
 
 </div>
 </div>
-<a id="abebcc8fbf72d27c40f64411b7259cbdf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abebcc8fbf72d27c40f64411b7259cbdf">&#9670;&nbsp;</a></span>raw_value()</h2>
+<a id="a2165bb95dba2e598a8c78eb5816778a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2165bb95dba2e598a8c78eb5816778a7">&#9670;&nbsp;</a></span>setValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr _type <a class="el" href="structSI_1_1detail_1_1unit__t.html">SI::detail::unit_t</a>&lt; _symbol, _exponent, _type, _ratio &gt;::raw_value </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>returns the stored value as raw type </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>rename to just value() and deprecate <a class="el" href="structSI_1_1detail_1_1unit__t.html#abebcc8fbf72d27c40f64411b7259cbdf">raw_value()</a> </dd></dl>
-
-</div>
-</div>
-<a id="a4e8e64c22749a3e68d40ada4a5a773ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e8e64c22749a3e68d40ada4a5a773ae">&#9670;&nbsp;</a></span>set_raw_value()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="structSI_1_1detail_1_1unit__t.html">SI::detail::unit_t</a>&lt; _symbol, _exponent, _type, _ratio &gt;::set_raw_value </td>
+          <td class="memname">void <a class="el" href="structSI_1_1detail_1_1unit__t.html">SI::detail::unit_t</a>&lt; _symbol, _exponent, _type, _ratio &gt;::setValue </td>
           <td>(</td>
           <td class="paramtype">_type&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
@@ -1541,6 +1513,36 @@ template&lt;char _symbol, int8_t _exponent, typename _type, typename _ratio = st
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>set as friend to the stream-function </dd></dl>
+
+</div>
+</div>
+<a id="ad6140abd917290bee1f19d98f56a2f87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6140abd917290bee1f19d98f56a2f87">&#9670;&nbsp;</a></span>value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr _type <a class="el" href="structSI_1_1detail_1_1unit__t.html">SI::detail::unit_t</a>&lt; _symbol, _exponent, _type, _ratio &gt;::value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>returns the stored value as raw type </p>
 
 </div>
 </div>
