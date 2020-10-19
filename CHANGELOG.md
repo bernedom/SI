@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.0
+
+*   Support for fractions as exponents (Types from version 1.x.x are no longer supported)
+*   Rename access to stored scalar values to `value()` (from previously `raw_value()`) (Brakes interfaces from 1.x.x)
+
 ## 1.7.6
 
 *   Refactoring conanfile.py to create cmake object only once for a tiny bit more performance when packing

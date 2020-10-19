@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.7.6
+ * This file is part of "SI" version 2.0.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -59,7 +59,8 @@ struct ratio_prefix<std::exa> : std::integral_constant<char, 'E'> {};
 } // namespace SI::detail
 namespace SI {
 /// Base struct. Unusable needs template overloading
-template <char _dimension_symbol, typename _ratio, int8_t _exponent = 1>
+template <char _dimension_symbol, typename _ratio,
+          typename _exponent = std::ratio<1>>
 struct unit_symbol : public std::false_type {};
 
 } // namespace SI

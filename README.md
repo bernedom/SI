@@ -137,3 +137,7 @@ SI is available as 'raw' download from this repo but also as [conan package](htt
 ## Implementation details
 
 For further information and deeper technical details refer to the [implementation details document](doc/implementation-details.md)
+
+## Breaking changes between versions 1.x.x and versions 2.x.x
+
+Version 2.0.0 is currently work in progress and not yet released. Versions above 2.0.0 will not be fully compatible with older versions because of the following changes. See the [Changelog](CHANGELOG.md) for the breaking changes.

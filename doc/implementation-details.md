@@ -14,7 +14,7 @@ All units provided by SI are derived from the template `SI::detail::unit_t`. All
 example:
 ```cpp
 template <typename _type, class _ratio = std::ratio<1>>
-using force_t = detail::unit_t<'F', 1, _type, _ratio>;
+using force_t = detail::unit_t<'F', std::ratio<1>, _type, _ratio>;
 
 template <typename _type> using micro_newton_t = force_t<_type, std::micro>;
 ```

@@ -5,9 +5,9 @@
 using namespace SI::detail;
 
 namespace {
-using ratio_one_unit = unit_t<'X', 1, int64_t, std::ratio<1>>;
-using ratio_kilo_unit = unit_t<'X', 1, int64_t, std::kilo>;
-using ratio_milli_unit = unit_t<'X', 1, int64_t, std::milli>;
+using ratio_one_unit = unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>>;
+using ratio_kilo_unit = unit_t<'X', std::ratio<1>, int64_t, std::kilo>;
+using ratio_milli_unit = unit_t<'X', std::ratio<1>, int64_t, std::milli>;
 } // namespace
 
 TEST_CASE("Detail benchmarks") {

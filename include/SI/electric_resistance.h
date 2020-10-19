@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.7.6
+ * This file is part of "SI" version 2.0.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -22,7 +22,7 @@ namespace SI {
 /// @todo find a way to use Ohm as dimension symbol or switch to R (occupied by
 /// solid angle)
 template <typename _type, class _ratio = std::ratio<1>>
-using electric_resistance_t = detail::unit_t<'O', 1, _type, _ratio>;
+using electric_resistance_t = detail::unit_t<'O', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type>
@@ -69,11 +69,11 @@ BUILD_UNIT_FROM_DIVISON(electric_resistance_t, electric_potential_t,
 /// Builds conductance from 1/conductance, to avoid include cycles the base
 /// unit_t is used instead of the type alias electric_conductance_t
 template <typename _type, class _ratio = std::ratio<1>>
-constexpr auto
-operator/(const _type scalar,
-          const detail::unit_t<'G', 1, _type, _ratio> &conductance) {
+constexpr auto operator/(
+    const _type scalar,
+    const detail::unit_t<'G', std::ratio<1>, _type, _ratio> &conductance) {
   return electric_resistance_t<_type, std::ratio<_ratio::den, _ratio::num>>{
-      scalar / conductance.raw_value()};
+      scalar / conductance.value()};
 }
 } // namespace detail
 

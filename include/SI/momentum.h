@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.7.6
+ * This file is part of "SI" version 2.0.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -22,7 +22,7 @@ namespace SI {
 
 /// Type for momentum where o = v * M
 template <typename _type, typename _ratio>
-using momentum_t = detail::unit_t<'o', 1, _type, _ratio>;
+using momentum_t = detail::unit_t<'o', std::ratio<1>, _type, _ratio>;
 
 namespace detail {
 BUILD_UNIT_FROM_MULTIPLICATION(momentum_t, velocity_t, mass_t)

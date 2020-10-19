@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.7.6
+ * This file is part of "SI" version 2.0.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -18,7 +18,7 @@
 namespace SI {
 
 template <typename _type, typename _ratio>
-using luminosity_t = detail::unit_t<'J', 1, _type, _ratio>;
+using luminosity_t = detail::unit_t<'J', std::ratio<1>, _type, _ratio>;
 
 template <typename _type> using atto_candela_t = luminosity_t<_type, std::atto>;
 template <typename _type>

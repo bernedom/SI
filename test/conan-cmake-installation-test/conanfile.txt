@@ -1,5 +1,5 @@
 [requires]
-SI/[>1.0 <2.0]@SI/testing
+SI/[>1.0 <3.0]@SI/testing
 
 [generators]
 cmake_find_package

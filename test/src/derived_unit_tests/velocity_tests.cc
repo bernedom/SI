@@ -40,7 +40,7 @@ TEST_CASE("GIVEN a length value in km WHEN divided by a time value in h THEN "
   constexpr auto one = 1_km / 1_h;
   STATIC_REQUIRE(
       std::ratio_equal<std::ratio<1000, 3600>, decltype(one)::ratio>::value);
-  STATIC_REQUIRE(one.raw_value() == 1);
+  STATIC_REQUIRE(one.value() == 1);
 }
 
 TEST_CASE("GIVEN a length value in km WHEN divided by a time value in seconds "
@@ -57,7 +57,7 @@ TEST_CASE(
   constexpr auto kms = 10_km / 2_s;
   constexpr auto ms = 10000_m / 2_s;
 
-  STATIC_REQUIRE(kms.raw_value() == 5);
+  STATIC_REQUIRE(kms.value() == 5);
   STATIC_REQUIRE(kms == ms);
 }
 

@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.7.6
+ * This file is part of "SI" version 2.0.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -21,7 +21,7 @@ namespace SI {
 
 /// unit for electric charge 'Q' where Q = T * I
 template <typename _type, typename _ratio>
-using electric_charge_t = detail::unit_t<'Q', 1, _type, _ratio>;
+using electric_charge_t = detail::unit_t<'Q', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type>

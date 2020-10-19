@@ -116,7 +116,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _h THEN resulting value "
 TEST_CASE(
     "GIVEN a value WHEN constructed with literal _negative duration test") {
   constexpr auto minus_one = -1_s;
-  STATIC_REQUIRE(minus_one.raw_value() == -1);
+  STATIC_REQUIRE(minus_one.value() == -1);
 }
 
 TEST_CASE("GIVEN a 1 atto seconds WHEN passed to a streaming operator THEN "
@@ -296,4 +296,3 @@ TEST_CASE("GIVEN a string of '1h' WHEN streamed into hours_t THEN result "
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_h);
 }
-

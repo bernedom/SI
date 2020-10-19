@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.7.6
+ * This file is part of "SI" version 2.0.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -22,7 +22,7 @@
 
 namespace SI {
 template <typename _type, class _ratio = std::ratio<1>>
-using electric_potential_t = detail::unit_t<'U', 1, _type, _ratio>;
+using electric_potential_t = detail::unit_t<'U', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type>

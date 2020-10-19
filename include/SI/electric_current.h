@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.7.6
+ * This file is part of "SI" version 2.0.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -18,7 +18,7 @@
 namespace SI {
 
 template <typename _type, typename _ratio>
-using electric_current_t = detail::unit_t<'I', 1, _type, _ratio>;
+using electric_current_t = detail::unit_t<'I', std::ratio<1>, _type, _ratio>;
 
 template <typename _type>
 using atto_ampere_t = electric_current_t<_type, std::atto>;

@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.7.6
+ * This file is part of "SI" version 2.0.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -21,14 +21,14 @@
 namespace SI {
 
 namespace detail {
-template <int8_t _exponent, typename _type, typename _ratio>
+template <typename _exponent, typename _type, typename _ratio>
 using time_base_t = detail::unit_t<'T', _exponent, _type, _ratio>;
 }
 template <typename _type, typename _ratio>
-using time_t = detail::time_base_t<1, _type, _ratio>;
+using time_t = detail::time_base_t<std::ratio<1>, _type, _ratio>;
 
 template <typename _type, typename _ratio>
-using time_squared_t = detail::time_base_t<2, _type, _ratio>;
+using time_squared_t = detail::time_base_t<std::ratio<2>, _type, _ratio>;
 
 template <typename _type> using atto_seconds_t = time_t<_type, std::atto>;
 template <typename _type> using femto_seconds_t = time_t<_type, std::femto>;

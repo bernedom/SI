@@ -56,7 +56,8 @@ TEMPLATE_TEST_CASE(
 
 TEST_CASE("GIVEN a unit AND ratio is <1> WHEN passed to an stringstream THEN "
           "resulting string contains value and unit symbol") {
-  constexpr SI::detail::unit_t<'X', 1, int64_t, std::ratio<1>> v{100};
+  constexpr SI::detail::unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>> v{
+      100};
 
   std::stringstream ss;
 
@@ -67,7 +68,7 @@ TEST_CASE("GIVEN a unit AND ratio is <1> WHEN passed to an stringstream THEN "
 TEST_CASE("GIVEN a unit AND ratio is kilo WHEN passed to an stringstream THEN "
           "resulting string contains value and unit symbol AND unit symbol is "
           "prefixed with 'k'") {
-  constexpr SI::detail::unit_t<'X', 1, int64_t, std::kilo> v{100};
+  constexpr SI::detail::unit_t<'X', std::ratio<1>, int64_t, std::kilo> v{100};
 
   std::stringstream ss;
 
@@ -78,7 +79,7 @@ TEST_CASE("GIVEN a unit AND ratio is kilo WHEN passed to an stringstream THEN "
 TEST_CASE("GIVEN a unit AND ratio is atto WHEN passed to an stringstream THEN "
           "resulting string contains value and unit symbol AND unit symbol is "
           "prefixed with 'a'") {
-  constexpr SI::detail::unit_t<'X', 1, int64_t, std::atto> v{100};
+  constexpr SI::detail::unit_t<'X', std::ratio<1>, int64_t, std::atto> v{100};
 
   std::stringstream ss;
 
@@ -88,7 +89,8 @@ TEST_CASE("GIVEN a unit AND ratio is atto WHEN passed to an stringstream THEN "
 
 TEST_CASE("GIVEN a unit AND with ratio 1:1 WHEN converted to string THEN "
           "result is iunit symbol") {
-  constexpr SI::detail::unit_t<'X', 1, int64_t, std::ratio<1>> v{100};
+  constexpr SI::detail::unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>> v{
+      100};
 
   REQUIRE(SI::to_string(v) == "100xx");
 }

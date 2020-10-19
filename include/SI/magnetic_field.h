@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.7.6
+ * This file is part of "SI" version 2.0.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -22,7 +22,7 @@ namespace SI {
 
 /// @todo find a way to encapsulate   phi
 template <typename _type, class _ratio = std::ratio<1>>
-using magnetic_field_t = detail::unit_t<'B', 1, _type, _ratio>;
+using magnetic_field_t = detail::unit_t<'B', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type>

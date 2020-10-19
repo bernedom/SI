@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.7.6
+ * This file is part of "SI" version 2.0.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -21,7 +21,7 @@ namespace SI {
 /// @todo think of how this can be built from 1/T (probably goes along with
 /// making it an alias of hertz)
 template <typename _type, class _ratio = std::ratio<1>>
-using radioactivity_t = detail::unit_t<'A', 1, _type, _ratio>;
+using radioactivity_t = detail::unit_t<'A', std::ratio<1>, _type, _ratio>;
 
 /// specific units
 template <typename _type>

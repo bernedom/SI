@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.7.6
+ * This file is part of "SI" version 2.0.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -22,10 +22,10 @@ namespace SI {
 
 /// Type for velocity where v = L / T
 template <typename _type, typename _ratio>
-using velocity_t = detail::unit_t<'v', 1, _type, _ratio>;
+using velocity_t = detail::unit_t<'v', std::ratio<1>, _type, _ratio>;
 
 template <typename _type, typename _ratio>
-using velocity_squared_t = detail::unit_t<'v', 2, _type, _ratio>;
+using velocity_squared_t = detail::unit_t<'v', std::ratio<2>, _type, _ratio>;
 
 template <typename _type>
 using metre_per_second_t = velocity_t<_type, std::ratio<1>::type>;

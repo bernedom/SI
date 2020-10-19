@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 1.7.6
+ * This file is part of "SI" version 2.0.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -19,7 +19,7 @@ namespace SI {
 
 /// Type for acceleration a = v / t or a = L / t^2
 template <typename _type, typename _ratio>
-using acceleration_t = detail::unit_t<'a', 1, _type, _ratio>;
+using acceleration_t = detail::unit_t<'a', std::ratio<1>, _type, _ratio>;
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(acceleration_t, velocity_t, time_t)
