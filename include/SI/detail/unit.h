@@ -118,7 +118,7 @@ struct unit_t {
   /// returns the stored value as raw type
   constexpr _type value() const { return value_; }
 
-  friend std::istream &operator>> <>(std::istream &stream, unit_t &u);
+  friend std::istream &operator >> < >(std::istream &stream, unit_t &u);
 
   /// Assignment for same ratio
   constexpr unit_t &operator=(const unit_t &rhs) = default;
