@@ -21,6 +21,7 @@
 
 #include <ratio>
 #include <type_traits>
+#include <istream>
 
 namespace SI::detail
 {
