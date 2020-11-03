@@ -40,7 +40,7 @@ mkdir ${HOME}/SI-install
 
 ## Installation using conan.io
 
-SI is available at [conan-center](https://conan.io/center/si/1.7.5/). As per convention of ConanCenter the package name here is `si` (lower case).
+SI is available at [conan-center](https://conan.io/center/si/1.7.5/). As per convention of ConanCenter the package name is `si` (lower case).
 
 Use the following in your `conanfile.txt`
 ```
@@ -59,7 +59,7 @@ In the `conanfile.txt` SI is added like this, to ensure to get the latest versio
 
 ```
 [requires]
-SI/[>1.0 <2.0]@SI/stable
+si/[>1.0 <2.0]@SI/stable
 ```
 
 `SI/stable` are release builds and are considered usable. 

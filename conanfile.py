@@ -4,10 +4,10 @@ import re, os
 
 
 class SiConan(ConanFile):
-    # todo rename to 'si' lower case to conform to conancenter standards
-    name = "SI"
+    
+    name = "si"
     license = "MIT"
-    url = "https://bintray.com/beta/#/bernedom/conan/SI:SI"
+    url = "https://bintray.com/beta/#/bernedom/conan/si:si"
     homepage = "https://github.com/bernedom/SI"
     description = "A header only c++ library that provides type safety and user defined literals \
          for handling pyhsical values defined in the International System of Units."
