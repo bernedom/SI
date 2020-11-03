@@ -4,6 +4,7 @@
 
 *   Support for fractions as exponents (Types from version 1.x.x are no longer supported)
 *   Rename access to stored scalar values to `value()` (from previously `raw_value()`) (Brakes interfaces from 1.x.x)
+*   The conan-package is named `si` instead of `SI` to match the conan naming convention (Include-paths stay upper case)
 
 ## 1.7.6
 
