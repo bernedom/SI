@@ -167,8 +167,8 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _PC THEN result is a "
 
   constexpr auto one_f = 1.0_PC;
   STATIC_REQUIRE(
-      std::is_same<decltype(one_f),
-                   const SI::electric_charge_t<long double, std::peta>>::value);
+      std::is_same_v<decltype(one_f),
+                   const SI::electric_charge_t<long double, std::peta>>);
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _EC THEN result is a "

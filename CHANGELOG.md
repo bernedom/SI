@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.1
+
+*   Refactored type dependent functions to use `std::enable_if_v` instead of `std::enable_if::value`
+*   Use value types for type traits (i.e. `std::is_arithmetic_v` instead of `std::is_arithmetic::value`
+*   Add `SI::detail::is_ratio_v` and `SI::detail::is_unit_t_v`
+
 ## 2.0.0
 
 *   Support for fractions as exponents (Types from version 1.x.x are no longer supported)
