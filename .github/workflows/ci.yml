@@ -63,7 +63,6 @@ jobs:
       - name: ctest
         run: ctest -C Debug
         working-directory: ./build
-
       
       - name: program-termination-tests
         if: runner.os == 'Linux' || runner.os == 'macOS'
@@ -78,7 +77,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: version-consitency
+
+      - name: dependencies (Linux)
+        run: |
+          sudo apt install shunit2 python3-setuptools python3-pip -y
+          sudo pip3 install conan
+
+      - name: version-consistency
         run: |
           ./test/version-consistency.sh
   # TODO add deploy to bintray
