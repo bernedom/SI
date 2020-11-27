@@ -532,13 +532,16 @@ struct is_unit_t<const unit_t<_symbol, _exponent, _type, _ratio>>
 template <char _symbol, typename _exponent, typename _ratio, typename _type>
 struct is_unit_t<unit_t<_symbol, _exponent, _type, _ratio>> : std::true_type {};
 
+template <typename _type>
+inline constexpr bool is_unit_t_v = is_unit_t<_type>::value;
+
 /// function to cast between two units of the same type
 template <typename _target_type, typename _rhs_T>
 constexpr auto unit_cast(const _rhs_T &rhs) {
   // using static assert instead of std::enable if in order to be able to
   // forward declare this function easier
   static_assert(
-      is_unit_t<_rhs_T>::value ||
+      is_unit_t_v<_rhs_T> ||
           std::is_base_of<
               unit_t<_rhs_T::symbol::value, typename _rhs_T::exponent,
                      typename _rhs_T::internal_type, typename _rhs_T::ratio>,
@@ -553,8 +556,8 @@ constexpr auto unit_cast(const _rhs_T &rhs) {
 
 template <typename _unit_lhs, typename _unit_rhs>
 struct unit_with_common_ratio {
-  static_assert(is_unit_t<_unit_lhs>::value, "only supported for SI::unit_t");
-  static_assert(is_unit_t<_unit_rhs>::value, "only supported for SI::unit_t");
+  static_assert(is_unit_t_v<_unit_lhs>, "only supported for SI::unit_t");
+  static_assert(is_unit_t_v<_unit_rhs>, "only supported for SI::unit_t");
   static_assert(std::is_convertible<typename _unit_lhs::internal_type,
                                     typename _unit_rhs::internal_type>::value);
   static_assert(_unit_lhs::symbol::value == _unit_rhs::symbol::value);
@@ -575,8 +578,8 @@ constexpr auto cross_unit_divide(const _unit_lhs &lhs, const _unit_rhs &rhs) {
   // do not use for the same unit as this should result in decreasing the
   // exponent
   static_assert(!std::is_same<_unit_lhs, _unit_rhs>::value);
-  static_assert(is_unit_t<_unit_lhs>::value, "lhs parameter is a unit_t");
-  static_assert(is_unit_t<_unit_rhs>::value, "rhs parameter is a unit_t");
+  static_assert(is_unit_t_v<_unit_lhs>, "lhs parameter is a unit_t");
+  static_assert(is_unit_t_v<_unit_rhs>, "rhs parameter is a unit_t");
 
   using resulting_ratio = typename std::ratio_divide<typename _unit_lhs::ratio,
                                                      typename _unit_rhs::ratio>;
@@ -595,8 +598,8 @@ constexpr auto cross_unit_multiply(const _unit_lhs &lhs, const _unit_rhs &rhs) {
   // do not use for the same unit as this should result in increasing the
   // exponent
   static_assert(!std::is_same<_unit_lhs, _unit_rhs>::value);
-  static_assert(is_unit_t<_unit_lhs>::value, "lhs parameter is a unit_t");
-  static_assert(is_unit_t<_unit_rhs>::value, "rhs parameter is a unit_t");
+  static_assert(is_unit_t_v<_unit_lhs>, "lhs parameter is a unit_t");
+  static_assert(is_unit_t_v<_unit_rhs>, "rhs parameter is a unit_t");
   using resulting_ratio =
       typename std::ratio_multiply<typename _unit_lhs::ratio,
                                    typename _unit_rhs::ratio>;
