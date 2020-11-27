@@ -28,8 +28,8 @@ template <typename _type> struct is_ratio : std::false_type {};
 template <intmax_t _num, intmax_t _den>
 struct is_ratio<std::ratio<_num, _den>> : std::true_type {};
 
-template <typename T, typename std::enable_if<
-                          std::is_floating_point<T>::value>::type * = nullptr>
+template <typename T,
+          std::enable_if_t<std::is_floating_point<T>::value> * = nullptr>
 constexpr bool epsEqual(const T &lhs, const T &rhs) {
 
   return (lhs - rhs) < std::numeric_limits<T>::epsilon() &&
