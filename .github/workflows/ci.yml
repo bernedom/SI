@@ -49,7 +49,7 @@ jobs:
       - name: set-compiler-env
         run: |
           if [ "${{ matrix.compiler }}" != "" ]; then
-            echo "::set-env name=CXX::${{ matrix.compiler }}"
+            echo "CXX=${{ matrix.compiler }}" >> $GITHUB_ENV
           fi
         shell: bash
 
