@@ -51,7 +51,7 @@ template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
 template <char _symbol, typename _exponent, typename _type,
           typename _ratio = std::ratio<1>>
 struct unit_t {
-  static_assert(std::is_arithmetic<_type>::value,
+  static_assert(std::is_arithmetic_v<_type>,
                 "Type is an arithmetic value");
   static_assert(detail::is_ratio<_exponent>::value,
                 "_exponent is a ratio type");
@@ -164,14 +164,14 @@ struct unit_t {
 
     static_assert(detail::is_ratio<_rhs_ratio>::value,
                   "_rhs_ratio is a std::ratio");
-    static_assert(std::is_integral<_type>::value ||
-                      std::is_floating_point<_type>::value,
+    static_assert(std::is_integral_v<_type> ||
+                      std::is_floating_point_v<_type>,
                   "Is integral or floating point");
     using gcd_unit = typename unit_with_common_ratio<
         typename std::remove_reference<decltype(rhs)>::type,
         typename std::remove_reference<decltype(*this)>::type>::type;
 
-    if constexpr (std::is_integral<_type>::value) {
+    if constexpr (std::is_integral_v<_type>) {
 
       return unit_cast<gcd_unit>(rhs).value() ==
              unit_cast<gcd_unit>(*this).value();
@@ -482,7 +482,7 @@ private:
 /// @results unit with negative exponent
 template <typename _type, char _symbol, typename _exponent, typename _rhs_type,
           typename _ratio,
-          std::enable_if_t<std::is_integral<_type>::value> * = nullptr>
+          std::enable_if_t<std::is_integral_v<_type>> * = nullptr>
 constexpr auto
 operator/(const _type &lhs,
           const unit_t<_symbol, _exponent, _rhs_type, _ratio> &rhs) {
@@ -503,7 +503,7 @@ operator/(const _type &lhs,
 /// @results unit with negative exponent
 template <typename _type, char _symbol, typename _exponent, typename _rhs_type,
           typename _ratio,
-          std::enable_if_t<std::is_floating_point<_type>::value> * = nullptr>
+          std::enable_if_t<std::is_floating_point_v<_type>> * = nullptr>
 constexpr auto
 operator/(const _type &lhs,
           const unit_t<_symbol, _exponent, _rhs_type, _ratio> &rhs) {
