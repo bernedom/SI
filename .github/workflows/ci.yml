@@ -64,23 +64,21 @@ jobs:
         run: ctest -C Debug
         working-directory: ./build
 
-      - name: cmake-configure-release
-        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
-      - name: build-release
-        run: cmake --build ./build --config Release
-
+      
       - name: program-termination-tests
         if: runner.os == 'Linux' || runner.os == 'macOS'
-        run: ./test/test-program-termination.sh
+        run: |
+          ./test/installation-tests.sh
+          ./test/compilation-tests.sh
 
-  installation-tests:
+  version-consistency-check:
+    if: github.event.action == 'published' || github.ref != 'refs/heads/master'
+    needs: ci
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/installation-tests
-        with:
-          script: ./test/installation-tests.sh
-        id: installation-tests
-
+      - name: version-consitency
+        run: |
+          ./test/version-consistency.sh
   # TODO add deploy to bintray
