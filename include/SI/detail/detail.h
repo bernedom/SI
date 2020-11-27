@@ -28,6 +28,9 @@ template <typename _type> struct is_ratio : std::false_type {};
 template <intmax_t _num, intmax_t _den>
 struct is_ratio<std::ratio<_num, _den>> : std::true_type {};
 
+template <typename _type>
+inline constexpr bool is_ratio_v = is_ratio<_type>::value;
+
 template <typename T,
           std::enable_if_t<std::is_floating_point_v<T>> * = nullptr>
 constexpr bool epsEqual(const T &lhs, const T &rhs) {
