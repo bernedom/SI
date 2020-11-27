@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">2.0.0</span>
+   &#160;<span id="projectnumber">2.0.1</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -69,7 +69,8 @@ $(function() {
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">SI::detail Namespace Reference</div>  </div>
 </div><!--header-->
@@ -147,14 +148,14 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1fe051f6c592daff5cce9a0f9e2fb66f"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if&lt; std::is_floating_point&lt; T &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:a1fe051f6c592daff5cce9a0f9e2fb66f"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; std::is_floating_point_v&lt; T &gt;&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:a1fe051f6c592daff5cce9a0f9e2fb66f"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#a1fe051f6c592daff5cce9a0f9e2fb66f">epsEqual</a> (const T &amp;lhs, const T &amp;rhs)</td></tr>
 <tr class="separator:a1fe051f6c592daff5cce9a0f9e2fb66f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45af83e9f353597a58012c58577724fb"><td class="memTemplParams" colspan="2">template&lt;typename _target_type , typename _rhs_T &gt; </td></tr>
 <tr class="memitem:a45af83e9f353597a58012c58577724fb"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#a45af83e9f353597a58012c58577724fb">unit_cast</a> (const _rhs_T &amp;rhs)</td></tr>
 <tr class="memdesc:a45af83e9f353597a58012c58577724fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">function to cast between two units of the same type  <a href="#a45af83e9f353597a58012c58577724fb">More...</a><br /></td></tr>
 <tr class="separator:a45af83e9f353597a58012c58577724fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2614dd22817f47500394f7311a09b68"><td class="memTemplParams" colspan="2">template&lt;typename _type , char _symbol, typename _exponent , typename _rhs_type , typename _ratio , typename std::enable_if&lt; std::is_integral&lt; _type &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:ae2614dd22817f47500394f7311a09b68"><td class="memTemplParams" colspan="2">template&lt;typename _type , char _symbol, typename _exponent , typename _rhs_type , typename _ratio , std::enable_if_t&lt; std::is_integral_v&lt; _type &gt;&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:ae2614dd22817f47500394f7311a09b68"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#ae2614dd22817f47500394f7311a09b68">operator/</a> (const _type &amp;lhs, const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _exponent, _rhs_type, _ratio &gt; &amp;rhs)</td></tr>
 <tr class="separator:ae2614dd22817f47500394f7311a09b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72bcb436f9c71971933bd49859c77b24"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename... &gt; typename _resulting_unit, typename _unit_lhs , typename _unit_rhs &gt; </td></tr>
@@ -165,11 +166,20 @@ Functions</h2></td></tr>
 <tr class="separator:acae9252988e90f68da5060953a32159e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c9596cb33a11f2dd65866bf958848d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#a1c9596cb33a11f2dd65866bf958848d7">BUILD_UNIT_FROM_DIVISON</a> (<a class="el" href="namespaceSI.html#a6f42e937c8881df1eb62cfe18efe337e">electric_conductance_t</a>, <a class="el" href="namespaceSI.html#af6b0ab281c8436b63542074ec36ea88e">electric_current_t</a>, <a class="el" href="namespaceSI.html#ae6af0981cddf4c69c74130d302b3b11d">electric_potential_t</a>) template&lt; typename _type</td></tr>
 <tr class="separator:a1c9596cb33a11f2dd65866bf958848d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a202cdcd9b0ce5191f6fb7484e7327369"><td class="memTemplParams" colspan="2">template&lt;typename _type &gt; </td></tr>
+<tr class="memitem:a202cdcd9b0ce5191f6fb7484e7327369"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#a202cdcd9b0ce5191f6fb7484e7327369">is_ratio_v</a> = <a class="el" href="structSI_1_1detail_1_1is__ratio.html">is_ratio</a>&lt;_type&gt;::value</td></tr>
+<tr class="separator:a202cdcd9b0ce5191f6fb7484e7327369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7778f5458866f2dee0e32bf25acd8d5f"><td class="memTemplParams" colspan="2">template&lt;typename _type &gt; </td></tr>
+<tr class="memitem:a7778f5458866f2dee0e32bf25acd8d5f"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI_1_1detail.html#a7778f5458866f2dee0e32bf25acd8d5f">is_unit_t_v</a> = <a class="el" href="structSI_1_1detail_1_1is__unit__t.html">is_unit_t</a>&lt;_type&gt;::value</td></tr>
+<tr class="separator:a7778f5458866f2dee0e32bf25acd8d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Namespace containing implementation details for <a class="el" href="namespaceSI.html">SI</a>. </p>
 <p>Namespace containing all <a class="el" href="namespaceSI.html">SI</a> units.</p>
-<p>This file is part of "SI" version 2.0.0 A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units</p>
+<p>This file is part of "SI" version 2.0.1 A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units</p>
 <p><a href="https://github.com/bernedom/SI">https://github.com/bernedom/SI</a></p>
 <p>SPDX-License-Identifier: MIT </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
@@ -294,7 +304,7 @@ template&lt;template&lt; typename... &gt; typename _resulting_unit, typename _un
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename std::enable_if&lt; std::is_floating_point&lt; T &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename T , std::enable_if_t&lt; std::is_floating_point_v&lt; T &gt;&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">constexpr bool SI::detail::epsEqual </td>
@@ -324,7 +334,7 @@ template&lt;typename T , typename std::enable_if&lt; std::is_floating_point&lt; 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename _type , char _symbol, typename _exponent , typename _rhs_type , typename _ratio , typename std::enable_if&lt; std::is_integral&lt; _type &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename _type , char _symbol, typename _exponent , typename _rhs_type , typename _ratio , std::enable_if_t&lt; std::is_integral_v&lt; _type &gt;&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">constexpr auto SI::detail::operator/ </td>
@@ -369,6 +379,55 @@ template&lt;typename _target_type , typename _rhs_T &gt; </div>
 </div><div class="memdoc">
 
 <p>function to cast between two units of the same type </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a202cdcd9b0ce5191f6fb7484e7327369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a202cdcd9b0ce5191f6fb7484e7327369">&#9670;&nbsp;</a></span>is_ratio_v</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool SI::detail::is_ratio_v = <a class="el" href="structSI_1_1detail_1_1is__ratio.html">is_ratio</a>&lt;_type&gt;::value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7778f5458866f2dee0e32bf25acd8d5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7778f5458866f2dee0e32bf25acd8d5f">&#9670;&nbsp;</a></span>is_unit_t_v</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool SI::detail::is_unit_t_v = <a class="el" href="structSI_1_1detail_1_1is__unit__t.html">is_unit_t</a>&lt;_type&gt;::value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">2.0.0</span>
+   &#160;<span id="projectnumber">2.0.1</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -124,11 +124,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a386e5fd51f72ecd5dcaa8d04ce91921e"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a386e5fd51f72ecd5dcaa8d04ce91921e">operator=</a> (<a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;&amp;rhs)=default</td></tr>
 <tr class="memdesc:a386e5fd51f72ecd5dcaa8d04ce91921e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assigmnment for same ratio.  <a href="#a386e5fd51f72ecd5dcaa8d04ce91921e">More...</a><br /></td></tr>
 <tr class="separator:a386e5fd51f72ecd5dcaa8d04ce91921e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4499529631442c2d6390a4b39e72b636"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_ratio , typename std::enable_if&lt; !std::ratio_equal&lt; _rhs_ratio, _ratio &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:a4499529631442c2d6390a4b39e72b636"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_ratio , std::enable_if_t&lt;!std::ratio_equal_v&lt; _rhs_ratio, _ratio &gt;&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:a4499529631442c2d6390a4b39e72b636"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a4499529631442c2d6390a4b39e72b636">operator=</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _exponent, _type, _rhs_ratio &gt; &amp;rhs)</td></tr>
 <tr class="memdesc:a4499529631442c2d6390a4b39e72b636"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment of same unit but different ratio.  <a href="#a4499529631442c2d6390a4b39e72b636">More...</a><br /></td></tr>
 <tr class="separator:a4499529631442c2d6390a4b39e72b636"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcb9b491bf1937944cde9c21279817cf"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_ratio , typename std::enable_if&lt; !std::ratio_equal&lt; _rhs_ratio, _ratio &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:adcb9b491bf1937944cde9c21279817cf"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_ratio , std::enable_if_t&lt;!std::ratio_equal_v&lt; _rhs_ratio, _ratio &gt;&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:adcb9b491bf1937944cde9c21279817cf"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#adcb9b491bf1937944cde9c21279817cf">operator=</a> (<a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _exponent, _type, _rhs_ratio &gt; &amp;&amp;rhs)</td></tr>
 <tr class="memdesc:adcb9b491bf1937944cde9c21279817cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment of same unit but different ratio.  <a href="#adcb9b491bf1937944cde9c21279817cf">More...</a><br /></td></tr>
 <tr class="separator:adcb9b491bf1937944cde9c21279817cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,17 +167,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab9ea95a6f6da8f51f91e288d67f54e18"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#ab9ea95a6f6da8f51f91e288d67f54e18">operator/</a> (const _type f) const</td></tr>
 <tr class="memdesc:ab9ea95a6f6da8f51f91e288d67f54e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">divide by a non-unit scalar  <a href="#ab9ea95a6f6da8f51f91e288d67f54e18">More...</a><br /></td></tr>
 <tr class="separator:ab9ea95a6f6da8f51f91e288d67f54e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a240988ec83ef5d9c644ad4a4a8a167ed"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_exponent , typename _rhs_type , typename std::enable_if&lt; std::ratio_not_equal&lt; _rhs_exponent, _exponent &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:a240988ec83ef5d9c644ad4a4a8a167ed"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_exponent , typename _rhs_type , std::enable_if_t&lt; std::ratio_not_equal_v&lt; _rhs_exponent, _exponent &gt;&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:a240988ec83ef5d9c644ad4a4a8a167ed"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a240988ec83ef5d9c644ad4a4a8a167ed">operator/</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _rhs_exponent, _rhs_type, _ratio &gt; &amp;rhs) const</td></tr>
 <tr class="separator:a240988ec83ef5d9c644ad4a4a8a167ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e8534b067932ad6f2adaa5dc7a2bc3d"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_exponent , typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; std::ratio_not_equal&lt; _rhs_exponent, _exponent &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:a9e8534b067932ad6f2adaa5dc7a2bc3d"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_exponent , typename _rhs_type , typename _rhs_ratio , std::enable_if_t&lt; std::ratio_not_equal_v&lt; _rhs_exponent, _exponent &gt;&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:a9e8534b067932ad6f2adaa5dc7a2bc3d"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a9e8534b067932ad6f2adaa5dc7a2bc3d">operator/</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _rhs_exponent, _rhs_type, _rhs_ratio &gt; &amp;rhs) const</td></tr>
 <tr class="separator:a9e8534b067932ad6f2adaa5dc7a2bc3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4616f6c84b6cb0723a34abe84d8b0002"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_type &gt; </td></tr>
 <tr class="memitem:a4616f6c84b6cb0723a34abe84d8b0002"><td class="memTemplItemLeft" align="right" valign="top">constexpr _type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a4616f6c84b6cb0723a34abe84d8b0002">operator/</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _exponent, _rhs_type, _ratio &gt; &amp;rhs)</td></tr>
 <tr class="memdesc:a4616f6c84b6cb0723a34abe84d8b0002"><td class="mdescLeft">&#160;</td><td class="mdescRight">divide whit same unit result is a scalar  <a href="#a4616f6c84b6cb0723a34abe84d8b0002">More...</a><br /></td></tr>
 <tr class="separator:a4616f6c84b6cb0723a34abe84d8b0002"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f2abca0f3699625f2de14b384ee9472"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_exponent , typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; std::ratio_equal&lt; _rhs_exponent, exponent &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:a4f2abca0f3699625f2de14b384ee9472"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_exponent , typename _rhs_type , typename _rhs_ratio , std::enable_if_t&lt; std::ratio_equal_v&lt; _rhs_exponent, exponent &gt;&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:a4f2abca0f3699625f2de14b384ee9472"><td class="memTemplItemLeft" align="right" valign="top">constexpr _type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a4f2abca0f3699625f2de14b384ee9472">operator/</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _rhs_exponent, _rhs_type, _rhs_ratio &gt; &amp;rhs) const</td></tr>
 <tr class="separator:a4f2abca0f3699625f2de14b384ee9472"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c51124a77017271ecad7cb1b4249f48"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a6c51124a77017271ecad7cb1b4249f48">operator/=</a> (const _type scalar)</td></tr>
@@ -190,7 +190,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1aee4aac9a9fdd78965efae3b1884e19"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a1aee4aac9a9fdd78965efae3b1884e19">operator+=</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;rhs)</td></tr>
 <tr class="memdesc:a1aee4aac9a9fdd78965efae3b1884e19"><td class="mdescLeft">&#160;</td><td class="mdescRight">add-assign value of the same unit  <a href="#a1aee4aac9a9fdd78965efae3b1884e19">More...</a><br /></td></tr>
 <tr class="separator:a1aee4aac9a9fdd78965efae3b1884e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcc3749bda24ed5025164c89d34e96e5"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; !std::ratio_equal&lt; _rhs_ratio, _ratio &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:adcc3749bda24ed5025164c89d34e96e5"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_type , typename _rhs_ratio , std::enable_if_t&lt;!std::ratio_equal_v&lt; _rhs_ratio, _ratio &gt;&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:adcc3749bda24ed5025164c89d34e96e5"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#adcc3749bda24ed5025164c89d34e96e5">operator+=</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _exponent, _rhs_type, _rhs_ratio &gt; &amp;rhs)</td></tr>
 <tr class="memdesc:adcc3749bda24ed5025164c89d34e96e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">add value of the same type but possibly different ratio  <a href="#adcc3749bda24ed5025164c89d34e96e5">More...</a><br /></td></tr>
 <tr class="separator:adcc3749bda24ed5025164c89d34e96e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,7 +201,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a079253e0467e2b770a5f8e8003117fad"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a079253e0467e2b770a5f8e8003117fad">operator-=</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;rhs)</td></tr>
 <tr class="memdesc:a079253e0467e2b770a5f8e8003117fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract-assign value of the same unit.  <a href="#a079253e0467e2b770a5f8e8003117fad">More...</a><br /></td></tr>
 <tr class="separator:a079253e0467e2b770a5f8e8003117fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25b6ff160a90372ff0da53a75ac2ad44"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; !std::ratio_equal&lt; _rhs_ratio, _ratio &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:a25b6ff160a90372ff0da53a75ac2ad44"><td class="memTemplParams" colspan="2">template&lt;typename _rhs_type , typename _rhs_ratio , std::enable_if&lt;!std::ratio_equal_v&lt; _rhs_ratio, _ratio &gt;&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:a25b6ff160a90372ff0da53a75ac2ad44"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a25b6ff160a90372ff0da53a75ac2ad44">operator-=</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt; _symbol, _exponent, _type, _rhs_ratio &gt; &amp;rhs)</td></tr>
 <tr class="memdesc:a25b6ff160a90372ff0da53a75ac2ad44"><td class="mdescLeft">&#160;</td><td class="mdescRight">subtract value of the same type but possibly different ratio  <a href="#a25b6ff160a90372ff0da53a75ac2ad44">More...</a><br /></td></tr>
 <tr class="separator:a25b6ff160a90372ff0da53a75ac2ad44"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -822,7 +822,7 @@ template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = 
 <div class="memtemplate">
 template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; !std::ratio_equal&lt; _rhs_ratio, _ratio &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename _rhs_type , typename _rhs_ratio , std::enable_if_t&lt;!std::ratio_equal_v&lt; _rhs_ratio, _ratio &gt;&gt; *  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1004,7 +1004,7 @@ template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = 
 <div class="memtemplate">
 template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; !std::ratio_equal&lt; _rhs_ratio, _ratio &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename _rhs_type , typename _rhs_ratio , std::enable_if&lt;!std::ratio_equal_v&lt; _rhs_ratio, _ratio &gt;&gt; *  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1066,7 +1066,7 @@ template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = 
 <div class="memtemplate">
 template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;typename _rhs_exponent , typename _rhs_type , typename std::enable_if&lt; std::ratio_not_equal&lt; _rhs_exponent, _exponent &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename _rhs_exponent , typename _rhs_type , std::enable_if_t&lt; std::ratio_not_equal_v&lt; _rhs_exponent, _exponent &gt;&gt; *  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1097,7 +1097,7 @@ template&lt;typename _rhs_exponent , typename _rhs_type , typename std::enable_i
 <div class="memtemplate">
 template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;typename _rhs_exponent , typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; std::ratio_not_equal&lt; _rhs_exponent, _exponent &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename _rhs_exponent , typename _rhs_type , typename _rhs_ratio , std::enable_if_t&lt; std::ratio_not_equal_v&lt; _rhs_exponent, _exponent &gt;&gt; *  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1160,7 +1160,7 @@ template&lt;typename _rhs_type &gt; </div>
 <div class="memtemplate">
 template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;typename _rhs_exponent , typename _rhs_type , typename _rhs_ratio , typename std::enable_if&lt; std::ratio_equal&lt; _rhs_exponent, exponent &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename _rhs_exponent , typename _rhs_type , typename _rhs_ratio , std::enable_if_t&lt; std::ratio_equal_v&lt; _rhs_exponent, exponent &gt;&gt; *  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1341,7 +1341,7 @@ template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = 
 <div class="memtemplate">
 template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;typename _rhs_ratio , typename std::enable_if&lt; !std::ratio_equal&lt; _rhs_ratio, _ratio &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename _rhs_ratio , std::enable_if_t&lt;!std::ratio_equal_v&lt; _rhs_ratio, _ratio &gt;&gt; *  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1373,7 +1373,7 @@ template&lt;typename _rhs_ratio , typename std::enable_if&lt; !std::ratio_equal&
 <div class="memtemplate">
 template&lt;char _symbol, typename _exponent, typename _type, typename _ratio = std::ratio&lt;1&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;typename _rhs_ratio , typename std::enable_if&lt; !std::ratio_equal&lt; _rhs_ratio, _ratio &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename _rhs_ratio , std::enable_if_t&lt;!std::ratio_equal_v&lt; _rhs_ratio, _ratio &gt;&gt; *  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
