@@ -63,7 +63,7 @@ jobs:
       - name: ctest
         run: ctest -C Debug
         working-directory: ./build
-      
+
       - name: program-termination-tests
         if: runner.os == 'Linux' || runner.os == 'macOS'
         run: |
@@ -77,6 +77,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: dependencies (Linux)
         run: |
@@ -85,5 +87,6 @@ jobs:
 
       - name: version-consistency
         run: |
+          git fetch --tags --force
           ./test/version-consistency.sh
   # TODO add deploy to bintray

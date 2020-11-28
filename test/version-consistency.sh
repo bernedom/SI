@@ -4,6 +4,8 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 ROOT_DIR=$(realpath ${SCRIPT_DIR}/../)
 
+set -e
+
 setUp() {
     SI_BUILD_DIR=$(mktemp -d)
     BUILD_DIR=$(mktemp -d)
