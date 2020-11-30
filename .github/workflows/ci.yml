@@ -65,7 +65,7 @@ jobs:
         working-directory: ./build
 
       - name: program-termination-tests
-        if: runner.os == 'Linux' || runner.os == 'macOS'
+        if: runner.os == 'Linux'
         run: |
           ./test/installation-tests.sh
           ./test/compilation-tests.sh
