@@ -1,0 +1,92 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  release:
+    types: [published]
+
+jobs:
+  ci:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: true
+      matrix:
+        name:
+          [ubuntu-gcc-7, ubuntu-clang-6, macos-appleclang-11, windows-msvc-19]
+        include:
+          - name: ubuntu-gcc-7
+            os: ubuntu-latest
+            compiler: g++-7
+
+          - name: ubuntu-clang-6
+            os: ubuntu-latest
+            compiler: clang++-6.0
+
+          - name: macos-appleclang-11
+            os: macos-latest
+
+          - name: windows-msvc-19
+            os: windows-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: dependencies (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt install shunit2 ninja-build python3-setuptools python3-pip -y
+          sudo pip3 install conan
+
+      - name: dependecies (macos)
+        if: runner.os == 'macOS'
+        run: brew install shunit2 ninja conan
+
+      # - name: dependencies (windows)
+      #   if: runner.os == 'Windows'
+
+      - name: set-compiler-env
+        run: |
+          if [ "${{ matrix.compiler }}" != "" ]; then
+            echo "CXX=${{ matrix.compiler }}" >> $GITHUB_ENV
+          fi
+        shell: bash
+
+      - name: make-build-dir
+        run: mkdir build
+      - name: cmake-configure-debug
+        run: cmake -DCMAKE_BUILD_TYPE=Debug ..
+        working-directory: ./build
+      - name: build-debug
+        run: cmake --build ./build --config Debug
+      - name: ctest
+        run: ctest -C Debug
+        working-directory: ./build
+
+      - name: program-termination-tests
+        if: runner.os == 'Linux'
+        run: |
+          ./test/installation-tests.sh
+          ./test/compilation-tests.sh
+
+  version-consistency-check:
+    if: github.event.action == 'published' || github.ref != 'refs/heads/master'
+    needs: ci
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: dependencies (Linux)
+        run: |
+          sudo apt install shunit2 python3-setuptools python3-pip -y
+          sudo pip3 install conan
+
+      - name: version-consistency
+        run: |
+          git fetch --tags --force
+          ./test/version-consistency.sh
+  # TODO add deploy to bintray

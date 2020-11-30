@@ -4,6 +4,8 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 ROOT_DIR=$(realpath ${SCRIPT_DIR}/../)
 
+set -e
+
 setUp() {
     SI_BUILD_DIR=$(mktemp -d)
     BUILD_DIR=$(mktemp -d)
@@ -31,7 +33,7 @@ testVersionNumberConsistency() {
     cd ${SI_BUILD_DIR}
     CMAKE_VERSION=$(cmake --system-information | grep -E "VERSION:STATIC" | grep -E -o '[0-9]+\.[0-9]+\.[0-9]+')
     cd ${ORIG_DIR}
-    GIT_VERSION_EXACT=$(git describe --tags | grep -E -o '^[0-9]+\.[0-9]+\.[0-9]+$')
+    GIT_VERSION_EXACT=$(git describe --tags | { grep -E -o '^[0-9]+\.[0-9]+\.[0-9]+$' || true; } )
     
     assertEquals "version in changelog (${CHANGELOG_VERSION}) does not match cmake version (${CMAKE_VERSION})" $CHANGELOG_VERSION $CMAKE_VERSION
     
