@@ -41,7 +41,7 @@ jobs:
 
       - name: dependecies (macos)
         if: runner.os == 'macOS'
-        run: brew install shunit2 ninja conan
+        run: brew install shunit2 ninja conan coreutils
 
       # - name: dependencies (windows)
       #   if: runner.os == 'Windows'
