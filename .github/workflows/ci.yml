@@ -108,7 +108,15 @@ jobs:
           echo "CONAN_PASSWORD=${{ secrets.CONAN_PASSWORD }}" >> $GITHUB_ENV
 
       - name: deploy-unstable
+        if: github.event.action != 'published' && github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
         run: |
           conan remote add bernedom https://api.bintray.com/conan/bernedom/conan
           conan create . SI/unstable
           conan upload SI/*@SI/unstable --all -c -r bernedom
+
+      - name: deploy-stable
+        if: github.event.action == 'published'
+        run: |
+          conan remote add bernedom https://api.bintray.com/conan/bernedom/conan
+          conan create . SI/stable
+          conan upload SI/*@SI/stable --all -c -r bernedom
