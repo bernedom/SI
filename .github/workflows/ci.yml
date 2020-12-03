@@ -18,11 +18,11 @@ jobs:
           [ubuntu-gcc-7, ubuntu-clang-6, macos-appleclang-11, windows-msvc-19]
         include:
           - name: ubuntu-gcc-7
-            os: ubuntu-latest
+            os: ubuntu-18.04
             compiler: g++-7
 
           - name: ubuntu-clang-6
-            os: ubuntu-latest
+            os: ubuntu-18.04
             compiler: clang++-6.0
 
           - name: macos-appleclang-11
@@ -41,7 +41,7 @@ jobs:
 
       - name: dependecies (macos)
         if: runner.os == 'macOS'
-        run: brew install shunit2 ninja conan
+        run: brew install shunit2 ninja conan coreutils
 
       # - name: dependencies (windows)
       #   if: runner.os == 'Windows'
@@ -65,7 +65,7 @@ jobs:
         working-directory: ./build
 
       - name: program-termination-tests
-        if: runner.os == 'Linux'
+        if: runner.os == 'Linux' || runner.os == 'macOs'
         run: |
           ./test/installation-tests.sh
           ./test/compilation-tests.sh
@@ -73,7 +73,7 @@ jobs:
   version-consistency-check:
     if: github.event.action == 'published' || github.ref != 'refs/heads/master'
     needs: ci
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
       - uses: actions/checkout@v2
@@ -89,4 +89,34 @@ jobs:
         run: |
           git fetch --tags --force
           ./test/version-consistency.sh
-  # TODO add deploy to bintray
+
+  deploy-to-bintray:
+    needs: version-consistency-check
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: dependencies
+        run: |
+          sudo apt install shunit2 python3-setuptools python3-pip -y
+          sudo pip3 install conan
+
+      - name: set-environment
+        run: |
+          echo "CONAN_LOGIN_USERNAME=${{ secrets.CONAN_USERNAME }}" >> $GITHUB_ENV
+          echo "CONAN_PASSWORD=${{ secrets.CONAN_PASSWORD }}" >> $GITHUB_ENV
+
+      - name: deploy-unstable
+        if: github.event.action != 'published' && github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        run: |
+          conan remote add bernedom https://api.bintray.com/conan/bernedom/conan
+          conan create . SI/unstable
+          conan upload SI/*@SI/unstable --all -c -r bernedom
+
+      - name: deploy-stable
+        if: github.event.action == 'published'
+        run: |
+          conan remote add bernedom https://api.bintray.com/conan/bernedom/conan
+          conan create . SI/stable
+          conan upload SI/*@SI/stable --all -c -r bernedom

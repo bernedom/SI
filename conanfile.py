@@ -4,7 +4,7 @@ import re, os
 
 
 class SiConan(ConanFile):
-    
+
     name = "si"
     license = "MIT"
     url = "https://bintray.com/beta/#/bernedom/conan/si:si"

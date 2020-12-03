@@ -24,11 +24,7 @@ tearDown() {
 testVersionNumberConsistency() {
     CHANGELOG_VERSION=$(sed -n -E '/## [0-9]+\.[0-9]+\.[0-9]+/p' ${ROOT_DIR}/CHANGELOG.md | head -1 | grep -E -o '[0-9]+\.[0-9]+\.[0-9]+')
     ORIG_DIR=$(pwd)
-    if [ -x "$(command -v python3)" ]; then
-        PYTHON_CMD=python3
-    else
-        PYTHON_CMD=python
-    fi
+    
     cmake ${ROOT_DIR} -B${SI_BUILD_DIR} -DBUILD_TESTING=off -DCMAKE_BUILD_TYPE=Debug >/dev/null
     cd ${SI_BUILD_DIR}
     CMAKE_VERSION=$(cmake --system-information | grep -E "VERSION:STATIC" | grep -E -o '[0-9]+\.[0-9]+\.[0-9]+')
