@@ -18,11 +18,11 @@ jobs:
           [ubuntu-gcc-7, ubuntu-clang-6, macos-appleclang-11, windows-msvc-19]
         include:
           - name: ubuntu-gcc-7
-            os: ubuntu-20.04
+            os: ubuntu-18.04
             compiler: g++-7
 
           - name: ubuntu-clang-6
-            os: ubuntu-20.04
+            os: ubuntu-18.04
             compiler: clang++-6.0
 
           - name: macos-appleclang-11
@@ -73,7 +73,7 @@ jobs:
   version-consistency-check:
     if: github.event.action == 'published' || github.ref != 'refs/heads/master'
     needs: ci
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-18.04
 
     steps:
       - uses: actions/checkout@v2
@@ -92,7 +92,7 @@ jobs:
 
   deploy-to-bintray:
     needs: version-consistency-check
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-18.04
 
     steps:
       - uses: actions/checkout@v2
