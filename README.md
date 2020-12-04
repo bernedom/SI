@@ -1,12 +1,12 @@
 <img align="right" src="SI-logo.jpg">
 
-[![Travis Build Status](https://travis-ci.com/bernedom/SI.svg?branch=master)](https://travis-ci.com/bernedom/SI)
+
 [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/github/bernedom/SI?branch=master&svg=true)](https://ci.appveyor.com/project/bernedom/si)
 [![GitHub Releases](https://img.shields.io/github/release/bernedom/SI.svg)](https://github.com/bernedom/SI/releases)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/bernedom/SI/master/LICENSE)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ec7f65662b91480a9968bd77bd32c66c)](https://www.codacy.com/app/bernedom/SI?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bernedom/SI&amp;utm_campaign=Badge_Grade)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/bernedom/SI.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/bernedom/SI/context:cpp)
-[![Download](https://api.bintray.com/packages/bernedom/conan/SI%3ASI/images/download.svg)](https://bintray.com/bernedom/conan/SI%3ASI/_latestVersion)
+[![Download](https://api.bintray.com/packages/bernedom/conan/si%3ASI/images/download.svg)](https://bintray.com/bernedom/conan/si%3ASI/_latestVersion)
 
 # SI - Type safety for physical units
 
@@ -126,13 +126,13 @@ substitute `--config Debug` with `--config Release` for optimized builds
 
 ### Installing
 
-The default installation location for SI is  `/usr/local/lib/SI`. SI can be installed using raw cmake, cpack (cmakes package mechanism), or as a conan.io package provided from [Bintray](https://bintray.com/bernedom/conan/SI%3ASI)
+The default installation location for SI is  `/usr/local/lib/SI`. SI can be installed using raw cmake, cpack (cmakes package mechanism), or as a conan.io package provided from [Bintray](https://bintray.com/bernedom/conan/si%3ASI)
 
 See [the installation guide](doc/installation-guide.md) for detailed instructions
 
 ## Packaging
 
-SI is available as 'raw' download from this repo but also as [conan package](https://bintray.com/bernedom/conan/SI%3ASI/_latestVersion). All releases are available from `SI/stable` from bintray. Getting SI from there is the preferred way.
+SI is available as 'raw' download from this repo but also as [conan package](https://bintray.com/bernedom/conan/si%3ASI/_latestVersion). All releases are available from `SI/stable` from bintray. Getting SI from there is the preferred way.
 
 ## Implementation details
 
@@ -141,3 +141,4 @@ For further information and deeper technical details refer to the [implementatio
 ## Breaking changes between versions 1.x.x and versions 2.x.x
 
 Versions above 2.0.0 will not be fully compatible with older versions because of the breaking changes mentioned in the [changelog](CHANGELOG.md).
+From version 2.0.0 on the conan package is named lower case `si` to conform to the conan naming convention.
