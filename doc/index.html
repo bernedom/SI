@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">2.0.1</span>
+   &#160;<span id="projectnumber">2.0.2</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -68,7 +68,8 @@ $(function() {
 <div class="textblock"><div class="image">
 <img src="SI-logo.jpg" align="right"/>
 </div>
-<p><a href="https://travis-ci.com/bernedom/SI"></a> <a href="https://ci.appveyor.com/project/bernedom/si"></a> <a href="https://github.com/bernedom/SI/releases"></a> <a href="https://raw.githubusercontent.com/bernedom/SI/master/LICENSE"></a> <a href="https://www.codacy.com/app/bernedom/SI?utm_source=github.com&amp;amp;utm_medium=referral&amp;amp;utm_content=bernedom/SI&amp;amp;utm_campaign=Badge_Grade"></a> <a href="https://lgtm.com/projects/g/bernedom/SI/context:cpp"></a> <a href="https://bintray.com/bernedom/conan/SI%3ASI/_latestVersion"></a></p>
+<p><a href="https://github.com/bernedom/SI/actions?query=workflow%3ACI"></a> <a href="https://ci.appveyor.com/project/bernedom/si"></a> <a href="https://www.codacy.com/app/bernedom/SI?utm_source=github.com&amp;amp;utm_medium=referral&amp;amp;utm_content=bernedom/SI&amp;amp;utm_campaign=Badge_Grade"></a> <a href="https://lgtm.com/projects/g/bernedom/SI/context:cpp"></a> <a href="https://si.dominikberner.ch/dev/bench/"></a> <a href="https://si.dominikberner.ch/doc/"></a></p>
+<p><a href="https://github.com/bernedom/SI/releases"></a> <a href="https://raw.githubusercontent.com/bernedom/SI/master/LICENSE"></a> <a href="https://bintray.com/bernedom/conan/si%3ASI/_latestVersion"></a></p>
 <h1><a class="el" href="namespaceSI.html">SI</a> - Type safety for physical units</h1>
 <p>A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the <a href="https://en.wikipedia.org/wiki/International_System_of_Units">International System of Units</a> regulated by the <a href="https://www.bipm.org/en/about-us/">International Bureau of Weights and Measures (BIPM)</a> and published in the <a href="https://www.bipm.org/en/publications/si-brochure/">SI brochure</a>. For a quick start see https://github.com/bernedom/SI/blob/master/doc/installation-guide.md "the installation guide". Contributions and comments are welcome, please check the contribution guidelines for further information.</p>
 <p>An illustrative example:</p>
@@ -181,14 +182,14 @@ $(function() {
 <p>to build use:</p>
 <div class="fragment"><div class="line">mkdir build</div><div class="line">cd build</div><div class="line">cmake ..</div><div class="line">cmake --build . --config Debug -- -j $(nproc)</div></div><!-- fragment --><p>substitute <code>--config Debug</code> with <code>--config Release</code> for optimized builds</p>
 <h3>Installing</h3>
-<p>The default installation location for <a class="el" href="namespaceSI.html">SI</a> is <code>/usr/local/lib/SI</code>. <a class="el" href="namespaceSI.html">SI</a> can be installed using raw cmake, cpack (cmakes package mechanism), or as a conan.io package provided from <a href="https://bintray.com/bernedom/conan/SI%3ASI">Bintray</a></p>
+<p>The default installation location for <a class="el" href="namespaceSI.html">SI</a> is <code>/usr/local/lib/SI</code>. <a class="el" href="namespaceSI.html">SI</a> can be installed using raw cmake, cpack (cmakes package mechanism), or as a conan.io package provided from <a href="https://bintray.com/bernedom/conan/si%3ASI">Bintray</a></p>
 <p>See the installation guide for detailed instructions</p>
 <h2>Packaging</h2>
-<p><a class="el" href="namespaceSI.html">SI</a> is available as 'raw' download from this repo but also as <a href="https://bintray.com/bernedom/conan/SI%3ASI/_latestVersion">conan package</a>. All releases are available from <code>SI/stable</code> from bintray. Getting <a class="el" href="namespaceSI.html">SI</a> from there is the preferred way.</p>
+<p><a class="el" href="namespaceSI.html">SI</a> is available as 'raw' download from this repo but also as <a href="https://bintray.com/bernedom/conan/si%3ASI/_latestVersion">conan package</a>. All releases are available from <code>SI/stable</code> from bintray. Getting <a class="el" href="namespaceSI.html">SI</a> from there is the preferred way.</p>
 <h2>Implementation details</h2>
 <p>For further information and deeper technical details refer to the implementation details document</p>
 <h2>Breaking changes between versions 1.x.x and versions 2.x.x</h2>
-<p>Versions above 2.0.0 will not be fully compatible with older versions because of the breaking changes mentioned in the changelog. </p>
+<p>Versions above 2.0.0 will not be fully compatible with older versions because of the breaking changes mentioned in the changelog. From version 2.0.0 on the conan package is named lower case <code>si</code> to conform to the conan naming convention. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
