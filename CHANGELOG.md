@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.2
+
+*   Documentation update
+
 ## 2.0.1
 
 *   Refactored type dependent functions to use `std::enable_if_v` instead of `std::enable_if::value`
