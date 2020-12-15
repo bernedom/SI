@@ -2,7 +2,7 @@
 
 ## 2.0.2
 
-*   Documentation update
+*   Documentation update and fixing typos in test names
 
 ## 2.0.1
 

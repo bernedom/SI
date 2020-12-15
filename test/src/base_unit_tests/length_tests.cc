@@ -18,7 +18,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _am THEN result is a "
                    const SI::length_t<long double, std::atto>>::value);
 }
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _pm THEN result is a "
+TEST_CASE("GIVEN a value WHEN constructed with literal _fm THEN result is a "
           "length type AND ratio 1 to 10^15") {
   constexpr auto one = 1_fm;
   STATIC_REQUIRE(std::is_same<decltype(one),
