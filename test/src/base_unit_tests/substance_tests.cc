@@ -19,7 +19,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _amol THEN result is a "
                    const SI::substance_t<long double, std::atto>>::value);
 }
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _pmol THEN result is a "
+TEST_CASE("GIVEN a value WHEN constructed with literal _fmol THEN result is a "
           "substance type AND ratio 1 to 10^15") {
   constexpr auto one = 1_fmol;
   STATIC_REQUIRE(

@@ -19,7 +19,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _aK THEN result is a "
                    const SI::temperature_t<long double, std::atto>>::value);
 }
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _pK THEN result is a "
+TEST_CASE("GIVEN a value WHEN constructed with literal _fK THEN result is a "
           "temperature type AND ratio 1 to 10^15") {
   constexpr auto one = 1_fK;
   STATIC_REQUIRE(

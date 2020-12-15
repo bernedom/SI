@@ -19,7 +19,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _acd THEN result is a "
                    const SI::luminosity_t<long double, std::atto>>::value);
 }
 
-TEST_CASE("GIVEN a value WHEN constructed with literal _pcd THEN result is a "
+TEST_CASE("GIVEN a value WHEN constructed with literal _fcd THEN result is a "
           "luminosity type AND ratio 1 to 10^15") {
   constexpr auto one = 1_fcd;
   STATIC_REQUIRE(
