@@ -99,6 +99,78 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _t THEN result is a "
                               const SI::mass_t<long double, std::kilo>>::value);
 }
 
+TEST_CASE("GIVEN a value WHEN constructed with literal _Mg THEN result is a "
+          "mass value AND ratio is 1000/1") {
+  constexpr auto one = 1_Mg;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::kilo>>::value);
+
+  constexpr auto one_f = 1.0_Mg;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::kilo>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _Gg THEN result is a "
+          "mass value AND ratio is 10^6/1") {
+  constexpr auto one = 1_Gg;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::mega>>::value);
+
+  constexpr auto one_f = 1.0_Gg;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::mega>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _Tg THEN result is a "
+          "mass value AND ratio is 10^9/1") {
+  constexpr auto one = 1_Tg;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::giga>>::value);
+
+  constexpr auto one_f = 1.0_Tg;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::giga>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _Pg THEN result is a "
+          "mass value AND ratio is 10^12/1") {
+  constexpr auto one = 1_Pg;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::tera>>::value);
+
+  constexpr auto one_f = 1.0_Pg;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::tera>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _Eg THEN result is a "
+          "mass value AND ratio is 10^15/1") {
+  constexpr auto one = 1_Eg;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::peta>>::value);
+
+  constexpr auto one_f = 1.0_Eg;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::peta>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _Zg THEN result is a "
+          "mass value AND ratio is 10^18/1") {
+  constexpr auto one = 1_Zg;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::exa>>::value);
+
+  constexpr auto one_f = 1.0_Zg;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::exa>>::value);
+}
+
 TEST_CASE("GIVEN a 1 femto gram WHEN passed to a streaming operator THEN "
           "result is '1fg'") {
   constexpr auto value = 1_fg;
@@ -250,4 +322,3 @@ TEST_CASE("GIVEN a string of '1t' WHEN streamed into ton_t THEN result "
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_t);
 }
-

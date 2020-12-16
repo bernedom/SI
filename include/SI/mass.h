@@ -29,11 +29,17 @@ template <typename _type> using milli_gram_t = mass_t<_type, std::micro>;
 template <typename _type> using gram_t = mass_t<_type, std::milli>;
 template <typename _type> using kilo_gram_t = mass_t<_type, std::ratio<1>>;
 template <typename _type> using ton_t = mass_t<_type, std::kilo>;
+template <typename _type> using mega_gram_t = ton_t<_type>;
+template <typename _type> using giga_gram_t = mass_t<_type, std::mega>;
+template <typename _type> using tera_gram_t = mass_t<_type, std::giga>;
+template <typename _type> using peta_gram_t = mass_t<_type, std::tera>;
+template <typename _type> using exa_gram_t = mass_t<_type, std::peta>;
+template <typename _type> using zetta_gram_t = mass_t<_type, std::exa>;
 
 // specialize unit_symbol for usage with stream operators
 // due to the standard SI unit being 'kg' instead of 'g'
-// ratios has to be multiplied by 1000/1 and explicit template specialization is
-// needed for the 'ton' and 'gram'
+// ratios has to be multiplied by 1000/1 and explicit template
+// specialization is needed for the 'ton' and 'gram'
 template <>
 struct unit_symbol<'M', std::ratio<1>>
     : SI::detail::unit_symbol_impl<'k', 'g'> {};
@@ -84,6 +90,30 @@ template <char... _digits> constexpr ton_t<int64_t> operator""_t() {
   return ton_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
+template <char... _digits> constexpr mega_gram_t<int64_t> operator""_Mg() {
+  return mega_gram_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
+template <char... _digits> constexpr giga_gram_t<int64_t> operator""_Gg() {
+  return giga_gram_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
+template <char... _digits> constexpr tera_gram_t<int64_t> operator""_Tg() {
+  return tera_gram_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
+template <char... _digits> constexpr peta_gram_t<int64_t> operator""_Pg() {
+  return peta_gram_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
+template <char... _digits> constexpr exa_gram_t<int64_t> operator""_Eg() {
+  return exa_gram_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
+template <char... _digits> constexpr zetta_gram_t<int64_t> operator""_Zg() {
+  return zetta_gram_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
 constexpr femto_gram_t<long double> operator""_fg(long double value) {
   return femto_gram_t<long double>{value};
 }
@@ -111,8 +141,33 @@ constexpr gram_t<long double> operator"" _g(long double g) {
 constexpr kilo_gram_t<long double> operator"" _kg(long double kg) {
   return kilo_gram_t<long double>(kg);
 }
+
 constexpr ton_t<long double> operator"" _t(long double t) {
   return ton_t<long double>(t);
+}
+
+constexpr mega_gram_t<long double> operator""_Mg(long double value) {
+  return mega_gram_t<long double>{value};
+}
+
+constexpr giga_gram_t<long double> operator""_Gg(long double value) {
+  return giga_gram_t<long double>{value};
+}
+
+constexpr tera_gram_t<long double> operator""_Tg(long double value) {
+  return tera_gram_t<long double>{value};
+}
+
+constexpr peta_gram_t<long double> operator""_Pg(long double value) {
+  return peta_gram_t<long double>{value};
+}
+
+constexpr exa_gram_t<long double> operator""_Eg(long double value) {
+  return exa_gram_t<long double>{value};
+}
+
+constexpr zetta_gram_t<long double> operator""_Zg(long double value) {
+  return zetta_gram_t<long double>{value};
 }
 
 } // namespace literals
