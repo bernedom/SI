@@ -40,6 +40,7 @@ template <typename _type> using zetta_gram_t = mass_t<_type, std::exa>;
 // due to the standard SI unit being 'kg' instead of 'g'
 // ratios has to be multiplied by 1000/1 and explicit template
 // specialization is needed for the 'ton' and 'gram'
+// @todo figure out how to handle duplicates between tonne and mega_gram
 template <>
 struct unit_symbol<'M', std::ratio<1>>
     : SI::detail::unit_symbol_impl<'k', 'g'> {};
@@ -49,6 +50,9 @@ struct unit_symbol<'M', std::milli> : SI::detail::unit_symbol_impl<'g'> {};
 
 template <>
 struct unit_symbol<'M', std::kilo> : SI::detail::unit_symbol_impl<'t'> {};
+
+template <>
+struct unit_symbol<'M', std::exa> : SI::detail::unit_symbol_impl<'Z', 'g'> {};
 
 template <typename _ratio>
 struct unit_symbol<'M', _ratio>

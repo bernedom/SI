@@ -3,6 +3,7 @@
 ## 2.0.2
 
 *   Documentation update and fixing typos in test names
+*   Full magnitudes for mass up to zetta_gram
 
 ## 2.0.1
 
