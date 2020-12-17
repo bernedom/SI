@@ -99,6 +99,78 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _t THEN result is a "
                               const SI::mass_t<long double, std::kilo>>::value);
 }
 
+TEST_CASE("GIVEN a value WHEN constructed with literal _Mg THEN result is a "
+          "mass value AND ratio is 1000/1") {
+  constexpr auto one = 1_Mg;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::kilo>>::value);
+
+  constexpr auto one_f = 1.0_Mg;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::kilo>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _Gg THEN result is a "
+          "mass value AND ratio is 10^6/1") {
+  constexpr auto one = 1_Gg;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::mega>>::value);
+
+  constexpr auto one_f = 1.0_Gg;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::mega>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _Tg THEN result is a "
+          "mass value AND ratio is 10^9/1") {
+  constexpr auto one = 1_Tg;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::giga>>::value);
+
+  constexpr auto one_f = 1.0_Tg;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::giga>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _Pg THEN result is a "
+          "mass value AND ratio is 10^12/1") {
+  constexpr auto one = 1_Pg;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::tera>>::value);
+
+  constexpr auto one_f = 1.0_Pg;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::tera>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _Eg THEN result is a "
+          "mass value AND ratio is 10^15/1") {
+  constexpr auto one = 1_Eg;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::peta>>::value);
+
+  constexpr auto one_f = 1.0_Eg;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::peta>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _Zg THEN result is a "
+          "mass value AND ratio is 10^18/1") {
+  constexpr auto one = 1_Zg;
+
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::exa>>::value);
+
+  constexpr auto one_f = 1.0_Zg;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::exa>>::value);
+}
+
 TEST_CASE("GIVEN a 1 femto gram WHEN passed to a streaming operator THEN "
           "result is '1fg'") {
   constexpr auto value = 1_fg;
@@ -162,8 +234,8 @@ TEST_CASE("GIVEN a 1 kilo gram WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1kg");
 }
 
-TEST_CASE("GIVEN a 1 mega gram WHEN passed to a streaming operator THEN "
-          "result is '1Mg'") {
+TEST_CASE("GIVEN a 1t WHEN passed to a streaming operator THEN "
+          "result is '1t'") {
   constexpr auto value = 1_t;
   std::stringstream ss;
   ss << value;
@@ -251,3 +323,118 @@ TEST_CASE("GIVEN a string of '1t' WHEN streamed into ton_t THEN result "
   REQUIRE(value == 1_t);
 }
 
+TEST_CASE("GIVEN a 1 mega gram WHEN passed to a streaming operator THEN "
+          "result is '1t'") {
+  constexpr auto value = 1_Mg;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == "1t");
+}
+
+TEST_CASE("GIVEN a 1 giga gram WHEN passed to a streaming operator THEN "
+          "result is '1Gg'") {
+  constexpr auto value = 1_Gg;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == "1Gg");
+}
+
+TEST_CASE("GIVEN a 1 tera gram WHEN passed to a streaming operator THEN "
+          "result is '1Tg'") {
+  constexpr auto value = 1_Tg;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == "1Tg");
+}
+
+TEST_CASE("GIVEN a 1 peta gram WHEN passed to a streaming operator THEN "
+          "result is '1Pg'") {
+  constexpr auto value = 1_Pg;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == "1Pg");
+}
+
+TEST_CASE("GIVEN a 1 exa gram WHEN passed to a streaming operator THEN "
+          "result is '1Eg'") {
+  constexpr auto value = 1_Eg;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == "1Eg");
+}
+
+TEST_CASE("GIVEN a 1 zetta gram WHEN passed to a streaming operator THEN "
+          "result is '1Zg'") {
+  constexpr auto value = 1_Zg;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == "1Zg");
+}
+
+// @todo comment back in when tonne Megagram is handled
+// TEST_CASE("GIVEN a string of '1Mg' WHEN streamed into mega_gram_t THEN result
+// "
+//           "is a value of 1 mega_gram_t AND stream is good") {
+//   std::stringstream ss;
+//   ss << "1Mg";
+//   SI::mega_gram_t<int64_t> value{0};
+//   ss >> value;
+//   REQUIRE(!ss.fail());
+//   REQUIRE(value == 1_Mg);
+// }
+
+TEST_CASE("GIVEN a string of '1Gg' WHEN streamed into giga_gram_t THEN result "
+          "is a value of 1 giga_gram_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Gg";
+  SI::giga_gram_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Gg);
+}
+
+TEST_CASE("GIVEN a string of '1Tg' WHEN streamed into tera_gram_t THEN result "
+          "is a value of 1 tera_gram_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Tg";
+  SI::tera_gram_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Tg);
+}
+
+TEST_CASE("GIVEN a string of '1Pg' WHEN streamed into peta_gram_t THEN result "
+          "is a value of 1 peta_gram_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Pg";
+  SI::peta_gram_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Pg);
+}
+
+TEST_CASE("GIVEN a string of '1Eg' WHEN streamed into exa_gram_t THEN result "
+          "is a value of 1 exa_gram_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Eg";
+  SI::exa_gram_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Eg);
+}
+
+TEST_CASE("GIVEN a string of '1Zg' WHEN streamed into zetta_gram_t THEN result "
+          "is a value of 1 zetta_gram_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1Zg";
+  SI::zetta_gram_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_Zg);
+}
