@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structSI_1_1detail_1_1unit__symbol__impl.html" title="SI::detail::unit_symbol\l_impl\&lt; SI::detail::ratio\l_prefix\&lt; _ratio \&gt;::value, &#39;F&#39;\&gt;" alt="" coords="5,5,192,61"/>
-<area shape="rect" id="node2" href="$structSI_1_1unit__symbol_3_01&#39;C&#39;_00_01__ratio_01_4.html" title="SI::unit_symbol\&lt; &#39;C&#39;,\l _ratio \&gt;" alt="" coords="240,13,385,54"/>
+<area shape="rect" id="node1" href="$structSI_1_1detail_1_1unit__symbol__impl.html" title="SI::detail::unit_symbol\l_impl\&lt; SI::detail::ratio\l_prefix\&lt; _ratio \&gt;::value, &#39;C&#39;\&gt;" alt="" coords="5,5,193,61"/>
+<area shape="rect" id="node2" href="$structSI_1_1unit__symbol_3_01&#39;Q&#39;_00_01__ratio_01_4.html" title="SI::unit_symbol\&lt; &#39;Q&#39;,\l _ratio \&gt;" alt="" coords="241,13,387,54"/>
 </map>

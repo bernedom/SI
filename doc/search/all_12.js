@@ -7,6 +7,7 @@ var searchData=
   ['tera_5fcandela_5ft',['tera_candela_t',['../namespaceSI.html#a0557e7979ec6b4a4d7978c068c140889',1,'SI']]],
   ['tera_5fcoulomb_5ft',['tera_coulomb_t',['../namespaceSI.html#a79c08ac299293eb158c405f6e36dbe6a',1,'SI']]],
   ['tera_5ffarad_5ft',['tera_farad_t',['../namespaceSI.html#afdfbaaa86fb3e4c9e2412d7a5740c8ec',1,'SI']]],
+  ['tera_5fgram_5ft',['tera_gram_t',['../namespaceSI.html#a5e6f58eba9c746d65f7c0fdfd9f7a5e9',1,'SI']]],
   ['tera_5fgray_5ft',['tera_gray_t',['../namespaceSI.html#a95d07db80437a5c480515c4fb4099a08',1,'SI']]],
   ['tera_5fhenry_5ft',['tera_henry_t',['../namespaceSI.html#af494be505b02e63bc2c11fcba0b81de5',1,'SI']]],
   ['tera_5fhertz_5ft',['tera_hertz_t',['../namespaceSI.html#ac9d0e9025c9905cf6ffaf3887b376ce4',1,'SI']]],

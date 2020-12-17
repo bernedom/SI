@@ -5,6 +5,7 @@ var searchData=
   ['giga_5fcandela_5ft',['giga_candela_t',['../namespaceSI.html#af01ec641a7d9535089961506eedb141b',1,'SI']]],
   ['giga_5fcoulomb_5ft',['giga_coulomb_t',['../namespaceSI.html#a66f6f529196cdbb9d90b0cf61f9fa3fe',1,'SI']]],
   ['giga_5ffarad_5ft',['giga_farad_t',['../namespaceSI.html#a00a18ccb1582d55b761f494b02f6d1ec',1,'SI']]],
+  ['giga_5fgram_5ft',['giga_gram_t',['../namespaceSI.html#af6a00be51e5e583646179af51bf19789',1,'SI']]],
   ['giga_5fgray_5ft',['giga_gray_t',['../namespaceSI.html#a56f044ee6af4f538ee2a3e8319a4490f',1,'SI']]],
   ['giga_5fhenry_5ft',['giga_henry_t',['../namespaceSI.html#ab15326758ccd1a9d34aec83502e09470',1,'SI']]],
   ['giga_5fhertz_5ft',['giga_hertz_t',['../namespaceSI.html#aa931032ed5d6391c20c1ca2770737f60',1,'SI']]],
