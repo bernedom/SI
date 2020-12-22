@@ -50,7 +50,7 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metric
 | --------------------------- | ---------------- | ----------- | --------------------------------------------------- | --------------------------------- |
 | Length                      | L                | m           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_metre_t`                       |
 | Time                        | T                | s           | 10<sup>-18</sup> to 10<sup>0</sup> and 60/1, 3600/1 | `*_seconds_t, minutes_t, hours_t` |
-| Mass*                       | M                | kg          | 10<sup>-15</sup> to 10<sup>3</sup>                  | `*_gram_t`, `ton_t`               |
+| Mass*                       | M                | kg          | 10<sup>-15</sup> to 10<sup>18</sup>                 | `*_gram_t`, `ton_t`               |
 | Electric current            | I                | A           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_ampere_t`                      |
 | Thermodynamic temperature** | t                | K           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_kelvin_t`                      |
 | Amount of substance         | N                | mol         | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_mol_t`                         |
