@@ -71,7 +71,7 @@ jobs:
           ./test/compilation-tests.sh
 
   version-consistency-check:
-    if: github.event.action == 'published' || github.ref != 'refs/heads/master'
+    if: github.event.action == 'published' || github.ref != 'refs/heads/main'
     needs: ci
     runs-on: ubuntu-18.04
 
@@ -108,7 +108,7 @@ jobs:
           echo "CONAN_PASSWORD=${{ secrets.CONAN_PASSWORD }}" >> $GITHUB_ENV
 
       - name: deploy-unstable
-        if: github.event.action != 'published' && github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        if: github.event.action != 'published' && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         run: |
           conan remote add bernedom https://api.bintray.com/conan/bernedom/conan
           conan create . SI/unstable
