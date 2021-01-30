@@ -377,17 +377,6 @@ TEST_CASE("GIVEN a 1 zetta gram WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1Zg");
 }
 
-// @todo comment back in when tonne Megagram is handled
-// TEST_CASE("GIVEN a string of '1Mg' WHEN streamed into mega_gram_t THEN result
-// "
-//           "is a value of 1 mega_gram_t AND stream is good") {
-//   std::stringstream ss;
-//   ss << "1Mg";
-//   SI::mega_gram_t<int64_t> value{0};
-//   ss >> value;
-//   REQUIRE(!ss.fail());
-//   REQUIRE(value == 1_Mg);
-// }
 
 TEST_CASE("GIVEN a string of '1Gg' WHEN streamed into giga_gram_t THEN result "
           "is a value of 1 giga_gram_t AND stream is good") {
@@ -438,3 +427,4 @@ TEST_CASE("GIVEN a string of '1Zg' WHEN streamed into zetta_gram_t THEN result "
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_Zg);
 }
+

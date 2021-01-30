@@ -50,15 +50,15 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metric
 | --------------------------- | ---------------- | ----------- | --------------------------------------------------- | --------------------------------- |
 | Length                      | L                | m           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_metre_t`                       |
 | Time                        | T                | s           | 10<sup>-18</sup> to 10<sup>0</sup> and 60/1, 3600/1 | `*_seconds_t, minutes_t, hours_t` |
-| Mass*                       | M                | kg          | 10<sup>-15</sup> to 10<sup>18</sup>                 | `*_gram_t`, `ton_t`               |
+| Mass*                       | M                | kg          | 10<sup>-15</sup> to 10<sup>18</sup>                 | `*_gram_t`, `*_ton_t`               |
 | Electric current            | I                | A           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_ampere_t`                      |
 | Thermodynamic temperature** | t                | K           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_kelvin_t`                      |
 | Amount of substance         | N                | mol         | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_mol_t`                         |
 | Luminousity                 | J                | cd          | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_candela_t`                     |
 
-\* for mass the base ratio is `kg` (not `g`) as it is defined in the SI unit table. So there is a mismatch between the literal prefix and the internal representation.
+\* for mass the base ratio is `kg` (not `g`) as defined in the SI unit table. So there is a mismatch between the literal prefix and the internal representation.
 
-\** The dimension symbol for thermodynamic temperature should be `Θ (Theta)` but the current implementation does not allow for non-ASCII symbols or multi-char symbols
+\** The dimension symbol for thermodynamic temperature should be `Θ (Theta)`, but the current implementation does not allow for non-ASCII symbols or multi-char symbols
 
 ### Special Units
 
@@ -100,7 +100,7 @@ All units that can be built from other units decay to the respective units by in
 | Equivalent Dose      | H                | Sv          |                  | aSv to ESv              | `*_sievert_t`                                                      |
 | Catalytic activity   | K                | kat         | N / T            | akat to Ekat            | `*_katal_t`                                                        |
 
-\* These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`but. Illuminace should be E<sub>b</sub>.
+\* These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`but. Luminance should be E<sub>b</sub>.
 
 \** luminous flux should be Φ<sub>v</sub> which is even more less supported than `Φ (Phi)` itself.
 

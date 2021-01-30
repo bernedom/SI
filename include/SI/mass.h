@@ -30,11 +30,16 @@ template <typename _type> using gram_t = mass_t<_type, std::milli>;
 template <typename _type> using kilo_gram_t = mass_t<_type, std::ratio<1>>;
 template <typename _type> using ton_t = mass_t<_type, std::kilo>;
 template <typename _type> using mega_gram_t = ton_t<_type>;
-template <typename _type> using giga_gram_t = mass_t<_type, std::mega>;
-template <typename _type> using tera_gram_t = mass_t<_type, std::giga>;
-template <typename _type> using peta_gram_t = mass_t<_type, std::tera>;
-template <typename _type> using exa_gram_t = mass_t<_type, std::peta>;
-template <typename _type> using zetta_gram_t = mass_t<_type, std::exa>;
+template <typename _type> using kilo_ton_t = mass_t<_type, std::mega>;
+template <typename _type> using giga_gram_t = kilo_ton_t<_type>;
+template <typename _type> using mega_ton_t = mass_t<_type, std::giga>;
+template <typename _type> using tera_gram_t = mega_ton_t<_type>;
+template <typename _type> using giga_ton_t = mass_t<_type, std::tera>;
+template <typename _type> using peta_gram_t = giga_ton_t<_type>;
+template <typename _type> using tera_ton_t = mass_t<_type, std::peta>;
+template <typename _type> using exa_gram_t = tera_ton_t<_type>;
+template <typename _type> using peta_ton_t = mass_t<_type, std::exa>;
+template <typename _type> using zetta_gram_t = peta_ton_t<_type>;
 
 // specialize unit_symbol for usage with stream operators
 // due to the standard SI unit being 'kg' instead of 'g'
