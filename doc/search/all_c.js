@@ -30,6 +30,7 @@ var searchData=
   ['mega_5fsiemens_5ft',['mega_siemens_t',['../namespaceSI.html#a937f25fcf42d84ec971c99297965313e',1,'SI']]],
   ['mega_5fsievert_5ft',['mega_sievert_t',['../namespaceSI.html#aa609f28e33e2f9da239e270489953db6',1,'SI']]],
   ['mega_5ftesla_5ft',['mega_tesla_t',['../namespaceSI.html#ad3f794bd098724737ee913be93414e93',1,'SI']]],
+  ['mega_5fton_5ft',['mega_ton_t',['../namespaceSI.html#a598312e241b304087b3257692197d8d0',1,'SI']]],
   ['mega_5fvolt_5ft',['mega_volt_t',['../namespaceSI.html#a074003fe002eaba737f27e29e149a13e',1,'SI']]],
   ['mega_5fwatt_5ft',['mega_watt_t',['../namespaceSI.html#a7263f6eeb2aac28255f26e3cefc26a0c',1,'SI']]],
   ['mega_5fweber_5ft',['mega_weber_t',['../namespaceSI.html#a8834dbe8c9fd4fda7d76b94b12d9de9e',1,'SI']]],

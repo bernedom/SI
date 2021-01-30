@@ -85,7 +85,7 @@ $(function() {
 <tr>
 <td>Time </td><td>T </td><td>s </td><td>10<sup>-18</sup> to 10<sup>0</sup> and 60/1, 3600/1 </td><td><code>*_seconds_t, minutes_t, hours_t</code> </td></tr>
 <tr>
-<td>Mass* </td><td>M </td><td>kg </td><td>10<sup>-15</sup> to 10<sup>18</sup> </td><td><code>*_gram_t</code>, <code>ton_t</code> </td></tr>
+<td>Mass* </td><td>M </td><td>kg </td><td>10<sup>-15</sup> to 10<sup>18</sup> </td><td><code>*_gram_t</code>, <code>*_ton_t</code> </td></tr>
 <tr>
 <td>Electric current </td><td>I </td><td>A </td><td>10<sup>-18</sup> to 10<sup>18</sup> </td><td><code>*_ampere_t</code> </td></tr>
 <tr>
@@ -96,9 +96,9 @@ $(function() {
 <td>Luminousity </td><td>J </td><td>cd </td><td>10<sup>-18</sup> to 10<sup>18</sup> </td><td><code>*_candela_t</code> </td></tr>
 </table>
 <ul>
-<li>for mass the base ratio is <code>kg</code> (not <code>g</code>) as it is defined in the <a class="el" href="namespaceSI.html">SI</a> unit table. So there is a mismatch between the literal prefix and the internal representation.</li>
+<li>for mass the base ratio is <code>kg</code> (not <code>g</code>) as defined in the <a class="el" href="namespaceSI.html">SI</a> unit table. So there is a mismatch between the literal prefix and the internal representation.</li>
 </ul>
-<p>** The dimension symbol for thermodynamic temperature should be <code>Θ (Theta)</code> but the current implementation does not allow for non-ASCII symbols or multi-char symbols</p>
+<p>** The dimension symbol for thermodynamic temperature should be <code>Θ (Theta)</code>, but the current implementation does not allow for non-ASCII symbols or multi-char symbols</p>
 <h3>Special Units</h3>
 <table class="doxtable">
 <tr>
@@ -166,7 +166,7 @@ $(function() {
 <td>Catalytic activity </td><td>K </td><td>kat </td><td>N / T </td><td>akat to Ekat </td><td><code>*_katal_t</code> </td></tr>
 </table>
 <ul>
-<li>These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be <code>Ω (Ohm)</code> and for magnetic flux <code>Φ (Phi)</code>but. Illuminace should be E<sub>b</sub>.</li>
+<li>These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be <code>Ω (Ohm)</code> and for magnetic flux <code>Φ (Phi)</code>but. Luminance should be E<sub>b</sub>.</li>
 </ul>
 <p>** luminous flux should be Φ<sub>v</sub> which is even more less supported than <code>Φ (Phi)</code> itself.</p>
 <h2>Non-Standard Units</h2>

@@ -1,9 +1,9 @@
 <map id="SI/velocity.h" name="SI/velocity.h">
-<area shape="rect" id="node2" href="$operator__helpers_8h.html" title="detail/operator_helpers.h" alt="" coords="100,80,264,107"/>
-<area shape="rect" id="node4" href="$number__parser_8h.html" title="number_parser.h" alt="" coords="21,304,140,331"/>
-<area shape="rect" id="node11" href="$unit_8h.html" title="detail/unit.h" alt="" coords="452,155,541,181"/>
-<area shape="rect" id="node12" href="$length_8h.html" title="length.h" alt="" coords="344,80,412,107"/>
-<area shape="rect" id="node16" href="$time_8h.html" title="time.h" alt="" coords="569,80,627,107"/>
-<area shape="rect" id="node3" href="$detail_8h.html" title="detail.h" alt="" coords="262,229,326,256"/>
-<area shape="rect" id="node13" href="$unit__symbol_8h.html" title="detail/unit_symbol.h" alt="" coords="566,155,705,181"/>
+<area shape="rect" id="node2" href="$operator__helpers_8h.html" title="detail/operator_helpers.h" alt="" coords="103,80,288,107"/>
+<area shape="rect" id="node4" href="$number__parser_8h.html" title="number_parser.h" alt="" coords="21,304,152,331"/>
+<area shape="rect" id="node11" href="$unit_8h.html" title="detail/unit.h" alt="" coords="471,155,571,181"/>
+<area shape="rect" id="node12" href="$length_8h.html" title="length.h" alt="" coords="361,80,436,107"/>
+<area shape="rect" id="node16" href="$time_8h.html" title="time.h" alt="" coords="598,80,662,107"/>
+<area shape="rect" id="node3" href="$detail_8h.html" title="detail.h" alt="" coords="274,229,344,256"/>
+<area shape="rect" id="node13" href="$unit__symbol_8h.html" title="detail/unit_symbol.h" alt="" coords="594,155,749,181"/>
 </map>

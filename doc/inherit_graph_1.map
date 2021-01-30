@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$structSI_1_1detail_1_1is__ratio_3_01std_1_1ratio_3_01__num_00_01__den_01_4_01_4.html" title="SI::detail::is_ratio\l\&lt; std::ratio\&lt; _num, \l_den \&gt; \&gt;" alt="" coords="156,5,293,61"/>
-<area shape="rect" id="node3" href="$structSI_1_1detail_1_1is__unit__t_3_01const_01unit__t_3_01__symbol_00_01__exponent_00_01__type_00_01__ratio_01_4_01_4.html" title="template specialisation to check if a type is a unit_t (true if unit_t) " alt="" coords="129,85,320,141"/>
-<area shape="rect" id="node4" href="$structSI_1_1detail_1_1is__unit__t_3_01unit__t_3_01__symbol_00_01__exponent_00_01__type_00_01__ratio_01_4_01_4.html" title="non&#45;const specialisation of check above " alt="" coords="129,165,320,221"/>
+<area shape="rect" id="node2" href="$structSI_1_1detail_1_1is__ratio_3_01std_1_1ratio_3_01__num_00_01__den_01_4_01_4.html" title="SI::detail::is_ratio\l\&lt; std::ratio\&lt; _num, \l_den \&gt; \&gt;" alt="" coords="167,5,321,61"/>
+<area shape="rect" id="node3" href="$structSI_1_1detail_1_1is__unit__t_3_01const_01unit__t_3_01__symbol_00_01__exponent_00_01__type_00_01__ratio_01_4_01_4.html" title="template specialisation to check if a type is a unit_t (true if unit_t) " alt="" coords="137,85,351,141"/>
+<area shape="rect" id="node4" href="$structSI_1_1detail_1_1is__unit__t_3_01unit__t_3_01__symbol_00_01__exponent_00_01__type_00_01__ratio_01_4_01_4.html" title="non&#45;const specialisation of check above " alt="" coords="137,165,351,221"/>
 </map>

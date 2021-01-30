@@ -24,6 +24,7 @@ var searchData=
   ['kilo_5fsiemens_5ft',['kilo_siemens_t',['../namespaceSI.html#a6970edbbcabb71ea068df40c3d0ae412',1,'SI']]],
   ['kilo_5fsievert_5ft',['kilo_sievert_t',['../namespaceSI.html#a576c99cc8890face1f6230d57bf66c19',1,'SI']]],
   ['kilo_5ftesla_5ft',['kilo_tesla_t',['../namespaceSI.html#a7878328bcc19e98a84e45304520a1375',1,'SI']]],
+  ['kilo_5fton_5ft',['kilo_ton_t',['../namespaceSI.html#a3c7282aed0203218feb6f5e67c45c1c7',1,'SI']]],
   ['kilo_5fvolt_5ft',['kilo_volt_t',['../namespaceSI.html#a908cec08ecd7b1d8276664e60ea037dc',1,'SI']]],
   ['kilo_5fwatt_5ft',['kilo_watt_t',['../namespaceSI.html#a1da08c64bc0a311302d853bf74a42ae6',1,'SI']]],
   ['kilo_5fweber_5ft',['kilo_weber_t',['../namespaceSI.html#a19228e1195ac3257e99e59126b084231',1,'SI']]],
