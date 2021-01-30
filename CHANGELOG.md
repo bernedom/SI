@@ -2,7 +2,7 @@
 
 ## 2.0.3
 
-*   Extended documentation
+*   Add synonymous `*_ton_t` types for mass magnitudes
 *   Renamed default branch from `master` to `main`
 
 ## 2.0.2
