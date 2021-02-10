@@ -103,6 +103,22 @@ template <char... _digits> constexpr kilo_ton_t<int64_t> operator""_kt() {
   return kilo_ton_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
+template <char... _digits> constexpr mega_ton_t<int64_t> operator""_Mt() {
+  return mega_ton_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
+template <char... _digits> constexpr giga_ton_t<int64_t> operator""_Gt() {
+  return giga_ton_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
+template <char... _digits> constexpr tera_ton_t<int64_t> operator""_Tt() {
+  return tera_ton_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
+template <char... _digits> constexpr peta_ton_t<int64_t> operator""_Pt() {
+  return peta_ton_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
 template <char... _digits> constexpr mega_gram_t<int64_t> operator""_Mg() {
   return mega_gram_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
@@ -163,6 +179,21 @@ constexpr kilo_ton_t<long double> operator"" _kt(long double t) {
   return kilo_ton_t<long double>(t);
 }
 
+constexpr mega_ton_t<long double> operator"" _Mt(long double t) {
+  return mega_ton_t<long double>(t);
+}
+
+constexpr giga_ton_t<long double> operator"" _Gt(long double t) {
+  return giga_ton_t<long double>(t);
+}
+
+constexpr tera_ton_t<long double> operator"" _Tt(long double t) {
+  return tera_ton_t<long double>(t);
+}
+
+constexpr peta_ton_t<long double> operator"" _Pt(long double t) {
+  return peta_ton_t<long double>(t);
+}
 
 constexpr mega_gram_t<long double> operator""_Mg(long double value) {
   return mega_gram_t<long double>{value};
