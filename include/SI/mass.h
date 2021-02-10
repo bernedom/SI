@@ -99,6 +99,10 @@ template <char... _digits> constexpr ton_t<int64_t> operator""_t() {
   return ton_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
 
+template <char... _digits> constexpr kilo_ton_t<int64_t> operator""_kt() {
+  return kilo_ton_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
 template <char... _digits> constexpr mega_gram_t<int64_t> operator""_Mg() {
   return mega_gram_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
 }
@@ -154,6 +158,11 @@ constexpr kilo_gram_t<long double> operator"" _kg(long double kg) {
 constexpr ton_t<long double> operator"" _t(long double t) {
   return ton_t<long double>(t);
 }
+
+constexpr kilo_ton_t<long double> operator"" _kt(long double t) {
+  return kilo_ton_t<long double>(t);
+}
+
 
 constexpr mega_gram_t<long double> operator""_Mg(long double value) {
   return mega_gram_t<long double>{value};
