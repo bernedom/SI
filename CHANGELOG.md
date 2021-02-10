@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.4
+
+*   Add literals for ton types up to peta ton
+
 ## 2.0.3
 
 *   Add synonymous `*_ton_t` types for mass magnitudes
