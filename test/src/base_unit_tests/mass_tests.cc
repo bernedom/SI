@@ -99,6 +99,62 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _t THEN result is a "
                               const SI::mass_t<long double, std::kilo>>::value);
 }
 
+TEST_CASE("GIVEN a value WHEN constructed with literal _kt THEN result is a "
+          "mass value AND ratio is 10^6/1") {
+  constexpr auto one = 1_kt;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::mega>>::value);
+
+  constexpr auto one_f = 1.0_kt;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::mega>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _Mt THEN result is a "
+          "mass value AND ratio is 10^9/1") {
+  constexpr auto one = 1_Mt;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::giga>>::value);
+
+  constexpr auto one_f = 1.0_Mt;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::giga>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _Gt THEN result is a "
+          "mass value AND ratio is 10^12/1") {
+  constexpr auto one = 1_Gt;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::tera>>::value);
+
+  constexpr auto one_f = 1.0_Gt;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::tera>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _Tt THEN result is a "
+          "mass value AND ratio is 10^15/1") {
+  constexpr auto one = 1_Tt;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::peta>>::value);
+
+  constexpr auto one_f = 1.0_Tt;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::peta>>::value);
+}
+
+TEST_CASE("GIVEN a value WHEN constructed with literal _Pt THEN result is a "
+          "mass value AND ratio is 10^18/1") {
+  constexpr auto one = 1_Pt;
+  STATIC_REQUIRE(
+      std::is_same<decltype(one), const SI::mass_t<int64_t, std::exa>>::value);
+
+  constexpr auto one_f = 1.0_Pt;
+  STATIC_REQUIRE(std::is_same<decltype(one_f),
+                              const SI::mass_t<long double, std::exa>>::value);
+}
+
+
 TEST_CASE("GIVEN a value WHEN constructed with literal _Mg THEN result is a "
           "mass value AND ratio is 1000/1") {
   constexpr auto one = 1_Mg;
