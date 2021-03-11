@@ -1,6 +1,6 @@
 # Installing `SI`
 
-The default installation location for SI is  `/usr/local/lib/SI`. SI can be installed using raw cmake, cpack (cmakes package mechanism), or as a conan.io package provided from [Bintray](https://bintray.com/bernedom/conan/SI%3ASI)
+The default installation location for SI is  `/usr/local/lib/si`. SI can be installed using raw cmake, cpack (cmakes package mechanism), or as a conan.io package provided from [conan center](https://conan.io/center/si). Early access to conan packages for unstable versions is available from [Bintray](https://bintray.com/bernedom/conan/si%3ASI)
 
 ## Installing using cmake
 

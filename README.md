@@ -50,11 +50,11 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metric
 | --------------------------- | ---------------- | ----------- | --------------------------------------------------- | --------------------------------- |
 | Length                      | L                | m           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_metre_t`                       |
 | Time                        | T                | s           | 10<sup>-18</sup> to 10<sup>0</sup> and 60/1, 3600/1 | `*_seconds_t, minutes_t, hours_t` |
-| Mass*                       | M                | kg          | 10<sup>-15</sup> to 10<sup>18</sup>                 | `*_gram_t`, `*_ton_t`               |
+| Mass*                       | M                | kg          | 10<sup>-15</sup> to 10<sup>18</sup>                 | `*_gram_t`, `*_ton_t`             |
 | Electric current            | I                | A           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_ampere_t`                      |
 | Thermodynamic temperature** | t                | K           | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_kelvin_t`                      |
 | Amount of substance         | N                | mol         | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_mol_t`                         |
-| Luminousity                 | J                | cd          | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_candela_t`                     |
+| Luminosity                  | J                | cd          | 10<sup>-18</sup> to 10<sup>18</sup>                 | `*_candela_t`                     |
 
 \* for mass the base ratio is `kg` (not `g`) as defined in the SI unit table. So there is a mismatch between the literal prefix and the internal representation.
 
@@ -76,7 +76,7 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metric
 
 All units that can be built from other units decay to the respective units by inverting the mathematical operation. I.e if `Q = I * T` then `Q / I = T` and `Q / T = I`
 
-| Unit                 | Dimension Symbol | Unit Symbol | builable from    | implemented literals    | unit typedefs                                                      |
+| Unit                 | Dimension Symbol | Unit Symbol | buildable from   | implemented literals    | unit typedefs                                                      |
 | -------------------- | ---------------- | ----------- | ---------------- | ----------------------- | ------------------------------------------------------------------ |
 | Velocity             | v                | m/s         | L / T            | `m_p_s`, `km_p_h`, `_c` | `metre_per_second_t`, `kilometre_per_second_t`, `speed_of_light_t` |
 | Acceleration         | a                | m/s^2       | v / T, v^2 / L   | none                    | none                                                               |
@@ -135,7 +135,7 @@ See [the installation guide](doc/installation-guide.md) for detailed instruction
 
 ## Packaging
 
-SI is available as 'raw' download from this repo but also as [conan package](https://bintray.com/bernedom/conan/si%3ASI/_latestVersion). All releases are available from `SI/stable` from bintray. Getting SI from there is the preferred way.
+SI is available as 'raw' download from this repository but also as [conan package](https://conan.io/center/si). Getting SI from conan-center is the preferred way.
 
 ## Implementation details
 
