@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.5
+
+*   Fixed typos in documentation
+
 ## 2.0.4
 
 *   Add literals for ton types up to peta ton

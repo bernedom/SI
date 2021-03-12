@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 2.0.4
+ * This file is part of "SI" version 2.0.5
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -31,8 +31,7 @@ struct is_ratio<std::ratio<_num, _den>> : std::true_type {};
 template <typename _type>
 inline constexpr bool is_ratio_v = is_ratio<_type>::value;
 
-template <typename T,
-          std::enable_if_t<std::is_floating_point_v<T>> * = nullptr>
+template <typename T, std::enable_if_t<std::is_floating_point_v<T>> * = nullptr>
 constexpr bool epsEqual(const T &lhs, const T &rhs) {
 
   return (lhs - rhs) < std::numeric_limits<T>::epsilon() &&
