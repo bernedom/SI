@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">2.0.4</span>
+   &#160;<span id="projectnumber">2.0.5</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -93,7 +93,7 @@ $(function() {
 <tr>
 <td>Amount of substance </td><td>N </td><td>mol </td><td>10<sup>-18</sup> to 10<sup>18</sup> </td><td><code>*_mol_t</code> </td></tr>
 <tr>
-<td>Luminousity </td><td>J </td><td>cd </td><td>10<sup>-18</sup> to 10<sup>18</sup> </td><td><code>*_candela_t</code> </td></tr>
+<td>Luminosity </td><td>J </td><td>cd </td><td>10<sup>-18</sup> to 10<sup>18</sup> </td><td><code>*_candela_t</code> </td></tr>
 </table>
 <ul>
 <li>for mass the base ratio is <code>kg</code> (not <code>g</code>) as defined in the <a class="el" href="namespaceSI.html">SI</a> unit table. So there is a mismatch between the literal prefix and the internal representation.</li>
@@ -121,7 +121,7 @@ $(function() {
 <p>All units that can be built from other units decay to the respective units by inverting the mathematical operation. I.e if <code>Q = I * T</code> then <code>Q / I = T</code> and <code>Q / T = I</code></p>
 <table class="doxtable">
 <tr>
-<th>Unit </th><th>Dimension Symbol </th><th>Unit Symbol </th><th>builable from </th><th>implemented literals </th><th>unit typedefs  </th></tr>
+<th>Unit </th><th>Dimension Symbol </th><th>Unit Symbol </th><th>buildable from </th><th>implemented literals </th><th>unit typedefs  </th></tr>
 <tr>
 <td>Velocity </td><td>v </td><td>m/s </td><td>L / T </td><td><code>m_p_s</code>, <code>km_p_h</code>, <code>_c</code> </td><td><code>metre_per_second_t</code>, <code>kilometre_per_second_t</code>, <code>speed_of_light_t</code> </td></tr>
 <tr>
@@ -185,7 +185,7 @@ $(function() {
 <p>The default installation location for <a class="el" href="namespaceSI.html">SI</a> is <code>/usr/local/lib/SI</code>. <a class="el" href="namespaceSI.html">SI</a> can be installed using raw cmake, cpack (cmakes package mechanism), or as a conan.io package provided from <a href="https://bintray.com/bernedom/conan/si%3ASI">Bintray</a></p>
 <p>See the installation guide for detailed instructions</p>
 <h2>Packaging</h2>
-<p><a class="el" href="namespaceSI.html">SI</a> is available as 'raw' download from this repo but also as <a href="https://bintray.com/bernedom/conan/si%3ASI/_latestVersion">conan package</a>. All releases are available from <code>SI/stable</code> from bintray. Getting <a class="el" href="namespaceSI.html">SI</a> from there is the preferred way.</p>
+<p><a class="el" href="namespaceSI.html">SI</a> is available as 'raw' download from this repository but also as <a href="https://conan.io/center/si">conan package</a>. Getting <a class="el" href="namespaceSI.html">SI</a> from conan-center is the preferred way.</p>
 <h2>Implementation details</h2>
 <p>For further information and deeper technical details refer to the implementation details document</p>
 <h2>Breaking changes between versions 1.x.x and versions 2.x.x</h2>
