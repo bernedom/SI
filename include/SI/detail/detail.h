@@ -13,11 +13,8 @@
 
 #include "number_parser.h"
 #include <cstdint>
-#include <limits>
 #include <numeric>
 #include <ratio>
-#include <stdexcept>
-#include <type_traits>
 
 /// Namespace containing implementation details for SI
 namespace SI::detail {
@@ -31,13 +28,7 @@ struct is_ratio<std::ratio<_num, _den>> : std::true_type {};
 template <typename _type>
 inline constexpr bool is_ratio_v = is_ratio<_type>::value;
 
-template <typename T, std::enable_if_t<std::is_floating_point_v<T>> * = nullptr>
-constexpr bool epsEqual(const T &lhs, const T &rhs) {
-
-  return (lhs - rhs) < std::numeric_limits<T>::epsilon() &&
-         (lhs - rhs) > -std::numeric_limits<T>::epsilon();
-  // return std::abs(lhs - rhs) < std::numeric_limits<T>::epsilon();
-}
+/// calculate gcd for rations
 template <typename _ratio_lhs, typename _ratio_rhs> struct ratio_gcd {
 private:
   using gcd_num = std::integral_constant<std::intmax_t,

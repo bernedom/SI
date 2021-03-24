@@ -18,6 +18,7 @@
 #endif
 
 #include "detail.h"
+#include "eps_equal.h"
 #include "unit_cast.h"
 
 #include <ratio>
