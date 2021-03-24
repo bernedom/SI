@@ -2,7 +2,8 @@
 
 ## 2.0.5
 
-*   Move helper function such as `unit_cast` to own file for easier maintenance
+*   Moved helper function such as `unit_cast` and `unit_with_common_ratio` to own file for easier maintenance
+*   Moved cross-unit-operations to a separate file for easier maintenance
 *   Fixed typos in documentation
 
 ## 2.0.4

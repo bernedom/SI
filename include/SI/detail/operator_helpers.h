@@ -11,6 +11,7 @@
  **/
 #pragma once
 
+#include "cross_unit_operations.h"
 #include "detail.h"
 
 #define BUILD_UNIT_FROM_DIVISON(RESULTING_UNIT_T, DIVIDEND_UNIT_T,             \

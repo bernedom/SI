@@ -1,5 +1,6 @@
 #include <catch2/catch.hpp>
 
+#include <SI/detail/cross_unit_operations.h>
 #include <SI/detail/unit.h>
 
 #include <type_traits>

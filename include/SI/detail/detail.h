@@ -53,4 +53,24 @@ public:
                                                _ratio_rhs::den>;
 };
 
+// forward declaration
+template <char _symbol, typename _exponent, typename _type, typename _ratio>
+struct unit_t;
+
+/// helper template to check if a type is a unit_t (false for all other
+/// types)
+template <typename _unit> struct is_unit_t : std::false_type {};
+
+/// template specialisation to check if a type is a unit_t (true if unit_t)
+template <char _symbol, typename _exponent, typename _ratio, typename _type>
+struct is_unit_t<const unit_t<_symbol, _exponent, _type, _ratio>>
+    : std::true_type {};
+
+/// non-const specialisation of check above
+template <char _symbol, typename _exponent, typename _ratio, typename _type>
+struct is_unit_t<unit_t<_symbol, _exponent, _type, _ratio>> : std::true_type {};
+
+template <typename _type>
+inline constexpr bool is_unit_t_v = is_unit_t<_type>::value;
+
 } // namespace SI::detail
