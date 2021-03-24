@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['epsequal',['epsEqual',['../namespaceSI_1_1detail.html#a1fe051f6c592daff5cce9a0f9e2fb66f',1,'SI::detail']]]
+  ['eps_5fequals_1162',['eps_equals',['../namespaceSI_1_1detail.html#a81b7d76dc7a434412eeef7d5d07ac988',1,'SI::detail']]]
 ];

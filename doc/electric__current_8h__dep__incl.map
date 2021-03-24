@@ -1,10 +1,11 @@
 <map id="SI/electric_current.h" name="SI/electric_current.h">
-<area shape="rect" id="node2" href="$electric__charge_8h.html" title="SI/electric_charge.h" alt="" coords="250,80,399,107"/>
-<area shape="rect" id="node4" href="$electric__potential_8h.html" title="SI/electric_potential.h" alt="" coords="265,155,427,181"/>
-<area shape="rect" id="node5" href="$electric__conductance_8h.html" title="SI/electric_conductance.h" alt="" coords="355,229,542,256"/>
-<area shape="rect" id="node6" href="$electric__resistance_8h.html" title="SI/electric_resistance.h" alt="" coords="567,229,739,256"/>
-<area shape="rect" id="node8" href="$inductance_8h.html" title="SI/inductance.h" alt="" coords="536,304,657,331"/>
-<area shape="rect" id="node3" href="$electric__capacity_8h.html" title="SI/electric_capacity.h" alt="" coords="5,229,164,256"/>
-<area shape="rect" id="node7" href="$magnetic__flux_8h.html" title="SI/magnetic_flux.h" alt="" coords="188,229,331,256"/>
-<area shape="rect" id="node9" href="$magnetic__field_8h.html" title="SI/magnetic_field.h" alt="" coords="186,304,333,331"/>
+<area shape="rect" id="node1" title=" " alt="" coords="412,5,563,32"/>
+<area shape="rect" id="node2" href="$electric__charge_8h.html" title=" " alt="" coords="250,80,399,107"/>
+<area shape="rect" id="node4" href="$electric__potential_8h.html" title=" " alt="" coords="265,155,427,181"/>
+<area shape="rect" id="node5" href="$electric__conductance_8h.html" title=" " alt="" coords="355,229,542,256"/>
+<area shape="rect" id="node6" href="$electric__resistance_8h.html" title=" " alt="" coords="567,229,739,256"/>
+<area shape="rect" id="node8" href="$inductance_8h.html" title=" " alt="" coords="536,304,657,331"/>
+<area shape="rect" id="node3" href="$electric__capacity_8h.html" title=" " alt="" coords="5,229,164,256"/>
+<area shape="rect" id="node7" href="$magnetic__flux_8h.html" title=" " alt="" coords="188,229,331,256"/>
+<area shape="rect" id="node9" href="$magnetic__field_8h.html" title=" " alt="" coords="186,304,333,331"/>
 </map>

@@ -1,6 +1,16 @@
 <map id="SI/solid_angle.h" name="SI/solid_angle.h">
-<area shape="rect" id="node2" href="$number__parser_8h.html" title="detail/number_parser.h" alt="" coords="5,229,177,256"/>
-<area shape="rect" id="node5" href="$unit_8h.html" title="detail/unit.h" alt="" coords="473,80,573,107"/>
-<area shape="rect" id="node11" href="$unit__symbol_8h.html" title="detail/unit_symbol.h" alt="" coords="611,155,766,181"/>
-<area shape="rect" id="node6" href="$detail_8h.html" title="detail.h" alt="" coords="377,155,448,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="321,5,445,32"/>
+<area shape="rect" id="node2" href="$number__parser_8h.html" title=" " alt="" coords="5,304,177,331"/>
+<area shape="rect" id="node5" href="$unit_8h.html" title=" " alt="" coords="333,80,433,107"/>
+<area shape="rect" id="node12" href="$unit__symbol_8h.html" title=" " alt="" coords="597,155,751,181"/>
+<area shape="rect" id="node3" title=" " alt="" coords="119,379,186,405"/>
+<area shape="rect" id="node4" title=" " alt="" coords="311,379,370,405"/>
+<area shape="rect" id="node6" href="$detail_8h.html" title=" " alt="" coords="180,229,251,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="352,304,404,331"/>
+<area shape="rect" id="node9" href="$eps__equal_8h.html" title=" " alt="" coords="421,155,521,181"/>
+<area shape="rect" id="node10" title=" " alt="" coords="480,229,572,256"/>
+<area shape="rect" id="node11" href="$unit__cast_8h.html" title=" " alt="" coords="253,155,346,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="253,304,327,331"/>
+<area shape="rect" id="node13" title=" " alt="" coords="647,229,703,256"/>
+<area shape="rect" id="node14" title=" " alt="" coords="728,229,825,256"/>
 </map>
