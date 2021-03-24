@@ -166,8 +166,8 @@ struct unit_t {
       return unit_cast<gcd_unit>(rhs).value() ==
              unit_cast<gcd_unit>(*this).value();
     } else {
-      return detail::epsEqual(unit_cast<gcd_unit>(rhs).value(),
-                              unit_cast<gcd_unit>(*this).value());
+      return detail::eps_equals(unit_cast<gcd_unit>(rhs).value(),
+                                unit_cast<gcd_unit>(*this).value());
     }
   }
 

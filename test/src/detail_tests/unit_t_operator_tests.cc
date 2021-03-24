@@ -191,7 +191,7 @@ TEST_CASE(
       std::ratio_equal<typename decltype(result)::ratio, std::milli>::value);
 }
 
-/* This test is not templatized because of the epsEqual comparison of the raw
+/* This test is not templatized because of the eps_equals comparison of the raw
  * values*/
 TEST_CASE(
     "GIVEN two units with different values AND ratio of rhs is small AND type "
@@ -209,7 +209,7 @@ TEST_CASE(
       v1 *
       unit_cast<unit_t<'X', std::ratio<1>, long double, std::ratio<1>>>(v2);
 
-  STATIC_REQUIRE(epsEqual(result.value(), 40.0L));
+  STATIC_REQUIRE(eps_equals(result.value(), 40.0L));
   STATIC_REQUIRE(result == expected);
   STATIC_REQUIRE(std::ratio_equal<typename decltype(result)::ratio,
                                   typename std::milli>::value);
@@ -306,7 +306,7 @@ TEST_CASE("GIVEN two units with the same ratio exponent 1 AND internal type is "
 
   STATIC_REQUIRE(std::is_same<std::remove_const<decltype(result)>::type,
                               decltype(v1)::internal_type>::value);
-  STATIC_REQUIRE(epsEqual(result, 100.0L));
+  STATIC_REQUIRE(eps_equals(result, 100.0L));
 }
 
 TEMPLATE_TEST_CASE(
@@ -340,7 +340,7 @@ TEST_CASE("GIVEN a unit with ratio<1> and a scalar AND internal type is "
   constexpr unit_t<'X', std::ratio<1>, long double, std::ratio<1>> v2{2};
   constexpr auto result = v1 / v2;
 
-  STATIC_REQUIRE(epsEqual(result.value(), 500.0L));
+  STATIC_REQUIRE(eps_equals(result.value(), 500.0L));
 }
 
 TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
@@ -369,7 +369,7 @@ TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
   constexpr unit_t<'X', std::ratio<-1>, long double, std::deca> expected{5};
   STATIC_REQUIRE(v2.value() == 2);
   STATIC_REQUIRE(std::ratio_equal<std::deca, decltype(result)::ratio>::value);
-  STATIC_REQUIRE(epsEqual(result.value(), 5.0L));
+  STATIC_REQUIRE(eps_equals(result.value(), 5.0L));
   STATIC_REQUIRE(result == expected);
 }
 

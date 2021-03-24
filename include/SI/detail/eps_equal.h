@@ -7,7 +7,7 @@
 namespace SI::detail {
 
 template <typename T, std::enable_if_t<std::is_floating_point_v<T>> * = nullptr>
-constexpr bool epsEqual(const T &lhs, const T &rhs) {
+constexpr bool eps_equals(const T &lhs, const T &rhs) {
 
   return (lhs - rhs) < std::numeric_limits<T>::epsilon() &&
          (lhs - rhs) > -std::numeric_limits<T>::epsilon();
