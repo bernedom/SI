@@ -2,6 +2,7 @@
 
 ## 2.0.5
 
+*   Move helper function such as `unit_cast` to own file for easier maintenance
 *   Fixed typos in documentation
 
 ## 2.0.4
