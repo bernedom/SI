@@ -18,8 +18,8 @@ namespace SI {
 
 /// @todo find a way to encapuslate unit symbol Theta
 /// @todo consider adding Celsius and fahrenheit
-template <typename _type, typename _ratio>
-using temperature_t = detail::unit_t<'t', std::ratio<1>, _type, _ratio>;
+template <typename _type, typename _ratio, int _value_offset = 0>
+using temperature_t = detail::unit_t<'t', std::ratio<1>, _type, _ratio, _value_offset>;
 template <typename _type> using atto_kelvin_t = temperature_t<_type, std::atto>;
 template <typename _type>
 using femto_kelvin_t = temperature_t<_type, std::femto>;
@@ -38,7 +38,7 @@ template <typename _type> using peta_kelvin_t = temperature_t<_type, std::peta>;
 template <typename _type> using exa_kelvin_t = temperature_t<_type, std::exa>;
 
 template<typename _type>
-using celsius_t = temperature_t<_type, std::ratio<1>>;
+using celsius_t = temperature_t<_type, std::ratio<1>, -273>;
 
 // specialize unit_symbol for usage with stream operators
 template <>

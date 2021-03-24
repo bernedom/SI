@@ -46,8 +46,11 @@ template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
  * @tparam _exponent the exponent to the unit (i.e. length ==  m^1, area == m^2,
  *volume = m^3)
  **/
+
+
+// @todo wrap value offset into a type value_offset<_type> 
 template <char _symbol, typename _exponent, typename _type,
-          typename _ratio = std::ratio<1>>
+          typename _ratio = std::ratio<1>, int _value_offset = 0>
 struct unit_t {
   static_assert(std::is_arithmetic_v<_type>, "Type is an arithmetic value");
   static_assert(detail::is_ratio_v<_exponent>, "_exponent is a ratio type");
@@ -56,6 +59,7 @@ struct unit_t {
   using internal_type = _type;
   using exponent = _exponent;
   using symbol = std::integral_constant<char, _symbol>;
+  using value_offset = std::integral_constant<int, _value_offset>;
 
   /// Construct with value v
   constexpr unit_t(_type v) : value_{v} {}
@@ -102,10 +106,10 @@ struct unit_t {
   ///@todo set as friend to the stream-function
   void setValue(_type v) { value_ = v; }
 
-  /// Assignment for same ratio
+  /// Assignment for same unit
   constexpr unit_t &operator=(const unit_t &rhs) = default;
 
-  /// Move assigmnment for same ratio
+  /// Move assigmnment for same unit
   constexpr unit_t &operator=(unit_t &&rhs) = default;
 
   /// Assignment of same unit but different ratio
