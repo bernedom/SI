@@ -37,6 +37,9 @@ template <typename _type> using tera_kelvin_t = temperature_t<_type, std::tera>;
 template <typename _type> using peta_kelvin_t = temperature_t<_type, std::peta>;
 template <typename _type> using exa_kelvin_t = temperature_t<_type, std::exa>;
 
+template<typename _type>
+using celsius_t = temperature_t<_type, std::ratio<1>>;
+
 // specialize unit_symbol for usage with stream operators
 template <>
 struct unit_symbol<'t', std::ratio<1>> : SI::detail::unit_symbol_impl<'K'> {};
