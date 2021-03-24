@@ -1,8 +1,10 @@
 # Changelog
 
-## 2.0.5
+## 2.1.0
 
-*   Fixed typos in documentation
+*   Moved helper function such as `unit_cast` and `unit_with_common_ratio` to own file for easier maintenance
+*   Moved cross-unit-operations and `epsEqual` to a separate file for easier maintenance
+*   Rename `epsEqual()` to `eps_equals()` for consitency with naming scheme
 
 ## 2.0.4
 

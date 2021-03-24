@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 2.0.5
+ * This file is part of "SI" version 2.1.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -11,6 +11,7 @@
  **/
 #pragma once
 
+#include "cross_unit_operations.h"
 #include "detail.h"
 
 #define BUILD_UNIT_FROM_DIVISON(RESULTING_UNIT_T, DIVIDEND_UNIT_T,             \

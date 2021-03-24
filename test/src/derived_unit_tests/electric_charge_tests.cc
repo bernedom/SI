@@ -168,7 +168,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _PC THEN result is a "
   constexpr auto one_f = 1.0_PC;
   STATIC_REQUIRE(
       std::is_same_v<decltype(one_f),
-                   const SI::electric_charge_t<long double, std::peta>>);
+                     const SI::electric_charge_t<long double, std::peta>>);
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _EC THEN result is a "
@@ -280,7 +280,7 @@ TEST_CASE("GIVEN electric charge Q with ratio<1000000,1>  AND type is floating "
   constexpr auto result = charge / current;
 
   STATIC_REQUIRE(std::ratio_equal<decltype(result)::ratio, std::mega>::value);
-  STATIC_REQUIRE(SI::detail::epsEqual(result.value(), 0.002L));
+  STATIC_REQUIRE(SI::detail::eps_equals(result.value(), 0.002L));
 }
 
 TEST_CASE("GIVEN electric charge Q with ratio<1> WHEN divided by time T in "
