@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.1
+
+*   Cleaning up obsolete todos and typos
+
 ## 2.1.0
 
 *   Moved helper function such as `unit_cast` and `unit_with_common_ratio` to own file for easier maintenance

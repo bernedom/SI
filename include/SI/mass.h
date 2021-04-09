@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 2.1.0
+ * This file is part of "SI" version 2.1.1
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -13,8 +13,6 @@
 #include "detail/number_parser.h"
 #include "detail/unit.h"
 #include "detail/unit_symbol.h"
-
-///@todo add kilkton (kilotonne), megatonne etc
 
 namespace SI {
 

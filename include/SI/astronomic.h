@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 2.1.0
+ * This file is part of "SI" version 2.1.1
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -12,14 +12,13 @@
 #pragma once
 
 #include "length.h"
+#include "mass.h"
 
 namespace SI {
 
 /**
  * Astronomic units are not part of the SI standard but are accepted for use
  * within
- * @todo add jupiter mass and earth mass and typedef astronomical unit of time
- * (day)
  * */
 
 template <typename _type>

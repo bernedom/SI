@@ -37,6 +37,9 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt install shunit2 ninja-build python3-setuptools python3-pip -y
+          if [ "${{ matrix.compiler }}" = "clang++-6.0" ]; then
+            sudo apt install clang-6.0 -y
+          fi
           sudo pip3 install conan
 
       - name: dependecies (macos)
