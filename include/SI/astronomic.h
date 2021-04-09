@@ -12,14 +12,13 @@
 #pragma once
 
 #include "length.h"
+#include "mass.h"
 
 namespace SI {
 
 /**
  * Astronomic units are not part of the SI standard but are accepted for use
  * within
- * @todo add jupiter mass and earth mass and typedef astronomical unit of time
- * (day)
  * */
 
 template <typename _type>

@@ -14,8 +14,6 @@
 #include "detail/unit.h"
 #include "detail/unit_symbol.h"
 
-///@todo add kilkton (kilotonne), megatonne etc
-
 namespace SI {
 
 template <typename _type, typename _ratio>
