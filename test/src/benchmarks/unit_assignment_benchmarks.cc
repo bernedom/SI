@@ -59,7 +59,7 @@ TEST_CASE("Unit_assignment") {
         return target;
       });
     };
-    BENCHMARK_ADVANCED("Same unit same ratio assignment")
+    BENCHMARK_ADVANCED("same ratio assignment")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<ratio_one_unit> source(10000);
       std::vector<ratio_one_unit> target(10000, 0);
@@ -74,7 +74,7 @@ TEST_CASE("Unit_assignment") {
         return target;
       });
     };
-    BENCHMARK_ADVANCED("Same unit different ratio assignment")
+    BENCHMARK_ADVANCED("different ratio assignment")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<ratio_one_unit> source(10000);
       std::vector<ratio_milli_unit> target(10000, 0);
@@ -92,7 +92,7 @@ TEST_CASE("Unit_assignment") {
   }
 
   SECTION("Add-Assignment") {
-    BENCHMARK_ADVANCED("Raw number add assignment (reference)")
+    BENCHMARK_ADVANCED("Raw add assignment (reference)")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<int64_t> source(10000);
       std::vector<int64_t> target(10000, 0);
@@ -107,7 +107,7 @@ TEST_CASE("Unit_assignment") {
         return target;
       });
     };
-    BENCHMARK_ADVANCED("Same unit same ratio add assignment")
+    BENCHMARK_ADVANCED("same ratio add assignment")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<ratio_one_unit> source(10000);
       std::vector<ratio_one_unit> target(10000, 0);
@@ -122,7 +122,7 @@ TEST_CASE("Unit_assignment") {
         return target;
       });
     };
-    BENCHMARK_ADVANCED("Same unit different ratio add assignment")
+    BENCHMARK_ADVANCED("different ratio add assignment")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<ratio_one_unit> source(10000);
       std::vector<ratio_milli_unit> target(10000, 0);
@@ -140,7 +140,7 @@ TEST_CASE("Unit_assignment") {
   }
 
   SECTION("Subtract-Assignment") {
-    BENCHMARK_ADVANCED("Raw number subtract assignment (reference)")
+    BENCHMARK_ADVANCED("Raw subtract assignment (reference)")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<int64_t> source(10000);
       std::vector<int64_t> target(10000, 0);
@@ -155,7 +155,7 @@ TEST_CASE("Unit_assignment") {
         return target;
       });
     };
-    BENCHMARK_ADVANCED("Same unit same ratio subtract assignment")
+    BENCHMARK_ADVANCED("same ratio subtract assignment")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<ratio_one_unit> source(10000);
       std::vector<ratio_one_unit> target(10000, 0);
@@ -170,7 +170,7 @@ TEST_CASE("Unit_assignment") {
         return target;
       });
     };
-    BENCHMARK_ADVANCED("Same unit different ratio subtract assignment")
+    BENCHMARK_ADVANCED("different ratio subtract assignment")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<ratio_one_unit> source(10000);
       std::vector<ratio_milli_unit> target(10000, 0);
