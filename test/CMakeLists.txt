@@ -29,7 +29,11 @@ endif()
 # module path
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_BINARY_DIR})
 
-find_package(Catch2 REQUIRED)
+find_package(Catch2)
+if(NOT Catch2_FOUND)
+  message(WARNING "Catch2 not found, not building tests")
+  return()
+endif()
 
 add_executable(SI_detail_tests)
 target_sources(
