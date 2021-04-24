@@ -19,11 +19,15 @@ jobs:
         include:
           - name: ubuntu-gcc-7
             os: ubuntu-18.04
-            compiler: g++-7
+            compiler: g++
+            compiler-version: 7
+            compiler-name-conan: gcc
 
           - name: ubuntu-clang-6
             os: ubuntu-18.04
-            compiler: clang++-6.0
+            compiler: clang++
+            compiler-version: "6.0"
+            compiler-name-conan: clang
 
           - name: macos-appleclang-11
             os: macos-latest
@@ -37,7 +41,7 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt install shunit2 ninja-build python3-setuptools python3-pip -y
-          if [ "${{ matrix.compiler }}" = "clang++-6.0" ]; then
+          if [ "${{ matrix.compiler }}" = "clang++" ]; then
             sudo apt install clang-6.0 -y
           fi
           sudo pip3 install conan
@@ -52,9 +56,23 @@ jobs:
       - name: set-compiler-env
         run: |
           if [ "${{ matrix.compiler }}" != "" ]; then
-            echo "CXX=${{ matrix.compiler }}" >> $GITHUB_ENV
+            echo "CXX=${{ matrix.compiler }}-${{ matrix.compiler-version }}" >> $GITHUB_ENV
           fi
         shell: bash
+
+      - name: conan-profile
+        if: runner.os == 'Linux' || runner.os == 'macOs'
+        run: |
+          conan profile new default --detect
+          if [ "${{ matrix.compiler-name-conan }}" != "" ]; then
+            conan profile update settings.compiler=${{ matrix.compiler-name-conan }} default
+          fi
+          if [ "${{ matrix.compiler-version }}" != "" ]; then
+            conan profile update settings.compiler.version=${{ matrix.compiler-version }} default
+          fi
+          conan profile update settings.compiler.libcxx=libstdc++ default
+
+          cat ~/.conan/profiles/default
 
       - name: make-build-dir
         run: mkdir build
