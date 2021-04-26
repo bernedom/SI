@@ -67,10 +67,14 @@ jobs:
         run: ctest -C Debug
         working-directory: ./build
 
-      - name: program-termination-tests
+      - name: installation-tests
         if: runner.os == 'Linux' || runner.os == 'macOs'
         run: |
           ./test/installation-tests.sh
+
+      - name: program-termination-tests
+        if: runner.os == 'Linux' || runner.os == 'macOs'
+        run: |
           ./test/compilation-tests.sh
 
   version-consistency-check:
