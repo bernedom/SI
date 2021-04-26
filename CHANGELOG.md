@@ -2,6 +2,7 @@
 
 ## 2.1.1
 
+*   Tests are built without the need for conan if catch2 is found. (using conan is still the preferred way)
 *   Cleaning up obsolete todos and typos
 
 ## 2.1.0
