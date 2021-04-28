@@ -3,6 +3,7 @@
 ## 2.1.2
 
 *   Update to catch 2.13.6 in the conan recipes
+*   Remove deployment to bintray.com as it is scheduled to sunset on May 1 2021
 
 ## 2.1.1
 

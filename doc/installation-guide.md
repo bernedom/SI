@@ -1,6 +1,6 @@
 # Installing `SI`
 
-The default installation location for SI is  `/usr/local/lib/si`. SI can be installed using raw cmake, cpack (cmakes package mechanism), or as a conan.io package provided from [conan center](https://conan.io/center/si). Early access to conan packages for unstable versions is available from [Bintray](https://bintray.com/bernedom/conan/si%3ASI)
+The default installation location for SI is  `/usr/local/lib/si`. SI can be installed using raw cmake, cpack (cmakes package mechanism), or as a conan.io package provided from [conan center](https://conan.io/center/si). 
 
 ## Installing using cmake
 
@@ -43,20 +43,6 @@ mkdir ${HOME}/SI-install
 SI is available at [conan-center](https://conan.io/center/si/1.7.5/). As per convention of ConanCenter the package name is `si` (lower case).
 
 Use the following in your `conanfile.txt`
-```
-[requires]
-si/[>1.0 <2.0]@SI/stable
-```
-
-### Early access and nightly builds
-
-For nightly builds and early access to versions use the custom repository https://api.bintray.com/conan/bernedom/conan
-
-```bash
-conan remote add bernedom https://api.bintray.com/conan/bernedom/conan
-```
-In the `conanfile.txt` SI is added like this, to ensure to get the latest version. 
-
 ```
 [requires]
 si/[>1.0 <2.0]@SI/stable

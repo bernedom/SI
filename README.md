@@ -9,7 +9,6 @@
 
 [![GitHub Releases](https://img.shields.io/github/release/bernedom/SI.svg)](https://github.com/bernedom/SI/releases)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/bernedom/SI/master/LICENSE)
-[![Download](https://api.bintray.com/packages/bernedom/conan/si%3ASI/images/download.svg)](https://bintray.com/bernedom/conan/si%3ASI/_latestVersion)
 
 # SI - Type safety for physical units
 
@@ -129,7 +128,7 @@ substitute `--config Debug` with `--config Release` for optimized builds
 
 ### Installing
 
-The default installation location for SI is  `/usr/local/lib/SI`. SI can be installed using raw cmake, cpack (cmakes package mechanism), or as a conan.io package provided from [Bintray](https://bintray.com/bernedom/conan/si%3ASI)
+The default installation location for SI is  `/usr/local/lib/SI`. SI can be installed using raw cmake, cpack (cmakes package mechanism), or as a conan.io package provided from [conan center](https://conan.io/center/si/)
 
 See [the installation guide](doc/installation-guide.md) for detailed instructions
 

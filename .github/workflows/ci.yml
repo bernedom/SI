@@ -114,34 +114,3 @@ jobs:
         run: |
           git fetch --tags --force
           ./test/version-consistency.sh
-
-  deploy-to-bintray:
-    needs: version-consistency-check
-    runs-on: ubuntu-18.04
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: dependencies
-        run: |
-          sudo apt install shunit2 python3-setuptools python3-pip -y
-          sudo pip3 install conan
-
-      - name: set-environment
-        run: |
-          echo "CONAN_LOGIN_USERNAME=${{ secrets.CONAN_USERNAME }}" >> $GITHUB_ENV
-          echo "CONAN_PASSWORD=${{ secrets.CONAN_PASSWORD }}" >> $GITHUB_ENV
-
-      - name: deploy-unstable
-        if: github.event.action != 'published' && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-        run: |
-          conan remote add bernedom https://api.bintray.com/conan/bernedom/conan
-          conan create . SI/unstable
-          conan upload SI/*@SI/unstable --all -c -r bernedom
-
-      - name: deploy-stable
-        if: github.event.action == 'published'
-        run: |
-          conan remote add bernedom https://api.bintray.com/conan/bernedom/conan
-          conan create . SI/stable
-          conan upload SI/*@SI/stable --all -c -r bernedom
