@@ -33,14 +33,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 10.54,
             "range": "+/- 11.374",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.691,
             "range": "+/- 2.79",
             "unit": "us",
@@ -106,56 +106,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.552,
             "range": "+/- 1.537",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.499,
             "range": "+/- 350",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.493,
             "range": "+/- 1.57",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.53,
             "range": "+/- 295",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.628,
             "range": "+/- 1.902",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.415,
             "range": "+/- 280",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.766,
             "range": "+/- 1.655",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 11.204,
             "range": "+/- 358",
             "unit": "us",
@@ -249,56 +249,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 6.476,
             "range": "+/- 759",
             "unit": "us",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 7.67,
             "range": "+/- 810",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 7.167,
             "range": "+/- 1.219",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 7.137,
             "range": "+/- 1.077",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.115,
             "range": "+/- 1.195",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 7.529,
             "range": "+/- 929",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.546,
             "range": "+/- 1.199",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 7.721,
             "range": "+/- 889",
             "unit": "us",
@@ -392,56 +392,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.652,
             "range": "+/- 1.217",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 11.166,
             "range": "+/- 1.798",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 9.363,
             "range": "+/- 2.571",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.783,
             "range": "+/- 2.474",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 11.434,
             "range": "+/- 2.7",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 9.103,
             "range": "+/- 2.054",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 9.176,
             "range": "+/- 2.242",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 12.525,
             "range": "+/- 6.42",
             "unit": "us",
@@ -535,56 +535,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 5.35,
             "range": "+/- 489",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 9.309,
             "range": "+/- 1.609",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 7.308,
             "range": "+/- 985",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 6.083,
             "range": "+/- 46",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 7.969,
             "range": "+/- 538",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 6.429,
             "range": "+/- 144",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 6.347,
             "range": "+/- 119",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 8.307,
             "range": "+/- 554",
             "unit": "us",
@@ -678,56 +678,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.84,
             "range": "+/- 1.399",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 11.419,
             "range": "+/- 2.382",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 9.31,
             "range": "+/- 2.047",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 9.767,
             "range": "+/- 3.215",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 11.59,
             "range": "+/- 2.304",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 9.549,
             "range": "+/- 3.88",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 9.073,
             "range": "+/- 1.426",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 12.205,
             "range": "+/- 2.548",
             "unit": "us",
@@ -821,56 +821,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.493,
             "range": "+/- 1.982",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 11.189,
             "range": "+/- 3.366",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.884,
             "range": "+/- 2.717",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.478,
             "range": "+/- 1.635",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 11.298,
             "range": "+/- 3.152",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.669,
             "range": "+/- 1.755",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.645,
             "range": "+/- 1.366",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 11.27,
             "range": "+/- 2.106",
             "unit": "us",
@@ -964,56 +964,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.192,
             "range": "+/- 302",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.217,
             "range": "+/- 267",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.833,
             "range": "+/- 2.801",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.478,
             "range": "+/- 379",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.702,
             "range": "+/- 1.729",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.675,
             "range": "+/- 280",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.692,
             "range": "+/- 248",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 11.135,
             "range": "+/- 238",
             "unit": "us",
@@ -1107,56 +1107,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 6.813,
             "range": "+/- 2.42",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 11.827,
             "range": "+/- 5.583",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 7.718,
             "range": "+/- 566",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.5,
             "range": "+/- 2.073",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.943,
             "range": "+/- 3.171",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 7.423,
             "range": "+/- 1.697",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.732,
             "range": "+/- 2.254",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.423,
             "range": "+/- 3.617",
             "unit": "us",
@@ -1250,56 +1250,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 8.701,
             "range": "+/- 1.422",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.666,
             "range": "+/- 1.259",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 9.079,
             "range": "+/- 519",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 9.194,
             "range": "+/- 904",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 11.387,
             "range": "+/- 2.533",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 9.143,
             "range": "+/- 791",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 9.02,
             "range": "+/- 420",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 11.49,
             "range": "+/- 417",
             "unit": "us",
@@ -1393,56 +1393,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.527,
             "range": "+/- 627",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 11.001,
             "range": "+/- 608",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.717,
             "range": "+/- 310",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.979,
             "range": "+/- 1.32",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 11.087,
             "range": "+/- 1.745",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.814,
             "range": "+/- 267",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.924,
             "range": "+/- 282",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 13.795,
             "range": "+/- 20.657",
             "unit": "us",
@@ -1536,56 +1536,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.621,
             "range": "+/- 2.224",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.12,
             "range": "+/- 2.801",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.271,
             "range": "+/- 2.552",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 9.629,
             "range": "+/- 6.106",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.499,
             "range": "+/- 3.025",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.275,
             "range": "+/- 2.379",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.132,
             "range": "+/- 2.332",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 11.444,
             "range": "+/- 3.906",
             "unit": "us",
@@ -1679,56 +1679,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.172,
             "range": "+/- 1.005",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 7.809,
             "range": "+/- 967",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 6.922,
             "range": "+/- 1.263",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.676,
             "range": "+/- 1.283",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.553,
             "range": "+/- 3.977",
             "unit": "us",
             "extra": "100 samples\n3 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 11.256,
             "range": "+/- 15.141",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.137,
             "range": "+/- 825",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.221,
             "range": "+/- 2.939",
             "unit": "us",
@@ -1763,14 +1763,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 107,
             "range": "+/- 212",
             "unit": "ns",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 391,
             "range": "+/- 92",
             "unit": "ns",
@@ -1843,56 +1843,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 6.791,
             "range": "+/- 568",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 9.98,
             "range": "+/- 530",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.75,
             "range": "+/- 1.176",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.506,
             "range": "+/- 637",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.939,
             "range": "+/- 764",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.367,
             "range": "+/- 503",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.215,
             "range": "+/- 672",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.924,
             "range": "+/- 1.019",
             "unit": "us",
@@ -1927,14 +1927,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 88,
             "range": "+/- 70",
             "unit": "ns",
             "extra": "100 samples\n12 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 514,
             "range": "+/- 132",
             "unit": "ns",
@@ -2007,56 +2007,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 6.633,
             "range": "+/- 853",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 8.895,
             "range": "+/- 852",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.24,
             "range": "+/- 1.123",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.107,
             "range": "+/- 706",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.253,
             "range": "+/- 1.748",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.354,
             "range": "+/- 863",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.564,
             "range": "+/- 2.144",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.372,
             "range": "+/- 1.396",
             "unit": "us",
@@ -2091,14 +2091,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 87,
             "range": "+/- 149",
             "unit": "ns",
             "extra": "100 samples\n10 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 411,
             "range": "+/- 70",
             "unit": "ns",
@@ -2171,56 +2171,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 10.103,
             "range": "+/- 2.674",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 11.754,
             "range": "+/- 2.539",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 10.731,
             "range": "+/- 2.778",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 10.121,
             "range": "+/- 1.181",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 11.927,
             "range": "+/- 3.586",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 9.929,
             "range": "+/- 1.059",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 10.023,
             "range": "+/- 949",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 12.524,
             "range": "+/- 1.774",
             "unit": "us",
@@ -2255,14 +2255,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n3 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 184,
             "range": "+/- 423",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 486,
             "range": "+/- 17",
             "unit": "ns",
@@ -2335,56 +2335,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 6.606,
             "range": "+/- 619",
             "unit": "us",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 8.678,
             "range": "+/- 1.082",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.106,
             "range": "+/- 1.647",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 7.522,
             "range": "+/- 984",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.923,
             "range": "+/- 1.341",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.278,
             "range": "+/- 1.126",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.552,
             "range": "+/- 803",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.679,
             "range": "+/- 1.752",
             "unit": "us",
@@ -2419,14 +2419,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 65,
             "range": "+/- 65",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 348,
             "range": "+/- 52",
             "unit": "ns",
@@ -2499,56 +2499,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 8.292,
             "range": "+/- 805",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.597,
             "range": "+/- 1.336",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.358,
             "range": "+/- 1.227",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.867,
             "range": "+/- 2.403",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.713,
             "range": "+/- 1.773",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.373,
             "range": "+/- 718",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.607,
             "range": "+/- 812",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.964,
             "range": "+/- 1.232",
             "unit": "us",
@@ -2583,14 +2583,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 109,
             "range": "+/- 99",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 487,
             "range": "+/- 51",
             "unit": "ns",
@@ -2663,56 +2663,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 8.556,
             "range": "+/- 2.418",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.233,
             "range": "+/- 1.473",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 9.209,
             "range": "+/- 2.756",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.418,
             "range": "+/- 1.346",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.562,
             "range": "+/- 1.273",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.254,
             "range": "+/- 1.255",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.564,
             "range": "+/- 2.163",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 12.103,
             "range": "+/- 4.073",
             "unit": "us",
@@ -2747,14 +2747,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 82,
             "range": "+/- 82",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 498,
             "range": "+/- 181",
             "unit": "ns",
@@ -2827,56 +2827,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 8.397,
             "range": "+/- 3.329",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 9.188,
             "range": "+/- 1.957",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.651,
             "range": "+/- 2.38",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 10.041,
             "range": "+/- 9.877",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 8.63,
             "range": "+/- 1.559",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.485,
             "range": "+/- 2.123",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.021,
             "range": "+/- 1.904",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.346,
             "range": "+/- 3.068",
             "unit": "us",
@@ -2911,14 +2911,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n3 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 72,
             "range": "+/- 81",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 429,
             "range": "+/- 130",
             "unit": "ns",
@@ -2991,56 +2991,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 6.174,
             "range": "+/- 450",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 8.014,
             "range": "+/- 1.657",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 6.695,
             "range": "+/- 729",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 6.566,
             "range": "+/- 218",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 7.783,
             "range": "+/- 271",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 6.533,
             "range": "+/- 171",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 6.546,
             "range": "+/- 165",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 8.411,
             "range": "+/- 255",
             "unit": "us",
@@ -3075,14 +3075,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 68,
             "range": "+/- 26",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 350,
             "range": "+/- 6",
             "unit": "ns",
@@ -3155,56 +3155,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 8.607,
             "range": "+/- 1.808",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.607,
             "range": "+/- 1.821",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.703,
             "range": "+/- 1.62",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 9.177,
             "range": "+/- 2.27",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.68,
             "range": "+/- 325",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.11,
             "range": "+/- 694",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 9.471,
             "range": "+/- 4.824",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.929,
             "range": "+/- 2.388",
             "unit": "us",
@@ -3239,14 +3239,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 84,
             "range": "+/- 75",
             "unit": "ns",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 476,
             "range": "+/- 106",
             "unit": "ns",
@@ -3319,56 +3319,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.522,
             "range": "+/- 2.029",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.183,
             "range": "+/- 2.996",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 9.289,
             "range": "+/- 2.885",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 10.091,
             "range": "+/- 3.784",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.94,
             "range": "+/- 3.005",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 9.616,
             "range": "+/- 4.003",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 9.016,
             "range": "+/- 1.752",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.37,
             "range": "+/- 1.681",
             "unit": "us",
@@ -3403,14 +3403,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 77,
             "range": "+/- 69",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 455,
             "range": "+/- 139",
             "unit": "ns",
@@ -3483,56 +3483,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 6.627,
             "range": "+/- 1.076",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 8.394,
             "range": "+/- 1.605",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.675,
             "range": "+/- 2.924",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 9.5,
             "range": "+/- 3.6",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.646,
             "range": "+/- 3.528",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.348,
             "range": "+/- 2.229",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.149,
             "range": "+/- 3.061",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.323,
             "range": "+/- 2.75",
             "unit": "us",
@@ -3567,14 +3567,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 72,
             "range": "+/- 60",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 426,
             "range": "+/- 125",
             "unit": "ns",
@@ -3647,56 +3647,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.614,
             "range": "+/- 641",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.762,
             "range": "+/- 6.333",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.946,
             "range": "+/- 231",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 9.182,
             "range": "+/- 5.334",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.935,
             "range": "+/- 284",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 9.04,
             "range": "+/- 828",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.773,
             "range": "+/- 192",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 11.572,
             "range": "+/- 315",
             "unit": "us",
@@ -3731,14 +3731,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 91,
             "range": "+/- 50",
             "unit": "ns",
             "extra": "100 samples\n12 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 487,
             "range": "+/- 15",
             "unit": "ns",
@@ -3811,56 +3811,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 6.939,
             "range": "+/- 329",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.011,
             "range": "+/- 502",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.367,
             "range": "+/- 616",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.507,
             "range": "+/- 1.093",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.669,
             "range": "+/- 418",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.513,
             "range": "+/- 565",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.198,
             "range": "+/- 438",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 11.09,
             "range": "+/- 2.956",
             "unit": "us",
@@ -3895,14 +3895,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 90,
             "range": "+/- 55",
             "unit": "ns",
             "extra": "100 samples\n11 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 478,
             "range": "+/- 98",
             "unit": "ns",
@@ -3975,56 +3975,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 6.672,
             "range": "+/- 1.001",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 8.608,
             "range": "+/- 2.279",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 7.317,
             "range": "+/- 1.093",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.28,
             "range": "+/- 2.797",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.523,
             "range": "+/- 2.751",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 7.888,
             "range": "+/- 1.367",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.833,
             "range": "+/- 1.065",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 9.751,
             "range": "+/- 1.762",
             "unit": "us",
@@ -4059,14 +4059,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 77,
             "range": "+/- 68",
             "unit": "ns",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 497,
             "range": "+/- 214",
             "unit": "ns",
@@ -4139,56 +4139,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.295,
             "range": "+/- 247",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.201,
             "range": "+/- 997",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.948,
             "range": "+/- 1.381",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 9.512,
             "range": "+/- 2.389",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 12.221,
             "range": "+/- 9.483",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.631,
             "range": "+/- 248",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 10.23,
             "range": "+/- 14.394",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 11.309,
             "range": "+/- 1.077",
             "unit": "us",
@@ -4223,14 +4223,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 83,
             "range": "+/- 57",
             "unit": "ns",
             "extra": "100 samples\n12 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 475,
             "range": "+/- 17",
             "unit": "ns",
@@ -4303,56 +4303,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 8.274,
             "range": "+/- 943",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.634,
             "range": "+/- 1.708",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.457,
             "range": "+/- 921",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.778,
             "range": "+/- 659",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.041,
             "range": "+/- 1.433",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.75,
             "range": "+/- 1.344",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.793,
             "range": "+/- 1.379",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 13.76,
             "range": "+/- 18.928",
             "unit": "us",
@@ -4387,14 +4387,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 96,
             "range": "+/- 55",
             "unit": "ns",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 477,
             "range": "+/- 83",
             "unit": "ns",
@@ -4467,56 +4467,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.106,
             "range": "+/- 1.577",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 12.406,
             "range": "+/- 17.024",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 7.74,
             "range": "+/- 2.04",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.77,
             "range": "+/- 3.283",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 11.477,
             "range": "+/- 2.699",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.683,
             "range": "+/- 1.502",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.75,
             "range": "+/- 2.733",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 9.909,
             "range": "+/- 2.105",
             "unit": "us",
@@ -4551,14 +4551,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 120,
             "range": "+/- 269",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 384,
             "range": "+/- 89",
             "unit": "ns",
@@ -4631,56 +4631,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 6.628,
             "range": "+/- 454",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 9.602,
             "range": "+/- 1.051",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 7.875,
             "range": "+/- 613",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.036,
             "range": "+/- 973",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.025,
             "range": "+/- 727",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.389,
             "range": "+/- 985",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.962,
             "range": "+/- 221",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 9.625,
             "range": "+/- 810",
             "unit": "us",
@@ -4715,14 +4715,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 97,
             "range": "+/- 98",
             "unit": "ns",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 434,
             "range": "+/- 35",
             "unit": "ns",
@@ -4795,56 +4795,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 6.522,
             "range": "+/- 1.458",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 8.39,
             "range": "+/- 1.108",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.689,
             "range": "+/- 1.961",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 7.512,
             "range": "+/- 1.038",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.302,
             "range": "+/- 718",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 7.868,
             "range": "+/- 1.122",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.718,
             "range": "+/- 669",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.62,
             "range": "+/- 1.012",
             "unit": "us",
@@ -4879,14 +4879,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 95,
             "range": "+/- 77",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 392,
             "range": "+/- 59",
             "unit": "ns",
@@ -4959,56 +4959,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.983,
             "range": "+/- 164",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 11.248,
             "range": "+/- 1.032",
             "unit": "us",
             "extra": "100 samples\n3 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.397,
             "range": "+/- 297",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.39,
             "range": "+/- 289",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.196,
             "range": "+/- 343",
             "unit": "us",
             "extra": "100 samples\n3 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.517,
             "range": "+/- 716",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 9.232,
             "range": "+/- 4.495",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.845,
             "range": "+/- 747",
             "unit": "us",
@@ -5043,14 +5043,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 101,
             "range": "+/- 92",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 503,
             "range": "+/- 25",
             "unit": "ns",
@@ -5123,56 +5123,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.695,
             "range": "+/- 1.764",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 9.964,
             "range": "+/- 2.626",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 9.066,
             "range": "+/- 2.67",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 7.699,
             "range": "+/- 1.795",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 21.815,
             "range": "+/- 52.343",
             "unit": "us",
             "extra": "100 samples\n3 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 7.636,
             "range": "+/- 1.722",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.496,
             "range": "+/- 1.254",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.894,
             "range": "+/- 2.941",
             "unit": "us",
@@ -5207,14 +5207,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 92,
             "range": "+/- 79",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 432,
             "range": "+/- 110",
             "unit": "ns",
@@ -5287,56 +5287,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 5.878,
             "range": "+/- 491",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 7.47,
             "range": "+/- 513",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 6.736,
             "range": "+/- 1.199",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 5.892,
             "range": "+/- 911",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 8.995,
             "range": "+/- 1.574",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 7.127,
             "range": "+/- 978",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.477,
             "range": "+/- 678",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 7.778,
             "range": "+/- 685",
             "unit": "us",
@@ -5371,14 +5371,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 102,
             "range": "+/- 79",
             "unit": "ns",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 399,
             "range": "+/- 41",
             "unit": "ns",
@@ -5451,56 +5451,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 6.921,
             "range": "+/- 414",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 9.885,
             "range": "+/- 813",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 9.569,
             "range": "+/- 2.022",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 13.385,
             "range": "+/- 47.137",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.57,
             "range": "+/- 963",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 7.843,
             "range": "+/- 431",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.648,
             "range": "+/- 2.983",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.791,
             "range": "+/- 1.15",
             "unit": "us",
@@ -5535,14 +5535,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 106,
             "range": "+/- 87",
             "unit": "ns",
             "extra": "100 samples\n11 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 471,
             "range": "+/- 25",
             "unit": "ns",
@@ -5615,56 +5615,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 9.06,
             "range": "+/- 4.869",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 11.048,
             "range": "+/- 2.463",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 9.292,
             "range": "+/- 1.943",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 9.225,
             "range": "+/- 1.69",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.737,
             "range": "+/- 907",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 9.419,
             "range": "+/- 1.228",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.866,
             "range": "+/- 536",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 12.016,
             "range": "+/- 3.15",
             "unit": "us",
@@ -5699,14 +5699,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 99,
             "range": "+/- 90",
             "unit": "ns",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 483,
             "range": "+/- 56",
             "unit": "ns",
@@ -5779,56 +5779,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.392,
             "range": "+/- 2.22",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 9.437,
             "range": "+/- 2.547",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 9.7,
             "range": "+/- 3.134",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 9.528,
             "range": "+/- 3.661",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.92,
             "range": "+/- 2.362",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 13.781,
             "range": "+/- 34.215",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 10.621,
             "range": "+/- 6.823",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.431,
             "range": "+/- 2.903",
             "unit": "us",
@@ -5863,14 +5863,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 99,
             "range": "+/- 230",
             "unit": "ns",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 457,
             "range": "+/- 119",
             "unit": "ns",
@@ -5943,56 +5943,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 5.421,
             "range": "+/- 266",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 12.359,
             "range": "+/- 18.759",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 6.795,
             "range": "+/- 812",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 7.492,
             "range": "+/- 1.002",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 8.359,
             "range": "+/- 1.318",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 6.727,
             "range": "+/- 577",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.261,
             "range": "+/- 1.18",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 8.398,
             "range": "+/- 597",
             "unit": "us",
@@ -6027,14 +6027,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 76,
             "range": "+/- 82",
             "unit": "ns",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 376,
             "range": "+/- 41",
             "unit": "ns",
@@ -6107,56 +6107,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.54,
             "range": "+/- 2.659",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 11.064,
             "range": "+/- 3.742",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 9.152,
             "range": "+/- 5.043",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.365,
             "range": "+/- 642",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.667,
             "range": "+/- 779",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.692,
             "range": "+/- 1.832",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.153,
             "range": "+/- 677",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.665,
             "range": "+/- 834",
             "unit": "us",
@@ -6191,14 +6191,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 89,
             "range": "+/- 43",
             "unit": "ns",
             "extra": "100 samples\n12 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 484,
             "range": "+/- 41",
             "unit": "ns",
@@ -6271,56 +6271,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 10.963,
             "range": "+/- 11.919",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 8.685,
             "range": "+/- 610",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 9.416,
             "range": "+/- 460",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 7.375,
             "range": "+/- 615",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 8.897,
             "range": "+/- 436",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 7.784,
             "range": "+/- 1.213",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.469,
             "range": "+/- 667",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 14.362,
             "range": "+/- 15.599",
             "unit": "us",
@@ -6355,14 +6355,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 106,
             "range": "+/- 77",
             "unit": "ns",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 464,
             "range": "+/- 79",
             "unit": "ns",
@@ -6435,56 +6435,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.704,
             "range": "+/- 2.035",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 9.57,
             "range": "+/- 2.988",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.497,
             "range": "+/- 2.307",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.342,
             "range": "+/- 2.614",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.791,
             "range": "+/- 2.627",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 7.658,
             "range": "+/- 1.56",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.584,
             "range": "+/- 2.28",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.808,
             "range": "+/- 3.652",
             "unit": "us",
@@ -6519,14 +6519,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 77,
             "range": "+/- 76",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 407,
             "range": "+/- 118",
             "unit": "ns",
@@ -6599,56 +6599,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.283,
             "range": "+/- 1.952",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.185,
             "range": "+/- 2.679",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.421,
             "range": "+/- 2.266",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 7.904,
             "range": "+/- 2.772",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.915,
             "range": "+/- 3.116",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.513,
             "range": "+/- 2.84",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.979,
             "range": "+/- 1.838",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 12.097,
             "range": "+/- 4.692",
             "unit": "us",
@@ -6683,14 +6683,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 98,
             "range": "+/- 229",
             "unit": "ns",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 482,
             "range": "+/- 178",
             "unit": "ns",
@@ -6763,56 +6763,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 5.547,
             "range": "+/- 329",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 8.544,
             "range": "+/- 116",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 7,
             "range": "+/- 96",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 7.017,
             "range": "+/- 159",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.348,
             "range": "+/- 253",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 7.176,
             "range": "+/- 116",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 6.955,
             "range": "+/- 82",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 9.747,
             "range": "+/- 63",
             "unit": "us",
@@ -6847,14 +6847,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 95,
             "range": "+/- 23",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 503,
             "range": "+/- 6",
             "unit": "ns",
@@ -6927,56 +6927,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 4.509,
             "range": "+/- 441",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 8.062,
             "range": "+/- 598",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 6.796,
             "range": "+/- 729",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 6.731,
             "range": "+/- 406",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 8.694,
             "range": "+/- 584",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 6.255,
             "range": "+/- 929",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 6.933,
             "range": "+/- 690",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 9.186,
             "range": "+/- 1.171",
             "unit": "us",
@@ -7011,14 +7011,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 88,
             "range": "+/- 28",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 436,
             "range": "+/- 55",
             "unit": "ns",
@@ -7091,56 +7091,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.233,
             "range": "+/- 558",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 9.567,
             "range": "+/- 890",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 7.638,
             "range": "+/- 853",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 7.462,
             "range": "+/- 482",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 12.406,
             "range": "+/- 30.335",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 7.517,
             "range": "+/- 539",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.577,
             "range": "+/- 1.019",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.616,
             "range": "+/- 1.68",
             "unit": "us",
@@ -7175,14 +7175,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 88,
             "range": "+/- 88",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 457,
             "range": "+/- 73",
             "unit": "ns",
@@ -7255,56 +7255,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 6.906,
             "range": "+/- 1.735",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 11.45,
             "range": "+/- 3.656",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 9.222,
             "range": "+/- 2.607",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 7.942,
             "range": "+/- 1.163",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.455,
             "range": "+/- 3.661",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.203,
             "range": "+/- 804",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.399,
             "range": "+/- 1.692",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.82,
             "range": "+/- 2.676",
             "unit": "us",
@@ -7339,14 +7339,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 92,
             "range": "+/- 80",
             "unit": "ns",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 484,
             "range": "+/- 91",
             "unit": "ns",
@@ -7419,56 +7419,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.783,
             "range": "+/- 2.254",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 8.087,
             "range": "+/- 1.05",
             "unit": "us",
             "extra": "100 samples\n3 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.696,
             "range": "+/- 3.687",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 7.307,
             "range": "+/- 907",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 13.576,
             "range": "+/- 40.193",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 6.911,
             "range": "+/- 1.396",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.398,
             "range": "+/- 974",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 9.754,
             "range": "+/- 2.212",
             "unit": "us",
@@ -7503,14 +7503,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 76,
             "range": "+/- 76",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 435,
             "range": "+/- 128",
             "unit": "ns",
@@ -7583,56 +7583,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 5.432,
             "range": "+/- 464",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 8.292,
             "range": "+/- 523",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 7.277,
             "range": "+/- 272",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 7.04,
             "range": "+/- 380",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.142,
             "range": "+/- 120",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 6.417,
             "range": "+/- 726",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 6.757,
             "range": "+/- 675",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 9.656,
             "range": "+/- 718",
             "unit": "us",
@@ -7667,14 +7667,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 96,
             "range": "+/- 26",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 432,
             "range": "+/- 85",
             "unit": "ns",
@@ -7747,56 +7747,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 5.211,
             "range": "+/- 657",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 8.356,
             "range": "+/- 741",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 7.009,
             "range": "+/- 620",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 6.859,
             "range": "+/- 497",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 8.453,
             "range": "+/- 1.106",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 7.079,
             "range": "+/- 112",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 6.866,
             "range": "+/- 267",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 9.18,
             "range": "+/- 798",
             "unit": "us",
@@ -7831,14 +7831,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 80,
             "range": "+/- 53",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 475,
             "range": "+/- 6",
             "unit": "ns",
@@ -7911,56 +7911,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 3.799,
             "range": "+/- 58",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 7.54,
             "range": "+/- 1.05",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 6.272,
             "range": "+/- 549",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 5.584,
             "range": "+/- 68",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 7.429,
             "range": "+/- 1.193",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 6.576,
             "range": "+/- 706",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 4.9,
             "range": "+/- 43",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 7.315,
             "range": "+/- 1",
             "unit": "us",
@@ -7995,14 +7995,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 66,
             "range": "+/- 18",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 445,
             "range": "+/- 50",
             "unit": "ns",
@@ -8075,56 +8075,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 4.295,
             "range": "+/- 38",
             "unit": "us",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 6.587,
             "range": "+/- 148",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 5.092,
             "range": "+/- 26",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 5.051,
             "range": "+/- 97",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 6.536,
             "range": "+/- 18",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 5.006,
             "range": "+/- 85",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 5.103,
             "range": "+/- 103",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 7.25,
             "range": "+/- 12",
             "unit": "us",
@@ -8159,14 +8159,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 70,
             "range": "+/- 19",
             "unit": "ns",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 373,
             "range": "+/- 8",
             "unit": "ns",
@@ -8239,56 +8239,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 4.605,
             "range": "+/- 77",
             "unit": "us",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 7.346,
             "range": "+/- 98",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 5.691,
             "range": "+/- 87",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 5.698,
             "range": "+/- 213",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 7.451,
             "range": "+/- 100",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 5.642,
             "range": "+/- 106",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 5.665,
             "range": "+/- 85",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 8.222,
             "range": "+/- 147",
             "unit": "us",
@@ -8323,14 +8323,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 78,
             "range": "+/- 12",
             "unit": "ns",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 423,
             "range": "+/- 8",
             "unit": "ns",
@@ -8403,56 +8403,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 4.564,
             "range": "+/- 106",
             "unit": "us",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 7.324,
             "range": "+/- 165",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 5.731,
             "range": "+/- 82",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 5.828,
             "range": "+/- 59",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 7.435,
             "range": "+/- 138",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 5.697,
             "range": "+/- 78",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 5.667,
             "range": "+/- 126",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 8.207,
             "range": "+/- 277",
             "unit": "us",
@@ -8487,14 +8487,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 81,
             "range": "+/- 40",
             "unit": "ns",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 425,
             "range": "+/- 10",
             "unit": "ns",
@@ -8567,56 +8567,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 4.509,
             "range": "+/- 57",
             "unit": "us",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 7.367,
             "range": "+/- 82",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 5.719,
             "range": "+/- 73",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 5.68,
             "range": "+/- 71",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 8.042,
             "range": "+/- 157",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 5.792,
             "range": "+/- 94",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 5.818,
             "range": "+/- 87",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 8.31,
             "range": "+/- 123",
             "unit": "us",
@@ -8651,14 +8651,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 82,
             "range": "+/- 55",
             "unit": "ns",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 423,
             "range": "+/- 19",
             "unit": "ns",
@@ -8731,56 +8731,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 5.481,
             "range": "+/- 114",
             "unit": "us",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 8.522,
             "range": "+/- 807",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 6.89,
             "range": "+/- 972",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 6.994,
             "range": "+/- 683",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 8.933,
             "range": "+/- 754",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 6.803,
             "range": "+/- 659",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.014,
             "range": "+/- 847",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 8.924,
             "range": "+/- 1.328",
             "unit": "us",
@@ -8815,14 +8815,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 96,
             "range": "+/- 26",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 508,
             "range": "+/- 8",
             "unit": "ns",
@@ -8895,56 +8895,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 8.714,
             "range": "+/- 1.47",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.769,
             "range": "+/- 2.228",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 9.771,
             "range": "+/- 2.841",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 10.265,
             "range": "+/- 6.223",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.066,
             "range": "+/- 1.881",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.916,
             "range": "+/- 1.871",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.967,
             "range": "+/- 718",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 13.007,
             "range": "+/- 3.407",
             "unit": "us",
@@ -8979,14 +8979,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 95,
             "range": "+/- 79",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 494,
             "range": "+/- 89",
             "unit": "ns",
@@ -9059,56 +9059,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 8.207,
             "range": "+/- 522",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.02,
             "range": "+/- 719",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.521,
             "range": "+/- 268",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.825,
             "range": "+/- 2.438",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.785,
             "range": "+/- 2.884",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.615,
             "range": "+/- 321",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 8.597,
             "range": "+/- 370",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 11.173,
             "range": "+/- 1.643",
             "unit": "us",
@@ -9143,14 +9143,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 101,
             "range": "+/- 92",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 461,
             "range": "+/- 17",
             "unit": "ns",
@@ -9223,56 +9223,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.441,
             "range": "+/- 2.063",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 11.685,
             "range": "+/- 7.716",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 7.479,
             "range": "+/- 1.872",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 8.984,
             "range": "+/- 2.684",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.319,
             "range": "+/- 3.348",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 7.78,
             "range": "+/- 2.61",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 9.314,
             "range": "+/- 2.689",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 10.3,
             "range": "+/- 2.39",
             "unit": "us",
@@ -9307,14 +9307,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 137,
             "range": "+/- 289",
             "unit": "ns",
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 526,
             "range": "+/- 201",
             "unit": "ns",
@@ -9387,56 +9387,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 9.476,
             "range": "+/- 3.21",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.547,
             "range": "+/- 3.602",
             "unit": "us",
             "extra": "100 samples\n3 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 8.582,
             "range": "+/- 2.293",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 9.222,
             "range": "+/- 4.138",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 10.55,
             "range": "+/- 5.065",
             "unit": "us",
             "extra": "100 samples\n3 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 7.328,
             "range": "+/- 2.108",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.096,
             "range": "+/- 1.2",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 8.631,
             "range": "+/- 2.858",
             "unit": "us",
@@ -9471,14 +9471,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 139,
             "range": "+/- 238",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 469,
             "range": "+/- 219",
             "unit": "ns",
@@ -9551,56 +9551,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 5.526,
             "range": "+/- 103",
             "unit": "us",
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 11.001,
             "range": "+/- 64",
             "unit": "us",
             "extra": "100 samples\n3 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 7.096,
             "range": "+/- 153",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 7.033,
             "range": "+/- 125",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.036,
             "range": "+/- 166",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 8.447,
             "range": "+/- 238",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.088,
             "range": "+/- 254",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 9.103,
             "range": "+/- 150",
             "unit": "us",
@@ -9635,14 +9635,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 106,
             "range": "+/- 23",
             "unit": "ns",
             "extra": "100 samples\n11 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 485,
             "range": "+/- 14",
             "unit": "ns",
@@ -9715,56 +9715,56 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit same ratio assignment",
+            "name": "same ratio assignmentt",
             "value": 7.741,
             "range": "+/- 1.684",
             "unit": "us",
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "Same unit different ratio assignment",
+            "name": "different ratio assignment",
             "value": 10.886,
             "range": "+/- 5.152",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Raw number add assignment (reference)",
+            "name": "Raw add assignment (reference)",
             "value": 9.236,
             "range": "+/- 5.111",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio add assignment",
+            "name": "same ratio add assignment",
             "value": 7.933,
             "range": "+/- 1.178",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio add assignment",
+            "name": "different ratio add assignment",
             "value": 9.71,
             "range": "+/- 1.725",
             "unit": "us",
             "extra": "100 samples\n3 iterations"
           },
           {
-            "name": "Raw number subtract assignment (reference)",
+            "name": "Raw subtract assignment (reference)",
             "value": 7.917,
             "range": "+/- 1.212",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit same ratio subtract assignment",
+            "name": "same ratio subtract assignment",
             "value": 7.91,
             "range": "+/- 1.332",
             "unit": "us",
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "Same unit different ratio subtract assignment",
+            "name": "different ratio subtract assignment",
             "value": 9.385,
             "range": "+/- 1.296",
             "unit": "us",
@@ -9799,14 +9799,14 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "conversion by streams without construction",
+            "name": "conversion by streams",
             "value": 97,
             "range": "+/- 53",
             "unit": "ns",
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "conversion by streams including construction",
+            "name": "stream conversion with ctor",
             "value": 477,
             "range": "+/- 128",
             "unit": "ns",
