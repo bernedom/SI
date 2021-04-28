@@ -10,4 +10,4 @@ extraction:
       - export PATH=$PATH:~/.local/bin
       - conan --version
       - conan profile new default --detect
-      - conan remote update conan-center https://conan.bintray.com False
+      - conan remote update conan-center https://conan.io/center False

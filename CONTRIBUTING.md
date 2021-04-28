@@ -13,7 +13,7 @@ Contributions and suggestions to this repo are highly welcome. For deeper techni
 
 ## Building the tests
 
-The tests use [Catch2](https://github.com/catchorg/Catch2) version 2.11. Catch is retrieved as a conan package. **If conan is not found, the tests will not be built**. 
+The tests use [Catch2](https://github.com/catchorg/Catch2) version 2.16. Catch is retrieved as a conan package if possible, else any system install will be used. **If catch2 is not found, the tests will not be built**. 
 
 For ubuntu releases < 18.04 use:
 

@@ -21,7 +21,7 @@ struct unit_symbol<'X', _ratio>
 TEST_CASE("String operations") {
 
   SECTION("unit to string conversion") {
-    BENCHMARK_ADVANCED("conversion by streams without construction")
+    BENCHMARK_ADVANCED("conversion by streams")
     (Catch::Benchmark::Chronometer meter) {
 
       constexpr SI::detail::unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>>
@@ -34,7 +34,7 @@ TEST_CASE("String operations") {
       });
     };
 
-    BENCHMARK_ADVANCED("conversion by streams including construction")
+    BENCHMARK_ADVANCED("stream conversion with ctor")
     (Catch::Benchmark::Chronometer meter) {
 
       constexpr SI::detail::unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>>
