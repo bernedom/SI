@@ -33,7 +33,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 10.54,
             "range": "+/- 11.374",
             "unit": "us",
@@ -106,7 +106,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.552,
             "range": "+/- 1.537",
             "unit": "us",
@@ -249,7 +249,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 6.476,
             "range": "+/- 759",
             "unit": "us",
@@ -392,7 +392,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.652,
             "range": "+/- 1.217",
             "unit": "us",
@@ -535,7 +535,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 5.35,
             "range": "+/- 489",
             "unit": "us",
@@ -678,7 +678,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.84,
             "range": "+/- 1.399",
             "unit": "us",
@@ -821,7 +821,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.493,
             "range": "+/- 1.982",
             "unit": "us",
@@ -964,7 +964,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.192,
             "range": "+/- 302",
             "unit": "us",
@@ -1107,7 +1107,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 6.813,
             "range": "+/- 2.42",
             "unit": "us",
@@ -1250,7 +1250,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 8.701,
             "range": "+/- 1.422",
             "unit": "us",
@@ -1393,7 +1393,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.527,
             "range": "+/- 627",
             "unit": "us",
@@ -1536,7 +1536,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.621,
             "range": "+/- 2.224",
             "unit": "us",
@@ -1679,7 +1679,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.172,
             "range": "+/- 1.005",
             "unit": "us",
@@ -1843,7 +1843,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 6.791,
             "range": "+/- 568",
             "unit": "us",
@@ -2007,7 +2007,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 6.633,
             "range": "+/- 853",
             "unit": "us",
@@ -2171,7 +2171,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 10.103,
             "range": "+/- 2.674",
             "unit": "us",
@@ -2335,7 +2335,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 6.606,
             "range": "+/- 619",
             "unit": "us",
@@ -2499,7 +2499,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 8.292,
             "range": "+/- 805",
             "unit": "us",
@@ -2663,7 +2663,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 8.556,
             "range": "+/- 2.418",
             "unit": "us",
@@ -2827,7 +2827,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 8.397,
             "range": "+/- 3.329",
             "unit": "us",
@@ -2991,7 +2991,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 6.174,
             "range": "+/- 450",
             "unit": "us",
@@ -3155,7 +3155,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 8.607,
             "range": "+/- 1.808",
             "unit": "us",
@@ -3319,7 +3319,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.522,
             "range": "+/- 2.029",
             "unit": "us",
@@ -3483,7 +3483,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 6.627,
             "range": "+/- 1.076",
             "unit": "us",
@@ -3647,7 +3647,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.614,
             "range": "+/- 641",
             "unit": "us",
@@ -3811,7 +3811,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 6.939,
             "range": "+/- 329",
             "unit": "us",
@@ -3975,7 +3975,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 6.672,
             "range": "+/- 1.001",
             "unit": "us",
@@ -4139,7 +4139,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.295,
             "range": "+/- 247",
             "unit": "us",
@@ -4303,7 +4303,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 8.274,
             "range": "+/- 943",
             "unit": "us",
@@ -4467,7 +4467,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.106,
             "range": "+/- 1.577",
             "unit": "us",
@@ -4631,7 +4631,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 6.628,
             "range": "+/- 454",
             "unit": "us",
@@ -4795,7 +4795,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 6.522,
             "range": "+/- 1.458",
             "unit": "us",
@@ -4959,7 +4959,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.983,
             "range": "+/- 164",
             "unit": "us",
@@ -5123,7 +5123,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.695,
             "range": "+/- 1.764",
             "unit": "us",
@@ -5287,7 +5287,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 5.878,
             "range": "+/- 491",
             "unit": "us",
@@ -5451,7 +5451,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 6.921,
             "range": "+/- 414",
             "unit": "us",
@@ -5615,7 +5615,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 9.06,
             "range": "+/- 4.869",
             "unit": "us",
@@ -5779,7 +5779,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.392,
             "range": "+/- 2.22",
             "unit": "us",
@@ -5943,7 +5943,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 5.421,
             "range": "+/- 266",
             "unit": "us",
@@ -6107,7 +6107,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.54,
             "range": "+/- 2.659",
             "unit": "us",
@@ -6271,7 +6271,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 10.963,
             "range": "+/- 11.919",
             "unit": "us",
@@ -6435,7 +6435,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.704,
             "range": "+/- 2.035",
             "unit": "us",
@@ -6599,7 +6599,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.283,
             "range": "+/- 1.952",
             "unit": "us",
@@ -6763,7 +6763,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 5.547,
             "range": "+/- 329",
             "unit": "us",
@@ -6927,7 +6927,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 4.509,
             "range": "+/- 441",
             "unit": "us",
@@ -7091,7 +7091,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.233,
             "range": "+/- 558",
             "unit": "us",
@@ -7255,7 +7255,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 6.906,
             "range": "+/- 1.735",
             "unit": "us",
@@ -7419,7 +7419,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.783,
             "range": "+/- 2.254",
             "unit": "us",
@@ -7583,7 +7583,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 5.432,
             "range": "+/- 464",
             "unit": "us",
@@ -7747,7 +7747,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 5.211,
             "range": "+/- 657",
             "unit": "us",
@@ -7911,7 +7911,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 3.799,
             "range": "+/- 58",
             "unit": "us",
@@ -8075,7 +8075,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 4.295,
             "range": "+/- 38",
             "unit": "us",
@@ -8239,7 +8239,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 4.605,
             "range": "+/- 77",
             "unit": "us",
@@ -8403,7 +8403,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 4.564,
             "range": "+/- 106",
             "unit": "us",
@@ -8567,7 +8567,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n8 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 4.509,
             "range": "+/- 57",
             "unit": "us",
@@ -8731,7 +8731,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n7 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 5.481,
             "range": "+/- 114",
             "unit": "us",
@@ -8895,7 +8895,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 8.714,
             "range": "+/- 1.47",
             "unit": "us",
@@ -9059,7 +9059,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 8.207,
             "range": "+/- 522",
             "unit": "us",
@@ -9223,7 +9223,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.441,
             "range": "+/- 2.063",
             "unit": "us",
@@ -9387,7 +9387,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n4 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 9.476,
             "range": "+/- 3.21",
             "unit": "us",
@@ -9551,7 +9551,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n6 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 5.526,
             "range": "+/- 103",
             "unit": "us",
@@ -9715,7 +9715,7 @@ window.BENCHMARK_DATA = {
             "extra": "100 samples\n5 iterations"
           },
           {
-            "name": "same ratio assignmentt",
+            "name": "same ratio assignment",
             "value": 7.741,
             "range": "+/- 1.684",
             "unit": "us",
