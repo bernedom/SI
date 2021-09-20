@@ -50,8 +50,9 @@ jobs:
         if: runner.os == 'macOS'
         run: brew install shunit2 ninja conan coreutils
 
-      # - name: dependencies (windows)
-      #   if: runner.os == 'Windows'
+      - name: dependencies (windows)
+        if: runner.os == 'Windows'
+        run: pip install conan
 
       - name: set-compiler-env
         run: |
