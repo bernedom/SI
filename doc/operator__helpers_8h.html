@@ -161,32 +161,38 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> _type, <span class="keyword">typename</span> _ratio_lhs, <span class="keyword">typename</span> _ratio_rhs&gt;          \</div>
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> _type, <span class="keyword">typename</span> _ratio_lhs, <span class="keyword">typename</span> _type_rhs,           \</div>
+<div class="line">            typename _ratio_rhs&gt;                                               \</div>
 <div class="line">  constexpr <span class="keyword">auto</span> <a class="code" href="namespaceSI_1_1detail.html#ae2614dd22817f47500394f7311a09b68">operator/</a>(<span class="keyword">const</span> DIVIDEND_UNIT_T&lt;_type, _ratio_lhs&gt; &amp;lhs,      \</div>
-<div class="line">                           <span class="keyword">const</span> DIVISOR_UNIT_T&lt;_type, _ratio_rhs&gt; &amp;rhs) {     \</div>
+<div class="line">                           <span class="keyword">const</span> DIVISOR_UNIT_T&lt;_type_rhs, _ratio_rhs&gt; &amp;rhs) { \</div>
 <div class="line">    return detail::cross_unit_divide&lt;RESULTING_UNIT_T&gt;(lhs, rhs);              \</div>
 <div class="line">  }                                                                            \</div>
 <div class="line">                                                                               \</div>
-<div class="line">  template &lt;typename _type, typename _ratio_lhs, typename _ratio_rhs&gt;          \</div>
+<div class="line">  template &lt;<span class="keyword">typename</span> _type, <span class="keyword">typename</span> _ratio_lhs, <span class="keyword">typename</span> _type_rhs,           \</div>
+<div class="line">            typename _ratio_rhs&gt;                                               \</div>
 <div class="line">  constexpr <span class="keyword">auto</span> operator*(<span class="keyword">const</span> RESULTING_UNIT_T&lt;_type, _ratio_lhs&gt; &amp;lhs,     \</div>
-<div class="line">                           <span class="keyword">const</span> DIVISOR_UNIT_T&lt;_type, _ratio_rhs&gt; &amp;rhs) {     \</div>
+<div class="line">                           <span class="keyword">const</span> DIVISOR_UNIT_T&lt;_type_rhs, _ratio_rhs&gt; &amp;rhs) { \</div>
 <div class="line">    return detail::cross_unit_multiply&lt;DIVIDEND_UNIT_T&gt;(lhs, rhs);             \</div>
 <div class="line">  }                                                                            \</div>
 <div class="line">                                                                               \</div>
-<div class="line">  template &lt;typename _type, typename _ratio_lhs, typename _ratio_rhs&gt;          \</div>
-<div class="line">  constexpr <span class="keyword">auto</span> operator*(<span class="keyword">const</span> DIVISOR_UNIT_T&lt;_type, _ratio_lhs&gt; &amp;lhs,       \</div>
-<div class="line">                           <span class="keyword">const</span> RESULTING_UNIT_T&lt;_type, _ratio_rhs&gt; &amp;rhs) {   \</div>
+<div class="line">  template &lt;<span class="keyword">typename</span> _type, <span class="keyword">typename</span> _ratio_lhs, <span class="keyword">typename</span> _type_rhs,           \</div>
+<div class="line">            typename _ratio_rhs&gt;                                               \</div>
+<div class="line">  constexpr <span class="keyword">auto</span> operator*(                                                    \</div>
+<div class="line">      <span class="keyword">const</span> DIVISOR_UNIT_T&lt;_type, _ratio_lhs&gt; &amp;lhs,                            \</div>
+<div class="line">      <span class="keyword">const</span> RESULTING_UNIT_T&lt;_type_rhs, _ratio_rhs&gt; &amp;rhs) {                    \</div>
 <div class="line">    return rhs * lhs;                                                          \</div>
 <div class="line">  }                                                                            \</div>
 <div class="line">                                                                               \</div>
-<div class="line">  template &lt;typename _type, typename _ratio_lhs, typename _ratio_rhs&gt;          \</div>
-<div class="line">  constexpr <span class="keyword">auto</span> <a class="code" href="namespaceSI_1_1detail.html#ae2614dd22817f47500394f7311a09b68">operator/</a>(<span class="keyword">const</span> DIVIDEND_UNIT_T&lt;_type, _ratio_lhs&gt; &amp;lhs,      \</div>
-<div class="line">                           <span class="keyword">const</span> RESULTING_UNIT_T&lt;_type, _ratio_rhs&gt; &amp;rhs) {   \</div>
+<div class="line">  template &lt;<span class="keyword">typename</span> _type, <span class="keyword">typename</span> _ratio_lhs, <span class="keyword">typename</span> _type_rhs,           \</div>
+<div class="line">            typename _ratio_rhs&gt;                                               \</div>
+<div class="line">  constexpr <span class="keyword">auto</span> <a class="code" href="namespaceSI_1_1detail.html#ae2614dd22817f47500394f7311a09b68">operator/</a>(                                                    \</div>
+<div class="line">      <span class="keyword">const</span> DIVIDEND_UNIT_T&lt;_type, _ratio_lhs&gt; &amp;lhs,                           \</div>
+<div class="line">      <span class="keyword">const</span> RESULTING_UNIT_T&lt;_type_rhs, _ratio_rhs&gt; &amp;rhs) {                    \</div>
 <div class="line">    return detail::cross_unit_divide&lt;DIVISOR_UNIT_T&gt;(lhs, rhs);                \</div>
 <div class="line">  }</div>
 </div><!-- fragment --><p>This file is part of "SI" version 2.1.3 A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units</p>
 <p><a href="https://github.com/bernedom/SI">https://github.com/bernedom/SI</a></p>
-<p>SPDX-License-Identifier: MIT </p>
+<p>SPDX-License-Identifier: MIT Generate operators for unit conversions. Both macros generate the operators to create new units as well as the inverse operators </p>
 
 </div>
 </div>
@@ -222,28 +228,32 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">                                                                               \</div>
-<div class="line">  template &lt;typename _type, typename _ratio_lhs, typename _ratio_rhs&gt;          \</div>
+<div class="line">  template &lt;<span class="keyword">typename</span> _type, <span class="keyword">typename</span> _ratio_lhs, <span class="keyword">typename</span> _type_rhs,           \</div>
+<div class="line">            typename _ratio_rhs&gt;                                               \</div>
 <div class="line">  constexpr <span class="keyword">auto</span> operator*(<span class="keyword">const</span> UNIT_LHS&lt;_type, _ratio_lhs&gt; &amp;lhs,             \</div>
-<div class="line">                           <span class="keyword">const</span> UNIT_RHS&lt;_type, _ratio_rhs&gt; &amp;rhs) {           \</div>
+<div class="line">                           <span class="keyword">const</span> UNIT_RHS&lt;_type_rhs, _ratio_rhs&gt; &amp;rhs) {       \</div>
 <div class="line">                                                                               \</div>
 <div class="line">    return detail::cross_unit_multiply&lt;RESULTING_UNIT&gt;(lhs, rhs);              \</div>
 <div class="line">  }                                                                            \</div>
 <div class="line">                                                                               \</div>
-<div class="line">  template &lt;typename _type, typename _ratio_lhs, typename _ratio_rhs&gt;          \</div>
+<div class="line">  template &lt;<span class="keyword">typename</span> _type, <span class="keyword">typename</span> _ratio_lhs, <span class="keyword">typename</span> _type_rhs,           \</div>
+<div class="line">            typename _ratio_rhs&gt;                                               \</div>
 <div class="line">  constexpr <span class="keyword">auto</span> operator*(<span class="keyword">const</span> UNIT_RHS&lt;_type, _ratio_lhs&gt; &amp;lhs,             \</div>
-<div class="line">                           <span class="keyword">const</span> UNIT_LHS&lt;_type, _ratio_rhs&gt; &amp;rhs) {           \</div>
+<div class="line">                           <span class="keyword">const</span> UNIT_LHS&lt;_type_rhs, _ratio_rhs&gt; &amp;rhs) {       \</div>
 <div class="line">    return rhs * lhs;                                                          \</div>
 <div class="line">  }                                                                            \</div>
 <div class="line">                                                                               \</div>
-<div class="line">  template &lt;typename _type, typename _ratio_lhs, typename _ratio_rhs&gt;          \</div>
+<div class="line">  template &lt;<span class="keyword">typename</span> _type, <span class="keyword">typename</span> _ratio_lhs, <span class="keyword">typename</span> _type_rhs,           \</div>
+<div class="line">            typename _ratio_rhs&gt;                                               \</div>
 <div class="line">  constexpr <span class="keyword">auto</span> <a class="code" href="namespaceSI_1_1detail.html#ae2614dd22817f47500394f7311a09b68">operator/</a>(<span class="keyword">const</span> RESULTING_UNIT&lt;_type, _ratio_lhs&gt; &amp;lhs,       \</div>
-<div class="line">                           <span class="keyword">const</span> UNIT_LHS&lt;_type, _ratio_rhs&gt; &amp;rhs) {           \</div>
+<div class="line">                           <span class="keyword">const</span> UNIT_LHS&lt;_type_rhs, _ratio_rhs&gt; &amp;rhs) {       \</div>
 <div class="line">    return detail::cross_unit_divide&lt;UNIT_RHS&gt;(lhs, rhs);                      \</div>
 <div class="line">  }                                                                            \</div>
 <div class="line">                                                                               \</div>
-<div class="line">  template &lt;typename _type, typename _ratio_lhs, typename _ratio_rhs&gt;          \</div>
+<div class="line">  template &lt;<span class="keyword">typename</span> _type, <span class="keyword">typename</span> _ratio_lhs, <span class="keyword">typename</span> _type_rhs,           \</div>
+<div class="line">            typename _ratio_rhs&gt;                                               \</div>
 <div class="line">  constexpr <span class="keyword">auto</span> <a class="code" href="namespaceSI_1_1detail.html#ae2614dd22817f47500394f7311a09b68">operator/</a>(<span class="keyword">const</span> RESULTING_UNIT&lt;_type, _ratio_lhs&gt; &amp;lhs,       \</div>
-<div class="line">                           <span class="keyword">const</span> UNIT_RHS&lt;_type, _ratio_rhs&gt; &amp;rhs) {           \</div>
+<div class="line">                           <span class="keyword">const</span> UNIT_RHS&lt;_type_rhs, _ratio_rhs&gt; &amp;rhs) {       \</div>
 <div class="line">    return detail::cross_unit_divide&lt;UNIT_LHS&gt;(lhs, rhs);                      \</div>
 <div class="line">  }</div>
 </div><!-- fragment -->
