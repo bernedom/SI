@@ -3,6 +3,7 @@
 ## 2.1.3
 
 *   Fix CI pipeline for windows
+*   Add missing conversion between float and double for operator/ 
 
 ## 2.1.2
 

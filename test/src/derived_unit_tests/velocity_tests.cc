@@ -130,3 +130,13 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _m_p_h THEN result is a "
       std::is_same<decltype(one_m_ps_literal_double),
                    const SI::metre_per_second_t<long double>>::value);
 }
+
+TEST_CASE("GIVEN a length of type float WHEN divided by a value of type double "
+          "THEN resulting type is a valocity of type float") {
+
+  SI::metre_t<long double> a = 1.5_km;
+  SI::seconds_t<float> s = 1.0;
+  SI::metre_per_second_t<long double> c = a / s;
+  STATIC_REQUIRE(
+      std::is_same<decltype(c), SI::metre_per_second_t<long double>>::value);
+}
