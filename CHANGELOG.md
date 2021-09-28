@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.0
+
+*   Add `degree_t` to angle type including literals `_deg`
+
 ## 2.1.3
 
 *   Fix CI pipeline for windows

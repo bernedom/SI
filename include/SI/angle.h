@@ -28,10 +28,29 @@ template <typename _type> using micro_radian_t = angle_t<_type, std::micro>;
 template <typename _type> using milli_radian_t = angle_t<_type, std::milli>;
 template <typename _type> using radian_t = angle_t<_type, std::ratio<1>>;
 
+template <typename _type>
+using micro_degree_t = angle_t<_type, std::ratio<10000, 572957795131>>;
+template <typename _type>
+using milli_degree_t = angle_t<_type, std::ratio<10000000, 572957795131>>;
+template <typename _type>
+using degree_t = angle_t<_type, std::ratio<10000000000, 572957795131>>;
+
 // specialize unit_symbol for usage with stream operators
 template <>
 struct unit_symbol<'r', std::ratio<1>>
     : SI::detail::unit_symbol_impl<'r', 'a', 'd'> {};
+
+template <>
+struct unit_symbol<'r', std::ratio<10000, 572957795131>>
+    : SI::detail::unit_symbol_impl<'u', 'd', 'e', 'g'> {};
+
+template <>
+struct unit_symbol<'r', std::ratio<10000000, 572957795131>>
+    : SI::detail::unit_symbol_impl<'m', 'd', 'e', 'g'> {};
+
+template <>
+struct unit_symbol<'r', std::ratio<10000000000, 572957795131>>
+    : SI::detail::unit_symbol_impl<'d', 'e', 'g'> {};
 
 template <typename _ratio>
 struct unit_symbol<'r', _ratio>
@@ -100,6 +119,32 @@ constexpr milli_radian_t<long double> operator""_mrad(long double value) {
 
 constexpr radian_t<long double> operator""_rad(long double value) {
   return radian_t<long double>{value};
+}
+
+template <char... _digits> constexpr micro_degree_t<int64_t> operator""_udeg() {
+  return micro_degree_t<int64_t>{
+      SI::detail::parsing::Number<_digits...>::value};
+}
+
+template <char... _digits> constexpr milli_degree_t<int64_t> operator""_mdeg() {
+  return milli_degree_t<int64_t>{
+      SI::detail::parsing::Number<_digits...>::value};
+}
+
+template <char... _digits> constexpr degree_t<int64_t> operator""_deg() {
+  return degree_t<int64_t>{SI::detail::parsing::Number<_digits...>::value};
+}
+
+constexpr micro_degree_t<long double> operator""_udeg(long double value) {
+  return micro_degree_t<long double>{value};
+}
+
+constexpr milli_degree_t<long double> operator""_mdeg(long double value) {
+  return milli_degree_t<long double>{value};
+}
+
+constexpr degree_t<long double> operator""_deg(long double value) {
+  return degree_t<long double>{value};
 }
 
 } // namespace literals
