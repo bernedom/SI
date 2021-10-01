@@ -29,11 +29,12 @@ template <typename _type> using milli_radian_t = angle_t<_type, std::milli>;
 template <typename _type> using radian_t = angle_t<_type, std::ratio<1>>;
 
 template <typename _type>
-using micro_degree_t = angle_t<_type, std::ratio<10000, 572957795131>>;
+using micro_degree_t = angle_t<_type, std::ratio<100000000, 5729577951308232>>;
 template <typename _type>
-using milli_degree_t = angle_t<_type, std::ratio<10000000, 572957795131>>;
+using milli_degree_t =
+    angle_t<_type, std::ratio<100000000000, 5729577951308232>>;
 template <typename _type>
-using degree_t = angle_t<_type, std::ratio<10000000000, 572957795131>>;
+using degree_t = angle_t<_type, std::ratio<100000000000000, 5729577951308232>>;
 
 // specialize unit_symbol for usage with stream operators
 template <>
@@ -41,15 +42,15 @@ struct unit_symbol<'r', std::ratio<1>>
     : SI::detail::unit_symbol_impl<'r', 'a', 'd'> {};
 
 template <>
-struct unit_symbol<'r', std::ratio<10000, 572957795131>>
+struct unit_symbol<'r', std::ratio<100000000, 5729577951308232>>
     : SI::detail::unit_symbol_impl<'u', 'd', 'e', 'g'> {};
 
 template <>
-struct unit_symbol<'r', std::ratio<10000000, 572957795131>>
+struct unit_symbol<'r', std::ratio<100000000000, 5729577951308232>>
     : SI::detail::unit_symbol_impl<'m', 'd', 'e', 'g'> {};
 
 template <>
-struct unit_symbol<'r', std::ratio<10000000000, 572957795131>>
+struct unit_symbol<'r', std::ratio<100000000000000, 5729577951308232>>
     : SI::detail::unit_symbol_impl<'d', 'e', 'g'> {};
 
 template <typename _ratio>

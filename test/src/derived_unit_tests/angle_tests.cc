@@ -237,44 +237,49 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _udeg THEN result is a "
   STATIC_REQUIRE(
       std::is_same<
           decltype(one),
-          const SI::angle_t<int64_t, std::ratio<10000, 572957795131>>>::value);
+          const SI::angle_t<int64_t,
+                            std::ratio<100000000, 5729577951308232>>>::value);
 
   constexpr auto one_f = 1.0_udeg;
   STATIC_REQUIRE(
-      std::is_same<decltype(one_f),
-                   const SI::angle_t<long double,
-                                     std::ratio<10000, 572957795131>>>::value);
+      std::is_same<
+          decltype(one_f),
+          const SI::angle_t<long double,
+                            std::ratio<100000000, 5729577951308232>>>::value);
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _mdeg THEN result is a "
           "angle type AND ratio 1 to 1000") {
   constexpr auto one = 1_mdeg;
   STATIC_REQUIRE(
-      std::is_same<decltype(one),
-                   const SI::angle_t<
-                       int64_t, std::ratio<10000000, 572957795131>>>::value);
+      std::is_same<
+          decltype(one),
+          const SI::angle_t<
+              int64_t, std::ratio<100000000000, 5729577951308232>>>::value);
 
   constexpr auto one_f = 1.0_mdeg;
-  STATIC_REQUIRE(std::is_same<
-                 decltype(one_f),
-                 const SI::angle_t<long double,
-                                   std::ratio<10000000, 572957795131>>>::value);
+  STATIC_REQUIRE(
+      std::is_same<
+          decltype(one_f),
+          const SI::angle_t<
+              long double, std::ratio<100000000000, 5729577951308232>>>::value);
 }
 
 TEST_CASE("GIVEN a value WHEN constructed with literal _deg THEN result is a "
           "angle type AND ratio 1 to 1") {
   constexpr auto one = 1_deg;
   STATIC_REQUIRE(
-      std::is_same<decltype(one),
-                   const SI::angle_t<
-                       int64_t, std::ratio<10000000000, 572957795131>>>::value);
+      std::is_same<
+          decltype(one),
+          const SI::angle_t<
+              int64_t, std::ratio<100000000000000, 5729577951308232>>>::value);
 
   constexpr auto one_f = 1.0_deg;
   STATIC_REQUIRE(
       std::is_same<
           decltype(one_f),
-          const SI::angle_t<long double,
-                            std::ratio<10000000000, 572957795131>>>::value);
+          const SI::angle_t<long double, std::ratio<100000000000000,
+                                                    5729577951308232>>>::value);
 }
 
 TEST_CASE("GIVEN a 1 micro degree WHEN passed to a streaming operator THEN "
@@ -342,7 +347,7 @@ TEST_CASE("GIVEN a value of 1.0 rad WHEN converted to degrees THEN result is "
   constexpr auto value = 1.0_rad;
   constexpr SI::degree_t<long double> deg = value;
 
-  REQUIRE(SI::detail::eps_equals(deg.value(), 57.2957795131L));
+  REQUIRE(SI::detail::eps_equals(deg.value(), 57.29577951308232L));
 }
 
 TEST_CASE("GIVEN a value of 1.0 mrad WHEN converted to mdegrees THEN result is "
@@ -351,7 +356,7 @@ TEST_CASE("GIVEN a value of 1.0 mrad WHEN converted to mdegrees THEN result is "
   constexpr auto value = 1.0_mrad;
   constexpr SI::milli_degree_t<long double> deg = value;
 
-  REQUIRE(SI::detail::eps_equals(deg.value(), 57.2957795131L));
+  REQUIRE(SI::detail::eps_equals(deg.value(), 57.29577951308232L));
 }
 
 TEST_CASE("GIVEN a value of 1.0 urad WHEN converted to udegrees THEN result is "
@@ -360,5 +365,13 @@ TEST_CASE("GIVEN a value of 1.0 urad WHEN converted to udegrees THEN result is "
   constexpr auto value = 1.0_urad;
   constexpr SI::micro_degree_t<long double> deg = value;
 
-  REQUIRE(SI::detail::eps_equals(deg.value(), 57.2957795131L));
+  REQUIRE(SI::detail::eps_equals(deg.value(), 57.29577951308232L));
+}
+
+TEST_CASE(
+    "GIVEN a value of 180.0 def WHEN converted to radian THEN result is PI") {
+  constexpr auto value = 180.0_deg;
+  constexpr SI::radian_t<double> rad = value;
+
+  REQUIRE(SI::detail::eps_equals(rad.value(), M_PI));
 }
