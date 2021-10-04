@@ -3,6 +3,7 @@
 #include <SI/angle.h>
 #include <SI/detail/eps_equal.h>
 #include <SI/stream.h>
+#include <cmath>
 #include <sstream>
 
 using namespace SI::literals;
@@ -371,7 +372,7 @@ TEST_CASE("GIVEN a value of 1.0 urad WHEN converted to udegrees THEN result is "
 TEST_CASE(
     "GIVEN a value of 180.0 def WHEN converted to radian THEN result is PI") {
   constexpr auto value = 180.0_deg;
-  constexpr SI::radian_t<double> rad = value;
+  constexpr SI::radian_t<long double> rad = value;
 
-  REQUIRE(SI::detail::eps_equals(rad.value(), M_PI));
+  REQUIRE(SI::detail::eps_equals(rad.value(), 3.14159265358979328643L));
 }
