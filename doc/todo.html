@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">2.1.3</span>
+   &#160;<span id="projectnumber">2.2.0</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -71,27 +71,29 @@ $(function() {
 <div class="textblock"><dl class="reflist">
 <dt>Member <a class="el" href="namespaceSI_1_1detail.html#acae9252988e90f68da5060953a32159e">SI::detail::cross_unit_multiply</a>  (const _unit_lhs &amp;lhs, const _unit_rhs &amp;rhs)</dt>
 <dd><a class="anchor" id="_todo000001"></a>add function that works with variable exponent units and remove special typedefs for time  </dd>
+<dt>Member <a class="el" href="namespaceSI_1_1detail.html#a81b7d76dc7a434412eeef7d5d07ac988">SI::detail::eps_equals</a>  (const T &amp;lhs, const T &amp;rhs)</dt>
+<dd><a class="anchor" id="_todo000002"></a>make eps_equal take different types with similar properties  </dd>
 <dt>Class <a class="el" href="structSI_1_1detail_1_1unit__t.html">SI::detail::unit_t&lt; _symbol, _exponent, _type, _ratio &gt;</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000002"></a>add in-place unit_cast for move operators </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000003"></a>add in-place unit_cast for move operators </p>
 <p class="interdd">add logarithmic units (decibel) </p>
 <p class="enddd">add constants for speed of light, planck constant, elementary charge, boltzmann constant, avorgadro constant and luminous efficacy of monochromatic radiation of frequency  </p>
 </dd>
 <dt>Member <a class="el" href="structSI_1_1detail_1_1unit__t.html#a2165bb95dba2e598a8c78eb5816778a7">SI::detail::unit_t&lt; _symbol, _exponent, _type, _ratio &gt;::setValue</a>  (_type v)</dt>
-<dd><a class="anchor" id="_todo000003"></a>set as friend to the stream-function  </dd>
+<dd><a class="anchor" id="_todo000004"></a>set as friend to the stream-function  </dd>
 <dt>Member <a class="el" href="namespaceSI.html#acfe531810335fe392f116d1bb80638c1">SI::electric_resistance_t</a>  </dt>
-<dd><a class="anchor" id="_todo000004"></a>find a way to use Ohm as dimension symbol or switch to R (occupied by solid angle)  </dd>
+<dd><a class="anchor" id="_todo000005"></a>find a way to use Ohm as dimension symbol or switch to R (occupied by solid angle)  </dd>
 <dt>Member <a class="el" href="namespaceSI.html#aa463096022d7bb402c6fa209c052daa0">SI::frequency_t</a>  </dt>
-<dd><a class="anchor" id="_todo000005"></a>find a way to add alternative dimension symbol (f) to frequency  </dd>
+<dd><a class="anchor" id="_todo000006"></a>find a way to add alternative dimension symbol (f) to frequency  </dd>
 <dt>Member <a class="el" href="namespaceSI.html#a86a815a1a2e665d11d0961075c832267">SI::magnetic_field_t</a>  </dt>
-<dd><a class="anchor" id="_todo000006"></a>find a way to encapsulate phi  </dd>
-<dt>Member <a class="el" href="namespaceSI.html#a905ac0fdcdba8a035f4ace27071844b4">SI::magnetic_flux_t</a>  </dt>
 <dd><a class="anchor" id="_todo000007"></a>find a way to encapsulate phi  </dd>
+<dt>Member <a class="el" href="namespaceSI.html#a905ac0fdcdba8a035f4ace27071844b4">SI::magnetic_flux_t</a>  </dt>
+<dd><a class="anchor" id="_todo000008"></a>find a way to encapsulate phi  </dd>
 <dt>Member <a class="el" href="namespaceSI.html#a094f1145bcd58fd4f250ba2ead393c19">SI::radioactivity_t</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000008"></a>check how to make this the same/an alias of hertz </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000009"></a>check how to make this the same/an alias of hertz </p>
 <p class="enddd">think of how this can be built from 1/T (probably goes along with making it an alias of hertz)  </p>
 </dd>
 <dt>Member <a class="el" href="namespaceSI.html#a22c7b39177f61c6b0934b9d11ae64378">SI::temperature_t</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000009"></a>find a way to encapuslate unit symbol Theta </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000010"></a>find a way to encapuslate unit symbol Theta </p>
 <p class="enddd">consider adding Celsius and fahrenheit </p>
 </dd>
 </dl>

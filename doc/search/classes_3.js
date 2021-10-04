@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['number_962',['Number',['../structSI_1_1detail_1_1parsing_1_1Number.html',1,'SI::detail::parsing']]],
-  ['number_3c_20_270_27_2c_20_27b_27_2c_20_5fdigits_2e_2e_2e_20_3e_963',['Number&lt; &apos;0&apos;, &apos;b&apos;, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Number_3_01'0'_00_01'b'_00_01__digits_8_8_8_01_4.html',1,'SI::detail::parsing::Number&lt; &apos;0&apos;, &apos;b&apos;, _digits... &gt;'],['../structSI_1_1detail_1_1parsing_1_1Number_3_01'0'_00_01'B'_00_01__digits_8_8_8_01_4.html',1,'SI::detail::parsing::Number&lt; &apos;0&apos;, &apos;B&apos;, _digits... &gt;']]],
-  ['number_3c_20_270_27_2c_20_27x_27_2c_20_5fdigits_2e_2e_2e_20_3e_964',['Number&lt; &apos;0&apos;, &apos;x&apos;, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Number_3_01'0'_00_01'x'_00_01__digits_8_8_8_01_4.html',1,'SI::detail::parsing::Number&lt; &apos;0&apos;, &apos;x&apos;, _digits... &gt;'],['../structSI_1_1detail_1_1parsing_1_1Number_3_01'0'_00_01'X'_00_01__digits_8_8_8_01_4.html',1,'SI::detail::parsing::Number&lt; &apos;0&apos;, &apos;X&apos;, _digits... &gt;']]],
-  ['number_3c_20_270_27_2c_20_5fdigits_2e_2e_2e_20_3e_965',['Number&lt; &apos;0&apos;, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Number_3_01'0'_00_01__digits_8_8_8_01_4.html',1,'SI::detail::parsing']]],
-  ['number_5fimpl_966',['Number_impl',['../structSI_1_1detail_1_1parsing_1_1Number__impl.html',1,'SI::detail::parsing']]],
-  ['number_5fimpl_3c_2010_2c_20_5fdigits_2e_2e_2e_20_3e_967',['Number_impl&lt; 10, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Number__impl.html',1,'SI::detail::parsing']]],
-  ['number_5fimpl_3c_2016_2c_20_5fdigits_2e_2e_2e_20_3e_968',['Number_impl&lt; 16, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Number__impl.html',1,'SI::detail::parsing']]],
-  ['number_5fimpl_3c_202_2c_20_5fdigits_2e_2e_2e_20_3e_969',['Number_impl&lt; 2, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Number__impl.html',1,'SI::detail::parsing']]],
-  ['number_5fimpl_3c_208_2c_20_5fdigits_2e_2e_2e_20_3e_970',['Number_impl&lt; 8, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Number__impl.html',1,'SI::detail::parsing']]],
-  ['number_5fimpl_3c_20_5fbase_2c_20_5fdigit_20_3e_971',['Number_impl&lt; _base, _digit &gt;',['../structSI_1_1detail_1_1parsing_1_1Number__impl_3_01__base_00_01__digit_01_4.html',1,'SI::detail::parsing']]]
+  ['number_974',['Number',['../structSI_1_1detail_1_1parsing_1_1Number.html',1,'SI::detail::parsing']]],
+  ['number_3c_20_270_27_2c_20_27b_27_2c_20_5fdigits_2e_2e_2e_20_3e_975',['Number&lt; &apos;0&apos;, &apos;b&apos;, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Number_3_01'0'_00_01'b'_00_01__digits_8_8_8_01_4.html',1,'SI::detail::parsing::Number&lt; &apos;0&apos;, &apos;b&apos;, _digits... &gt;'],['../structSI_1_1detail_1_1parsing_1_1Number_3_01'0'_00_01'B'_00_01__digits_8_8_8_01_4.html',1,'SI::detail::parsing::Number&lt; &apos;0&apos;, &apos;B&apos;, _digits... &gt;']]],
+  ['number_3c_20_270_27_2c_20_27x_27_2c_20_5fdigits_2e_2e_2e_20_3e_976',['Number&lt; &apos;0&apos;, &apos;x&apos;, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Number_3_01'0'_00_01'x'_00_01__digits_8_8_8_01_4.html',1,'SI::detail::parsing::Number&lt; &apos;0&apos;, &apos;x&apos;, _digits... &gt;'],['../structSI_1_1detail_1_1parsing_1_1Number_3_01'0'_00_01'X'_00_01__digits_8_8_8_01_4.html',1,'SI::detail::parsing::Number&lt; &apos;0&apos;, &apos;X&apos;, _digits... &gt;']]],
+  ['number_3c_20_270_27_2c_20_5fdigits_2e_2e_2e_20_3e_977',['Number&lt; &apos;0&apos;, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Number_3_01'0'_00_01__digits_8_8_8_01_4.html',1,'SI::detail::parsing']]],
+  ['number_5fimpl_978',['Number_impl',['../structSI_1_1detail_1_1parsing_1_1Number__impl.html',1,'SI::detail::parsing']]],
+  ['number_5fimpl_3c_2010_2c_20_5fdigits_2e_2e_2e_20_3e_979',['Number_impl&lt; 10, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Number__impl.html',1,'SI::detail::parsing']]],
+  ['number_5fimpl_3c_2016_2c_20_5fdigits_2e_2e_2e_20_3e_980',['Number_impl&lt; 16, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Number__impl.html',1,'SI::detail::parsing']]],
+  ['number_5fimpl_3c_202_2c_20_5fdigits_2e_2e_2e_20_3e_981',['Number_impl&lt; 2, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Number__impl.html',1,'SI::detail::parsing']]],
+  ['number_5fimpl_3c_208_2c_20_5fdigits_2e_2e_2e_20_3e_982',['Number_impl&lt; 8, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Number__impl.html',1,'SI::detail::parsing']]],
+  ['number_5fimpl_3c_20_5fbase_2c_20_5fdigit_20_3e_983',['Number_impl&lt; _base, _digit &gt;',['../structSI_1_1detail_1_1parsing_1_1Number__impl_3_01__base_00_01__digit_01_4.html',1,'SI::detail::parsing']]]
 ];

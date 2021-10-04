@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">2.1.3</span>
+   &#160;<span id="projectnumber">2.2.0</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -133,10 +133,12 @@ Special Units</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Angle* </td><td class="markdownTableBodyNone">r </td><td class="markdownTableBodyNone">1 </td><td class="markdownTableBodyNone">rad </td><td class="markdownTableBodyNone">10<sup>-18</sup> to 1 </td><td class="markdownTableBodyNone"><code>*_radian_t</code>  </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Angle (Degrees)* </td><td class="markdownTableBodyNone">r </td><td class="markdownTableBodyNone">1 </td><td class="markdownTableBodyNone">deg </td><td class="markdownTableBodyNone">micro, milli, 1 </td><td class="markdownTableBodyNone"><code>*_radian_t</code>  </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Solid Angle* </td><td class="markdownTableBodyNone">R </td><td class="markdownTableBodyNone">1 </td><td class="markdownTableBodyNone">sr </td><td class="markdownTableBodyNone">10<sup>-18</sup> to 1 </td><td class="markdownTableBodyNone"><code>*_sterradian_t</code>  </td></tr>
 </table>
 <ul>
-<li>Angle and solid angle are simple containers, not containing any functionality to do angle/room-angle computation such as an overflow after 2*pi.</li>
+<li>Angle, Angle (degree) and solid angle are simple containers, not containing any functionality to do angle/solid-angle computation such as an overflow after 2*pi. Converting between radians and degree might lose precision, especially if working with <code>long doubles</code> because the ratios not precise enough, as they have to be represented as long ints</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md3"></a>
 Derived units with special names</h2>
