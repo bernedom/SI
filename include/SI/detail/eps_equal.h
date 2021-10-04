@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 2.1.3
+ * This file is part of "SI" version 2.2.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -17,6 +17,7 @@
 
 namespace SI::detail {
 
+/// @todo make eps_equal take different types with similar properties
 template <typename T, std::enable_if_t<std::is_floating_point_v<T>> * = nullptr>
 constexpr bool eps_equals(const T &lhs, const T &rhs) {
 
