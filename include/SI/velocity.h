@@ -43,6 +43,18 @@ namespace detail {
 BUILD_UNIT_FROM_DIVISON(velocity_t, length_t, time_t)
 } // namespace detail
 
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'v', std::ratio<1>>
+    : SI::detail::unit_symbol_impl<'m', '/', 's'> {};
+
+template <typename _ratio>
+struct unit_symbol<'v', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'm',
+                                   '/', 's'> {
+  static_assert(std::ratio_less_equal<_ratio, std::ratio<1>>::value,
+                "Generic streaming only implemented for ratios 1 and 1/1000");
+};
 inline namespace literals {
 
 template <char... _digits> constexpr speed_of_light_t<int64_t> operator""_c() {

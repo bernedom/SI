@@ -1,6 +1,8 @@
 #include <catch2/catch.hpp>
 
+#include <SI/stream.h>
 #include <SI/velocity.h>
+#include <sstream>
 
 using namespace SI;
 
@@ -139,4 +141,25 @@ TEST_CASE("GIVEN a length of type float WHEN divided by a value of type double "
   SI::metre_per_second_t<long double> c = a / s;
   STATIC_REQUIRE(
       std::is_same<decltype(c), SI::metre_per_second_t<long double>>::value);
+}
+
+TEST_CASE("GIVEN a 1 metre per second WHEN passed to a streaming operator THEN "
+          "result is '1m/s'") {
+  constexpr auto value = 1_m_p_s;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  const auto strin = ss.str();
+  REQUIRE(strin == "1m/s");
+}
+
+TEST_CASE("GIVEN a string of '1m/s' WHEN streamed into metre_per_second_t THEN "
+          "result "
+          "is a value of 1 metre_per_second AND stream is good") {
+  std::stringstream ss;
+  ss << "1m/s";
+  SI::metre_per_second_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_m_p_s);
 }
