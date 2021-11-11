@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.3.0
+
+*   Add string conversions for velocity (`m/s`) and acceleration types (`m/s^2`)
+
 ## 2.2.0
 
 *   Add `degree_t` to angle type including literals `_deg`

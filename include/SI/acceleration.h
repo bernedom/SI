@@ -21,6 +21,16 @@ namespace SI {
 template <typename _type, typename _ratio>
 using acceleration_t = detail::unit_t<'a', std::ratio<1>, _type, _ratio>;
 
+// specialize unit_symbol for usage with stream operators
+template <>
+struct unit_symbol<'a', std::ratio<1>>
+    : SI::detail::unit_symbol_impl<'m', '/', 's', '^', '2'> {};
+
+template <typename _ratio>
+struct unit_symbol<'a', _ratio>
+    : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'm',
+                                   '/', 's', '^', '2'> {};
+
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(acceleration_t, velocity_t, time_t)
 BUILD_UNIT_FROM_DIVISON(acceleration_t, length_t, time_squared_t)
