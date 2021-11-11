@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['power_984',['Power',['../structSI_1_1detail_1_1parsing_1_1Power.html',1,'SI::detail::parsing']]],
-  ['power_3c_20_5fbase_20_3e_985',['Power&lt; _base &gt;',['../structSI_1_1detail_1_1parsing_1_1Power_3_01__base_01_4.html',1,'SI::detail::parsing']]],
-  ['power_5fimpl_986',['Power_impl',['../structSI_1_1detail_1_1parsing_1_1Power__impl.html',1,'SI::detail::parsing']]],
-  ['power_5fimpl_3c_20_5fbase_2c_20_5fdigit_20_3e_987',['Power_impl&lt; _base, _digit &gt;',['../structSI_1_1detail_1_1parsing_1_1Power__impl_3_01__base_00_01__digit_01_4.html',1,'SI::detail::parsing']]],
-  ['power_5fimpl_3c_20_5fbase_2c_20_5fdigits_2e_2e_2e_20_3e_988',['Power_impl&lt; _base, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Power__impl.html',1,'SI::detail::parsing']]]
+  ['power_992',['Power',['../structSI_1_1detail_1_1parsing_1_1Power.html',1,'SI::detail::parsing']]],
+  ['power_3c_20_5fbase_20_3e_993',['Power&lt; _base &gt;',['../structSI_1_1detail_1_1parsing_1_1Power_3_01__base_01_4.html',1,'SI::detail::parsing']]],
+  ['power_5fimpl_994',['Power_impl',['../structSI_1_1detail_1_1parsing_1_1Power__impl.html',1,'SI::detail::parsing']]],
+  ['power_5fimpl_3c_20_5fbase_2c_20_5fdigit_20_3e_995',['Power_impl&lt; _base, _digit &gt;',['../structSI_1_1detail_1_1parsing_1_1Power__impl_3_01__base_00_01__digit_01_4.html',1,'SI::detail::parsing']]],
+  ['power_5fimpl_3c_20_5fbase_2c_20_5fdigits_2e_2e_2e_20_3e_996',['Power_impl&lt; _base, _digits... &gt;',['../structSI_1_1detail_1_1parsing_1_1Power__impl.html',1,'SI::detail::parsing']]]
 ];

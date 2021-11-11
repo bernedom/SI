@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">2.2.0</span>
+   &#160;<span id="projectnumber">2.3.0</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -106,45 +106,60 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<a class="code" href="namespaceSI_1_1detail.html#a1c9596cb33a11f2dd65866bf958848d7">BUILD_UNIT_FROM_DIVISON</a>(<a class="code" href="structSI_1_1detail_1_1unit__t.html">velocity_t</a>, <a class="code" href="structSI_1_1detail_1_1unit__t.html">length_t</a>, <a class="code" href="structSI_1_1detail_1_1unit__t.html">time_t</a>)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <span class="comment">// namespace detail</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">inline</span> <span class="keyword">namespace </span>literals {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="namespaceSI_1_1literals.html#a048a894ac845bae3a53058670563fe49">   48</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">char</span>... _digits&gt; constexpr <a class="code" href="structSI_1_1detail_1_1unit__t.html">speed_of_light_t&lt;int64_t&gt;</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_c() {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="structSI_1_1detail_1_1unit__t.html">speed_of_light_t&lt;int64_t&gt;</a>{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <a class="code" href="structSI_1_1detail_1_1parsing_1_1Number.html">SI::detail::parsing::Number</a>&lt;_digits...&gt;::value};</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="namespaceSI_1_1literals.html#a20b807059655144b572b5047a85b0234">   53</a></span>&#160;constexpr <a class="code" href="structSI_1_1detail_1_1unit__t.html">speed_of_light_t&lt;long double&gt;</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_c(<span class="keywordtype">long</span> <span class="keywordtype">double</span> value) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="structSI_1_1detail_1_1unit__t.html">speed_of_light_t&lt;long double&gt;</a>{value};</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">char</span>... _digits&gt;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="namespaceSI_1_1literals.html#a80b6a00ce08c51a4c754697e20ff8627">   58</a></span>&#160;constexpr <a class="code" href="structSI_1_1detail_1_1unit__t.html">metre_per_second_t&lt;int64_t&gt;</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_m_p_s() {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="structSI_1_1detail_1_1unit__t.html">metre_per_second_t&lt;int64_t&gt;</a>{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <a class="code" href="structSI_1_1detail_1_1parsing_1_1Number.html">SI::detail::parsing::Number</a>&lt;_digits...&gt;::value};</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">char</span>... _digits&gt;</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="namespaceSI_1_1literals.html#a82314487a59dedd5a37d2c1800091bb6">   64</a></span>&#160;constexpr <a class="code" href="structSI_1_1detail_1_1unit__t.html">kilometre_per_hour_t&lt;int64_t&gt;</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_km_p_h() {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="structSI_1_1detail_1_1unit__t.html">kilometre_per_hour_t&lt;int64_t&gt;</a>{</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <a class="code" href="structSI_1_1detail_1_1parsing_1_1Number.html">SI::detail::parsing::Number</a>&lt;_digits...&gt;::value};</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="namespaceSI_1_1literals.html#ab4bbb5b2cb6161e5f9a7c29b88a2d6de">   69</a></span>&#160;constexpr <a class="code" href="structSI_1_1detail_1_1unit__t.html">metre_per_second_t&lt;long double&gt;</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_m_p_s(<span class="keywordtype">long</span> <span class="keywordtype">double</span> value) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="structSI_1_1detail_1_1unit__t.html">metre_per_second_t&lt;long double&gt;</a>{value};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;constexpr <a class="code" href="structSI_1_1detail_1_1unit__t.html">kilometre_per_hour_t&lt;long double&gt;</a></div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="namespaceSI_1_1literals.html#a12b56203fae27d5afca637195c77ae6d">   74</a></span>&#160;<span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_km_p_h(<span class="keywordtype">long</span> <span class="keywordtype">double</span> value) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="structSI_1_1detail_1_1unit__t.html">kilometre_per_hour_t&lt;long double&gt;</a>{value};</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;} <span class="comment">// namespace literals</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;} <span class="comment">// namespace SI</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// specialize unit_symbol for usage with stream operators</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structSI_1_1unit__symbol_3_01'v'_00_01std_1_1ratio_3_011_01_4_01_4.html">   48</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structSI_1_1unit__symbol.html">unit_symbol</a>&lt;&#39;v&#39;, std::ratio&lt;1&gt;&gt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    : <a class="code" href="structSI_1_1detail_1_1unit__symbol__impl.html">SI::detail::unit_symbol_impl</a>&lt;&#39;m&#39;, &#39;/&#39;, &#39;s&#39;&gt; {};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structSI_1_1unit__symbol_3_01'v'_00_01std_1_1ratio__divide_3_01std_1_1kilo_00_01std_1_1ratio_3_0c6cd7074ea8d592ea55cb1afbb014987.html">   52</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structSI_1_1unit__symbol.html">unit_symbol</a>&lt;&#39;v&#39;, std::ratio_divide&lt;std::kilo, std::ratio&lt;3600, 1&gt;&gt;::type&gt;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    : <a class="code" href="structSI_1_1detail_1_1unit__symbol__impl.html">SI::detail::unit_symbol_impl</a>&lt;&#39;k&#39;, &#39;m&#39;, &#39;/&#39;, &#39;h&#39;&gt; {};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> _ratio&gt;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="structSI_1_1unit__symbol_3_01'v'_00_01__ratio_01_4.html">   56</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structSI_1_1unit__symbol.html">unit_symbol</a>&lt;&#39;v&#39;, _ratio&gt;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    : <a class="code" href="structSI_1_1detail_1_1unit__symbol__impl.html">SI::detail::unit_symbol_impl</a>&lt;SI::detail::ratio_prefix&lt;_ratio&gt;::value, &#39;m&#39;,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                   &#39;/&#39;, &#39;s&#39;&gt; {};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">inline</span> <span class="keyword">namespace </span>literals {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="namespaceSI_1_1literals.html#a048a894ac845bae3a53058670563fe49">   61</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">char</span>... _digits&gt; constexpr <a class="code" href="structSI_1_1detail_1_1unit__t.html">speed_of_light_t&lt;int64_t&gt;</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_c() {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="structSI_1_1detail_1_1unit__t.html">speed_of_light_t&lt;int64_t&gt;</a>{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <a class="code" href="structSI_1_1detail_1_1parsing_1_1Number.html">SI::detail::parsing::Number</a>&lt;_digits...&gt;::value};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="namespaceSI_1_1literals.html#a20b807059655144b572b5047a85b0234">   66</a></span>&#160;constexpr <a class="code" href="structSI_1_1detail_1_1unit__t.html">speed_of_light_t&lt;long double&gt;</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_c(<span class="keywordtype">long</span> <span class="keywordtype">double</span> value) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="structSI_1_1detail_1_1unit__t.html">speed_of_light_t&lt;long double&gt;</a>{value};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">char</span>... _digits&gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="namespaceSI_1_1literals.html#a80b6a00ce08c51a4c754697e20ff8627">   71</a></span>&#160;constexpr <a class="code" href="structSI_1_1detail_1_1unit__t.html">metre_per_second_t&lt;int64_t&gt;</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_m_p_s() {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="structSI_1_1detail_1_1unit__t.html">metre_per_second_t&lt;int64_t&gt;</a>{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <a class="code" href="structSI_1_1detail_1_1parsing_1_1Number.html">SI::detail::parsing::Number</a>&lt;_digits...&gt;::value};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">char</span>... _digits&gt;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="namespaceSI_1_1literals.html#a82314487a59dedd5a37d2c1800091bb6">   77</a></span>&#160;constexpr <a class="code" href="structSI_1_1detail_1_1unit__t.html">kilometre_per_hour_t&lt;int64_t&gt;</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_km_p_h() {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="structSI_1_1detail_1_1unit__t.html">kilometre_per_hour_t&lt;int64_t&gt;</a>{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <a class="code" href="structSI_1_1detail_1_1parsing_1_1Number.html">SI::detail::parsing::Number</a>&lt;_digits...&gt;::value};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="namespaceSI_1_1literals.html#ab4bbb5b2cb6161e5f9a7c29b88a2d6de">   82</a></span>&#160;constexpr <a class="code" href="structSI_1_1detail_1_1unit__t.html">metre_per_second_t&lt;long double&gt;</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_m_p_s(<span class="keywordtype">long</span> <span class="keywordtype">double</span> value) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="structSI_1_1detail_1_1unit__t.html">metre_per_second_t&lt;long double&gt;</a>{value};</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;constexpr <a class="code" href="structSI_1_1detail_1_1unit__t.html">kilometre_per_hour_t&lt;long double&gt;</a></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="namespaceSI_1_1literals.html#a12b56203fae27d5afca637195c77ae6d">   87</a></span>&#160;<span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_km_p_h(<span class="keywordtype">long</span> <span class="keywordtype">double</span> value) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="structSI_1_1detail_1_1unit__t.html">kilometre_per_hour_t&lt;long double&gt;</a>{value};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;} <span class="comment">// namespace literals</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;} <span class="comment">// namespace SI</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aunit_8h_html"><div class="ttname"><a href="unit_8h.html">unit.h</a></div></div>
 <div class="ttc" id="anamespaceSI_1_1detail_html_a1c9596cb33a11f2dd65866bf958848d7"><div class="ttname"><a href="namespaceSI_1_1detail.html#a1c9596cb33a11f2dd65866bf958848d7">SI::detail::BUILD_UNIT_FROM_DIVISON</a></div><div class="ttdeci">BUILD_UNIT_FROM_DIVISON(electric_conductance_t, electric_current_t, electric_potential_t) template&lt; typename _type</div></div>
+<div class="ttc" id="astructSI_1_1detail_1_1unit__symbol__impl_html"><div class="ttname"><a href="structSI_1_1detail_1_1unit__symbol__impl.html">SI::detail::unit_symbol_impl</a></div><div class="ttdoc">Compile time string provider for conversion of unit types to stringsa.</div><div class="ttdef"><b>Definition:</b> unit_symbol.h:21</div></div>
 <div class="ttc" id="astructSI_1_1detail_1_1parsing_1_1Number_html"><div class="ttname"><a href="structSI_1_1detail_1_1parsing_1_1Number.html">SI::detail::parsing::Number</a></div><div class="ttdoc">interface class for number</div><div class="ttdef"><b>Definition:</b> number_parser.h:111</div></div>
+<div class="ttc" id="astructSI_1_1unit__symbol_html"><div class="ttname"><a href="structSI_1_1unit__symbol.html">SI::unit_symbol</a></div><div class="ttdoc">Base struct. Unusable needs template overloading.</div><div class="ttdef"><b>Definition:</b> unit_symbol.h:64</div></div>
 <div class="ttc" id="anumber__parser_8h_html"><div class="ttname"><a href="number__parser_8h.html">number_parser.h</a></div></div>
 <div class="ttc" id="atime_8h_html"><div class="ttname"><a href="time_8h.html">time.h</a></div></div>
 <div class="ttc" id="alength_8h_html"><div class="ttname"><a href="length_8h.html">length.h</a></div></div>

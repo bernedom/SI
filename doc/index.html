@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">2.2.0</span>
+   &#160;<span id="projectnumber">2.3.0</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -96,7 +96,8 @@ SI - Type safety for physical units</h1>
 <p>It is possible to supply custom ratios to the built-in types and they are fully compatible for calculation with other units. However, the necessary literals or typedefs have to be supplied by the user. For instance <code><a class="el" href="namespaceSI.html#ae46a5cfa6ab42b215af02f97839b65ee" title="Type for velocity where v = L / T.">SI::velocity_t</a>&lt;double, std::ratio&lt;1000, 36&gt;&gt;</code> would be "kilometre per one-hundreth-of-an-hour".</p>
 <h2><a class="anchor" id="autotoc_md1"></a>
 SI Base units</h2>
-<p>For each unit the available literals are the implemented ratios prefixed with an underscore. i.e. <code>_mm</code>. <code>_km</code>. Generally the ratios follow <a href="https://en.wikipedia.org/wiki/Metric_prefix">metric prefixes of the international system of units</a> The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. <code>metre_t, milli_metre_t, kilo_metre_t</code>. The prefix or interfix is marked with an <code>*</code> in the tables below. Units that have defined typedefs and literals can be <a href="doc/implementation-details.md#conversion-to-strings">converted to strings</a> using stream operators or the <code><a class="el" href="namespaceSI.html#a940e6c5680765888164264fa4ff3809d">SI::to_string</a></code> function.</p>
+<p>For each unit the available literals are the implemented ratios prefixed with an underscore. i.e. <code>_mm</code>. <code>_km</code>. Generally the ratios follow <a href="https://en.wikipedia.org/wiki/Metric_prefix">metric prefixes of the international system of units</a> The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. <code>metre_t, milli_metre_t, kilo_metre_t</code>. The prefix or interfix is marked with an <code>*</code> in the tables below. Units that have defined typedefs and literals can be <a href="doc/implementation-details.md#conversion-to-strings">converted to strings</a> using stream operators or the <code><a class="el" href="namespaceSI.html#a940e6c5680765888164264fa4ff3809d">SI::to_string</a></code> function. To use the stream operators, include the header file <code><a class="el" href="stream_8h.html">SI/stream.h</a></code> <br  />
+</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Unit </th><th class="markdownTableHeadNone">Dimension Symbol </th><th class="markdownTableHeadNone">Unit Symbol </th><th class="markdownTableHeadNone">implemented ratios </th><th class="markdownTableHeadNone">unit typedefs  </th></tr>
@@ -190,7 +191,7 @@ Derived units with special names</h2>
 <td class="markdownTableBodyNone">Catalytic activity </td><td class="markdownTableBodyNone">K </td><td class="markdownTableBodyNone">kat </td><td class="markdownTableBodyNone">N / T </td><td class="markdownTableBodyNone">akat to Ekat </td><td class="markdownTableBodyNone"><code>*_katal_t</code>  </td></tr>
 </table>
 <ul>
-<li>These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be <code>Ω (Ohm)</code> and for magnetic flux <code>Φ (Phi)</code>but. Luminance should be E<sub>b</sub>.</li>
+<li>These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be <code>Ω (Ohm)</code> and for magnetic flux <code>Φ (Phi)</code>. Luminance should be E<sub>b</sub>.</li>
 </ul>
 <p>** luminous flux should be Φ<sub>v</sub> which is even more less supported than <code>Φ (Phi)</code> itself.</p>
 <h2><a class="anchor" id="autotoc_md4"></a>
