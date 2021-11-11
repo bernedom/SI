@@ -43,7 +43,7 @@ It is possible to supply custom ratios to the built-in types and they are fully 
 ## SI Base units
 
 For each unit the available literals are the implemented ratios prefixed with an underscore. i.e. `_mm`. `_km`. Generally the ratios follow [metric prefixes of the international system of units](https://en.wikipedia.org/wiki/Metric_prefix)
-The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. `metre_t, milli_metre_t, kilo_metre_t`. The prefix or interfix is marked with an `*` in the tables below. Units that have defined typedefs and literals can be [converted to strings](doc/implementation-details.md#conversion-to-strings) using stream operators or the `SI::to_string` function.
+The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. `metre_t, milli_metre_t, kilo_metre_t`. The prefix or interfix is marked with an `*` in the tables below. Units that have defined typedefs and literals can be [converted to strings](doc/implementation-details.md#conversion-to-strings) using stream operators or the `SI::to_string` function. To use  the stream operators, include the header file `SI/stream.h`  
 
 | Unit                        | Dimension Symbol | Unit Symbol | implemented ratios                                  | unit typedefs                     |
 | --------------------------- | ---------------- | ----------- | --------------------------------------------------- | --------------------------------- |
@@ -100,7 +100,7 @@ All units that can be built from other units decay to the respective units by in
 | Equivalent Dose      | H                | Sv          |                  | aSv to ESv              | `*_sievert_t`                                                      |
 | Catalytic activity   | K                | kat         | N / T            | akat to Ekat            | `*_katal_t`                                                        |
 
-\* These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`but. Luminance should be E<sub>b</sub>.
+\* These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`. Luminance should be E<sub>b</sub>.
 
 \** luminous flux should be Φ<sub>v</sub> which is even more less supported than `Φ (Phi)` itself.
 
