@@ -48,6 +48,10 @@ template <>
 struct unit_symbol<'v', std::ratio<1>>
     : SI::detail::unit_symbol_impl<'m', '/', 's'> {};
 
+template <>
+struct unit_symbol<'v', std::ratio_divide<std::kilo, std::ratio<3600, 1>>::type>
+    : SI::detail::unit_symbol_impl<'k', 'm', '/', 'h'> {};
+
 template <typename _ratio>
 struct unit_symbol<'v', _ratio>
     : SI::detail::unit_symbol_impl<SI::detail::ratio_prefix<_ratio>::value, 'm',

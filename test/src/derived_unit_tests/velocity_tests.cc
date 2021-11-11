@@ -149,8 +149,7 @@ TEST_CASE("GIVEN a 1 metre per second WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  const auto strin = ss.str();
-  REQUIRE(strin == "1m/s");
+  REQUIRE(ss.str() == "1m/s");
 }
 
 TEST_CASE("GIVEN a string of '1m/s' WHEN streamed into metre_per_second_t THEN "
@@ -162,4 +161,26 @@ TEST_CASE("GIVEN a string of '1m/s' WHEN streamed into metre_per_second_t THEN "
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_m_p_s);
+}
+
+TEST_CASE(
+    "GIVEN a 1 kilometre per hour WHEN passed to a streaming operator THEN "
+    "result is '1km/h'") {
+  constexpr auto value = 1_km_p_h;
+  std::stringstream ss;
+  ss << value;
+  REQUIRE(ss.str() == SI::to_string(value));
+  REQUIRE(ss.str() == "1km/h");
+}
+
+TEST_CASE(
+    "GIVEN a string of '1km/h' WHEN streamed into kilometre_per_hour_t THEN "
+    "result "
+    "is a value of 1 kilometre_per_hour_t AND stream is good") {
+  std::stringstream ss;
+  ss << "1km/h";
+  SI::kilometre_per_hour_t<int64_t> value{0};
+  ss >> value;
+  REQUIRE(!ss.fail());
+  REQUIRE(value == 1_km_p_h);
 }
