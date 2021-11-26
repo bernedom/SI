@@ -1,19 +1,18 @@
-name: "Hello World"
-description: "Greet someone"
+name: "Update conan center index"
+description: "Create a version bump update for the conan center index for a specific recipe"
 inputs:
-  who-to-greet: # id of input
-    description: "Who to greet"
+  version: # id of input
+    description: "the version to push"
     required: true
-    default: "World"
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
+  fork-of-index:
+    description: "The repository containing the fork"
+
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
-      shell: bash
-    - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
-      shell: bash
+    - uses: actions/checkout@v2
+      with:
+        name: ${{ inputs.fork-of-index }}
+        ref: "refs/heads/main"
+# todo update with upstream
+# add to recipe

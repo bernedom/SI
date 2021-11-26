@@ -1,14 +1,13 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  update_conan_center_index:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: conan_center_update
     steps:
       - uses: actions/checkout@v2
-      - id: foo
+      - id: create_conan_center_update
         uses: ./.github/actions/conancenterindex
         with:
-          who-to-greet: "Mona the Octocat"
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-        shell: bash
+          version: "1.0.0"
+          fork-of-index: bernedom/conan-center-index
