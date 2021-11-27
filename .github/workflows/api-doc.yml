@@ -1,6 +1,6 @@
 name: API documentation
 on:
-  push:
+  pull_request:
 
 jobs:
   generate-documentation:
