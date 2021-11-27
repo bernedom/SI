@@ -1,3 +1,4 @@
+name: conan center update
 on: [push]
 
 jobs:
@@ -6,8 +7,8 @@ jobs:
     name: conan_center_update
     steps:
       - uses: actions/checkout@v2
-      - id: create_conan_center_update
-        uses: ./.github/actions/conancenterindex
+
+      - uses: ./.github/actions/conancenterindex
         with:
           version: "1.0.0"
           fork-of-index: bernedom/conan-center-index
