@@ -1,3 +1,4 @@
+#action.yml
 name: "Update conan center index"
 description: "Create a version bump update for the conan center index for a specific recipe"
 inputs:
