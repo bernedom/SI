@@ -15,5 +15,9 @@ runs:
       with:
         repository: ${{ inputs.fork-of-index }}
         ref: "refs/heads/master"
+        path: conan-center-index
+    - name: "Reading the directory"
+      run: ls -lR $GITHUB_WORKSPACE/conan-center-index
+      shell: bash
 # todo update with upstream
 # add to recipe
