@@ -12,8 +12,8 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v2
-      with:
-        name: ${{ inputs.fork-of-index }}
-        ref: "refs/heads/main"
+      # with:
+      #   name: ${{ inputs.fork-of-index }}
+      #   ref: "refs/heads/main"
 # todo update with upstream
 # add to recipe
