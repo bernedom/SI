@@ -7,9 +7,12 @@ inputs:
     required: true
   fork_of_index:
     description: "The repository containing the fork"
+    required: true
 
 runs:
   using: "docker"
   image: "Dockerfile"
+  build-args:
+    - FORK_OF_INDEX=${{ input.fork_of_index }}
 # todo update with upstream
 # add to recipe
