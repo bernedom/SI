@@ -13,6 +13,6 @@ runs:
   using: "docker"
   image: "Dockerfile"
   build-args:
-    - FORK_OF_INDEX=${{ input.fork_of_index }}
+    FORK_OF_INDEX: ${{ input.fork_of_index }}
 # todo update with upstream
 # add to recipe
