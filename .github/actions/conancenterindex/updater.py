@@ -3,7 +3,11 @@ import yaml
 import io
 import requests
 import hashlib
+import sys
 
+print('Number of arguments:', len(sys.argv), 'arguments.')
+print('Argument List:', str(sys.argv))
+sys.exit(0)
 
 with open("config.yml", 'r') as stream:
     data_loaded = yaml.safe_load(stream)

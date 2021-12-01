@@ -12,7 +12,8 @@ inputs:
 runs:
   using: "docker"
   image: "Dockerfile"
-  build-args:
-    FORK_OF_INDEX: ${{ input.fork_of_index }}
+  args:
+    - ${{ inputs.fork_of_index }}
+    - ${{ inputs.version }}
 # todo update with upstream
 # add to recipe
