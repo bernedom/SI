@@ -5,19 +5,11 @@ inputs:
   version: # id of input
     description: "the version to push"
     required: true
-  fork-of-index:
+  fork_of_index:
     description: "The repository containing the fork"
 
 runs:
-  using: "composite"
-  steps:
-    - uses: actions/checkout@v2
-      with:
-        repository: ${{ inputs.fork-of-index }}
-        ref: "refs/heads/master"
-        path: conan-center-index
-    - name: "Reading the directory"
-      run: ls -lR $GITHUB_WORKSPACE/conan-center-index
-      shell: bash
+  using: "docker"
+  image: "Dockerfile"
 # todo update with upstream
 # add to recipe

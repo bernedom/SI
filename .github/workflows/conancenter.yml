@@ -11,5 +11,5 @@ jobs:
       - uses: ./.github/actions/conancenterindex
         with:
           version: "1.0.0"
-          fork-of-index: bernedom/conan-center-index
+          fork_of_index: bernedom/conan-center-index
         id: conan-update
