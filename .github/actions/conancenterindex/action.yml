@@ -8,12 +8,19 @@ inputs:
   fork_of_index:
     description: "The repository containing the fork"
     required: true
+  recipe:
+    description: "The recipe to update"
+    required: true
 
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
+    - "--fork"
     - ${{ inputs.fork_of_index }}
+    - "--version"
     - ${{ inputs.version }}
+    - "--recipe"
+    - ${{ inputs.recipe }}
 # todo update with upstream
 # add to recipe

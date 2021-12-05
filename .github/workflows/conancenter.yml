@@ -12,4 +12,5 @@ jobs:
         with:
           version: "1.0.0"
           fork_of_index: bernedom/conan-center-index
+          recipe: "si"
         id: conan-update

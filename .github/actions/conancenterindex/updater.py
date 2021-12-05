@@ -4,10 +4,17 @@ import io
 import requests
 import hashlib
 import sys
+import argparse
 
-print('Number of arguments:', len(sys.argv), 'arguments.')
-print('Argument List:', str(sys.argv))
-sys.exit(0)
+
+parser = argparse.ArgumentParser(description='Update Conan Center Index')
+parser.add_argument(
+    '--fork', help='The fork of the Conan Center Index', required=True)
+parser.add_argument('--version', help='The version to add', required=True)
+parser.add_argument('--recipe', help='The recipe to update', required=True)
+
+args = parser.parse_args()
+
 
 with open("config.yml", 'r') as stream:
     data_loaded = yaml.safe_load(stream)
