@@ -2,8 +2,7 @@ FROM python:3-alpine
 
 ARG FORK_OF_INDEX
 
-RUN apk update && apk upgrade && apk add --no-cache git openssh
-
+RUN apk update && apk upgrade && apk add --no-cache git openssh py3-gitpython 
 
 COPY updater.py /tmp/conan-center-index/
 
