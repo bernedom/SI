@@ -23,4 +23,4 @@ runs:
     - "--recipe"
     - ${{ inputs.recipe }}
 # todo update with upstream
-# add to recipe
+# todo allow passing the fork as /bernedom/conan-center-index
