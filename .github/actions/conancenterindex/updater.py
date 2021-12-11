@@ -16,6 +16,8 @@ parser.add_argument('--version', help='The version to add', required=True)
 parser.add_argument('--recipe', help='The recipe to update', required=True)
 parser.add_argument('--dryrun', help='Dry run, do not push',
                     action='store_true')
+parser.add_argument(
+    '--zipball', help='The URL of the archive to add', required=True)
 
 args = parser.parse_args()
 target_dir_ = tempfile.mkdtemp()
@@ -43,17 +45,14 @@ with io.open(os.path.join(recipe_dir, 'config.yml'), 'w', encoding='utf8') as ou
               default_flow_style=False, allow_unicode=True)
 
 # TODO download correct artifact
-r = requests.get(
-    "https://github.com/bernedom/SI/archive/2.1.3.tar.gz", allow_redirects=True)
+r = requests.get(args.zipball, allow_redirects=True)
 hash = hashlib.sha256(r.content).hexdigest()
-print(hash)
 
 with open(os.path.join(recipe_dir, "all", "conandata.yml"), 'r') as stream:
     conandata = yaml.safe_load(stream)
 
-print(conandata)
 conandata["sources"][args.version] = {
-    'url': 'https://github.com/bernedom/SI/archive/2.1.3.tar.gz', 'sha256': hash}
+    'url': args.zipball, 'sha256': hash}
 
 # temporary for debbuging purposes)
 with io.open(os.path.join(recipe_dir, 'conandata.yml'), 'w', encoding='utf8') as outfile:

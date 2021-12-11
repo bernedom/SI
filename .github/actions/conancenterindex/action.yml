@@ -11,6 +11,9 @@ inputs:
   recipe:
     description: "The recipe to update"
     required: true
+  zipball_url:
+    description: "The URL for the release zip ball to download"
+    required: true
 
 runs:
   using: "docker"
@@ -22,6 +25,8 @@ runs:
     - ${{ inputs.version }}
     - "--recipe"
     - ${{ inputs.recipe }}
+    - "--zipball"
+    - ${{ inputs.zipball_url }}
     - "--dryrun"
 # todo update with upstream
 # todo allow passing the fork as /bernedom/conan-center-index
