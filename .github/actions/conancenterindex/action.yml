@@ -22,5 +22,6 @@ runs:
     - ${{ inputs.version }}
     - "--recipe"
     - ${{ inputs.recipe }}
+    - "--dryrun"
 # todo update with upstream
 # todo allow passing the fork as /bernedom/conan-center-index
