@@ -11,8 +11,10 @@ jobs:
       - uses: bernedom/update-conan-center-index@main
         with:
           version: "1.0.0"
-          fork_of_index: https://github.com/bernedom/conan-center-index.git
+          fork_of_index: bernedom/conan-center-index
           recipe: "si"
           # zipball_url: ${{ github.event.release.zipball_url }}
           zipball_url: https://github.com/bernedom/SI/archive/2.1.3.tar.gz
+          user: bernedom
+          access_token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
         id: conan-update
