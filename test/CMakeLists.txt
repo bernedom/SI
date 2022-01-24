@@ -175,12 +175,13 @@ target_compile_options(
     $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
     $<$<CXX_COMPILER_ID:MSVC>:/W4>
     $<$<CXX_COMPILER_ID:MSVC>:/WX>
-    $<$<CXX_COMPILER_ID:MSVC>:/DCATCH_CONFIG_ENABLE_BENCHMARKING>
     $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-Wall>
     $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-Werror>
     $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-pedantic>
-    $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-DCATCH_CONFIG_ENABLE_BENCHMARKING>
 )
+
+target_compile_definitions(SI_unit_benchmarks
+                           PRIVATE CATCH_CONFIG_ENABLE_BENCHMARKING)
 
 add_test(NAME SI_detail_tests COMMAND SI_detail_tests)
 add_test(NAME SI_base_unit_tests COMMAND SI_base_unit_tests)
