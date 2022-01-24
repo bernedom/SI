@@ -1,0 +1,29 @@
+/**
+ * This file is part of "SI" version 2.3.0
+ * A header only c++ library that provides type safety and user defined literals
+ * for handling pyhsical values defined in the International System of
+ * Units
+ *
+ * https://github.com/bernedom/SI
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ **/
+#pragma once
+
+#include "detail/operator_helpers.h"
+
+#include "area.h"
+#include "time.h"
+
+namespace SI {
+
+template <typename _type, typename _ratio>
+using surface_flow_t = detail::unit_t<'V', std::ratio<1>, _type, _ratio>;
+
+namespace detail {
+BUILD_UNIT_FROM_DIVISON(surface_flow_t, area_t, time_t)
+
+}
+
+} // namespace SI
