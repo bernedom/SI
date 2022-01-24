@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.4.0
+
+*   Add surface flow unit 
 ## 2.3.0
 
 *   Add string conversions for velocity (`m/s`) and acceleration types (`m/s^2`)
