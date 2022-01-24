@@ -99,6 +99,7 @@ All units that can be built from other units decay to the respective units by in
 | Absorbed Dose        | D                | Gy          |                  | aGy to EGy              | `*_gray_t`                                                         |
 | Equivalent Dose      | H                | Sv          |                  | aSv to ESv              | `*_sievert_t`                                                      |
 | Catalytic activity   | K                | kat         | N / T            | akat to Ekat            | `*_katal_t`                                                        |
+| Surface flow   | V                | m^2/s         | L^2 / T            | none            | `*_katal_t`                                                        |
 
 \* These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`. Luminance should be E<sub>b</sub>.
 
