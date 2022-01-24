@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">2.3.0</span>
+   &#160;<span id="projectnumber">2.4.0</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -1388,6 +1388,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a3ae8e9870468e6b5db0fe1726df44448"><td class="memTemplParams" colspan="2">template&lt;typename _type &gt; </td></tr>
 <tr class="memitem:a3ae8e9870468e6b5db0fe1726df44448"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a3ae8e9870468e6b5db0fe1726df44448">exa_mol_t</a> = <a class="el" href="namespaceSI.html#a7be7c92c2cba00a3e69037ac466083d8">substance_t</a>&lt; _type, std::exa &gt;</td></tr>
 <tr class="separator:a3ae8e9870468e6b5db0fe1726df44448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4a53226ff3e77a1b4d1d5d2c94408da"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
+<tr class="memitem:ac4a53226ff3e77a1b4d1d5d2c94408da"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#ac4a53226ff3e77a1b4d1d5d2c94408da">surface_flow_t</a> = <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt; 'V', std::ratio&lt; 1 &gt;, _type, _ratio &gt;</td></tr>
+<tr class="separator:ac4a53226ff3e77a1b4d1d5d2c94408da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22c7b39177f61c6b0934b9d11ae64378"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
 <tr class="memitem:a22c7b39177f61c6b0934b9d11ae64378"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a22c7b39177f61c6b0934b9d11ae64378">temperature_t</a> = <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt; 't', std::ratio&lt; 1 &gt;, _type, _ratio &gt;</td></tr>
 <tr class="separator:a22c7b39177f61c6b0934b9d11ae64378"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3337,7 +3340,7 @@ Functions</h2></td></tr>
 <tr class="separator:a12b56203fae27d5afca637195c77ae6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This file is part of "SI" version 2.3.0 A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units</p>
+<div class="textblock"><p>This file is part of "SI" version 2.4.0 A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units</p>
 <p><a href="https://github.com/bernedom/SI">https://github.com/bernedom/SI</a></p>
 <p>SPDX-License-Identifier: MIT </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
@@ -9261,6 +9264,22 @@ template&lt;typename _type , typename _ratio &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="namespaceSI.html#a7be7c92c2cba00a3e69037ac466083d8">SI::substance_t</a> = typedef <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt;'N', std::ratio&lt;1&gt;, _type, _ratio&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac4a53226ff3e77a1b4d1d5d2c94408da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4a53226ff3e77a1b4d1d5d2c94408da">&#9670;&nbsp;</a></span>surface_flow_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _type , typename _ratio &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceSI.html#ac4a53226ff3e77a1b4d1d5d2c94408da">SI::surface_flow_t</a> = typedef <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt;'V', std::ratio&lt;1&gt;, _type, _ratio&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">

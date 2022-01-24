@@ -1,5 +1,5 @@
 <map id="SI/detail/operator_helpers.h" name="SI/detail/operator_helpers.h">
-<area shape="rect" id="node1" title=" " alt="" coords="697,5,831,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="722,5,857,47"/>
 <area shape="rect" id="node2" href="$acceleration_8h.html" title=" " alt="" coords="571,169,701,196"/>
 <area shape="rect" id="node3" href="$force_8h.html" title=" " alt="" coords="564,244,647,271"/>
 <area shape="rect" id="node4" href="$energy_8h.html" title=" " alt="" coords="379,393,472,420"/>
@@ -17,7 +17,8 @@
 <area shape="rect" id="node16" href="$catalytic__activity_8h.html" title=" " alt="" coords="1029,95,1189,121"/>
 <area shape="rect" id="node17" href="$electric__charge_8h.html" title=" " alt="" coords="43,468,192,495"/>
 <area shape="rect" id="node18" href="$equivalent__dose_8h.html" title=" " alt="" coords="1213,95,1371,121"/>
-<area shape="rect" id="node19" href="$illuminance_8h.html" title=" " alt="" coords="1398,169,1525,196"/>
-<area shape="rect" id="node20" href="$luminous__flux_8h.html" title=" " alt="" coords="1445,95,1587,121"/>
+<area shape="rect" id="node19" href="$illuminance_8h.html" title=" " alt="" coords="1455,169,1582,196"/>
+<area shape="rect" id="node20" href="$luminous__flux_8h.html" title=" " alt="" coords="1395,95,1536,121"/>
 <area shape="rect" id="node21" href="$radioactivity_8h.html" title=" " alt="" coords="1611,95,1741,121"/>
+<area shape="rect" id="node22" href="$surface__flow_8h.html" title=" " alt="" coords="1765,95,1896,121"/>
 </map>
