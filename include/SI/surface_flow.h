@@ -19,10 +19,18 @@
 namespace SI {
 
 template <typename _type, typename _ratio>
-using surface_flow_t = detail::unit_t<'V', std::ratio<1>, _type, _ratio>;
+using surface_flow_t = detail::unit_t<'s', std::ratio<1>, _type, _ratio>;
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISON(surface_flow_t, area_t, time_t)
+
+}
+
+template <typename _type, typename _ratio>
+using volumetric_flow_t = detail::unit_t<'V', std::ratio<1>, _type, _ratio>;
+
+namespace detail {
+BUILD_UNIT_FROM_DIVISON(volumetric_flow_t, volume_t, time_t)
 
 }
 
