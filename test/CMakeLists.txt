@@ -134,7 +134,7 @@ target_sources(
           src/derived_unit_tests/angle_tests.cc
           src/derived_unit_tests/solid_angle_tests.cc
           src/derived_unit_tests/astronomic_tests.cc
-          src/derived_unit_tests/surface_flow_tests.cc)
+          src/derived_unit_tests/flow_tests.cc)
 
 target_include_directories(
   SI_derived_unit_tests

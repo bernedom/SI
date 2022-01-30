@@ -3,7 +3,7 @@
 #include <SI/area.h>
 #include <SI/time.h>
 
-#include <SI/surface_flow.h>
+#include <SI/flow.h>
 
 using namespace SI::literals;
 
