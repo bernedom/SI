@@ -741,6 +741,12 @@ Typedefs</h2></td></tr>
 <tr class="memitem:acbda9574996853b35224fb7f56407b9f"><td class="memTemplParams" colspan="2">template&lt;typename _type &gt; </td></tr>
 <tr class="memitem:acbda9574996853b35224fb7f56407b9f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#acbda9574996853b35224fb7f56407b9f">exa_sievert_t</a> = <a class="el" href="namespaceSI.html#ae4946b976d0f18ebce9d95f00908f027">equivalent_dose_t</a>&lt; _type, std::exa &gt;</td></tr>
 <tr class="separator:acbda9574996853b35224fb7f56407b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb03f1deb964ce0b22655146788d2eaf"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
+<tr class="memitem:aeb03f1deb964ce0b22655146788d2eaf"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#aeb03f1deb964ce0b22655146788d2eaf">surface_flow_t</a> = <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt; 's', std::ratio&lt; 1 &gt;, _type, _ratio &gt;</td></tr>
+<tr class="separator:aeb03f1deb964ce0b22655146788d2eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0efee52b70484e7a33ecfcd935cab881"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
+<tr class="memitem:a0efee52b70484e7a33ecfcd935cab881"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a0efee52b70484e7a33ecfcd935cab881">volumetric_flow_t</a> = <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt; 'V', std::ratio&lt; 1 &gt;, _type, _ratio &gt;</td></tr>
+<tr class="separator:a0efee52b70484e7a33ecfcd935cab881"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30f856111df1f1a7f9b757f86a12f372"><td class="memTemplParams" colspan="2">template&lt;typename _type , class _ratio  = std::ratio&lt;1&gt;&gt; </td></tr>
 <tr class="memitem:a30f856111df1f1a7f9b757f86a12f372"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a30f856111df1f1a7f9b757f86a12f372">force_t</a> = <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt; 'F', std::ratio&lt; 1 &gt;, _type, _ratio &gt;</td></tr>
 <tr class="separator:a30f856111df1f1a7f9b757f86a12f372"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1388,9 +1394,6 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a3ae8e9870468e6b5db0fe1726df44448"><td class="memTemplParams" colspan="2">template&lt;typename _type &gt; </td></tr>
 <tr class="memitem:a3ae8e9870468e6b5db0fe1726df44448"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a3ae8e9870468e6b5db0fe1726df44448">exa_mol_t</a> = <a class="el" href="namespaceSI.html#a7be7c92c2cba00a3e69037ac466083d8">substance_t</a>&lt; _type, std::exa &gt;</td></tr>
 <tr class="separator:a3ae8e9870468e6b5db0fe1726df44448"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4a53226ff3e77a1b4d1d5d2c94408da"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
-<tr class="memitem:ac4a53226ff3e77a1b4d1d5d2c94408da"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#ac4a53226ff3e77a1b4d1d5d2c94408da">surface_flow_t</a> = <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt; 'V', std::ratio&lt; 1 &gt;, _type, _ratio &gt;</td></tr>
-<tr class="separator:ac4a53226ff3e77a1b4d1d5d2c94408da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22c7b39177f61c6b0934b9d11ae64378"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
 <tr class="memitem:a22c7b39177f61c6b0934b9d11ae64378"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a22c7b39177f61c6b0934b9d11ae64378">temperature_t</a> = <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt; 't', std::ratio&lt; 1 &gt;, _type, _ratio &gt;</td></tr>
 <tr class="separator:a22c7b39177f61c6b0934b9d11ae64378"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -9270,8 +9273,8 @@ template&lt;typename _type , typename _ratio &gt; </div>
 
 </div>
 </div>
-<a id="ac4a53226ff3e77a1b4d1d5d2c94408da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4a53226ff3e77a1b4d1d5d2c94408da">&#9670;&nbsp;</a></span>surface_flow_t</h2>
+<a id="aeb03f1deb964ce0b22655146788d2eaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb03f1deb964ce0b22655146788d2eaf">&#9670;&nbsp;</a></span>surface_flow_t</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9279,7 +9282,7 @@ template&lt;typename _type , typename _ratio &gt; </div>
 template&lt;typename _type , typename _ratio &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceSI.html#ac4a53226ff3e77a1b4d1d5d2c94408da">SI::surface_flow_t</a> = typedef <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt;'V', std::ratio&lt;1&gt;, _type, _ratio&gt;</td>
+          <td class="memname">using <a class="el" href="namespaceSI.html#aeb03f1deb964ce0b22655146788d2eaf">SI::surface_flow_t</a> = typedef <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt;'s', std::ratio&lt;1&gt;, _type, _ratio&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -9845,6 +9848,22 @@ template&lt;typename _type , typename _ratio &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="namespaceSI.html#adbfcb93d90a4999f80180cad7e7b4096">SI::volume_t</a> = typedef <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt;'L', std::ratio&lt;3&gt;, _type, _ratio&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0efee52b70484e7a33ecfcd935cab881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0efee52b70484e7a33ecfcd935cab881">&#9670;&nbsp;</a></span>volumetric_flow_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _type , typename _ratio &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceSI.html#a0efee52b70484e7a33ecfcd935cab881">SI::volumetric_flow_t</a> = typedef <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt;'V', std::ratio&lt;1&gt;, _type, _ratio&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
