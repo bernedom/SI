@@ -2,7 +2,8 @@
 
 ## 2.4.0
 
-*   Add surface flow unit 
+*   Add surface flow and volumetric flow units
+ 
 ## 2.3.0
 
 *   Add string conversions for velocity (`m/s`) and acceleration types (`m/s^2`)
