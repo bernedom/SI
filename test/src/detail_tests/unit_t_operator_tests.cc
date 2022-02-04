@@ -343,33 +343,48 @@ TEST_CASE("GIVEN a unit with ratio<1> and a scalar AND internal type is "
   STATIC_REQUIRE(eps_equals(result.value(), 500.0L));
 }
 
-TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
+TEST_CASE("GIVEN a unit with ratio<10, 1> and a scalar AND interal type is "
           "integral WHEN scalar is dived "
-          "by unit THEN resulting value is adjusted by ratio",
+          "by unit THEN resulting value is not adjusted by ratio",
           "[unit_t][operator/]") {
   constexpr int64_t v1{1000};
   constexpr unit_t<'X', std::ratio<1>, int64_t, std::deca> v2{2};
 
   constexpr auto result = v1 / v2;
-  constexpr unit_t<'X', std::ratio<-1>, int64_t, std::deca> expected{5};
+  constexpr unit_t<'X', std::ratio<-1>, int64_t, std::deca> expected{500};
   STATIC_REQUIRE(v2.value() == 2);
   STATIC_REQUIRE(std::ratio_equal<std::deca, decltype(result)::ratio>::value);
-  STATIC_REQUIRE(result.value() == 5);
+  STATIC_REQUIRE(result.value() == 500);
   STATIC_REQUIRE(result == expected);
 }
 
-TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
+TEST_CASE("GIVEN a unit with ratio<10, 1> and a scalar AND interal type is "
           "floating point WHEN scalar is dived "
-          "by unit THEN resulting value is adjusted by ratio",
+          "by unit THEN resulting value is not adjusted by ratio",
           "[unit_t][operator/]") {
   constexpr long double v1{1000};
   constexpr unit_t<'X', std::ratio<1>, long double, std::deca> v2{2};
 
   constexpr auto result = v1 / v2;
-  constexpr unit_t<'X', std::ratio<-1>, long double, std::deca> expected{5};
+  constexpr unit_t<'X', std::ratio<-1>, long double, std::deca> expected{500};
   STATIC_REQUIRE(v2.value() == 2);
   STATIC_REQUIRE(std::ratio_equal<std::deca, decltype(result)::ratio>::value);
-  STATIC_REQUIRE(eps_equals(result.value(), 5.0L));
+  STATIC_REQUIRE(eps_equals(result.value(), 500.0L));
+  STATIC_REQUIRE(result == expected);
+}
+
+TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
+          "floating point WHEN scalar is dived "
+          "by unit THEN resulting value is not adjusted by ratio",
+          "[unit_t][operator/]") {
+  constexpr long double v1{1000};
+  constexpr unit_t<'X', std::ratio<1>, long double, std::milli> v2{2};
+
+  constexpr auto result = v1 / v2;
+  constexpr unit_t<'X', std::ratio<-1>, long double, std::milli> expected{500};
+  STATIC_REQUIRE(v2.value() == 2);
+  STATIC_REQUIRE(std::ratio_equal<std::milli, decltype(result)::ratio>::value);
+  STATIC_REQUIRE(eps_equals(result.value(), 500.0L));
   STATIC_REQUIRE(result == expected);
 }
 
