@@ -454,7 +454,7 @@ private:
   _type value_;
 };
 
-/// operator to divide primitive type by unit encapsulating the same type
+/// operator to divide scalar type by unit encapsulating the same type
 /// template specialisation handling integer types
 /// @results unit with negative exponent
 template <typename _type, char _symbol, typename _exponent, typename _rhs_type,
@@ -468,13 +468,11 @@ operator/(const _type &lhs,
                 "Implicit ratio conversion disabled, convert to ratio<1> "
                 "before dividing");
   static_assert(detail::is_ratio_v<_exponent>, "Exponent is a ratio type");
-  return unit_cast<unit_t<
-      _symbol, std::ratio_multiply<std::ratio<-1>, _exponent>, _type, _ratio>>(
-      unit_t<_symbol, std::ratio_multiply<std::ratio<-1>, _exponent>, _type,
-             std::ratio<1>>{lhs / (rhs.value() * (_ratio::num / _ratio::den))});
+  return unit_t<_symbol, std::ratio_multiply<std::ratio<-1>, _exponent>, _type,
+                _ratio>{lhs / rhs.value()};
 }
 
-/// operator to divide primitive type by unit encapsulating the same type
+/// operator to divide scalar type by unit encapsulating the same type
 /// template specialisation for floating point types, to avoid possible loss
 /// of precision when adjusting for ratio
 /// @results unit with negative exponent
@@ -489,12 +487,8 @@ operator/(const _type &lhs,
                 "Implicit ratio conversion disabled, convert to ratio<1> "
                 "before dividing");
   static_assert(detail::is_ratio_v<_exponent>, "Exponent is a ratio type");
-  return unit_cast<unit_t<
-      _symbol, std::ratio_multiply<std::ratio<-1>, _exponent>, _type, _ratio>>(
-      unit_t<_symbol, std::ratio_multiply<std::ratio<-1>, _exponent>, _type,
-             std::ratio<1>>{lhs /
-                            (rhs.value() * (static_cast<_type>(_ratio::num) /
-                                            static_cast<_type>(_ratio::den)))});
+  return unit_t<_symbol, std::ratio_multiply<std::ratio<-1>, _exponent>, _type,
+                _ratio>{lhs / rhs.value()};
 }
 
 } // namespace SI::detail

@@ -511,3 +511,9 @@ TEST_CASE("GIVEN a string of '1Em' WHEN streamed into exa_metre_t THEN result "
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_Em);
 }
+
+// TEST_CASE("Test") {
+//   constexpr auto r = 2L / 1_mm;
+//   // constexpr auto x = 2.0 / SI::milli_metre_t<double>{1};
+//   //  constexpr auto x = 2 / SI::milli_metre_t<double>{1};
+// }
