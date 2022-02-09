@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 
 project(SI-Compilation-Tests)
 
-find_package(SI CONFIG REQUIRED)
+find_package(SI REQUIRED)
 
 add_executable(SI-Compilation-Tests)
 target_link_libraries(SI-Compilation-Tests SI::SI)
