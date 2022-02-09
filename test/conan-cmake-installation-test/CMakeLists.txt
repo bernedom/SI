@@ -16,7 +16,7 @@ endif()
 include(${CMAKE_CURRENT_BINARY_DIR}/conan.cmake)
 conan_cmake_run(CONANFILE conanfile.txt BASIC_SETUP CMAKE_TARGETS)
 
-find_package(SI CONFIG REQUIRED)
+find_package(SI REQUIRED)
 
 add_executable(SI-example-conan
                ${CMAKE_CURRENT_SOURCE_DIR}/../src/installation-tests/main.cc)
