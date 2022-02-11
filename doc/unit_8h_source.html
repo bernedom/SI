@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">2.4.0</span>
+   &#160;<span id="projectnumber">2.4.1</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units.</div>
   </td>
@@ -473,32 +473,26 @@ $(function() {
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;                <span class="stringliteral">&quot;Implicit ratio conversion disabled, convert to ratio&lt;1&gt; &quot;</span></div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;                <span class="stringliteral">&quot;before dividing&quot;</span>);</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;  static_assert(detail::is_ratio_v&lt;_exponent&gt;, <span class="stringliteral">&quot;Exponent is a ratio type&quot;</span>);</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespaceSI_1_1detail.html#a45af83e9f353597a58012c58577724fb">unit_cast</a>&lt;<a class="code" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt;</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;      _symbol, std::ratio_multiply&lt;std::ratio&lt;-1&gt;, _exponent&gt;, _type, _ratio&gt;&gt;(</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;      <a class="code" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt;_symbol, std::ratio_multiply&lt;std::ratio&lt;-1&gt;, _exponent&gt;, _type,</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;             std::ratio&lt;1&gt;&gt;{lhs / (rhs.<a class="code" href="structSI_1_1detail_1_1unit__t.html#ad6140abd917290bee1f19d98f56a2f87">value</a>() * (_ratio::num / _ratio::den))});</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;}</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160; </div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> _type, <span class="keywordtype">char</span> _symbol, <span class="keyword">typename</span> _exponent, <span class="keyword">typename</span> _rhs_type,</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;          <span class="keyword">typename</span> _ratio,</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;          std::enable_if_t&lt;std::is_floating_point_v&lt;_type&gt;&gt; * = <span class="keyword">nullptr</span>&gt;</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;constexpr <span class="keyword">auto</span></div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;<a class="code" href="namespaceSI_1_1detail.html#ae2614dd22817f47500394f7311a09b68">operator/</a>(<span class="keyword">const</span> _type &amp;lhs,</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;          <span class="keyword">const</span> unit_t&lt;_symbol, _exponent, _rhs_type, _ratio&gt; &amp;rhs) {</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;  static_assert(<a class="code" href="unit_8h.html#a4801616f306f098065c28d1c782ce0e0">SI_ENABLE_IMPLICIT_RATIO_CONVERSION</a> ||</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                    std::ratio_equal_v&lt;_ratio, std::ratio&lt;1&gt;&gt;,</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                <span class="stringliteral">&quot;Implicit ratio conversion disabled, convert to ratio&lt;1&gt; &quot;</span></div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                <span class="stringliteral">&quot;before dividing&quot;</span>);</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;  static_assert(detail::is_ratio_v&lt;_exponent&gt;, <span class="stringliteral">&quot;Exponent is a ratio type&quot;</span>);</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespaceSI_1_1detail.html#a45af83e9f353597a58012c58577724fb">unit_cast</a>&lt;unit_t&lt;</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;      _symbol, std::ratio_multiply&lt;std::ratio&lt;-1&gt;, _exponent&gt;, _type, _ratio&gt;&gt;(</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;      unit_t&lt;_symbol, std::ratio_multiply&lt;std::ratio&lt;-1&gt;, _exponent&gt;, _type,</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;             std::ratio&lt;1&gt;&gt;{lhs /</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                            (rhs.value() * (<span class="keyword">static_cast&lt;</span>_type<span class="keyword">&gt;</span>(_ratio::num) /</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;                                            <span class="keyword">static_cast&lt;</span>_type<span class="keyword">&gt;</span>(_ratio::den)))});</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;}</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160; </div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;} <span class="comment">// namespace SI::detail</span></div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="structSI_1_1detail_1_1unit__t.html">unit_t</a>&lt;_symbol, std::ratio_multiply&lt;std::ratio&lt;-1&gt;, _exponent&gt;, _type,</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                _ratio&gt;{lhs / rhs.<a class="code" href="structSI_1_1detail_1_1unit__t.html#ad6140abd917290bee1f19d98f56a2f87">value</a>()};</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;}</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160; </div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> _type, <span class="keywordtype">char</span> _symbol, <span class="keyword">typename</span> _exponent, <span class="keyword">typename</span> _rhs_type,</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;          <span class="keyword">typename</span> _ratio,</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;          std::enable_if_t&lt;std::is_floating_point_v&lt;_type&gt;&gt; * = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;constexpr <span class="keyword">auto</span></div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;<a class="code" href="namespaceSI_1_1detail.html#ae2614dd22817f47500394f7311a09b68">operator/</a>(<span class="keyword">const</span> _type &amp;lhs,</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;          <span class="keyword">const</span> unit_t&lt;_symbol, _exponent, _rhs_type, _ratio&gt; &amp;rhs) {</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;  static_assert(<a class="code" href="unit_8h.html#a4801616f306f098065c28d1c782ce0e0">SI_ENABLE_IMPLICIT_RATIO_CONVERSION</a> ||</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                    std::ratio_equal_v&lt;_ratio, std::ratio&lt;1&gt;&gt;,</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                <span class="stringliteral">&quot;Implicit ratio conversion disabled, convert to ratio&lt;1&gt; &quot;</span></div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                <span class="stringliteral">&quot;before dividing&quot;</span>);</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;  static_assert(detail::is_ratio_v&lt;_exponent&gt;, <span class="stringliteral">&quot;Exponent is a ratio type&quot;</span>);</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;  <span class="keywordflow">return</span> unit_t&lt;_symbol, std::ratio_multiply&lt;std::ratio&lt;-1&gt;, _exponent&gt;, _type,</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                _ratio&gt;{lhs / rhs.value()};</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;}</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160; </div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;} <span class="comment">// namespace SI::detail</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructSI_1_1detail_1_1unit__t_html_a25b6ff160a90372ff0da53a75ac2ad44"><div class="ttname"><a href="structSI_1_1detail_1_1unit__t.html#a25b6ff160a90372ff0da53a75ac2ad44">SI::detail::unit_t::operator-=</a></div><div class="ttdeci">constexpr unit_t &amp; operator-=(const unit_t&lt; _symbol, _exponent, _type, _rhs_ratio &gt; &amp;rhs)</div><div class="ttdoc">subtract value of the same type but possibly different ratio</div><div class="ttdef"><b>Definition:</b> unit.h:410</div></div>
 <div class="ttc" id="astructSI_1_1detail_1_1unit__t_html_a89cfd3ad100ee1dc6364d20bb45a9bbe"><div class="ttname"><a href="structSI_1_1detail_1_1unit__t.html#a89cfd3ad100ee1dc6364d20bb45a9bbe">SI::detail::unit_t::operator!=</a></div><div class="ttdeci">constexpr bool operator!=(const unit_t&lt; _symbol, _exponent, _rhs_type, _rhs_ratio &gt; &amp;rhs) const</div><div class="ttdoc">compares two values, considers different ratios.</div><div class="ttdef"><b>Definition:</b> unit.h:176</div></div>
