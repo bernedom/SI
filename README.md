@@ -22,16 +22,17 @@ An illustrative example:
 
 using namespace SI::literals;
 
-constexpr auto one_kilogramm = 1.0_kg;
+constexpr auto one_kilogram = 1.0_kg;
 constexpr auto ten_coulomb = 5.0_A * 2.0_s;
 constexpr auto half_an_ampere = ten_coulomb / 20.0_s;
+constexpr auto tousand_gramms = one_kilogram.as<gramt_t>();
 
 void calculate_mass(const SI::kilo_gram_t<long double> &kg) {
   // do something meaningful here
 }
 
 int main(int, char **) {
-  calculate_mass(one_kilogramm);
+  calculate_mass(one_kilogram);
   return 0;
 }
 ```
@@ -39,6 +40,8 @@ int main(int, char **) {
 SI provides conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) with strong **type safety at compile time**. All units are special typedefs of the template struct `SI::unit_t`. Only the value of the unit is stored internally, the ratio (i.e. milli, micro, kilo...) is determined as a type trait to allow all units to have the same resolution across the whole implemented ratios. SI handles operations of units of the same ratios as well as when the ratios are different. See the [documentation implementation details](doc/implementation-details.md) for further information. Operations between units of the same ratio are overhead-free, else there is additional computation cost to adjust the values to the units. By passing the flag `SI_DISABLE_IMPLICIT_RATIO_CONVERSION` to the compiler implicit ratio conversion is not done and fails with a compiler error. See the [continuous benchmark results](https://si.dominikberner.ch/dev/bench/) for a comparison between the reference measurements and the implementation in SI. 
 
 It is possible to supply custom ratios to the built-in types and they are fully compatible for calculation with other units. However, the necessary literals or typedefs have to be supplied by the user. For instance `SI::velocity_t<double, std::ratio<1000, 36>>` would be "kilometre per one-hundreth-of-an-hour".
+
+Converting between units is either done with the `as<unit_t>()` member function of `unit_` or the free function `SI::unit_cast<unit_t>(unit_t u)`. This will convert a value of the same type but different ratio. 
 
 ## SI Base units
 

@@ -339,3 +339,15 @@ TEST_CASE("GIVEN a unit with internal type of int32_t WHEN static_cast to unit "
                    decltype(result)>::value);
   STATIC_REQUIRE(result.value() == 2000);
 }
+
+TEST_CASE("GIVEN a unit with internal ratio of kilo WHEN retrieved with "
+          "as<unit<std::milli>() THHEN value is multiplied by 1000000 ") {
+  constexpr unit_t<'X', std::ratio<1>, int64_t, std::kilo> v{2};
+  constexpr auto result =
+      v.as<unit_t<'X', std::ratio<1>, int64_t, std::milli>>();
+
+  STATIC_REQUIRE(
+      std::is_same<const unit_t<'X', std::ratio<1>, int64_t, std::milli>,
+                   decltype(result)>::value);
+  STATIC_REQUIRE(result.value() == 2000000);
+}

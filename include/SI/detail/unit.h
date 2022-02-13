@@ -99,6 +99,16 @@ struct unit_t {
   /// returns the stored value as raw type
   constexpr _type value() const { return value_; }
 
+  template <typename _unit_rhs> constexpr _unit_rhs as() const {
+    static_assert(is_unit_t_v<_unit_rhs>, "only supported for SI::unit_t");
+    static_assert(std::ratio_equal_v<typename _unit_rhs::exponent, _exponent>,
+                  "Exponents must match");
+    static_assert(_unit_rhs::symbol::value == _symbol,
+                  "target unit must be of the same type must match");
+
+    return unit_cast<_unit_rhs>(*this);
+  }
+
   ///@todo set as friend to the stream-function
   void setValue(_type v) { value_ = v; }
 
