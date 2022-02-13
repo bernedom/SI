@@ -3,6 +3,7 @@
 ## 2.4.1
 
 * Fix reported [issue](https://github.com/bernedom/SI/issues/101) that `operator/(scalar / unit)` would calculate the ratio into the value.
+* Add function `as<unit_t>()` to unit for convenient conversion to a unit of the same type but different ratio
 
 ## 2.4.0
 
