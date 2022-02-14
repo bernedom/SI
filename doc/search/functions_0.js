@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['build_5funit_5ffrom_5fdivison_1197',['BUILD_UNIT_FROM_DIVISON',['../namespaceSI_1_1detail.html#a1c9596cb33a11f2dd65866bf958848d7',1,'SI::detail']]]
+  ['as_1198',['as',['../structSI_1_1detail_1_1unit__t.html#ab71953c8200ff65fd889e9095959c9c6',1,'SI::detail::unit_t']]]
 ];

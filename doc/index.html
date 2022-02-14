@@ -80,20 +80,22 @@ SI - Type safety for physical units</h1>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceSI_1_1literals.html">SI::literals</a>;</div>
 <div class="line"> </div>
-<div class="line">constexpr <span class="keyword">auto</span> one_kilogramm = 1.0_kg;</div>
+<div class="line">constexpr <span class="keyword">auto</span> one_kilogram = 1.0_kg;</div>
 <div class="line">constexpr <span class="keyword">auto</span> ten_coulomb = 5.0_A * 2.0_s;</div>
 <div class="line">constexpr <span class="keyword">auto</span> half_an_ampere = ten_coulomb / 20.0_s;</div>
+<div class="line">constexpr <span class="keyword">auto</span> tousand_gramms = one_kilogram.as&lt;gramt_t&gt;();</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> calculate_mass(<span class="keyword">const</span> <a class="code" href="structSI_1_1detail_1_1unit__t.html">SI::kilo_gram_t&lt;long double&gt;</a> &amp;kg) {</div>
 <div class="line">  <span class="comment">// do something meaningful here</span></div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span>, <span class="keywordtype">char</span> **) {</div>
-<div class="line">  calculate_mass(one_kilogramm);</div>
+<div class="line">  calculate_mass(one_kilogram);</div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --><p><a class="el" href="namespaceSI.html">SI</a> provides conversions and arithmetic operations with values of any of the <a href="https://en.wikipedia.org/wiki/International_System_of_Units">International System of Units</a> with strong <b>type safety at compile time</b>. All units are special typedefs of the template struct <code>SI::unit_t</code>. Only the value of the unit is stored internally, the ratio (i.e. milli, micro, kilo...) is determined as a type trait to allow all units to have the same resolution across the whole implemented ratios. <a class="el" href="namespaceSI.html">SI</a> handles operations of units of the same ratios as well as when the ratios are different. See the documentation implementation details for further information. Operations between units of the same ratio are overhead-free, else there is additional computation cost to adjust the values to the units. By passing the flag <code>SI_DISABLE_IMPLICIT_RATIO_CONVERSION</code> to the compiler implicit ratio conversion is not done and fails with a compiler error. See the <a href="https://si.dominikberner.ch/dev/bench/">continuous benchmark results</a> for a comparison between the reference measurements and the implementation in <a class="el" href="namespaceSI.html">SI</a>.</p>
 <p>It is possible to supply custom ratios to the built-in types and they are fully compatible for calculation with other units. However, the necessary literals or typedefs have to be supplied by the user. For instance <code><a class="el" href="namespaceSI.html#ae46a5cfa6ab42b215af02f97839b65ee" title="Type for velocity where v = L / T.">SI::velocity_t</a>&lt;double, std::ratio&lt;1000, 36&gt;&gt;</code> would be "kilometre per one-hundreth-of-an-hour".</p>
+<p>Converting between units is either done with the <code>as&lt;unit_t&gt;()</code> member function of <code>unit_</code> or the free function <code>SI::unit_cast&lt;unit_t&gt;(unit_t u)</code>. This will convert a value of the same type but different ratio.</p>
 <h2><a class="anchor" id="autotoc_md1"></a>
 SI Base units</h2>
 <p>For each unit the available literals are the implemented ratios prefixed with an underscore. i.e. <code>_mm</code>. <code>_km</code>. Generally the ratios follow <a href="https://en.wikipedia.org/wiki/Metric_prefix">metric prefixes of the international system of units</a> The typedefs are prefixed (or in rare cases interfixed) with the standard metric prefixes. i.e. <code>metre_t, milli_metre_t, kilo_metre_t</code>. The prefix or interfix is marked with an <code>*</code> in the tables below. Units that have defined typedefs and literals can be <a href="doc/implementation-details.md#conversion-to-strings">converted to strings</a> using stream operators or the <code><a class="el" href="namespaceSI.html#a940e6c5680765888164264fa4ff3809d">SI::to_string</a></code> function. To use the stream operators, include the header file <code><a class="el" href="stream_8h.html">SI/stream.h</a></code> <br  />
