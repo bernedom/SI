@@ -83,7 +83,7 @@ SI - Type safety for physical units</h1>
 <div class="line">constexpr <span class="keyword">auto</span> one_kilogram = 1.0_kg;</div>
 <div class="line">constexpr <span class="keyword">auto</span> ten_coulomb = 5.0_A * 2.0_s;</div>
 <div class="line">constexpr <span class="keyword">auto</span> half_an_ampere = ten_coulomb / 20.0_s;</div>
-<div class="line">constexpr <span class="keyword">auto</span> tousand_gramms = one_kilogram.as&lt;gramt_t&gt;();</div>
+<div class="line">constexpr <span class="keyword">auto</span> tousand_gramms = one_kilogram.as&lt;<a class="code" href="structSI_1_1detail_1_1unit__t.html">SI::gram_t</a>&gt;();</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> calculate_mass(<span class="keyword">const</span> <a class="code" href="structSI_1_1detail_1_1unit__t.html">SI::kilo_gram_t&lt;long double&gt;</a> &amp;kg) {</div>
 <div class="line">  <span class="comment">// do something meaningful here</span></div>
