@@ -1,5 +1,5 @@
 /**
- * This file is part of "SI" version 2.4.1
+ * This file is part of "SI" version 2.5.0
  * A header only c++ library that provides type safety and user defined literals
  * for handling pyhsical values defined in the International System of
  * Units
@@ -28,11 +28,13 @@ template <std::intmax_t _base, char _str_digit> struct Digit_impl {
 
   static constexpr bool is_valid_digit = _str_digit == '\'' ? false : true;
   static constexpr std::intmax_t value =
-      (_str_digit >= '0' && _str_digit <= '9')   ? _str_digit - '0'
-      : (_str_digit >= 'a' && _str_digit <= 'f') ? 10 + (_str_digit - 'a')
-      : (_str_digit >= 'A' && _str_digit <= 'F')
-          ? 10 + (_str_digit - 'A')
-          : std::numeric_limits<std::intmax_t>::quiet_NaN();
+      (_str_digit >= '0' && _str_digit <= '9')
+          ? _str_digit - '0'
+          : (_str_digit >= 'a' && _str_digit <= 'f')
+                ? 10 + (_str_digit - 'a')
+                : (_str_digit >= 'A' && _str_digit <= 'F')
+                      ? 10 + (_str_digit - 'A')
+                      : std::numeric_limits<std::intmax_t>::quiet_NaN();
   static_assert(!is_valid_digit || value < _base, "Digit is valid for base");
 };
 
