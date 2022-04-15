@@ -58,7 +58,7 @@ struct unit_t {
   using symbol = std::integral_constant<char, _symbol>;
 
   /// Construct with value v
-  constexpr unit_t(_type v) : value_{v} {}
+  explicit constexpr unit_t(_type v) : value_{v} {}
   constexpr unit_t() = default;
   constexpr unit_t(const unit_t &) = default;
   constexpr unit_t(unit_t &&) = default;
@@ -235,7 +235,7 @@ struct unit_t {
   }
 
   /// multiply with a non-unit scalar
-  constexpr unit_t operator*(const _type f) const { return {value_ * f}; }
+  constexpr unit_t operator*(const _type f) const { return unit_t{value_ * f}; }
 
   /// multiply with an unit of the same ratio
   template <typename _rhs_exponent, typename _rhs_type>
@@ -275,7 +275,7 @@ struct unit_t {
   }
 
   /// divide by a non-unit scalar
-  constexpr unit_t operator/(const _type f) const { return {value_ / f}; }
+  constexpr unit_t operator/(const _type f) const { return unit_t{value_ / f}; }
 
   /// divide with same unit with same ratio but not the same exponent
   /// @returns unit with exponents subtracted from each others
@@ -431,7 +431,7 @@ struct unit_t {
   }
 
   /// negate operation
-  constexpr unit_t operator-() const { return {-value_}; }
+  constexpr unit_t operator-() const { return unit_t{-value_}; }
 
   /// increment by prefix ++
   unit_t &operator++() {

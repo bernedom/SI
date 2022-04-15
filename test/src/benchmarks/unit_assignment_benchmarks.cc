@@ -62,9 +62,9 @@ TEST_CASE("Unit_assignment") {
     BENCHMARK_ADVANCED("same ratio assignment")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<ratio_one_unit> source(10000);
-      std::vector<ratio_one_unit> target(10000, 0);
+      std::vector<ratio_one_unit> target(10000, ratio_one_unit(0));
       for (size_t i = 0; i < source.size(); ++i) {
-        source[i] = i;
+        source[i] = ratio_one_unit(i);
       }
 
       meter.measure([&] {
@@ -77,9 +77,9 @@ TEST_CASE("Unit_assignment") {
     BENCHMARK_ADVANCED("different ratio assignment")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<ratio_one_unit> source(10000);
-      std::vector<ratio_milli_unit> target(10000, 0);
+      std::vector<ratio_milli_unit> target(10000, ratio_milli_unit(0));
       for (size_t i = 0; i < source.size(); ++i) {
-        source[i] = i;
+        source[i] = ratio_milli_unit(i);
       }
 
       meter.measure([&] {
@@ -110,9 +110,9 @@ TEST_CASE("Unit_assignment") {
     BENCHMARK_ADVANCED("same ratio add assignment")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<ratio_one_unit> source(10000);
-      std::vector<ratio_one_unit> target(10000, 0);
+      std::vector<ratio_one_unit> target(10000, ratio_one_unit(0));
       for (size_t i = 0; i < source.size(); ++i) {
-        source[i] = i;
+        source[i] = ratio_one_unit(i);
       }
 
       meter.measure([&] {
@@ -125,9 +125,9 @@ TEST_CASE("Unit_assignment") {
     BENCHMARK_ADVANCED("different ratio add assignment")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<ratio_one_unit> source(10000);
-      std::vector<ratio_milli_unit> target(10000, 0);
+      std::vector<ratio_milli_unit> target(10000, ratio_milli_unit(0));
       for (size_t i = 0; i < source.size(); ++i) {
-        source[i] = i;
+        source[i] = ratio_milli_unit(i);
       }
 
       meter.measure([&] {
@@ -158,9 +158,9 @@ TEST_CASE("Unit_assignment") {
     BENCHMARK_ADVANCED("same ratio subtract assignment")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<ratio_one_unit> source(10000);
-      std::vector<ratio_one_unit> target(10000, 0);
+      std::vector<ratio_one_unit> target(10000, ratio_one_unit(0));
       for (size_t i = 0; i < source.size(); ++i) {
-        source[i] = i;
+        source[i] = ratio_one_unit(i);
       }
 
       meter.measure([&] {
@@ -173,9 +173,9 @@ TEST_CASE("Unit_assignment") {
     BENCHMARK_ADVANCED("different ratio subtract assignment")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<ratio_one_unit> source(10000);
-      std::vector<ratio_milli_unit> target(10000, 0);
+      std::vector<ratio_milli_unit> target(10000, ratio_milli_unit(0));
       for (size_t i = 0; i < source.size(); ++i) {
-        source[i] = i;
+        source[i] = ratio_milli_unit(i);
       }
 
       meter.measure([&] {

@@ -318,3 +318,8 @@ TEST_CASE(
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_m3);
 }
+
+// TEST_CASE("Implicit conversion test") {
+//   SI::centi_metre_t<int64_t> a = 15;
+//   SI::square_metre_t<int64_t> c = a / a; // This is not square meters!!!
+// }

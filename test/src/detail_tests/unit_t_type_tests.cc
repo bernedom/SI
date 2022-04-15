@@ -21,8 +21,11 @@ TEMPLATE_TEST_CASE("GIVEN a variable of simple type WHEN passed to is_unit "
 TEST_CASE("GIVEN derived type derived from unit_t WHEN catsed AND passed to "
           "is_unit  THEN return value is true ") {
 
-  struct to_test : unit_t<'X', std::ratio<1>, int64_t> {};
-  constexpr to_test v1{0};
+  struct to_test : public unit_t<'X', std::ratio<1>, int64_t> {
+    explicit constexpr to_test(int64_t v)
+        : unit_t<'X', std::ratio<1>, int64_t>(v) {}
+  };
+  constexpr to_test v1{0L};
 
   STATIC_REQUIRE(
       is_unit_t<decltype(static_cast<const unit_t<'X', std::ratio<1>, int64_t>>(
