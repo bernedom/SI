@@ -15,10 +15,10 @@ TEST_CASE("Detail benchmarks") {
     BENCHMARK_ADVANCED("unit_cast same ratio unit")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<ratio_milli_unit> source(10000);
-      std::vector<ratio_milli_unit> target(10000, 0);
+      std::vector<ratio_milli_unit> target(10000, ratio_milli_unit(0));
 
       for (size_t i = 0; i < source.size(); ++i) {
-        source[i] = i;
+        source[i] = ratio_milli_unit(i);
       }
 
       meter.measure([&] {
@@ -31,10 +31,10 @@ TEST_CASE("Detail benchmarks") {
     BENCHMARK_ADVANCED("unit_cast different ratio unit")
     (Catch::Benchmark::Chronometer meter) {
       std::vector<ratio_kilo_unit> source(10000);
-      std::vector<ratio_one_unit> target(10000, 0);
+      std::vector<ratio_one_unit> target(10000, ratio_one_unit(0));
 
       for (size_t i = 0; i < source.size(); ++i) {
-        source[i] = i;
+        source[i] = ratio_one_unit(i);
       }
 
       meter.measure([&] {

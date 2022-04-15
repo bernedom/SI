@@ -137,7 +137,7 @@ TEST_CASE("GIVEN a length of type float WHEN divided by a value of type double "
           "THEN resulting type is a valocity of type float") {
 
   SI::metre_t<long double> a = 1.5_km;
-  SI::seconds_t<float> s = 1.0;
+  SI::seconds_t<float> s{1.0};
   SI::metre_per_second_t<long double> c = a / s;
   STATIC_REQUIRE(
       std::is_same<decltype(c), SI::metre_per_second_t<long double>>::value);
