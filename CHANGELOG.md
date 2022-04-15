@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.5.0
+
+* Removed implicit conversion from primitives to `unit_t`. See [issue #106](https://github.com/bernedom/SI/issues/106) for details
+
 ## 2.4.1
 
 * Fix reported [issue](https://github.com/bernedom/SI/issues/101) that `operator/(scalar / unit)` would calculate the ratio into the value.
