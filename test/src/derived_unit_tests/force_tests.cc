@@ -190,7 +190,7 @@ TEMPLATE_TEST_CASE("GIVEN a force value WHEN divided by acceleration THEN then "
 }
 
 TEMPLATE_TEST_CASE("GIVEN a force value WHEN divided by mass THEN then "
-                   "result is a accelereatin value",
+                   "result is a acceleration value",
                    "[force][operators]", int64_t, long double) {
   constexpr SI::force_t<TestType, std::ratio<1>> f{1};
   constexpr SI::mass_t<TestType, std::ratio<1>> m{1};

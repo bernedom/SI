@@ -208,7 +208,7 @@ TEMPLATE_TEST_CASE(
 
 TEMPLATE_TEST_CASE(
     "GIVEN a luminous_flux value WHEN divided by luminosity THEN then "
-    "result is a accelereatin value",
+    "result is a acceleration value",
     "[luminous_flux][operators]", int64_t, long double) {
   constexpr SI::luminous_flux_t<TestType, std::ratio<1>> e{1};
   constexpr SI::luminosity_t<TestType, std::ratio<1>> f{1};
