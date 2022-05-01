@@ -583,7 +583,7 @@ TEST_CASE("GIVEN unit and scalar WHEN multiplied with assignment "
   REQUIRE(v1.value() == 14);
 }
 
-TEST_CASE("GIVEN a unit and a scalar WHEN divided with assigment THEN result "
+TEST_CASE("GIVEN a unit and a scalar WHEN divided with assignment THEN result "
           "is stored int the unit") {
   unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>> v1{10};
   constexpr int64_t scalar{2};
