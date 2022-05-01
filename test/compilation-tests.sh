@@ -271,7 +271,7 @@ testOperatorSubtractFailsWhenImplicitConversionDisabled()
     buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
 }
 
-testOperatorSbutractAssignmentCompilesWhenDefaultInvocation()
+testOperatorSubtractAssignmentCompilesWhenDefaultInvocation()
 {
     TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_subtract_assignment_test.cc.o
     buildSingleTarget ${TARGET} DEFAULTBUILD PASS
