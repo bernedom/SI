@@ -52,12 +52,12 @@ struct unit_t;
 /// types)
 template <typename _unit> struct is_unit_t : std::false_type {};
 
-/// template specialisation to check if a type is a unit_t (true if unit_t)
+/// template specialization to check if a type is a unit_t (true if unit_t)
 template <char _symbol, typename _exponent, typename _ratio, typename _type>
 struct is_unit_t<const unit_t<_symbol, _exponent, _type, _ratio>>
     : std::true_type {};
 
-/// non-const specialisation of check above
+/// non-const specialization of check above
 template <char _symbol, typename _exponent, typename _ratio, typename _type>
 struct is_unit_t<unit_t<_symbol, _exponent, _type, _ratio>> : std::true_type {};
 

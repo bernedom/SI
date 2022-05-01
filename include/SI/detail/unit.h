@@ -465,7 +465,7 @@ private:
 };
 
 /// operator to divide scalar type by unit encapsulating the same type
-/// template specialisation handling integer types
+/// template specialization handling integer types
 /// @results unit with negative exponent
 template <typename _type, char _symbol, typename _exponent, typename _rhs_type,
           typename _ratio,
@@ -483,7 +483,7 @@ operator/(const _type &lhs,
 }
 
 /// operator to divide scalar type by unit encapsulating the same type
-/// template specialisation for floating point types, to avoid possible loss
+/// template specialization for floating point types, to avoid possible loss
 /// of precision when adjusting for ratio
 /// @results unit with negative exponent
 template <typename _type, char _symbol, typename _exponent, typename _rhs_type,
