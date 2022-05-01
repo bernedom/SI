@@ -30,7 +30,7 @@ cmake ..
 cmake --build . --config Release --target package -- -j $(nproc)
 ```
 
-This creates gzipped archives containing all files as well as an installation script `SI-<version>-<plattform>.sh`.
+This creates gzipped archives containing all files as well as an installation script `SI-<version>-<platform>.sh`.
 
 ```bash
 cd build
