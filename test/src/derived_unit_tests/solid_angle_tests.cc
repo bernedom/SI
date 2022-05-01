@@ -96,7 +96,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _sr THEN result is a "
                    const SI::solid_angle_t<long double, std::ratio<1>>>::value);
 }
 
-TEST_CASE("GIVEN a 1 atto sterradiant WHEN passed to a streaming operator WHEN "
+TEST_CASE("GIVEN a 1 atto steradian WHEN passed to a streaming operator WHEN "
           "result is '1asr'") {
   constexpr auto value = 1_asr;
   std::stringstream ss;
@@ -106,7 +106,7 @@ TEST_CASE("GIVEN a 1 atto sterradiant WHEN passed to a streaming operator WHEN "
 }
 
 TEST_CASE(
-    "GIVEN a 1 femto sterradiant WHEN passed to a streaming operator WHEN "
+    "GIVEN a 1 femto steradian WHEN passed to a streaming operator WHEN "
     "result is '1fsr'") {
   constexpr auto value = 1_fsr;
   std::stringstream ss;
@@ -115,7 +115,7 @@ TEST_CASE(
   REQUIRE(ss.str() == "1fsr");
 }
 
-TEST_CASE("GIVEN a 1 pico sterradiant WHEN passed to a streaming operator WHEN "
+TEST_CASE("GIVEN a 1 pico steradian WHEN passed to a streaming operator WHEN "
           "result is '1psr'") {
   constexpr auto value = 1_psr;
   std::stringstream ss;
@@ -124,7 +124,7 @@ TEST_CASE("GIVEN a 1 pico sterradiant WHEN passed to a streaming operator WHEN "
   REQUIRE(ss.str() == "1psr");
 }
 
-TEST_CASE("GIVEN a 1 nano sterradiant WHEN passed to a streaming operator WHEN "
+TEST_CASE("GIVEN a 1 nano steradian WHEN passed to a streaming operator WHEN "
           "result is '1psr'") {
   constexpr auto value = 1_nsr;
   std::stringstream ss;
@@ -134,7 +134,7 @@ TEST_CASE("GIVEN a 1 nano sterradiant WHEN passed to a streaming operator WHEN "
 }
 
 TEST_CASE(
-    "GIVEN a 1 micro sterradiant WHEN passed to a streaming operator WHEN "
+    "GIVEN a 1 micro steradian WHEN passed to a streaming operator WHEN "
     "result is '1usr'") {
   constexpr auto value = 1_usr;
   std::stringstream ss;
@@ -144,7 +144,7 @@ TEST_CASE(
 }
 
 TEST_CASE(
-    "GIVEN a 1 milli sterradiant WHEN passed to a streaming operator WHEN "
+    "GIVEN a 1 milli steradian WHEN passed to a streaming operator WHEN "
     "result is '1msr'") {
   constexpr auto value = 1_msr;
   std::stringstream ss;
@@ -154,7 +154,7 @@ TEST_CASE(
 }
 
 TEST_CASE(
-    "GIVEN a 1 sterradiant WHEN passed to a streaming operator WHEN result is "
+    "GIVEN a 1 steradian WHEN passed to a streaming operator WHEN result is "
     "'1sr'") {
   constexpr auto value = 1_sr;
   std::stringstream ss;
@@ -163,77 +163,77 @@ TEST_CASE(
   REQUIRE(ss.str() == "1sr");
 }
 
-TEST_CASE("GIVEN a string of '1asr' WHEN streamed into atto_sterradian_t THEN "
+TEST_CASE("GIVEN a string of '1asr' WHEN streamed into atto_steradian_t THEN "
           "result "
-          "is a value of 1 atto_sterradian_t AND stream is good") {
+          "is a value of 1 atto_steradian_t AND stream is good") {
   std::stringstream ss;
   ss << "1asr";
-  SI::atto_sterradian_t<int64_t> value{0};
+  SI::atto_steradian_t<int64_t> value{0};
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_asr);
 }
 
-TEST_CASE("GIVEN a string of '1fsr' WHEN streamed into femto_sterradian_t "
+TEST_CASE("GIVEN a string of '1fsr' WHEN streamed into femto_steradian_t "
           "THEN result "
-          "is a value of 1 femto_sterradian_t AND stream is good") {
+          "is a value of 1 femto_steradian_t AND stream is good") {
   std::stringstream ss;
   ss << "1fsr";
-  SI::femto_sterradian_t<int64_t> value{0};
+  SI::femto_steradian_t<int64_t> value{0};
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_fsr);
 }
 
-TEST_CASE("GIVEN a string of '1psr' WHEN streamed into pico_sterradian_t THEN "
+TEST_CASE("GIVEN a string of '1psr' WHEN streamed into pico_steradian_t THEN "
           "result "
-          "is a value of 1 pico_sterradian_t AND stream is good") {
+          "is a value of 1 pico_steradian_t AND stream is good") {
   std::stringstream ss;
   ss << "1psr";
-  SI::pico_sterradian_t<int64_t> value{0};
+  SI::pico_steradian_t<int64_t> value{0};
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_psr);
 }
 
-TEST_CASE("GIVEN a string of '1nsr' WHEN streamed into nano_sterradian_t THEN "
+TEST_CASE("GIVEN a string of '1nsr' WHEN streamed into nano_steradian_t THEN "
           "result "
-          "is a value of 1 nano_sterradian_t AND stream is good") {
+          "is a value of 1 nano_steradian_t AND stream is good") {
   std::stringstream ss;
   ss << "1nsr";
-  SI::nano_sterradian_t<int64_t> value{0};
+  SI::nano_steradian_t<int64_t> value{0};
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_nsr);
 }
 
-TEST_CASE("GIVEN a string of '1usr' WHEN streamed into micro_sterradian_t "
+TEST_CASE("GIVEN a string of '1usr' WHEN streamed into micro_steradian_t "
           "THEN result "
-          "is a value of 1 micro_sterradian_t AND stream is good") {
+          "is a value of 1 micro_steradian_t AND stream is good") {
   std::stringstream ss;
   ss << "1usr";
-  SI::micro_sterradian_t<int64_t> value{0};
+  SI::micro_steradian_t<int64_t> value{0};
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_usr);
 }
 
-TEST_CASE("GIVEN a string of '1msr' WHEN streamed into milli_sterradian_t "
+TEST_CASE("GIVEN a string of '1msr' WHEN streamed into milli_steradian_t "
           "THEN result "
-          "is a value of 1 milli_sterradian_t AND stream is good") {
+          "is a value of 1 milli_steradian_t AND stream is good") {
   std::stringstream ss;
   ss << "1msr";
-  SI::milli_sterradian_t<int64_t> value{0};
+  SI::milli_steradian_t<int64_t> value{0};
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_msr);
 }
 
-TEST_CASE("GIVEN a string of '1sr' WHEN streamed into sterradian_t THEN result "
-          "is a value of 1 sterradian_t AND stream is good") {
+TEST_CASE("GIVEN a string of '1sr' WHEN streamed into steradian_t THEN result "
+          "is a value of 1 steradian_t AND stream is good") {
   std::stringstream ss;
   ss << "1sr";
-  SI::sterradian_t<int64_t> value{0};
+  SI::steradian_t<int64_t> value{0};
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_sr);

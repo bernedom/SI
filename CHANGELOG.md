@@ -190,7 +190,7 @@
 ## 0.0.5
 
 * Updated catch2 to version 2.7.2
-* Added angle (radiant) and solid angle (sterradiant) typedefs
+* Added angle (radian) and solid angle (steradian) typedefs
 * luminous flux can be built from luminosity *   solid_angle
 
 ## 0.0.4
