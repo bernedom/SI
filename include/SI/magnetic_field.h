@@ -61,7 +61,7 @@ struct unit_symbol<'B', _ratio>
                                    'T'> {};
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(magnetic_field_t, magnetic_flux_t, area_t)
+BUILD_UNIT_FROM_DIVISION(magnetic_field_t, magnetic_flux_t, area_t)
 }
 
 inline namespace literals {

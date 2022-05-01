@@ -46,7 +46,7 @@ struct unit_symbol<'P', _ratio>
                                    'W'> {};
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(power_t, energy_t, time_t)
+BUILD_UNIT_FROM_DIVISION(power_t, energy_t, time_t)
 }
 
 inline namespace literals {

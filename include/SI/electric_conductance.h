@@ -62,8 +62,8 @@ struct unit_symbol<'G', _ratio>
 
 namespace detail {
 
-BUILD_UNIT_FROM_DIVISON(electric_conductance_t, electric_current_t,
-                        electric_potential_t)
+BUILD_UNIT_FROM_DIVISION(electric_conductance_t, electric_current_t,
+                         electric_potential_t)
 
 /// Builds conductance from 1/resistance, to avoid include cycles the base
 /// unit_t is used instead of the type alias electric_resistance_t

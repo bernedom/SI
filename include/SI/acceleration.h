@@ -32,9 +32,9 @@ struct unit_symbol<'a', _ratio>
                                    '/', 's', '^', '2'> {};
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(acceleration_t, velocity_t, time_t)
-BUILD_UNIT_FROM_DIVISON(acceleration_t, length_t, time_squared_t)
-BUILD_UNIT_FROM_DIVISON(acceleration_t, velocity_squared_t, length_t)
+BUILD_UNIT_FROM_DIVISION(acceleration_t, velocity_t, time_t)
+BUILD_UNIT_FROM_DIVISION(acceleration_t, length_t, time_squared_t)
+BUILD_UNIT_FROM_DIVISION(acceleration_t, velocity_squared_t, length_t)
 } // namespace detail
 
 } // namespace SI

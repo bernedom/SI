@@ -48,7 +48,7 @@ struct unit_symbol<'p', _ratio>
 
 namespace detail {
 
-BUILD_UNIT_FROM_DIVISON(pressure_t, force_t, area_t)
+BUILD_UNIT_FROM_DIVISION(pressure_t, force_t, area_t)
 }
 
 inline namespace literals {

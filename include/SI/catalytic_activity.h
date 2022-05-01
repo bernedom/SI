@@ -62,7 +62,7 @@ struct unit_symbol<'K', _ratio>
                                    'a', 't'> {};
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(catalytic_activity_t, substance_t, time_t)
+BUILD_UNIT_FROM_DIVISION(catalytic_activity_t, substance_t, time_t)
 }
 
 inline namespace literals {

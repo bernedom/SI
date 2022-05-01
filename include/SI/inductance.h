@@ -47,7 +47,7 @@ struct unit_symbol<'l', _ratio>
                                    'H'> {};
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(inductance_t, magnetic_flux_t, electric_current_t)
+BUILD_UNIT_FROM_DIVISION(inductance_t, magnetic_flux_t, electric_current_t)
 } // namespace detail
 
 inline namespace literals {

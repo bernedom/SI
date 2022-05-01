@@ -19,7 +19,7 @@
  * to create new units as well as the inverse operators
  * */
 
-#define BUILD_UNIT_FROM_DIVISON(RESULTING_UNIT_T, DIVIDEND_UNIT_T,             \
+#define BUILD_UNIT_FROM_DIVISION(RESULTING_UNIT_T, DIVIDEND_UNIT_T,            \
                                 DIVISOR_UNIT_T)                                \
   template <typename _type, typename _ratio_lhs, typename _type_rhs,           \
             typename _ratio_rhs>                                               \

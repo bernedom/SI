@@ -48,7 +48,7 @@ struct unit_symbol<'i', _ratio>
                                    'x'> {};
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(illuminance_t, luminous_flux_t, area_t)
+BUILD_UNIT_FROM_DIVISION(illuminance_t, luminous_flux_t, area_t)
 } // namespace detail
 
 inline namespace literals {

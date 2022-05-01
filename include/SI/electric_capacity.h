@@ -60,8 +60,8 @@ struct unit_symbol<'C', _ratio>
                                    'F'> {};
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(electric_capacity_t, electric_charge_t,
-                        electric_potential_t)
+BUILD_UNIT_FROM_DIVISION(electric_capacity_t, electric_charge_t,
+                         electric_potential_t)
 } // namespace detail
 
 inline namespace literals {

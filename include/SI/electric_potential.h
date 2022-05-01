@@ -62,8 +62,8 @@ struct unit_symbol<'U', _ratio>
                                    'V'> {};
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(electric_potential_t, power_t, electric_current_t)
-BUILD_UNIT_FROM_DIVISON(electric_potential_t, energy_t, electric_charge_t)
+BUILD_UNIT_FROM_DIVISION(electric_potential_t, power_t, electric_current_t)
+BUILD_UNIT_FROM_DIVISION(electric_potential_t, energy_t, electric_charge_t)
 } // namespace detail
 
 inline namespace literals {
