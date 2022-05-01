@@ -115,7 +115,7 @@ struct unit_t {
   /// Assignment for same ratio
   constexpr unit_t &operator=(const unit_t &rhs) = default;
 
-  /// Move assigmnment for same ratio
+  /// Move assignment for same ratio
   constexpr unit_t &operator=(unit_t &&rhs) = default;
 
   /// Assignment of same unit but different ratio
