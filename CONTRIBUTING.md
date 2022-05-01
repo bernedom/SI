@@ -1,6 +1,6 @@
 # Contributing to SI
 
-Contributions and suggestions to this repo are highly welcome. For deeper technical information read the [implementatation details document](doc/implementation-details.md) first.
+Contributions and suggestions to this repo are highly welcome. For deeper technical information read the [implementation details document](doc/implementation-details.md) first.
 
 ## Pull request guidelines
 
