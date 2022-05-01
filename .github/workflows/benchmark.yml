@@ -1,4 +1,4 @@
-name: Continous Benchmark
+name: Continuous Benchmark
 on:
   push:
 

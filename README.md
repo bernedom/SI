@@ -1,10 +1,10 @@
 <img align="right" src="SI-logo.jpg">
 
-[![Continous Integration](https://github.com/bernedom/SI/workflows/CI/badge.svg?branch=master)](https://github.com/bernedom/SI/actions?query=workflow%3ACI)
+[![Continuous Integration](https://github.com/bernedom/SI/workflows/CI/badge.svg?branch=master)](https://github.com/bernedom/SI/actions?query=workflow%3ACI)
 [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/github/bernedom/SI?branch=master&svg=true)](https://ci.appveyor.com/project/bernedom/si)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ec7f65662b91480a9968bd77bd32c66c)](https://www.codacy.com/app/bernedom/SI?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bernedom/SI&amp;utm_campaign=Badge_Grade)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/bernedom/SI.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/bernedom/SI/context:cpp)
-[![Continous Benchmark](https://github.com/bernedom/SI/workflows/Continous%20Benchmark/badge.svg?branch=master)](https://si.dominikberner.ch/dev/bench/)
+[![Continuous Benchmark](https://github.com/bernedom/SI/workflows/Continuous%20Benchmark/badge.svg?branch=master)](https://si.dominikberner.ch/dev/bench/)
 [![API Documentation](https://github.com/bernedom/SI/workflows/API%20documentation/badge.svg?branch=master)](https://si.dominikberner.ch/doc/)
 
 [![GitHub Releases](https://img.shields.io/github/release/bernedom/SI.svg)](https://github.com/bernedom/SI/releases)
