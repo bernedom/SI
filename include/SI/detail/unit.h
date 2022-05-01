@@ -438,7 +438,7 @@ struct unit_t {
     ++value_;
     return *this;
   }
-  /// incrment by postfix ++
+  /// increment by postfix ++
   unit_t operator++(int) {
     auto ret_val(*this);
     ++(*this);
