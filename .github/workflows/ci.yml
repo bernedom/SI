@@ -46,7 +46,7 @@ jobs:
           fi
           sudo pip3 install conan
 
-      - name: dependecies (macos)
+      - name: dependencies (macos)
         if: runner.os == 'macOS'
         run: |
           brew update
