@@ -19,7 +19,7 @@
 /// Namespace containing implementation details for SI
 namespace SI::detail {
 
-/// to check if a template is an instatiation of std::ratio
+/// to check if a template is an instantiation of std::ratio
 template <typename _type> struct is_ratio : std::false_type {};
 
 template <intmax_t _num, intmax_t _den>
