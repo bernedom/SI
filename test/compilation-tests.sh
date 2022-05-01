@@ -187,14 +187,14 @@ testOperatorEqualsFailsWhenImplicitConversionDisabled()
 
 testOperatorLessThanCompilesWhenDefaultInvocation()
 {
-    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_lessthan_test.cc.o
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_less_than_test.cc.o
     buildSingleTarget ${TARGET} DEFAULTBUILD PASS
 }
 
 
 testOperatorLessThanFailsWhenImplicitConversionDisabled()
 {
-    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_lessthan_test.cc.o
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_less_than_test.cc.o
     buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
 }
 
