@@ -200,14 +200,14 @@ testOperatorLessThanFailsWhenImplicitConversionDisabled()
 
 testOperatorGreaterThanCompilesWhenDefaultInvocation()
 {
-    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_greaterthan_test.cc.o
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_greater_than_test.cc.o
     buildSingleTarget ${TARGET} DEFAULTBUILD PASS
 }
 
 
 testOperatorGreaterThanFailsWhenImplicitConversionDisabled()
 {
-    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_greaterthan_test.cc.o
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_greater_than_test.cc.o
     buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
 }
 

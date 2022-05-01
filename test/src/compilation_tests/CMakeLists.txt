@@ -16,7 +16,7 @@ target_sources(
           move_ctor_with_same_ratio_test.cc
           operator_equals_test.cc
           operator_less_than_test.cc
-          operator_greaterthan_test.cc
+          operator_greater_than_test.cc
           operator_multiply_test.cc
           operator_divide_test.cc
           operator_add_test.cc
