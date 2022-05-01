@@ -116,7 +116,7 @@ Non standard units are not regulated by the [BIPM](https://www.bipm.org/) but ar
 
 | Unit                       | Dimension Symbol | literals   | implemented ratios                                                     | unit typedefs                                                           |
 | -------------------------- | ---------------- | ---------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| Astronomic Units of length | L                | AU, ly, pc | 149597870691:1 (AU), 9460730777119564:1 (ly), 30856775814913700:1 (pc) | `astronimcal_unit_t` (`_AU`), `lightyear_t` (`_ly`), `parsec_t` (`_pc`) |
+| Astronomic Units of length | L                | AU, ly, pc | 149597870691:1 (AU), 9460730777119564:1 (ly), 30856775814913700:1 (pc) | `astronomic_unit_t` (`_AU`), `lightyear_t` (`_ly`), `parsec_t` (`_pc`) |
 
 ## Building & compatibility
 
