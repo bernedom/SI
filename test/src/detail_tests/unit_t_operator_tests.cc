@@ -343,7 +343,7 @@ TEST_CASE("GIVEN a unit with ratio<1> and a scalar AND internal type is "
   STATIC_REQUIRE(eps_equals(result.value(), 500.0L));
 }
 
-TEST_CASE("GIVEN a unit with ratio<10, 1> and a scalar AND interal type is "
+TEST_CASE("GIVEN a unit with ratio<10, 1> and a scalar AND integral type is "
           "integral WHEN scalar is dived "
           "by unit THEN resulting value is not adjusted by ratio",
           "[unit_t][operator/]") {
@@ -358,7 +358,7 @@ TEST_CASE("GIVEN a unit with ratio<10, 1> and a scalar AND interal type is "
   STATIC_REQUIRE(result == expected);
 }
 
-TEST_CASE("GIVEN a unit with ratio<10, 1> and a scalar AND interal type is "
+TEST_CASE("GIVEN a unit with ratio<10, 1> and a scalar AND integral type is "
           "floating point WHEN scalar is dived "
           "by unit THEN resulting value is not adjusted by ratio",
           "[unit_t][operator/]") {
@@ -373,7 +373,7 @@ TEST_CASE("GIVEN a unit with ratio<10, 1> and a scalar AND interal type is "
   STATIC_REQUIRE(result == expected);
 }
 
-TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND interal type is "
+TEST_CASE("GIVEN a unit with ratio<1, 1000> and a scalar AND integral type is "
           "floating point WHEN scalar is dived "
           "by unit THEN resulting value is not adjusted by ratio",
           "[unit_t][operator/]") {
