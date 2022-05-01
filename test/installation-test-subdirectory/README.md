@@ -1,7 +1,7 @@
 <img align="right" src="../SI-logo.jpg">
 # SI installation example 
 
-This is an example application to demostrate/test the installation and usage of SI. See the [install section of SI](../README.md#Installing) how to install it.
+This is an example application to demonstrate/test the installation and usage of SI. See the [install section of SI](../README.md#Installing) how to install it.
 
 ## Building
 
