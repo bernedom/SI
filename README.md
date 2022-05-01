@@ -12,7 +12,7 @@
 
 # SI - Type safety for physical units
 
-A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) regulated by the [International Bureau of Weights and Measures (BIPM)](https://www.bipm.org/en/about-us/)  and published in the [SI brochure](https://www.bipm.org/en/publications/si-brochure/). For a quick start see [the installation guide](https://github.com/bernedom/SI/blob/master/doc/installation-guide.md). Contributions and comments are welcome, please check the [contribution guidelines](CONTRIBUTING.md) for further information.
+A header only c++ library that provides type safety and user defined literals for handling physical values defined in the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) regulated by the [International Bureau of Weights and Measures (BIPM)](https://www.bipm.org/en/about-us/)  and published in the [SI brochure](https://www.bipm.org/en/publications/si-brochure/). For a quick start see [the installation guide](https://github.com/bernedom/SI/blob/master/doc/installation-guide.md). Contributions and comments are welcome, please check the [contribution guidelines](CONTRIBUTING.md) for further information.
 
 An illustrative example:
 
