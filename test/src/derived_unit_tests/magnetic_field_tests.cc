@@ -208,7 +208,7 @@ TEMPLATE_TEST_CASE(
                    const SI::area_t<TestType, std::ratio<1>>>::value);
 }
 
-TEST_CASE("GIVEN a 1 atto Tesla WTEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 atto Tesla WHEN passed to a streaming operator THEN "
           "result is '1aT'") {
   constexpr auto value = 1_aT;
   std::stringstream ss;
@@ -217,7 +217,7 @@ TEST_CASE("GIVEN a 1 atto Tesla WTEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1aT");
 }
 
-TEST_CASE("GIVEN a 1 femto Tesla WTEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 femto Tesla WHEN passed to a streaming operator THEN "
           "result is '1fT'") {
   constexpr auto value = 1_fT;
   std::stringstream ss;
@@ -226,7 +226,7 @@ TEST_CASE("GIVEN a 1 femto Tesla WTEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1fT");
 }
 
-TEST_CASE("GIVEN a 1 pico Tesla WTEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 pico Tesla WHEN passed to a streaming operator THEN "
           "result is '1pT'") {
   constexpr auto value = 1_pT;
   std::stringstream ss;
@@ -235,7 +235,7 @@ TEST_CASE("GIVEN a 1 pico Tesla WTEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1pT");
 }
 
-TEST_CASE("GIVEN a 1 nano Tesla WTEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 nano Tesla WHEN passed to a streaming operator THEN "
           "result is '1pT'") {
   constexpr auto value = 1_nT;
   std::stringstream ss;
@@ -244,7 +244,7 @@ TEST_CASE("GIVEN a 1 nano Tesla WTEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1nT");
 }
 
-TEST_CASE("GIVEN a 1 micro Tesla WTEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 micro Tesla WHEN passed to a streaming operator THEN "
           "result is '1uT'") {
   constexpr auto value = 1_uT;
   std::stringstream ss;
@@ -253,7 +253,7 @@ TEST_CASE("GIVEN a 1 micro Tesla WTEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1uT");
 }
 
-TEST_CASE("GIVEN a 1 milli Tesla WTEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 milli Tesla WHEN passed to a streaming operator THEN "
           "result is '1mT'") {
   constexpr auto value = 1_mT;
   std::stringstream ss;
@@ -262,7 +262,7 @@ TEST_CASE("GIVEN a 1 milli Tesla WTEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1mT");
 }
 
-TEST_CASE("GIVEN a 1 Tesla WTEN passed to a streaming operator THEN result is "
+TEST_CASE("GIVEN a 1 Tesla WHEN passed to a streaming operator THEN result is "
           "'1T'") {
   constexpr auto value = 1_T;
   std::stringstream ss;
@@ -271,7 +271,7 @@ TEST_CASE("GIVEN a 1 Tesla WTEN passed to a streaming operator THEN result is "
   REQUIRE(ss.str() == "1T");
 }
 
-TEST_CASE("GIVEN a 1 kilo Tesla WTEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 kilo Tesla WHEN passed to a streaming operator THEN "
           "result is '1kT'") {
   constexpr auto value = 1_kT;
   std::stringstream ss;
@@ -280,7 +280,7 @@ TEST_CASE("GIVEN a 1 kilo Tesla WTEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1kT");
 }
 
-TEST_CASE("GIVEN a 1 mega Tesla WTEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 mega Tesla WHEN passed to a streaming operator THEN "
           "result is '1MT'") {
   constexpr auto value = 1_MT;
   std::stringstream ss;
@@ -289,7 +289,7 @@ TEST_CASE("GIVEN a 1 mega Tesla WTEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1MT");
 }
 
-TEST_CASE("GIVEN a 1 giga Tesla WTEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 giga Tesla WHEN passed to a streaming operator THEN "
           "result is '1GT'") {
   constexpr auto value = 1_GT;
   std::stringstream ss;
@@ -298,7 +298,7 @@ TEST_CASE("GIVEN a 1 giga Tesla WTEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1GT");
 }
 
-TEST_CASE("GIVEN a 1 tera Tesla WTEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 tera Tesla WHEN passed to a streaming operator THEN "
           "result is '1TT'") {
   constexpr auto value = 1_TT;
   std::stringstream ss;
@@ -307,7 +307,7 @@ TEST_CASE("GIVEN a 1 tera Tesla WTEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1TT");
 }
 
-TEST_CASE("GIVEN a 1 exa Tesla WTEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 exa Tesla WHEN passed to a streaming operator THEN "
           "result is '1ET'") {
   constexpr auto value = 1_ET;
   std::stringstream ss;
@@ -316,7 +316,7 @@ TEST_CASE("GIVEN a 1 exa Tesla WTEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1ET");
 }
 
-TEST_CASE("GIVEN a 1 peta Tesla WTEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 peta Tesla WHEN passed to a streaming operator THEN "
           "result is '1PT'") {
   constexpr auto value = 1_PT;
   std::stringstream ss;
