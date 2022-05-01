@@ -332,13 +332,13 @@ testOperatorDivideFromIntegralFailsWhenImplicitConversionDisabled()
     buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
 }
 
-testCompilationFailsWhenNumberparserOverflows()
+testCompilationFailsWhenNumberParserOverflows()
 {
     TARGET=CMakeFiles/SI-Compilation-Tests.dir/parsing_overflow_test.cc.o
     buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
 }
 
-testCompilationSucceedsWhenNumberparserDoesNotOverflow()
+testCompilationSucceedsWhenNumberParserDoesNotOverflow()
 {
     TARGET=CMakeFiles/SI-Compilation-Tests.dir/parsing_overflow_test_pass_compilation.cc.o
     buildSingleTarget ${TARGET} DEFAULTBUILD PASS
