@@ -40,7 +40,7 @@
 
 * Moved helper function such as `unit_cast` and `unit_with_common_ratio` to own file for easier maintenance
 * Moved cross-unit-operations and `epsEqual` to a separate file for easier maintenance
-* Rename `epsEqual()` to `eps_equals()` for consitency with naming scheme
+* Rename `epsEqual()` to `eps_equals()` for consistency with naming scheme
 
 ## 2.0.4
 
