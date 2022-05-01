@@ -25,7 +25,7 @@ using namespace SI::literals;
 constexpr auto one_kilogram = 1.0_kg;
 constexpr auto ten_coulomb = 5.0_A * 2.0_s;
 constexpr auto half_an_ampere = ten_coulomb / 20.0_s;
-constexpr auto tousand_gramms = one_kilogram.as<SI::gram_t>();
+constexpr auto thousand_gramms = one_kilogram.as<SI::gram_t>();
 
 void calculate_mass(const SI::kilo_gram_t<long double> &kg) {
   // do something meaningful here
