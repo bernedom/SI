@@ -59,7 +59,7 @@ TEST_CASE("GIVEN a declared unit of type int64_t WHEN move-constructed "
 }
 
 TEST_CASE("GIVEN a declared unit of int32_t WHEN assigned a unit of type "
-          "int64_t THEN value is implicitely converted") {
+          "int64_t THEN value is implicitly converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{1};
   constexpr unit_t<'X', std::ratio<1>, int64_t> v_int64 = v_int32;
 
@@ -69,7 +69,7 @@ TEST_CASE("GIVEN a declared unit of int32_t WHEN assigned a unit of type "
 }
 
 TEST_CASE("GIVEN a declared unit of int32_t WHEN compared with an unit of type "
-          "int64_t THEN value is implicitely converted") {
+          "int64_t THEN value is implicitly converted") {
 
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{123};
   constexpr unit_t<'X', std::ratio<1>, int64_t> v_int64{123};
@@ -80,7 +80,7 @@ TEST_CASE("GIVEN a declared unit of int32_t WHEN compared with an unit of type "
 
 TEST_CASE(
     "GIVEN a declared unit of int32_t WHEN compared with an unit of type "
-    "int64_t AND ratio is different THEN value is implicitely converted") {
+    "int64_t AND ratio is different THEN value is implicitly converted") {
 
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{123};
   constexpr unit_t<'X', std::ratio<1>, int64_t, std::milli> v_int64{123000};
@@ -90,7 +90,7 @@ TEST_CASE(
 }
 
 TEST_CASE("GIVEN a declared unit of int32_t WHEN compared with < to an unit of "
-          "type int64_t THEN value is implicitely converted") {
+          "type int64_t THEN value is implicitly converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{123};
   constexpr unit_t<'X', std::ratio<1>, int64_t> v_int64{124};
 
@@ -100,7 +100,7 @@ TEST_CASE("GIVEN a declared unit of int32_t WHEN compared with < to an unit of "
 
 TEST_CASE(
     "GIVEN a declared unit of int32_t WHEN compared with < to an unit of "
-    "type int64_t AND ratio is different THEN value is implicitely converted") {
+    "type int64_t AND ratio is different THEN value is implicitly converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{123};
   constexpr unit_t<'X', std::ratio<1>, int64_t, std::milli> v_int64{124000};
 
@@ -109,7 +109,7 @@ TEST_CASE(
 }
 
 TEST_CASE("GIVEN a declared unit of int32_t WHEN compared with > to an unit of "
-          "type int64_t THEN value is implicitely converted") {
+          "type int64_t THEN value is implicitly converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{124};
   constexpr unit_t<'X', std::ratio<1>, int64_t> v_int64{123};
 
@@ -119,7 +119,7 @@ TEST_CASE("GIVEN a declared unit of int32_t WHEN compared with > to an unit of "
 
 TEST_CASE(
     "GIVEN a declared unit of int32_t WHEN compared with > to an unit of "
-    "type int64_t AND ratio is different THEN value is implicitely converted") {
+    "type int64_t AND ratio is different THEN value is implicitly converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{124};
   constexpr unit_t<'X', std::ratio<1>, int64_t, std::milli> v_int64{123000};
 
@@ -128,7 +128,7 @@ TEST_CASE(
 }
 
 TEST_CASE("GIVEN a declared unit of int64_t WHEN multiplied with an unit of "
-          "type int32_t THEN value is implicitely converted") {
+          "type int32_t THEN value is implicitly converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{2};
   constexpr unit_t<'X', std::ratio<1>, int64_t> v_int64{5};
   constexpr auto result = v_int64 * v_int32;
@@ -139,7 +139,7 @@ TEST_CASE("GIVEN a declared unit of int64_t WHEN multiplied with an unit of "
 
 TEST_CASE(
     "GIVEN a declared unit of int64_t WHEN multiplied with an unit of "
-    "type int32_t AND ratio is different THEN value is implicitely converted") {
+    "type int32_t AND ratio is different THEN value is implicitly converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{2};
   constexpr unit_t<'X', std::ratio<1>, int64_t, std::milli> v_int64{5000};
   constexpr auto result = v_int64 * v_int32;
@@ -151,7 +151,7 @@ TEST_CASE(
 
 TEST_CASE(
     "GIVEN a declared unit of int64_t WHEN multiply-assigned raw value of "
-    "type int64_t THEN value is implicitely converted") {
+    "type int64_t THEN value is implicitly converted") {
   int32_t raw_value{2};
   unit_t<'X', std::ratio<1>, int64_t> v_int64{5};
   const auto result = v_int64 * raw_value;
@@ -164,7 +164,7 @@ TEST_CASE(
 }
 
 TEST_CASE("GIVEN a declared unit of int64_t WHEN divided by scalar of "
-          "type int32_t THEN value is implicitely converted") {
+          "type int32_t THEN value is implicitly converted") {
   constexpr int32_t v_int32{2};
   unit_t<'X', std::ratio<1>, int64_t> v_int64{10};
   auto result = v_int64 / v_int32;
@@ -177,7 +177,7 @@ TEST_CASE("GIVEN a declared unit of int64_t WHEN divided by scalar of "
 }
 
 TEST_CASE("GIVEN a declared unit of int64_t WHEN divided by an unit of "
-          "type int32_t AND exponent is the same THEN value is implicitely "
+          "type int32_t AND exponent is the same THEN value is implicitly "
           "converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{2};
   constexpr unit_t<'X', std::ratio<1>, int64_t> v_int64{5};
@@ -187,7 +187,7 @@ TEST_CASE("GIVEN a declared unit of int64_t WHEN divided by an unit of "
 }
 
 TEST_CASE("GIVEN a declared unit of int64_t WHEN divided by an unit of "
-          "type int32_t AND exponent is not the same THEN value is implicitely "
+          "type int32_t AND exponent is not the same THEN value is implicitly "
           "converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{2};
   constexpr unit_t<'X', std::ratio<2>, int64_t> v_int64{5};
@@ -199,7 +199,7 @@ TEST_CASE("GIVEN a declared unit of int64_t WHEN divided by an unit of "
 
 TEST_CASE("GIVEN a declared unit of int64_t WHEN divided by an unit of "
           "type int32_t AND exponent is not the same AND ratio is not the same "
-          "THEN value is implicitely "
+          "THEN value is implicitly "
           "converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t, std::milli> v_int32{2000};
   constexpr unit_t<'X', std::ratio<2>, int64_t> v_int64{5};
@@ -211,7 +211,7 @@ TEST_CASE("GIVEN a declared unit of int64_t WHEN divided by an unit of "
 }
 
 TEST_CASE("GIVEN a scaler of int64_t WHEN divided by an unit of "
-          "type int32_t THEN value is implicitely converted") {
+          "type int32_t THEN value is implicitly converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{2};
   constexpr int64_t v_int64{10};
   constexpr auto result = v_int64 / v_int32;
@@ -221,7 +221,7 @@ TEST_CASE("GIVEN a scaler of int64_t WHEN divided by an unit of "
 }
 
 TEST_CASE("GIVEN a scaler of double WHEN divided by an unit of "
-          "type float THEN value is implicitely converted") {
+          "type float THEN value is implicitly converted") {
   constexpr unit_t<'X', std::ratio<1>, float> v_float{2};
   constexpr double v_double{10};
   constexpr auto result = v_double / v_float;
@@ -231,7 +231,7 @@ TEST_CASE("GIVEN a scaler of double WHEN divided by an unit of "
 }
 
 TEST_CASE("GIVEN a declared unit of int32_t WHEN added to an unit of "
-          "type int64_t  THEN value is implicitely converted") {
+          "type int64_t  THEN value is implicitly converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{123};
   unit_t<'X', std::ratio<1>, int64_t> v_int64{123};
   auto result = v_int64 + v_int32;
@@ -243,7 +243,7 @@ TEST_CASE("GIVEN a declared unit of int32_t WHEN added to an unit of "
 
 TEST_CASE(
     "GIVEN a declared unit of int32_t WHEN added to an unit of "
-    "type int64_t AND ratio is different THEN value is implicitely converted") {
+    "type int64_t AND ratio is different THEN value is implicitly converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{123};
   unit_t<'X', std::ratio<1>, int64_t, std::milli> v_int64{124000};
   auto result = v_int64 + v_int32;
@@ -254,7 +254,7 @@ TEST_CASE(
 }
 
 TEST_CASE("GIVEN a declared unit of int32_t WHEN subtracted from an unit of "
-          "type int64_t  THEN value is implicitely converted") {
+          "type int64_t  THEN value is implicitly converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{123};
   unit_t<'X', std::ratio<1>, int64_t> v_int64{123};
   auto result = v_int64 - v_int32;
@@ -266,7 +266,7 @@ TEST_CASE("GIVEN a declared unit of int32_t WHEN subtracted from an unit of "
 
 TEST_CASE(
     "GIVEN a declared unit of int32_t WHEN subtracted from an unit of "
-    "type int64_t AND ratio is different THEN value is implicitely converted") {
+    "type int64_t AND ratio is different THEN value is implicitly converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{123};
   unit_t<'X', std::ratio<1>, int64_t, std::milli> v_int64{124000};
   auto result = v_int64 - v_int32;
@@ -278,7 +278,7 @@ TEST_CASE(
 
 TEST_CASE("GIVEN a declared unit of int32_t WHEN cast to an unit of type "
           "int64_t THEN "
-          "value is implicitely converted") {
+          "value is implicitly converted") {
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{123};
   constexpr unit_t<'X', std::ratio<1>, int64_t, std::milli> v_int64{123000};
   constexpr auto result =
