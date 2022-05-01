@@ -18,7 +18,7 @@ Consider running the build/install command with setting the install prefix, if y
 -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/SI-install
 ```
 
-The folder `test/installation-tests` contains standalone sample programs to check for succesful installation.
+The folder `test/installation-tests` contains standalone sample programs to check for successful installation.
 
 ## Installing using `cpack`
 
