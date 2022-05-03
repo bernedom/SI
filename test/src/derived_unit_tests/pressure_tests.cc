@@ -215,7 +215,7 @@ TEST_CASE("GIVEN a 1 atto Pascal WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1apa");
+  REQUIRE(ss.str() == "1 apa");
 }
 
 TEST_CASE("GIVEN a 1 femto Pascal WHEN passed to a streaming operator WHEN "
@@ -224,7 +224,7 @@ TEST_CASE("GIVEN a 1 femto Pascal WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fpa");
+  REQUIRE(ss.str() == "1 fpa");
 }
 
 TEST_CASE("GIVEN a 1 pico Pascal WHEN passed to a streaming operator WHEN "
@@ -233,7 +233,7 @@ TEST_CASE("GIVEN a 1 pico Pascal WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1ppa");
+  REQUIRE(ss.str() == "1 ppa");
 }
 
 TEST_CASE("GIVEN a 1 nano Pascal WHEN passed to a streaming operator WHEN "
@@ -242,7 +242,7 @@ TEST_CASE("GIVEN a 1 nano Pascal WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1npa");
+  REQUIRE(ss.str() == "1 npa");
 }
 
 TEST_CASE("GIVEN a 1 micro Pascal WHEN passed to a streaming operator WHEN "
@@ -251,7 +251,7 @@ TEST_CASE("GIVEN a 1 micro Pascal WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1upa");
+  REQUIRE(ss.str() == "1 upa");
 }
 
 TEST_CASE("GIVEN a 1 milli Pascal WHEN passed to a streaming operator WHEN "
@@ -260,7 +260,7 @@ TEST_CASE("GIVEN a 1 milli Pascal WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mpa");
+  REQUIRE(ss.str() == "1 mpa");
 }
 
 TEST_CASE("GIVEN a 1 Pascal WHEN passed to a streaming operator WHEN result is "
@@ -269,7 +269,7 @@ TEST_CASE("GIVEN a 1 Pascal WHEN passed to a streaming operator WHEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pa");
+  REQUIRE(ss.str() == "1 pa");
 }
 
 TEST_CASE("GIVEN a 1 kilo Pascal WHEN passed to a streaming operator WHEN "
@@ -278,7 +278,7 @@ TEST_CASE("GIVEN a 1 kilo Pascal WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kpa");
+  REQUIRE(ss.str() == "1 kpa");
 }
 
 TEST_CASE("GIVEN a 1 mega Pascal WHEN passed to a streaming operator WHEN "
@@ -287,7 +287,7 @@ TEST_CASE("GIVEN a 1 mega Pascal WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Mpa");
+  REQUIRE(ss.str() == "1 Mpa");
 }
 
 TEST_CASE("GIVEN a 1 giga Pascal WHEN passed to a streaming operator WHEN "
@@ -296,7 +296,7 @@ TEST_CASE("GIVEN a 1 giga Pascal WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Gpa");
+  REQUIRE(ss.str() == "1 Gpa");
 }
 
 TEST_CASE("GIVEN a 1 tera Pascal WHEN passed to a streaming operator WHEN "
@@ -305,7 +305,7 @@ TEST_CASE("GIVEN a 1 tera Pascal WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Tpa");
+  REQUIRE(ss.str() == "1 Tpa");
 }
 
 TEST_CASE("GIVEN a 1 exa Pascal WHEN passed to a streaming operator WHEN "
@@ -314,7 +314,7 @@ TEST_CASE("GIVEN a 1 exa Pascal WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Epa");
+  REQUIRE(ss.str() == "1 Epa");
 }
 
 TEST_CASE("GIVEN a 1 peta Pascal WHEN passed to a streaming operator WHEN "
@@ -323,7 +323,7 @@ TEST_CASE("GIVEN a 1 peta Pascal WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Ppa");
+  REQUIRE(ss.str() == "1 Ppa");
 }
 
 TEST_CASE(

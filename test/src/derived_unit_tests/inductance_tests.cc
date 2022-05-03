@@ -227,7 +227,7 @@ TEST_CASE("GIVEN a 1 atto Henry WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aH");
+  REQUIRE(ss.str() == "1 aH");
 }
 
 TEST_CASE("GIVEN a 1 femto Henry WHEN passed to a streaming operator THEN "
@@ -236,7 +236,7 @@ TEST_CASE("GIVEN a 1 femto Henry WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fH");
+  REQUIRE(ss.str() == "1 fH");
 }
 
 TEST_CASE("GIVEN a 1 pico Henry WHEN passed to a streaming operator THEN "
@@ -245,7 +245,7 @@ TEST_CASE("GIVEN a 1 pico Henry WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pH");
+  REQUIRE(ss.str() == "1 pH");
 }
 
 TEST_CASE("GIVEN a 1 nano Henry WHEN passed to a streaming operator THEN "
@@ -254,7 +254,7 @@ TEST_CASE("GIVEN a 1 nano Henry WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nH");
+  REQUIRE(ss.str() == "1 nH");
 }
 
 TEST_CASE("GIVEN a 1 micro Henry WHEN passed to a streaming operator THEN "
@@ -263,7 +263,7 @@ TEST_CASE("GIVEN a 1 micro Henry WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uH");
+  REQUIRE(ss.str() == "1 uH");
 }
 
 TEST_CASE("GIVEN a 1 milli Henry WHEN passed to a streaming operator THEN "
@@ -272,7 +272,7 @@ TEST_CASE("GIVEN a 1 milli Henry WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mH");
+  REQUIRE(ss.str() == "1 mH");
 }
 
 TEST_CASE("GIVEN a 1 Henry WHEN passed to a streaming operator THEN result is "
@@ -281,7 +281,7 @@ TEST_CASE("GIVEN a 1 Henry WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1H");
+  REQUIRE(ss.str() == "1 H");
 }
 
 TEST_CASE("GIVEN a 1 kilo Henry WHEN passed to a streaming operator THEN "
@@ -290,7 +290,7 @@ TEST_CASE("GIVEN a 1 kilo Henry WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kH");
+  REQUIRE(ss.str() == "1 kH");
 }
 
 TEST_CASE("GIVEN a 1 mega Henry WHEN passed to a streaming operator THEN "
@@ -299,7 +299,7 @@ TEST_CASE("GIVEN a 1 mega Henry WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MH");
+  REQUIRE(ss.str() == "1 MH");
 }
 
 TEST_CASE("GIVEN a 1 giga Henry WHEN passed to a streaming operator THEN "
@@ -308,7 +308,7 @@ TEST_CASE("GIVEN a 1 giga Henry WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GH");
+  REQUIRE(ss.str() == "1 GH");
 }
 
 TEST_CASE("GIVEN a 1 tera Henry WHEN passed to a streaming operator THEN "
@@ -317,7 +317,7 @@ TEST_CASE("GIVEN a 1 tera Henry WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TH");
+  REQUIRE(ss.str() == "1 TH");
 }
 
 TEST_CASE("GIVEN a 1 exa Henry WHEN passed to a streaming operator THEN "
@@ -326,7 +326,7 @@ TEST_CASE("GIVEN a 1 exa Henry WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1EH");
+  REQUIRE(ss.str() == "1 EH");
 }
 
 TEST_CASE("GIVEN a 1 peta Henry WHEN passed to a streaming operator THEN "
@@ -335,7 +335,7 @@ TEST_CASE("GIVEN a 1 peta Henry WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PH");
+  REQUIRE(ss.str() == "1 PH");
 }
 
 TEST_CASE("GIVEN a string of '1aH' WHEN streamed into atto_henry_t THEN result "

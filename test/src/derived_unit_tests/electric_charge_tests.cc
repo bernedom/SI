@@ -311,7 +311,7 @@ TEST_CASE("GIVEN a 1 atto Coulomb WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aC");
+  REQUIRE(ss.str() == "1 aC");
 }
 
 TEST_CASE("GIVEN a 1 femto Coulomb WHEN passed to a streaming operator THEN "
@@ -320,7 +320,7 @@ TEST_CASE("GIVEN a 1 femto Coulomb WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fC");
+  REQUIRE(ss.str() == "1 fC");
 }
 
 TEST_CASE("GIVEN a 1 pico Coulomb WHEN passed to a streaming operator THEN "
@@ -329,7 +329,7 @@ TEST_CASE("GIVEN a 1 pico Coulomb WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pC");
+  REQUIRE(ss.str() == "1 pC");
 }
 
 TEST_CASE("GIVEN a 1 nano Coulomb WHEN passed to a streaming operator THEN "
@@ -338,7 +338,7 @@ TEST_CASE("GIVEN a 1 nano Coulomb WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nC");
+  REQUIRE(ss.str() == "1 nC");
 }
 
 TEST_CASE("GIVEN a 1 micro Coulomb WHEN passed to a streaming operator THEN "
@@ -347,7 +347,7 @@ TEST_CASE("GIVEN a 1 micro Coulomb WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uC");
+  REQUIRE(ss.str() == "1 uC");
 }
 
 TEST_CASE("GIVEN a 1 milli Coulomb WHEN passed to a streaming operator THEN "
@@ -356,7 +356,7 @@ TEST_CASE("GIVEN a 1 milli Coulomb WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mC");
+  REQUIRE(ss.str() == "1 mC");
 }
 
 TEST_CASE(
@@ -366,7 +366,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1C");
+  REQUIRE(ss.str() == "1 C");
 }
 
 TEST_CASE("GIVEN a 1 kilo Coulomb WHEN passed to a streaming operator THEN "
@@ -375,7 +375,7 @@ TEST_CASE("GIVEN a 1 kilo Coulomb WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kC");
+  REQUIRE(ss.str() == "1 kC");
 }
 
 TEST_CASE("GIVEN a 1 mega Coulomb WHEN passed to a streaming operator THEN "
@@ -384,7 +384,7 @@ TEST_CASE("GIVEN a 1 mega Coulomb WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MC");
+  REQUIRE(ss.str() == "1 MC");
 }
 
 TEST_CASE("GIVEN a 1 giga Coulomb WHEN passed to a streaming operator THEN "
@@ -393,7 +393,7 @@ TEST_CASE("GIVEN a 1 giga Coulomb WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GC");
+  REQUIRE(ss.str() == "1 GC");
 }
 
 TEST_CASE("GIVEN a 1 tera Coulomb WHEN passed to a streaming operator THEN "
@@ -402,7 +402,7 @@ TEST_CASE("GIVEN a 1 tera Coulomb WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TC");
+  REQUIRE(ss.str() == "1 TC");
 }
 
 TEST_CASE("GIVEN a 1 exa Coulomb WHEN passed to a streaming operator THEN "
@@ -411,7 +411,7 @@ TEST_CASE("GIVEN a 1 exa Coulomb WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1EC");
+  REQUIRE(ss.str() == "1 EC");
 }
 
 TEST_CASE("GIVEN a 1 peta Coulomb WHEN passed to a streaming operator THEN "
@@ -420,7 +420,7 @@ TEST_CASE("GIVEN a 1 peta Coulomb WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PC");
+  REQUIRE(ss.str() == "1 PC");
 }
 
 TEST_CASE(

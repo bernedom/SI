@@ -181,7 +181,7 @@ TEST_CASE("GIVEN a 1 atto candela WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1acd");
+  REQUIRE(ss.str() == "1 acd");
 }
 
 TEST_CASE("GIVEN a 1 femto candela WHEN passed to a streaming operator THEN "
@@ -190,7 +190,7 @@ TEST_CASE("GIVEN a 1 femto candela WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fcd");
+  REQUIRE(ss.str() == "1 fcd");
 }
 
 TEST_CASE("GIVEN a 1 pico candela WHEN passed to a streaming operator THEN "
@@ -199,7 +199,7 @@ TEST_CASE("GIVEN a 1 pico candela WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pcd");
+  REQUIRE(ss.str() == "1 pcd");
 }
 
 TEST_CASE("GIVEN a 1 nano candela WHEN passed to a streaming operator THEN "
@@ -208,7 +208,7 @@ TEST_CASE("GIVEN a 1 nano candela WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1ncd");
+  REQUIRE(ss.str() == "1 ncd");
 }
 
 TEST_CASE("GIVEN a 1 micro candela WHEN passed to a streaming operator THEN "
@@ -217,7 +217,7 @@ TEST_CASE("GIVEN a 1 micro candela WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1ucd");
+  REQUIRE(ss.str() == "1 ucd");
 }
 
 TEST_CASE("GIVEN a 1 milli candela WHEN passed to a streaming operator THEN "
@@ -226,7 +226,7 @@ TEST_CASE("GIVEN a 1 milli candela WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mcd");
+  REQUIRE(ss.str() == "1 mcd");
 }
 
 TEST_CASE(
@@ -236,7 +236,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1cd");
+  REQUIRE(ss.str() == "1 cd");
 }
 
 TEST_CASE("GIVEN a 1 kilo candela WHEN passed to a streaming operator THEN "
@@ -245,7 +245,7 @@ TEST_CASE("GIVEN a 1 kilo candela WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kcd");
+  REQUIRE(ss.str() == "1 kcd");
 }
 
 TEST_CASE("GIVEN a 1 mega candela WHEN passed to a streaming operator THEN "
@@ -254,7 +254,7 @@ TEST_CASE("GIVEN a 1 mega candela WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Mcd");
+  REQUIRE(ss.str() == "1 Mcd");
 }
 
 TEST_CASE("GIVEN a 1 giga candela WHEN passed to a streaming operator THEN "
@@ -263,7 +263,7 @@ TEST_CASE("GIVEN a 1 giga candela WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Gcd");
+  REQUIRE(ss.str() == "1 Gcd");
 }
 
 TEST_CASE("GIVEN a 1 tera candela WHEN passed to a streaming operator THEN "
@@ -272,7 +272,7 @@ TEST_CASE("GIVEN a 1 tera candela WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Tcd");
+  REQUIRE(ss.str() == "1 Tcd");
 }
 
 TEST_CASE("GIVEN a 1 exa candela WHEN passed to a streaming operator THEN "
@@ -281,7 +281,7 @@ TEST_CASE("GIVEN a 1 exa candela WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Ecd");
+  REQUIRE(ss.str() == "1 Ecd");
 }
 
 TEST_CASE("GIVEN a 1 peta candela WHEN passed to a streaming operator THEN "
@@ -290,7 +290,7 @@ TEST_CASE("GIVEN a 1 peta candela WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Pcd");
+  REQUIRE(ss.str() == "1 Pcd");
 }
 TEST_CASE(
     "GIVEN a string of '1acd' WHEN streamed into atto_candela_t THEN result "

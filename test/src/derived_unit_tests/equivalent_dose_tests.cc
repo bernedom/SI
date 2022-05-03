@@ -180,7 +180,7 @@ TEST_CASE("GIVEN a 1 atto Sievert WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aSv");
+  REQUIRE(ss.str() == "1 aSv");
 }
 
 TEST_CASE("GIVEN a 1 femto Sievert WHEN passed to a streaming operator THEN "
@@ -189,7 +189,7 @@ TEST_CASE("GIVEN a 1 femto Sievert WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fSv");
+  REQUIRE(ss.str() == "1 fSv");
 }
 
 TEST_CASE("GIVEN a 1 pico Sievert WHEN passed to a streaming operator THEN "
@@ -198,7 +198,7 @@ TEST_CASE("GIVEN a 1 pico Sievert WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pSv");
+  REQUIRE(ss.str() == "1 pSv");
 }
 
 TEST_CASE("GIVEN a 1 nano Sievert WHEN passed to a streaming operator THEN "
@@ -207,7 +207,7 @@ TEST_CASE("GIVEN a 1 nano Sievert WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nSv");
+  REQUIRE(ss.str() == "1 nSv");
 }
 
 TEST_CASE("GIVEN a 1 micro Sievert WHEN passed to a streaming operator THEN "
@@ -216,7 +216,7 @@ TEST_CASE("GIVEN a 1 micro Sievert WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uSv");
+  REQUIRE(ss.str() == "1 uSv");
 }
 
 TEST_CASE("GIVEN a 1 milli Sievert WHEN passed to a streaming operator THEN "
@@ -225,7 +225,7 @@ TEST_CASE("GIVEN a 1 milli Sievert WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mSv");
+  REQUIRE(ss.str() == "1 mSv");
 }
 
 TEST_CASE(
@@ -235,7 +235,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Sv");
+  REQUIRE(ss.str() == "1 Sv");
 }
 
 TEST_CASE("GIVEN a 1 kilo Sievert WHEN passed to a streaming operator THEN "
@@ -244,7 +244,7 @@ TEST_CASE("GIVEN a 1 kilo Sievert WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kSv");
+  REQUIRE(ss.str() == "1 kSv");
 }
 
 TEST_CASE("GIVEN a 1 mega Sievert WHEN passed to a streaming operator THEN "
@@ -253,7 +253,7 @@ TEST_CASE("GIVEN a 1 mega Sievert WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MSv");
+  REQUIRE(ss.str() == "1 MSv");
 }
 
 TEST_CASE("GIVEN a 1 giga Sievert WHEN passed to a streaming operator THEN "
@@ -262,7 +262,7 @@ TEST_CASE("GIVEN a 1 giga Sievert WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GSv");
+  REQUIRE(ss.str() == "1 GSv");
 }
 
 TEST_CASE("GIVEN a 1 tera Sievert WHEN passed to a streaming operator THEN "
@@ -271,7 +271,7 @@ TEST_CASE("GIVEN a 1 tera Sievert WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TSv");
+  REQUIRE(ss.str() == "1 TSv");
 }
 
 TEST_CASE("GIVEN a 1 exa Sievert WHEN passed to a streaming operator THEN "
@@ -280,7 +280,7 @@ TEST_CASE("GIVEN a 1 exa Sievert WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1ESv");
+  REQUIRE(ss.str() == "1 ESv");
 }
 
 TEST_CASE("GIVEN a 1 peta Sievert WHEN passed to a streaming operator THEN "
@@ -289,7 +289,7 @@ TEST_CASE("GIVEN a 1 peta Sievert WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PSv");
+  REQUIRE(ss.str() == "1 PSv");
 }
 
 TEST_CASE(

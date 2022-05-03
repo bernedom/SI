@@ -98,7 +98,7 @@ TEST_CASE("GIVEN a 1 atto radian WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1arad");
+  REQUIRE(ss.str() == "1 arad");
 }
 
 TEST_CASE("GIVEN a 1 femto radian WHEN passed to a streaming operator THEN "
@@ -107,7 +107,7 @@ TEST_CASE("GIVEN a 1 femto radian WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1frad");
+  REQUIRE(ss.str() == "1 frad");
 }
 
 TEST_CASE("GIVEN a 1 pico radian WHEN passed to a streaming operator THEN "
@@ -116,7 +116,7 @@ TEST_CASE("GIVEN a 1 pico radian WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1prad");
+  REQUIRE(ss.str() == "1 prad");
 }
 
 TEST_CASE("GIVEN a 1 nano radian WHEN passed to a streaming operator THEN "
@@ -125,7 +125,7 @@ TEST_CASE("GIVEN a 1 nano radian WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nrad");
+  REQUIRE(ss.str() == "1 nrad");
 }
 
 TEST_CASE("GIVEN a 1 micro radian WHEN passed to a streaming operator THEN "
@@ -134,7 +134,7 @@ TEST_CASE("GIVEN a 1 micro radian WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1urad");
+  REQUIRE(ss.str() == "1 urad");
 }
 
 TEST_CASE("GIVEN a 1 milli radian WHEN passed to a streaming operator THEN "
@@ -143,17 +143,16 @@ TEST_CASE("GIVEN a 1 milli radian WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mrad");
+  REQUIRE(ss.str() == "1 mrad");
 }
 
-TEST_CASE(
-    "GIVEN a 1 radian WHEN passed to a streaming operator THEN result is "
-    "'1rad'") {
+TEST_CASE("GIVEN a 1 radian WHEN passed to a streaming operator THEN result is "
+          "'1rad'") {
   constexpr auto value = 1_rad;
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1rad");
+  REQUIRE(ss.str() == "1 rad");
 }
 
 TEST_CASE(
@@ -289,7 +288,7 @@ TEST_CASE("GIVEN a 1 micro degree WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1udeg");
+  REQUIRE(ss.str() == "1 udeg");
 }
 
 TEST_CASE("GIVEN a 1 milli degree WHEN passed to a streaming operator THEN "
@@ -298,7 +297,7 @@ TEST_CASE("GIVEN a 1 milli degree WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mdeg");
+  REQUIRE(ss.str() == "1 mdeg");
 }
 
 TEST_CASE("GIVEN a 1 degree WHEN passed to a streaming operator THEN result is "
@@ -307,7 +306,7 @@ TEST_CASE("GIVEN a 1 degree WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1deg");
+  REQUIRE(ss.str() == "1 deg");
 }
 
 TEST_CASE(

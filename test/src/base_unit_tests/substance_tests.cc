@@ -180,7 +180,7 @@ TEST_CASE("GIVEN a 1 atto mol WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1amol");
+  REQUIRE(ss.str() == "1 amol");
 }
 
 TEST_CASE("GIVEN a 1 femto mol WHEN passed to a streaming operator THEN "
@@ -189,7 +189,7 @@ TEST_CASE("GIVEN a 1 femto mol WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fmol");
+  REQUIRE(ss.str() == "1 fmol");
 }
 
 TEST_CASE("GIVEN a 1 pico mol WHEN passed to a streaming operator THEN "
@@ -198,7 +198,7 @@ TEST_CASE("GIVEN a 1 pico mol WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pmol");
+  REQUIRE(ss.str() == "1 pmol");
 }
 
 TEST_CASE("GIVEN a 1 nano mol WHEN passed to a streaming operator THEN "
@@ -207,7 +207,7 @@ TEST_CASE("GIVEN a 1 nano mol WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nmol");
+  REQUIRE(ss.str() == "1 nmol");
 }
 
 TEST_CASE("GIVEN a 1 micro mol WHEN passed to a streaming operator THEN "
@@ -216,7 +216,7 @@ TEST_CASE("GIVEN a 1 micro mol WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1umol");
+  REQUIRE(ss.str() == "1 umol");
 }
 
 TEST_CASE("GIVEN a 1 milli mol WHEN passed to a streaming operator THEN "
@@ -225,7 +225,7 @@ TEST_CASE("GIVEN a 1 milli mol WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mmol");
+  REQUIRE(ss.str() == "1 mmol");
 }
 
 TEST_CASE("GIVEN a 1 mol WHEN passed to a streaming operator THEN result is "
@@ -234,7 +234,7 @@ TEST_CASE("GIVEN a 1 mol WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mol");
+  REQUIRE(ss.str() == "1 mol");
 }
 
 TEST_CASE("GIVEN a 1 kilo mol WHEN passed to a streaming operator THEN "
@@ -243,7 +243,7 @@ TEST_CASE("GIVEN a 1 kilo mol WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kmol");
+  REQUIRE(ss.str() == "1 kmol");
 }
 
 TEST_CASE("GIVEN a 1 mega mol WHEN passed to a streaming operator THEN "
@@ -252,7 +252,7 @@ TEST_CASE("GIVEN a 1 mega mol WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Mmol");
+  REQUIRE(ss.str() == "1 Mmol");
 }
 
 TEST_CASE("GIVEN a 1 giga mol WHEN passed to a streaming operator THEN "
@@ -261,7 +261,7 @@ TEST_CASE("GIVEN a 1 giga mol WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Gmol");
+  REQUIRE(ss.str() == "1 Gmol");
 }
 
 TEST_CASE("GIVEN a 1 tera mol WHEN passed to a streaming operator THEN "
@@ -270,7 +270,7 @@ TEST_CASE("GIVEN a 1 tera mol WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Tmol");
+  REQUIRE(ss.str() == "1 Tmol");
 }
 
 TEST_CASE("GIVEN a 1 exa mol WHEN passed to a streaming operator THEN "
@@ -279,7 +279,7 @@ TEST_CASE("GIVEN a 1 exa mol WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Emol");
+  REQUIRE(ss.str() == "1 Emol");
 }
 
 TEST_CASE("GIVEN a 1 peta mol WHEN passed to a streaming operator THEN "
@@ -288,7 +288,7 @@ TEST_CASE("GIVEN a 1 peta mol WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Pmol");
+  REQUIRE(ss.str() == "1 Pmol");
 }
 TEST_CASE("GIVEN a string of '1amol' WHEN streamed into atto_mol_t THEN result "
           "is a value of 1 atto_mol_t AND stream is good") {

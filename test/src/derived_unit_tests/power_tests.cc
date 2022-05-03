@@ -211,7 +211,7 @@ TEST_CASE("GIVEN a 1 atto Watt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aW");
+  REQUIRE(ss.str() == "1 aW");
 }
 
 TEST_CASE("GIVEN a 1 femto Watt WHEN passed to a streaming operator THEN "
@@ -220,7 +220,7 @@ TEST_CASE("GIVEN a 1 femto Watt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fW");
+  REQUIRE(ss.str() == "1 fW");
 }
 
 TEST_CASE("GIVEN a 1 pico Watt WHEN passed to a streaming operator THEN "
@@ -229,7 +229,7 @@ TEST_CASE("GIVEN a 1 pico Watt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pW");
+  REQUIRE(ss.str() == "1 pW");
 }
 
 TEST_CASE("GIVEN a 1 nano Watt WHEN passed to a streaming operator THEN "
@@ -238,7 +238,7 @@ TEST_CASE("GIVEN a 1 nano Watt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nW");
+  REQUIRE(ss.str() == "1 nW");
 }
 
 TEST_CASE("GIVEN a 1 micro Watt WHEN passed to a streaming operator THEN "
@@ -247,7 +247,7 @@ TEST_CASE("GIVEN a 1 micro Watt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uW");
+  REQUIRE(ss.str() == "1 uW");
 }
 
 TEST_CASE("GIVEN a 1 milli Watt WHEN passed to a streaming operator THEN "
@@ -256,7 +256,7 @@ TEST_CASE("GIVEN a 1 milli Watt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mW");
+  REQUIRE(ss.str() == "1 mW");
 }
 
 TEST_CASE("GIVEN a 1 Watt WHEN passed to a streaming operator THEN result is "
@@ -265,7 +265,7 @@ TEST_CASE("GIVEN a 1 Watt WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1W");
+  REQUIRE(ss.str() == "1 W");
 }
 
 TEST_CASE("GIVEN a 1 kilo Watt WHEN passed to a streaming operator THEN "
@@ -274,7 +274,7 @@ TEST_CASE("GIVEN a 1 kilo Watt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kW");
+  REQUIRE(ss.str() == "1 kW");
 }
 
 TEST_CASE("GIVEN a 1 mega Watt WHEN passed to a streaming operator THEN "
@@ -283,7 +283,7 @@ TEST_CASE("GIVEN a 1 mega Watt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MW");
+  REQUIRE(ss.str() == "1 MW");
 }
 
 TEST_CASE("GIVEN a 1 giga Watt WHEN passed to a streaming operator THEN "
@@ -292,7 +292,7 @@ TEST_CASE("GIVEN a 1 giga Watt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GW");
+  REQUIRE(ss.str() == "1 GW");
 }
 
 TEST_CASE("GIVEN a 1 tera Watt WHEN passed to a streaming operator THEN "
@@ -301,7 +301,7 @@ TEST_CASE("GIVEN a 1 tera Watt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TW");
+  REQUIRE(ss.str() == "1 TW");
 }
 
 TEST_CASE("GIVEN a 1 exa Watt WHEN passed to a streaming operator THEN "
@@ -310,7 +310,7 @@ TEST_CASE("GIVEN a 1 exa Watt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1EW");
+  REQUIRE(ss.str() == "1 EW");
 }
 
 TEST_CASE("GIVEN a 1 peta Watt WHEN passed to a streaming operator THEN "
@@ -319,7 +319,7 @@ TEST_CASE("GIVEN a 1 peta Watt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PW");
+  REQUIRE(ss.str() == "1 PW");
 }
 
 TEST_CASE("GIVEN a string of '1aW' WHEN streamed into atto_watt_t THEN result "

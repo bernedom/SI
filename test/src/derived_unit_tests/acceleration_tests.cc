@@ -149,7 +149,7 @@ TEST_CASE("GIVEN a 1 atto metre per second^2 WHEN passed to a streaming "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1am/s^2");
+  REQUIRE(ss.str() == "1 am/s^2");
 }
 
 TEST_CASE(
@@ -171,7 +171,7 @@ TEST_CASE("GIVEN a 1 femto metre per second^2 WHEN passed to a streaming "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fm/s^2");
+  REQUIRE(ss.str() == "1 fm/s^2");
 }
 
 TEST_CASE(
@@ -193,7 +193,7 @@ TEST_CASE("GIVEN a 1 pico metre per second^2 WHEN passed to a streaming "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pm/s^2");
+  REQUIRE(ss.str() == "1 pm/s^2");
 }
 
 TEST_CASE(
@@ -215,7 +215,7 @@ TEST_CASE("GIVEN a 1 nano metre per second^2 WHEN passed to a streaming "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nm/s^2");
+  REQUIRE(ss.str() == "1 nm/s^2");
 }
 
 TEST_CASE(
@@ -237,7 +237,7 @@ TEST_CASE("GIVEN a 1 micro metre per second^2 WHEN passed to a streaming "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1um/s^2");
+  REQUIRE(ss.str() == "1 um/s^2");
 }
 
 TEST_CASE(
@@ -259,7 +259,7 @@ TEST_CASE("GIVEN a 1 milli metre per second^2 WHEN passed to a streaming "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mm/s^2");
+  REQUIRE(ss.str() == "1 mm/s^2");
 }
 
 TEST_CASE(
@@ -281,7 +281,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1m/s^2");
+  REQUIRE(ss.str() == "1 m/s^2");
 }
 
 TEST_CASE(
@@ -303,7 +303,7 @@ TEST_CASE("GIVEN a 1 kilo metre per second^2 WHEN passed to a streaming "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1km/s^2");
+  REQUIRE(ss.str() == "1 km/s^2");
 }
 
 TEST_CASE(
@@ -325,7 +325,7 @@ TEST_CASE("GIVEN a 1 mega metre per second^2 WHEN passed to a streaming "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Mm/s^2");
+  REQUIRE(ss.str() == "1 Mm/s^2");
 }
 
 TEST_CASE(
@@ -347,7 +347,7 @@ TEST_CASE("GIVEN a 1 giga metre per second^2 WHEN passed to a streaming "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Gm/s^2");
+  REQUIRE(ss.str() == "1 Gm/s^2");
 }
 
 TEST_CASE(
@@ -369,7 +369,7 @@ TEST_CASE("GIVEN a 1 tera metre per second^2 WHEN passed to a streaming "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Tm/s^2");
+  REQUIRE(ss.str() == "1 Tm/s^2");
 }
 
 TEST_CASE(
@@ -391,7 +391,7 @@ TEST_CASE("GIVEN a 1 peta metre per second^2 WHEN passed to a streaming "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Pm/s^2");
+  REQUIRE(ss.str() == "1 Pm/s^2");
 }
 
 TEST_CASE(
@@ -413,7 +413,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Em/s^2");
+  REQUIRE(ss.str() == "1 Em/s^2");
 }
 
 TEST_CASE(

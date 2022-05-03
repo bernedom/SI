@@ -102,17 +102,16 @@ TEST_CASE("GIVEN a 1 atto steradian WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1asr");
+  REQUIRE(ss.str() == "1 asr");
 }
 
-TEST_CASE(
-    "GIVEN a 1 femto steradian WHEN passed to a streaming operator WHEN "
-    "result is '1fsr'") {
+TEST_CASE("GIVEN a 1 femto steradian WHEN passed to a streaming operator WHEN "
+          "result is '1fsr'") {
   constexpr auto value = 1_fsr;
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fsr");
+  REQUIRE(ss.str() == "1 fsr");
 }
 
 TEST_CASE("GIVEN a 1 pico steradian WHEN passed to a streaming operator WHEN "
@@ -121,7 +120,7 @@ TEST_CASE("GIVEN a 1 pico steradian WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1psr");
+  REQUIRE(ss.str() == "1 psr");
 }
 
 TEST_CASE("GIVEN a 1 nano steradian WHEN passed to a streaming operator WHEN "
@@ -130,27 +129,25 @@ TEST_CASE("GIVEN a 1 nano steradian WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nsr");
+  REQUIRE(ss.str() == "1 nsr");
 }
 
-TEST_CASE(
-    "GIVEN a 1 micro steradian WHEN passed to a streaming operator WHEN "
-    "result is '1usr'") {
+TEST_CASE("GIVEN a 1 micro steradian WHEN passed to a streaming operator WHEN "
+          "result is '1usr'") {
   constexpr auto value = 1_usr;
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1usr");
+  REQUIRE(ss.str() == "1 usr");
 }
 
-TEST_CASE(
-    "GIVEN a 1 milli steradian WHEN passed to a streaming operator WHEN "
-    "result is '1msr'") {
+TEST_CASE("GIVEN a 1 milli steradian WHEN passed to a streaming operator WHEN "
+          "result is '1msr'") {
   constexpr auto value = 1_msr;
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1msr");
+  REQUIRE(ss.str() == "1 msr");
 }
 
 TEST_CASE(
@@ -160,7 +157,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1sr");
+  REQUIRE(ss.str() == "1 sr");
 }
 
 TEST_CASE("GIVEN a string of '1asr' WHEN streamed into atto_steradian_t THEN "
@@ -238,4 +235,3 @@ TEST_CASE("GIVEN a string of '1sr' WHEN streamed into steradian_t THEN result "
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_sr);
 }
-

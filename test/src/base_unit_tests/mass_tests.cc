@@ -154,7 +154,6 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _Pt THEN result is a "
                               const SI::mass_t<long double, std::exa>>::value);
 }
 
-
 TEST_CASE("GIVEN a value WHEN constructed with literal _Mg THEN result is a "
           "mass value AND ratio is 1000/1") {
   constexpr auto one = 1_Mg;
@@ -233,7 +232,7 @@ TEST_CASE("GIVEN a 1 femto gram WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fg");
+  REQUIRE(ss.str() == "1 fg");
 }
 
 TEST_CASE("GIVEN a 1 pico gram WHEN passed to a streaming operator THEN "
@@ -242,7 +241,7 @@ TEST_CASE("GIVEN a 1 pico gram WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pg");
+  REQUIRE(ss.str() == "1 pg");
 }
 
 TEST_CASE("GIVEN a 1 nano gram WHEN passed to a streaming operator THEN "
@@ -251,7 +250,7 @@ TEST_CASE("GIVEN a 1 nano gram WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1ng");
+  REQUIRE(ss.str() == "1 ng");
 }
 
 TEST_CASE("GIVEN a 1 micro gram WHEN passed to a streaming operator THEN "
@@ -260,7 +259,7 @@ TEST_CASE("GIVEN a 1 micro gram WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1ug");
+  REQUIRE(ss.str() == "1 ug");
 }
 
 TEST_CASE("GIVEN a 1 milli gram WHEN passed to a streaming operator THEN "
@@ -269,7 +268,7 @@ TEST_CASE("GIVEN a 1 milli gram WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mg");
+  REQUIRE(ss.str() == "1 mg");
 }
 
 TEST_CASE("GIVEN a 1 gram WHEN passed to a streaming operator THEN result is "
@@ -278,7 +277,7 @@ TEST_CASE("GIVEN a 1 gram WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1g");
+  REQUIRE(ss.str() == "1 g");
 }
 
 TEST_CASE("GIVEN a 1 kilo gram WHEN passed to a streaming operator THEN "
@@ -287,7 +286,7 @@ TEST_CASE("GIVEN a 1 kilo gram WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kg");
+  REQUIRE(ss.str() == "1 kg");
 }
 
 TEST_CASE("GIVEN a 1t WHEN passed to a streaming operator THEN "
@@ -296,7 +295,7 @@ TEST_CASE("GIVEN a 1t WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1t");
+  REQUIRE(ss.str() == "1 t");
 }
 
 TEST_CASE("GIVEN a string of '1fg' WHEN streamed into femto_gram_t THEN result "
@@ -385,7 +384,7 @@ TEST_CASE("GIVEN a 1 mega gram WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1t");
+  REQUIRE(ss.str() == "1 t");
 }
 
 TEST_CASE("GIVEN a 1 giga gram WHEN passed to a streaming operator THEN "
@@ -394,7 +393,7 @@ TEST_CASE("GIVEN a 1 giga gram WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Gg");
+  REQUIRE(ss.str() == "1 Gg");
 }
 
 TEST_CASE("GIVEN a 1 tera gram WHEN passed to a streaming operator THEN "
@@ -403,7 +402,7 @@ TEST_CASE("GIVEN a 1 tera gram WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Tg");
+  REQUIRE(ss.str() == "1 Tg");
 }
 
 TEST_CASE("GIVEN a 1 peta gram WHEN passed to a streaming operator THEN "
@@ -412,7 +411,7 @@ TEST_CASE("GIVEN a 1 peta gram WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Pg");
+  REQUIRE(ss.str() == "1 Pg");
 }
 
 TEST_CASE("GIVEN a 1 exa gram WHEN passed to a streaming operator THEN "
@@ -421,7 +420,7 @@ TEST_CASE("GIVEN a 1 exa gram WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Eg");
+  REQUIRE(ss.str() == "1 Eg");
 }
 
 TEST_CASE("GIVEN a 1 zetta gram WHEN passed to a streaming operator THEN "
@@ -430,9 +429,8 @@ TEST_CASE("GIVEN a 1 zetta gram WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Zg");
+  REQUIRE(ss.str() == "1 Zg");
 }
-
 
 TEST_CASE("GIVEN a string of '1Gg' WHEN streamed into giga_gram_t THEN result "
           "is a value of 1 giga_gram_t AND stream is good") {
@@ -483,4 +481,3 @@ TEST_CASE("GIVEN a string of '1Zg' WHEN streamed into zetta_gram_t THEN result "
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_Zg);
 }
-

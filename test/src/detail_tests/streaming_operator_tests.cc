@@ -62,7 +62,7 @@ TEST_CASE("GIVEN a unit AND ratio is <1> WHEN passed to an stringstream THEN "
   std::stringstream ss;
 
   ss << v;
-  REQUIRE(ss.str() == "100xx");
+  REQUIRE(ss.str() == "100 xx");
 }
 
 TEST_CASE("GIVEN a unit AND ratio is kilo WHEN passed to an stringstream THEN "
@@ -73,7 +73,7 @@ TEST_CASE("GIVEN a unit AND ratio is kilo WHEN passed to an stringstream THEN "
   std::stringstream ss;
 
   ss << v;
-  REQUIRE(ss.str() == "100kxx");
+  REQUIRE(ss.str() == "100 kxx");
 }
 
 TEST_CASE("GIVEN a unit AND ratio is atto WHEN passed to an stringstream THEN "
@@ -84,7 +84,7 @@ TEST_CASE("GIVEN a unit AND ratio is atto WHEN passed to an stringstream THEN "
   std::stringstream ss;
 
   ss << v;
-  REQUIRE(ss.str() == "100axx");
+  REQUIRE(ss.str() == "100 axx");
 }
 
 TEST_CASE("GIVEN a unit AND with ratio 1:1 WHEN converted to string THEN "
@@ -92,5 +92,5 @@ TEST_CASE("GIVEN a unit AND with ratio 1:1 WHEN converted to string THEN "
   constexpr SI::detail::unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>> v{
       100};
 
-  REQUIRE(SI::to_string(v) == "100xx");
+  REQUIRE(SI::to_string(v) == "100 xx");
 }

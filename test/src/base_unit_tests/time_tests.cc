@@ -125,7 +125,7 @@ TEST_CASE("GIVEN a 1 atto seconds WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1as");
+  REQUIRE(ss.str() == "1 as");
 }
 
 TEST_CASE("GIVEN a 1 femto seconds WHEN passed to a streaming operator THEN "
@@ -134,7 +134,7 @@ TEST_CASE("GIVEN a 1 femto seconds WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fs");
+  REQUIRE(ss.str() == "1 fs");
 }
 
 TEST_CASE("GIVEN a 1 pico seconds WHEN passed to a streaming operator THEN "
@@ -143,7 +143,7 @@ TEST_CASE("GIVEN a 1 pico seconds WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1ps");
+  REQUIRE(ss.str() == "1 ps");
 }
 
 TEST_CASE("GIVEN a 1 nano seconds WHEN passed to a streaming operator THEN "
@@ -152,7 +152,7 @@ TEST_CASE("GIVEN a 1 nano seconds WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1ns");
+  REQUIRE(ss.str() == "1 ns");
 }
 
 TEST_CASE("GIVEN a 1 micro seconds WHEN passed to a streaming operator THEN "
@@ -161,7 +161,7 @@ TEST_CASE("GIVEN a 1 micro seconds WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1us");
+  REQUIRE(ss.str() == "1 us");
 }
 
 TEST_CASE("GIVEN a 1 milli seconds WHEN passed to a streaming operator THEN "
@@ -170,7 +170,7 @@ TEST_CASE("GIVEN a 1 milli seconds WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1ms");
+  REQUIRE(ss.str() == "1 ms");
 }
 
 TEST_CASE(
@@ -180,7 +180,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1s");
+  REQUIRE(ss.str() == "1 s");
 }
 
 TEST_CASE("GIVEN a 1 min WHEN passed to a streaming operator THEN result is "
@@ -189,7 +189,7 @@ TEST_CASE("GIVEN a 1 min WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1min");
+  REQUIRE(ss.str() == "1 min");
 }
 
 TEST_CASE("GIVEN a 1 hour WHEN passed to a streaming operator THEN result is "
@@ -198,7 +198,7 @@ TEST_CASE("GIVEN a 1 hour WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1h");
+  REQUIRE(ss.str() == "1 h");
 }
 
 TEST_CASE(
