@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1650343520430,
+  "lastUpdate": 1651548611527,
   "repoUrl": "https://github.com/bernedom/SI",
   "entries": {
     "Catch2 Benchmark": [
@@ -11950,6 +11950,170 @@ window.BENCHMARK_DATA = {
             "range": "+/- 3.29204",
             "unit": "ns",
             "extra": "100 samples\n334 iterations"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "public.melg8@gmail.com",
+            "name": "Melg Eight",
+            "username": "melg8"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "884ab34aa3a3ade94dd78eee0d1e3ce6a3b86758",
+          "message": "Fix spelling (#109)\n\n* Fix spelling of avogadro\r\n\r\n* Fix spelling of integral\r\n\r\n* Fix spelling of THEN\r\n\r\n* Fix spelling of WHEN\r\n\r\n* Fix spelling of calculated\r\n\r\n* Fix spelling of assignment\r\n\r\n* Fix spelling of velocity\r\n\r\n* Fix spelling of physical\r\n\r\n* Fix spelling of acceleration\r\n\r\n* Fix spelling of strings\r\n\r\n* Fix spelling of assignment\r\n\r\n* Fix spelling of DIVISION\r\n\r\n* Fix spelling of increment\r\n\r\n* Fix spelling of instantiation\r\n\r\n* Fix spelling of with\r\n\r\n* Fix spelling of successful\r\n\r\n* Fix spelling of platform\r\n\r\n* Fix spelling of assigning\r\n\r\n* Fix spelling of implementation\r\n\r\n* Fix spelling of consistency\r\n\r\n* Fix spelling of acceleration\r\n\r\n* Fix spelling of demonstrate\r\n\r\n* Use English name\r\n\r\n* Fix spelling of continuous\r\n\r\n* Fix spelling of thousand\r\n\r\n* Fix spelling of grams\r\n\r\n* Fix spelling of hundredth\r\n\r\n* Make readme consistent with source code\r\n\r\n* Fix spelling of subtract\r\n\r\n* Fix capitalization of Parsing\r\n\r\n* Fix spelling of divided\r\n\r\n* Fix spelling of facilitate\r\n\r\n* Fix spelling of length\r\n\r\n* Fix spelling of radian and steradian\r\n\r\n* Fix spelling of dependencies\r\n\r\n* Fix spelling of implicitly\r\n\r\n* Fix spelling of light-years\r\n\r\n* Fix spelling of usable\r\n\r\n* Split apple and clang words\r\n\r\n* Fix spelling of specialization\r\n\r\n* Fix spelling of less than\r\n\r\n* Fix spelling greater than",
+          "timestamp": "2022-05-03T05:28:38+02:00",
+          "tree_id": "2c9a5c92bbb387d0e3cda5677ffdedafbfc1ebd3",
+          "url": "https://github.com/bernedom/SI/commit/884ab34aa3a3ade94dd78eee0d1e3ce6a3b86758"
+        },
+        "date": 1651548607950,
+        "tool": "catch2",
+        "benches": [
+          {
+            "name": "Default construction",
+            "value": 0.170178,
+            "range": "+/- 0.0268333",
+            "unit": "ns",
+            "extra": "100 samples\n29358 iterations"
+          },
+          {
+            "name": "Value initialized construction",
+            "value": 0.30355,
+            "range": "+/- 0.019036",
+            "unit": "ns",
+            "extra": "100 samples\n42246 iterations"
+          },
+          {
+            "name": "copy construction same ratio",
+            "value": 0.242602,
+            "range": "+/- 0.0174736",
+            "unit": "ns",
+            "extra": "100 samples\n42422 iterations"
+          },
+          {
+            "name": "copy construction different ratio",
+            "value": 0.253041,
+            "range": "+/- 0.00178073",
+            "unit": "ns",
+            "extra": "100 samples\n42300 iterations"
+          },
+          {
+            "name": "Raw number assignment (reference)",
+            "value": 5.48703,
+            "range": "+/- 95.9068",
+            "unit": "us",
+            "extra": "100 samples\n7 iterations"
+          },
+          {
+            "name": "same ratio assignment",
+            "value": 5.49746,
+            "range": "+/- 262.623",
+            "unit": "us",
+            "extra": "100 samples\n7 iterations"
+          },
+          {
+            "name": "different ratio assignment",
+            "value": 10.4914,
+            "range": "+/- 914.458",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Raw add assignment (reference)",
+            "value": 6.6659,
+            "range": "+/- 380.912",
+            "unit": "us",
+            "extra": "100 samples\n6 iterations"
+          },
+          {
+            "name": "same ratio add assignment",
+            "value": 7.27322,
+            "range": "+/- 173.996",
+            "unit": "us",
+            "extra": "100 samples\n5 iterations"
+          },
+          {
+            "name": "different ratio add assignment",
+            "value": 8.91102,
+            "range": "+/- 541.39",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Raw subtract assignment (reference)",
+            "value": 6.68926,
+            "range": "+/- 347.436",
+            "unit": "us",
+            "extra": "100 samples\n6 iterations"
+          },
+          {
+            "name": "same ratio subtract assignment",
+            "value": 6.93509,
+            "range": "+/- 234.362",
+            "unit": "us",
+            "extra": "100 samples\n6 iterations"
+          },
+          {
+            "name": "different ratio subtract assignment",
+            "value": 10.9382,
+            "range": "+/- 533.411",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "int64_t by unit division",
+            "value": 418.257,
+            "range": "+/- 15.1595",
+            "unit": "us",
+            "extra": "100 samples\n1 iterations"
+          },
+          {
+            "name": "long double by unit division",
+            "value": 39.3394,
+            "range": "+/- 1.41705",
+            "unit": "us",
+            "extra": "100 samples\n1 iterations"
+          },
+          {
+            "name": "unit_cast same ratio unit",
+            "value": 5.73592,
+            "range": "+/- 87.9121",
+            "unit": "us",
+            "extra": "100 samples\n7 iterations"
+          },
+          {
+            "name": "unit_cast different ratio unit",
+            "value": 10.8207,
+            "range": "+/- 590.497",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "conversion by streams",
+            "value": 104.149,
+            "range": "+/- 23.2897",
+            "unit": "ns",
+            "extra": "100 samples\n7 iterations"
+          },
+          {
+            "name": "stream conversion with ctor",
+            "value": 473.663,
+            "range": "+/- 47.1723",
+            "unit": "ns",
+            "extra": "100 samples\n71 iterations"
+          },
+          {
+            "name": "conversion by to_string",
+            "value": 106.876,
+            "range": "+/- 14.6197",
+            "unit": "ns",
+            "extra": "100 samples\n329 iterations"
           }
         ]
       }
