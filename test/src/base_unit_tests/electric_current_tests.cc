@@ -181,7 +181,7 @@ TEST_CASE("GIVEN a 1 atto ampere WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aA");
+  REQUIRE(ss.str() == "1 aA");
 }
 
 TEST_CASE("GIVEN a 1 femto ampere WHEN passed to a streaming operator THEN "
@@ -190,7 +190,7 @@ TEST_CASE("GIVEN a 1 femto ampere WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fA");
+  REQUIRE(ss.str() == "1 fA");
 }
 
 TEST_CASE("GIVEN a 1 pico ampere WHEN passed to a streaming operator THEN "
@@ -199,7 +199,7 @@ TEST_CASE("GIVEN a 1 pico ampere WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pA");
+  REQUIRE(ss.str() == "1 pA");
 }
 
 TEST_CASE("GIVEN a 1 nano ampere WHEN passed to a streaming operator THEN "
@@ -208,7 +208,7 @@ TEST_CASE("GIVEN a 1 nano ampere WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nA");
+  REQUIRE(ss.str() == "1 nA");
 }
 
 TEST_CASE("GIVEN a 1 micro ampere WHEN passed to a streaming operator THEN "
@@ -217,7 +217,7 @@ TEST_CASE("GIVEN a 1 micro ampere WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uA");
+  REQUIRE(ss.str() == "1 uA");
 }
 
 TEST_CASE("GIVEN a 1 milli ampere WHEN passed to a streaming operator THEN "
@@ -226,7 +226,7 @@ TEST_CASE("GIVEN a 1 milli ampere WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mA");
+  REQUIRE(ss.str() == "1 mA");
 }
 
 TEST_CASE("GIVEN a 1 ampere WHEN passed to a streaming operator THEN result is "
@@ -235,7 +235,7 @@ TEST_CASE("GIVEN a 1 ampere WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1A");
+  REQUIRE(ss.str() == "1 A");
 }
 
 TEST_CASE("GIVEN a 1 kilo ampere WHEN passed to a streaming operator THEN "
@@ -244,7 +244,7 @@ TEST_CASE("GIVEN a 1 kilo ampere WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kA");
+  REQUIRE(ss.str() == "1 kA");
 }
 
 TEST_CASE("GIVEN a 1 mega ampere WHEN passed to a streaming operator THEN "
@@ -253,7 +253,7 @@ TEST_CASE("GIVEN a 1 mega ampere WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MA");
+  REQUIRE(ss.str() == "1 MA");
 }
 
 TEST_CASE("GIVEN a 1 giga ampere WHEN passed to a streaming operator THEN "
@@ -262,7 +262,7 @@ TEST_CASE("GIVEN a 1 giga ampere WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GA");
+  REQUIRE(ss.str() == "1 GA");
 }
 
 TEST_CASE("GIVEN a 1 tera ampere WHEN passed to a streaming operator THEN "
@@ -271,7 +271,7 @@ TEST_CASE("GIVEN a 1 tera ampere WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TA");
+  REQUIRE(ss.str() == "1 TA");
 }
 
 TEST_CASE("GIVEN a 1 exa ampere WHEN passed to a streaming operator THEN "
@@ -280,7 +280,7 @@ TEST_CASE("GIVEN a 1 exa ampere WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1EA");
+  REQUIRE(ss.str() == "1 EA");
 }
 
 TEST_CASE("GIVEN a 1 peta ampere WHEN passed to a streaming operator THEN "
@@ -289,7 +289,7 @@ TEST_CASE("GIVEN a 1 peta ampere WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PA");
+  REQUIRE(ss.str() == "1 PA");
 }
 
 TEST_CASE(

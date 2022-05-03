@@ -211,7 +211,7 @@ TEST_CASE("GIVEN a 1 atto Weber WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aWb");
+  REQUIRE(ss.str() == "1 aWb");
 }
 
 TEST_CASE("GIVEN a 1 femto Weber WHEN passed to a streaming operator WHEN "
@@ -220,7 +220,7 @@ TEST_CASE("GIVEN a 1 femto Weber WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fWb");
+  REQUIRE(ss.str() == "1 fWb");
 }
 
 TEST_CASE("GIVEN a 1 pico Weber WHEN passed to a streaming operator WHEN "
@@ -229,7 +229,7 @@ TEST_CASE("GIVEN a 1 pico Weber WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pWb");
+  REQUIRE(ss.str() == "1 pWb");
 }
 
 TEST_CASE("GIVEN a 1 nano Weber WHEN passed to a streaming operator WHEN "
@@ -238,7 +238,7 @@ TEST_CASE("GIVEN a 1 nano Weber WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nWb");
+  REQUIRE(ss.str() == "1 nWb");
 }
 
 TEST_CASE("GIVEN a 1 micro Weber WHEN passed to a streaming operator WHEN "
@@ -247,7 +247,7 @@ TEST_CASE("GIVEN a 1 micro Weber WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uWb");
+  REQUIRE(ss.str() == "1 uWb");
 }
 
 TEST_CASE("GIVEN a 1 milli Weber WHEN passed to a streaming operator WHEN "
@@ -256,7 +256,7 @@ TEST_CASE("GIVEN a 1 milli Weber WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mWb");
+  REQUIRE(ss.str() == "1 mWb");
 }
 
 TEST_CASE("GIVEN a 1 Weber WHEN passed to a streaming operator WHEN result is "
@@ -265,7 +265,7 @@ TEST_CASE("GIVEN a 1 Weber WHEN passed to a streaming operator WHEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Wb");
+  REQUIRE(ss.str() == "1 Wb");
 }
 
 TEST_CASE("GIVEN a 1 kilo Weber WHEN passed to a streaming operator WHEN "
@@ -274,7 +274,7 @@ TEST_CASE("GIVEN a 1 kilo Weber WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kWb");
+  REQUIRE(ss.str() == "1 kWb");
 }
 
 TEST_CASE("GIVEN a 1 mega Weber WHEN passed to a streaming operator WHEN "
@@ -283,7 +283,7 @@ TEST_CASE("GIVEN a 1 mega Weber WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MWb");
+  REQUIRE(ss.str() == "1 MWb");
 }
 
 TEST_CASE("GIVEN a 1 giga Weber WHEN passed to a streaming operator WHEN "
@@ -292,7 +292,7 @@ TEST_CASE("GIVEN a 1 giga Weber WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GWb");
+  REQUIRE(ss.str() == "1 GWb");
 }
 
 TEST_CASE("GIVEN a 1 tera Weber WHEN passed to a streaming operator WHEN "
@@ -301,7 +301,7 @@ TEST_CASE("GIVEN a 1 tera Weber WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TWb");
+  REQUIRE(ss.str() == "1 TWb");
 }
 
 TEST_CASE("GIVEN a 1 exa Weber WHEN passed to a streaming operator WHEN "
@@ -310,7 +310,7 @@ TEST_CASE("GIVEN a 1 exa Weber WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1EWb");
+  REQUIRE(ss.str() == "1 EWb");
 }
 
 TEST_CASE("GIVEN a 1 peta Weber WHEN passed to a streaming operator WHEN "
@@ -319,7 +319,7 @@ TEST_CASE("GIVEN a 1 peta Weber WHEN passed to a streaming operator WHEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PWb");
+  REQUIRE(ss.str() == "1 PWb");
 }
 
 TEST_CASE(

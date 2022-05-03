@@ -211,7 +211,7 @@ TEST_CASE("GIVEN a 1 atto metre WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1am");
+  REQUIRE(ss.str() == "1 am");
 }
 
 TEST_CASE("GIVEN a 1 femto metre WHEN passed to a streaming operator THEN "
@@ -220,7 +220,7 @@ TEST_CASE("GIVEN a 1 femto metre WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fm");
+  REQUIRE(ss.str() == "1 fm");
 }
 
 TEST_CASE("GIVEN a 1 pico metre WHEN passed to a streaming operator THEN "
@@ -229,7 +229,7 @@ TEST_CASE("GIVEN a 1 pico metre WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pm");
+  REQUIRE(ss.str() == "1 pm");
 }
 
 TEST_CASE("GIVEN a 1 nano metre WHEN passed to a streaming operator THEN "
@@ -238,7 +238,7 @@ TEST_CASE("GIVEN a 1 nano metre WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nm");
+  REQUIRE(ss.str() == "1 nm");
 }
 
 TEST_CASE("GIVEN a 1 micro metre WHEN passed to a streaming operator THEN "
@@ -247,7 +247,7 @@ TEST_CASE("GIVEN a 1 micro metre WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1um");
+  REQUIRE(ss.str() == "1 um");
 }
 
 TEST_CASE("GIVEN a 1 milli metre WHEN passed to a streaming operator THEN "
@@ -256,7 +256,7 @@ TEST_CASE("GIVEN a 1 milli metre WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mm");
+  REQUIRE(ss.str() == "1 mm");
 }
 
 TEST_CASE("GIVEN a 1 centi metre WHEN passed to a streaming operator THEN "
@@ -265,7 +265,7 @@ TEST_CASE("GIVEN a 1 centi metre WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1cm");
+  REQUIRE(ss.str() == "1 cm");
 }
 
 TEST_CASE(
@@ -274,7 +274,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1m");
+  REQUIRE(ss.str() == "1 m");
 }
 
 TEST_CASE("GIVEN a 1 kilo metre WHEN passed to a streaming operator THEN "
@@ -283,7 +283,7 @@ TEST_CASE("GIVEN a 1 kilo metre WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1km");
+  REQUIRE(ss.str() == "1 km");
 }
 
 TEST_CASE("GIVEN a 1 mega metre WHEN passed to a streaming operator THEN "
@@ -292,7 +292,7 @@ TEST_CASE("GIVEN a 1 mega metre WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Mm");
+  REQUIRE(ss.str() == "1 Mm");
 }
 
 TEST_CASE("GIVEN a 1 giga metre WHEN passed to a streaming operator THEN "
@@ -301,7 +301,7 @@ TEST_CASE("GIVEN a 1 giga metre WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Gm");
+  REQUIRE(ss.str() == "1 Gm");
 }
 
 TEST_CASE("GIVEN a 1 tera metre WHEN passed to a streaming operator THEN "
@@ -310,7 +310,7 @@ TEST_CASE("GIVEN a 1 tera metre WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Tm");
+  REQUIRE(ss.str() == "1 Tm");
 }
 
 TEST_CASE("GIVEN a 1 exa metre WHEN passed to a streaming operator THEN "
@@ -319,7 +319,7 @@ TEST_CASE("GIVEN a 1 exa metre WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Em");
+  REQUIRE(ss.str() == "1 Em");
 }
 
 TEST_CASE("GIVEN a 1 peta metre WHEN passed to a streaming operator THEN "
@@ -328,7 +328,7 @@ TEST_CASE("GIVEN a 1 peta metre WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Pm");
+  REQUIRE(ss.str() == "1 Pm");
 }
 
 TEST_CASE(

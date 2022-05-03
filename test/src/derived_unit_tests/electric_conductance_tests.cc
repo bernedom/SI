@@ -262,7 +262,7 @@ TEST_CASE("GIVEN a 1 atto Siemens WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aS");
+  REQUIRE(ss.str() == "1 aS");
 }
 
 TEST_CASE("GIVEN a 1 femto Siemens WHEN passed to a streaming operator THEN "
@@ -272,7 +272,7 @@ TEST_CASE("GIVEN a 1 femto Siemens WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fS");
+  REQUIRE(ss.str() == "1 fS");
 }
 
 TEST_CASE("GIVEN a 1 pico Siemens WHEN passed to a streaming operator THEN "
@@ -282,7 +282,7 @@ TEST_CASE("GIVEN a 1 pico Siemens WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pS");
+  REQUIRE(ss.str() == "1 pS");
 }
 
 TEST_CASE("GIVEN a 1 nano Siemens WHEN passed to a streaming operator THEN "
@@ -292,7 +292,7 @@ TEST_CASE("GIVEN a 1 nano Siemens WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nS");
+  REQUIRE(ss.str() == "1 nS");
 }
 
 TEST_CASE("GIVEN a 1 micro Siemens WHEN passed to a streaming operator THEN "
@@ -302,7 +302,7 @@ TEST_CASE("GIVEN a 1 micro Siemens WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uS");
+  REQUIRE(ss.str() == "1 uS");
 }
 
 TEST_CASE("GIVEN a 1 milli Siemens WHEN passed to a streaming operator THEN "
@@ -312,7 +312,7 @@ TEST_CASE("GIVEN a 1 milli Siemens WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mS");
+  REQUIRE(ss.str() == "1 mS");
 }
 
 TEST_CASE(
@@ -323,7 +323,7 @@ TEST_CASE(
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1S");
+  REQUIRE(ss.str() == "1 S");
 }
 
 TEST_CASE("GIVEN a 1 kilo Siemens WHEN passed to a streaming operator THEN "
@@ -333,7 +333,7 @@ TEST_CASE("GIVEN a 1 kilo Siemens WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kS");
+  REQUIRE(ss.str() == "1 kS");
 }
 
 TEST_CASE("GIVEN a 1 mega Siemens WHEN passed to a streaming operator THEN "
@@ -343,7 +343,7 @@ TEST_CASE("GIVEN a 1 mega Siemens WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MS");
+  REQUIRE(ss.str() == "1 MS");
 }
 
 TEST_CASE("GIVEN a 1 giga Siemens WHEN passed to a streaming operator THEN "
@@ -353,7 +353,7 @@ TEST_CASE("GIVEN a 1 giga Siemens WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GS");
+  REQUIRE(ss.str() == "1 GS");
 }
 
 TEST_CASE("GIVEN a 1 tera Siemens WHEN passed to a streaming operator THEN "
@@ -363,7 +363,7 @@ TEST_CASE("GIVEN a 1 tera Siemens WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TS");
+  REQUIRE(ss.str() == "1 TS");
 }
 
 TEST_CASE("GIVEN a 1 exa Siemens WHEN passed to a streaming operator THEN "
@@ -373,7 +373,7 @@ TEST_CASE("GIVEN a 1 exa Siemens WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1ES");
+  REQUIRE(ss.str() == "1 ES");
 }
 
 TEST_CASE("GIVEN a 1 peta Siemens WHEN passed to a streaming operator THEN "
@@ -383,7 +383,7 @@ TEST_CASE("GIVEN a 1 peta Siemens WHEN passed to a streaming operator THEN "
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PS");
+  REQUIRE(ss.str() == "1 PS");
 }
 
 TEST_CASE(

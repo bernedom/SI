@@ -226,7 +226,7 @@ TEST_CASE("GIVEN a 1 atto Lux WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1alx");
+  REQUIRE(ss.str() == "1 alx");
 }
 
 TEST_CASE("GIVEN a 1 femto Lux WHEN passed to a streaming operator THEN "
@@ -235,7 +235,7 @@ TEST_CASE("GIVEN a 1 femto Lux WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1flx");
+  REQUIRE(ss.str() == "1 flx");
 }
 
 TEST_CASE("GIVEN a 1 pico Lux WHEN passed to a streaming operator THEN "
@@ -244,7 +244,7 @@ TEST_CASE("GIVEN a 1 pico Lux WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1plx");
+  REQUIRE(ss.str() == "1 plx");
 }
 
 TEST_CASE("GIVEN a 1 nano Lux WHEN passed to a streaming operator THEN "
@@ -253,7 +253,7 @@ TEST_CASE("GIVEN a 1 nano Lux WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nlx");
+  REQUIRE(ss.str() == "1 nlx");
 }
 
 TEST_CASE("GIVEN a 1 micro Lux WHEN passed to a streaming operator THEN "
@@ -262,7 +262,7 @@ TEST_CASE("GIVEN a 1 micro Lux WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1ulx");
+  REQUIRE(ss.str() == "1 ulx");
 }
 
 TEST_CASE("GIVEN a 1 milli Lux WHEN passed to a streaming operator THEN "
@@ -271,7 +271,7 @@ TEST_CASE("GIVEN a 1 milli Lux WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mlx");
+  REQUIRE(ss.str() == "1 mlx");
 }
 
 TEST_CASE("GIVEN a 1 Lux WHEN passed to a streaming operator THEN result is "
@@ -280,7 +280,7 @@ TEST_CASE("GIVEN a 1 Lux WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1lx");
+  REQUIRE(ss.str() == "1 lx");
 }
 
 TEST_CASE("GIVEN a 1 kilo Lux WHEN passed to a streaming operator THEN "
@@ -289,7 +289,7 @@ TEST_CASE("GIVEN a 1 kilo Lux WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1klx");
+  REQUIRE(ss.str() == "1 klx");
 }
 
 TEST_CASE("GIVEN a 1 mega Lux WHEN passed to a streaming operator THEN "
@@ -298,7 +298,7 @@ TEST_CASE("GIVEN a 1 mega Lux WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Mlx");
+  REQUIRE(ss.str() == "1 Mlx");
 }
 
 TEST_CASE("GIVEN a 1 giga Lux WHEN passed to a streaming operator THEN "
@@ -307,7 +307,7 @@ TEST_CASE("GIVEN a 1 giga Lux WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Glx");
+  REQUIRE(ss.str() == "1 Glx");
 }
 
 TEST_CASE("GIVEN a 1 tera Lux WHEN passed to a streaming operator THEN "
@@ -316,7 +316,7 @@ TEST_CASE("GIVEN a 1 tera Lux WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Tlx");
+  REQUIRE(ss.str() == "1 Tlx");
 }
 
 TEST_CASE("GIVEN a 1 exa Lux WHEN passed to a streaming operator THEN "
@@ -325,7 +325,7 @@ TEST_CASE("GIVEN a 1 exa Lux WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Elx");
+  REQUIRE(ss.str() == "1 Elx");
 }
 
 TEST_CASE("GIVEN a 1 peta Lux WHEN passed to a streaming operator THEN "
@@ -334,7 +334,7 @@ TEST_CASE("GIVEN a 1 peta Lux WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Plx");
+  REQUIRE(ss.str() == "1 Plx");
 }
 
 TEST_CASE("GIVEN a string of '1alx' WHEN streamed into atto_lux_t THEN result "

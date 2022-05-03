@@ -225,7 +225,7 @@ TEST_CASE("GIVEN a 1 atto Lumen WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1alm");
+  REQUIRE(ss.str() == "1 alm");
 }
 
 TEST_CASE("GIVEN a 1 femto Lumen WHEN passed to a streaming operator THEN "
@@ -234,7 +234,7 @@ TEST_CASE("GIVEN a 1 femto Lumen WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1flm");
+  REQUIRE(ss.str() == "1 flm");
 }
 
 TEST_CASE("GIVEN a 1 pico Lumen WHEN passed to a streaming operator THEN "
@@ -243,7 +243,7 @@ TEST_CASE("GIVEN a 1 pico Lumen WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1plm");
+  REQUIRE(ss.str() == "1 plm");
 }
 
 TEST_CASE("GIVEN a 1 nano Lumen WHEN passed to a streaming operator THEN "
@@ -252,7 +252,7 @@ TEST_CASE("GIVEN a 1 nano Lumen WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nlm");
+  REQUIRE(ss.str() == "1 nlm");
 }
 
 TEST_CASE("GIVEN a 1 micro Lumen WHEN passed to a streaming operator THEN "
@@ -261,7 +261,7 @@ TEST_CASE("GIVEN a 1 micro Lumen WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1ulm");
+  REQUIRE(ss.str() == "1 ulm");
 }
 
 TEST_CASE("GIVEN a 1 milli Lumen WHEN passed to a streaming operator THEN "
@@ -270,7 +270,7 @@ TEST_CASE("GIVEN a 1 milli Lumen WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mlm");
+  REQUIRE(ss.str() == "1 mlm");
 }
 
 TEST_CASE("GIVEN a 1 Lumen WHEN passed to a streaming operator THEN result is "
@@ -279,7 +279,7 @@ TEST_CASE("GIVEN a 1 Lumen WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1lm");
+  REQUIRE(ss.str() == "1 lm");
 }
 
 TEST_CASE("GIVEN a 1 kilo Lumen WHEN passed to a streaming operator THEN "
@@ -288,7 +288,7 @@ TEST_CASE("GIVEN a 1 kilo Lumen WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1klm");
+  REQUIRE(ss.str() == "1 klm");
 }
 
 TEST_CASE("GIVEN a 1 mega Lumen WHEN passed to a streaming operator THEN "
@@ -297,7 +297,7 @@ TEST_CASE("GIVEN a 1 mega Lumen WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Mlm");
+  REQUIRE(ss.str() == "1 Mlm");
 }
 
 TEST_CASE("GIVEN a 1 giga Lumen WHEN passed to a streaming operator THEN "
@@ -306,7 +306,7 @@ TEST_CASE("GIVEN a 1 giga Lumen WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Glm");
+  REQUIRE(ss.str() == "1 Glm");
 }
 
 TEST_CASE("GIVEN a 1 tera Lumen WHEN passed to a streaming operator THEN "
@@ -315,7 +315,7 @@ TEST_CASE("GIVEN a 1 tera Lumen WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Tlm");
+  REQUIRE(ss.str() == "1 Tlm");
 }
 
 TEST_CASE("GIVEN a 1 exa Lumen WHEN passed to a streaming operator THEN "
@@ -324,7 +324,7 @@ TEST_CASE("GIVEN a 1 exa Lumen WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Elm");
+  REQUIRE(ss.str() == "1 Elm");
 }
 
 TEST_CASE("GIVEN a 1 peta Lumen WHEN passed to a streaming operator THEN "
@@ -333,7 +333,7 @@ TEST_CASE("GIVEN a 1 peta Lumen WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Plm");
+  REQUIRE(ss.str() == "1 Plm");
 }
 
 TEST_CASE(

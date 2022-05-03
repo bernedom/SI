@@ -277,7 +277,7 @@ TEST_CASE("GIVEN a 1 atto Volt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aV");
+  REQUIRE(ss.str() == "1 aV");
 }
 
 TEST_CASE("GIVEN a 1 femto Volt WHEN passed to a streaming operator THEN "
@@ -286,7 +286,7 @@ TEST_CASE("GIVEN a 1 femto Volt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fV");
+  REQUIRE(ss.str() == "1 fV");
 }
 
 TEST_CASE("GIVEN a 1 pico Volt WHEN passed to a streaming operator THEN "
@@ -295,7 +295,7 @@ TEST_CASE("GIVEN a 1 pico Volt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pV");
+  REQUIRE(ss.str() == "1 pV");
 }
 
 TEST_CASE("GIVEN a 1 nano Volt WHEN passed to a streaming operator THEN "
@@ -304,7 +304,7 @@ TEST_CASE("GIVEN a 1 nano Volt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nV");
+  REQUIRE(ss.str() == "1 nV");
 }
 
 TEST_CASE("GIVEN a 1 micro Volt WHEN passed to a streaming operator THEN "
@@ -313,7 +313,7 @@ TEST_CASE("GIVEN a 1 micro Volt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uV");
+  REQUIRE(ss.str() == "1 uV");
 }
 
 TEST_CASE("GIVEN a 1 milli Volt WHEN passed to a streaming operator THEN "
@@ -322,7 +322,7 @@ TEST_CASE("GIVEN a 1 milli Volt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mV");
+  REQUIRE(ss.str() == "1 mV");
 }
 
 TEST_CASE("GIVEN a 1 Volt WHEN passed to a streaming operator THEN result is "
@@ -331,7 +331,7 @@ TEST_CASE("GIVEN a 1 Volt WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1V");
+  REQUIRE(ss.str() == "1 V");
 }
 
 TEST_CASE("GIVEN a 1 kilo Volt WHEN passed to a streaming operator THEN "
@@ -340,7 +340,7 @@ TEST_CASE("GIVEN a 1 kilo Volt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kV");
+  REQUIRE(ss.str() == "1 kV");
 }
 
 TEST_CASE("GIVEN a 1 mega Volt WHEN passed to a streaming operator THEN "
@@ -349,7 +349,7 @@ TEST_CASE("GIVEN a 1 mega Volt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MV");
+  REQUIRE(ss.str() == "1 MV");
 }
 
 TEST_CASE("GIVEN a 1 giga Volt WHEN passed to a streaming operator THEN "
@@ -358,7 +358,7 @@ TEST_CASE("GIVEN a 1 giga Volt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GV");
+  REQUIRE(ss.str() == "1 GV");
 }
 
 TEST_CASE("GIVEN a 1 tera Volt WHEN passed to a streaming operator THEN "
@@ -367,7 +367,7 @@ TEST_CASE("GIVEN a 1 tera Volt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TV");
+  REQUIRE(ss.str() == "1 TV");
 }
 
 TEST_CASE("GIVEN a 1 exa Volt WHEN passed to a streaming operator THEN "
@@ -376,7 +376,7 @@ TEST_CASE("GIVEN a 1 exa Volt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1EV");
+  REQUIRE(ss.str() == "1 EV");
 }
 
 TEST_CASE("GIVEN a 1 peta Volt WHEN passed to a streaming operator THEN "
@@ -385,7 +385,7 @@ TEST_CASE("GIVEN a 1 peta Volt WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PV");
+  REQUIRE(ss.str() == "1 PV");
 }
 
 TEST_CASE("GIVEN a string of '1aV' WHEN streamed into atto_volt_t THEN result "

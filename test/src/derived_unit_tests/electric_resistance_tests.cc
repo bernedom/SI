@@ -269,7 +269,7 @@ TEST_CASE("GIVEN a 1 atto Ohm WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aOhm");
+  REQUIRE(ss.str() == "1 aOhm");
 }
 
 TEST_CASE("GIVEN a 1 femto Ohm WHEN passed to a streaming operator THEN "
@@ -278,7 +278,7 @@ TEST_CASE("GIVEN a 1 femto Ohm WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fOhm");
+  REQUIRE(ss.str() == "1 fOhm");
 }
 
 TEST_CASE("GIVEN a 1 pico Ohm WHEN passed to a streaming operator THEN "
@@ -287,7 +287,7 @@ TEST_CASE("GIVEN a 1 pico Ohm WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pOhm");
+  REQUIRE(ss.str() == "1 pOhm");
 }
 
 TEST_CASE("GIVEN a 1 nano Ohm WHEN passed to a streaming operator THEN "
@@ -296,7 +296,7 @@ TEST_CASE("GIVEN a 1 nano Ohm WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nOhm");
+  REQUIRE(ss.str() == "1 nOhm");
 }
 
 TEST_CASE("GIVEN a 1 micro Ohm WHEN passed to a streaming operator THEN "
@@ -305,7 +305,7 @@ TEST_CASE("GIVEN a 1 micro Ohm WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uOhm");
+  REQUIRE(ss.str() == "1 uOhm");
 }
 
 TEST_CASE("GIVEN a 1 milli Ohm WHEN passed to a streaming operator THEN "
@@ -314,7 +314,7 @@ TEST_CASE("GIVEN a 1 milli Ohm WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mOhm");
+  REQUIRE(ss.str() == "1 mOhm");
 }
 
 TEST_CASE("GIVEN a 1 Ohm WHEN passed to a streaming operator THEN result is "
@@ -323,7 +323,7 @@ TEST_CASE("GIVEN a 1 Ohm WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Ohm");
+  REQUIRE(ss.str() == "1 Ohm");
 }
 
 TEST_CASE("GIVEN a 1 kilo Ohm WHEN passed to a streaming operator THEN "
@@ -332,7 +332,7 @@ TEST_CASE("GIVEN a 1 kilo Ohm WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kOhm");
+  REQUIRE(ss.str() == "1 kOhm");
 }
 
 TEST_CASE("GIVEN a 1 mega Ohm WHEN passed to a streaming operator THEN "
@@ -341,7 +341,7 @@ TEST_CASE("GIVEN a 1 mega Ohm WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MOhm");
+  REQUIRE(ss.str() == "1 MOhm");
 }
 
 TEST_CASE("GIVEN a 1 giga Ohm WHEN passed to a streaming operator THEN "
@@ -350,7 +350,7 @@ TEST_CASE("GIVEN a 1 giga Ohm WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GOhm");
+  REQUIRE(ss.str() == "1 GOhm");
 }
 
 TEST_CASE("GIVEN a 1 tera Ohm WHEN passed to a streaming operator THEN "
@@ -359,7 +359,7 @@ TEST_CASE("GIVEN a 1 tera Ohm WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TOhm");
+  REQUIRE(ss.str() == "1 TOhm");
 }
 
 TEST_CASE("GIVEN a 1 exa Ohm WHEN passed to a streaming operator THEN "
@@ -368,7 +368,7 @@ TEST_CASE("GIVEN a 1 exa Ohm WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1EOhm");
+  REQUIRE(ss.str() == "1 EOhm");
 }
 
 TEST_CASE("GIVEN a 1 peta Ohm WHEN passed to a streaming operator THEN "
@@ -377,7 +377,7 @@ TEST_CASE("GIVEN a 1 peta Ohm WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1POhm");
+  REQUIRE(ss.str() == "1 POhm");
 }
 
 TEST_CASE("GIVEN a string of '1aOhm' WHEN streamed into atto_ohm_t THEN result "

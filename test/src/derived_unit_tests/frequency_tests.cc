@@ -179,7 +179,7 @@ TEST_CASE("GIVEN a 1 atto Hertz WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aHz");
+  REQUIRE(ss.str() == "1 aHz");
 }
 
 TEST_CASE("GIVEN a 1 femto Hertz WHEN passed to a streaming operator THEN "
@@ -188,7 +188,7 @@ TEST_CASE("GIVEN a 1 femto Hertz WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fHz");
+  REQUIRE(ss.str() == "1 fHz");
 }
 
 TEST_CASE("GIVEN a 1 pico Hertz WHEN passed to a streaming operator THEN "
@@ -197,7 +197,7 @@ TEST_CASE("GIVEN a 1 pico Hertz WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pHz");
+  REQUIRE(ss.str() == "1 pHz");
 }
 
 TEST_CASE("GIVEN a 1 nano Hertz WHEN passed to a streaming operator THEN "
@@ -206,7 +206,7 @@ TEST_CASE("GIVEN a 1 nano Hertz WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nHz");
+  REQUIRE(ss.str() == "1 nHz");
 }
 
 TEST_CASE("GIVEN a 1 micro Hertz WHEN passed to a streaming operator THEN "
@@ -215,7 +215,7 @@ TEST_CASE("GIVEN a 1 micro Hertz WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uHz");
+  REQUIRE(ss.str() == "1 uHz");
 }
 
 TEST_CASE("GIVEN a 1 milli Hertz WHEN passed to a streaming operator THEN "
@@ -224,7 +224,7 @@ TEST_CASE("GIVEN a 1 milli Hertz WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mHz");
+  REQUIRE(ss.str() == "1 mHz");
 }
 
 TEST_CASE("GIVEN a 1 Hertz WHEN passed to a streaming operator THEN result is "
@@ -233,7 +233,7 @@ TEST_CASE("GIVEN a 1 Hertz WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Hz");
+  REQUIRE(ss.str() == "1 Hz");
 }
 
 TEST_CASE("GIVEN a 1 kilo Hertz WHEN passed to a streaming operator THEN "
@@ -242,7 +242,7 @@ TEST_CASE("GIVEN a 1 kilo Hertz WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kHz");
+  REQUIRE(ss.str() == "1 kHz");
 }
 
 TEST_CASE("GIVEN a 1 mega Hertz WHEN passed to a streaming operator THEN "
@@ -251,7 +251,7 @@ TEST_CASE("GIVEN a 1 mega Hertz WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MHz");
+  REQUIRE(ss.str() == "1 MHz");
 }
 
 TEST_CASE("GIVEN a 1 giga Hertz WHEN passed to a streaming operator THEN "
@@ -260,7 +260,7 @@ TEST_CASE("GIVEN a 1 giga Hertz WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GHz");
+  REQUIRE(ss.str() == "1 GHz");
 }
 
 TEST_CASE("GIVEN a 1 tera Hertz WHEN passed to a streaming operator THEN "
@@ -269,7 +269,7 @@ TEST_CASE("GIVEN a 1 tera Hertz WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1THz");
+  REQUIRE(ss.str() == "1 THz");
 }
 
 TEST_CASE("GIVEN a 1 exa Hertz WHEN passed to a streaming operator THEN "
@@ -278,7 +278,7 @@ TEST_CASE("GIVEN a 1 exa Hertz WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1EHz");
+  REQUIRE(ss.str() == "1 EHz");
 }
 
 TEST_CASE("GIVEN a 1 peta Hertz WHEN passed to a streaming operator THEN "
@@ -287,7 +287,7 @@ TEST_CASE("GIVEN a 1 peta Hertz WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PHz");
+  REQUIRE(ss.str() == "1 PHz");
 }
 
 TEST_CASE(

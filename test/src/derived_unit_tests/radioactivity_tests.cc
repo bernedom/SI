@@ -180,7 +180,7 @@ TEST_CASE("GIVEN a 1 atto becquerel WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aBq");
+  REQUIRE(ss.str() == "1 aBq");
 }
 
 TEST_CASE("GIVEN a 1 femto becquerel WHEN passed to a streaming operator THEN "
@@ -189,7 +189,7 @@ TEST_CASE("GIVEN a 1 femto becquerel WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fBq");
+  REQUIRE(ss.str() == "1 fBq");
 }
 
 TEST_CASE("GIVEN a 1 pico becquerel WHEN passed to a streaming operator THEN "
@@ -198,7 +198,7 @@ TEST_CASE("GIVEN a 1 pico becquerel WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pBq");
+  REQUIRE(ss.str() == "1 pBq");
 }
 
 TEST_CASE("GIVEN a 1 nano becquerel WHEN passed to a streaming operator THEN "
@@ -207,7 +207,7 @@ TEST_CASE("GIVEN a 1 nano becquerel WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nBq");
+  REQUIRE(ss.str() == "1 nBq");
 }
 
 TEST_CASE("GIVEN a 1 micro becquerel WHEN passed to a streaming operator THEN "
@@ -216,7 +216,7 @@ TEST_CASE("GIVEN a 1 micro becquerel WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uBq");
+  REQUIRE(ss.str() == "1 uBq");
 }
 
 TEST_CASE("GIVEN a 1 milli becquerel WHEN passed to a streaming operator THEN "
@@ -225,7 +225,7 @@ TEST_CASE("GIVEN a 1 milli becquerel WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mBq");
+  REQUIRE(ss.str() == "1 mBq");
 }
 
 TEST_CASE(
@@ -235,7 +235,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Bq");
+  REQUIRE(ss.str() == "1 Bq");
 }
 
 TEST_CASE("GIVEN a 1 kilo becquerel WHEN passed to a streaming operator THEN "
@@ -244,7 +244,7 @@ TEST_CASE("GIVEN a 1 kilo becquerel WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kBq");
+  REQUIRE(ss.str() == "1 kBq");
 }
 
 TEST_CASE("GIVEN a 1 mega becquerel WHEN passed to a streaming operator THEN "
@@ -253,7 +253,7 @@ TEST_CASE("GIVEN a 1 mega becquerel WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MBq");
+  REQUIRE(ss.str() == "1 MBq");
 }
 
 TEST_CASE("GIVEN a 1 giga becquerel WHEN passed to a streaming operator THEN "
@@ -262,7 +262,7 @@ TEST_CASE("GIVEN a 1 giga becquerel WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GBq");
+  REQUIRE(ss.str() == "1 GBq");
 }
 
 TEST_CASE("GIVEN a 1 tera becquerel WHEN passed to a streaming operator THEN "
@@ -271,7 +271,7 @@ TEST_CASE("GIVEN a 1 tera becquerel WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TBq");
+  REQUIRE(ss.str() == "1 TBq");
 }
 
 TEST_CASE("GIVEN a 1 exa becquerel WHEN passed to a streaming operator THEN "
@@ -280,7 +280,7 @@ TEST_CASE("GIVEN a 1 exa becquerel WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1EBq");
+  REQUIRE(ss.str() == "1 EBq");
 }
 
 TEST_CASE("GIVEN a 1 peta becquerel WHEN passed to a streaming operator THEN "
@@ -289,7 +289,7 @@ TEST_CASE("GIVEN a 1 peta becquerel WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PBq");
+  REQUIRE(ss.str() == "1 PBq");
 }
 
 TEST_CASE(

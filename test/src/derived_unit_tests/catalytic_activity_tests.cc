@@ -228,7 +228,7 @@ TEST_CASE("GIVEN a 1 atto katal WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1akat");
+  REQUIRE(ss.str() == "1 akat");
 }
 
 TEST_CASE("GIVEN a 1 femto katal WHEN passed to a streaming operator THEN "
@@ -237,7 +237,7 @@ TEST_CASE("GIVEN a 1 femto katal WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fkat");
+  REQUIRE(ss.str() == "1 fkat");
 }
 
 TEST_CASE("GIVEN a 1 pico katal WHEN passed to a streaming operator THEN "
@@ -246,7 +246,7 @@ TEST_CASE("GIVEN a 1 pico katal WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pkat");
+  REQUIRE(ss.str() == "1 pkat");
 }
 
 TEST_CASE("GIVEN a 1 nano katal WHEN passed to a streaming operator THEN "
@@ -255,7 +255,7 @@ TEST_CASE("GIVEN a 1 nano katal WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nkat");
+  REQUIRE(ss.str() == "1 nkat");
 }
 
 TEST_CASE("GIVEN a 1 micro katal WHEN passed to a streaming operator THEN "
@@ -264,7 +264,7 @@ TEST_CASE("GIVEN a 1 micro katal WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1ukat");
+  REQUIRE(ss.str() == "1 ukat");
 }
 
 TEST_CASE("GIVEN a 1 milli katal WHEN passed to a streaming operator THEN "
@@ -273,7 +273,7 @@ TEST_CASE("GIVEN a 1 milli katal WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mkat");
+  REQUIRE(ss.str() == "1 mkat");
 }
 
 TEST_CASE("GIVEN a 1 katal WHEN passed to a streaming operator THEN result is "
@@ -282,7 +282,7 @@ TEST_CASE("GIVEN a 1 katal WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kat");
+  REQUIRE(ss.str() == "1 kat");
 }
 
 TEST_CASE("GIVEN a 1 kilo katal WHEN passed to a streaming operator THEN "
@@ -291,7 +291,7 @@ TEST_CASE("GIVEN a 1 kilo katal WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kkat");
+  REQUIRE(ss.str() == "1 kkat");
 }
 
 TEST_CASE("GIVEN a 1 mega katal WHEN passed to a streaming operator THEN "
@@ -300,7 +300,7 @@ TEST_CASE("GIVEN a 1 mega katal WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Mkat");
+  REQUIRE(ss.str() == "1 Mkat");
 }
 
 TEST_CASE("GIVEN a 1 giga katal WHEN passed to a streaming operator THEN "
@@ -309,7 +309,7 @@ TEST_CASE("GIVEN a 1 giga katal WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Gkat");
+  REQUIRE(ss.str() == "1 Gkat");
 }
 
 TEST_CASE("GIVEN a 1 tera katal WHEN passed to a streaming operator THEN "
@@ -318,7 +318,7 @@ TEST_CASE("GIVEN a 1 tera katal WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Tkat");
+  REQUIRE(ss.str() == "1 Tkat");
 }
 
 TEST_CASE("GIVEN a 1 exa katal WHEN passed to a streaming operator THEN "
@@ -327,7 +327,7 @@ TEST_CASE("GIVEN a 1 exa katal WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Ekat");
+  REQUIRE(ss.str() == "1 Ekat");
 }
 
 TEST_CASE("GIVEN a 1 peta katal WHEN passed to a streaming operator THEN "
@@ -336,7 +336,7 @@ TEST_CASE("GIVEN a 1 peta katal WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Pkat");
+  REQUIRE(ss.str() == "1 Pkat");
 }
 
 TEST_CASE(

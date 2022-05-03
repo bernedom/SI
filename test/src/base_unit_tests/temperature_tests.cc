@@ -181,7 +181,7 @@ TEST_CASE("GIVEN a 1 atto Kelvin WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aK");
+  REQUIRE(ss.str() == "1 aK");
 }
 
 TEST_CASE("GIVEN a 1 femto Kelvin WHEN passed to a streaming operator THEN "
@@ -190,7 +190,7 @@ TEST_CASE("GIVEN a 1 femto Kelvin WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fK");
+  REQUIRE(ss.str() == "1 fK");
 }
 
 TEST_CASE("GIVEN a 1 pico Kelvin WHEN passed to a streaming operator THEN "
@@ -199,7 +199,7 @@ TEST_CASE("GIVEN a 1 pico Kelvin WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pK");
+  REQUIRE(ss.str() == "1 pK");
 }
 
 TEST_CASE("GIVEN a 1 nano Kelvin WHEN passed to a streaming operator THEN "
@@ -208,7 +208,7 @@ TEST_CASE("GIVEN a 1 nano Kelvin WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nK");
+  REQUIRE(ss.str() == "1 nK");
 }
 
 TEST_CASE("GIVEN a 1 micro Kelvin WHEN passed to a streaming operator THEN "
@@ -217,7 +217,7 @@ TEST_CASE("GIVEN a 1 micro Kelvin WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uK");
+  REQUIRE(ss.str() == "1 uK");
 }
 
 TEST_CASE("GIVEN a 1 milli Kelvin WHEN passed to a streaming operator THEN "
@@ -226,7 +226,7 @@ TEST_CASE("GIVEN a 1 milli Kelvin WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mK");
+  REQUIRE(ss.str() == "1 mK");
 }
 
 TEST_CASE("GIVEN a 1 Kelvin WHEN passed to a streaming operator THEN result is "
@@ -235,7 +235,7 @@ TEST_CASE("GIVEN a 1 Kelvin WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1K");
+  REQUIRE(ss.str() == "1 K");
 }
 
 TEST_CASE("GIVEN a 1 kilo Kelvin WHEN passed to a streaming operator THEN "
@@ -244,7 +244,7 @@ TEST_CASE("GIVEN a 1 kilo Kelvin WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kK");
+  REQUIRE(ss.str() == "1 kK");
 }
 
 TEST_CASE("GIVEN a 1 mega Kelvin WHEN passed to a streaming operator THEN "
@@ -253,7 +253,7 @@ TEST_CASE("GIVEN a 1 mega Kelvin WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MK");
+  REQUIRE(ss.str() == "1 MK");
 }
 
 TEST_CASE("GIVEN a 1 giga Kelvin WHEN passed to a streaming operator THEN "
@@ -262,7 +262,7 @@ TEST_CASE("GIVEN a 1 giga Kelvin WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GK");
+  REQUIRE(ss.str() == "1 GK");
 }
 
 TEST_CASE("GIVEN a 1 tera Kelvin WHEN passed to a streaming operator THEN "
@@ -271,7 +271,7 @@ TEST_CASE("GIVEN a 1 tera Kelvin WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TK");
+  REQUIRE(ss.str() == "1 TK");
 }
 
 TEST_CASE("GIVEN a 1 exa Kelvin WHEN passed to a streaming operator THEN "
@@ -280,7 +280,7 @@ TEST_CASE("GIVEN a 1 exa Kelvin WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1EK");
+  REQUIRE(ss.str() == "1 EK");
 }
 
 TEST_CASE("GIVEN a 1 peta Kelvin WHEN passed to a streaming operator THEN "
@@ -289,7 +289,7 @@ TEST_CASE("GIVEN a 1 peta Kelvin WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PK");
+  REQUIRE(ss.str() == "1 PK");
 }
 TEST_CASE(
     "GIVEN a string of '1aK' WHEN streamed into atto_kelvin_t THEN result "

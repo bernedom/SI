@@ -181,7 +181,7 @@ TEST_CASE("GIVEN a 1 atto Gray WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aGy");
+  REQUIRE(ss.str() == "1 aGy");
 }
 
 TEST_CASE("GIVEN a 1 femto Gray WHEN passed to a streaming operator THEN "
@@ -190,7 +190,7 @@ TEST_CASE("GIVEN a 1 femto Gray WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fGy");
+  REQUIRE(ss.str() == "1 fGy");
 }
 
 TEST_CASE("GIVEN a 1 pico Gray WHEN passed to a streaming operator THEN "
@@ -199,7 +199,7 @@ TEST_CASE("GIVEN a 1 pico Gray WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pGy");
+  REQUIRE(ss.str() == "1 pGy");
 }
 
 TEST_CASE("GIVEN a 1 nano Gray WHEN passed to a streaming operator THEN "
@@ -208,7 +208,7 @@ TEST_CASE("GIVEN a 1 nano Gray WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nGy");
+  REQUIRE(ss.str() == "1 nGy");
 }
 
 TEST_CASE("GIVEN a 1 micro Gray WHEN passed to a streaming operator THEN "
@@ -217,7 +217,7 @@ TEST_CASE("GIVEN a 1 micro Gray WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uGy");
+  REQUIRE(ss.str() == "1 uGy");
 }
 
 TEST_CASE("GIVEN a 1 milli Gray WHEN passed to a streaming operator THEN "
@@ -226,7 +226,7 @@ TEST_CASE("GIVEN a 1 milli Gray WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mGy");
+  REQUIRE(ss.str() == "1 mGy");
 }
 
 TEST_CASE("GIVEN a 1 Gray WHEN passed to a streaming operator THEN result is "
@@ -235,7 +235,7 @@ TEST_CASE("GIVEN a 1 Gray WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Gy");
+  REQUIRE(ss.str() == "1 Gy");
 }
 
 TEST_CASE("GIVEN a 1 kilo Gray WHEN passed to a streaming operator THEN "
@@ -244,7 +244,7 @@ TEST_CASE("GIVEN a 1 kilo Gray WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kGy");
+  REQUIRE(ss.str() == "1 kGy");
 }
 
 TEST_CASE("GIVEN a 1 mega Gray WHEN passed to a streaming operator THEN "
@@ -253,7 +253,7 @@ TEST_CASE("GIVEN a 1 mega Gray WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MGy");
+  REQUIRE(ss.str() == "1 MGy");
 }
 
 TEST_CASE("GIVEN a 1 giga Gray WHEN passed to a streaming operator THEN "
@@ -262,7 +262,7 @@ TEST_CASE("GIVEN a 1 giga Gray WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GGy");
+  REQUIRE(ss.str() == "1 GGy");
 }
 
 TEST_CASE("GIVEN a 1 tera Gray WHEN passed to a streaming operator THEN "
@@ -271,7 +271,7 @@ TEST_CASE("GIVEN a 1 tera Gray WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TGy");
+  REQUIRE(ss.str() == "1 TGy");
 }
 
 TEST_CASE("GIVEN a 1 exa Gray WHEN passed to a streaming operator THEN "
@@ -280,7 +280,7 @@ TEST_CASE("GIVEN a 1 exa Gray WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1EGy");
+  REQUIRE(ss.str() == "1 EGy");
 }
 
 TEST_CASE("GIVEN a 1 peta Gray WHEN passed to a streaming operator THEN "
@@ -289,7 +289,7 @@ TEST_CASE("GIVEN a 1 peta Gray WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PGy");
+  REQUIRE(ss.str() == "1 PGy");
 }
 
 TEST_CASE("GIVEN a string of '1aGy' WHEN streamed into atto_gray_t THEN result "

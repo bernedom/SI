@@ -201,7 +201,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mm2");
+  REQUIRE(ss.str() == "1 mm2");
 }
 
 TEST_CASE(
@@ -211,7 +211,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1cm2");
+  REQUIRE(ss.str() == "1 cm2");
 }
 
 TEST_CASE(
@@ -221,7 +221,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1m2");
+  REQUIRE(ss.str() == "1 m2");
 }
 
 TEST_CASE("GIVEN a 1 cubic millimetre WHEN passed to a streaming operator THEN "
@@ -230,7 +230,7 @@ TEST_CASE("GIVEN a 1 cubic millimetre WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mm3");
+  REQUIRE(ss.str() == "1 mm3");
 }
 
 TEST_CASE(
@@ -240,7 +240,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1cm3");
+  REQUIRE(ss.str() == "1 cm3");
 }
 
 TEST_CASE(
@@ -250,7 +250,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1m3");
+  REQUIRE(ss.str() == "1 m3");
 }
 
 TEST_CASE("GIVEN a string of '1mm2' WHEN streamed into square_milli_metre_t "

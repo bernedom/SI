@@ -207,7 +207,7 @@ TEST_CASE("GIVEN a 1 atto Newton WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aN");
+  REQUIRE(ss.str() == "1 aN");
 }
 
 TEST_CASE("GIVEN a 1 femto Newton WHEN passed to a streaming operator THEN "
@@ -216,7 +216,7 @@ TEST_CASE("GIVEN a 1 femto Newton WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fN");
+  REQUIRE(ss.str() == "1 fN");
 }
 
 TEST_CASE("GIVEN a 1 pico Newton WHEN passed to a streaming operator THEN "
@@ -225,7 +225,7 @@ TEST_CASE("GIVEN a 1 pico Newton WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pN");
+  REQUIRE(ss.str() == "1 pN");
 }
 
 TEST_CASE("GIVEN a 1 nano Newton WHEN passed to a streaming operator THEN "
@@ -234,7 +234,7 @@ TEST_CASE("GIVEN a 1 nano Newton WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nN");
+  REQUIRE(ss.str() == "1 nN");
 }
 
 TEST_CASE("GIVEN a 1 micro Newton WHEN passed to a streaming operator THEN "
@@ -243,7 +243,7 @@ TEST_CASE("GIVEN a 1 micro Newton WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uN");
+  REQUIRE(ss.str() == "1 uN");
 }
 
 TEST_CASE("GIVEN a 1 milli Newton WHEN passed to a streaming operator THEN "
@@ -252,7 +252,7 @@ TEST_CASE("GIVEN a 1 milli Newton WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mN");
+  REQUIRE(ss.str() == "1 mN");
 }
 
 TEST_CASE("GIVEN a 1 Newton WHEN passed to a streaming operator THEN result is "
@@ -261,7 +261,7 @@ TEST_CASE("GIVEN a 1 Newton WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1N");
+  REQUIRE(ss.str() == "1 N");
 }
 
 TEST_CASE("GIVEN a 1 kilo Newton WHEN passed to a streaming operator THEN "
@@ -270,7 +270,7 @@ TEST_CASE("GIVEN a 1 kilo Newton WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kN");
+  REQUIRE(ss.str() == "1 kN");
 }
 
 TEST_CASE("GIVEN a 1 mega Newton WHEN passed to a streaming operator THEN "
@@ -279,7 +279,7 @@ TEST_CASE("GIVEN a 1 mega Newton WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MN");
+  REQUIRE(ss.str() == "1 MN");
 }
 
 TEST_CASE("GIVEN a 1 giga Newton WHEN passed to a streaming operator THEN "
@@ -288,7 +288,7 @@ TEST_CASE("GIVEN a 1 giga Newton WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GN");
+  REQUIRE(ss.str() == "1 GN");
 }
 
 TEST_CASE("GIVEN a 1 tera Newton WHEN passed to a streaming operator THEN "
@@ -297,7 +297,7 @@ TEST_CASE("GIVEN a 1 tera Newton WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TN");
+  REQUIRE(ss.str() == "1 TN");
 }
 
 TEST_CASE("GIVEN a 1 exa Newton WHEN passed to a streaming operator THEN "
@@ -306,7 +306,7 @@ TEST_CASE("GIVEN a 1 exa Newton WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1EN");
+  REQUIRE(ss.str() == "1 EN");
 }
 
 TEST_CASE("GIVEN a 1 peta Newton WHEN passed to a streaming operator THEN "
@@ -315,7 +315,7 @@ TEST_CASE("GIVEN a 1 peta Newton WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PN");
+  REQUIRE(ss.str() == "1 PN");
 }
 
 TEST_CASE(

@@ -214,7 +214,7 @@ TEST_CASE("GIVEN a 1 atto Tesla WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aT");
+  REQUIRE(ss.str() == "1 aT");
 }
 
 TEST_CASE("GIVEN a 1 femto Tesla WHEN passed to a streaming operator THEN "
@@ -223,7 +223,7 @@ TEST_CASE("GIVEN a 1 femto Tesla WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fT");
+  REQUIRE(ss.str() == "1 fT");
 }
 
 TEST_CASE("GIVEN a 1 pico Tesla WHEN passed to a streaming operator THEN "
@@ -232,7 +232,7 @@ TEST_CASE("GIVEN a 1 pico Tesla WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pT");
+  REQUIRE(ss.str() == "1 pT");
 }
 
 TEST_CASE("GIVEN a 1 nano Tesla WHEN passed to a streaming operator THEN "
@@ -241,7 +241,7 @@ TEST_CASE("GIVEN a 1 nano Tesla WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nT");
+  REQUIRE(ss.str() == "1 nT");
 }
 
 TEST_CASE("GIVEN a 1 micro Tesla WHEN passed to a streaming operator THEN "
@@ -250,7 +250,7 @@ TEST_CASE("GIVEN a 1 micro Tesla WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uT");
+  REQUIRE(ss.str() == "1 uT");
 }
 
 TEST_CASE("GIVEN a 1 milli Tesla WHEN passed to a streaming operator THEN "
@@ -259,7 +259,7 @@ TEST_CASE("GIVEN a 1 milli Tesla WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mT");
+  REQUIRE(ss.str() == "1 mT");
 }
 
 TEST_CASE("GIVEN a 1 Tesla WHEN passed to a streaming operator THEN result is "
@@ -268,7 +268,7 @@ TEST_CASE("GIVEN a 1 Tesla WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1T");
+  REQUIRE(ss.str() == "1 T");
 }
 
 TEST_CASE("GIVEN a 1 kilo Tesla WHEN passed to a streaming operator THEN "
@@ -277,7 +277,7 @@ TEST_CASE("GIVEN a 1 kilo Tesla WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kT");
+  REQUIRE(ss.str() == "1 kT");
 }
 
 TEST_CASE("GIVEN a 1 mega Tesla WHEN passed to a streaming operator THEN "
@@ -286,7 +286,7 @@ TEST_CASE("GIVEN a 1 mega Tesla WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MT");
+  REQUIRE(ss.str() == "1 MT");
 }
 
 TEST_CASE("GIVEN a 1 giga Tesla WHEN passed to a streaming operator THEN "
@@ -295,7 +295,7 @@ TEST_CASE("GIVEN a 1 giga Tesla WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GT");
+  REQUIRE(ss.str() == "1 GT");
 }
 
 TEST_CASE("GIVEN a 1 tera Tesla WHEN passed to a streaming operator THEN "
@@ -304,7 +304,7 @@ TEST_CASE("GIVEN a 1 tera Tesla WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TT");
+  REQUIRE(ss.str() == "1 TT");
 }
 
 TEST_CASE("GIVEN a 1 exa Tesla WHEN passed to a streaming operator THEN "
@@ -313,7 +313,7 @@ TEST_CASE("GIVEN a 1 exa Tesla WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1ET");
+  REQUIRE(ss.str() == "1 ET");
 }
 
 TEST_CASE("GIVEN a 1 peta Tesla WHEN passed to a streaming operator THEN "
@@ -322,7 +322,7 @@ TEST_CASE("GIVEN a 1 peta Tesla WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PT");
+  REQUIRE(ss.str() == "1 PT");
 }
 
 TEST_CASE("GIVEN a string of '1aT' WHEN streamed into atto_tesla_t THEN result "

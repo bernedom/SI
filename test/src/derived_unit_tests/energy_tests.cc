@@ -249,7 +249,7 @@ TEST_CASE("GIVEN a 1 atto Joule WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aJ");
+  REQUIRE(ss.str() == "1 aJ");
 }
 
 TEST_CASE("GIVEN a 1 femto Joule WHEN passed to a streaming operator THEN "
@@ -258,7 +258,7 @@ TEST_CASE("GIVEN a 1 femto Joule WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fJ");
+  REQUIRE(ss.str() == "1 fJ");
 }
 
 TEST_CASE("GIVEN a 1 pico Joule WHEN passed to a streaming operator THEN "
@@ -267,7 +267,7 @@ TEST_CASE("GIVEN a 1 pico Joule WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pJ");
+  REQUIRE(ss.str() == "1 pJ");
 }
 
 TEST_CASE("GIVEN a 1 nano Joule WHEN passed to a streaming operator THEN "
@@ -276,7 +276,7 @@ TEST_CASE("GIVEN a 1 nano Joule WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nJ");
+  REQUIRE(ss.str() == "1 nJ");
 }
 
 TEST_CASE("GIVEN a 1 micro Joule WHEN passed to a streaming operator THEN "
@@ -285,7 +285,7 @@ TEST_CASE("GIVEN a 1 micro Joule WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uJ");
+  REQUIRE(ss.str() == "1 uJ");
 }
 
 TEST_CASE("GIVEN a 1 milli Joule WHEN passed to a streaming operator THEN "
@@ -294,7 +294,7 @@ TEST_CASE("GIVEN a 1 milli Joule WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mJ");
+  REQUIRE(ss.str() == "1 mJ");
 }
 
 TEST_CASE("GIVEN a 1 Joule WHEN passed to a streaming operator THEN result is "
@@ -303,7 +303,7 @@ TEST_CASE("GIVEN a 1 Joule WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1J");
+  REQUIRE(ss.str() == "1 J");
 }
 
 TEST_CASE("GIVEN a 1 kilo Joule WHEN passed to a streaming operator THEN "
@@ -312,7 +312,7 @@ TEST_CASE("GIVEN a 1 kilo Joule WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kJ");
+  REQUIRE(ss.str() == "1 kJ");
 }
 
 TEST_CASE("GIVEN a 1 mega Joule WHEN passed to a streaming operator THEN "
@@ -321,7 +321,7 @@ TEST_CASE("GIVEN a 1 mega Joule WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MJ");
+  REQUIRE(ss.str() == "1 MJ");
 }
 
 TEST_CASE("GIVEN a 1 giga Joule WHEN passed to a streaming operator THEN "
@@ -330,7 +330,7 @@ TEST_CASE("GIVEN a 1 giga Joule WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GJ");
+  REQUIRE(ss.str() == "1 GJ");
 }
 
 TEST_CASE("GIVEN a 1 tera Joule WHEN passed to a streaming operator THEN "
@@ -339,7 +339,7 @@ TEST_CASE("GIVEN a 1 tera Joule WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TJ");
+  REQUIRE(ss.str() == "1 TJ");
 }
 
 TEST_CASE("GIVEN a 1 exa Joule WHEN passed to a streaming operator THEN "
@@ -348,7 +348,7 @@ TEST_CASE("GIVEN a 1 exa Joule WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1EJ");
+  REQUIRE(ss.str() == "1 EJ");
 }
 
 TEST_CASE("GIVEN a 1 peta Joule WHEN passed to a streaming operator THEN "
@@ -357,7 +357,7 @@ TEST_CASE("GIVEN a 1 peta Joule WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PJ");
+  REQUIRE(ss.str() == "1 PJ");
 }
 
 TEST_CASE("GIVEN a string of '1aJ' WHEN streamed into atto_joule_t THEN result "

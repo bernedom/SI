@@ -231,7 +231,7 @@ TEST_CASE("GIVEN a 1 atto Farad WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1aF");
+  REQUIRE(ss.str() == "1 aF");
 }
 
 TEST_CASE("GIVEN a 1 femto Farad WHEN passed to a streaming operator THEN "
@@ -240,7 +240,7 @@ TEST_CASE("GIVEN a 1 femto Farad WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fF");
+  REQUIRE(ss.str() == "1 fF");
 }
 
 TEST_CASE("GIVEN a 1 pico Farad WHEN passed to a streaming operator THEN "
@@ -249,7 +249,7 @@ TEST_CASE("GIVEN a 1 pico Farad WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pF");
+  REQUIRE(ss.str() == "1 pF");
 }
 
 TEST_CASE("GIVEN a 1 nano Farad WHEN passed to a streaming operator THEN "
@@ -258,7 +258,7 @@ TEST_CASE("GIVEN a 1 nano Farad WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nF");
+  REQUIRE(ss.str() == "1 nF");
 }
 
 TEST_CASE("GIVEN a 1 micro Farad WHEN passed to a streaming operator THEN "
@@ -267,7 +267,7 @@ TEST_CASE("GIVEN a 1 micro Farad WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1uF");
+  REQUIRE(ss.str() == "1 uF");
 }
 
 TEST_CASE("GIVEN a 1 milli Farad WHEN passed to a streaming operator THEN "
@@ -276,7 +276,7 @@ TEST_CASE("GIVEN a 1 milli Farad WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mF");
+  REQUIRE(ss.str() == "1 mF");
 }
 
 TEST_CASE("GIVEN a 1 Farad WHEN passed to a streaming operator THEN result is "
@@ -285,7 +285,7 @@ TEST_CASE("GIVEN a 1 Farad WHEN passed to a streaming operator THEN result is "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1F");
+  REQUIRE(ss.str() == "1 F");
 }
 
 TEST_CASE("GIVEN a 1 kilo Farad WHEN passed to a streaming operator THEN "
@@ -294,7 +294,7 @@ TEST_CASE("GIVEN a 1 kilo Farad WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1kF");
+  REQUIRE(ss.str() == "1 kF");
 }
 
 TEST_CASE("GIVEN a 1 mega Farad WHEN passed to a streaming operator THEN "
@@ -303,7 +303,7 @@ TEST_CASE("GIVEN a 1 mega Farad WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1MF");
+  REQUIRE(ss.str() == "1 MF");
 }
 
 TEST_CASE("GIVEN a 1 giga Farad WHEN passed to a streaming operator THEN "
@@ -312,7 +312,7 @@ TEST_CASE("GIVEN a 1 giga Farad WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1GF");
+  REQUIRE(ss.str() == "1 GF");
 }
 
 TEST_CASE("GIVEN a 1 tera Farad WHEN passed to a streaming operator THEN "
@@ -321,7 +321,7 @@ TEST_CASE("GIVEN a 1 tera Farad WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1TF");
+  REQUIRE(ss.str() == "1 TF");
 }
 
 TEST_CASE("GIVEN a 1 exa Farad WHEN passed to a streaming operator THEN "
@@ -330,7 +330,7 @@ TEST_CASE("GIVEN a 1 exa Farad WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1EF");
+  REQUIRE(ss.str() == "1 EF");
 }
 
 TEST_CASE("GIVEN a 1 peta Farad WHEN passed to a streaming operator THEN "
@@ -339,7 +339,7 @@ TEST_CASE("GIVEN a 1 peta Farad WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1PF");
+  REQUIRE(ss.str() == "1 PF");
 }
 
 TEST_CASE("GIVEN a string of '1aF' WHEN streamed into atto_farad_t THEN result "

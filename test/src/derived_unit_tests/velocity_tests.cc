@@ -145,12 +145,12 @@ TEST_CASE("GIVEN a length of type float WHEN divided by a value of type double "
 
 TEST_CASE(
     "GIVEN a 1 atto metre per second WHEN passed to a streaming operator THEN "
-    "result is '1am/s'") {
+    "result is '1 am/s'") {
   constexpr velocity_t<int64_t, std::atto> value{1};
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1am/s");
+  REQUIRE(ss.str() == "1 am/s");
 }
 
 TEST_CASE(
@@ -167,12 +167,12 @@ TEST_CASE(
 
 TEST_CASE(
     "GIVEN a 1 femto metre per second WHEN passed to a streaming operator THEN "
-    "result is '1fm/s'") {
+    "result is '1 fm/s'") {
   constexpr velocity_t<int64_t, std::femto> value{1};
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1fm/s");
+  REQUIRE(ss.str() == "1 fm/s");
 }
 
 TEST_CASE(
@@ -194,7 +194,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1pm/s");
+  REQUIRE(ss.str() == "1 pm/s");
 }
 
 TEST_CASE(
@@ -211,12 +211,12 @@ TEST_CASE(
 
 TEST_CASE(
     "GIVEN a 1 nano metre per second WHEN passed to a streaming operator THEN "
-    "result is '1nm/s'") {
+    "result is '1 nm/s'") {
   constexpr velocity_t<int64_t, std::nano> value{1};
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1nm/s");
+  REQUIRE(ss.str() == "1 nm/s");
 }
 
 TEST_CASE(
@@ -238,7 +238,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1um/s");
+  REQUIRE(ss.str() == "1 um/s");
 }
 
 TEST_CASE(
@@ -260,7 +260,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1mm/s");
+  REQUIRE(ss.str() == "1 mm/s");
 }
 
 TEST_CASE(
@@ -281,7 +281,7 @@ TEST_CASE("GIVEN a 1 metre per second WHEN passed to a streaming operator THEN "
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1m/s");
+  REQUIRE(ss.str() == "1 m/s");
 }
 
 TEST_CASE("GIVEN a string of '1m/s' WHEN streamed into metre_per_second_t THEN "
@@ -302,7 +302,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1km/s");
+  REQUIRE(ss.str() == "1 km/s");
 }
 
 TEST_CASE(
@@ -324,7 +324,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Mm/s");
+  REQUIRE(ss.str() == "1 Mm/s");
 }
 
 TEST_CASE(
@@ -341,12 +341,12 @@ TEST_CASE(
 
 TEST_CASE(
     "GIVEN a 1 giga metre per second WHEN passed to a streaming operator THEN "
-    "result is '1Gm/s'") {
+    "result is '1 Gm/s'") {
   constexpr velocity_t<int64_t, std::giga> value{1};
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Gm/s");
+  REQUIRE(ss.str() == "1 Gm/s");
 }
 
 TEST_CASE(
@@ -363,12 +363,12 @@ TEST_CASE(
 
 TEST_CASE(
     "GIVEN a 1 tera metre per second WHEN passed to a streaming operator THEN "
-    "result is '1Tm/s'") {
+    "result is '1 Tm/s'") {
   constexpr velocity_t<int64_t, std::tera> value{1};
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Tm/s");
+  REQUIRE(ss.str() == "1 Tm/s");
 }
 
 TEST_CASE(
@@ -390,7 +390,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Pm/s");
+  REQUIRE(ss.str() == "1 Pm/s");
 }
 
 TEST_CASE(
@@ -412,7 +412,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1Em/s");
+  REQUIRE(ss.str() == "1 Em/s");
 }
 
 TEST_CASE(
@@ -434,7 +434,7 @@ TEST_CASE(
   std::stringstream ss;
   ss << value;
   REQUIRE(ss.str() == SI::to_string(value));
-  REQUIRE(ss.str() == "1km/h");
+  REQUIRE(ss.str() == "1 km/h");
 }
 
 TEST_CASE(
