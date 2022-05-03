@@ -94,3 +94,40 @@ TEST_CASE("GIVEN a unit AND with ratio 1:1 WHEN converted to string THEN "
 
   REQUIRE(SI::to_string(v) == "100 xx");
 }
+
+TEST_CASE("GIVEN a string `99 xx` WHEN streamed into a unit then resulting "
+          "value is 99 and ratio is 1") {
+  SI::detail::unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>> v{0};
+
+  std::stringstream ss;
+  ss << "99 xx";
+
+  ss >> v;
+  REQUIRE(v.value() == 99);
+  REQUIRE(!ss.fail());
+}
+
+TEST_CASE("GIVEN a string `1 axx` WHEN streamed into a unit then resulting "
+          "value is 1 and ratio is atto") {
+  SI::detail::unit_t<'X', std::ratio<1>, int64_t, std::atto> v{0};
+
+  std::stringstream ss;
+  ss << "99 axx";
+
+  ss >> v;
+  REQUIRE(v.value() == 99);
+  REQUIRE(!ss.fail());
+}
+
+TEST_CASE("GIVEN a string `1 axx` WHEN streamed into a unit of the wrong ratio "
+          "THEN failbit is set AND value is set") {
+
+  SI::detail::unit_t<'X', std::ratio<1>, int64_t, std::ratio<1>> v{0};
+
+  std::stringstream ss;
+  ss << "99 axx";
+
+  ss >> v;
+  REQUIRE(v.value() == 99);
+  REQUIRE(ss.fail());
+}
