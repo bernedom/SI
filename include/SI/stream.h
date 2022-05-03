@@ -25,6 +25,8 @@ operator<<(std::ostream &stream,
   return stream;
 }
 
+// @todo add implicit optiona conversion when reading strings of the correct
+// unit but the wrong ratio
 template <char _symbol, typename _exponent, typename _type, typename _ratio>
 std::istream &
 operator>>(std::istream &stream,
