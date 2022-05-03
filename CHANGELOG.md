@@ -3,8 +3,12 @@
 ## 2.5.0
 
 * Removed implicit conversion from primitives to `unit_t`. See [issue #106](https://github.com/bernedom/SI/issues/106) for details
+* When converting units to string a space is inserted between the value and the unit, as described in the [SI brochure, section 5.4.2](https://www.bipm.org/en/publications/si-brochure)
+  * > The numerical value always precedes the unit and a space is always used to separate the
+unit from the number
 * Fix various spelling errors (thanks to [melg8](https://github.com/melg8)). 
 * Renamed `sterradiant_t` to `steradian_t`  which is correct
+  
 
 ## 2.4.1
 
