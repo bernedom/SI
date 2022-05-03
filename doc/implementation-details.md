@@ -64,11 +64,23 @@ For example:
 
 std::stringstream ss;
 const auto value = 1_km; // constructs a value of the type SI::kilo_metre_t
-ss << value; // ss now contains "1km"
+ss << value; // ss now contains "1 km"
 SI::kilo_metre_t<int64_t> from_string{0};
 ss >> value_from_string; // the value of from_string is now 1
 
 std::string str = SI::to_string(value);
 ```
 
-If a value cannot be constructed from a string the failbit of the stream is set. 
+If a value cannot be constructed from a string the failbit of the stream is set, but the value might still be present in the unit
+
+```cpp
+std::stringstream ss;
+const auto value = 1_km; // constructs a value of the type SI::kilo_metre_t
+ss << value; // ss now contains "1 km"
+SI::milli_metre_t<int64_t> from_string{0};
+ss >> value_from_string; // the value of from_string is now 1 but the failbit is set
+
+assert(!ss.fail()); // will fail, because 1 km is not implicitely converted to mm
+
+
+```
