@@ -194,7 +194,7 @@ TEMPLATE_TEST_CASE("GIVEN a magnetic_flux value WHEN divided by time THEN then "
 
 TEMPLATE_TEST_CASE(
     "GIVEN a magnetic_flux value WHEN divided by electric_potential THEN then "
-    "result is a accelereatin value",
+    "result is a acceleration value",
     "[magnetic_flux][operators]", int64_t, long double) {
   constexpr SI::magnetic_flux_t<TestType, std::ratio<1>> e{1};
   constexpr SI::electric_potential_t<TestType, std::ratio<1>> f{1};

@@ -1,10 +1,10 @@
 <img align="right" src="SI-logo.jpg">
 
-[![Continous Integration](https://github.com/bernedom/SI/workflows/CI/badge.svg?branch=master)](https://github.com/bernedom/SI/actions?query=workflow%3ACI)
+[![Continuous Integration](https://github.com/bernedom/SI/workflows/CI/badge.svg?branch=master)](https://github.com/bernedom/SI/actions?query=workflow%3ACI)
 [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/github/bernedom/SI?branch=master&svg=true)](https://ci.appveyor.com/project/bernedom/si)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ec7f65662b91480a9968bd77bd32c66c)](https://www.codacy.com/app/bernedom/SI?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bernedom/SI&amp;utm_campaign=Badge_Grade)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/bernedom/SI.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/bernedom/SI/context:cpp)
-[![Continous Benchmark](https://github.com/bernedom/SI/workflows/Continous%20Benchmark/badge.svg?branch=master)](https://si.dominikberner.ch/dev/bench/)
+[![Continuous Benchmark](https://github.com/bernedom/SI/workflows/Continuous%20Benchmark/badge.svg?branch=master)](https://si.dominikberner.ch/dev/bench/)
 [![API Documentation](https://github.com/bernedom/SI/workflows/API%20documentation/badge.svg?branch=master)](https://si.dominikberner.ch/doc/)
 
 [![GitHub Releases](https://img.shields.io/github/release/bernedom/SI.svg)](https://github.com/bernedom/SI/releases)
@@ -12,7 +12,7 @@
 
 # SI - Type safety for physical units
 
-A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) regulated by the [International Bureau of Weights and Measures (BIPM)](https://www.bipm.org/en/about-us/)  and published in the [SI brochure](https://www.bipm.org/en/publications/si-brochure/). For a quick start see [the installation guide](https://github.com/bernedom/SI/blob/master/doc/installation-guide.md). Contributions and comments are welcome, please check the [contribution guidelines](CONTRIBUTING.md) for further information.
+A header only c++ library that provides type safety and user defined literals for handling physical values defined in the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) regulated by the [International Bureau of Weights and Measures (BIPM)](https://www.bipm.org/en/about-us/)  and published in the [SI brochure](https://www.bipm.org/en/publications/si-brochure/). For a quick start see [the installation guide](https://github.com/bernedom/SI/blob/master/doc/installation-guide.md). Contributions and comments are welcome, please check the [contribution guidelines](CONTRIBUTING.md) for further information.
 
 An illustrative example:
 
@@ -25,7 +25,7 @@ using namespace SI::literals;
 constexpr auto one_kilogram = 1.0_kg;
 constexpr auto ten_coulomb = 5.0_A * 2.0_s;
 constexpr auto half_an_ampere = ten_coulomb / 20.0_s;
-constexpr auto tousand_gramms = one_kilogram.as<SI::gram_t>();
+constexpr auto thousand_grams = one_kilogram.as<SI::gram_t>();
 
 void calculate_mass(const SI::kilo_gram_t<long double> &kg) {
   // do something meaningful here
@@ -39,7 +39,7 @@ int main(int, char **) {
 
 SI provides conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) with strong **type safety at compile time**. All units are special typedefs of the template struct `SI::unit_t`. Only the value of the unit is stored internally, the ratio (i.e. milli, micro, kilo...) is determined as a type trait to allow all units to have the same resolution across the whole implemented ratios. SI handles operations of units of the same ratios as well as when the ratios are different. See the [documentation implementation details](doc/implementation-details.md) for further information. Operations between units of the same ratio are overhead-free, else there is additional computation cost to adjust the values to the units. By passing the flag `SI_DISABLE_IMPLICIT_RATIO_CONVERSION` to the compiler implicit ratio conversion is not done and fails with a compiler error. See the [continuous benchmark results](https://si.dominikberner.ch/dev/bench/) for a comparison between the reference measurements and the implementation in SI. 
 
-It is possible to supply custom ratios to the built-in types and they are fully compatible for calculation with other units. However, the necessary literals or typedefs have to be supplied by the user. For instance `SI::velocity_t<double, std::ratio<1000, 36>>` would be "kilometre per one-hundreth-of-an-hour".
+It is possible to supply custom ratios to the built-in types and they are fully compatible for calculation with other units. However, the necessary literals or typedefs have to be supplied by the user. For instance `SI::velocity_t<double, std::ratio<1000, 36>>` would be "kilometre per one-hundredth-of-an-hour".
 
 Converting between units is either done with the `as<unit_t>()` member function of `unit_` or the free function `SI::unit_cast<unit_t>(unit_t u)`. This will convert a value of the same type but different ratio. 
 
@@ -71,7 +71,7 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metric
 | Frequency        | T                | -1       | Hz          | 10<sup>-18</sup> to 10<sup>18</sup> | `*_hertz_t`        |
 | Angle*           | r                | 1        | rad         | 10<sup>-18</sup> to 1               | `*_radian_t`       |
 | Angle (Degrees)* | r                | 1        | deg         | micro, milli, 1                     | `*_radian_t`       |
-| Solid Angle*     | R                | 1        | sr          | 10<sup>-18</sup> to 1               | `*_sterradian_t`   |
+| Solid Angle*     | R                | 1        | sr          | 10<sup>-18</sup> to 1               | `*_steradian_t`   |
 
 \* Angle, Angle (degree) and solid angle are simple containers, not containing any functionality to do angle/solid-angle computation such as an overflow after 2*pi. Converting between radians and degree might lose precision, especially if working with `long doubles` because the ratios not precise enough, as they have to be represented as long ints
 
@@ -116,7 +116,7 @@ Non standard units are not regulated by the [BIPM](https://www.bipm.org/) but ar
 
 | Unit                       | Dimension Symbol | literals   | implemented ratios                                                     | unit typedefs                                                           |
 | -------------------------- | ---------------- | ---------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| Astronomic Units of length | L                | AU, ly, pc | 149597870691:1 (AU), 9460730777119564:1 (ly), 30856775814913700:1 (pc) | `astronimcal_unit_t` (`_AU`), `lightyear_t` (`_ly`), `parsec_t` (`_pc`) |
+| Astronomic Units of length | L                | AU, ly, pc | 149597870691:1 (AU), 9460730777119564:1 (ly), 30856775814913700:1 (pc) | `astronomic_unit_t` (`_AU`), `lightyear_t` (`_ly`), `parsec_t` (`_pc`) |
 
 ## Building & compatibility
 

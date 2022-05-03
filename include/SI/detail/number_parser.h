@@ -1,7 +1,7 @@
 /**
  * This file is part of "SI" version 2.5.0
  * A header only c++ library that provides type safety and user defined literals
- * for handling pyhsical values defined in the International System of
+ * for handling physical values defined in the International System of
  * Units
  *
  * https://github.com/bernedom/SI
@@ -112,23 +112,23 @@ template <std::intmax_t _base, char _digit> struct Number_impl<_base, _digit> {
 /// interface class for number
 template <char... _digits> struct Number : Number_impl<10, _digits...> {};
 
-/// specialisation of Number for hex notation
+/// specialization of Number for hex notation
 template <char... _digits>
 struct Number<'0', 'x', _digits...> : Number_impl<16, _digits...> {};
 
-/// specialisation of Number for hex notation
+/// specialization of Number for hex notation
 template <char... _digits>
 struct Number<'0', 'X', _digits...> : Number_impl<16, _digits...> {};
 
-/// specialisation of Number for binary notation
+/// specialization of Number for binary notation
 template <char... _digits>
 struct Number<'0', 'b', _digits...> : Number_impl<2, _digits...> {};
 
-/// specialisation of Number for binary notation
+/// specialization of Number for binary notation
 template <char... _digits>
 struct Number<'0', 'B', _digits...> : Number_impl<2, _digits...> {};
 
-/// specialisation of Number for octal notation
+/// specialization of Number for octal notation
 template <char... _digits>
 struct Number<'0', _digits...> : Number_impl<8, _digits...> {};
 

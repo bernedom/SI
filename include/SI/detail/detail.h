@@ -1,7 +1,7 @@
 /**
  * This file is part of "SI" version 2.5.0
  * A header only c++ library that provides type safety and user defined literals
- * for handling pyhsical values defined in the International System of
+ * for handling physical values defined in the International System of
  * Units
  *
  * https://github.com/bernedom/SI
@@ -19,7 +19,7 @@
 /// Namespace containing implementation details for SI
 namespace SI::detail {
 
-/// to check if a template is an instatiation of std::ratio
+/// to check if a template is an instantiation of std::ratio
 template <typename _type> struct is_ratio : std::false_type {};
 
 template <intmax_t _num, intmax_t _den>
@@ -52,12 +52,12 @@ struct unit_t;
 /// types)
 template <typename _unit> struct is_unit_t : std::false_type {};
 
-/// template specialisation to check if a type is a unit_t (true if unit_t)
+/// template specialization to check if a type is a unit_t (true if unit_t)
 template <char _symbol, typename _exponent, typename _ratio, typename _type>
 struct is_unit_t<const unit_t<_symbol, _exponent, _type, _ratio>>
     : std::true_type {};
 
-/// non-const specialisation of check above
+/// non-const specialization of check above
 template <char _symbol, typename _exponent, typename _ratio, typename _type>
 struct is_unit_t<unit_t<_symbol, _exponent, _type, _ratio>> : std::true_type {};
 

@@ -25,7 +25,7 @@ The implementation of the functionality is done purely in the classes of the `de
 
 SI handles operations of units of the same ratios as well as when the ratios are different. Operations of between units of the same ratio are overhead-free, else there is additional computation cost to adjust the values to the units. By passing the flag `SI_DISABLE_IMPLICIT_RATIO_CONVERSION` to the compiler implicit ratio conversion is not done and fails with a compiler error. See the [continuous benchmark results](https://si.dominikberner.ch/dev/bench/) for comparing the reference measurements and the implementation in SI.
 
-If the internal type of a unit is an integral type (`int64_t`, `int` etc.) integer rounding applies when assigning to a unit of bigger ratio. When assiging to units with a smaller ratio overflows might happen if the value is not checked beforehand. 
+If the internal type of a unit is an integral type (`int64_t`, `int` etc.) integer rounding applies when assigning to a unit of bigger ratio. When assigning to units with a smaller ratio overflows might happen if the value is not checked beforehand. 
 ```cpp
 
 const auto almost_a_km = 999_m;

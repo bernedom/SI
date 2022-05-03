@@ -1,7 +1,7 @@
 /**
  * This file is part of "SI" version 2.5.0
  * A header only c++ library that provides type safety and user defined literals
- * for handling pyhsical values defined in the International System of
+ * for handling physical values defined in the International System of
  * Units
  *
  * https://github.com/bernedom/SI
@@ -46,7 +46,7 @@ struct unit_symbol<'P', _ratio>
                                    'W'> {};
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(power_t, energy_t, time_t)
+BUILD_UNIT_FROM_DIVISION(power_t, energy_t, time_t)
 }
 
 inline namespace literals {

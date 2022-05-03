@@ -102,7 +102,7 @@ TEMPLATE_TEST_CASE(
 
 TEMPLATE_TEST_CASE(
     "GIVEN a squared velocity value WHEN divided by length THEN result is "
-    "a accleration value",
+    "a acceleration value",
     "[acceleration][operators]", int64_t, long double) {
   constexpr SI::velocity_squared_t<TestType, std::ratio<1>> v2{1};
   constexpr SI::length_t<TestType, std::ratio<1>> L{1};

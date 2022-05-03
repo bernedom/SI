@@ -1,7 +1,7 @@
 /**
  * This file is part of "SI" version 2.5.0
  * A header only c++ library that provides type safety and user defined literals
- * for handling pyhsical values defined in the International System of
+ * for handling physical values defined in the International System of
  * Units
  *
  * https://github.com/bernedom/SI
@@ -40,7 +40,7 @@ template <typename _type>
 using speed_of_light_t = velocity_t<_type, std::ratio<299792458, 1>::type>;
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(velocity_t, length_t, time_t)
+BUILD_UNIT_FROM_DIVISION(velocity_t, length_t, time_t)
 } // namespace detail
 
 // specialize unit_symbol for usage with stream operators

@@ -1,7 +1,7 @@
 /**
  * This file is part of "SI" version 2.5.0
  * A header only c++ library that provides type safety and user defined literals
- * for handling pyhsical values defined in the International System of
+ * for handling physical values defined in the International System of
  * Units
  *
  * https://github.com/bernedom/SI
@@ -62,7 +62,7 @@ struct unit_symbol<'K', _ratio>
                                    'a', 't'> {};
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(catalytic_activity_t, substance_t, time_t)
+BUILD_UNIT_FROM_DIVISION(catalytic_activity_t, substance_t, time_t)
 }
 
 inline namespace literals {

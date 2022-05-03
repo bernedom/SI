@@ -175,7 +175,7 @@ TEST_CASE("GIVEN a number WHEN passed with prefix 0x THEN base is 16") {
 }
 
 TEST_CASE("GIVEN a multidigit number WHEN passed with prefix 0x THEN base is "
-          "16 AND result is caluculated accordingly") {
+          "16 AND result is calculated accordingly") {
   using number = Number<'0', 'x', '1', '0'>;
   STATIC_REQUIRE(number::value == 0x10);
 
@@ -192,7 +192,7 @@ TEST_CASE("GIVEN a number WHEN passed with prefix 0b THEN base is 2") {
 }
 
 TEST_CASE("GIVEN a multidigit number WHEN passed with prefix 0x THEN base is "
-          "2 AND result is caluculated accordingly") {
+          "2 AND result is calculated accordingly") {
   using number = Number<'0', 'b', '1', '0'>;
   STATIC_REQUIRE(number::value == 0b10);
 
@@ -206,7 +206,7 @@ TEST_CASE("GIVEN a number WHEN passed with prefix 0 THEN base is 8") {
 }
 
 TEST_CASE("GIVEN a multidigit number WHEN passed with prefix 0 THEN base is "
-          "8 AND result is caluculated accordingly") {
+          "8 AND result is calculated accordingly") {
   using number = Number<'0', '1', '0'>;
   STATIC_REQUIRE(number::value == 010);
 

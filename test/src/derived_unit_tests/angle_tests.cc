@@ -92,7 +92,7 @@ TEST_CASE("GIVEN a value WHEN constructed with literal _rad THEN result is a "
                    const SI::angle_t<long double, std::ratio<1>>>::value);
 }
 
-TEST_CASE("GIVEN a 1 atto radiant WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 atto radian WHEN passed to a streaming operator THEN "
           "result is '1arad'") {
   constexpr auto value = 1_arad;
   std::stringstream ss;
@@ -101,7 +101,7 @@ TEST_CASE("GIVEN a 1 atto radiant WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1arad");
 }
 
-TEST_CASE("GIVEN a 1 femto radiant WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 femto radian WHEN passed to a streaming operator THEN "
           "result is '1frad'") {
   constexpr auto value = 1_frad;
   std::stringstream ss;
@@ -110,7 +110,7 @@ TEST_CASE("GIVEN a 1 femto radiant WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1frad");
 }
 
-TEST_CASE("GIVEN a 1 pico radiant WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 pico radian WHEN passed to a streaming operator THEN "
           "result is '1prad'") {
   constexpr auto value = 1_prad;
   std::stringstream ss;
@@ -119,7 +119,7 @@ TEST_CASE("GIVEN a 1 pico radiant WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1prad");
 }
 
-TEST_CASE("GIVEN a 1 nano radiant WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 nano radian WHEN passed to a streaming operator THEN "
           "result is '1prad'") {
   constexpr auto value = 1_nrad;
   std::stringstream ss;
@@ -128,7 +128,7 @@ TEST_CASE("GIVEN a 1 nano radiant WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1nrad");
 }
 
-TEST_CASE("GIVEN a 1 micro radiant WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 micro radian WHEN passed to a streaming operator THEN "
           "result is '1urad'") {
   constexpr auto value = 1_urad;
   std::stringstream ss;
@@ -137,7 +137,7 @@ TEST_CASE("GIVEN a 1 micro radiant WHEN passed to a streaming operator THEN "
   REQUIRE(ss.str() == "1urad");
 }
 
-TEST_CASE("GIVEN a 1 milli radiant WHEN passed to a streaming operator THEN "
+TEST_CASE("GIVEN a 1 milli radian WHEN passed to a streaming operator THEN "
           "result is '1mrad'") {
   constexpr auto value = 1_mrad;
   std::stringstream ss;
@@ -147,7 +147,7 @@ TEST_CASE("GIVEN a 1 milli radiant WHEN passed to a streaming operator THEN "
 }
 
 TEST_CASE(
-    "GIVEN a 1 radiant WHEN passed to a streaming operator THEN result is "
+    "GIVEN a 1 radian WHEN passed to a streaming operator THEN result is "
     "'1rad'") {
   constexpr auto value = 1_rad;
   std::stringstream ss;

@@ -7,7 +7,7 @@
 
 using namespace SI::literals;
 
-TEST_CASE("GIVEN an area value WHEN deivided by a time value THEN the result "
+TEST_CASE("GIVEN an area value WHEN divided by a time value THEN the result "
           "is a surface_flow") {
   constexpr auto area = 1_m2;
   constexpr auto time = 1_s;
@@ -37,7 +37,7 @@ TEMPLATE_TEST_CASE(
       std::is_same<decltype(result), decltype(result_commutative)>::value);
 }
 
-TEST_CASE("GIVEN an volume value WHEN deivided by a time value THEN the result "
+TEST_CASE("GIVEN an volume value WHEN divided by a time value THEN the result "
           "is a surface_flow") {
   constexpr auto volume = 1_m3;
   constexpr auto time = 1_s;

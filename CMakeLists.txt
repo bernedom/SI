@@ -4,7 +4,7 @@ project(
   "SI"
   VERSION 2.5.0
   DESCRIPTION
-    "A header only c++ library that provides type safety and user defined literals for handling pyhsical values defined in the International System of Units."
+    "A header only c++ library that provides type safety and user defined literals for handling physical values defined in the International System of Units."
   HOMEPAGE_URL "https://github.com/bernedom/SI"
   LANGUAGES CXX)
 

@@ -228,7 +228,7 @@ TEMPLATE_TEST_CASE("GIVEN a scalar WHEN divided by a resistance value THEN "
 }
 
 namespace {
-/// helper struct to faciltate templated testcase
+/// helper struct to facilitate templated testcase
 template <typename _ratio_lhs, typename _ratio_rhs> struct ratio_tuple {
   using ratio_lhs = _ratio_lhs;
   using ratio_rhs = _ratio_rhs;

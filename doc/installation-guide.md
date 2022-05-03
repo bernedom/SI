@@ -18,7 +18,7 @@ Consider running the build/install command with setting the install prefix, if y
 -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/SI-install
 ```
 
-The folder `test/installation-tests` contains standalone sample programs to check for succesful installation.
+The folder `test/installation-tests` contains standalone sample programs to check for successful installation.
 
 ## Installing using `cpack`
 
@@ -30,7 +30,7 @@ cmake ..
 cmake --build . --config Release --target package -- -j $(nproc)
 ```
 
-This creates gzipped archives containing all files as well as an installation script `SI-<version>-<plattform>.sh`.
+This creates gzipped archives containing all files as well as an installation script `SI-<version>-<platform>.sh`.
 
 ```bash
 cd build

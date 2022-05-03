@@ -1,7 +1,7 @@
 /**
  * This file is part of "SI" version 2.5.0
  * A header only c++ library that provides type safety and user defined literals
- * for handling pyhsical values defined in the International System of
+ * for handling physical values defined in the International System of
  * Units
  *
  * https://github.com/bernedom/SI
@@ -32,7 +32,7 @@ template <typename _unit_lhs, typename _unit_rhs> struct unit_with_common_ratio;
 /// @todo add in-place unit_cast for move operators
 /// @todo add logarithmic units (decibel)
 /// @todo add constants for speed of light, planck constant, elementary charge,
-/// boltzmann constant, avorgadro constant and  luminous efficacy of
+/// boltzmann constant, avogadro constant and  luminous efficacy of
 /// monochromatic radiation of frequency
 
 /**
@@ -63,7 +63,7 @@ struct unit_t {
   constexpr unit_t(const unit_t &) = default;
   constexpr unit_t(unit_t &&) = default;
 
-  /// construct from other unit with implicitely convertible type
+  /// construct from other unit with implicitly convertible type
   template <typename _type_rhs>
   constexpr unit_t(const unit_t<_symbol, _exponent, _type_rhs, _ratio> &rhs)
       : value_(rhs.value()) {
@@ -115,7 +115,7 @@ struct unit_t {
   /// Assignment for same ratio
   constexpr unit_t &operator=(const unit_t &rhs) = default;
 
-  /// Move assigmnment for same ratio
+  /// Move assignment for same ratio
   constexpr unit_t &operator=(unit_t &&rhs) = default;
 
   /// Assignment of same unit but different ratio
@@ -438,7 +438,7 @@ struct unit_t {
     ++value_;
     return *this;
   }
-  /// incrment by postfix ++
+  /// increment by postfix ++
   unit_t operator++(int) {
     auto ret_val(*this);
     ++(*this);
@@ -465,7 +465,7 @@ private:
 };
 
 /// operator to divide scalar type by unit encapsulating the same type
-/// template specialisation handling integer types
+/// template specialization handling integer types
 /// @results unit with negative exponent
 template <typename _type, char _symbol, typename _exponent, typename _rhs_type,
           typename _ratio,
@@ -483,7 +483,7 @@ operator/(const _type &lhs,
 }
 
 /// operator to divide scalar type by unit encapsulating the same type
-/// template specialisation for floating point types, to avoid possible loss
+/// template specialization for floating point types, to avoid possible loss
 /// of precision when adjusting for ratio
 /// @results unit with negative exponent
 template <typename _type, char _symbol, typename _exponent, typename _rhs_type,

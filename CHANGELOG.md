@@ -40,7 +40,7 @@
 
 * Moved helper function such as `unit_cast` and `unit_with_common_ratio` to own file for easier maintenance
 * Moved cross-unit-operations and `epsEqual` to a separate file for easier maintenance
-* Rename `epsEqual()` to `eps_equals()` for consitency with naming scheme
+* Rename `epsEqual()` to `eps_equals()` for consistency with naming scheme
 
 ## 2.0.4
 
@@ -101,7 +101,7 @@
 ## 1.7.0
 
 * Add literals and typedefs for km/h (`_km_p_h`) m/s (`m_p_s`)
-* Add literals for astronomical units of length (AU), lightyears (ly) and parsecs (pc)
+* Add literals for astronomical units of length (AU), light-years (ly) and parsecs (pc)
 * API documentation is built over the cmake-target `api_doc`
 
 ## 1.6.1
@@ -157,7 +157,7 @@
 
 ## 1.2.0
 
-* Changed spelling of length unit from 'meter' to 'metre' as this is the official SI spelling according to the [bureau international des Poids and Mesures](https://www.bipm.org/en/measurement-units/)
+* Changed spelling of length unit from 'meter' to 'metre' as this is the official SI spelling according to the [International Bureau of Weights and Measures](https://www.bipm.org/en/measurement-units/)
 * added `SI_` prefix to preprocessor flag to disable ratio conversion to `SI_DISABLE_IMPLICIT_RATIO_CONVERSION` to scope it closer
 * Renamed template parameters to fit with c++ naming convention ([See this stackoverflow thread](https://stackoverflow.com/questions/228783/what-are-the-rules-about-using-an-underscore-in-a-c-identifier))
 
@@ -190,7 +190,7 @@
 ## 0.0.5
 
 * Updated catch2 to version 2.7.2
-* Added angle (radiant) and solid angle (sterradiant) typedefs
+* Added angle (radian) and solid angle (steradian) typedefs
 * luminous flux can be built from luminosity *   solid_angle
 
 ## 0.0.4

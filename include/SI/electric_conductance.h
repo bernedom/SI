@@ -1,7 +1,7 @@
 /**
  * This file is part of "SI" version 2.5.0
  * A header only c++ library that provides type safety and user defined literals
- * for handling pyhsical values defined in the International System of
+ * for handling physical values defined in the International System of
  * Units
  *
  * https://github.com/bernedom/SI
@@ -62,8 +62,8 @@ struct unit_symbol<'G', _ratio>
 
 namespace detail {
 
-BUILD_UNIT_FROM_DIVISON(electric_conductance_t, electric_current_t,
-                        electric_potential_t)
+BUILD_UNIT_FROM_DIVISION(electric_conductance_t, electric_current_t,
+                         electric_potential_t)
 
 /// Builds conductance from 1/resistance, to avoid include cycles the base
 /// unit_t is used instead of the type alias electric_resistance_t

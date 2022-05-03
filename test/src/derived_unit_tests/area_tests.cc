@@ -177,7 +177,7 @@ TEST_CASE("GIVEN two length values AND ratio is 10^-3 WHEN multiplied THEN "
   STATIC_REQUIRE(expected == a);
 }
 
-TEST_CASE("GIVEN a lenght value with ratio 1 AND a length value with ratio "
+TEST_CASE("GIVEN a length value with ratio 1 AND a length value with ratio "
           "10^-3 WHEN multiplied THEN ratio of result is 10^-6") {
   constexpr auto l = 2_m;
   constexpr auto l_mm = 2_mm;

@@ -187,27 +187,27 @@ testOperatorEqualsFailsWhenImplicitConversionDisabled()
 
 testOperatorLessThanCompilesWhenDefaultInvocation()
 {
-    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_lessthan_test.cc.o
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_less_than_test.cc.o
     buildSingleTarget ${TARGET} DEFAULTBUILD PASS
 }
 
 
 testOperatorLessThanFailsWhenImplicitConversionDisabled()
 {
-    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_lessthan_test.cc.o
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_less_than_test.cc.o
     buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
 }
 
 testOperatorGreaterThanCompilesWhenDefaultInvocation()
 {
-    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_greaterthan_test.cc.o
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_greater_than_test.cc.o
     buildSingleTarget ${TARGET} DEFAULTBUILD PASS
 }
 
 
 testOperatorGreaterThanFailsWhenImplicitConversionDisabled()
 {
-    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_greaterthan_test.cc.o
+    TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_greater_than_test.cc.o
     buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
 }
 
@@ -271,7 +271,7 @@ testOperatorSubtractFailsWhenImplicitConversionDisabled()
     buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
 }
 
-testOperatorSbutractAssignmentCompilesWhenDefaultInvocation()
+testOperatorSubtractAssignmentCompilesWhenDefaultInvocation()
 {
     TARGET=CMakeFiles/SI-Compilation-Tests.dir/operator_subtract_assignment_test.cc.o
     buildSingleTarget ${TARGET} DEFAULTBUILD PASS
@@ -332,13 +332,13 @@ testOperatorDivideFromIntegralFailsWhenImplicitConversionDisabled()
     buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
 }
 
-testCompilationFailsWhenNumberparserOverflows()
+testCompilationFailsWhenNumberParserOverflows()
 {
     TARGET=CMakeFiles/SI-Compilation-Tests.dir/parsing_overflow_test.cc.o
     buildSingleTarget ${TARGET} RESTRICTEDBUILD FAIL
 }
 
-testCompilationSucceedsWhenNumberparserDoesNotOverflow()
+testCompilationSucceedsWhenNumberParserDoesNotOverflow()
 {
     TARGET=CMakeFiles/SI-Compilation-Tests.dir/parsing_overflow_test_pass_compilation.cc.o
     buildSingleTarget ${TARGET} DEFAULTBUILD PASS

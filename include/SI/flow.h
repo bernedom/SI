@@ -1,7 +1,7 @@
 /**
  * This file is part of "SI" version 2.5.0
  * A header only c++ library that provides type safety and user defined literals
- * for handling pyhsical values defined in the International System of
+ * for handling physical values defined in the International System of
  * Units
  *
  * https://github.com/bernedom/SI
@@ -22,7 +22,7 @@ template <typename _type, typename _ratio>
 using surface_flow_t = detail::unit_t<'s', std::ratio<1>, _type, _ratio>;
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(surface_flow_t, area_t, time_t)
+BUILD_UNIT_FROM_DIVISION(surface_flow_t, area_t, time_t)
 
 }
 
@@ -30,7 +30,7 @@ template <typename _type, typename _ratio>
 using volumetric_flow_t = detail::unit_t<'V', std::ratio<1>, _type, _ratio>;
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(volumetric_flow_t, volume_t, time_t)
+BUILD_UNIT_FROM_DIVISION(volumetric_flow_t, volume_t, time_t)
 
 }
 

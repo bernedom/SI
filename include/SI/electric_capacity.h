@@ -1,7 +1,7 @@
 /**
  * This file is part of "SI" version 2.5.0
  * A header only c++ library that provides type safety and user defined literals
- * for handling pyhsical values defined in the International System of
+ * for handling physical values defined in the International System of
  * Units
  *
  * https://github.com/bernedom/SI
@@ -60,8 +60,8 @@ struct unit_symbol<'C', _ratio>
                                    'F'> {};
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(electric_capacity_t, electric_charge_t,
-                        electric_potential_t)
+BUILD_UNIT_FROM_DIVISION(electric_capacity_t, electric_charge_t,
+                         electric_potential_t)
 } // namespace detail
 
 inline namespace literals {

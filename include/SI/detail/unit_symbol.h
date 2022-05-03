@@ -1,7 +1,7 @@
 /**
  * This file is part of "SI" version 2.5.0
  * A header only c++ library that provides type safety and user defined literals
- * for handling pyhsical values defined in the International System of
+ * for handling physical values defined in the International System of
  * Units
  *
  * https://github.com/bernedom/SI
@@ -17,7 +17,7 @@
 
 namespace SI::detail {
 
-/// Compile time string provider for conversion of unit types to stringsa
+/// Compile time string provider for conversion of unit types to strings
 template <char... Cs> struct unit_symbol_impl {
   static_assert(sizeof...(Cs) > 0, "Empty strings are disallowed");
   // using double curly braces to because of a bug in clang5

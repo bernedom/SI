@@ -192,7 +192,7 @@ TEMPLATE_TEST_CASE("GIVEN a energy value WHEN divided by length THEN then "
 }
 
 TEMPLATE_TEST_CASE("GIVEN a energy value WHEN divided by force THEN then "
-                   "result is a accelereatin value",
+                   "result is a acceleration value",
                    "[energy][operators]", int64_t, long double) {
   constexpr SI::energy_t<TestType, std::ratio<1>> e{1};
   constexpr SI::force_t<TestType, std::ratio<1>> f{1};
@@ -232,7 +232,7 @@ TEMPLATE_TEST_CASE("GIVEN a energy value WHEN divided by volume THEN then "
 }
 
 TEMPLATE_TEST_CASE("GIVEN a energy value WHEN divided by pressure THEN then "
-                   "result is a accelereatin value",
+                   "result is a acceleration value",
                    "[energy][operators]", int64_t, long double) {
   constexpr SI::energy_t<TestType, std::ratio<1>> e{1};
   constexpr SI::pressure_t<TestType, std::ratio<1>> p{1};

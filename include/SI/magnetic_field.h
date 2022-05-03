@@ -1,7 +1,7 @@
 /**
  * This file is part of "SI" version 2.5.0
  * A header only c++ library that provides type safety and user defined literals
- * for handling pyhsical values defined in the International System of
+ * for handling physical values defined in the International System of
  * Units
  *
  * https://github.com/bernedom/SI
@@ -61,7 +61,7 @@ struct unit_symbol<'B', _ratio>
                                    'T'> {};
 
 namespace detail {
-BUILD_UNIT_FROM_DIVISON(magnetic_field_t, magnetic_flux_t, area_t)
+BUILD_UNIT_FROM_DIVISION(magnetic_field_t, magnetic_flux_t, area_t)
 }
 
 inline namespace literals {

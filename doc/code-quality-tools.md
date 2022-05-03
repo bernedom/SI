@@ -1,6 +1,6 @@
 # Note about coverage metrics
 
-Since most of the tests are done using `constexpr` the coverage returns less than what is actually covered. By replacing all `constexpr` with `const` and running cmake with `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE`  the coverage result is useable.
+Since most of the tests are done using `constexpr` the coverage returns less than what is actually covered. By replacing all `constexpr` with `const` and running cmake with `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE`  the coverage result is usable.
 
 ## How to run lcov
 
