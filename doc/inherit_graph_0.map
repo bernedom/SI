@@ -1,6 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node1" title=" " alt="" coords="5,111,96,138"/>
-<area shape="rect" id="node2" href="$structSI_1_1detail_1_1is__ratio.html" title="to check if a template is an instatiation of std::ratio" alt="" coords="183,5,318,47"/>
+<area shape="rect" id="node2" href="$structSI_1_1detail_1_1is__ratio.html" title="to check if a template is an instantiation of std::ratio" alt="" coords="183,5,318,47"/>
 <area shape="rect" id="node3" href="$structSI_1_1detail_1_1is__unit__t.html" title=" " alt="" coords="185,71,316,112"/>
 <area shape="rect" id="node4" href="$structSI_1_1detail_1_1ratio__prefix.html" title="base template for ratio prefix, unusable" alt="" coords="170,136,331,177"/>
 <area shape="rect" id="node5" href="$structSI_1_1unit__symbol.html" title="Base struct. Unusable needs template overloading." alt="" coords="144,201,357,243"/>

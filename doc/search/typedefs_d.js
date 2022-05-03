@@ -23,7 +23,7 @@ var searchData=
   ['nano_5fseconds_5ft_1830',['nano_seconds_t',['../namespaceSI.html#ab51d8a30980f8ed281107b97ee3f1f5d',1,'SI']]],
   ['nano_5fsiemens_5ft_1831',['nano_siemens_t',['../namespaceSI.html#a184bede09f7f98f24a153d75c7cfc323',1,'SI']]],
   ['nano_5fsievert_5ft_1832',['nano_sievert_t',['../namespaceSI.html#aeeb9c9f9d26a988bc70eeb0fc871783d',1,'SI']]],
-  ['nano_5fsterradian_5ft_1833',['nano_sterradian_t',['../namespaceSI.html#a8b9271ba2af91f56b04153d159e05a0f',1,'SI']]],
+  ['nano_5fsteradian_5ft_1833',['nano_steradian_t',['../namespaceSI.html#a46b74940e1e627bd904bea14a19fbe9c',1,'SI']]],
   ['nano_5ftesla_5ft_1834',['nano_tesla_t',['../namespaceSI.html#ab5cc512cdb9a08a00c9ac45dcba412e1',1,'SI']]],
   ['nano_5fvolt_5ft_1835',['nano_volt_t',['../namespaceSI.html#af78eb3b4f8832998c1f42175848a7e29',1,'SI']]],
   ['nano_5fwatt_5ft_1836',['nano_watt_t',['../namespaceSI.html#a0e483fe2801bde8f859155bbfd7017cd',1,'SI']]],

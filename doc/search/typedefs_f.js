@@ -51,7 +51,7 @@ var searchData=
   ['pico_5fseconds_5ft_1888',['pico_seconds_t',['../namespaceSI.html#a4968bc23c0e638bf38a445e2cec977a6',1,'SI']]],
   ['pico_5fsiemens_5ft_1889',['pico_siemens_t',['../namespaceSI.html#acab91d74994d95a4f7e7be863a629523',1,'SI']]],
   ['pico_5fsievert_5ft_1890',['pico_sievert_t',['../namespaceSI.html#ab153643016fb9932fc0a1a4e7752753f',1,'SI']]],
-  ['pico_5fsterradian_5ft_1891',['pico_sterradian_t',['../namespaceSI.html#ab0f7ae816d00dbd904e8ed506a723f1a',1,'SI']]],
+  ['pico_5fsteradian_5ft_1891',['pico_steradian_t',['../namespaceSI.html#ac1acf0adbd28306e5719f0c5acd8df13',1,'SI']]],
   ['pico_5ftesla_5ft_1892',['pico_tesla_t',['../namespaceSI.html#adbb2c2c34ccfe912e4cd38c6cb0b2814',1,'SI']]],
   ['pico_5fvolt_5ft_1893',['pico_volt_t',['../namespaceSI.html#a94898198aa0b459ff7275999e56517af',1,'SI']]],
   ['pico_5fwatt_5ft_1894',['pico_watt_t',['../namespaceSI.html#a8c45692ed1cda81705666d28f36c2d8a',1,'SI']]],

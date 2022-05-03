@@ -8,7 +8,7 @@ var searchData=
   ['square_5fcenti_5fmetre_5ft_1908',['square_centi_metre_t',['../namespaceSI.html#ab2fb670015aa218627a63b5199265295',1,'SI']]],
   ['square_5fmetre_5ft_1909',['square_metre_t',['../namespaceSI.html#a759a94cb97a49531cd3fc5d30dee4280',1,'SI']]],
   ['square_5fmilli_5fmetre_5ft_1910',['square_milli_metre_t',['../namespaceSI.html#a83e8280f6ed15afa20e2178f3590d579',1,'SI']]],
-  ['sterradian_5ft_1911',['sterradian_t',['../namespaceSI.html#a0152a944fe2ace70ea8781b803723a43',1,'SI']]],
+  ['steradian_5ft_1911',['steradian_t',['../namespaceSI.html#a9e2e859621867b53b95281a34f2fffb4',1,'SI']]],
   ['substance_5ft_1912',['substance_t',['../namespaceSI.html#a7be7c92c2cba00a3e69037ac466083d8',1,'SI']]],
   ['surface_5fflow_5ft_1913',['surface_flow_t',['../namespaceSI.html#aeb03f1deb964ce0b22655146788d2eaf',1,'SI']]],
   ['symbol_1914',['symbol',['../structSI_1_1detail_1_1unit__t.html#abea949cea3dfb989f651efd568fead1b',1,'SI::detail::unit_t']]]

@@ -24,7 +24,7 @@ var searchData=
   ['femto_5fseconds_5ft_1638',['femto_seconds_t',['../namespaceSI.html#a5e44762a6b9e22bb06ffcbe9d7ee8416',1,'SI']]],
   ['femto_5fsiemens_5ft_1639',['femto_siemens_t',['../namespaceSI.html#a32898d7d32591b384ea342e8594ea5d8',1,'SI']]],
   ['femto_5fsievert_5ft_1640',['femto_sievert_t',['../namespaceSI.html#a9a843ff0595da7efc49fba0f06d95789',1,'SI']]],
-  ['femto_5fsterradian_5ft_1641',['femto_sterradian_t',['../namespaceSI.html#a4a97f4529733e581d2932fa77610d297',1,'SI']]],
+  ['femto_5fsteradian_5ft_1641',['femto_steradian_t',['../namespaceSI.html#a45504da80fc4d9dc33c031dc79187b7e',1,'SI']]],
   ['femto_5ftesla_5ft_1642',['femto_tesla_t',['../namespaceSI.html#a97b20432fd304353f67a8aa64a053f6e',1,'SI']]],
   ['femto_5fvolt_5ft_1643',['femto_volt_t',['../namespaceSI.html#abc7f667b219745518fcc919cc70a70b9',1,'SI']]],
   ['femto_5fwatt_5ft_1644',['femto_watt_t',['../namespaceSI.html#a2af0ee215588617accfacb4b754b87cf',1,'SI']]],
