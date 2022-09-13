@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.5.1 
+
+* Using Catch2 test discovery in CMake
+
 ## 2.5.0
 
 * Removed implicit conversion from primitives to `unit_t`. See [issue #106](https://github.com/bernedom/SI/issues/106) for details
