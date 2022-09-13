@@ -68,6 +68,7 @@ target_compile_options(
 # add `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE to switch to runtime only checks
 # target_compile_definitions(SI_detail_tests PRIVATE
 # CATCH_CONFIG_RUNTIME_STATIC_REQUIRE)
+include(Catch)
 
 add_executable(SI_base_unit_tests)
 target_sources(
@@ -188,3 +189,7 @@ add_test(NAME SI_detail_tests COMMAND SI_detail_tests)
 add_test(NAME SI_base_unit_tests COMMAND SI_base_unit_tests)
 add_test(NAME SI_derived_unit_tests COMMAND SI_derived_unit_tests)
 # add_test(NAME SI_unit_benchmarks COMMAND SI_unit_benchmarks)
+
+catch_discover_tests(SI_base_unit_tests)
+catch_discover_tests(SI_detail_tests)
+catch_discover_tests(SI_derived_unit_tests)
