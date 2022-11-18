@@ -2,6 +2,7 @@
 
 ## 2.5.1 
 
+* Bugfix: `unit.as<other_unit>()` automatically infers the underlying type if not explicitely specified.
 * Using Catch2 test discovery in CMake
 
 ## 2.5.0

@@ -2,6 +2,7 @@
 
 #include <SI/length.h>
 #include <SI/stream.h>
+#include <cstdint>
 #include <sstream>
 
 using namespace SI;
@@ -517,3 +518,19 @@ TEST_CASE("GIVEN a string of '1Em' WHEN streamed into exa_metre_t THEN result "
 //   // constexpr auto x = 2.0 / SI::milli_metre_t<double>{1};
 //   //  constexpr auto x = 2 / SI::milli_metre_t<double>{1};
 // }
+
+TEST_CASE("Test as() with type conversion") {
+  constexpr auto one_m = 1_m;
+  constexpr auto one_mm = one_m.as<SI::milli_metre_t<long double>>();
+
+  REQUIRE(std::is_same<decltype(one_mm),
+                       const SI::milli_metre_t<long double>>::value);
+}
+
+TEST_CASE("Test as() with implict underlying type") {
+  constexpr auto one_m = 1_m;
+  constexpr auto one_mm = one_m.as<SI::milli_metre_t>();
+
+  REQUIRE(
+      std::is_same<decltype(one_mm), const SI::milli_metre_t<int64_t>>::value);
+}
