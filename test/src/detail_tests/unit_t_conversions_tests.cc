@@ -3,6 +3,7 @@
 #include <SI/detail/cross_unit_operations.h>
 #include <SI/detail/unit.h>
 
+#include <cstdint>
 #include <type_traits>
 
 using namespace SI::detail;
@@ -13,6 +14,8 @@ using unit_Z_t = SI::detail::unit_t<'Z', std::ratio<1>, _type, _ratio>;
 
 template <typename _type, typename _ratio>
 using unit_X_t = SI::detail::unit_t<'X', std::ratio<1>, _type, _ratio>;
+
+template <typename _type> using milli_X_t = unit_X_t<_type, std::milli>;
 } // namespace
 
 TEST_CASE("GIVEN a declared unit of type int64_t WHEN copy-constructed "
@@ -78,9 +81,8 @@ TEST_CASE("GIVEN a declared unit of int32_t WHEN compared with an unit of type "
   STATIC_REQUIRE_FALSE(v_int32 != v_int64);
 }
 
-TEST_CASE(
-    "GIVEN a declared unit of int32_t WHEN compared with an unit of type "
-    "int64_t AND ratio is different THEN value is implicitly converted") {
+TEST_CASE("GIVEN a declared unit of int32_t WHEN compared with an unit of type "
+          "int64_t AND ratio is different THEN value is implicitly converted") {
 
   constexpr unit_t<'X', std::ratio<1>, int32_t> v_int32{123};
   constexpr unit_t<'X', std::ratio<1>, int64_t, std::milli> v_int64{123000};
@@ -350,4 +352,22 @@ TEST_CASE("GIVEN a unit with internal ratio of kilo WHEN retrieved with "
       std::is_same<const unit_t<'X', std::ratio<1>, int64_t, std::milli>,
                    decltype(result)>::value);
   STATIC_REQUIRE(result.value() == 2000000);
+}
+
+TEST_CASE("GIVEN a unit WHEN converted with the as() function without "
+          "underlying type specified THEN unit is converted") {
+  constexpr unit_X_t<int64_t, std::ratio<1>> v{2};
+
+  constexpr auto result = v.as<milli_X_t>();
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), const milli_X_t<int64_t>>::value);
+}
+
+TEST_CASE("GIVEN a unit WHEN converted with the as() function with the "
+          "the underlying type specified THEN unit is converted") {
+  constexpr unit_X_t<int64_t, std::ratio<1>> v{2};
+
+  constexpr auto result = v.as<milli_X_t<long double>>();
+  STATIC_REQUIRE(
+      std::is_same<decltype(result), const milli_X_t<long double>>::value);
 }
