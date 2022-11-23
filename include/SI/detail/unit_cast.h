@@ -13,6 +13,7 @@
 
 #include "detail.h"
 #include <ratio>
+#include <type_traits>
 
 namespace SI::detail {
 
@@ -28,11 +29,20 @@ constexpr auto unit_cast(const _rhs_T &rhs) {
                      typename _rhs_T::internal_type, typename _rhs_T::ratio>,
               _rhs_T>::value,
       "is of type unit_t or a derived class");
+
   using conversion_ratio =
       std::ratio_divide<typename _rhs_T::ratio, typename _target_type::ratio>;
+  static_assert(std::is_convertible<decltype(conversion_ratio::den),
+                                    typename _rhs_T::internal_type>::value,
+                "conversion ratio denominator is convertible to internal type");
 
+  // the static cast is needed because MSVC will print a warning without it
+  // because of a possible loss of precision when rhs is of type double
   return _target_type(
-      ((rhs.value() * conversion_ratio::num) / conversion_ratio::den));
+      ((rhs.value() * static_cast<typename _target_type::internal_type>(
+                          conversion_ratio::num)) /
+       static_cast<typename _target_type::internal_type>(
+           conversion_ratio::den)));
 }
 
 template <typename _unit_lhs, typename _unit_rhs>
