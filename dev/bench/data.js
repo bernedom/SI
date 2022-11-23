@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1663592366928,
+  "lastUpdate": 1669232673120,
   "repoUrl": "https://github.com/bernedom/SI",
   "entries": {
     "Catch2 Benchmark": [
@@ -12440,6 +12440,170 @@ window.BENCHMARK_DATA = {
             "name": "conversion by to_string",
             "value": 92.1819,
             "range": "+/- 4.8202",
+            "unit": "ns",
+            "extra": "100 samples\n313 iterations"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dominik.berner@gmail.com",
+            "name": "Dominik Berner",
+            "username": "bernedom"
+          },
+          "committer": {
+            "email": "dominik.berner@gmail.com",
+            "name": "Dominik Berner",
+            "username": "bernedom"
+          },
+          "distinct": true,
+          "id": "ea979be9916e5af7ce6a0456247ff35c15980c93",
+          "message": "Explicitly casting ratio to target type on unit cast",
+          "timestamp": "2022-11-23T20:43:07+01:00",
+          "tree_id": "a2f46c42371109d402a7e78fcfb00ba2111b7101",
+          "url": "https://github.com/bernedom/SI/commit/ea979be9916e5af7ce6a0456247ff35c15980c93"
+        },
+        "date": 1669232668515,
+        "tool": "catch2",
+        "benches": [
+          {
+            "name": "Default construction",
+            "value": 0.163025,
+            "range": "+/- 0.0019208",
+            "unit": "ns",
+            "extra": "100 samples\n46479 iterations"
+          },
+          {
+            "name": "Value initialized construction",
+            "value": 0.261537,
+            "range": "+/- 0.0422207",
+            "unit": "ns",
+            "extra": "100 samples\n41441 iterations"
+          },
+          {
+            "name": "copy construction same ratio",
+            "value": 0.214421,
+            "range": "+/- 0.00108134",
+            "unit": "ns",
+            "extra": "100 samples\n41513 iterations"
+          },
+          {
+            "name": "copy construction different ratio",
+            "value": 0.219225,
+            "range": "+/- 0.0317776",
+            "unit": "ns",
+            "extra": "100 samples\n40932 iterations"
+          },
+          {
+            "name": "Raw number assignment (reference)",
+            "value": 4.96502,
+            "range": "+/- 25.2427",
+            "unit": "us",
+            "extra": "100 samples\n6 iterations"
+          },
+          {
+            "name": "same ratio assignment",
+            "value": 4.97202,
+            "range": "+/- 88.7437",
+            "unit": "us",
+            "extra": "100 samples\n6 iterations"
+          },
+          {
+            "name": "different ratio assignment",
+            "value": 8.26807,
+            "range": "+/- 59.4702",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Raw add assignment (reference)",
+            "value": 6.33364,
+            "range": "+/- 94.3492",
+            "unit": "us",
+            "extra": "100 samples\n5 iterations"
+          },
+          {
+            "name": "same ratio add assignment",
+            "value": 6.34024,
+            "range": "+/- 111.458",
+            "unit": "us",
+            "extra": "100 samples\n5 iterations"
+          },
+          {
+            "name": "different ratio add assignment",
+            "value": 8.38956,
+            "range": "+/- 354.979",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "Raw subtract assignment (reference)",
+            "value": 6.52683,
+            "range": "+/- 88.9642",
+            "unit": "us",
+            "extra": "100 samples\n5 iterations"
+          },
+          {
+            "name": "same ratio subtract assignment",
+            "value": 6.33704,
+            "range": "+/- 99.2889",
+            "unit": "us",
+            "extra": "100 samples\n5 iterations"
+          },
+          {
+            "name": "different ratio subtract assignment",
+            "value": 8.42456,
+            "range": "+/- 339.69",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "int64_t by unit division",
+            "value": 265.134,
+            "range": "+/- 2.30712",
+            "unit": "us",
+            "extra": "100 samples\n1 iterations"
+          },
+          {
+            "name": "long double by unit division",
+            "value": 45.3055,
+            "range": "+/- 829.374",
+            "unit": "us",
+            "extra": "100 samples\n1 iterations"
+          },
+          {
+            "name": "unit_cast same ratio unit",
+            "value": 4.968,
+            "range": "+/- 95.008",
+            "unit": "us",
+            "extra": "100 samples\n6 iterations"
+          },
+          {
+            "name": "unit_cast different ratio unit",
+            "value": 8.27978,
+            "range": "+/- 157.967",
+            "unit": "us",
+            "extra": "100 samples\n4 iterations"
+          },
+          {
+            "name": "conversion by streams",
+            "value": 90.902,
+            "range": "+/- 8.30697",
+            "unit": "ns",
+            "extra": "100 samples\n10 iterations"
+          },
+          {
+            "name": "stream conversion with ctor",
+            "value": 402.611,
+            "range": "+/- 22.0585",
+            "unit": "ns",
+            "extra": "100 samples\n72 iterations"
+          },
+          {
+            "name": "conversion by to_string",
+            "value": 91.5558,
+            "range": "+/- 3.38905",
             "unit": "ns",
             "extra": "100 samples\n313 iterations"
           }
