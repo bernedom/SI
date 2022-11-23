@@ -1,12 +1,12 @@
 <map id="SI/detail/unit.h" name="SI/detail/unit.h">
-<area shape="rect" id="node1" title=" " alt="" coords="135,5,251,32"/>
-<area shape="rect" id="node2" href="$detail_8h.html" title=" " alt="" coords="111,155,181,181"/>
-<area shape="rect" id="node7" title=" " alt="" coords="5,229,57,256"/>
-<area shape="rect" id="node8" href="$eps__equal_8h.html" title=" " alt="" coords="284,80,384,107"/>
-<area shape="rect" id="node9" title=" " alt="" coords="205,155,297,181"/>
-<area shape="rect" id="node10" href="$unit__cast_8h.html" title=" " alt="" coords="62,80,155,107"/>
-<area shape="rect" id="node3" href="$number__parser_8h.html" title=" " alt="" coords="133,229,263,256"/>
-<area shape="rect" id="node4" title=" " alt="" coords="117,304,183,331"/>
-<area shape="rect" id="node6" title=" " alt="" coords="287,229,362,256"/>
-<area shape="rect" id="node5" title=" " alt="" coords="215,304,274,331"/>
+<area shape="rect" id="node1" title=" " alt="" coords="169,5,285,32"/>
+<area shape="rect" id="node2" href="$detail_8h.html" title=" " alt="" coords="209,155,280,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="333,229,385,256"/>
+<area shape="rect" id="node8" href="$eps__equal_8h.html" title=" " alt="" coords="5,80,105,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="93,155,185,181"/>
+<area shape="rect" id="node10" href="$unit__cast_8h.html" title=" " alt="" coords="181,80,274,107"/>
+<area shape="rect" id="node3" href="$number__parser_8h.html" title=" " alt="" coords="127,229,258,256"/>
+<area shape="rect" id="node4" title=" " alt="" coords="210,304,277,331"/>
+<area shape="rect" id="node6" title=" " alt="" coords="29,229,103,256"/>
+<area shape="rect" id="node5" title=" " alt="" coords="70,304,129,331"/>
 </map>

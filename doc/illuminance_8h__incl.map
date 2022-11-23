@@ -1,24 +1,24 @@
 <map id="SI/illuminance.h" name="SI/illuminance.h">
-<area shape="rect" id="node1" title=" " alt="" coords="578,5,705,32"/>
-<area shape="rect" id="node2" href="$area_8h.html" title=" " alt="" coords="351,80,414,107"/>
-<area shape="rect" id="node7" href="$number__parser_8h.html" title=" " alt="" coords="846,453,1018,480"/>
-<area shape="rect" id="node9" href="$unit_8h.html" title=" " alt="" coords="506,229,606,256"/>
-<area shape="rect" id="node15" href="$unit__symbol_8h.html" title=" " alt="" coords="327,229,481,256"/>
-<area shape="rect" id="node18" href="$operator__helpers_8h.html" title=" " alt="" coords="853,155,1038,181"/>
-<area shape="rect" id="node20" href="$luminous__flux_8h.html" title=" " alt="" coords="651,80,776,107"/>
-<area shape="rect" id="node3" href="$length_8h.html" title=" " alt="" coords="343,155,417,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="520,528,579,555"/>
-<area shape="rect" id="node5" title=" " alt="" coords="334,453,386,480"/>
-<area shape="rect" id="node6" title=" " alt="" coords="215,229,302,256"/>
-<area shape="rect" id="node8" title=" " alt="" coords="811,528,877,555"/>
-<area shape="rect" id="node10" href="$detail_8h.html" title=" " alt="" coords="697,379,767,405"/>
-<area shape="rect" id="node12" href="$eps__equal_8h.html" title=" " alt="" coords="499,304,599,331"/>
-<area shape="rect" id="node13" title=" " alt="" coords="415,379,507,405"/>
-<area shape="rect" id="node14" href="$unit__cast_8h.html" title=" " alt="" coords="624,304,717,331"/>
-<area shape="rect" id="node11" title=" " alt="" coords="629,453,704,480"/>
-<area shape="rect" id="node16" title=" " alt="" coords="144,304,200,331"/>
-<area shape="rect" id="node17" title=" " alt="" coords="225,304,322,331"/>
-<area shape="rect" id="node19" href="$cross__unit__operations_8h.html" title=" " alt="" coords="893,229,1069,256"/>
-<area shape="rect" id="node21" href="$luminosity_8h.html" title=" " alt="" coords="727,155,828,181"/>
-<area shape="rect" id="node22" href="$solid__angle_8h.html" title=" " alt="" coords="594,155,702,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="463,5,590,32"/>
+<area shape="rect" id="node2" href="$area_8h.html" title=" " alt="" coords="209,80,271,107"/>
+<area shape="rect" id="node7" href="$number__parser_8h.html" title=" " alt="" coords="867,453,1039,480"/>
+<area shape="rect" id="node9" href="$unit_8h.html" title=" " alt="" coords="466,229,566,256"/>
+<area shape="rect" id="node15" href="$unit__symbol_8h.html" title=" " alt="" coords="257,229,412,256"/>
+<area shape="rect" id="node18" href="$operator__helpers_8h.html" title=" " alt="" coords="738,155,923,181"/>
+<area shape="rect" id="node20" href="$luminous__flux_8h.html" title=" " alt="" coords="536,80,661,107"/>
+<area shape="rect" id="node3" href="$length_8h.html" title=" " alt="" coords="181,155,256,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="469,528,528,555"/>
+<area shape="rect" id="node5" title=" " alt="" coords="385,453,437,480"/>
+<area shape="rect" id="node6" title=" " alt="" coords="94,229,181,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="851,528,917,555"/>
+<area shape="rect" id="node10" href="$detail_8h.html" title=" " alt="" coords="774,379,845,405"/>
+<area shape="rect" id="node12" href="$eps__equal_8h.html" title=" " alt="" coords="449,304,549,331"/>
+<area shape="rect" id="node13" title=" " alt="" coords="590,379,682,405"/>
+<area shape="rect" id="node14" href="$unit__cast_8h.html" title=" " alt="" coords="675,304,768,331"/>
+<area shape="rect" id="node11" title=" " alt="" coords="625,453,700,480"/>
+<area shape="rect" id="node16" title=" " alt="" coords="195,304,251,331"/>
+<area shape="rect" id="node17" title=" " alt="" coords="275,304,373,331"/>
+<area shape="rect" id="node19" href="$cross__unit__operations_8h.html" title=" " alt="" coords="744,229,920,256"/>
+<area shape="rect" id="node21" href="$luminosity_8h.html" title=" " alt="" coords="612,155,713,181"/>
+<area shape="rect" id="node22" href="$solid__angle_8h.html" title=" " alt="" coords="479,155,587,181"/>
 </map>

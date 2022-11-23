@@ -9,7 +9,7 @@ var searchData=
   ['angle_5ft_6',['angle_t',['../namespaceSI.html#a28c0520de270c6b5ff99890d021b9f23',1,'SI']]],
   ['area_2eh_7',['area.h',['../area_8h.html',1,'']]],
   ['area_5ft_8',['area_t',['../namespaceSI.html#a1264d13c0b7e8a28972762c7d0c77663',1,'SI']]],
-  ['as_9',['as',['../structSI_1_1detail_1_1unit__t.html#ab71953c8200ff65fd889e9095959c9c6',1,'SI::detail::unit_t']]],
+  ['as_9',['as',['../structSI_1_1detail_1_1unit__t.html#ab71953c8200ff65fd889e9095959c9c6',1,'SI::detail::unit_t::as() const'],['../structSI_1_1detail_1_1unit__t.html#ae3fe6b04da99a952a400ead28b754c10',1,'SI::detail::unit_t::as() const']]],
   ['astronomic_2eh_10',['astronomic.h',['../astronomic_8h.html',1,'']]],
   ['astronomic_5funit_5ft_11',['astronomic_unit_t',['../namespaceSI.html#a24927f17d807566f95b4e4f1f439a970',1,'SI']]],
   ['atto_5fampere_5ft_12',['atto_ampere_t',['../namespaceSI.html#aceeb0e5f8a9b7b4f13bf62d6128ae4ea',1,'SI']]],

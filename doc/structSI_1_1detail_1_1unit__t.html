@@ -122,6 +122,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab71953c8200ff65fd889e9095959c9c6"><td class="memTemplParams" colspan="2">template&lt;typename _unit_rhs &gt; </td></tr>
 <tr class="memitem:ab71953c8200ff65fd889e9095959c9c6"><td class="memTemplItemLeft" align="right" valign="top">constexpr _unit_rhs&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#ab71953c8200ff65fd889e9095959c9c6">as</a> () const</td></tr>
 <tr class="separator:ab71953c8200ff65fd889e9095959c9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3fe6b04da99a952a400ead28b754c10"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename _type_rhs &gt; typename _unit_rhs&gt; </td></tr>
+<tr class="memitem:ae3fe6b04da99a952a400ead28b754c10"><td class="memTemplItemLeft" align="right" valign="top">constexpr _unit_rhs&lt; _type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#ae3fe6b04da99a952a400ead28b754c10">as</a> () const</td></tr>
+<tr class="separator:ae3fe6b04da99a952a400ead28b754c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2165bb95dba2e598a8c78eb5816778a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a2165bb95dba2e598a8c78eb5816778a7">setValue</a> (_type v)</td></tr>
 <tr class="separator:a2165bb95dba2e598a8c78eb5816778a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a5e0ddb89157e3f2d3e798ee0f87754"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSI_1_1detail_1_1unit__t.html#a4a5e0ddb89157e3f2d3e798ee0f87754">operator=</a> (const <a class="el" href="structSI_1_1detail_1_1unit__t.html">unit_t</a> &amp;rhs)=default</td></tr>
@@ -545,7 +548,7 @@ template&lt;typename _rhs_ratio &gt; </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab71953c8200ff65fd889e9095959c9c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab71953c8200ff65fd889e9095959c9c6">&#9670;&nbsp;</a></span>as()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab71953c8200ff65fd889e9095959c9c6">&#9670;&nbsp;</a></span>as() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -570,6 +573,37 @@ template&lt;typename _unit_rhs &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>returns a new instance of the unit with a differend value and explicit specified underlying type </p>
+
+</div>
+</div>
+<a id="ae3fe6b04da99a952a400ead28b754c10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3fe6b04da99a952a400ead28b754c10">&#9670;&nbsp;</a></span>as() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;char _symbol, typename _exponent , typename _type , typename _ratio  = std::ratio&lt;1&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;template&lt; typename _type_rhs &gt; typename _unit_rhs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr _unit_rhs&lt;_type&gt; <a class="el" href="structSI_1_1detail_1_1unit__t.html">SI::detail::unit_t</a>&lt; _symbol, _exponent, _type, _ratio &gt;::as </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>returns a new instance of the unit with a differend value with the same underlying type </p>
 
 </div>
 </div>
