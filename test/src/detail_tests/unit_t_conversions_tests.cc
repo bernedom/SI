@@ -4,6 +4,7 @@
 #include <SI/detail/unit.h>
 
 #include <cstdint>
+#include <iostream>
 #include <type_traits>
 
 using namespace SI::detail;
