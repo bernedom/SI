@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_1529',['value',['../structSI_1_1detail_1_1unit__t.html#ad6140abd917290bee1f19d98f56a2f87',1,'SI::detail::unit_t']]]
+  ['value_1811',['value',['../structSI_1_1detail_1_1unit__t.html#ad6140abd917290bee1f19d98f56a2f87',1,'SI::detail::unit_t']]]
 ];

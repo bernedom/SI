@@ -1,4 +1,4 @@
 <map id="SI::detail::is_unit_t&lt; const unit_t&lt; _symbol, _exponent, _type, _ratio &gt; &gt;" name="SI::detail::is_unit_t&lt; const unit_t&lt; _symbol, _exponent, _type, _ratio &gt; &gt;">
 <area shape="rect" id="node1" title="template specialization to check if a type is a unit_t (true if unit_t)" alt="" coords="5,80,219,136"/>
-<area shape="rect" id="node2" title=" " alt="" coords="70,5,154,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="56,5,168,32"/>
 </map>
