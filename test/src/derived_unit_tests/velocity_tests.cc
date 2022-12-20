@@ -1,5 +1,7 @@
+#include "SI/detail/operator_helpers.h"
 #include <catch2/catch.hpp>
 
+#include <SI/frequency.h>
 #include <SI/stream.h>
 #include <SI/velocity.h>
 #include <sstream>
@@ -447,4 +449,29 @@ TEST_CASE(
   ss >> value;
   REQUIRE(!ss.fail());
   REQUIRE(value == 1_km_p_h);
+}
+
+TEST_CASE("GIVEN a velocity type when divided by length type THEN result is "
+          "frequency type") {
+  constexpr auto velocity = 10_m_p_s;
+  constexpr auto length = 2_m;
+  constexpr auto frequ = velocity / length;
+  STATIC_REQUIRE(frequ == 5_Hz);
+}
+
+TEST_CASE("GIVEN a velocity type with a large magnitude when divided by length "
+          "type THEN result is "
+          "frequency type") {
+  constexpr auto velocity = 10000_m_p_s;
+  constexpr auto length = 2_m;
+  constexpr auto frequ = velocity / length;
+  STATIC_REQUIRE(frequ == 5_kHz);
+}
+
+TEST_CASE("GIVEN a freqency type when multiplied by length type THEN result is "
+          "velocity type") {
+  constexpr auto frequ = 5_Hz;
+  constexpr auto length = 2_m;
+  constexpr auto velocity = frequ * length;
+  STATIC_REQUIRE(velocity == 10_m_p_s);
 }
