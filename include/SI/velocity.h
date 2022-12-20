@@ -15,6 +15,7 @@
 
 #include "detail/number_parser.h"
 #include "detail/unit.h"
+#include "frequency.h"
 #include "length.h"
 #include "time.h"
 
@@ -41,6 +42,7 @@ using speed_of_light_t = velocity_t<_type, std::ratio<299792458, 1>::type>;
 
 namespace detail {
 BUILD_UNIT_FROM_DIVISION(velocity_t, length_t, time_t)
+BUILD_UNIT_FROM_DIVISION(frequency_t, velocity_t, length_t)
 } // namespace detail
 
 // specialize unit_symbol for usage with stream operators
