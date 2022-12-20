@@ -20,7 +20,7 @@
  * */
 
 #define BUILD_UNIT_FROM_DIVISION(RESULTING_UNIT_T, DIVIDEND_UNIT_T,            \
-                                DIVISOR_UNIT_T)                                \
+                                 DIVISOR_UNIT_T)                               \
   template <typename _type, typename _ratio_lhs, typename _type_rhs,           \
             typename _ratio_rhs>                                               \
   constexpr auto operator/(const DIVIDEND_UNIT_T<_type, _ratio_lhs> &lhs,      \
