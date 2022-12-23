@@ -2,11 +2,9 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
-  schedule:
-    - cron: "5 14 * * 5"
+  release:
+    types: [published]
 
 jobs:
   analyze:
@@ -29,7 +27,7 @@ jobs:
       - name: Install Packages
         run: |
           sudo apt-get update
-          sudo apt-get install --yes python-pip ca-certificates
+          sudo apt-get install --yes python3-pip ca-certificates
 
       - name: After Prepare
         run: |
