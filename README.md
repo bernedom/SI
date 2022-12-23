@@ -36,11 +36,11 @@ int main(int, char **) {
 }
 ```
 
-SI provides conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) with strong **type safety at compile time**. All units are special typedefs of the template struct `SI::unit_t`. Only the value of the unit is stored internally, the ratio (i.e. milli, micro, kilo...) is determined as a type trait to allow all units to have the same resolution across the whole implemented ratios. SI handles operations of units of the same ratios as well as when the ratios are different. See the [documentation implementation details](doc/implementation-details.md) for further information. Operations between units of the same ratio are overhead-free, else there is additional computation cost to adjust the values to the units. By passing the flag `SI_DISABLE_IMPLICIT_RATIO_CONVERSION` to the compiler implicit ratio conversion is not done and fails with a compiler error. See the [continuous benchmark results](https://si.dominikberner.ch/dev/bench/) for a comparison between the reference measurements and the implementation in SI. 
+SI provides conversions and arithmetic operations with values of any of the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units) with strong **type safety at compile time**. All units are special typedefs of the template struct `SI::unit_t`. Only the value of the unit is stored internally, the ratio (i.e. milli, micro, kilo...) is determined as a type trait to allow all units to have the same resolution across the whole implemented ratios. SI handles operations of units of the same ratios as well as when the ratios are different. See the [documentation implementation details](doc/implementation-details.md) for further information. Operations between units of the same ratio are overhead-free, else there is an additional computation cost to adjust the values to the units. Passing the flag `SI_DISABLE_IMPLICIT_RATIO_CONVERSION` to the compiler implicit ratio conversion is not done and fails with a compiler error. See the [continuous benchmark results](https://si.dominikberner.ch/dev/bench/) for a comparison between the reference measurements and the implementation in SI. 
 
 It is possible to supply custom ratios to the built-in types and they are fully compatible for calculation with other units. However, the necessary literals or typedefs have to be supplied by the user. For instance `SI::velocity_t<double, std::ratio<1000, 36>>` would be "kilometre per one-hundredth-of-an-hour".
 
-Converting between units is either done with the `as<unit_t>()` member function of `unit_` or the free function `SI::unit_cast<unit_t>(unit_t u)`. This will convert a value of the same type but different ratio. 
+Converting between units is either done with the `as<unit_t>()` member function of `unit_` or the free function `SI::unit_cast<unit_t>(unit_t u)`. This will convert a value of the same type but a different ratio. 
 
 ## SI Base units
 
@@ -70,7 +70,8 @@ The typedefs are prefixed (or in rare cases interfixed) with the standard metric
 | Frequency        | T                | -1       | Hz          | 10<sup>-18</sup> to 10<sup>18</sup> | `*_hertz_t`        |
 | Angle*           | r                | 1        | rad         | 10<sup>-18</sup> to 1               | `*_radian_t`       |
 | Angle (Degrees)* | r                | 1        | deg         | micro, milli, 1                     | `*_radian_t`       |
-| Solid Angle*     | R                | 1        | sr          | 10<sup>-18</sup> to 1               | `*_steradian_t`   |
+| Solid Angle*     | R                | 1        | sr          | 10<sup>-18</sup> to 1               | `*_steradian_t`    |
+
 
 \* Angle, Angle (degree) and solid angle are simple containers, not containing any functionality to do angle/solid-angle computation such as an overflow after 2*pi. Converting between radians and degree might lose precision, especially if working with `long doubles` because the ratios not precise enough, as they have to be represented as long ints
 
@@ -95,7 +96,7 @@ All units that can be built from other units decay to the respective units by in
 | Magnetic Field       | B                | T           | f/L^2            | aT to ET                | `*_tesla_t`                                                        |
 | Momentum             | o*               | kg⋅m/s      | M \* v           | none                    | none                                                               |
 | Inductance           | l                | H           | f / I            | aH to EH                | `*_henry_t`                                                        |
-| Luminous flux        | m**              | lm          | J \* R           | alm to Elm              | `*_lumen_t`                                                        |
+| Luminous flux        | m*               | lm          | J \* R           | alm to Elm              | `*_lumen_t`                                                        |
 | Luminance            | i*               | lx          | m / a            | alx to Elx              | `*_lux_t`                                                          |
 | Radioactivity        | A                | Bq          |                  | aBq to EBq              | `*_becquerel_t`                                                    |
 | Absorbed Dose        | D                | Gy          |                  | aGy to EGy              | `*_gray_t`                                                         |
@@ -103,18 +104,18 @@ All units that can be built from other units decay to the respective units by in
 | Catalytic activity   | K                | kat         | N / T            | akat to Ekat            | `*_katal_t`                                                        |
 | Surface flow         | s                | m^2/s       | L^2 / T          | none                    |                                                                    |
 | Volumetric flow      | V                | m^3/s       | L^3 / T          | none                    |                                                                    |
+| angular velocity     | w*               | rad/s       | r / T            | none                    |                                                                    |
 
 
-\* These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`. Luminance should be E<sub>b</sub>.
+\* These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`. Luminance should be E<sub>b</sub>. Angular velocity should be ω (omega). Luminous flux should be Φ<sub>v</sub> which is even less supported than `Φ (Phi)` itself.
 
-\** luminous flux should be Φ<sub>v</sub> which is even more less supported than `Φ (Phi)` itself.
 
 ## Non-Standard Units
 
 Non standard units are not regulated by the [BIPM](https://www.bipm.org/) but are accepted for use with the SI standard. 
 
-| Unit                       | Dimension Symbol | literals   | implemented ratios                                                     | unit typedefs                                                           |
-| -------------------------- | ---------------- | ---------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Unit                       | Dimension Symbol | literals   | implemented ratios                                                     | unit typedefs                                                          |
+| -------------------------- | ---------------- | ---------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | Astronomic Units of length | L                | AU, ly, pc | 149597870691:1 (AU), 9460730777119564:1 (ly), 30856775814913700:1 (pc) | `astronomic_unit_t` (`_AU`), `lightyear_t` (`_ly`), `parsec_t` (`_pc`) |
 
 ## Building & compatibility
