@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.5.2
+
+* Add CodeQL analysis to CI pipeline
+
 ## 2.5.1 
 
 * Bugfix: `unit.as<other_unit>()` automatically infers the underlying type if not explicitely specified.
