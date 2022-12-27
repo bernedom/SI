@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ cpp ]
+        language: [cpp]
 
     steps:
       - name: Checkout
@@ -36,7 +36,6 @@ jobs:
           export PATH=$PATH:~/.local/bin && echo "PATH=$PATH" >> $GITHUB_ENV
           conan --version
           conan profile new default --detect
-          cat /usr/local/share/ca-certificates/semmle-cache-ca/semmle-cache-ca.crt >> ~/.conan/cacert.pem
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
