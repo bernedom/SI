@@ -498,15 +498,11 @@ TEST_CASE("clc") {
   auto u = 1.0_rad;
 
   for (int i = 0; i < 10; ++i) {
-    auto speed_div_whelbase = speed / wheelbase;
-    auto speed_angle = (speed / wheelbase) * u * std::tan(angle.value());
-    auto dt_speed_angle = dt * speed_angle;
-    heading += dt_speed_angle;
-    // auto something = dt * (speed / wheelbase) * u; //*
-    // std::tan(angle.value());
 
-    // heading =
-    //  heading + dt * (speed / wheelbase); //* u; * std::tan(angle.value());
+    // works if the brackets are set
+    heading += dt * ((speed / wheelbase) * u * std::tan(angle.value()));
+    // this does not work but should
+    heading += dt * (speed / wheelbase) * u * std::tan(angle.value());
 
     x = x + dt * speed * std::cos(heading.value()); // += not accepted
     y = y + dt * speed * std::sin(heading.value()); // std::sin(h) not accepted
