@@ -2,6 +2,7 @@
 #include <catch2/catch.hpp>
 
 #include <SI/angle.h>
+#include <SI/angular_velocity.h>
 #include <SI/frequency.h>
 #include <SI/stream.h>
 #include <SI/velocity.h>
@@ -497,7 +498,16 @@ TEST_CASE("clc") {
   auto u = 1.0_rad;
 
   for (int i = 0; i < 10; ++i) {
-    heading = heading + dt * (speed / wheelbase) * u * std::tan(angle.value());
+    auto speed_div_whelbase = speed / wheelbase;
+    auto speed_angle = (speed / wheelbase) * u * std::tan(angle.value());
+    auto dt_speed_angle = dt * speed_angle;
+    heading += dt_speed_angle;
+    // auto something = dt * (speed / wheelbase) * u; //*
+    // std::tan(angle.value());
+
+    // heading =
+    //  heading + dt * (speed / wheelbase); //* u; * std::tan(angle.value());
+
     x = x + dt * speed * std::cos(heading.value()); // += not accepted
     y = y + dt * speed * std::sin(heading.value()); // std::sin(h) not accepted
 
