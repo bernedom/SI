@@ -2,7 +2,7 @@
 
 #include <SI/length.h>
 #include <SI/stream.h>
-#include <cstdint>
+
 #include <sstream>
 
 using namespace SI;
