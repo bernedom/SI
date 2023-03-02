@@ -11,7 +11,7 @@ jobs:
       - name: install dependencies
         run: |
           sudo -H pip3 install setuptools wheel
-          sudo -H pip3 install conan
+          sudo -H pip3 install conan==1.59
       - name: Build and run benchmarks with Catch2
         run: |
           mkdir build && cd build
