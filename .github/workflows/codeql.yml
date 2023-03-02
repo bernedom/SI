@@ -31,7 +31,7 @@ jobs:
 
       - name: After Prepare
         run: |
-          pip3 install conan --user --upgrade
+          pip3 install conan==1.59 --user --upgrade
           ls ~/.local/bin
           export PATH=$PATH:~/.local/bin && echo "PATH=$PATH" >> $GITHUB_ENV
           conan --version

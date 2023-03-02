@@ -44,17 +44,17 @@ jobs:
           if [ "${{ matrix.compiler }}" = "clang++" ]; then
             sudo apt install clang-6.0 -y
           fi
-          sudo pip3 install conan
+          sudo pip3 install conan==1.59
 
       - name: dependencies (macos)
         if: runner.os == 'macOS'
         run: |
           brew update
-          brew install shunit2 ninja conan coreutils
+          brew install shunit2 ninja conan==1.59 coreutils
 
       - name: dependencies (windows)
         if: runner.os == 'Windows'
-        run: pip install conan
+        run: pip install conan==1.59
 
       - name: set-compiler-env
         run: |
@@ -111,7 +111,7 @@ jobs:
       - name: dependencies (Linux)
         run: |
           sudo apt install shunit2 python3-setuptools python3-pip -y
-          sudo pip3 install conan
+          sudo pip3 install conan==1.59
 
       - name: version-consistency
         run: |
