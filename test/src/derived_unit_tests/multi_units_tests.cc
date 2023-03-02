@@ -1,7 +1,7 @@
 #include <catch2/catch.hpp>
 
 #include <SI/angle.h>
-#include <SI/angular_velocity.h>
+#include <SI/angular_frequency.h>
 #include <SI/frequency.h>
 #include <SI/velocity.h>
 
