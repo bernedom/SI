@@ -136,7 +136,7 @@ target_sources(
           src/derived_unit_tests/solid_angle_tests.cc
           src/derived_unit_tests/astronomic_tests.cc
           src/derived_unit_tests/flow_tests.cc
-          src/derived_unit_tests/angular_velocity_tests.cc
+          src/derived_unit_tests/angular_frequency_tests.cc
           src/derived_unit_tests/multi_units_tests.cc)
 
 target_include_directories(
