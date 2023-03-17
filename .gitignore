@@ -39,3 +39,4 @@ build
 # exclude generated documentation
 doc/generated
 __pycache__/
+.cache
