@@ -50,7 +50,8 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew update
-          brew install shunit2 ninja conan@1.59 coreutils
+          brew install shunit2 ninja conan@1 coreutils
+          echo 'export PATH="/usr/local/opt/conan@1/bin:$PATH"' >> /Users/runner/.bash_profile
 
       - name: dependencies (windows)
         if: runner.os == 'Windows'
