@@ -54,7 +54,10 @@ jobs:
 
       - name: dependencies (windows)
         if: runner.os == 'Windows'
-        run: pip install conan==1.59
+        run: |
+          pip install conan==1.59
+          curl -L0 https://github.com/kward/shunit2/archive/v2.1.7.zip --output shunit2.zip
+          unzip -j -n shunit2.zip
 
       - name: set-compiler-env
         run: |
@@ -89,9 +92,9 @@ jobs:
         working-directory: ./build
 
       - name: installation-tests
-        if: runner.os == 'Linux' || runner.os == 'macOs'
         run: |
           ./test/installation-tests.sh
+        shell: bash
 
       - name: program-termination-tests
         if: runner.os == 'Linux' || runner.os == 'macOs'
