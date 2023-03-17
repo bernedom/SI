@@ -92,6 +92,7 @@ jobs:
         working-directory: ./build
 
       - name: installation-tests
+        if: runner.os == 'Linux' || runner.os == 'macOs'
         run: |
           ./test/installation-tests.sh
         shell: bash
