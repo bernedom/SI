@@ -55,7 +55,7 @@ jobs:
       - name: dependencies (windows)
         if: runner.os == 'Windows'
         run: |
-          pip install conan==1.59
+          pip install conan@1.59
           curl -L0 https://github.com/kward/shunit2/archive/v2.1.7.zip --output shunit2.zip
           unzip -j -n shunit2.zip
 
