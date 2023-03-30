@@ -51,7 +51,7 @@ jobs:
         run: |
           brew update
           brew install shunit2 ninja conan@1 coreutils
-          echo 'export PATH="/usr/local/opt/conan@1/bin:$PATH"' >> /Users/runner/.bash_profile
+          echo PATH="/usr/local/opt/conan@1/bin:$PATH" >> $GITHUB_ENV
 
       - name: dependencies (windows)
         if: runner.os == 'Windows'
