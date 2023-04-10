@@ -104,7 +104,7 @@ All units that can be built from other units decay to the respective units by in
 | Catalytic activity   | K                | kat         | N / T            | akat to Ekat            | `*_katal_t`                                                        |
 | Surface flow         | s                | m^2/s       | L^2 / T          | none                    |                                                                    |
 | Volumetric flow      | V                | m^3/s       | L^3 / T          | none                    |                                                                    |
-| angular velocity     | w*               | rad/s       | r / T            | none                    |                                                                    |
+| Angular frequency     | w*               | rad/s       | r / T            | none                    |                                                                    |
 
 
 \* These dimensions do not yet have the correct symbols, because the current implementation does not allow for non-ASCII symbols or multi-char symbols. The dimension symbol for electric resistance should be `Ω (Ohm)` and for magnetic flux `Φ (Phi)`. Luminance should be E<sub>b</sub>. Angular velocity should be ω (omega). Luminous flux should be Φ<sub>v</sub> which is even less supported than `Φ (Phi)` itself.
