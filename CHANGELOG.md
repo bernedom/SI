@@ -2,6 +2,7 @@
 
 ## 2.5.2
 
+* Add `angular_frequency_t` as type
 * Add operators to convert velocity to frequency and vice versa (i.e. velocity / length = frequency)
 * Add CodeQL analysis to CI pipeline
 
