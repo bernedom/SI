@@ -15,21 +15,21 @@ jobs:
       fail-fast: true
       matrix:
         name:
-          [ubuntu-gcc-7, ubuntu-clang-6, macos-apple-clang-11, windows-msvc-19]
+          [ubuntu-gcc-9, ubuntu-clang-12, macos-apple-clang-10, windows-msvc-19]
         include:
-          - name: ubuntu-gcc-7
-            os: ubuntu-18.04
+          - name: ubuntu-gcc-9
+            os: ubuntu-22.04
             compiler: g++
-            compiler-version: 7
+            compiler-version: 9
             compiler-name-conan: gcc
 
-          - name: ubuntu-clang-6
-            os: ubuntu-18.04
+          - name: ubuntu-clang-12
+            os: ubuntu-22.04
             compiler: clang++
-            compiler-version: "6.0"
+            compiler-version: "12.0.1"
             compiler-name-conan: clang
 
-          - name: macos-apple-clang-11
+          - name: macos-apple-clang-10
             os: macos-10.15
 
           - name: windows-msvc-19
@@ -41,9 +41,6 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt install shunit2 ninja-build python3-setuptools python3-pip -y
-          if [ "${{ matrix.compiler }}" = "clang++" ]; then
-            sudo apt install clang-6.0 -y
-          fi
           sudo pip3 install conan==1.59
 
       - name: dependencies (macos)
@@ -106,7 +103,7 @@ jobs:
   version-consistency-check:
     if: github.event.action == 'published' || github.ref != 'refs/heads/main'
     needs: ci
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
 
     steps:
       - uses: actions/checkout@v2
