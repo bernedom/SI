@@ -1,0 +1,77 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 21,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "ccache-env",
+            "hidden": true,
+            "environment": {
+                "CCACHE_BASEDIR": "${sourceDir}",
+                "CCACHE_SLOPPINESS": "pch_defines,time_macros"
+            }
+        },
+        {
+            "name": "ci-ninja",
+            "displayName": "Ninja",
+            "description": "build using Ninja generator",
+            "inherits": [
+                "ccache-env"
+            ],
+            "generator": "Ninja",
+            "hidden": true
+        },
+        {
+            "name": "ci-ninja-debug",
+            "displayName": "Ninja Debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "ci-ninja-release",
+            "displayName": "Ninja Release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "ci-windows-msvc2017-32",
+            "displayName": "MSVC 2017 32bit",
+            "generator": "Visual Studio 15 2017",
+            "binaryDir": "${sourceDir}/build",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "ci-msvc2017-debug-32",
+            "displayName": "MSVC 2017 32Bit Debug",
+            "configurePreset": "ci-windows-msvc2017-32",
+            "configuration": "Debug",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "ci-msvc2017-release-32",
+            "displayName": "MSVC 2017 32Bit release",
+            "configurePreset": "ci-windows-msvc2017-32",
+            "configuration": "Release",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        }
+    ]
+}
