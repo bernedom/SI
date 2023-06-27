@@ -1,5 +1,6 @@
 [requires]
-catch2/2.13.6
+catch2/2.13.10
 
 [generators]
-cmake_find_package
+CMakeDeps
+CMakeToolchain
