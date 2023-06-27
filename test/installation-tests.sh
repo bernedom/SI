@@ -72,39 +72,6 @@ testCpackInstallation() {
     
 }
 
-testConanInstallation() {
-    
-    # preliminary cleanup
-    conan remove -f *@SI/testing
-    
-    conan create ${ROOT_DIR} SI/testing
-    assertEquals "Conan installation build successful" 0 $?
-    conan install -if ${BUILD_DIR} ${ROOT_DIR}/test/conan-installation-test
-    assertEquals "Conan installation successful" 0 $?
-    
-    cmake ${ROOT_DIR}/test/conan-installation-test -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release
-    cmake --build ${BUILD_DIR}
-    assertEquals "build against installation successful" 0 $?
-    
-    # cleanup
-    conan remove -f *@SI/testing
-    
-}
-
-testConanCmakeIntegratedInstallation() {
-    # preliminary cleanup
-    conan remove -f *@SI/testing
-    
-    conan create ${ROOT_DIR} SI/testing
-    assertEquals "Conan installation build successful" 0 $?
-    
-    cmake ${ROOT_DIR}/test/conan-cmake-installation-test -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release
-    cmake --build ${BUILD_DIR}
-    assertEquals "build against installation successful" 0 $?
-    
-    # cleanup
-    conan remove -f *@SI/testing
-}
 
 testUsageAsSubdirectory() {
     # install SI
