@@ -1,11 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
 
 
-find_package(Catch2)
-if(NOT Catch2_FOUND)
-  message(WARNING "Catch2 not found, not building tests")
-  return()
-endif()
 
 add_executable(SI_detail_tests)
 target_sources(
@@ -36,11 +31,6 @@ target_compile_options(
     $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-Werror>
     $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-pedantic>
 )
-
-# add `-DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE to switch to runtime only checks
-# target_compile_definitions(SI_detail_tests PRIVATE
-# CATCH_CONFIG_RUNTIME_STATIC_REQUIRE)
-include(Catch)
 
 add_executable(SI_base_unit_tests)
 target_sources(

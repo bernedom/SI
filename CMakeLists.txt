@@ -11,6 +11,8 @@ project(
 include(GNUInstallDirs)
 include(CTest)
 
+find_package(Catch2)
+
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
   set(IS_TOPLEVEL_PROJECT TRUE)
 else()
@@ -22,6 +24,11 @@ option(SI_INSTALL_LIBRARY
        ${IS_TOPLEVEL_PROJECT})
 option(SI_BUILD_TESTING "Build and run SI tests " ${IS_TOPLEVEL_PROJECT})
 option(SI_BUILD_DOC "Generate SI documentation" ${IS_TOPLEVEL_PROJECT})
+
+if(NOT Catch2_FOUND)
+  message(WARNING "Catch2 not found, not building tests")
+  set(SI_BUILD_TESTING OFF)
+endif()
 
 add_library(SI INTERFACE)
 # add alias so the project can be uses with add_subdirectory
