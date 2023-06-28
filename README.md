@@ -122,12 +122,12 @@ Non standard units are not regulated by the [BIPM](https://www.bipm.org/) but ar
 
 SI is a header-only library that uses **C++17** features. Building is tested using cmake > 3.25 and verified for g++7, g++8, clang5, clang6, clang7, msvc 19, and AppleClang 10.0. I recommend using  **conan 2.0** to download any dependencies for testing, but can be used without it, if the tests are not built. 
 
-to build using conan as dependency provider
+to build using conan to fetch the dependencies and cmake to build the project, run the following commands:
 
 ```bash
-conan install . --output-folder=build --build=missing
+conan install . --output-folder=build --build=missing --settings=build_type=Debug
 cmake -B build -S . --toolchain ./build/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Debug
-cmake --build . -- -j $(nproc)
+cmake --build build -- -j $(nproc)
 ```
 
 substitute `--config Debug` with `--config Release` for optimized builds

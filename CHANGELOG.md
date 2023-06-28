@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.5.3
+
+* Change building instructions to work with conan 2.0
+
 ## 2.5.2
 
 * Add `angular_frequency_t` as type
