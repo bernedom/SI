@@ -1,5 +1,5 @@
 {
-    "version": 3,
+    "version": 4,
     "cmakeMinimumRequired": {
         "major": 3,
         "minor": 21,
@@ -17,25 +17,25 @@
         {
             "name": "conan-toolchain",
             "hidden": true,
-            "toolchainFile": "conan_toolchain.cmake"
+            "toolchainFile": "conan_toolchain.cmake",
+            "binaryDir": "${sourceDir}/build"
         },
         {
             "name": "ci-ninja",
             "displayName": "Ninja",
             "description": "build using Ninja generator",
             "inherits": [
-                "ccache-env"
+                "ccache-env",
+                "conan-toolchain"
             ],
             "generator": "Ninja",
-            "hidden": true,
-            "binaryDir": "${sourceDir}/build"
+            "hidden": true
         },
         {
             "name": "ci-ninja-debug",
             "displayName": "Ninja Debug",
             "inherits": [
-                "ci-ninja",
-                "conan-toolchain"
+                "ci-ninja"
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug"
@@ -45,8 +45,7 @@
             "name": "ci-ninja-release",
             "displayName": "Ninja Release",
             "inherits": [
-                "ci-ninja",
-                "conan-toolchain"
+                "ci-ninja"
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release"

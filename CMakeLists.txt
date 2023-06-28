@@ -43,6 +43,7 @@ target_include_directories(
 target_compile_features(SI INTERFACE cxx_std_17)
 
 if(BUILD_TESTING AND SI_BUILD_TESTING)
+  include(Catch)
   add_subdirectory(test)
 endif()
 
