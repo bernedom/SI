@@ -59,7 +59,6 @@ jobs:
           pip install conan
           curl -L0 https://github.com/kward/shunit2/archive/v2.1.7.zip --output shunit2.zip
           unzip -j -n shunit2.zip
-          choco install ninja
           
       - name: set-compiler-env
         run: |
