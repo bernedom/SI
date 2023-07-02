@@ -52,9 +52,9 @@
             }
         },
         {
-            "name": "ci-windows-msvc2017-32",
-            "displayName": "MSVC 2017 32bit",
-            "generator": "Visual Studio 15 2017",
+            "name": "ci-windows-msvc2019",
+            "displayName": "MSVC 2019",
+            "generator": "Visual Studio 16 2019",
             "binaryDir": "${sourceDir}/build",
             "condition": {
                 "type": "equals",
@@ -65,9 +65,9 @@
     ],
     "buildPresets": [
         {
-            "name": "ci-msvc2017-debug-32",
-            "displayName": "MSVC 2017 32Bit Debug",
-            "configurePreset": "ci-windows-msvc2017-32",
+            "name": "ci-msvc2019-debug",
+            "displayName": "MSVC 2019 Debug",
+            "configurePreset": "ci-windows-msvc2017",
             "configuration": "Debug",
             "condition": {
                 "type": "equals",
@@ -76,9 +76,9 @@
             }
         },
         {
-            "name": "ci-msvc2017-release-32",
-            "displayName": "MSVC 2017 32Bit release",
-            "configurePreset": "ci-windows-msvc2017-32",
+            "name": "ci-msvc2019-release",
+            "displayName": "MSVC 2019 release",
+            "configurePreset": "ci-windows-msvc2017",
             "configuration": "Release",
             "condition": {
                 "type": "equals",
