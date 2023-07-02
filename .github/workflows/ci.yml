@@ -47,7 +47,6 @@ jobs:
       - name: dependencies (macos)
         if: runner.os == 'macOS'
         run: |
-          brew update
           brew install shunit2 ninja conan coreutils
 
       - name: dependencies (windows)
@@ -82,7 +81,7 @@ jobs:
         
       - name: build-debug
         run: cmake --build ./build
-        
+
       - name: ctest
         run: ctest -C Debug
         working-directory: ./build
