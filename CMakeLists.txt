@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.23)
 
 project(
   "SI"
-  VERSION 2.5.2
+  VERSION 2.5.3
   DESCRIPTION
     "A header only c++ library that provides type safety and user defined literals for handling physical values defined in the International System of Units."
   HOMEPAGE_URL "https://github.com/bernedom/SI"
