@@ -13,6 +13,7 @@ jobs:
           sudo -H pip3 install setuptools wheel
           sudo -H pip3 install conan
           conan profile detect --force
+          sudo apt-get install -y ninja-build
 
       - name: Build and run benchmarks with Catch2
         run: |
