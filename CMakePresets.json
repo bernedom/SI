@@ -56,6 +56,9 @@
             "displayName": "MSVC 2019",
             "generator": "Visual Studio 16 2019",
             "binaryDir": "${sourceDir}/build",
+            "inherits": [
+                "conan-toolchain"
+            ],
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
