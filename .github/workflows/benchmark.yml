@@ -21,7 +21,7 @@ jobs:
           conan install . --output-folder=build --build=missing --settings=build_type=Release
           cmake --preset=ci-ninja-release
           cmake --build build --target SI_unit_benchmarks
-          ./test/SI_unit_benchmarks | tee benchmark_result.txt
+          ./build/test/SI_unit_benchmarks | tee ./build/benchmark_result.txt
       - name: Store benchmark result
         if: github.ref == 'refs/heads/main'
         uses: rhysd/github-action-benchmark@v1.7.0

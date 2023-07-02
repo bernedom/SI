@@ -73,6 +73,7 @@ jobs:
           if [ "${{ matrix.compiler-version }}" != "" ]; then
             sed -i 's/compiler.version=[0-9]\+/compiler.version=${{ matrix.compiler-version }}/g' ~/.conan2/profiles/default
           fi
+        shell: bash
 
       - name: cmake-configure-debug
         run: |
