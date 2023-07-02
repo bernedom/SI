@@ -129,7 +129,7 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt install shunit2 python3-setuptools python3-pip -y
-          sudo pip3 install
+          sudo pip3 install conan
 
       - name: version-consistency
         run: |
