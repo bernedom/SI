@@ -41,7 +41,8 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt install shunit2 ninja-build python3-setuptools python3-pip -y
-          sudo pip3 install conan==1.59
+          sudo pip3 install conan
+          
 
       - name: dependencies (macos)
         if: runner.os == 'macOS'
@@ -49,14 +50,16 @@ jobs:
           brew update
           brew install shunit2 ninja conan@1 coreutils
           echo PATH="/usr/local/opt/conan@1/bin:$PATH" >> $GITHUB_ENV
+          
 
       - name: dependencies (windows)
         if: runner.os == 'Windows'
         run: |
-          pip install conan==1.59
+          pip install conan
           curl -L0 https://github.com/kward/shunit2/archive/v2.1.7.zip --output shunit2.zip
           unzip -j -n shunit2.zip
-
+          choco install ninja
+          
       - name: set-compiler-env
         run: |
           if [ "${{ matrix.compiler }}" != "" ]; then
@@ -65,9 +68,8 @@ jobs:
         shell: bash
 
       - name: conan-profile
-        if: runner.os == 'Linux' || runner.os == 'macOs'
         run: |
-          conan profile new default --detect
+          conan profile detect --force
           if [ "${{ matrix.compiler-name-conan }}" != "" ]; then
             conan profile update settings.compiler=${{ matrix.compiler-name-conan }} default
           fi
@@ -76,15 +78,13 @@ jobs:
           fi
           conan profile update settings.compiler.libcxx=libstdc++ default
 
-          cat ~/.conan/profiles/default
-
-      - name: make-build-dir
-        run: mkdir build
       - name: cmake-configure-debug
-        run: cmake -DCMAKE_BUILD_TYPE=Debug ..
+        run: |
+          conan install . --output-folder=build --build=missing --settings=build_type=Debug
+          cmake --preset=ci-ninja-debug
         working-directory: ./build
       - name: build-debug
-        run: cmake --build ./build --config Debug
+        run: cmake --build ./build
       - name: ctest
         run: ctest -C Debug
         working-directory: ./build
@@ -114,7 +114,7 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt install shunit2 python3-setuptools python3-pip -y
-          sudo pip3 install conan==1.59
+          sudo pip3 install
 
       - name: version-consistency
         run: |

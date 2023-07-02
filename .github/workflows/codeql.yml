@@ -31,11 +31,11 @@ jobs:
 
       - name: After Prepare
         run: |
-          pip3 install conan==1.59 --user --upgrade
+          pip3 install --user --upgrade conan
+          conan profile detect --force
           ls ~/.local/bin
           export PATH=$PATH:~/.local/bin && echo "PATH=$PATH" >> $GITHUB_ENV
-          conan --version
-          conan profile new default --detect
+          conan install . --output-folder=build --build=missing --settings=build_type=Debug
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2

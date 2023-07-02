@@ -11,7 +11,7 @@ extraction:
       - export PATH=$PATH:~/.local/bin
 
       - conan --version
-      - conan profile new default --detect
+      - conan profile detect --force
       # see here for the reason why the certificates need to be appended
       # https://github.com/fair-acc/opencmw-cpp/blob/d231d6a09c6288da60c32df7b77c1dee8363e68a/.lgtm.yml#L14
       - cat /usr/local/share/ca-certificates/semmle-cache-ca/semmle-cache-ca.crt >> ~/.conan/cacert.pem
