@@ -27,7 +27,7 @@ jobs:
       - name: Install Packages
         run: |
           sudo apt-get update
-          sudo apt-get install --yes python3-pip ca-certificates
+          sudo apt-get install --yes python3-pip ca-certificates ninja-build
 
       - name: After Prepare
         run: |
@@ -43,8 +43,10 @@ jobs:
           languages: ${{ matrix.language }}
           queries: +security-and-quality
 
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v2
+      - name: build
+        run: |
+          cmake --preset ci-ninja-debug
+          cmake --build build 
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2

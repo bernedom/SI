@@ -67,7 +67,7 @@
         {
             "name": "ci-msvc2019-debug",
             "displayName": "MSVC 2019 Debug",
-            "configurePreset": "ci-windows-msvc2017",
+            "configurePreset": "ci-windows-msvc2019",
             "configuration": "Debug",
             "condition": {
                 "type": "equals",
@@ -78,7 +78,7 @@
         {
             "name": "ci-msvc2019-release",
             "displayName": "MSVC 2019 release",
-            "configurePreset": "ci-windows-msvc2017",
+            "configurePreset": "ci-windows-msvc2019",
             "configuration": "Release",
             "condition": {
                 "type": "equals",
