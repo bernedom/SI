@@ -2,7 +2,7 @@
 
 ## 2.5.3
 
-* Change building instructions to work with conan 2.0
+* Change building instructions to work with conan 2.0 - This sets the minimum CMake version to 3.23
 * Remove conan recipe as it is maintained in the [conan center index](https://github.com/conan-io/conan-center-index)
 
 ## 2.5.2
