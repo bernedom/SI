@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="SI-logo-small.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SI
-   &#160;<span id="projectnumber">2.5.2</span>
+   &#160;<span id="projectnumber">2.5.3</span>
    </div>
    <div id="projectbrief">A header only c++ library that provides type safety and user defined literals for handling physical values defined in the International System of Units.</div>
   </td>
@@ -321,6 +321,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a9ea511d79637773b3481d9a768f71d30"><td class="memTemplParams" colspan="2">template&lt;typename _type &gt; </td></tr>
 <tr class="memitem:a9ea511d79637773b3481d9a768f71d30"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a9ea511d79637773b3481d9a768f71d30">degree_t</a> = <a class="el" href="namespaceSI.html#a28c0520de270c6b5ff99890d021b9f23">angle_t</a>&lt; _type, std::ratio&lt; 100000000000000, 5729577951308232 &gt; &gt;</td></tr>
 <tr class="separator:a9ea511d79637773b3481d9a768f71d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5094c4de45e55b7b637ebf34bd341740"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
+<tr class="memitem:a5094c4de45e55b7b637ebf34bd341740"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a5094c4de45e55b7b637ebf34bd341740">angular_frequency_t</a> = <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt; 'w', std::ratio&lt; 1 &gt;, _type, _ratio &gt;</td></tr>
+<tr class="memdesc:a5094c4de45e55b7b637ebf34bd341740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for velocity where w = r / T.  <a href="namespaceSI.html#a5094c4de45e55b7b637ebf34bd341740">More...</a><br /></td></tr>
+<tr class="separator:a5094c4de45e55b7b637ebf34bd341740"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1264d13c0b7e8a28972762c7d0c77663"><td class="memTemplParams" colspan="2">template&lt;typename _type , typename _ratio &gt; </td></tr>
 <tr class="memitem:a1264d13c0b7e8a28972762c7d0c77663"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSI.html#a1264d13c0b7e8a28972762c7d0c77663">area_t</a> = <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt; 'L', std::ratio&lt; 2 &gt;, _type, _ratio &gt;</td></tr>
 <tr class="separator:a1264d13c0b7e8a28972762c7d0c77663"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3343,7 +3347,7 @@ Functions</h2></td></tr>
 <tr class="separator:a12b56203fae27d5afca637195c77ae6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This file is part of "SI" version 2.5.2 A header only c++ library that provides type safety and user defined literals for handling physical values defined in the International System of Units</p>
+<div class="textblock"><p>This file is part of "SI" version 2.5.3 A header only c++ library that provides type safety and user defined literals for handling physical values defined in the International System of Units</p>
 <p><a href="https://github.com/bernedom/SI">https://github.com/bernedom/SI</a></p>
 <p>SPDX-License-Identifier: MIT </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
@@ -3412,6 +3416,24 @@ template&lt;typename _type , typename _ratio &gt; </div>
 </div><div class="memdoc">
 
 <p>Type for angle (which should be buildable from m/m (sin/cos)) </p>
+
+</div>
+</div>
+<a id="a5094c4de45e55b7b637ebf34bd341740"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5094c4de45e55b7b637ebf34bd341740">&#9670;&nbsp;</a></span>angular_frequency_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _type , typename _ratio &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceSI.html#a5094c4de45e55b7b637ebf34bd341740">SI::angular_frequency_t</a> = typedef <a class="el" href="structSI_1_1detail_1_1unit__t.html">detail::unit_t</a>&lt;'w', std::ratio&lt;1&gt;, _type, _ratio&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type for velocity where w = r / T. </p>
 
 </div>
 </div>
