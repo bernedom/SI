@@ -36,7 +36,8 @@ jobs:
           - name: windows-msvc-19
             os: windows-2019
             configure-preset: "ci-windows-msvc2019"
-            build-preset: "ci-windows-msvc2019-debug"
+            build-preset: "ci-msvc2019-debug"
+            
 
     steps:
       - uses: actions/checkout@v2
