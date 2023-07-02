@@ -7,13 +7,13 @@ INSTALL_PATH=$(realpath ~/SI-install)
 
 buildSingleTarget()
 {
-    
+    conan install . --output-folder={BUILD_DIR} --build=missing --settings=build_type=Release
     if [ "${2}" == "DEFAULTBUILD" ]; then
-        cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_BUILD_TYPE=Release -G Ninja > /dev/null
+        cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_BUILD_TYPE=Release --toolchain=${BUILD_DIR}/conan_toolchain.cmake -G Ninja > /dev/null
         assertEquals "Configuration successful" 0 $?
         
     else
-        cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-DSI_DISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja > /dev/null
+        cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-DSI_DISABLE_IMPLICIT_RATIO_CONVERSION" --toolchain=${BUILD_DIR}/conan_toolchain.cmake -G Ninja > /dev/null
         assertEquals "Configuration successful" 0 $?
     fi
     
