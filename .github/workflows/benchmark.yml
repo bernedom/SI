@@ -11,12 +11,15 @@ jobs:
       - name: install dependencies
         run: |
           sudo -H pip3 install setuptools wheel
-          sudo -H pip3 install conan==1.59
+          sudo -H pip3 install conan
+          conan profile detect --force
+
       - name: Build and run benchmarks with Catch2
         run: |
-          mkdir build && cd build
-          cmake -DCMAKE_BUILD_TYPE=Release ..
-          cmake --build . --config Release --target SI_unit_benchmarks
+          
+          conan install . --output-folder=build --build=missing --settings=build_type=Release
+          cmake --preset=ci-ninja-release
+          cmake --build build --target SI_unit_benchmarks
           ./test/bin/SI_unit_benchmarks | tee benchmark_result.txt
       - name: Store benchmark result
         if: github.ref == 'refs/heads/main'
