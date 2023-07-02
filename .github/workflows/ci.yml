@@ -79,9 +79,10 @@ jobs:
         run: |
           conan install . --output-folder=build --build=missing --settings=build_type=Debug
           cmake --preset=ci-ninja-debug
-        working-directory: ./build
+        
       - name: build-debug
         run: cmake --build ./build
+        
       - name: ctest
         run: ctest -C Debug
         working-directory: ./build
