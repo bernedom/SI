@@ -94,7 +94,7 @@ jobs:
           if [ "${{ matrix.build-preset }}" != "" ]; then
             cmake --build ./build --preset=${{ matrix.build-preset }}
           else
-            cmake --build ./build --preset=ci-ninja-debug
+            cmake --build ./build 
           fi
 
         shell: bash
