@@ -31,6 +31,8 @@ jobs:
 
           - name: macos-apple-clang-11
             os: macos-11
+            configure-preset: "ci-windows-msvc2019"
+            build-preset: "ci-windows-msvc2019-debug"
 
           - name: windows-msvc-19
             os: windows-2019
@@ -78,10 +80,24 @@ jobs:
       - name: cmake-configure-debug
         run: |
           conan install . --output-folder=build --build=missing --settings=build_type=Debug
-          cmake --preset=ci-ninja-debug
+          if [ "${{ matrix.configure-preset }}" != "" ]; then
+            cmake --preset=${{ matrix.configure-preset }}
+          else
+            cmake --preset=ci-ninja-debug
+          fi
+          
+        shell: bash
         
       - name: build-debug
-        run: cmake --build ./build
+        run: |
+
+          if [ "${{ matrix.build-preset }}" != "" ]; then
+            cmake --build ./build --preset=${{ matrix.build-preset }}
+          else
+            cmake --build ./build --preset=ci-ninja-debug
+          fi
+
+        shell: bash
 
       - name: ctest
         run: ctest -C Debug
