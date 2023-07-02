@@ -48,9 +48,7 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew update
-          brew install shunit2 ninja conan@1 coreutils
-          echo PATH="/usr/local/opt/conan@1/bin:$PATH" >> $GITHUB_ENV
-          
+          brew install shunit2 ninja conan coreutils
 
       - name: dependencies (windows)
         if: runner.os == 'Windows'
@@ -71,12 +69,11 @@ jobs:
         run: |
           conan profile detect --force
           if [ "${{ matrix.compiler-name-conan }}" != "" ]; then
-            conan profile update settings.compiler=${{ matrix.compiler-name-conan }} default
+            sed -i 's/compiler=.*/compiler=${{ matrix.compiler-name-conan }}/g' ~/.conan2/profiles/default
           fi
           if [ "${{ matrix.compiler-version }}" != "" ]; then
-            conan profile update settings.compiler.version=${{ matrix.compiler-version }} default
+            sed -i 's/compiler.version=[0-9]\+/compiler.version=${{ matrix.compiler-version }}/g' ~/.conan2/profiles/default
           fi
-          conan profile update settings.compiler.libcxx=libstdc++ default
 
       - name: cmake-configure-debug
         run: |
