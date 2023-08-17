@@ -1,8 +1,8 @@
 {
-    "version": 4,
+    "version": 6,
     "cmakeMinimumRequired": {
         "major": 3,
-        "minor": 21,
+        "minor": 25,
         "patch": 0
     },
     "configurePresets": [
@@ -11,7 +11,8 @@
             "hidden": true,
             "environment": {
                 "CCACHE_BASEDIR": "${sourceDir}",
-                "CCACHE_SLOPPINESS": "pch_defines,time_macros"
+                "CCACHE_SLOPPINESS": "pch_defines,time_macros",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "YES"
             }
         },
         {
@@ -90,6 +91,97 @@
                 "lhs": "${hostSystemName}",
                 "rhs": "Windows"
             }
+        },
+        {
+            "name": "ci-ninja-debug",
+            "displayName": "Ninja debug",
+            "configurePreset": "ci-ninja-debug",
+            "configuration": "Debug",
+            "targets": [ "all", "help" ]
+        },
+        {
+            "name": "ci-ninja-release",
+            "displayName": "Ninja release",
+            "configurePreset": "ci-ninja-release",
+            "configuration": "Release",
+            "targets": [ "all", "api_doc" ]
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "test-common",
+            "description": "Test CMake settings that apply to all configurations",
+            "hidden": true,
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": true
+            }
+        },
+        {
+            "name": "ci-ninja-debug",
+            "displayName": "Strict",
+            "description": "Enable output and stop on failure",
+            "inherits": "test-common",
+            "configurePreset": "ci-ninja-debug"
+        },
+        {
+            "name": "ci-ninja-release",
+            "displayName": "Strict",
+            "description": "Enable output and stop on failure",
+            "inherits": "test-common",
+            "configurePreset": "ci-ninja-release"
+        }
+    ],
+    "packagePresets": [
+        {
+            "name": "ci-ninja-release",
+            "configurePreset": "ci-ninja-release",
+            "generators": [
+                "TGZ"
+            ]
+        }
+    ],
+    "workflowPresets": [
+        {
+            "name": "ci-ninja-debug",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "ci-ninja-debug"
+                },
+                {
+                    "type": "build",
+                    "name": "ci-ninja-debug"
+                },
+                {
+                    "type": "test",
+                    "name": "ci-ninja-debug"
+                }
+            ]
+        },
+        {
+            "name": "ci-ninja-release",
+            "steps": [
+                {
+                    "name": "ci-ninja-release",
+                    "type": "configure"
+                },
+                {
+                    "name": "ci-ninja-release",
+                    "type": "build"
+                },
+                {
+                    "type": "test",
+                    "name": "ci-ninja-release"
+                },
+                {
+                    "name": "ci-ninja-release",
+                    "type": "package"
+                }
+            ]
         }
     ]
 }
