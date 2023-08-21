@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.23)
 add_executable(SI_detail_tests)
 target_sources(
   SI_detail_tests
-  PRIVATE src/Catch2Main.cc
+  PRIVATE #XXX src/Catch2Main.cc
           src/detail_tests/detail_tests.cc
           src/detail_tests/number_parser_tests.cc
           src/detail_tests/unit_t_operator_tests.cc
@@ -17,7 +17,7 @@ target_include_directories(
                           $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>)
 
 target_compile_features(SI_detail_tests PRIVATE cxx_std_17)
-target_link_libraries(SI_detail_tests Catch2::Catch2)
+target_link_libraries(SI_detail_tests Catch2::Catch2WithMain)
 
 target_compile_options(
   SI_detail_tests
@@ -33,7 +33,7 @@ target_compile_options(
 add_executable(SI_base_unit_tests)
 target_sources(
   SI_base_unit_tests
-  PRIVATE src/Catch2Main.cc
+  PRIVATE #XXX src/Catch2Main.cc
           src/base_unit_tests/mass_tests.cc
           src/base_unit_tests/time_tests.cc
           src/base_unit_tests/electric_current_tests.cc
@@ -48,7 +48,7 @@ target_include_directories(
           $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>)
 
 target_compile_features(SI_base_unit_tests PRIVATE cxx_std_17)
-target_link_libraries(SI_base_unit_tests Catch2::Catch2)
+target_link_libraries(SI_base_unit_tests Catch2::Catch2WithMain)
 
 target_compile_options(
   SI_base_unit_tests
@@ -68,7 +68,7 @@ target_compile_options(
 add_executable(SI_derived_unit_tests)
 target_sources(
   SI_derived_unit_tests
-  PRIVATE src/Catch2Main.cc
+  PRIVATE #XXX src/Catch2Main.cc
           src/derived_unit_tests/area_tests.cc
           src/derived_unit_tests/frequency_tests.cc
           src/derived_unit_tests/electric_charge_tests.cc
@@ -105,7 +105,7 @@ target_include_directories(
           $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>)
 
 target_compile_features(SI_derived_unit_tests PRIVATE cxx_std_17)
-target_link_libraries(SI_derived_unit_tests Catch2::Catch2)
+target_link_libraries(SI_derived_unit_tests Catch2::Catch2WithMain)
 
 target_compile_options(
   SI_derived_unit_tests
@@ -121,7 +121,8 @@ target_compile_options(
 add_executable(SI_unit_benchmarks)
 target_sources(
   SI_unit_benchmarks
-  PRIVATE src/Catch2Main.cc src/benchmarks/unit_assignment_benchmarks.cc
+  PRIVATE #XXX src/Catch2Main.cc
+          src/benchmarks/unit_assignment_benchmarks.cc
           src/benchmarks/detail_benchmarks.cc
           src/benchmarks/string_operations_benchmarks.cc)
 
@@ -131,7 +132,7 @@ target_include_directories(
           $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>)
 
 target_compile_features(SI_unit_benchmarks PRIVATE cxx_std_17)
-target_link_libraries(SI_unit_benchmarks Catch2::Catch2)
+target_link_libraries(SI_unit_benchmarks Catch2::Catch2WithMain)
 
 target_compile_options(
   SI_unit_benchmarks

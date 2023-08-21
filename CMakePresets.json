@@ -9,30 +9,42 @@
         {
             "name": "ccache-env",
             "hidden": true,
+            "description": "build using ccache",
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER_LAUNCHER ": "ccache"
+            },
             "environment": {
                 "CCACHE_BASEDIR": "${sourceDir}",
-                "CCACHE_SLOPPINESS": "pch_defines,time_macros",
+                "CCACHE_SLOPPINESS": "pch_defines,time_macros"
+            }
+        },
+        {
+            "name": "clang-tidy",
+            "hidden": true,
+            "description": "build using clang-tidy as precompile step",
+            "cacheVariables": {
+                "CMAKE_CXX_CLANG_TIDY": "clang-tidy"
+            },
+            "environment": {
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "YES"
             }
         },
         {
             "name": "conan-module-path",
             "hidden": true,
-            "cacheVariables": {
-                "CMAKE_PREFIX_PATH": "${sourceDir}/build/"
-            }
+            "description": "setup using conan toolchain",
+            "toolchainFile": "conan_toolchain.cmake",
+            "binaryDir": "${sourceDir}/build"
         },
         {
             "name": "ci-ninja",
-            "displayName": "Ninja",
+            "hidden": true,
             "description": "build using Ninja generator",
             "inherits": [
                 "ccache-env",
                 "conan-module-path"
             ],
-            "generator": "Ninja",
-            "hidden": true,
-            "binaryDir": "${sourceDir}/build"
+            "generator": "Ninja"
         },
         {
             "name": "ci-ninja-debug",
@@ -96,8 +108,7 @@
             "name": "ci-ninja-debug",
             "displayName": "Ninja debug",
             "configurePreset": "ci-ninja-debug",
-            "configuration": "Debug",
-            "targets": [ "all", "help" ]
+            "configuration": "Debug"
         },
         {
             "name": "ci-ninja-release",

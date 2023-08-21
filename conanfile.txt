@@ -1,5 +1,5 @@
 [requires]
-catch2/2.13.10
+catch2/3.4.0
 
 [generators]
 CMakeDeps

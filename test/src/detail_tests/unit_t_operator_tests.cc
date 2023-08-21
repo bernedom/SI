@@ -60,7 +60,7 @@ TEMPLATE_TEST_CASE(
   unit_t<'X', std::ratio<1>, TestType, std::ratio<1>> v1{123};
   unit_t<'X', std::ratio<1>, TestType, std::ratio<1>> v2{std::move(v1)};
 
-  REQUIRE(v1 == v2);
+  REQUIRE(v1 == v2); // NOLINT(bugprone-use-after-move,hicpp-invalid-access-moved)
 }
 
 TEMPLATE_TEST_CASE(
@@ -71,7 +71,7 @@ TEMPLATE_TEST_CASE(
   unit_t<'X', std::ratio<1>, TestType, std::ratio<1>> v1{1000};
   unit_t<'X', std::ratio<1>, TestType, std::kilo> v2{std::move(v1)};
 
-  REQUIRE(v1 == v2);
+  REQUIRE(v1 == v2); // NOLINT(bugprone-use-after-move,hicpp-invalid-access-moved)
   REQUIRE(v2.value() == 1);
 }
 
@@ -84,7 +84,7 @@ TEMPLATE_TEST_CASE("GIVEN two values of the same unit type WHEN move assigned"
 
   v2 = std::move(v1);
 
-  REQUIRE(v1 == v2);
+  REQUIRE(v1 == v2); // NOLINT(bugprone-use-after-move,hicpp-invalid-access-moved)
 }
 
 TEMPLATE_TEST_CASE(
@@ -98,7 +98,7 @@ TEMPLATE_TEST_CASE(
   unit_t<'X', std::ratio<1>, TestType, std::kilo> v2{0};
   v2 = std::move(v1);
 
-  REQUIRE(v1 == v2);
+  REQUIRE(v1 == v2); // NOLINT(bugprone-use-after-move,hicpp-invalid-access-moved)
   REQUIRE(v2.value() == 1);
 }
 
