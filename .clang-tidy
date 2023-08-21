@@ -1,0 +1,55 @@
+---
+#
+# clang-format v12.0.0
+#
+Checks:
+'-*,
+    #TBD llvm-header-guard,
+    bugprone-*,
+    cert-*,
+    clang-analyzer-*,
+    -clang-analyzer-cplusplus.Move,
+    cppcoreguidelines-*,
+    -cppcoreguidelines-macro-usage,
+    concurrency-*,
+    #MAYBE google-*,
+    hicpp-*,
+    misc-*,
+    modernize-*,
+    -modernize-use-trailing-return-type,
+    performance-*,
+    portability-*,
+    readability-*,
+    -readability-identifier-naming,
+    -readability-identifier-length,
+    -*-magic-numbers,
+'
+
+HeaderFilterRegex: '.*'
+WarningsAsErrors: 'clang*'
+FormatStyle:     google
+UseColor:        false
+User:            klein_cl
+
+CheckOptions:
+  - { key: readability-identifier-naming.NamespaceCase,             value: CamelCase  }
+  - { key: readability-identifier-naming.ClassCase,                 value: CamelCase  }
+  - { key: readability-identifier-naming.MemberCase,                value: camelBack  }
+  - { key: readability-identifier-naming.MemberPrefix,              value: m_         }
+  - { key: readability-identifier-naming.StructCase,                value: lower_case }
+  - { key: readability-identifier-naming.UnionCase,                 value: lower_case }
+  - { key: readability-identifier-naming.TypedefCase,               value: lower_case }
+  - { key: readability-identifier-naming.TypedefSuffix,             value: _type      }
+  - { key: readability-identifier-naming.FunctionCase,              value: camelBack  }
+  - { key: readability-identifier-naming.EnumCase,                  value: CamelCase  }
+  - { key: readability-identifier-naming.ConstexprFunctionCase,     value: CamelCase  }
+  - { key: readability-identifier-naming.ConstexprMethodCase,       value: CamelCase  }
+  - { key: readability-identifier-naming.ConstexprVariableCase,     value: CamelCase  }
+  - { key: readability-identifier-naming.ClassConstantCase,         value: UPPER_CASE }
+  - { key: readability-identifier-naming.EnumConstantCase,          value: UPPER_CASE }
+  - { key: readability-identifier-naming.GlobalConstantCase,        value: UPPER_CASE }
+  - { key: readability-identifier-naming.GlobalConstantPointerCase, value: UPPER_CASE }
+  - { key: readability-identifier-naming.LocalConstantPointerCase,  value: UPPER_CASE }
+  - { key: readability-identifier-naming.ScopedEnumConstantCase,    value: UPPER_CASE }
+  - { key: readability-identifier-naming.StaticConstantCase,        value: UPPER_CASE }
+...
