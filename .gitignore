@@ -42,6 +42,6 @@ __pycache__/
 .cache
 CMakeUserPresets.json
 
-# CLion specifi
+# CLion specific
 .idea/
 cmake-build-*/
