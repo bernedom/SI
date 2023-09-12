@@ -24,7 +24,7 @@ option(SI_BUILD_TESTING "Build and run SI tests " ${IS_TOPLEVEL_PROJECT})
 option(SI_BUILD_DOC "Generate SI documentation" ${IS_TOPLEVEL_PROJECT})
 
 # Only search for Catch2 if we're doing testing
-# This is to limit the warning output for projects importing SI with FetchContent
+# (this reduces the amount of warnings when added via FetchContent or git submodules)
 if(SI_BUILD_TESTING)
   find_package(Catch2)
   if (NOT Catch2_FOUND)
