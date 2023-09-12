@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.5.4
+
+* Adjusted CMake to only look for Catch2 if tests are being built. Reduces warnings for projects which use another testing framework (e.g. GTest)
+
 ## 2.5.3
 
 * Change building instructions to work with conan 2.0 - This sets the minimum CMake version to 3.23
