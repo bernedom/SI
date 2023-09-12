@@ -138,6 +138,32 @@ The default installation location for SI is  `/usr/local/lib/SI`. SI can be inst
 
 See [the installation guide](doc/installation-guide.md) for detailed instructions
 
+#### Including with FetchContent
+
+**Note:** Getting SI as a [conan package](https://conan.io/center/si) is preferred.
+
+To install with CMake's FetchContent, add the following to your CMakeLists.txt
+
+```cmake
+include(FetchContent)
+
+FetchContent_Declare(
+  SI
+  GIT_REPOSITORY https://gitlab.com/bernedom/SI.git
+  # This will get the latest version
+  # To pin to a specific version or hash, add the version/hash here instead
+  # (e.g. 2.5.1 or 63b267211a6f256f7ba8d5a26e17138bbcf95ba8)
+  GIT_TAG main
+)
+
+FetchContent_MakeAvailable(SI)
+
+# ...
+
+# Link the library to your target. Change this as needed!
+target_link_libraries(${PROJECT_NAME} PUBLIC SI::SI)
+```
+
 ## Packaging
 
 SI is available as 'raw' download from this repository but also as [conan package](https://conan.io/center/si). Getting SI from conan-center is the preferred way.
