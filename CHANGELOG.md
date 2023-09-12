@@ -2,7 +2,7 @@
 
 ## 2.5.4
 
-* Adjusted CMake to only look for Catch2 if tests are being built. Reduces warnings for projects which use another testing framework (e.g. GTest)
+* Adjusted CMake to only look for Catch2 if tests are being built. Reduces warnings for projects which use something else (e.g. GTest)
 
 ## 2.5.3
 
