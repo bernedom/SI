@@ -8,11 +8,11 @@ INSTALL_PATH=$(realpath ~/SI-install)
 buildSingleTarget()
 {
     if [ "${2}" == "DEFAULTBUILD" ]; then
-        cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_BUILD_TYPE=Release -G Ninja > /dev/null
+        cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_PREFIX_PATH=${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_BUILD_TYPE=Release -G Ninja > /dev/null
         assertEquals "Configuration successful" 0 $?
         
     else
-        cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-DSI_DISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja > /dev/null
+        cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_PREFIX_PATH=${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-DSI_DISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja > /dev/null
         assertEquals "Configuration successful" 0 $?
     fi
     
@@ -29,10 +29,10 @@ buildSingleTarget()
 oneTimeSetUp(){
     
     BUILD_DIR=$(mktemp -d)
-    conan install . --output-folder=${BUILD_DIR} --build=missing --settings=build_type=Release
+    conan install . --output-folder=${BUILD_DIR} --build=missing --settings=build_type=Release 2>&1> /dev/null
     
     # install SI
-    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DBUILD_TESTING=off -DCMAKE_BUILD_TYPE=Release -G Ninja > /dev/null
+    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_PREFIX_PATH=${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DBUILD_TESTING=off -DCMAKE_BUILD_TYPE=Release -G Ninja > /dev/null
     cmake --build ${BUILD_DIR} --config Release --target install > /dev/null
     
     if [ -d ${BUILD_DIR} ]; then
@@ -42,7 +42,7 @@ oneTimeSetUp(){
 
 setUp(){
     BUILD_DIR=$(mktemp -d)
-    conan install . --output-folder=${BUILD_DIR} --build=missing --settings=build_type=Release
+    conan install . --output-folder=${BUILD_DIR} --build=missing --settings=build_type=Release 2>&1> /dev/null
 }
 
 tearDown(){
@@ -53,7 +53,7 @@ tearDown(){
 
 testSISelfSuccessfulCompilationWhenDefaultInvocation() {
     
-    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release -G Ninja > /dev/null
+    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=${BUILD_DIR} -G Ninja > /dev/null
     assertEquals "Configuration successful" 0 $?
     cmake --build ${BUILD_DIR} --config Release > /dev/null
     assertEquals "Building successful" 0 $?
@@ -61,7 +61,7 @@ testSISelfSuccessfulCompilationWhenDefaultInvocation() {
 
 testSISelfFailedCompilationWhenImplicitConversionDisabled() {
     
-    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-DSI_DISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja > /dev/null
+    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=${BUILD_DIR} -DCMAKE_CXX_FLAGS="-DSI_DISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja > /dev/null
     assertEquals "Configuration successful" 0 $?
     cmake --build ${BUILD_DIR} --config Release
     assertNotEquals "Building fails" 0 $?
