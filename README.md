@@ -1,4 +1,4 @@
-<img align="right" src="SI-logo.jpg">
+-<img align="right" src="SI-logo.jpg">
 
 [![Continuous Integration](https://github.com/bernedom/SI/workflows/CI/badge.svg?branch=master)](https://github.com/bernedom/SI/actions?query=workflow%3ACI)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ec7f65662b91480a9968bd77bd32c66c)](https://www.codacy.com/app/bernedom/SI?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bernedom/SI&amp;utm_campaign=Badge_Grade)
@@ -122,15 +122,35 @@ Non standard units are not regulated by the [BIPM](https://www.bipm.org/) but ar
 
 SI is a header-only library that uses **C++17** features. Building is tested using cmake > 3.23 and verified for g++7, g++8, clang5, clang6, clang7, msvc 19, and AppleClang 10.0. I recommend using  **conan 2.0** to download any dependencies for testing, but can be used without it, if the tests are not built. 
 
-to build using conan to fetch the dependencies and cmake to build the project, run the following commands:
+SI supports the CMakeToolchain and CMakeDeps generator of conan. To install the dependencies use
 
 ```bash
 conan install . --output-folder=build --build=missing --settings=build_type=Debug
+```
+
+substitute `--settings=build_type=Debug` with `--settings=build_type=Release` to switc between debug and release builds.
+
+### Building using conans CMakeDeps generator
+
+By using the CMAkeDeps generator, you can either build manually or use the CMake presets provided. 
+
+```bash
+cmake --preset=ci-ninja-debug
+cmake --build build
+```
+
+### Building using conans CMakeToolchain generator
+
+to build using conan to fetch the dependencies and cmake to build the project, run the following commands:
+
+```bash
+
 cmake -B build -S . --toolchain ./build/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Debug
 cmake --build build -- -j $(nproc)
 ```
 
-substitute `--config Debug` with `--config Release` for optimized builds
+Set the `CMAKE_BUILD_TYPE` accordingly to swtich between debug and release builds.
+
 
 ### Installing
 

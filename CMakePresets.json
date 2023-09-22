@@ -15,10 +15,11 @@
             }
         },
         {
-            "name": "conan-toolchain",
+            "name": "conan-module-path",
             "hidden": true,
-            "toolchainFile": "conan_toolchain.cmake",
-            "binaryDir": "${sourceDir}/build"
+            "cacheVariables": {
+                "CMAKE_PREFIX_PATH": "${sourceDir}/build/"
+            }
         },
         {
             "name": "ci-ninja",
@@ -26,10 +27,11 @@
             "description": "build using Ninja generator",
             "inherits": [
                 "ccache-env",
-                "conan-toolchain"
+                "conan-module-path"
             ],
             "generator": "Ninja",
-            "hidden": true
+            "hidden": true,
+            "binaryDir": "${sourceDir}/build"
         },
         {
             "name": "ci-ninja-debug",
@@ -57,7 +59,7 @@
             "generator": "Visual Studio 16 2019",
             "binaryDir": "${sourceDir}/build",
             "inherits": [
-                "conan-toolchain"
+                "conan-module-path"
             ],
             "condition": {
                 "type": "equals",
