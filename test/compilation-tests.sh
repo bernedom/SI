@@ -32,7 +32,7 @@ oneTimeSetUp(){
     conan install . --output-folder=${BUILD_DIR} --build=missing --settings=build_type=Release
     
     # install SI
-    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DBUILD_TESTING=off -DCMAKE_BUILD_TYPE=Release --toolchain=${BUILD_DIR}/conan_toolchain.cmake -G Ninja > /dev/null
+    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DBUILD_TESTING=off -DCMAKE_BUILD_TYPE=Release -G Ninja > /dev/null
     cmake --build ${BUILD_DIR} --config Release --target install > /dev/null
     
     if [ -d ${BUILD_DIR} ]; then
@@ -53,7 +53,7 @@ tearDown(){
 
 testSISelfSuccessfulCompilationWhenDefaultInvocation() {
     
-    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release -G Ninja --toolchain=${BUILD_DIR}/conan_toolchain.cmake > /dev/null
+    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release -G Ninja > /dev/null
     assertEquals "Configuration successful" 0 $?
     cmake --build ${BUILD_DIR} --config Release > /dev/null
     assertEquals "Building successful" 0 $?
@@ -61,7 +61,7 @@ testSISelfSuccessfulCompilationWhenDefaultInvocation() {
 
 testSISelfFailedCompilationWhenImplicitConversionDisabled() {
     
-    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-DSI_DISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja --toolchain=${BUILD_DIR}/conan_toolchain.cmake > /dev/null
+    cmake ${ROOT_DIR} -B${BUILD_DIR} -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-DSI_DISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja > /dev/null
     assertEquals "Configuration successful" 0 $?
     cmake --build ${BUILD_DIR} --config Release
     assertNotEquals "Building fails" 0 $?
