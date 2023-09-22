@@ -122,15 +122,13 @@ Non standard units are not regulated by the [BIPM](https://www.bipm.org/) but ar
 
 SI is a header-only library that uses **C++17** features. Building is tested using cmake > 3.23 and verified for g++7, g++8, clang5, clang6, clang7, msvc 19, and AppleClang 10.0. I recommend using  **conan 2.0** to download any dependencies for testing, but can be used without it, if the tests are not built. 
 
-SI supports the CMakeToolchain and CMakeDeps generator of conan. To install the dependencies use
+SI uses CMakeDeps generator of conan to find dependencies. To install the dependencies use
 
 ```bash
 conan install . --output-folder=build --build=missing --settings=build_type=Debug
 ```
 
-substitute `--settings=build_type=Debug` with `--settings=build_type=Release` to switc between debug and release builds.
-
-### Building using conans CMakeDeps generator
+substitute `--settings=build_type=Debug` with `--settings=build_type=Release` to switch between debug and release builds.
 
 By using the CMAkeDeps generator, you can either build manually or use the CMake presets provided. 
 
@@ -138,19 +136,6 @@ By using the CMAkeDeps generator, you can either build manually or use the CMake
 cmake --preset=ci-ninja-debug
 cmake --build build
 ```
-
-### Building using conans CMakeToolchain generator
-
-to build using conan to fetch the dependencies and cmake to build the project, run the following commands:
-
-```bash
-
-cmake -B build -S . --toolchain ./build/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Debug
-cmake --build build -- -j $(nproc)
-```
-
-Set the `CMAKE_BUILD_TYPE` accordingly to swtich between debug and release builds.
-
 
 ### Installing
 
