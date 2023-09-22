@@ -226,13 +226,34 @@ Building &amp; compatibility</h2>
 Installing</h3>
 <p>The default installation location for <a class="el" href="namespaceSI.html">SI</a> is <code>/usr/local/lib/SI</code>. <a class="el" href="namespaceSI.html">SI</a> can be installed using raw cmake, cpack (cmakes package mechanism), or as a conan.io package provided from <a href="https://conan.io/center/si/">conan center</a></p>
 <p>See the installation guide for detailed instructions</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h4><a class="anchor" id="autotoc_md7"></a>
+Including with FetchContent</h4>
+<p><b>Note:</b> Getting <a class="el" href="namespaceSI.html">SI</a> as a <a href="https://conan.io/center/si">conan package</a> is preferred.</p>
+<p>To install with CMake's FetchContent, add the following to your CMakeLists.txt</p>
+<div class="fragment"><div class="line">include(FetchContent)</div>
+<div class="line"> </div>
+<div class="line">FetchContent_Declare(</div>
+<div class="line">  SI</div>
+<div class="line">  GIT_REPOSITORY https://gitlab.com/bernedom/SI.git</div>
+<div class="line">  # This will get the latest version</div>
+<div class="line">  # To pin to a specific version or hash, add the version/hash here instead</div>
+<div class="line">  # (e.g. 2.5.1 or 63b267211a6f256f7ba8d5a26e17138bbcf95ba8)</div>
+<div class="line">  GIT_TAG main</div>
+<div class="line">)</div>
+<div class="line"> </div>
+<div class="line">FetchContent_MakeAvailable(SI)</div>
+<div class="line"> </div>
+<div class="line"># ...</div>
+<div class="line"> </div>
+<div class="line"># Link the library to your target. Change this as needed!</div>
+<div class="line">target_link_libraries(${PROJECT_NAME} PUBLIC SI::SI)</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
 Packaging</h2>
 <p><a class="el" href="namespaceSI.html">SI</a> is available as 'raw' download from this repository but also as <a href="https://conan.io/center/si">conan package</a>. Getting <a class="el" href="namespaceSI.html">SI</a> from conan-center is the preferred way.</p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 Implementation details</h2>
 <p>For further information and deeper technical details refer to the implementation details document</p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Breaking changes between versions 1.x.x and versions 2.x.x</h2>
 <p>Versions above 2.0.0 will not be fully compatible with older versions because of the breaking changes mentioned in the changelog. From version 2.0.0 on the conan package is named lower case <code>si</code> to conform to the conan naming convention. </p>
 </div></div><!-- PageDoc -->
