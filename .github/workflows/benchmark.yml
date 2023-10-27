@@ -17,7 +17,6 @@ jobs:
 
       - name: Build and run benchmarks with Catch2
         run: |
-          
           conan install . --output-folder=build --build=missing --settings=build_type=Release
           cmake --preset=ci-ninja-release
           cmake --build build --target SI_unit_benchmarks

@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         name:
           [ubuntu-gcc-9, ubuntu-clang-12, macos-apple-clang-11, windows-msvc-19]
@@ -37,7 +37,7 @@ jobs:
             os: windows-2019
             configure-preset: "ci-windows-msvc2019"
             build-preset: "ci-msvc2019-debug"
-            
+
 
     steps:
       - uses: actions/checkout@v2
@@ -46,7 +46,7 @@ jobs:
         run: |
           sudo apt install shunit2 ninja-build python3-setuptools python3-pip -y
           sudo pip3 install conan
-          
+
 
       - name: dependencies (macos)
         if: runner.os == 'macOS'
@@ -59,7 +59,7 @@ jobs:
           pip install conan
           curl -L0 https://github.com/kward/shunit2/archive/v2.1.7.zip --output shunit2.zip
           unzip -j -n shunit2.zip
-          
+
       - name: set-compiler-env
         run: |
           if [ "${{ matrix.compiler }}" != "" ]; then
@@ -86,16 +86,15 @@ jobs:
           else
             cmake --preset=ci-ninja-debug
           fi
-          
+
         shell: bash
-        
+
       - name: build-debug
         run: |
-
           if [ "${{ matrix.build-preset }}" != "" ]; then
             cmake --build ./build --preset=${{ matrix.build-preset }}
           else
-            cmake --build ./build 
+            cmake --build ./build
           fi
 
         shell: bash
