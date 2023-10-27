@@ -14,23 +14,32 @@ Checks:
     concurrency-*,
     #MAYBE google-*,
     hicpp-*,
+    -hicpp-explicit-conversions,
     misc-*,
+    -misc-const-correctness,
+    -misc-include-cleaner,
     modernize-*,
+    -modernize-type-traits,
+    -modernize-use-nodiscard,
     -modernize-use-trailing-return-type,
     performance-*,
     portability-*,
     readability-*,
     -readability-identifier-naming,
     -readability-identifier-length,
+    -readability-simplify-boolean-expr,
+    -readability-string-compare,
     -*-magic-numbers,
+    -*-narrowing-conversions,
+    -*-uppercase-literal-suffix,
 '
 
 HeaderFilterRegex: '.*'
 WarningsAsErrors: 'clang*'
 FormatStyle:     google
 UseColor:        false
-User:            klein_cl
 
+#MAYBE: ... example only
 CheckOptions:
   - { key: readability-identifier-naming.NamespaceCase,             value: CamelCase  }
   - { key: readability-identifier-naming.ClassCase,                 value: CamelCase  }
