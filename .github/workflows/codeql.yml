@@ -46,7 +46,7 @@ jobs:
       - name: build
         run: |
           cmake --preset ci-ninja-debug
-          cmake --build build 
+          cmake --build build
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
