@@ -15,12 +15,12 @@ jobs:
       fail-fast: false
       matrix:
         name:
-          [ubuntu-gcc-9, ubuntu-clang-12, macos-apple-clang-11, windows-msvc-19]
+          [ubuntu-gcc-11, ubuntu-clang-12, macos-apple-clang-11, windows-msvc-19]
         include:
-          - name: ubuntu-gcc-9
+          - name: ubuntu-gcc-11
             os: ubuntu-22.04
             compiler: g++
-            compiler-version: 9
+            compiler-version: 11
             compiler-name-conan: gcc
 
           - name: ubuntu-clang-12
@@ -32,15 +32,13 @@ jobs:
           - name: macos-apple-clang-11
             os: macos-11
 
-
           - name: windows-msvc-19
             os: windows-2019
             configure-preset: "ci-windows-msvc2019"
             build-preset: "ci-msvc2019-debug"
 
-
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: dependencies (Linux)
         if: runner.os == 'Linux'
         run: |
@@ -120,7 +118,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
