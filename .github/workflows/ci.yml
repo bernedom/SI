@@ -15,7 +15,7 @@ jobs:
       fail-fast: false
       matrix:
         name:
-          [ubuntu-gcc-11, ubuntu-clang-12, macos-apple-clang-11, windows-msvc-19]
+          [ubuntu-gcc-11, ubuntu-clang-13, macos-apple-clang, windows-msvc-19]
         include:
           - name: ubuntu-gcc-11
             os: ubuntu-22.04
@@ -23,14 +23,14 @@ jobs:
             compiler-version: 11
             compiler-name-conan: gcc
 
-          - name: ubuntu-clang-12
+          - name: ubuntu-clang-13
             os: ubuntu-22.04
             compiler: clang++
-            compiler-version: "12"
+            compiler-version: "13"
             compiler-name-conan: clang
 
-          - name: macos-apple-clang-11
-            os: macos-11
+          - name: macos-apple-clang
+            os: macos-latest
 
           - name: windows-msvc-19
             os: windows-2019
