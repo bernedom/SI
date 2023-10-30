@@ -14,7 +14,6 @@ project(
   LANGUAGES CXX)
 
 include(GNUInstallDirs)
-include(CTest)
 
 option(SI_INSTALL_LIBRARY
        "Enable installing of SI library into default locations"
@@ -44,7 +43,9 @@ target_include_directories(
 
 target_compile_features(SI INTERFACE cxx_std_17)
 
-if(BUILD_TESTING AND SI_BUILD_TESTING)
+if(SI_BUILD_TESTING)
+  enable_testing()
+
   include(Catch)
   add_subdirectory(test)
 endif()
