@@ -31,6 +31,7 @@ jobs:
 
           - name: macos-apple-clang
             os: macos-latest
+            compiler-cppstd: "gnu17"
 
           - name: windows-msvc-19
             os: windows-2019
@@ -69,10 +70,13 @@ jobs:
         run: |
           conan profile detect --force
           if [ "${{ matrix.compiler-name-conan }}" != "" ]; then
-            sed -i 's/compiler=.*/compiler=${{ matrix.compiler-name-conan }}/g' ~/.conan2/profiles/default
+            sed -i.bak -e 's/compiler=.*/compiler=${{ matrix.compiler-name-conan }}/g' ~/.conan2/profiles/default
           fi
           if [ "${{ matrix.compiler-version }}" != "" ]; then
-            sed -i 's/compiler.version=[0-9]\+/compiler.version=${{ matrix.compiler-version }}/g' ~/.conan2/profiles/default
+            sed -i.bak -e 's/compiler.version=[0-9]\+/compiler.version=${{ matrix.compiler-version }}/g' ~/.conan2/profiles/default
+          fi
+          if [ "${{ matrix.compiler-cppstd }}" != "" ]; then
+            sed -i.bak -e 's/compiler.cppstd=gnu[0-9]\+/compiler.cppstd=${{ matrix.compiler-cppstd }}/g' ~/.conan2/profiles/default
           fi
         shell: bash
 
