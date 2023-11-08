@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.5.4
+
+* Introduced CMake Workflow Presets
+
 ## 2.5.3
 
 * Adjusted CMake to only look for Catch2 if tests are being built. Reduces warnings for projects which use something else (e.g. GTest)

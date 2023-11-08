@@ -1,6 +1,6 @@
 
 /**
- * This file is part of "SI" version 2.5.3
+ * This file is part of "SI" version 2.5.4
  * A header only c++ library that provides type safety and user defined literals
  * for handling physical values defined in the International System of
  * Units
