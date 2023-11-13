@@ -68,6 +68,7 @@ jobs:
 
       - name: conan-profile
         run: |
+          conan --version
           conan profile detect --force
           if [ "${{ matrix.compiler-name-conan }}" != "" ]; then
             sed -i.bak -e 's/compiler=.*/compiler=${{ matrix.compiler-name-conan }}/g' ~/.conan2/profiles/default
@@ -78,6 +79,7 @@ jobs:
           if [ "${{ matrix.compiler-cppstd }}" != "" ]; then
             sed -i.bak -e 's/compiler.cppstd=gnu[0-9]\+/compiler.cppstd=${{ matrix.compiler-cppstd }}/g' ~/.conan2/profiles/default
           fi
+          cat ~/.conan2/profiles/default
         shell: bash
 
       - name: cmake-configure-debug
