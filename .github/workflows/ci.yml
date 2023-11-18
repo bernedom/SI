@@ -39,7 +39,7 @@ jobs:
             build-preset: "ci-msvc2019-debug"
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: dependencies (Linux)
         if: runner.os == 'Linux'
         run: |
@@ -124,7 +124,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
