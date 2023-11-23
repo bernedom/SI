@@ -1,0 +1,24 @@
+<map id="SI/illuminance.h" name="SI/illuminance.h">
+<area shape="rect" id="node1" title=" " alt="" coords="463,5,590,32"/>
+<area shape="rect" id="node2" href="$area_8h.html" title=" " alt="" coords="209,80,271,107"/>
+<area shape="rect" id="node7" href="$number__parser_8h.html" title=" " alt="" coords="867,453,1039,480"/>
+<area shape="rect" id="node9" href="$unit_8h.html" title=" " alt="" coords="466,229,566,256"/>
+<area shape="rect" id="node15" href="$unit__symbol_8h.html" title=" " alt="" coords="257,229,412,256"/>
+<area shape="rect" id="node18" href="$operator__helpers_8h.html" title=" " alt="" coords="738,155,923,181"/>
+<area shape="rect" id="node20" href="$luminous__flux_8h.html" title=" " alt="" coords="536,80,661,107"/>
+<area shape="rect" id="node3" href="$length_8h.html" title=" " alt="" coords="181,155,256,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="469,528,528,555"/>
+<area shape="rect" id="node5" title=" " alt="" coords="385,453,437,480"/>
+<area shape="rect" id="node6" title=" " alt="" coords="94,229,181,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="851,528,917,555"/>
+<area shape="rect" id="node10" href="$detail_8h.html" title=" " alt="" coords="774,379,845,405"/>
+<area shape="rect" id="node12" href="$eps__equal_8h.html" title=" " alt="" coords="449,304,549,331"/>
+<area shape="rect" id="node13" title=" " alt="" coords="590,379,682,405"/>
+<area shape="rect" id="node14" href="$unit__cast_8h.html" title=" " alt="" coords="675,304,768,331"/>
+<area shape="rect" id="node11" title=" " alt="" coords="625,453,700,480"/>
+<area shape="rect" id="node16" title=" " alt="" coords="195,304,251,331"/>
+<area shape="rect" id="node17" title=" " alt="" coords="275,304,373,331"/>
+<area shape="rect" id="node19" href="$cross__unit__operations_8h.html" title=" " alt="" coords="744,229,920,256"/>
+<area shape="rect" id="node21" href="$luminosity_8h.html" title=" " alt="" coords="612,155,713,181"/>
+<area shape="rect" id="node22" href="$solid__angle_8h.html" title=" " alt="" coords="479,155,587,181"/>
+</map>

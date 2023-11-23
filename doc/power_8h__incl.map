@@ -1,0 +1,30 @@
+<map id="SI/power.h" name="SI/power.h">
+<area shape="rect" id="node1" title=" " alt="" coords="757,5,846,32"/>
+<area shape="rect" id="node2" href="$number__parser_8h.html" title=" " alt="" coords="973,827,1145,853"/>
+<area shape="rect" id="node5" href="$operator__helpers_8h.html" title=" " alt="" coords="937,453,1122,480"/>
+<area shape="rect" id="node10" href="$unit_8h.html" title=" " alt="" coords="573,603,673,629"/>
+<area shape="rect" id="node14" href="$unit__symbol_8h.html" title=" " alt="" coords="117,603,272,629"/>
+<area shape="rect" id="node17" href="$energy_8h.html" title=" " alt="" coords="763,80,840,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="987,901,1053,928"/>
+<area shape="rect" id="node4" title=" " alt="" coords="469,901,528,928"/>
+<area shape="rect" id="node6" href="$cross__unit__operations_8h.html" title=" " alt="" coords="845,528,1021,555"/>
+<area shape="rect" id="node7" href="$detail_8h.html" title=" " alt="" coords="795,752,866,779"/>
+<area shape="rect" id="node8" title=" " alt="" coords="703,827,777,853"/>
+<area shape="rect" id="node9" title=" " alt="" coords="359,827,411,853"/>
+<area shape="rect" id="node11" href="$eps__equal_8h.html" title=" " alt="" coords="449,677,549,704"/>
+<area shape="rect" id="node12" title=" " alt="" coords="590,752,682,779"/>
+<area shape="rect" id="node13" href="$unit__cast_8h.html" title=" " alt="" coords="675,677,768,704"/>
+<area shape="rect" id="node15" title=" " alt="" coords="93,677,149,704"/>
+<area shape="rect" id="node16" title=" " alt="" coords="174,677,271,704"/>
+<area shape="rect" id="node18" href="$force_8h.html" title=" " alt="" coords="768,229,835,256"/>
+<area shape="rect" id="node24" href="$length_8h.html" title=" " alt="" coords="205,528,280,555"/>
+<area shape="rect" id="node27" href="$pressure_8h.html" title=" " alt="" coords="844,155,935,181"/>
+<area shape="rect" id="node19" href="$acceleration_8h.html" title=" " alt="" coords="645,304,760,331"/>
+<area shape="rect" id="node26" href="$mass_8h.html" title=" " alt="" coords="459,528,528,555"/>
+<area shape="rect" id="node20" href="$time_8h.html" title=" " alt="" coords="604,528,668,555"/>
+<area shape="rect" id="node22" href="$velocity_8h.html" title=" " alt="" coords="675,379,759,405"/>
+<area shape="rect" id="node21" title=" " alt="" coords="752,603,819,629"/>
+<area shape="rect" id="node23" href="$frequency_8h.html" title=" " alt="" coords="510,453,607,480"/>
+<area shape="rect" id="node25" title=" " alt="" coords="347,603,434,629"/>
+<area shape="rect" id="node28" href="$area_8h.html" title=" " alt="" coords="358,304,421,331"/>
+</map>
