@@ -15,6 +15,7 @@
 
 #include <istream>
 #include <ostream>
+#include <string>
 
 template <char _symbol, typename _exponent, typename _type, typename _ratio>
 std::ostream &
