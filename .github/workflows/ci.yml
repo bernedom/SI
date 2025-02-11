@@ -30,7 +30,7 @@ jobs:
             compiler-name-conan: clang
 
           - name: macos-apple-clang
-            os: macos-latest
+            os: macos-14
             compiler-cppstd: "gnu17"
 
           - name: windows-msvc-19
