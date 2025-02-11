@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structSI_1_1detail_1_1parsing_1_1Power__impl_3_01__base_00_01__digit_01_4.html" title="terminating case for power variadic template" alt="" coords="5,5,168,61"/>
+<area shape="rect" id="Node000000" href="$structSI_1_1detail_1_1parsing_1_1Power__impl.html" title=" " alt="" coords="5,5,168,60"/>
+<area shape="rect" id="Node000001" href="$structSI_1_1detail_1_1parsing_1_1Power.html" title="interface class for power calculation" alt="" coords="216,13,405,53"/>
+<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="182,30,216,30,216,35,182,35"/>
 </map>

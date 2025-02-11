@@ -1,9 +1,15 @@
 <map id="SI/electric_potential.h" name="SI/electric_potential.h">
-<area shape="rect" id="node1" title=" " alt="" coords="302,5,465,32"/>
-<area shape="rect" id="node2" href="$electric__capacity_8h.html" title=" " alt="" coords="5,80,164,107"/>
-<area shape="rect" id="node3" href="$electric__conductance_8h.html" title=" " alt="" coords="189,80,375,107"/>
-<area shape="rect" id="node4" href="$electric__resistance_8h.html" title=" " alt="" coords="400,80,572,107"/>
-<area shape="rect" id="node5" href="$magnetic__flux_8h.html" title=" " alt="" coords="596,80,739,107"/>
-<area shape="rect" id="node6" href="$inductance_8h.html" title=" " alt="" coords="527,155,648,181"/>
-<area shape="rect" id="node7" href="$magnetic__field_8h.html" title=" " alt="" coords="673,155,819,181"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="302,5,465,31"/>
+<area shape="rect" id="Node000002" href="$electric__capacity_8h.html" title=" " alt="" coords="5,79,164,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="323,36,134,81,132,76,321,31"/>
+<area shape="rect" id="Node000003" href="$electric__conductance_8h.html" title=" " alt="" coords="189,79,375,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="357,41,300,81,297,76,354,36"/>
+<area shape="rect" id="Node000004" href="$electric__resistance_8h.html" title=" " alt="" coords="400,79,572,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="413,36,471,76,468,81,410,41"/>
+<area shape="rect" id="Node000005" href="$magnetic__flux_8h.html" title=" " alt="" coords="596,79,739,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="443,31,622,76,621,81,441,37"/>
+<area shape="rect" id="Node000006" href="$inductance_8h.html" title=" " alt="" coords="527,152,648,177"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="646,115,602,154,599,150,643,111"/>
+<area shape="rect" id="Node000007" href="$magnetic__field_8h.html" title=" " alt="" coords="673,152,819,177"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="692,111,735,150,731,154,688,115"/>
 </map>

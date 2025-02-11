@@ -1,6 +1,9 @@
 <map id="SI::detail::unit_symbol_impl&lt; Cs &gt;" name="SI::detail::unit_symbol_impl&lt; Cs &gt;">
-<area shape="rect" id="node1" title="Compile time string provider for conversion of unit types to strings." alt="" coords="69,185,236,227"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,96,228,123"/>
-<area shape="rect" id="node3" title=" " alt="" coords="253,96,378,123"/>
-<area shape="rect" id="node4" title=" " alt="" coords="232,5,399,47"/>
+<area shape="rect" id="Node000001" title="Compile time string provider for conversion of unit types to strings." alt="" coords="69,183,236,223"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,95,228,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,132,148,182,143,183,124,134"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="253,95,378,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="285,129,187,185,184,180,282,125"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="232,5,399,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="318,59,318,94,313,94,313,59"/>
 </map>

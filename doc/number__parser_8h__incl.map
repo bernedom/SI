@@ -1,5 +1,7 @@
 <map id="SI/detail/number_parser.h" name="SI/detail/number_parser.h">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,193,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="23,80,90,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="114,80,173,107"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,193,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="23,79,90,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,32,73,68,68,66,90,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="114,79,173,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,30,131,66,127,68,104,32"/>
 </map>

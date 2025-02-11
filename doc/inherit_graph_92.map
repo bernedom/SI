@@ -1,4 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structSI_1_1detail_1_1unit__symbol__impl.html" title=" " alt="" coords="5,5,248,76"/>
-<area shape="rect" id="node2" href="$structSI_1_1unit__symbol_3_01&#39;M&#39;_00_01__ratio_01_4.html" title=" " alt="" coords="296,20,457,61"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,109,124,134"/>
+<area shape="rect" id="Node000001" href="$structSI_1_1detail_1_1is__ratio.html" title="to check if a template is an instantiation of std::ratio" alt="" coords="211,5,346,45"/>
+<area shape="poly" id="edge84_Node000000_Node000001" title=" " alt="" coords="94,99,130,76,171,55,210,40,212,45,173,60,132,81,97,103"/>
+<area shape="rect" id="Node000002" href="$structSI_1_1detail_1_1is__unit__t.html" title=" " alt="" coords="213,69,344,109"/>
+<area shape="poly" id="edge85_Node000000_Node000002" title=" " alt="" coords="137,108,213,96,214,102,138,113"/>
+<area shape="rect" id="Node000003" href="$structSI_1_1detail_1_1ratio__prefix.html" title="base template for ratio prefix, unusable" alt="" coords="198,133,359,173"/>
+<area shape="poly" id="edge86_Node000000_Node000003" title=" " alt="" coords="138,130,198,139,197,144,138,135"/>
+<area shape="rect" id="Node000004" href="$structSI_1_1unit__symbol.html" title="Base struct. Unusable needs template overloading." alt="" coords="172,197,385,237"/>
+<area shape="poly" id="edge87_Node000000_Node000004" title=" " alt="" coords="97,139,132,162,173,183,204,195,202,200,171,188,130,166,94,144"/>
 </map>

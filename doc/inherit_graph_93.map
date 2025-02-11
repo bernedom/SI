@@ -1,3 +1,29 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structSI_1_1detail_1_1unit__t.html" title="base template class for holding values of type _type to be multiplied with a ratio _ratio" alt="" coords="5,5,177,61"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,397,168,422"/>
+<area shape="rect" id="Node000001" href="$structSI_1_1detail_1_1ratio__prefix_3_01std_1_1atto_01_4.html" title=" " alt="" coords="216,5,377,45"/>
+<area shape="poly" id="edge88_Node000000_Node000001" title=" " alt="" coords="88,383,97,318,119,231,135,184,156,138,182,95,214,55,230,43,233,47,218,59,187,98,161,141,140,186,124,233,103,319,93,384"/>
+<area shape="rect" id="Node000002" href="$structSI_1_1detail_1_1ratio__prefix_3_01std_1_1centi_01_4.html" title=" " alt="" coords="216,69,377,109"/>
+<area shape="poly" id="edge89_Node000000_Node000002" title=" " alt="" coords="90,383,103,329,127,259,163,185,187,150,214,119,230,107,233,112,218,123,191,154,168,187,132,261,108,330,95,384"/>
+<area shape="rect" id="Node000003" href="$structSI_1_1detail_1_1ratio__prefix_3_01std_1_1exa_01_4.html" title=" " alt="" coords="216,133,377,173"/>
+<area shape="poly" id="edge90_Node000000_Node000003" title=" " alt="" coords="94,382,111,340,136,287,170,232,214,183,232,171,235,176,218,187,175,235,141,289,115,342,99,384"/>
+<area shape="rect" id="Node000004" href="$structSI_1_1detail_1_1ratio__prefix_3_01std_1_1femto_01_4.html" title=" " alt="" coords="216,197,377,237"/>
+<area shape="poly" id="edge91_Node000000_Node000004" title=" " alt="" coords="100,383,146,316,178,280,214,247,234,235,237,240,218,251,182,283,150,320,104,386"/>
+<area shape="rect" id="Node000005" href="$structSI_1_1detail_1_1ratio__prefix_3_01std_1_1giga_01_4.html" title=" " alt="" coords="216,261,377,301"/>
+<area shape="poly" id="edge92_Node000000_Node000005" title=" " alt="" coords="111,386,158,349,215,311,239,299,241,304,217,316,161,353,114,390"/>
+<area shape="rect" id="Node000006" href="$structSI_1_1detail_1_1ratio__prefix_3_01std_1_1kilo_01_4.html" title=" " alt="" coords="216,325,377,365"/>
+<area shape="poly" id="edge93_Node000000_Node000006" title=" " alt="" coords="142,390,229,363,231,368,143,395"/>
+<area shape="rect" id="Node000007" href="$structSI_1_1detail_1_1ratio__prefix_3_01std_1_1mega_01_4.html" title=" " alt="" coords="216,389,377,429"/>
+<area shape="poly" id="edge94_Node000000_Node000007" title=" " alt="" coords="182,407,216,407,216,412,182,412"/>
+<area shape="rect" id="Node000008" href="$structSI_1_1detail_1_1ratio__prefix_3_01std_1_1micro_01_4.html" title=" " alt="" coords="216,453,377,493"/>
+<area shape="poly" id="edge95_Node000000_Node000008" title=" " alt="" coords="143,424,231,451,229,456,142,429"/>
+<area shape="rect" id="Node000009" href="$structSI_1_1detail_1_1ratio__prefix_3_01std_1_1milli_01_4.html" title=" " alt="" coords="216,517,377,557"/>
+<area shape="poly" id="edge96_Node000000_Node000009" title=" " alt="" coords="114,429,161,466,217,503,241,515,239,520,215,508,158,470,111,433"/>
+<area shape="rect" id="Node000010" href="$structSI_1_1detail_1_1ratio__prefix_3_01std_1_1nano_01_4.html" title=" " alt="" coords="216,581,377,621"/>
+<area shape="poly" id="edge97_Node000000_Node000010" title=" " alt="" coords="104,433,150,499,182,535,218,567,237,579,234,583,214,571,178,539,146,502,100,436"/>
+<area shape="rect" id="Node000011" href="$structSI_1_1detail_1_1ratio__prefix_3_01std_1_1peta_01_4.html" title=" " alt="" coords="216,645,377,685"/>
+<area shape="poly" id="edge98_Node000000_Node000011" title=" " alt="" coords="99,435,115,477,141,529,175,584,218,631,235,643,232,647,214,635,170,587,136,532,111,479,94,436"/>
+<area shape="rect" id="Node000012" href="$structSI_1_1detail_1_1ratio__prefix_3_01std_1_1pico_01_4.html" title=" " alt="" coords="216,709,377,749"/>
+<area shape="poly" id="edge99_Node000000_Node000012" title=" " alt="" coords="95,435,108,489,132,558,168,631,191,665,218,695,233,707,230,711,214,699,187,668,163,634,127,560,103,490,90,436"/>
+<area shape="rect" id="Node000013" href="$structSI_1_1detail_1_1ratio__prefix_3_01std_1_1tera_01_4.html" title=" " alt="" coords="216,773,377,813"/>
+<area shape="poly" id="edge100_Node000000_Node000013" title=" " alt="" coords="93,435,103,500,124,586,140,632,161,678,187,721,218,759,233,771,230,775,214,763,182,724,156,680,135,634,119,587,97,501,88,436"/>
 </map>

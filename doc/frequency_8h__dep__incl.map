@@ -1,18 +1,35 @@
 <map id="SI/frequency.h" name="SI/frequency.h">
-<area shape="rect" id="node1" title=" " alt="" coords="324,5,437,32"/>
-<area shape="rect" id="node2" href="$angular__frequency_8h.html" title=" " alt="" coords="217,80,387,107"/>
-<area shape="rect" id="node3" href="$velocity_8h.html" title=" " alt="" coords="411,80,511,107"/>
-<area shape="rect" id="node4" href="$acceleration_8h.html" title=" " alt="" coords="318,155,449,181"/>
-<area shape="rect" id="node16" href="$momentum_8h.html" title=" " alt="" coords="473,155,600,181"/>
-<area shape="rect" id="node5" href="$force_8h.html" title=" " alt="" coords="342,229,425,256"/>
-<area shape="rect" id="node6" href="$energy_8h.html" title=" " alt="" coords="337,379,430,405"/>
-<area shape="rect" id="node15" href="$pressure_8h.html" title=" " alt="" coords="375,304,482,331"/>
-<area shape="rect" id="node7" href="$electric__potential_8h.html" title=" " alt="" coords="302,528,465,555"/>
-<area shape="rect" id="node14" href="$power_8h.html" title=" " alt="" coords="380,453,469,480"/>
-<area shape="rect" id="node8" href="$electric__capacity_8h.html" title=" " alt="" coords="5,603,164,629"/>
-<area shape="rect" id="node9" href="$electric__conductance_8h.html" title=" " alt="" coords="189,603,375,629"/>
-<area shape="rect" id="node10" href="$electric__resistance_8h.html" title=" " alt="" coords="400,603,572,629"/>
-<area shape="rect" id="node11" href="$magnetic__flux_8h.html" title=" " alt="" coords="596,603,739,629"/>
-<area shape="rect" id="node12" href="$inductance_8h.html" title=" " alt="" coords="528,677,649,704"/>
-<area shape="rect" id="node13" href="$magnetic__field_8h.html" title=" " alt="" coords="674,677,821,704"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="324,5,437,31"/>
+<area shape="rect" id="Node000002" href="$angular__frequency_8h.html" title=" " alt="" coords="217,79,387,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="360,42,317,80,313,76,356,38"/>
+<area shape="rect" id="Node000003" href="$velocity_8h.html" title=" " alt="" coords="411,79,511,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="405,38,449,76,446,80,402,42"/>
+<area shape="rect" id="Node000004" href="$acceleration_8h.html" title=" " alt="" coords="318,152,449,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="440,115,398,154,394,150,436,111"/>
+<area shape="rect" id="Node000016" href="$momentum_8h.html" title=" " alt="" coords="473,152,600,177"/>
+<area shape="poly" id="edge17_Node000003_Node000016" title=" " alt="" coords="485,111,526,150,522,154,481,115"/>
+<area shape="rect" id="Node000005" href="$force_8h.html" title=" " alt="" coords="342,225,425,251"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="386,191,386,225,381,225,381,191"/>
+<area shape="rect" id="Node000006" href="$energy_8h.html" title=" " alt="" coords="337,372,430,397"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="376,264,366,299,365,319,369,339,380,371,375,373,364,340,360,319,361,298,371,263"/>
+<area shape="rect" id="Node000015" href="$pressure_8h.html" title=" " alt="" coords="375,299,482,324"/>
+<area shape="poly" id="edge15_Node000005_Node000015" title=" " alt="" coords="400,261,424,297,419,300,396,264"/>
+<area shape="rect" id="Node000007" href="$electric__potential_8h.html" title=" " alt="" coords="302,519,465,544"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="378,411,370,446,372,485,381,518,376,519,367,486,365,445,373,410"/>
+<area shape="rect" id="Node000014" href="$power_8h.html" title=" " alt="" coords="380,445,469,471"/>
+<area shape="poly" id="edge13_Node000006_Node000014" title=" " alt="" coords="399,408,420,444,416,447,395,411"/>
+<area shape="rect" id="Node000008" href="$electric__capacity_8h.html" title=" " alt="" coords="5,592,164,617"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="323,550,134,594,132,589,321,545"/>
+<area shape="rect" id="Node000009" href="$electric__conductance_8h.html" title=" " alt="" coords="189,592,375,617"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="357,554,300,594,297,590,354,550"/>
+<area shape="rect" id="Node000010" href="$electric__resistance_8h.html" title=" " alt="" coords="400,592,572,617"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="413,550,471,590,468,594,410,554"/>
+<area shape="rect" id="Node000011" href="$magnetic__flux_8h.html" title=" " alt="" coords="596,592,739,617"/>
+<area shape="poly" id="edge10_Node000007_Node000011" title=" " alt="" coords="443,545,622,589,621,594,441,550"/>
+<area shape="rect" id="Node000012" href="$inductance_8h.html" title=" " alt="" coords="528,665,649,691"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="646,629,603,667,600,663,643,625"/>
+<area shape="rect" id="Node000013" href="$magnetic__field_8h.html" title=" " alt="" coords="674,665,821,691"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="692,624,736,663,732,667,688,628"/>
+<area shape="poly" id="edge14_Node000014_Node000007" title=" " alt="" coords="413,484,392,520,388,517,409,481"/>
+<area shape="poly" id="edge16_Node000015_Node000006" title=" " alt="" coords="416,337,393,373,388,370,412,334"/>
 </map>

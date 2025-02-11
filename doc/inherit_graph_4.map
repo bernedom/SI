@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structSI_1_1detail_1_1parsing_1_1Magnitude.html" title=" " alt="" coords="5,5,161,61"/>
+<area shape="rect" id="Node000000" href="$structSI_1_1detail_1_1parsing_1_1Number__impl.html" title=" " alt="" coords="5,45,163,100"/>
+<area shape="rect" id="Node000001" href="$structSI_1_1detail_1_1parsing_1_1Number_3_01_0j0_0j_00_01_0jX_0j_00_01__digits_8_8_8_01_4.html" title="specialization of Number for hex notation" alt="" coords="211,5,353,60"/>
+<area shape="poly" id="edge3_Node000000_Node000001" title=" " alt="" coords="176,51,210,44,211,50,177,57"/>
+<area shape="rect" id="Node000002" href="$structSI_1_1detail_1_1parsing_1_1Number_3_01_0j0_0j_00_01_0jx_0j_00_01__digits_8_8_8_01_4.html" title="specialization of Number for hex notation" alt="" coords="211,84,353,139"/>
+<area shape="poly" id="edge4_Node000000_Node000002" title=" " alt="" coords="177,88,211,95,210,100,176,93"/>
 </map>
