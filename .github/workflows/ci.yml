@@ -117,6 +117,7 @@ jobs:
         if: runner.os == 'Linux' || runner.os == 'macOs'
         run: |
           ./test/compilation-tests.sh
+        shell: bash
 
   version-consistency-check:
     if: github.event.action == 'published' || github.ref != 'refs/heads/main'

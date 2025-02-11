@@ -7,7 +7,6 @@ INSTALL_PATH=$(realpath ~/SI-install)
 
 buildSingleTarget()
 {
-        set -x
     if [ "${2}" == "DEFAULTBUILD" ]; then
         cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_PREFIX_PATH=${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_BUILD_TYPE=Release -G Ninja > /dev/null
         assertEquals "Configuration for defaultbuild successful" 0 $? ${3}
@@ -25,11 +24,12 @@ buildSingleTarget()
     else
         assertNotEquals "Building fails" 0 $RESULT
     fi
-    set +x
+
 }
 
 oneTimeSetUp(){
 
+    echo "Setting up and installing SI"
     BUILD_DIR=$(mktemp -d)
     conan install . --output-folder=${BUILD_DIR} --build=missing --settings=build_type=Release 2>&1> /dev/null
 
