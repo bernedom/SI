@@ -3,17 +3,20 @@
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 ROOT_DIR=$(realpath ${SCRIPT_DIR}/../)
-INSTALL_PATH=$(realpath ~/SI-install)
+
+# Set the install path
+INSTALL_PATH=$(mktemp -d)/SI-install
+#INSTALL_PATH=$(realpath ~/SI-install)
 
 buildSingleTarget()
 {
     if [ "${2}" == "DEFAULTBUILD" ]; then
         cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_PREFIX_PATH=${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_BUILD_TYPE=Release -G Ninja > /dev/null
-        assertEquals "Configuration for defaultbuild successful" 0 $? ${3}
+        assertEquals "'${4}': Configuration for defaultbuild successful" 0 $?
 
     else
         cmake ${ROOT_DIR}/test/src/compilation_tests/ -B${BUILD_DIR} -DCMAKE_PREFIX_PATH=${BUILD_DIR} -DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_PATH} -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-DSI_DISABLE_IMPLICIT_RATIO_CONVERSION" -G Ninja > /dev/null
-        assertEquals "Configuration for build with disabled ration cinversion successful" 0 $? ${3}
+        assertEquals "'${4}': Configuration for build with disabled ration cinversion successful" 0 $?
     fi
 
     cmake --build ${BUILD_DIR} --config Release --target $1 > /dev/null
